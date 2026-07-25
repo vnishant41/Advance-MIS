@@ -1,0 +1,2685 @@
+<script>
+  /* ── JsCore ──────────────────────────────────── */
+  /* ── GLOBAL STATE ─────────────────────────────────────────────── */
+  let STATE = {
+    user: BOOT ? BOOT.user : null,
+    modules: BOOT ? BOOT.modules || {} : {},
+    today: BOOT ? BOOT.today : '',
+    window: BOOT ? BOOT.window || { open: true } : { open: true },
+    currentView: null
+  };
+
+  /* ── RPC HELPER ───────────────────────────────────────────────── */
+  function rpc(fn, ...args) {
+    return new Promise((resolve, reject) => {
+      if (typeof google === 'undefined' || !google.script || !google.script.run) {
+        // Localhost fallback
+        if (window.rpcLocal) return window.rpcLocal(fn, ...args).then(resolve).catch(reject);
+        return reject(new Error('google.script.run not found'));
+      }
+      google.script.run
+        .withSuccessHandler(resolve)
+        .withFailureHandler(err => reject(err))
+      [fn](...args);
+    });
+  }
+
+  /* ── LOGIN LOGIC ──────────────────────────────────────────────── */
+  async function doLogin() {
+    const email = document.getElementById('loginEmail').value.trim();
+    const pwd = document.getElementById('loginPassword').value;
+    const btn = document.getElementById('loginBtn');
+    const err = document.getElementById('loginError');
+
+    if (!email || !pwd) {
+      err.textContent = 'Email and password required';
+      err.style.display = 'block';
+      return;
+    }
+
+    btn.textContent = 'Signing in...';
+    btn.disabled = true;
+    err.style.display = 'none';
+
+    try {
+      const res = await rpc('authenticate', email, pwd);
+      if (!res.success) throw new Error(res.message);
+
+      // Save to localStorage for auto-login
+      localStorage.setItem('mis.email', email);
+      localStorage.setItem('mis.pwd', pwd);
+
+      // Update global state and boot
+      updateStateFromBoot(res.data);
+      document.getElementById('login').style.display = 'none';
+      bootApp();
+    } catch (e) {
+      err.textContent = e.message;
+      err.style.display = 'block';
+    } finally {
+      btn.textContent = 'Sign In';
+      btn.disabled = false;
+    }
+  }
+
+  function updateStateFromBoot(data) {
+    window.BOOT = data;
+    STATE.user = data.user;
+    STATE.modules = data.modules || {};
+    STATE.today = data.today;
+    STATE.window = data.window || { open: true };
+  }
+
+  /* ── TOAST ────────────────────────────────────────────────────── */
+  function toast(msg, type) {
+    const el = document.getElementById('toast');
+    el.textContent = msg;
+    el.className = 'toast show ' + (type || '');
+    setTimeout(() => { el.className = 'toast'; }, 3500);
+  }
+
+  /* ── NAVIGATION ───────────────────────────────────────────────── */
+  function navigate(view) {
+    const btn = document.querySelector('.sidebar .nav-btn[data-view="' + view + '"]');
+    if (btn && btn.classList.contains('disabled')) return;
+
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.querySelectorAll('.sidebar .nav-btn').forEach(b => b.classList.remove('active'));
+
+    const target = document.getElementById(view);
+    if (target) target.classList.add('active');
+    if (btn) btn.classList.add('active');
+
+    STATE.currentView = view;
+
+    if (view === 'dashboard') loadDashboard();
+    else if (view === 'mis') loadMisForm();
+    else if (view === 'du') loadDuForm();
+    else if (view === 'task') loadTaskForm();
+    else if (view === 'roadster') loadRoadster();
+    else if (view === 'kanban') loadKanban();
+    else if (view === 'roadsterConfig') loadRoadsterConfig();
+    else if (view === 'admin') loadAdmin();
+    else if (view === 'control') loadControl();
+    else if (view === 'analytics') loadAnalytics();
+    else if (view === 'audit') loadAudit();
+    else if (view === 'leaderControl') loadLeaderControl();
+  }
+
+  /* ── BOOT ─────────────────────────────────────────────────────── */
+  function bootApp() {
+    if (!STATE.user) return; // safety
+
+    // User badge (legacy left side)
+    const ub = document.getElementById('userBadge');
+    if (ub) {
+      ub.textContent = STATE.user.name + ' (' + STATE.user.role + (STATE.user.dept ? ' · ' + STATE.user.dept : '') + ')';
+      ub.style.cursor = 'pointer';
+      ub.title = 'Click to view Profile & Settings';
+      ub.onclick = openProfileModal;
+    }
+
+    // User dropdown menu (new right side)
+    const udName = document.getElementById('udName');
+    if (udName) udName.textContent = STATE.user.name;
+
+    const udRole = document.getElementById('udRole');
+    if (udRole) udRole.textContent = STATE.user.role + (STATE.user.dept ? ' · ' + STATE.user.dept : '');
+
+    const udAvatar = document.getElementById('userMenuAvatar');
+    if (udAvatar) udAvatar.textContent = STATE.user.name.charAt(0).toUpperCase();
+
+    // Window badge
+    const wb = document.getElementById('windowBadge');
+    if (STATE.window.open) {
+      wb.textContent = 'Window OPEN ' + STATE.window.start + '–' + STATE.window.end;
+    } else {
+      wb.textContent = 'Window CLOSED ' + STATE.window.start + '–' + STATE.window.end;
+      wb.classList.add('closed');
+    }
+
+    // Sidebar gating: hide modules disabled or above role
+    const ROLE_LEVEL = { Teammate: 1, Leader: 1.5, Manager: 2, SuperAdmin: 3 };
+    document.querySelectorAll('.sidebar .nav-btn').forEach(btn => {
+      const mod = btn.getAttribute('data-mod');
+      const minRole = btn.getAttribute('data-role');
+      let disabled = false;
+      if (mod && STATE.modules[mod] === false) disabled = true;
+      if (minRole && (ROLE_LEVEL[STATE.user.role] || 0) < (ROLE_LEVEL[minRole] || 0)) disabled = true;
+      if (disabled) {
+        btn.classList.add('disabled');
+        btn.style.display = 'none';
+      }
+    });
+
+    // Role-gate: show "Add Today's Task" button for Manager+
+    if (ROLE_LEVEL[STATE.user.role] >= ROLE_LEVEL['Manager']) {
+      const ttBtn = document.getElementById('btnAddTodayTask');
+      if (ttBtn) ttBtn.style.display = '';
+    }
+
+    // Leader role: apply per-leader view restrictions after initial gating
+    if (STATE.user.role === 'Leader') {
+      _applyLeaderGating();
+    }
+
+    // Default view: dashboard if enabled, else first available
+    if (STATE.modules.dashboard !== false) navigate('dashboard');
+    else {
+      const firstAvail = Array.from(document.querySelectorAll('.sidebar .nav-btn:not(.disabled)'))[0];
+      if (firstAvail) navigate(firstAvail.getAttribute('data-view'));
+    }
+  }
+
+  function _applyLeaderGating() {
+    rpc('getMyLeaderAccess').then(r => {
+      if (!r || !r.success) return;
+      const allowed = new Set(r.views || []);
+      // Never allow admin-only views regardless of config
+      const NEVER_LEADER = new Set(['admin', 'control', 'leaderControl', 'audit']);
+      document.querySelectorAll('.sidebar .nav-btn').forEach(btn => {
+        const view = btn.getAttribute('data-view');
+        if (!view) return;
+        if (NEVER_LEADER.has(view)) {
+          btn.classList.add('disabled');
+          btn.style.display = 'none';
+          return;
+        }
+        if (!allowed.has(view)) {
+          btn.classList.add('disabled');
+          btn.style.display = 'none';
+        }
+      });
+      STATE.leaderViews = allowed;
+    }).catch(() => { });
+  }
+
+  /* ── USER MENU ─────────────────────────────────────────────────── */
+  function toggleUserMenu() {
+    const btn = document.getElementById('userMenuBtn');
+    const dd = document.getElementById('userDropdown');
+    if (btn) btn.classList.toggle('open');
+    if (dd) dd.classList.toggle('show');
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function (e) {
+    const wrap = document.getElementById('userMenuWrap');
+    if (wrap && !wrap.contains(e.target)) {
+      const btn = document.getElementById('userMenuBtn');
+      const dd = document.getElementById('userDropdown');
+      if (btn) btn.classList.remove('open');
+      if (dd) dd.classList.remove('show');
+    }
+  });
+
+  function openProfileModal() {
+    document.getElementById('profileEmail').textContent = STATE.user.email;
+    document.getElementById('profileRole').textContent = STATE.user.role + (STATE.user.dept ? ' · ' + STATE.user.dept : '');
+    document.getElementById('profileOldPwd').value = '';
+    document.getElementById('profileNewPwd').value = '';
+    document.getElementById('pwdMsg').textContent = '';
+    document.getElementById('profileModal').style.display = 'flex';
+  }
+
+  function doLogout() {
+    localStorage.removeItem('mis.email');
+    localStorage.removeItem('mis.pwd');
+    // clear properties service using rpc
+    rpc('clearUserSession').then(() => {
+      location.reload();
+    }).catch(() => location.reload());
+  }
+
+  function submitPasswordChange() {
+    const oldPwd = document.getElementById('profileOldPwd').value;
+    const newPwd = document.getElementById('profileNewPwd').value;
+    if (!oldPwd || !newPwd) {
+      const msg = document.getElementById('pwdMsg');
+      msg.textContent = 'Please enter both passwords.';
+      msg.style.color = '#f87171';
+      return;
+    }
+    const msg = document.getElementById('pwdMsg');
+    msg.textContent = 'Updating...';
+    msg.style.color = '#cbd5e1';
+    rpc('changeUserPassword', oldPwd, newPwd).then(r => {
+      if (r.success) {
+        msg.textContent = 'Password updated successfully!';
+        msg.style.color = '#4ade80';
+        localStorage.setItem('mis.pwd', newPwd); // Update locally saved
+        setTimeout(() => document.getElementById('profileModal').style.display = 'none', 1500);
+      } else {
+        msg.textContent = r.message || 'Failed to update';
+        msg.style.color = '#f87171';
+      }
+    }).catch(e => {
+      msg.textContent = String(e);
+      msg.style.color = '#f87171';
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', async () => {
+    applyStoredTheme();
+    setupWindowClosePush();
+
+    const pl = document.getElementById('preloader');
+
+    if (BOOT && BOOT.access) {
+      // Already authenticated via Google Workspace!
+      document.getElementById('login').style.display = 'none';
+      bootApp();
+      if (pl) { pl.classList.add('hide'); setTimeout(() => pl.remove(), 600); }
+    } else {
+      // Custom Auth path
+      const savedEmail = localStorage.getItem('mis.email');
+      const savedPwd = localStorage.getItem('mis.pwd');
+
+      if (savedEmail && savedPwd) {
+        try {
+          const res = await rpc('authenticate', savedEmail, savedPwd);
+          if (res.success) {
+            updateStateFromBoot(res.data);
+            document.getElementById('login').style.display = 'none';
+            bootApp();
+          } else {
+            // Bad saved credentials, show login
+            localStorage.removeItem('mis.pwd');
+          }
+        } catch (e) {
+          // Network error maybe, show login
+        }
+      }
+
+      // Hide preloader to reveal login screen (or app if auto-login worked)
+      if (pl) { pl.classList.add('hide'); setTimeout(() => pl.remove(), 600); }
+    }
+  });
+
+  /* ── THEME TOGGLE (Phase 5) ───────────────────────────────────── */
+  function applyStoredTheme() {
+    try {
+      const t = localStorage.getItem('mis.theme');
+      if (t === 'light') document.body.classList.add('light');
+    } catch (e) { }
+  }
+  function toggleTheme() {
+    document.body.classList.toggle('light');
+    try { localStorage.setItem('mis.theme', document.body.classList.contains('light') ? 'light' : 'dark'); } catch (e) { }
+  }
+
+  /* ── BROWSER PUSH: 30 min before window closes (Phase 5) ──────── */
+  function setupWindowClosePush() {
+    if (!('Notification' in window)) return;
+    if (!STATE.window || !STATE.window.end) return;
+    if (Notification.permission === 'default') {
+      // Defer asking until after first user interaction (browsers reject sync prompts).
+      document.addEventListener('click', requestNotifPermissionOnce, { once: true });
+    }
+    scheduleWindowCloseNotification();
+  }
+  function requestNotifPermissionOnce() {
+    try { Notification.requestPermission().then(scheduleWindowCloseNotification); } catch (e) { }
+  }
+  function scheduleWindowCloseNotification() {
+    if (!('Notification' in window) || Notification.permission !== 'granted') return;
+    const end = STATE.window && STATE.window.end;
+    if (!end) return;
+    // Compute today's "end - 30min" in local time.
+    const [h, m] = end.split(':').map(n => parseInt(n, 10) || 0);
+    const target = new Date();
+    target.setHours(h, m - 30, 0, 0);
+    const diffMs = target - new Date();
+    if (diffMs <= 0) return; // already past
+    if (diffMs > 12 * 60 * 60 * 1000) return; // sanity cap
+    setTimeout(() => {
+      try {
+        new Notification('MIS Tracker — submission window closing', {
+          body: 'Window closes at ' + end + '. Submit any pending entries.',
+          tag: 'mis-window-close'
+        });
+      } catch (e) { }
+    }, diffMs);
+  }
+
+  /* ── HELPERS ──────────────────────────────────────────────────── */
+  function todayISO() { return STATE.today; }
+  function escapeHtml(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+  function statusBadge(s) {
+    const cls = (s || '').toLowerCase();
+    if (cls === 'done' || cls === 'pending' || cls === 'skip') return '<span class="badge ' + cls + '">' + escapeHtml(s) + '</span>';
+    return '<span class="badge">' + escapeHtml(s || '') + '</span>';
+  }
+
+  /* Skeleton placeholders — used wherever async content is loading. */
+  function skeletonLines(n) {
+    const widths = ['sk-w-90', 'sk-w-70', 'sk-w-50', 'sk-w-90', 'sk-w-30'];
+    let h = '';
+    for (let i = 0; i < (n || 3); i++) h += '<span class="sk sk-line ' + widths[i % widths.length] + '"></span>';
+    return h;
+  }
+  function skeletonRows(n) {
+    let h = '';
+    for (let i = 0; i < (n || 3); i++) {
+      h += '<div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>';
+    }
+    return h;
+  }
+
+  /* Shared CSV cell escaper. */
+  function csvCell(v) {
+    if (v === null || v === undefined) return '';
+    const s = String(v);
+    if (s.indexOf(',') >= 0 || s.indexOf('"') >= 0 || s.indexOf('\n') >= 0) return '"' + s.replace(/"/g, '""') + '"';
+    return s;
+  }
+
+  /* ── JsDashboard ──────────────────────────────────── */
+  /* Phase 3: progressive dashboard load.
+   * Sequence: stats → trend → report progress → pending.
+   * Each RPC is independently cached server-side; client renders as soon as
+   * each result arrives. Skeletons stay until that section's data lands. */
+
+  function toggleDashCard(cardId, bodyId) {
+    const body = document.getElementById(bodyId);
+    const toggle = document.getElementById(bodyId + 'Toggle');
+    if (!body) return;
+    const hidden = body.style.display === 'none';
+    body.style.display = hidden ? '' : 'none';
+    if (toggle) toggle.textContent = hidden ? '▾' : '▸';
+  }
+
+  function loadDashboard() {
+    // 1. Skeletons
+    showKpiSkeleton();
+    document.getElementById('roadsterTasks').innerHTML = skTable(3);
+    document.getElementById('reportProgress').innerHTML = skTable(4);
+    document.getElementById('weekTrend').innerHTML = skBars();
+    document.getElementById('kanbanSummary').innerHTML = skKpiRow(4);
+    document.getElementById('recentEntries').innerHTML = skTable(5);
+    const tsEl = document.getElementById('taskSnapshot');
+    if (tsEl) tsEl.innerHTML = skTable(1);
+
+    // 2. Sequential progressive load (each call independent + cached)
+    rpc('getTodayAlerts').then(r => { if (r && r.success) renderAlertBanners(r.alerts); });
+    rpc('getDashStats')
+      .then(r => { if (r.success) renderKpi(r.stats); else if (r.message) toast(r.message, 'error'); })
+      .then(() => rpc('getRoadsterTasks'))
+      .then(r => { if (r && r.success) renderRoadsterTasks(r.tasks); })
+      .then(() => rpc('getDashWeekTrend'))
+      .then(r => { if (r && r.success) renderWeekTrend(r.trend); })
+      .then(() => rpc('getDashReportProgress'))
+      .then(r => { if (r && r.success) renderReportProgress(r.progress); })
+      .then(() => rpc('getDashPending'))
+      .then(r => { if (r && r.success) { renderKanbanSummary(r.kanban); renderRecentEntries(r.recentEntries); } })
+      .then(() => rpc('getTaskSnapshot'))
+      .then(r => { if (r && r.success) renderTaskSnapshot(r.snapshot); })
+      .catch(e => toast(String(e), 'error'));
+  }
+
+  function renderTaskSnapshot(tasks) {
+    const el = document.getElementById('taskSnapshot');
+    if (!el) return;
+    if (!tasks || !tasks.length) { el.innerHTML = '<div class="empty">No tasks logged today.</div>'; return; }
+
+    const priorityBadge = p => {
+      const color = (p === 'High' || p === 'Urgent') ? '#dc2626' : (p === 'Low' ? '#64748b' : '#2563eb');
+      return '<span style="font-size:11px;padding:2px 8px;border-radius:10px;background:' + color + '22;color:' + color + ';border:1px solid ' + color + '44;">' + escapeHtml(p) + '</span>';
+    };
+    const statusBadgeClass = s => s === 'Done' ? 'roadster-toggle done' : (s === 'Skip' ? 'roadster-toggle' : 'roadster-toggle pending');
+    const statusLabel = s => s === 'Done' ? '✅ Done' : (s === 'Skip' ? '⏭ Skip' : '⏳ Pending');
+
+    const isManagerPlus = STATE.user && (STATE.user.role === 'Manager' || STATE.user.role === 'SuperAdmin');
+
+    // Group by assignee for Manager+ view
+    if (isManagerPlus && tasks.length > 1) {
+      const groups = {};
+      tasks.forEach(t => {
+        const key = t.assignee || 'Unassigned';
+        if (!groups[key]) groups[key] = [];
+        groups[key].push(t);
+      });
+
+      let html = '';
+      Object.keys(groups).sort().forEach(assignee => {
+        const grpTasks = groups[assignee];
+        const doneCount = grpTasks.filter(t => t.status === 'Done').length;
+        html += '<div style="margin-bottom:10px;">' +
+          '<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 10px;background:rgba(37,99,235,0.08);border-radius:8px;margin-bottom:4px;">' +
+          '<span style="font-size:12px;font-weight:600;color:var(--accent);">' + escapeHtml(assignee) + '</span>' +
+          '<span style="font-size:11px;color:var(--muted);">' + doneCount + '/' + grpTasks.length + ' done</span>' +
+          '</div>';
+        html += grpTasks.map(t =>
+          '<div class="roadster-row">' +
+          '<div class="roadster-info">' +
+          '<div style="display:flex;align-items:center;gap:8px;">' +
+          '<span class="roadster-role">' + escapeHtml(t.name) + '</span>' +
+          priorityBadge(t.priority) +
+          '</div>' +
+          (t.remarks ? '<span class="roadster-remark">' + escapeHtml(t.remarks) + '</span>' : '') +
+          '</div>' +
+          '<span class="' + statusBadgeClass(t.status) + '" style="pointer-events:none;">' + statusLabel(t.status) + '</span>' +
+          '</div>'
+        ).join('');
+        html += '</div>';
+      });
+      el.innerHTML = html;
+    } else {
+      // Teammate view — flat list
+      el.innerHTML = tasks.map(t =>
+        '<div class="roadster-row">' +
+        '<div class="roadster-info">' +
+        '<div style="display:flex;align-items:center;gap:8px;">' +
+        '<span class="roadster-role">' + escapeHtml(t.name) + '</span>' +
+        priorityBadge(t.priority) +
+        '</div>' +
+        (t.assignee ? '<span class="roadster-emp">' + escapeHtml(t.assignee) + '</span>' : '') +
+        (t.remarks ? '<span class="roadster-remark">' + escapeHtml(t.remarks) + '</span>' : '') +
+        '</div>' +
+        '<span class="' + statusBadgeClass(t.status) + '" style="pointer-events:none;">' + statusLabel(t.status) + '</span>' +
+        '</div>'
+      ).join('');
+    }
+  }
+
+  /* ── ALERT BANNERS ────────────────────────────────────────────── */
+  function renderAlertBanners(alerts) {
+    const area = document.getElementById('alertBannerArea');
+    if (!area || !alerts || !alerts.length) return;
+    const dismissed = JSON.parse(localStorage.getItem('dismissed_alerts') || '{}');
+    const html = alerts
+      .filter(a => !dismissed[a.alertId])
+      .map(a =>
+        '<div id="ab-' + a.alertId + '" style="background:#dc2626;color:#fff;padding:10px 14px;border-radius:8px;margin-bottom:8px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px;">' +
+        '<div><strong>🔴 Urgent Task: ' + escapeHtml(a.taskName) + '</strong>' +
+        (a.note ? '<div style="font-size:13px;margin-top:3px;opacity:0.9;">' + escapeHtml(a.note) + '</div>' : '') +
+        '</div>' +
+        '<button onclick="dismissAlert(\'' + a.alertId + '\')" style="background:transparent;border:1px solid rgba(255,255,255,0.6);color:#fff;border-radius:4px;padding:2px 8px;cursor:pointer;font-size:12px;white-space:nowrap;">Dismiss</button>' +
+        '</div>'
+      ).join('');
+    area.innerHTML = html;
+  }
+
+  function dismissAlert(alertId) {
+    const el = document.getElementById('ab-' + alertId);
+    if (el) el.remove();
+    const dismissed = JSON.parse(localStorage.getItem('dismissed_alerts') || '{}');
+    dismissed[alertId] = true;
+    localStorage.setItem('dismissed_alerts', JSON.stringify(dismissed));
+  }
+
+  /* ── SMART TASK ALERT MODAL ────────────────────────────────────── */
+  const _ttState = { members: [] };
+
+  function openTodayTaskModal() {
+    document.getElementById('ttTaskName').value = '';
+    document.getElementById('ttNote').value = '';
+    document.getElementById('ttMsg').textContent = '';
+    document.querySelector('input[name="ttPriority"][value="Normal"]').checked = true;
+    document.querySelector('input[name="ttNotify"][value="none"]').checked = true;
+    document.getElementById('ttSelectedWrap').style.display = 'none';
+    document.getElementById('ttMemberList').innerHTML = '<span style="color:#94a3b8;font-size:13px;">Loading…</span>';
+    document.getElementById('todayTaskModal').style.display = 'flex';
+
+    // Wire up notify radios
+    document.querySelectorAll('input[name="ttNotify"]').forEach(r => {
+      r.onchange = function() {
+        document.getElementById('ttSelectedWrap').style.display = this.value === 'selected' ? 'block' : 'none';
+      };
+    });
+
+    // Load team members for "selected" option
+    if (!_ttState.members.length) {
+      rpc('getActiveTeamEmails').then(r => {
+        if (r.success) {
+          _ttState.members = r.data || [];
+          _renderMemberList();
+        }
+      });
+    } else {
+      _renderMemberList();
+    }
+  }
+
+  function _renderMemberList() {
+    document.getElementById('ttMemberList').innerHTML = _ttState.members.map(m =>
+      '<label style="display:flex;align-items:center;gap:8px;padding:4px 0;cursor:pointer;">' +
+      '<input type="checkbox" class="tt-member-cb" value="' + escapeHtml(m.email) + '"> ' +
+      escapeHtml(m.name || m.email) + ' <span style="color:#64748b;font-size:11px;">(' + escapeHtml(m.email) + ')</span>' +
+      '</label>'
+    ).join('') || '<span style="color:#94a3b8;font-size:13px;">No team members found.</span>';
+  }
+
+  function closeTodayTaskModal() {
+    document.getElementById('todayTaskModal').style.display = 'none';
+  }
+
+  function submitTodayTask() {
+    const taskName = document.getElementById('ttTaskName').value.trim();
+    if (!taskName) { document.getElementById('ttMsg').textContent = 'Task name is required.'; return; }
+
+    const priority = document.querySelector('input[name="ttPriority"]:checked').value;
+    const notify   = document.querySelector('input[name="ttNotify"]:checked').value;
+    const selectedEmails = notify === 'selected'
+      ? Array.from(document.querySelectorAll('.tt-member-cb:checked')).map(c => c.value)
+      : [];
+
+    const payload = {
+      taskName,
+      note:    document.getElementById('ttNote').value.trim(),
+      priority,
+      notify,
+      selectedEmails
+    };
+
+    document.getElementById('ttMsg').textContent = 'Submitting…';
+    rpc('addTodayTask', payload).then(r => {
+      document.getElementById('ttMsg').textContent = '';
+      if (r.success) {
+        closeTodayTaskModal();
+        const who = r.recipientCount > 0 ? ' · ' + r.recipientCount + ' notified' : '';
+        toast('Task added' + who, 'success');
+        rpc('getTaskSnapshot').then(r2 => { if (r2 && r2.success) renderTaskSnapshot(r2.snapshot); });
+      } else {
+        document.getElementById('ttMsg').textContent = r.message || 'Failed.';
+      }
+    }).catch(e => { document.getElementById('ttMsg').textContent = String(e); });
+  }
+
+  /* ── SKELETON HELPERS ─────────────────────────────────────────── */
+  function showKpiSkeleton() {
+    ['kpiTotal', 'kpiDone', 'kpiPending'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = '<span class="sk" style="display:inline-block; width:40px; height:24px;"></span>';
+    });
+  }
+  function skTable(rows) {
+    let h = '<div>';
+    for (let i = 0; i < rows; i++) {
+      h += '<div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>';
+    }
+    return h + '</div>';
+  }
+  function skBars() {
+    let h = '<div style="display:flex; gap:6px; align-items:flex-end; height:100px;">';
+    const heights = [40, 60, 30, 70, 50, 80, 45];
+    heights.forEach(hh => {
+      h += '<div style="flex:1;"><div class="sk" style="height:' + hh + 'px; width:100%; border-radius:4px 4px 0 0;"></div></div>';
+    });
+    return h + '</div>';
+  }
+  function skKpiRow(n) {
+    let h = '<div class="kpi">';
+    for (let i = 0; i < n; i++) {
+      h += '<div class="sk-kpi"><span class="sk"></span><span class="sk sk-sub"></span></div>';
+    }
+    return h + '</div>';
+  }
+
+  /* ── VIEW LOADER HELPERS ────────────────────────────────────── */
+  function viewLoaderHtml(label) {
+    return '<div class="view-loader">' +
+      '<div class="vl-spinner">' +
+      '<div class="vl-ring r1"></div>' +
+      '<div class="vl-ring r2"></div>' +
+      '<div class="vl-ring r3"></div>' +
+      '<div class="vl-dot"></div>' +
+      '</div>' +
+      (label ? '<div class="vl-label">' + escapeHtml(label) + '</div>' : '') +
+      '</div>';
+  }
+  function showViewLoader(containerId, label) {
+    const el = document.getElementById(containerId);
+    if (el) el.innerHTML = viewLoaderHtml(label || 'Loading…');
+  }
+  function hideViewLoader(containerId) {
+    const el = document.getElementById(containerId);
+    if (el && el.querySelector('.view-loader')) el.innerHTML = '';
+  }
+
+  /* ── RENDER ────────────────────────────────────────────────────── */
+  function renderKpi(s) {
+    document.getElementById('kpiTotal').textContent = s.total;
+    document.getElementById('kpiDone').textContent = s.done;
+    document.getElementById('kpiPending').textContent = s.pending;
+  }
+
+  function renderReportProgress(arr) {
+    if (!arr || !arr.length) { document.getElementById('reportProgress').innerHTML = '<div class="empty">No reports submitted today.</div>'; return; }
+    const html = '<table><thead><tr><th>Report</th><th>Done</th><th>Pending</th><th>Skip</th><th>Late?</th></tr></thead><tbody>' +
+      arr.map(r =>
+        '<tr><td>' + escapeHtml(r.name) + '</td><td>' + r.done + '</td><td>' + r.pending + '</td><td>' + r.skip + '</td><td>' +
+        (r.late ? '<span class="badge late">LATE</span>' : '–') + '</td></tr>'
+      ).join('') + '</tbody></table>';
+    document.getElementById('reportProgress').innerHTML = html;
+  }
+
+  function renderWeekTrend(t) {
+    const keys = Object.keys(t || {});
+    if (!keys.length) { document.getElementById('weekTrend').innerHTML = '<div class="empty">No data.</div>'; return; }
+    const max = Math.max(1, ...keys.map(k => t[k].total));
+    const html = '<div style="display:flex; gap:6px; align-items:flex-end; height:100px;">' +
+      keys.map(k => {
+        const day = t[k];
+        const h = Math.round((day.total / max) * 80) + 4;
+        return '<div style="flex:1; text-align:center;">' +
+          '<div style="height:' + h + 'px; background:#2563eb; border-radius:4px 4px 0 0;" title="' + day.total + ' entries"></div>' +
+          '<div style="font-size:11px; color:#94a3b8; margin-top:4px;">' + k.slice(5) + '</div>' +
+          '<div style="font-size:11px; color:#cbd5e1;">' + day.total + '</div></div>';
+      }).join('') + '</div>';
+    document.getElementById('weekTrend').innerHTML = html;
+  }
+
+  function renderKanbanSummary(k) {
+    if (!k || !k.total) { document.getElementById('kanbanSummary').innerHTML = '<div class="empty">No tasks.</div>'; return; }
+    document.getElementById('kanbanSummary').innerHTML =
+      '<div class="kpi">' +
+      '<div class="box blue"><h4>Total</h4><div class="num">' + k.total + '</div></div>' +
+      '<div class="box orange"><h4>Open</h4><div class="num">' + k.open + '</div></div>' +
+      '<div class="box green"><h4>Done</h4><div class="num">' + k.done + '</div></div>' +
+      '<div class="box red"><h4>Blocked</h4><div class="num">' + k.blocked + '</div></div>' +
+      '</div>' +
+      (k.overdue && k.overdue.length ? '<div style="margin-top:10px; color:#fca5a5;">Overdue: ' + k.overdue.map(t => escapeHtml(t.title)).join(', ') + '</div>' : '') +
+      (k.dueToday && k.dueToday.length ? '<div style="margin-top:6px; color:#fcd34d;">Due Today: ' + k.dueToday.map(t => escapeHtml(t.title)).join(', ') + '</div>' : '');
+  }
+
+  function renderRecentEntries(arr) {
+    if (!arr || !arr.length) { document.getElementById('recentEntries').innerHTML = '<div class="empty">No entries today.</div>'; return; }
+    const html = '<table><thead><tr><th>Date</th><th>Employee</th><th>Topic</th><th>Sub</th><th>Status</th><th>Type</th><th></th></tr></thead><tbody>' +
+      arr.map(r =>
+        '<tr><td>' + escapeHtml(r.date) + '</td>' +
+        '<td>' + escapeHtml(r.employee) + (r.isProxy ? ' <span class="badge proxy" title="Proxy by ' + escapeHtml(r.submittedBy) + '">PROXY</span>' : '') + '</td>' +
+        '<td>' + escapeHtml(r.report) + '</td>' +
+        '<td>' + escapeHtml(r.component) + '</td>' +
+        '<td>' + statusBadge(r.status) + '</td>' +
+        '<td>' + escapeHtml(r.entryType) + '</td>' +
+        '<td>' + (r.late ? '<span class="badge late">LATE</span>' : '') + '</td></tr>'
+      ).join('') + '</tbody></table>';
+    document.getElementById('recentEntries').innerHTML = html;
+  }
+
+  /* ── ROADSTER TASKS ────────────────────────────────────────────── */
+  function renderRoadsterTasks(tasks) {
+    const el = document.getElementById('roadsterTasks');
+    if (!tasks || !tasks.length) {
+      el.innerHTML = '<div class="empty">No Daily Roster tasks assigned today.</div>';
+      return;
+    }
+    el.innerHTML = tasks.map(t => {
+      const isDone = t.status === 'Done';
+      const btnClass = isDone ? 'roadster-toggle done' : 'roadster-toggle pending';
+      const btnLabel = isDone ? '✅ Done' : '⏳ Pending';
+      const nextStatus = isDone ? 'Pending' : 'Done';
+      const freqBadge = '<span class="roadster-freq">' + escapeHtml(t.frequency || 'Daily') + '</span>';
+      const remarkHtml = t.remark ? '<span class="roadster-remark">' + escapeHtml(t.remark) + '</span>' : '';
+      return '<div class="roadster-row" data-role="' + escapeHtml(t.role) + '">' +
+        '<div class="roadster-info">' +
+        '<div style="display:flex;align-items:center;gap:8px;">' +
+        '<span class="roadster-role">' + escapeHtml(t.role) + '</span>' +
+        freqBadge +
+        '</div>' +
+        '<span class="roadster-emp">' + escapeHtml(t.employee) + '</span>' +
+        remarkHtml +
+        '</div>' +
+        '<button class="' + btnClass + '" onclick="toggleRoadsterStatus(\'' + escapeHtml(t.role) + '\', \'' + nextStatus + '\')">' + btnLabel + '</button>' +
+        '</div>';
+    }).join('');
+  }
+
+  function toggleRoadsterStatus(role, newStatus) {
+    // Optimistic UI update
+    const row = document.querySelector('.roadster-row[data-role="' + role + '"]');
+    if (row) {
+      const btn = row.querySelector('.roadster-toggle');
+      btn.className = newStatus === 'Done' ? 'roadster-toggle done' : 'roadster-toggle pending';
+      btn.textContent = newStatus === 'Done' ? '✅ Done' : '⏳ Pending';
+      btn.setAttribute('onclick', "toggleRoadsterStatus('" + role + "', '" + (newStatus === 'Done' ? 'Pending' : 'Done') + "')");
+    }
+
+    rpc('updateRoadsterStatus', role, newStatus).then(r => {
+      if (r.success) {
+        toast('Daily Roster: ' + role + ' → ' + newStatus, 'success');
+      } else {
+        toast(r.message || 'Update failed', 'error');
+        // Revert — reload the section
+        rpc('getRoadsterTasks').then(r2 => { if (r2 && r2.success) renderRoadsterTasks(r2.tasks); });
+      }
+    }).catch(e => { toast(String(e), 'error'); });
+  }
+
+  /* ── JsForms ──────────────────────────────────── */
+  /* ── PROXY VISIBILITY ─────────────────────────────────────────── */
+  function showProxyFields() {
+    // Manager+ can submit on behalf of someone else
+    if (STATE.user.role === 'Manager' || STATE.user.role === 'SuperAdmin') {
+      const ids = ['misProxyField', 'duProxyField'];
+      ids.forEach(id => { const el = document.getElementById(id); if (el) el.style.display = ''; });
+    }
+  }
+
+  // Consume STATE.proxyTarget set by the Control Center hand-off, then clear it.
+  function consumeProxyTarget(inputId) {
+    const el = document.getElementById(inputId);
+    if (!el) return;
+    if (STATE.proxyTarget) {
+      el.value = STATE.proxyTarget;
+      STATE.proxyTarget = null;
+      toast('Proxy target: ' + el.value, 'success');
+    }
+  }
+
+  /* ── Phase 5 form polish ─────────────────────────────────────── */
+
+  // Set every status <select> in a container to the given value.
+  function setAllStatuses(containerId, value) {
+    const cls = containerId === 'misComponents' ? '.mis-status'
+      : containerId === 'duFactors' ? '.du-status'
+        : containerId === 'taskList' ? '.task-status' : null;
+    if (!cls) return 0;
+    const sels = document.querySelectorAll('#' + containerId + ' ' + cls);
+    sels.forEach(s => { s.value = value; });
+    return sels.length;
+  }
+
+  function quickAllDone(form) {
+    const id = form === 'mis' ? 'misComponents' : form === 'du' ? 'duFactors' : 'taskList';
+    const n = document.querySelectorAll('#' + id + ' .entry-row').length;
+    if (!n) { toast('Nothing to mark', 'error'); return; }
+    if (!confirm('Mark all ' + n + ' rows as Done?')) return;
+    setAllStatuses(id, 'Done');
+    saveDraft(form);
+    toast('Marked ' + n + ' as Done', 'success');
+  }
+
+  // Draft persistence: serialize the form to localStorage on every change,
+  // restore on render. Drafts cleared after a successful submit.
+  const DRAFT_KEYS = { mis: 'mis.draft', du: 'du.draft', task: 'task.draft' };
+
+  function saveDraft(form) {
+    try {
+      if (form === 'mis') {
+        const rows = Array.from(document.querySelectorAll('#misComponents .entry-row')).map(row => ({
+          component: row.querySelector('.mis-component').value,
+          status: row.querySelector('.mis-status').value,
+          remarks: row.querySelector('.mis-remarks').value
+        }));
+        localStorage.setItem(DRAFT_KEYS.mis, JSON.stringify({
+          report: document.getElementById('misReport').value,
+          rows
+        }));
+      } else if (form === 'du') {
+        const rows = Array.from(document.querySelectorAll('#duFactors .entry-row')).map(row => ({
+          factor: row.querySelector('.du-factor').value,
+          status: row.querySelector('.du-status').value,
+          mode: row.querySelector('.du-mode').value,
+          remarks: row.querySelector('.du-remarks').value
+        }));
+        localStorage.setItem(DRAFT_KEYS.du, JSON.stringify({
+          commodity: document.getElementById('duCommodity').value,
+          type: document.getElementById('duType').value,
+          rows
+        }));
+      } else if (form === 'task') {
+        const rows = Array.from(document.querySelectorAll('#taskList .entry-row')).map(row => ({
+          name: row.querySelector('.task-name').value,
+          status: row.querySelector('.task-status').value,
+          remarks: row.querySelector('.task-remarks').value
+        }));
+        localStorage.setItem(DRAFT_KEYS.task, JSON.stringify({ rows }));
+      }
+    } catch (e) { }
+  }
+
+  function restoreDraft(form) {
+    try {
+      if (form === 'mis') {
+        const raw = localStorage.getItem(DRAFT_KEYS.mis);
+        if (!raw) return;
+        const d = JSON.parse(raw);
+        const map = {}; (d.rows || []).forEach(r => { map[r.component] = r; });
+        let restored = 0;
+        document.querySelectorAll('#misComponents .entry-row').forEach(row => {
+          const c = row.querySelector('.mis-component').value;
+          if (map[c]) {
+            row.querySelector('.mis-status').value = map[c].status || 'Pending';
+            row.querySelector('.mis-remarks').value = map[c].remarks || '';
+            restored++;
+          }
+        });
+        if (restored) toast('Draft restored (' + restored + ' rows)', 'success');
+      } else if (form === 'du') {
+        const raw = localStorage.getItem(DRAFT_KEYS.du);
+        if (!raw) return;
+        const d = JSON.parse(raw);
+        const map = {}; (d.rows || []).forEach(r => { map[r.factor] = r; });
+        let restored = 0;
+        document.querySelectorAll('#duFactors .entry-row').forEach(row => {
+          const f = row.querySelector('.du-factor').value;
+          if (map[f]) {
+            row.querySelector('.du-status').value = map[f].status || 'Pending';
+            row.querySelector('.du-mode').value = map[f].mode || '';
+            row.querySelector('.du-remarks').value = map[f].remarks || '';
+            restored++;
+          }
+        });
+        if (restored) toast('Draft restored (' + restored + ' rows)', 'success');
+      } else if (form === 'task') {
+        const raw = localStorage.getItem(DRAFT_KEYS.task);
+        if (!raw) return;
+        const d = JSON.parse(raw);
+        const map = {}; (d.rows || []).forEach(r => { map[r.name] = r; });
+        let restored = 0;
+        document.querySelectorAll('#taskList .entry-row').forEach(row => {
+          const n = row.querySelector('.task-name').value;
+          if (map[n]) {
+            row.querySelector('.task-status').value = map[n].status || 'Pending';
+            row.querySelector('.task-remarks').value = map[n].remarks || '';
+            restored++;
+          }
+        });
+        if (restored) toast('Draft restored (' + restored + ' rows)', 'success');
+      }
+    } catch (e) { }
+  }
+
+  function clearDraft(form) {
+    try { localStorage.removeItem(DRAFT_KEYS[form]); } catch (e) { }
+  }
+
+  // Auto-save on any change inside the entry containers.
+  document.addEventListener('change', e => {
+    const t = e.target;
+    if (!t.closest) return;
+    if (t.closest('#misComponents')) saveDraft('mis');
+    else if (t.closest('#duFactors')) saveDraft('du');
+    else if (t.closest('#taskList')) saveDraft('task');
+  });
+
+  /* ── KEYBOARD SHORTCUTS (D / P / S) ───────────────────────────── */
+  // While a status select inside any form is focused, single-letter keys cycle
+  // the value. Skipped when the user is typing in a text/textarea field.
+  document.addEventListener('keydown', e => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const t = e.target;
+    if (!t || !t.tagName) return;
+
+    // Only act when focus is on a status select, OR a text input inside an entry-row.
+    let statusSel = null;
+    if (t.matches && t.matches('select.mis-status, select.du-status, select.task-status')) statusSel = t;
+    else if (t.matches && (t.matches('input.mis-remarks, input.du-mode, input.du-remarks, input.task-remarks'))) {
+      // Allow typing in text fields without intercepting normal letters.
+      return;
+    }
+    if (!statusSel) return;
+
+    const key = (e.key || '').toLowerCase();
+    let next = null;
+    if (key === 'd') next = 'Done';
+    else if (key === 'p') next = 'Pending';
+    else if (key === 's') next = 'Skip';
+    if (!next) return;
+    e.preventDefault();
+    statusSel.value = next;
+    statusSel.dispatchEvent(new Event('change', { bubbles: true }));
+  });
+
+  /* ── MIS FORM ─────────────────────────────────────────────────── */
+  let MIS_OPEN_TIME = 0;
+
+  function loadMisForm() {
+    document.getElementById('misDate').value = todayISO();
+    MIS_OPEN_TIME = Date.now();
+
+    const sel = document.getElementById('misReport');
+    sel.innerHTML = '<option value="">Loading…</option>';
+    rpc('getReportList').then(list => {
+      sel.innerHTML = '<option value="">— select —</option>' +
+        list.map(r => '<option value="' + escapeHtml(r.name) + '">' + escapeHtml(r.name) + (r.deadline ? ' (by ' + r.deadline + ')' : '') + '</option>').join('');
+      sel.onchange = onMisReportChange;
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function onMisReportChange() {
+    const report = document.getElementById('misReport').value;
+    if (!report) { document.getElementById('misComponentsCard').style.display = 'none'; return; }
+    document.getElementById('misReportTitle').textContent = report;
+    document.getElementById('misComponents').innerHTML = skeletonRows(4);
+    document.getElementById('misComponentsCard').style.display = '';
+
+    rpc('getComponentsForReport', report).then(comps => {
+      if (!comps || !comps.length) { document.getElementById('misComponents').innerHTML = '<div class="empty">No components configured.</div>'; return; }
+      document.getElementById('misComponents').innerHTML = comps.map((c, i) =>
+        '<div class="entry-row" data-i="' + i + '">' +
+        '<div><div class="label">' + escapeHtml(c.name) + '</div><div class="meta">' + escapeHtml(c.assignee || '') + '</div></div>' +
+        '<select class="mis-status">' +
+        '<option value="Pending" selected>Pending</option>' +
+        '<option value="Done">Done</option>' +
+        '<option value="Skip">Skip</option>' +
+        '</select>' +
+        '<input type="text" class="mis-remarks" placeholder="remarks">' +
+        '<input type="hidden" class="mis-component" value="' + escapeHtml(c.name) + '">' +
+        '</div>'
+      ).join('');
+      restoreDraft('mis');
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function submitMIS(forceAmend) {
+    const report = document.getElementById('misReport').value;
+    if (!report) { toast('Select a report first', 'error'); return; }
+    const date = document.getElementById('misDate').value;
+    const backupBy = document.getElementById('misBackupBy').value;
+
+    const rows = Array.from(document.querySelectorAll('#misComponents .entry-row')).map(row => ({
+      component: row.querySelector('.mis-component').value,
+      status: row.querySelector('.mis-status').value,
+      remarks: row.querySelector('.mis-remarks').value
+    }));
+    if (!rows.length) { toast('Nothing to submit', 'error'); return; }
+
+    document.getElementById('misMsg').textContent = 'Submitting…';
+    rpc('submitMISEntries', {
+      report, date, backupBy, entries: rows,
+      formOpenTime: MIS_OPEN_TIME, forceAmend: !!forceAmend
+    }).then(r => {
+      document.getElementById('misMsg').textContent = '';
+      if (r.success) { clearDraft('mis'); toast(r.message, 'success'); loadMisForm(); }
+      else if (r.duplicate) toast('Duplicate. Click "Force Amend" to overwrite.', 'error');
+      else if (r.locked) toast(r.message, 'error');
+      else toast(r.message || 'Failed', 'error');
+    }).catch(e => { document.getElementById('misMsg').textContent = ''; toast(String(e), 'error'); });
+  }
+
+  /* ── DU FORM ──────────────────────────────────────────────────── */
+  let DU_OPEN_TIME = 0;
+
+  function loadDuForm() {
+    document.getElementById('duDate').value = todayISO();
+    DU_OPEN_TIME = Date.now();
+
+    const cs = document.getElementById('duCommodity');
+    cs.innerHTML = '<option value="">Loading…</option>';
+    rpc('getCommodityList').then(list => {
+      cs.innerHTML = '<option value="">— select —</option>' +
+        list.map(c => '<option value="' + escapeHtml(c) + '">' + escapeHtml(c) + '</option>').join('');
+      cs.onchange = onDuCommodityChange;
+      document.getElementById('duType').onchange = onDuTypeChange;
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function onDuCommodityChange() {
+    const c = document.getElementById('duCommodity').value;
+    const ts = document.getElementById('duType');
+    ts.innerHTML = '<option value="">Loading…</option>';
+    document.getElementById('duFactorsCard').style.display = 'none';
+    if (!c) { ts.innerHTML = '<option value="">— select commodity first —</option>'; return; }
+    rpc('getTypeListForCommodity', c).then(list => {
+      ts.innerHTML = '<option value="">— select type —</option>' +
+        list.map(t => '<option value="' + escapeHtml(t) + '">' + escapeHtml(t) + '</option>').join('');
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function onDuTypeChange() {
+    const c = document.getElementById('duCommodity').value;
+    const t = document.getElementById('duType').value;
+    if (!c || !t) { document.getElementById('duFactorsCard').style.display = 'none'; return; }
+    document.getElementById('duFactorsTitle').textContent = c + ' · ' + t;
+    document.getElementById('duFactors').innerHTML = skeletonRows(4);
+    document.getElementById('duFactorsCard').style.display = '';
+
+    rpc('getFactorsForCommodityType', c, t).then(factors => {
+      if (!factors || !factors.length) { document.getElementById('duFactors').innerHTML = '<div class="empty">No factors configured.</div>'; return; }
+      document.getElementById('duFactors').innerHTML = factors.map((f, i) =>
+        '<div class="entry-row" data-i="' + i + '">' +
+        '<div><div class="label">' + escapeHtml(f.factor) + '</div><div class="meta">' + escapeHtml(f.source || '') + '</div></div>' +
+        '<select class="du-status">' +
+        '<option value="Pending" selected>Pending</option>' +
+        '<option value="Done">Done</option>' +
+        '<option value="Skip">Skip</option>' +
+        '</select>' +
+        '<input type="text" class="du-mode" placeholder="mode" value="' + escapeHtml(f.mode || '') + '">' +
+        '<input type="text" class="du-remarks" placeholder="remarks">' +
+        '<input type="hidden" class="du-factor" value="' + escapeHtml(f.factor) + '">' +
+        '</div>'
+      ).join('');
+      restoreDraft('du');
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function submitDU(forceAmend) {
+    const commodity = document.getElementById('duCommodity').value;
+    const type = document.getElementById('duType').value;
+    if (!commodity || !type) { toast('Select commodity and type', 'error'); return; }
+    const date = document.getElementById('duDate').value;
+
+    const factors = Array.from(document.querySelectorAll('#duFactors .entry-row')).map(row => ({
+      factor: row.querySelector('.du-factor').value,
+      status: row.querySelector('.du-status').value,
+      mode: row.querySelector('.du-mode').value,
+      remarks: row.querySelector('.du-remarks').value
+    }));
+    if (!factors.length) { toast('Nothing to submit', 'error'); return; }
+
+    document.getElementById('duMsg').textContent = 'Submitting…';
+    rpc('submitDataUpdate', {
+      commodity, type, date, factors,
+      formOpenTime: DU_OPEN_TIME, forceAmend: !!forceAmend
+    }).then(r => {
+      document.getElementById('duMsg').textContent = '';
+      if (r.success) { clearDraft('du'); toast(r.message, 'success'); loadDuForm(); }
+      else if (r.duplicate) toast('Duplicate. Click "Force Amend" to overwrite.', 'error');
+      else if (r.locked) toast(r.message, 'error');
+      else toast(r.message || 'Failed', 'error');
+    }).catch(e => { document.getElementById('duMsg').textContent = ''; toast(String(e), 'error'); });
+  }
+
+  /* ── TASK FORM (Daily / Weekly / Monthly) ─────────────────────── */
+  let TASK_OPEN_TIME = 0;
+  const TASK_SECTIONS = ['Daily', 'Weekly', 'Monthly'];
+  const TASK_COLLAPSED = new Set();
+
+  /* ── AD-HOC TASK MODAL ────────────────────────────────────────── */
+  function openAdhocModal() {
+    const dd = document.getElementById('adhocDueDate');
+    const nm = document.getElementById('adhocName');
+    if (dd) dd.value = '';
+    if (nm) nm.value = '';
+    document.getElementById('adhocModal').style.display = 'flex';
+    setTimeout(() => { if (nm) nm.focus(); }, 50);
+  }
+
+  function closeAdhocModal() {
+    document.getElementById('adhocModal').style.display = 'none';
+  }
+
+  function submitAdhocTask() {
+    const freq = document.getElementById('adhocFreq').value;
+    const name = (document.getElementById('adhocName').value || '').trim();
+    const dueDate = (document.getElementById('adhocDueDate') || {}).value || '';
+    if (!name) { toast('Task name is required', 'error'); return; }
+
+    const btn = document.querySelector('#adhocModal .primary');
+    if (btn) btn.disabled = true;
+
+    rpc('addAdhocTask', { freq, name, dueDate }).then(r => {
+      if (btn) btn.disabled = false;
+      if (!r || !r.success) { toast((r && r.message) || 'Failed to add task', 'error'); return; }
+      closeAdhocModal();
+      loadTaskForm();
+      toast('Task "' + name + '" added to ' + freq + ' list', 'success');
+    }).catch(e => {
+      if (btn) btn.disabled = false;
+      toast(String(e), 'error');
+    });
+  }
+
+  function loadTaskForm() {
+    TASK_OPEN_TIME = Date.now();
+
+    // Show skeletons in all sections
+    TASK_SECTIONS.forEach(freq => {
+      const el = document.getElementById('task' + freq + 'List');
+      if (el) el.innerHTML = skeletonRows(3);
+    });
+
+    rpc('getTaskList').then(result => {
+      // result can be flat array (legacy) or { dailyTasks, weeklyTasks, monthlyTasks }
+      let daily, weekly, monthly;
+      if (Array.isArray(result)) {
+        // Legacy: all tasks are daily
+        daily = result;
+        weekly = [];
+        monthly = [];
+      } else {
+        daily = result.dailyTasks || [];
+        weekly = result.weeklyTasks || [];
+        monthly = result.monthlyTasks || [];
+      }
+
+      renderTaskSection('Daily', daily);
+      renderTaskSection('Weekly', weekly);
+      renderTaskSection('Monthly', monthly);
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+
+  function renderTaskSection(freq, tasks) {
+    const el = document.getElementById('task' + freq + 'List');
+    const countEl = document.getElementById('task' + freq + 'Count');
+    if (!el) return;
+
+    if (countEl) countEl.textContent = tasks.length;
+
+    if (!tasks.length) {
+      el.innerHTML = '<div class="empty" style="padding:14px;">No ' + freq.toLowerCase() + ' tasks configured.</div>';
+      return;
+    }
+
+    el.innerHTML = tasks.map((t, i) => {
+      const statusClass = t.lastStatus === 'Done' ? 'task-status-done' :
+        t.lastStatus === 'Skip' ? 'task-status-skip' : '';
+      const isOverdue = t.dueDate && t.dueDate < STATE.today && t.lastStatus !== 'Done';
+      const dueBadge = t.dueDate
+        ? '<span class="task-due-badge' + (isOverdue ? ' overdue' : '') + '">Due ' + escapeHtml(t.dueDate) + '</span>'
+        : '';
+      return '<div class="task-entry-row ' + statusClass + '" data-i="' + i + '" data-freq="' + freq + '">' +
+        '<div class="task-entry-info">' +
+        '<div class="task-entry-name">' + escapeHtml(t.name) + dueBadge + '</div>' +
+        '<div class="task-entry-meta">' + escapeHtml(t.assignee || '') + (t.priority ? ' · ' + escapeHtml(t.priority) : '') + '</div>' +
+        '</div>' +
+        '<select class="task-status">' +
+        '<option value="Pending"' + (t.lastStatus === 'Pending' || !t.lastStatus ? ' selected' : '') + '>Pending</option>' +
+        '<option value="Done"' + (t.lastStatus === 'Done' ? ' selected' : '') + '>Done</option>' +
+        '<option value="Skip"' + (t.lastStatus === 'Skip' ? ' selected' : '') + '>Skip</option>' +
+        '</select>' +
+        '<input type="text" class="task-remarks" placeholder="remarks" value="' + escapeHtml(t.lastRemarks || '') + '">' +
+        '<input type="hidden" class="task-name" value="' + escapeHtml(t.name) + '">' +
+        '<input type="hidden" class="task-priority" value="' + escapeHtml(t.priority || '') + '">' +
+        '<input type="hidden" class="task-assignee" value="' + escapeHtml(t.assignee || '') + '">' +
+        '<input type="hidden" class="task-frequency" value="' + freq + '">' +
+        '</div>';
+    }).join('');
+  }
+
+  function toggleTaskSection(freq) {
+    const body = document.getElementById('task' + freq + 'List');
+    const toggle = document.getElementById('task' + freq + 'Toggle');
+    if (!body) return;
+
+    if (TASK_COLLAPSED.has(freq)) {
+      TASK_COLLAPSED.delete(freq);
+      body.style.display = '';
+      if (toggle) toggle.textContent = '▾';
+    } else {
+      TASK_COLLAPSED.add(freq);
+      body.style.display = 'none';
+      if (toggle) toggle.textContent = '▸';
+    }
+  }
+
+  function quickAllDoneSection(freq) {
+    const rows = document.querySelectorAll('#task' + freq + 'List .task-entry-row');
+    rows.forEach(row => {
+      const sel = row.querySelector('.task-status');
+      if (sel) sel.value = 'Done';
+      row.classList.add('task-status-done');
+      row.classList.remove('task-status-skip');
+    });
+    toast(freq + ' tasks marked Done', 'success');
+  }
+
+  function submitAllTasks() {
+    const date = todayISO();
+    const onBehalfOf = '';
+    const confidence = 'Medium';
+
+    const allTasks = [];
+    TASK_SECTIONS.forEach(freq => {
+      const rows = document.querySelectorAll('#task' + freq + 'List .task-entry-row');
+      rows.forEach(row => {
+        allTasks.push({
+          name: row.querySelector('.task-name').value,
+          priority: row.querySelector('.task-priority').value,
+          assignee: row.querySelector('.task-assignee').value,
+          status: row.querySelector('.task-status').value,
+          remarks: row.querySelector('.task-remarks').value,
+          frequency: freq
+        });
+      });
+    });
+
+    if (!allTasks.length) { toast('Nothing to submit', 'error'); return; }
+
+    document.getElementById('taskMsg').textContent = 'Submitting…';
+    rpc('submitTaskEntries', {
+      date, tasks: allTasks, confidence,
+      onBehalfOfEmail: onBehalfOf, formOpenTime: TASK_OPEN_TIME
+    }).then(r => {
+      document.getElementById('taskMsg').textContent = '';
+      if (r.success) { clearDraft('task'); toast(r.message, 'success'); loadTaskForm(); }
+      else toast(r.message || 'Failed', 'error');
+    }).catch(e => { document.getElementById('taskMsg').textContent = ''; toast(String(e), 'error'); });
+  }
+
+  // Keep legacy function reference for backward compatibility
+  function submitTaskEntries_client() { submitAllTasks(); }
+
+  /* ── JsRoadster ──────────────────────────────────── */
+  /* ── DAILY ROADSTER VIEW ─────────────────────────────────────── */
+  const RKSTATE = { tasks: [] };
+
+  function loadRoadster() {
+    document.getElementById('rkTotal').innerHTML = '<span class="sk" style="display:inline-block;width:30px;height:20px;"></span>';
+    document.getElementById('rkDone').innerHTML = '<span class="sk" style="display:inline-block;width:30px;height:20px;"></span>';
+    document.getElementById('rkPending').innerHTML = '<span class="sk" style="display:inline-block;width:30px;height:20px;"></span>';
+    document.getElementById('roadsterViewList').innerHTML = viewLoaderHtml('Loading roster…');
+
+    rpc('getRoadsterTasks').then(r => {
+      if (!r.success) { toast(r.message || 'Failed', 'error'); return; }
+      RKSTATE.tasks = r.tasks || [];
+      renderRoadsterKpi();
+      renderRoadsterView();
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function renderRoadsterKpi() {
+    const total = RKSTATE.tasks.length;
+    const done = RKSTATE.tasks.filter(t => t.status === 'Done').length;
+    const pending = total - done;
+    document.getElementById('rkTotal').textContent = total;
+    document.getElementById('rkDone').textContent = done;
+    document.getElementById('rkPending').textContent = pending;
+  }
+
+  function renderRoadsterView() {
+    const statusFilter = document.getElementById('rkFilter').value;
+    const freqFilter = document.getElementById('rkFreqFilter').value;
+    let list = RKSTATE.tasks;
+
+    if (statusFilter === 'pending') list = list.filter(t => t.status !== 'Done');
+    else if (statusFilter === 'done') list = list.filter(t => t.status === 'Done');
+
+    if (freqFilter !== 'all') list = list.filter(t => t.frequency === freqFilter);
+
+    const el = document.getElementById('roadsterViewList');
+    if (!list.length) {
+      el.innerHTML = '<div class="empty">No matching Daily Roster tasks.</div>';
+      return;
+    }
+
+    el.innerHTML = list.map(t => {
+      const isDone = t.status === 'Done';
+      const btnClass = isDone ? 'roadster-toggle done' : 'roadster-toggle pending';
+      const btnLabel = isDone ? '✅ Done' : '⏳ Pending';
+      const nextStatus = isDone ? 'Pending' : 'Done';
+      const freqBadge = '<span class="roadster-freq">' + escapeHtml(t.frequency || 'Daily') + '</span>';
+      const remarkHtml = t.remark ? '<span class="roadster-remark">' + escapeHtml(t.remark) + '</span>' : '';
+      return '<div class="roadster-row" data-role="' + escapeHtml(t.role) + '">' +
+        '<div class="roadster-info">' +
+        '<div style="display:flex;align-items:center;gap:8px;">' +
+        '<span class="roadster-role">' + escapeHtml(t.role) + '</span>' +
+        freqBadge +
+        '</div>' +
+        '<span class="roadster-emp">' + escapeHtml(t.employee) + '</span>' +
+        remarkHtml +
+        '</div>' +
+        '<button class="' + btnClass + '" onclick="rkToggle(\'' + escapeHtml(t.role) + '\', \'' + nextStatus + '\')">' + btnLabel + '</button>' +
+        '</div>';
+    }).join('');
+  }
+
+  function rkToggle(role, newStatus) {
+    var t = RKSTATE.tasks.find(function (x) { return x.role === role; });
+    if (t) t.status = newStatus;
+    renderRoadsterKpi();
+    renderRoadsterView();
+
+    rpc('updateRoadsterStatus', role, newStatus).then(r => {
+      if (r.success) {
+        toast('Daily Roster: ' + role + ' → ' + newStatus, 'success');
+      } else {
+        toast(r.message || 'Update failed', 'error');
+        loadRoadster();
+      }
+    }).catch(e => { toast(String(e), 'error'); loadRoadster(); });
+  }
+
+  /* ── JsKanban ──────────────────────────────────── */
+  const KSTATE = {
+    shell: null,
+    byStatus: {},        // status -> [tasks]
+    allTasks: [],        // flat list across columns (for client-side search)
+    collapsed: new Set(),
+    selected: new Set(),
+    dragId: null,
+    pending: null       // { ids: [], targetStatus, kind: 'drag' | 'bulk' } awaiting block-reason
+  };
+  const KCOLS = ['Assigned', 'In Progress', 'Under Review', 'Done', 'Blocked'];
+
+  /* ── BOOT: shell first, then parallel per-column loads ─────────── */
+  function loadKanban() {
+    // Render headers + skeleton cards immediately, before any RPC.
+    renderKanbanShell();
+
+    rpc('getKanbanShell').then(s => {
+      if (!s.success) { toast(s.message || 'Kanban failed', 'error'); return; }
+      KSTATE.shell = s;
+      populateFilters(s);
+      renderVelocity(s.sprintVelocity);
+      fillSkeletonCounts(s.counts);
+      // Now fetch each column independently. Cards stream in column-by-column.
+      KCOLS.forEach((col, i) => loadKanbanColumn(col, i));
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function renderKanbanShell() {
+    const board = document.getElementById('kanbanBoard');
+    board.innerHTML = '<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px;">' +
+      KCOLS.map(col =>
+        '<div class="kcol" data-status="' + col + '" id="kcol-' + cssId(col) + '" ondragover="kAllowDrop(event)" ondrop="kDrop(event)">' +
+        '<div class="kcol-header" onclick="kToggleCollapse(\'' + cssId(col) + '\')">' +
+        '<h4>' + col + ' <span class="kcount" id="kcount-' + cssId(col) + '">…</span></h4>' +
+        '<button class="kcol-toggle" onclick="event.stopPropagation(); kToggleCollapse(\'' + cssId(col) + '\')">▾</button>' +
+        '</div>' +
+        '<div class="kcards" id="kcards-' + cssId(col) + '">' + skeletonCards(3) + '</div>' +
+        '</div>'
+      ).join('') + '</div>';
+  }
+
+  function fillSkeletonCounts(counts) {
+    KCOLS.forEach(col => {
+      const el = document.getElementById('kcount-' + cssId(col));
+      if (el) el.textContent = '(' + (counts[col] || 0) + ')';
+    });
+  }
+
+  function loadKanbanColumn(status) {
+    rpc('getKanbanColumn', status).then(r => {
+      if (!r.success) { toast(r.message || ('Column ' + status + ' failed'), 'error'); return; }
+      KSTATE.byStatus[status] = r.tasks || [];
+      KSTATE.allTasks = KCOLS.reduce((acc, c) => acc.concat(KSTATE.byStatus[c] || []), []);
+      renderColumn(status);
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function populateFilters(shell) {
+    // Assignee filter (board toolbar)
+    const as = document.getElementById('kAssignee');
+    if (as) {
+      const cur = as.value;
+      as.innerHTML = '<option value="">All</option>' +
+        (shell.assignees || []).map(e => '<option value="' + escapeHtml(e) + '">' + escapeHtml(e) + '</option>').join('');
+      as.value = cur || '';
+    }
+
+    // Modal assignee checkboxes — shell.allUsers already contains lowercased emails.
+    const mAssignee = document.getElementById('kAssigneeField');
+    if (mAssignee && shell.allUsers) {
+      mAssignee.innerHTML = shell.allUsers.map(u =>
+        '<label class="kassignee-item" title="' + escapeHtml(u.email) + '">' +
+        '<input type="checkbox" class="modal-assignee-cb" value="' + escapeHtml(String(u.email).toLowerCase()) + '">' +
+        '<span>' + escapeHtml(u.name || u.email) + '</span>' +
+        '</label>'
+      ).join('');
+    }
+  }
+
+  function renderVelocity(v) {
+    // Sprint workflow is hidden in the new task UI. Always hide the bar.
+    const el = document.getElementById('kVelocity');
+    if (el) el.style.display = 'none';
+  }
+
+  /* ── RENDER ────────────────────────────────────────────────────── */
+  function applyKanbanFilter(tasks) {
+    const qEl = document.getElementById('kSearch');
+    const assEl = document.getElementById('kAssignee');
+    const dueEl = document.getElementById('kDueFilter');
+    const q = qEl ? qEl.value.toLowerCase().trim() : '';
+    const ass = assEl ? assEl.value.toLowerCase() : '';
+    const due = dueEl ? dueEl.value : '';
+    const today = STATE.today;
+    const in7 = ymdAddDays(today, 7);
+    return tasks.filter(t => {
+      if (q) {
+        const hay = (t.title + ' ' + (t.desc || '') + ' ' + (t.remark || '')).toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      if (ass) {
+        const list = (t.assignedToList && t.assignedToList.length)
+          ? t.assignedToList
+          : String(t.assignedTo || '').split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+        if (list.indexOf(ass) === -1) return false;
+      }
+      if (due === 'overdue' && !(t.dueDate && t.dueDate < today && t.status !== 'Done')) return false;
+      if (due === 'today' && t.dueDate !== today) return false;
+      if (due === 'week' && !(t.dueDate && t.dueDate >= today && t.dueDate <= in7)) return false;
+      return true;
+    });
+  }
+
+  function renderKanban() {
+    KCOLS.forEach(renderColumn);
+  }
+
+  function renderColumn(status) {
+    const tasks = KSTATE.byStatus[status];
+    const container = document.getElementById('kcards-' + cssId(status));
+    const countEl = document.getElementById('kcount-' + cssId(status));
+    if (!container) return;
+    if (!tasks) { container.innerHTML = skeletonCards(2); return; }
+
+    const filtered = applyKanbanFilter(tasks);
+    countEl.textContent = '(' + filtered.length + ')';
+
+    if (!filtered.length) { container.innerHTML = '<div class="kcol-empty">No tasks here</div>'; return; }
+
+    container.innerHTML = filtered.map(t => kanbanCardHtml(t)).join('');
+  }
+
+  function kanbanCardHtml(t) {
+    const overdue = t.dueDate && t.dueDate < STATE.today && t.status !== 'Done';
+    const isBlocked = t.status === 'Blocked';
+    const cardStyle = overdue
+      ? ' style="background:#2d1a1a; border-left:3px solid #f87171;"'
+      : '';
+
+    // Priority dot color
+    const prio = (t.priority || 'Medium').toLowerCase();
+    const prioDot = prio === 'high' ? '#f87171' : prio === 'low' ? '#60a5fa' : '#fbbf24';
+
+    // Assignee avatars
+    const list = (t.assignedToNameList && t.assignedToNameList.length)
+      ? t.assignedToNameList
+      : (t.assignedToName || t.assignedTo || '').split(',').map(s => s.trim()).filter(Boolean);
+    const avatarHtml = list.slice(0, 3).map(n => {
+      const parts = String(n).split(/\s+/).filter(Boolean);
+      const ini = (parts[0] ? parts[0][0] : '?').toUpperCase();
+      return '<span class="kavatar" title="' + escapeHtml(n) + '">' + escapeHtml(ini) + '</span>';
+    }).join('');
+    const nameHtml = list.length ? '<span class="kassignee-name">' + escapeHtml(list[0]) + (list.length > 1 ? ' +' + (list.length - 1) : '') + '</span>' : '';
+
+    // Factor tag
+    const factorTag = t.factor ? '<span class="kfactor-tag">' + escapeHtml(t.factor) + '</span>' : '';
+
+    // Description (truncated)
+    const desc = t.desc ? '<div class="kdesc">' + escapeHtml(t.desc.length > 80 ? t.desc.substring(0, 80) + '…' : t.desc) + '</div>' : '';
+
+    // Due date
+    const dueHtml = t.dueDate
+      ? '<div class="kdue' + (overdue ? ' overdue' : '') + '">Due ' + escapeHtml(t.dueDate) + '</div>'
+      : '';
+
+    // Blocked reason banner
+    const blockedBanner = (isBlocked && t.blockedReason)
+      ? '<div class="kblocked-banner">Blocked: ' + escapeHtml(t.blockedReason) + '</div>'
+      : '';
+
+    // Comment count (conversation indicator)
+    const commentCount = (t.comments && t.comments.length) || 0;
+
+    const canEdit = STATE.user && (STATE.user.role === 'Manager' || STATE.user.role === 'SuperAdmin');
+
+    return '<div class="kcard-v2"' + cardStyle + ' data-id="' + escapeHtml(t.id) + '" draggable="true" ondragstart="kDragStart(event)">' +
+      blockedBanner +
+      '<div class="kcard-top">' +
+      '<div class="kcard-title-row">' +
+      '<span class="kprio-dot" style="background:' + prioDot + ';"></span>' +
+      '<span class="kcard-title">' + escapeHtml(t.title) + '</span>' +
+      '</div>' +
+      '</div>' +
+      desc +
+      (factorTag ? '<div class="kcard-tags">' + factorTag + '</div>' : '') +
+      dueHtml +
+      '<div class="kcard-divider"></div>' +
+      '<div class="kcard-assignee-row">' +
+      '<div class="kcard-avatar-group">' + avatarHtml + nameHtml + '</div>' +
+      '<div class="kcard-remark-count" title="Remarks">' +
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>' +
+      '<span>' + commentCount + '</span>' +
+      '</div>' +
+      '</div>' +
+      '<div class="kcard-actions-v2">' +
+      '<select class="kinline-status" onchange="kInlineStatus(\'' + escapeHtml(t.id) + '\', this.value)" onclick="event.stopPropagation()">' +
+      KCOLS.map(c => '<option' + (c === t.status ? ' selected' : '') + '>' + c + '</option>').join('') +
+      '</select>' +
+      '<div class="kcard-btns">' +
+      '<button class="kbtn-icon" title="Conversation" onclick="event.stopPropagation(); openCommentModal(\'' + escapeHtml(t.id) + '\')">' +
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>' +
+      '</button>' +
+      (canEdit ? '<button class="kbtn-icon" title="Edit" onclick="event.stopPropagation(); openKanbanEdit(\'' + escapeHtml(t.id) + '\')">' +
+        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>' +
+        '</button>' : '') +
+      (canEdit ? '<button class="kbtn-icon kbtn-danger" title="Delete" onclick="event.stopPropagation(); kQuickDelete(\'' + escapeHtml(t.id) + '\')">' +
+        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>' +
+        '</button>' : '') +
+      '</div>' +
+      '</div>' +
+      '</div>';
+  }
+
+  function skeletonCards(n) {
+    let h = '';
+    for (let i = 0; i < n; i++) {
+      h += '<div class="sk-card"><span class="sk sk-title"></span><span class="sk sk-meta"></span></div>';
+    }
+    return h;
+  }
+
+  function cssId(s) { return String(s).replace(/[^A-Za-z0-9]/g, '_'); }
+
+  function ymdAddDays(ymd, days) {
+    const d = new Date(ymd + 'T00:00:00');
+    d.setDate(d.getDate() + days);
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    return d.getFullYear() + '-' + m + '-' + dd;
+  }
+
+  /* ── COLLAPSE / EXPAND ─────────────────────────────────────────── */
+  function kToggleCollapse(colId) {
+    const el = document.getElementById('kcol-' + colId);
+    if (!el) return;
+    el.classList.toggle('collapsed');
+    const btn = el.querySelector('.kcol-toggle');
+    if (btn) btn.textContent = el.classList.contains('collapsed') ? '▸' : '▾';
+  }
+
+  /* ── SELECTION ─────────────────────────────────────────────────── */
+  function kToggleSelect(id, checked) {
+    if (checked) KSTATE.selected.add(id);
+    else KSTATE.selected.delete(id);
+    refreshBulkBar();
+    // Re-render only the affected card's container is heavy; just update class
+    document.querySelectorAll('.kcard[data-id="' + cssEsc(id) + '"]').forEach(el => {
+      if (checked) el.classList.add('selected'); else el.classList.remove('selected');
+    });
+  }
+  function cssEsc(s) { return String(s).replace(/"/g, '\\"'); }
+
+  function refreshBulkBar() {
+    const bar = document.getElementById('kBulkBar');
+    if (!KSTATE.selected.size) { bar.style.display = 'none'; return; }
+    bar.style.display = '';
+    document.getElementById('kBulkCount').textContent = KSTATE.selected.size + ' selected';
+  }
+
+  function kClearSelection() {
+    KSTATE.selected.clear();
+    refreshBulkBar();
+    renderKanban();
+  }
+
+  function kBulkApply() {
+    const target = document.getElementById('kBulkTarget').value;
+    if (!target) { toast('Pick a target column', 'error'); return; }
+    const ids = Array.from(KSTATE.selected);
+    if (!ids.length) return;
+
+    if (target === 'Blocked') {
+      KSTATE.pending = { ids, targetStatus: 'Blocked', kind: 'bulk' };
+      openBlockedReasonModal();
+      return;
+    }
+    performBulkMove(ids, target, '');
+  }
+
+  function performBulkMove(ids, status, blockedReason) {
+    document.getElementById('kBulkMsg').textContent = 'Moving…';
+    rpc('bulkMoveKanban', ids, status, blockedReason).then(r => {
+      document.getElementById('kBulkMsg').textContent = '';
+      if (r.success) {
+        toast('Moved ' + r.moved + (r.skipped && r.skipped.length ? ' · ' + r.skipped.length + ' skipped' : ''), 'success');
+        if (r.skipped && r.skipped.length) {
+          console.warn('Bulk move skipped:', r.skipped);
+        }
+        KSTATE.selected.clear();
+        refreshBulkBar();
+        loadKanban();
+      } else toast(r.message || 'Failed', 'error');
+    }).catch(e => { document.getElementById('kBulkMsg').textContent = ''; toast(String(e), 'error'); });
+  }
+
+  /* ── DRAG / DROP (optimistic) ──────────────────────────────────── */
+  function kDragStart(e) { KSTATE.dragId = e.currentTarget.getAttribute('data-id'); }
+  function kAllowDrop(e) { e.preventDefault(); }
+  function kDrop(e) {
+    e.preventDefault();
+    const newStatus = e.currentTarget.getAttribute('data-status');
+    const id = KSTATE.dragId;
+    if (!id) return;
+
+    if (newStatus === 'Blocked') {
+      KSTATE.pending = { ids: [id], targetStatus: 'Blocked', kind: 'drag' };
+      openBlockedReasonModal();
+      return;
+    }
+    applyOptimisticMove([id], newStatus);
+    performMove(id, newStatus, '');
+  }
+
+  function applyOptimisticMove(ids, newStatus) {
+    const set = new Set(ids);
+    let moved = [];
+    Object.keys(KSTATE.byStatus).forEach(status => {
+      KSTATE.byStatus[status] = (KSTATE.byStatus[status] || []).filter(t => {
+        if (!set.has(t.id)) return true;
+        moved.push(Object.assign({}, t, { status: newStatus }));
+        return false;
+      });
+    });
+    KSTATE.byStatus[newStatus] = (KSTATE.byStatus[newStatus] || []).concat(moved);
+    renderKanban();
+  }
+
+  function performMove(id, newStatus, blockedReason) {
+    rpc('updateKanbanTask', { id, status: newStatus, blockedReason }).then(r => {
+      if (!r.success) {
+        toast(r.message || 'Update failed — reverting', 'error');
+        loadKanban();
+        return;
+      }
+      if (Array.isArray(r.warnings)) r.warnings.forEach(w => toast(w, 'error'));
+    }).catch(err => { toast(String(err), 'error'); loadKanban(); });
+  }
+
+  /* ── INLINE STATUS CHANGE ──────────────────────────────────────── */
+  function kInlineStatus(id, newStatus) {
+    if (newStatus === 'Blocked') {
+      KSTATE.pending = { ids: [id], targetStatus: 'Blocked', kind: 'drag' };
+      openBlockedReasonModal();
+      return;
+    }
+    applyOptimisticMove([id], newStatus);
+    performMove(id, newStatus, '');
+  }
+
+  /* ── BLOCKED REASON MODAL ──────────────────────────────────────── */
+  function openBlockedReasonModal() {
+    document.getElementById('kBlockReason').value = '';
+    document.getElementById('kBlockModal').style.display = 'flex';
+    setTimeout(() => document.getElementById('kBlockReason').focus(), 50);
+  }
+
+  function kBlockModalConfirm() {
+    const reason = document.getElementById('kBlockReason').value.trim();
+    if (!reason) { toast('Reason required', 'error'); return; }
+    const p = KSTATE.pending; KSTATE.pending = null;
+    document.getElementById('kBlockModal').style.display = 'none';
+    if (!p) return;
+    if (p.kind === 'bulk') {
+      performBulkMove(p.ids, p.targetStatus, reason);
+    } else {
+      applyOptimisticMove(p.ids, p.targetStatus);
+      performMove(p.ids[0], p.targetStatus, reason);
+    }
+  }
+
+  function kBlockModalCancel() {
+    KSTATE.pending = null;
+    document.getElementById('kBlockModal').style.display = 'none';
+    loadKanban();
+  }
+
+  /* ── MODAL (CREATE/EDIT) ──────────────────────────────────────────────── */
+  let kEditingId = null;
+
+  function _kIsManagerPlus() {
+    return STATE.user && (STATE.user.role === 'Manager' || STATE.user.role === 'SuperAdmin');
+  }
+
+  function openKanbanCreate() {
+    kEditingId = null;
+    document.getElementById('kModalTitle').textContent = 'New Task';
+    document.getElementById('kTitle').value = '';
+    document.getElementById('kDesc').value = '';
+    document.getElementById('kFactor').value = '';
+    document.getElementById('kPriority').value = 'Medium';
+    document.getElementById('kDue').value = '';
+    document.getElementById('kRemark').value = '';
+    // Pre-tick the current user.
+    const me = (STATE.user && STATE.user.email || '').toLowerCase();
+    document.querySelectorAll('.modal-assignee-cb').forEach(cb => cb.checked = (cb.value === me));
+
+    document.getElementById('kMetaChips').style.display = 'none';
+    document.getElementById('kSaveBtn').textContent = 'Create';
+    document.getElementById('kDeleteBtn').style.display = 'none';
+    document.getElementById('kModal').style.display = 'flex';
+  }
+
+  function openKanbanEdit(id) {
+    const t = KSTATE.allTasks.find(x => x.id === id);
+    if (!t) return;
+    kEditingId = id;
+    document.getElementById('kModalTitle').textContent = 'Edit Task';
+    document.getElementById('kTitle').value = t.title || '';
+    document.getElementById('kDesc').value = t.desc || '';
+    document.getElementById('kFactor').value = t.factor || '';
+    document.getElementById('kPriority').value = t.priority || 'Medium';
+    document.getElementById('kDue').value = t.dueDate || '';
+    document.getElementById('kRemark').value = t.remark || '';
+
+    const assigned = (t.assignedToList && t.assignedToList.length
+      ? t.assignedToList
+      : String(t.assignedTo || '').split(',').map(s => s.trim().toLowerCase()).filter(Boolean));
+    document.querySelectorAll('.modal-assignee-cb').forEach(cb =>
+      cb.checked = assigned.indexOf(String(cb.value).toLowerCase()) !== -1);
+
+    // Read-only chips
+    document.getElementById('kMetaChips').style.display = 'flex';
+    document.getElementById('kChipId').textContent = t.id;
+    const created = (t.createdAt && !/^01-Jan-70/.test(t.createdAt)) ? t.createdAt : '—';
+    document.getElementById('kChipCreated').textContent = created;
+    document.getElementById('kChipStatus').textContent = t.status || '—';
+
+    const canEdit = _kIsManagerPlus();
+    document.getElementById('kSaveBtn').textContent = 'Save';
+    document.getElementById('kDeleteBtn').style.display = canEdit ? 'inline-block' : 'none';
+    document.getElementById('kModal').style.display = 'flex';
+  }
+
+  function closeKanbanModal() { document.getElementById('kModal').style.display = 'none'; }
+
+  function submitKanbanCreate() {
+    const assignedTo = Array.from(document.querySelectorAll('.modal-assignee-cb:checked'))
+      .map(cb => String(cb.value).toLowerCase().trim())
+      .filter(Boolean);
+
+    const payload = {
+      title: document.getElementById('kTitle').value.trim(),
+      desc: document.getElementById('kDesc').value.trim(),
+      factor: document.getElementById('kFactor').value.trim(),
+      priority: document.getElementById('kPriority').value,
+      assignedTo: assignedTo,
+      dueDate: document.getElementById('kDue').value,
+      remark: document.getElementById('kRemark').value.trim()
+    };
+    if (!payload.title) { toast('Task name required', 'error'); return; }
+    if (!assignedTo.length) { toast('Pick at least one assignee', 'error'); return; }
+
+    const fn = kEditingId ? 'updateKanbanTask' : 'createKanbanTask';
+    if (kEditingId) payload.id = kEditingId;
+
+    const btn = document.getElementById('kSaveBtn');
+    btn.disabled = true;
+    rpc(fn, payload).then(r => {
+      btn.disabled = false;
+      if (!r.success) { toast(r.message || 'Failed', 'error'); return; }
+      if (Array.isArray(r.warnings)) r.warnings.forEach(w => toast(w, 'error'));
+      toast(kEditingId ? 'Task updated' : (assignedTo.length > 1 ? assignedTo.length + ' tasks created' : 'Task created'), 'success');
+      closeKanbanModal();
+      loadKanban();
+    }).catch(e => { btn.disabled = false; toast(String(e), 'error'); });
+  }
+
+  function kDelete() {
+    if (!kEditingId || !confirm('Delete this task?')) return;
+    rpc('deleteKanbanTask', kEditingId).then(r => {
+      if (r.success) { toast('Task deleted', 'success'); closeKanbanModal(); loadKanban(); }
+      else toast(r.message || 'Failed', 'error');
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function kQuickDelete(id) {
+    if (!confirm('Delete this task?')) return;
+    rpc('deleteKanbanTask', id).then(r => {
+      if (r.success) { toast('Task deleted', 'success'); loadKanban(); }
+      else toast(r.message || 'Failed', 'error');
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  /* ── CONVERSATION / COMMENTS MODAL ──────────────────────────── */
+  let kCommentTaskId = null;
+
+  function openCommentModal(id) {
+    kCommentTaskId = id;
+    const t = KSTATE.allTasks.find(x => x.id === id);
+    if (!t) return;
+
+    document.getElementById('kCommentTitle').textContent = 'Comments: ' + (t.title || id);
+    document.getElementById('kCommentText').value = '';
+
+    const listEl = document.getElementById('kCommentList');
+    const comments = t.comments || [];
+
+    if (!comments.length) {
+      listEl.innerHTML = '<div class="empty" style="padding:20px;">No comments yet.</div>';
+    } else {
+      listEl.innerHTML = comments.map(c => {
+        const date = c.at ? new Date(c.at).toLocaleString() : '';
+        return '<div class="kcomment-item">' +
+          '<div class="kcomment-header">' +
+          '<strong>' + escapeHtml(c.by || 'Unknown') + '</strong>' +
+          '<span class="kcomment-date">' + escapeHtml(date) + '</span>' +
+          '</div>' +
+          '<div class="kcomment-text">' + escapeHtml(c.text) + '</div>' +
+          '</div>';
+      }).join('');
+      // Scroll to bottom
+      listEl.scrollTop = listEl.scrollHeight;
+    }
+
+    document.getElementById('kCommentModal').style.display = 'flex';
+  }
+
+  function closeCommentModal() {
+    document.getElementById('kCommentModal').style.display = 'none';
+    kCommentTaskId = null;
+  }
+
+  function addKanbanComment() {
+    const text = document.getElementById('kCommentText').value.trim();
+    if (!text) { toast('Write a comment first', 'error'); return; }
+    if (!kCommentTaskId) return;
+
+    rpc('addTaskComment', kCommentTaskId, text).then(r => {
+      if (r.success) {
+        // Optimistic: add to local state
+        const t = KSTATE.allTasks.find(x => x.id === kCommentTaskId);
+        if (t) {
+          if (!t.comments) t.comments = [];
+          t.comments.push({
+            by: (STATE.user && STATE.user.name) || 'You',
+            text: text,
+            at: new Date().toISOString()
+          });
+        }
+        toast('Comment added', 'success');
+        openCommentModal(kCommentTaskId); // re-render
+        renderKanban(); // update comment count on card
+      } else {
+        toast(r.message || 'Failed', 'error');
+      }
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  /* ── JsRoadsterConfig ──────────────────────────────────── */
+  const RSTATE = { roles: [] };
+
+  function loadRoadsterConfig() {
+    document.getElementById('roadsterConfigTable').innerHTML = skeletonRows(3);
+    rpc('getRoadsterConfigList').then(r => {
+      if (!r.success) {
+        document.getElementById('roadsterConfigTable').innerHTML = '<div class="empty">' + escapeHtml(r.message || '') + '</div>';
+        return;
+      }
+      RSTATE.roles = r.data || [];
+      renderRoadsterConfig();
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function renderRoadsterConfig() {
+    if (!RSTATE.roles.length) {
+      document.getElementById('roadsterConfigTable').innerHTML = '<div class="empty">No Daily Roster roles configured.</div>';
+      return;
+    }
+    document.getElementById('roadsterConfigTable').innerHTML =
+      '<table><thead><tr><th>Role / Task</th><th>Employee</th><th>Frequency</th><th>Remark</th><th></th></tr></thead><tbody>' +
+      RSTATE.roles.map(r =>
+        '<tr><td>' + escapeHtml(r.role) + '</td>' +
+        '<td>' + escapeHtml(r.employee) + '</td>' +
+        '<td>' + escapeHtml(r.frequency || 'Daily') + '</td>' +
+        '<td>' + escapeHtml(r.remark || '–') + '</td>' +
+        '<td>' +
+        '<button class="secondary" onclick="openRoadsterModal(\'' + escapeHtml(r.role) + '\', \'' + escapeHtml(r.employee) + '\', \'' + escapeHtml(r.frequency || 'Daily') + '\', \'' + escapeHtml(r.remark || '') + '\')">Edit</button> ' +
+        '<button class="danger" onclick="removeRoadsterRole(\'' + escapeHtml(r.role) + '\')">Remove</button>' +
+        '</td></tr>'
+      ).join('') + '</tbody></table>';
+  }
+
+  function openRoadsterModal(role, employee, frequency, remark) {
+    if (role) {
+      document.getElementById('roadsterModalTitle').textContent = 'Edit Role';
+      document.getElementById('rRole').value = role;
+      document.getElementById('rOldRole').value = role;
+      document.getElementById('rEmployee').value = employee || '';
+      document.getElementById('rFrequency').value = frequency || 'Daily';
+      document.getElementById('rRemark').value = remark || '';
+    } else {
+      document.getElementById('roadsterModalTitle').textContent = 'Add Role';
+      document.getElementById('rRole').value = '';
+      document.getElementById('rOldRole').value = '';
+      document.getElementById('rEmployee').value = '';
+      document.getElementById('rFrequency').value = 'Daily';
+      document.getElementById('rRemark').value = '';
+    }
+    document.getElementById('roadsterModal').style.display = 'flex';
+  }
+
+  function closeRoadsterModal() {
+    document.getElementById('roadsterModal').style.display = 'none';
+  }
+
+  function saveRoadsterConfig() {
+    const role = document.getElementById('rRole').value.trim();
+    const oldRole = document.getElementById('rOldRole').value.trim();
+    const employee = document.getElementById('rEmployee').value.trim();
+    const frequency = document.getElementById('rFrequency').value;
+    const remark = document.getElementById('rRemark').value.trim();
+
+    if (!role || !employee) {
+      toast('Role and Employee are required', 'error');
+      return;
+    }
+
+    const btn = document.querySelector('#roadsterModal .primary');
+    btn.disabled = true;
+    btn.textContent = 'Saving...';
+
+    rpc('saveRoadsterConfig', oldRole, role, employee, frequency, remark).then(r => {
+      btn.disabled = false;
+      btn.textContent = 'Save';
+      if (!r.success) {
+        toast(r.message || 'Error saving role', 'error');
+        return;
+      }
+      toast('Role saved', 'success');
+      closeRoadsterModal();
+      loadRoadsterConfig();
+    }).catch(e => {
+      btn.disabled = false;
+      btn.textContent = 'Save';
+      toast(String(e), 'error');
+    });
+  }
+
+  function removeRoadsterRole(role) {
+    if (!confirm('Remove role: ' + role + '?')) return;
+    rpc('deleteRoadsterConfig', role).then(r => {
+      if (!r.success) {
+        toast(r.message || 'Error removing role', 'error');
+        return;
+      }
+      toast('Role removed', 'success');
+      loadRoadsterConfig();
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  /* ── JsAdmin ──────────────────────────────────── */
+  const ASTATE = { users: [], editEmail: null };
+
+  function loadAdmin() {
+    loadUsers();
+    loadSettings();
+  }
+
+  /* ── USERS ────────────────────────────────────────────────────── */
+  function loadUsers() {
+    document.getElementById('usersTable').innerHTML = skeletonRows(4);
+    rpc('getAllUsers').then(r => {
+      if (!r.success) { document.getElementById('usersTable').innerHTML = '<div class="empty">' + escapeHtml(r.message || '') + '</div>'; return; }
+      ASTATE.users = r.data || [];
+      renderUsers();
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function renderUsers() {
+    if (!ASTATE.users.length) { document.getElementById('usersTable').innerHTML = '<div class="empty">No users in scope.</div>'; return; }
+    document.getElementById('usersTable').innerHTML =
+      '<table><thead><tr><th>Email</th><th>Name</th><th>Role</th><th>Dept</th><th>Commodities</th><th>Active</th><th></th></tr></thead><tbody>' +
+      ASTATE.users.map(u =>
+        '<tr><td>' + escapeHtml(u.email) + '</td>' +
+        '<td>' + escapeHtml(u.name) + '</td>' +
+        '<td>' + escapeHtml(u.role) + '</td>' +
+        '<td>' + escapeHtml(u.dept) + '</td>' +
+        '<td style="font-size:11px;color:#94a3b8;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="' + escapeHtml(u.commodities || '') + '">' + escapeHtml(u.commodities || '—') + '</td>' +
+        '<td>' + (u.active ? '<span class="badge done">YES</span>' : '<span class="badge late">NO</span>') + '</td>' +
+        '<td><button class="secondary" onclick="openUserModal(\'' + escapeHtml(u.email) + '\')">Edit</button> ' +
+        '<button class="danger" onclick="removeUserConfirm(\'' + escapeHtml(u.email) + '\')">Remove</button></td></tr>'
+      ).join('') + '</tbody></table>';
+  }
+
+  function openUserModal(email) {
+    ASTATE.editEmail = email || null;
+    document.getElementById('userModalTitle').textContent = email ? 'Edit User' : 'Add User';
+
+    // Only show password field to SuperAdmin
+    const passField = document.getElementById('uPasswordField');
+    if (STATE.user.role === 'SuperAdmin') {
+      passField.style.display = 'block';
+    } else {
+      passField.style.display = 'none';
+    }
+
+    if (email) {
+      const u = ASTATE.users.find(x => x.email === email) || {};
+      document.getElementById('uEmail').value = u.email || '';
+      document.getElementById('uEmail').disabled = true;
+      document.getElementById('uName').value = u.name || '';
+      document.getElementById('uRole').value = u.role || 'Teammate';
+      document.getElementById('uDept').value = u.dept || '';
+      document.getElementById('uActive').checked = !!u.active;
+      document.getElementById('uPassword').value = u.password || '';
+      document.getElementById('uCommodities').value = u.commodities || '';
+      document.getElementById('uBackupOf').value = u.backupOf || '';
+    } else {
+      document.getElementById('uEmail').value = '';
+      document.getElementById('uEmail').disabled = false;
+      document.getElementById('uName').value = '';
+      document.getElementById('uRole').value = 'Teammate';
+      document.getElementById('uDept').value = STATE.user.dept || '';
+      document.getElementById('uActive').checked = true;
+      document.getElementById('uPassword').value = '';
+      document.getElementById('uCommodities').value = '';
+      document.getElementById('uBackupOf').value = '';
+    }
+    document.getElementById('userModal').style.display = 'flex';
+  }
+
+  function closeUserModal() { document.getElementById('userModal').style.display = 'none'; }
+
+  function saveUser() {
+    const email = document.getElementById('uEmail').value.trim().toLowerCase();
+    const name = document.getElementById('uName').value.trim();
+    const role = document.getElementById('uRole').value;
+    const dept = document.getElementById('uDept').value.trim();
+    const active = document.getElementById('uActive').checked;
+    const pwd = document.getElementById('uPassword').value;
+    const commodities = document.getElementById('uCommodities').value.trim();
+    const backupOf = document.getElementById('uBackupOf').value.trim().toLowerCase();
+
+    if (!email) { toast('Email required', 'error'); return; }
+
+    const fn = ASTATE.editEmail ? 'updateUser' : 'addUser';
+    const args = ASTATE.editEmail
+      ? [email, name, role, dept, active, pwd, commodities, backupOf]
+      : [email, name, role, dept, pwd, commodities, backupOf];
+    rpc(fn, ...args).then(r => {
+      if (r.success) { toast('User saved', 'success'); closeUserModal(); loadUsers(); }
+      else toast(r.message || 'Failed', 'error');
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function removeUserConfirm(email) {
+    if (!confirm('Remove ' + email + '?')) return;
+    rpc('removeUser', email).then(r => {
+      if (r.success) { toast('Removed', 'success'); loadUsers(); }
+      else toast(r.message || 'Failed', 'error');
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  /* ── SETTINGS ─────────────────────────────────────────────────── */
+  function loadSettings() {
+    document.getElementById('settingsForm').innerHTML = skeletonRows(3);
+    rpc('getSettings').then(s => {
+      const isSuper = STATE.user.role === 'SuperAdmin';
+      const superFields = isSuper ? (
+        '<h4 style="margin:18px 0 8px 0; color:#cbd5e1; font-size:13px; text-transform:uppercase; letter-spacing:0.5px;">SuperAdmin · Phase 5</h4>' +
+        '<div class="row">' +
+        '<div class="field"><label>Slack Webhook URL</label><input type="url" id="setSlack" value="' + escapeHtml(s.slackWebhookUrl || '') + '" placeholder="https://hooks.slack.com/services/…"></div>' +
+        '<div class="field"><label>Google Chat Webhook URL</label><input type="url" id="setChat" value="' + escapeHtml(s.chatWebhookUrl || '') + '" placeholder="https://chat.googleapis.com/v1/spaces/…"></div>' +
+        '</div>' +
+        '<div class="row">' +
+        '<div class="field"><label>SuperAdmin Email</label><input type="email" id="setSuperEmail" value="' + escapeHtml(s.superAdminEmail || '') + '"></div>' +
+        '<div class="field"><label>SuperAdmin Escalate +Days</label><input type="number" min="1" id="setSuperEsc" value="' + (s.superEscalateDays || 2) + '"></div>' +
+        '</div>' +
+        '<div class="row">' +
+        '<div class="field"><label>Drive Backup Folder ID</label><input type="text" id="setBackup" value="' + escapeHtml(s.backupFolderId || '') + '" placeholder="folder ID from Drive URL"></div>' +
+        '<div class="field"><label>Webhook API Key</label><input type="text" id="setApiKey" value="' + escapeHtml(s.webhookApiKey || '') + '" placeholder="random secret for doPost"></div>' +
+        '</div>' +
+        '<div class="row" style="align-items:center; margin-top:8px;">' +
+        '<div class="field"><label style="margin-bottom:4px;">Pre-fill Last Entry</label>' +
+        '<div style="display:flex;align-items:center;gap:10px;">' +
+        '<button id="prefillToggleBtn" onclick="togglePrefillLastEntry_client()" style="min-width:70px;padding:5px 14px;border-radius:20px;border:none;cursor:pointer;font-weight:600;font-size:13px;background:' + (s.prefillLastEntry ? '#22c55e' : '#475569') + ';color:#fff;">' + (s.prefillLastEntry ? 'ON' : 'OFF') + '</button>' +
+        '<span id="prefillMsg" style="color:#94a3b8;font-size:12px;"></span>' +
+        '</div></div>' +
+        '</div>'
+      ) : '';
+
+      document.getElementById('settingsForm').innerHTML =
+        '<div class="row">' +
+        '<div class="field"><label>Window Start</label><input type="time" id="setStart" value="' + escapeHtml(s.windowStart) + '"></div>' +
+        '<div class="field"><label>Window End</label><input type="time" id="setEnd" value="' + escapeHtml(s.windowEnd) + '"></div>' +
+        '<div class="field"><label>Escalate Days</label><input type="number" min="1" id="setEsc" value="' + s.escalateDays + '"></div>' +
+        '</div>' +
+        '<div class="row">' +
+        (isSuper ? '<div class="field"><label>Manager Email</label><input type="email" id="setMgr" value="' + escapeHtml(s.managerEmail) + '"></div>' : '') +
+        '<div class="field"><label><input type="checkbox" id="setLock"' + (s.lockDuplicate ? ' checked' : '') + (isSuper ? '' : ' disabled') + '> Lock Duplicate</label></div>' +
+        '<div class="field"><label><input type="checkbox" id="setRem"' + (s.requireRemarks ? ' checked' : '') + '> Require Remarks</label></div>' +
+        '</div>' +
+        superFields +
+        '<div style="margin-top:12px;"><button class="primary" onclick="saveSettings_client()">Save Settings</button> <span id="setMsg" style="color:#94a3b8; font-size:12px;"></span></div>';
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function saveSettings_client() {
+    const payload = {
+      windowStart: document.getElementById('setStart').value,
+      windowEnd: document.getElementById('setEnd').value,
+      escalateDays: parseInt(document.getElementById('setEsc').value, 10) || 3,
+      requireRemarks: document.getElementById('setRem').checked
+    };
+    if (document.getElementById('setMgr')) payload.managerEmail = document.getElementById('setMgr').value;
+    if (document.getElementById('setLock')) payload.lockDuplicate = document.getElementById('setLock').checked;
+    if (document.getElementById('setSlack')) payload.slackWebhookUrl = document.getElementById('setSlack').value;
+    if (document.getElementById('setChat')) payload.chatWebhookUrl = document.getElementById('setChat').value;
+    if (document.getElementById('setSuperEmail')) payload.superAdminEmail = document.getElementById('setSuperEmail').value;
+    if (document.getElementById('setSuperEsc')) payload.superEscalateDays = parseInt(document.getElementById('setSuperEsc').value, 10) || 2;
+    if (document.getElementById('setBackup')) payload.backupFolderId = document.getElementById('setBackup').value;
+    if (document.getElementById('setApiKey')) payload.webhookApiKey = document.getElementById('setApiKey').value;
+
+    document.getElementById('setMsg').textContent = 'Saving…';
+    rpc('saveSettings', payload).then(r => {
+      document.getElementById('setMsg').textContent = '';
+      if (r.success) toast('Settings saved', 'success');
+      else toast(r.message || 'Failed', 'error');
+    }).catch(e => { document.getElementById('setMsg').textContent = ''; toast(String(e), 'error'); });
+  }
+
+  function togglePrefillLastEntry_client() {
+    const btn = document.getElementById('prefillToggleBtn');
+    const msg = document.getElementById('prefillMsg');
+    if (!btn) return;
+    const currentlyOn = btn.textContent === 'ON';
+    const newVal = !currentlyOn;
+    btn.disabled = true;
+    msg.textContent = 'Saving…';
+    rpc('togglePrefillLastEntry', newVal).then(r => {
+      btn.disabled = false;
+      msg.textContent = '';
+      if (r.success) {
+        btn.textContent = newVal ? 'ON' : 'OFF';
+        btn.style.background = newVal ? '#22c55e' : '#475569';
+        toast('Pre-fill Last Entry ' + (newVal ? 'enabled' : 'disabled'), 'success');
+      } else {
+        toast(r.message || 'Failed', 'error');
+      }
+    }).catch(e => { btn.disabled = false; msg.textContent = ''; toast(String(e), 'error'); });
+  }
+
+  /* ── TRIGGERS ─────────────────────────────────────────────────── */
+  function installTriggers() {
+    document.getElementById('triggerMsg').textContent = 'Installing…';
+    rpc('setupTriggers').then(r => {
+      document.getElementById('triggerMsg').textContent = '';
+      if (r.success) toast(r.message, 'success');
+      else toast(r.message || 'Failed', 'error');
+    }).catch(e => { document.getElementById('triggerMsg').textContent = ''; toast(String(e), 'error'); });
+  }
+
+  /* ── JsControl ──────────────────────────────────── */
+  const CCSTATE = {
+    users: [],
+    modules: {},
+    labels: {},
+    selected: new Set(),
+    inflight: false
+  };
+
+  function loadControl() {
+    if (STATE.user.role !== 'SuperAdmin') return;
+    document.getElementById('ccUsers').innerHTML = skeletonRows(4);
+    rpc('getControlCenterUsers').then(r => {
+      if (!r.success) { toast(r.message || 'Failed', 'error'); return; }
+      CCSTATE.users = r.data || [];
+      CCSTATE.modules = r.modules || {};
+      CCSTATE.labels = r.labels || {};
+      CCSTATE.selected.clear();
+      populateDeptFilter();
+      populateProxyUsers();
+      ccRenderUsers();
+      ccRenderToggles();
+    }).catch(e => toast(String(e), 'error'));
+
+    // Settings (for duplicate lock state)
+    rpc('getSettings').then(s => {
+      document.getElementById('ccDupState').textContent = s.lockDuplicate ? 'ON' : 'OFF';
+    }).catch(() => { });
+  }
+
+  function populateDeptFilter() {
+    const sel = document.getElementById('ccDeptFilter');
+    const cur = sel.value;
+    const depts = Array.from(new Set(CCSTATE.users.map(u => u.dept).filter(Boolean))).sort();
+    sel.innerHTML = '<option value="">All</option>' + depts.map(d => '<option value="' + escapeHtml(d) + '">' + escapeHtml(d) + '</option>').join('');
+    sel.value = cur || '';
+  }
+
+  function populateProxyUsers() {
+    const sel = document.getElementById('ccProxyUser');
+    sel.innerHTML = '<option value="">— select —</option>' +
+      CCSTATE.users.filter(u => u.active).map(u =>
+        '<option value="' + escapeHtml(u.email) + '">' + escapeHtml(u.name) + ' · ' + escapeHtml(u.email) + (u.dept ? ' (' + escapeHtml(u.dept) + ')' : '') + '</option>'
+      ).join('');
+  }
+
+  function ccFiltered() {
+    const q = document.getElementById('ccSearch').value.toLowerCase().trim();
+    const r = document.getElementById('ccRoleFilter').value;
+    const d = document.getElementById('ccDeptFilter').value;
+    const a = document.getElementById('ccActiveFilter').value;
+    return CCSTATE.users.filter(u =>
+      (!q || (u.email + ' ' + u.name).toLowerCase().includes(q)) &&
+      (!r || u.role === r) &&
+      (!d || u.dept === d) &&
+      (!a || (a === 'yes' ? u.active : !u.active))
+    );
+  }
+
+  function ccRenderUsers() {
+    const list = ccFiltered();
+    document.getElementById('ccUserCount').textContent = list.length + ' of ' + CCSTATE.users.length + ' users';
+    if (!list.length) { document.getElementById('ccUsers').innerHTML = '<div class="empty">No users match filters.</div>'; return; }
+
+    const html = '<table><thead><tr>' +
+      '<th><input type="checkbox" id="ccSelAll" onchange="ccToggleSelAll(this.checked)"></th>' +
+      '<th>Email</th><th>Name</th><th>Role</th><th>Dept</th><th>Active</th><th>Last Login</th><th>Total Entries</th><th></th>' +
+      '</tr></thead><tbody>' +
+      list.map(u => {
+        const sel = CCSTATE.selected.has(u.email) ? 'checked' : '';
+        return '<tr data-email="' + escapeHtml(u.email) + '">' +
+          '<td><input type="checkbox" ' + sel + ' onchange="ccToggleSel(\'' + escapeHtml(u.email) + '\', this.checked)"></td>' +
+          '<td>' + escapeHtml(u.email) + '</td>' +
+          '<td><input type="text" value="' + escapeHtml(u.name) + '" data-field="name" onchange="ccInlineSave(this)"></td>' +
+          '<td><select data-field="role" onchange="ccInlineSave(this)">' +
+          ['Teammate', 'Manager', 'SuperAdmin'].map(r => '<option' + (r === u.role ? ' selected' : '') + '>' + r + '</option>').join('') +
+          '</select></td>' +
+          '<td><input type="text" value="' + escapeHtml(u.dept) + '" data-field="dept" onchange="ccInlineSave(this)"></td>' +
+          '<td><input type="checkbox" ' + (u.active ? 'checked' : '') + ' data-field="active" onchange="ccInlineSave(this)"></td>' +
+          '<td style="font-size:12px; color:#94a3b8;">' + (u.lastLogin ? escapeHtml(u.lastLogin) : '<span style="color:#475569;">never</span>') + '</td>' +
+          '<td style="text-align:right;">' + u.totalEntries + '</td>' +
+          '<td><button class="danger" onclick="ccRemove(\'' + escapeHtml(u.email) + '\')">Remove</button></td>' +
+          '</tr>';
+      }).join('') + '</tbody></table>';
+    document.getElementById('ccUsers').innerHTML = html;
+  }
+
+  function ccToggleSel(email, checked) {
+    if (checked) CCSTATE.selected.add(email);
+    else CCSTATE.selected.delete(email);
+  }
+
+  function ccToggleSelAll(checked) {
+    ccFiltered().forEach(u => {
+      if (checked) CCSTATE.selected.add(u.email);
+      else CCSTATE.selected.delete(u.email);
+    });
+    ccRenderUsers();
+  }
+
+  function ccInlineSave(el) {
+    const tr = el.closest('tr');
+    const email = tr.getAttribute('data-email');
+    const u = CCSTATE.users.find(x => x.email === email);
+    if (!u) return;
+    const fields = {};
+    tr.querySelectorAll('[data-field]').forEach(f => {
+      if (f.type === 'checkbox') fields[f.getAttribute('data-field')] = f.checked;
+      else fields[f.getAttribute('data-field')] = f.value;
+    });
+    rpc('updateUser', email, fields.name, fields.role, fields.dept, fields.active).then(r => {
+      if (r.success) { Object.assign(u, fields); toast('Saved ' + email, 'success'); }
+      else { toast(r.message || 'Failed', 'error'); ccRenderUsers(); }
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function ccRemove(email) {
+    if (!confirm('Remove ' + email + '?')) return;
+    rpc('removeUser', email).then(r => {
+      if (r.success) { toast('Removed', 'success'); loadControl(); }
+      else toast(r.message || 'Failed', 'error');
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function ccBulkSetActive(active) {
+    const emails = Array.from(CCSTATE.selected);
+    if (!emails.length) { toast('Select at least one user', 'error'); return; }
+    if (!confirm((active ? 'Activate' : 'Deactivate') + ' ' + emails.length + ' user(s)?')) return;
+    rpc('bulkSetActive', emails, active).then(r => {
+      if (r.success) { toast('Updated ' + r.changed + ' user(s)', 'success'); loadControl(); }
+      else toast(r.message || 'Failed', 'error');
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function ccExportCsv() {
+    const list = ccFiltered();
+    const cols = ['email', 'name', 'role', 'dept', 'active', 'lastLogin', 'totalEntries'];
+    const lines = [cols.join(',')].concat(list.map(u => cols.map(c => csvCell(u[c])).join(',')));
+    const blob = new Blob([lines.join('\n')], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'users-' + STATE.today + '.csv';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 500);
+  }
+  /* ── MODULE TOGGLES ───────────────────────────────────────────── */
+  function ccRenderToggles() {
+    const keys = Object.keys(CCSTATE.modules);
+    document.getElementById('ccToggles').innerHTML =
+      '<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:8px;">' +
+      keys.map(k =>
+        '<label style="display:flex; align-items:center; gap:8px; padding:8px; background:#0f172a; border-radius:6px;">' +
+        '<input type="checkbox" data-mod="' + escapeHtml(k) + '"' + (CCSTATE.modules[k] ? ' checked' : '') + '>' +
+        '<span>' + escapeHtml(CCSTATE.labels[k] || k) + '</span>' +
+        '</label>'
+      ).join('') + '</div>';
+  }
+
+  function ccSaveToggles() {
+    const out = {};
+    document.querySelectorAll('#ccToggles input[type=checkbox]').forEach(cb => {
+      out[cb.getAttribute('data-mod')] = cb.checked;
+    });
+    document.getElementById('ccTogglesMsg').textContent = 'Saving…';
+    rpc('saveModuleToggles', out).then(r => {
+      document.getElementById('ccTogglesMsg').textContent = '';
+      if (r.success) { toast('Toggles saved. Reload to apply.', 'success'); }
+      else toast(r.message || 'Failed', 'error');
+    }).catch(e => { document.getElementById('ccTogglesMsg').textContent = ''; toast(String(e), 'error'); });
+  }
+
+  /* ── PROXY ENTRY HAND-OFF ─────────────────────────────────────── */
+  function ccProxyTo(target) {
+    const email = document.getElementById('ccProxyUser').value;
+    if (!email) { toast('Select a user first', 'error'); return; }
+    STATE.proxyTarget = email;
+    navigate(target);
+  }
+
+  /* ── QUICK ACTIONS ────────────────────────────────────────────── */
+  function ccForceUnlock() {
+    const id = document.getElementById('ccUnlockId').value.trim();
+    if (!id) { toast('log_id required', 'error'); return; }
+    document.getElementById('ccUnlockMsg').textContent = 'Working…';
+    rpc('requestAmend', id).then(r => {
+      document.getElementById('ccUnlockMsg').textContent = '';
+      if (r.success) toast(r.message, 'success');
+      else toast(r.message || 'Failed', 'error');
+    }).catch(e => { document.getElementById('ccUnlockMsg').textContent = ''; toast(String(e), 'error'); });
+  }
+
+  function ccBulkAmend() {
+    const filter = {
+      employeeEmail: document.getElementById('ccBaEmail').value.trim().toLowerCase(),
+      entryType: document.getElementById('ccBaType').value,
+      topic: document.getElementById('ccBaTopic').value.trim(),
+      entryDate: document.getElementById('ccBaDate').value
+    };
+    if (!filter.employeeEmail) { toast('Email required', 'error'); return; }
+    if (!confirm('Amend all matching entries for ' + filter.employeeEmail + '?')) return;
+    document.getElementById('ccBaMsg').textContent = 'Working…';
+    rpc('bulkAmendEntries', filter).then(r => {
+      document.getElementById('ccBaMsg').textContent = '';
+      if (r.success) toast('Amended ' + r.count + ' entries', 'success');
+      else toast(r.message || 'Failed', 'error');
+    }).catch(e => { document.getElementById('ccBaMsg').textContent = ''; toast(String(e), 'error'); });
+  }
+
+  function ccToggleLock() {
+    document.getElementById('ccLockMsg').textContent = 'Working…';
+    rpc('toggleDuplicateLock').then(r => {
+      document.getElementById('ccLockMsg').textContent = '';
+      if (r.success) {
+        toast('Lock toggled', 'success');
+        rpc('getSettings').then(s => { document.getElementById('ccDupState').textContent = s.lockDuplicate ? 'ON' : 'OFF'; });
+      } else toast(r.message || 'Failed', 'error');
+    }).catch(e => { document.getElementById('ccLockMsg').textContent = ''; toast(String(e), 'error'); });
+  }
+
+  function ccTrigger() {
+    const name = document.getElementById('ccAlertName').value;
+    if (!confirm('Manually run ' + name + '?')) return;
+    document.getElementById('ccAlertMsg').textContent = 'Running…';
+    rpc('triggerAlert', name).then(r => {
+      document.getElementById('ccAlertMsg').textContent = '';
+      if (r.success) toast(r.message, 'success');
+      else toast(r.message || 'Failed', 'error');
+    }).catch(e => { document.getElementById('ccAlertMsg').textContent = ''; toast(String(e), 'error'); });
+  }
+
+
+  /* ── JsAnalytics ──────────────────────────────────── */
+  function loadAnalytics() {
+    document.getElementById('anKpi').innerHTML = viewLoaderHtml('Loading KPI…');
+    loadKpiBreakdown();
+    loadSlaBreaches();
+    loadPendingAnalysis();
+  }
+
+  function loadKpiBreakdown() {
+    rpc('getKpiBreakdown').then(r => {
+      if (!r.success) { toast(r.message || 'Failed', 'error'); return; }
+      document.getElementById('anKpi').innerHTML =
+        '<div class="kpi">' +
+        '<div class="box green"><h4>Done Rate</h4><div class="num">' + r.doneRate + '%</div></div>' +
+        '<div class="box orange"><h4>Pending Rate</h4><div class="num">' + r.pendingRate + '%</div></div>' +
+        '<div class="box red"><h4>Late Rate</h4><div class="num">' + r.lateRate + '%</div></div>' +
+        '<div class="box red"><h4>SLA Breaches</h4><div class="num">' + r.slaBreach + '</div></div>' +
+        '</div>' +
+        '<div style="color:#94a3b8; font-size:12px; margin-top:8px;">' +
+        'Window: last ' + r.total + ' entries. Done: ' + r.counts.done +
+        ' · Pending: ' + r.counts.pending + ' · Skip: ' + r.counts.skip +
+        ' · Late: ' + r.counts.late + '</div>';
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function loadSlaBreaches() {
+    document.getElementById('anSla').innerHTML = skeletonRows(3);
+    rpc('getSlaBreaches').then(r => {
+      if (!r.success) { document.getElementById('anSla').innerHTML = '<div class="empty">' + escapeHtml(r.message || '') + '</div>'; return; }
+      const list = r.data || [];
+      if (!list.length) { document.getElementById('anSla').innerHTML = '<div class="empty">No SLA breaches.</div>'; return; }
+      document.getElementById('anSla').innerHTML =
+        '<table><thead><tr><th>Topic</th><th>Sub-topic</th><th>Breaches</th><th>Last</th><th>Employees</th></tr></thead><tbody>' +
+        list.map(s =>
+          '<tr><td>' + escapeHtml(s.topic) + '</td>' +
+          '<td>' + escapeHtml(s.subTopic) + '</td>' +
+          '<td><span class="badge late">' + s.breaches + '</span></td>' +
+          '<td>' + escapeHtml(s.lastBreach) + '</td>' +
+          '<td style="font-size:12px; color:#94a3b8;">' + escapeHtml(s.employees) + '</td></tr>'
+        ).join('') + '</tbody></table>';
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function loadPendingAnalysis() {
+    document.getElementById('anPending').innerHTML = skeletonRows(3);
+    rpc('getPendingAnalysis').then(r => {
+      if (!r.success) { document.getElementById('anPending').innerHTML = '<div class="empty">' + escapeHtml(r.message || '') + '</div>'; return; }
+      const list = r.data || [];
+      if (!list.length) { document.getElementById('anPending').innerHTML = '<div class="empty">No persistent pending items.</div>'; return; }
+      document.getElementById('anPending').innerHTML =
+        '<table><thead><tr><th>Topic</th><th>Sub-topic</th><th>Pending</th><th>Done</th><th>Last Done</th><th>Last Pending</th><th>Pending %</th></tr></thead><tbody>' +
+        list.map(p =>
+          '<tr><td>' + escapeHtml(p.topic) + '</td>' +
+          '<td>' + escapeHtml(p.subTopic) + '</td>' +
+          '<td>' + p.pending + '</td><td>' + p.done + '</td>' +
+          '<td>' + escapeHtml(p.lastDone) + '</td>' +
+          '<td>' + escapeHtml(p.lastPending) + '</td>' +
+          '<td><span class="badge ' + (p.pendingRate >= 70 ? 'late' : 'pending') + '">' + p.pendingRate + '%</span></td></tr>'
+        ).join('') + '</tbody></table>';
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function loadComparison() {
+    const c = document.getElementById('anCommodity').value.trim();
+    if (!c) { toast('Commodity required', 'error'); return; }
+    document.getElementById('anComparison').innerHTML = skeletonRows(3);
+    rpc('getCommodityComparison', c).then(r => {
+      if (!r.success) { document.getElementById('anComparison').innerHTML = '<div class="empty">' + escapeHtml(r.message || '') + '</div>'; return; }
+      const slot = (s) => '<div class="box blue"><h4>' + s.date + '</h4>' +
+        '<div style="font-size:13px; line-height:1.5; margin-top:6px;">Total: <b>' + s.total + '</b><br>Done: ' + s.done + ' · Pending: ' + s.pending + ' · Skip: ' + s.skip + '</div></div>';
+      document.getElementById('anComparison').innerHTML =
+        '<div class="kpi" style="grid-template-columns:repeat(3, 1fr);">' +
+        slot(r.today) + slot(r.yesterday) + slot(r.lastWeek) +
+        '</div>';
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  /* ── EXPORT ───────────────────────────────────────────────────── */
+  function _expFilters() {
+    return {
+      entryType: document.getElementById('anExpType').value,
+      commodity: document.getElementById('anExpCommodity').value.trim(),
+      user: document.getElementById('anExpUser').value.trim().toLowerCase(),
+      dateFrom: document.getElementById('anExpFrom').value,
+      dateTo: document.getElementById('anExpTo').value
+    };
+  }
+
+  function exportCsv() {
+    document.getElementById('anExpMsg').textContent = 'Exporting…';
+    rpc('exportEntriesCsv', _expFilters()).then(r => {
+      document.getElementById('anExpMsg').textContent = '';
+      if (!r.success) { toast(r.message || 'Failed', 'error'); return; }
+      if (r.count === 0) { toast('No rows match filter', 'error'); return; }
+      const blob = new Blob([r.csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'mis-export-' + STATE.today + '.csv';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 500);
+      toast('Exported ' + r.count + ' rows', 'success');
+    }).catch(e => { document.getElementById('anExpMsg').textContent = ''; toast(String(e), 'error'); });
+  }
+
+  function exportPdf() {
+    document.getElementById('anExpMsg').textContent = 'Generating PDF…';
+    rpc('exportEntriesPdf', _expFilters()).then(r => {
+      document.getElementById('anExpMsg').textContent = '';
+      if (!r.success) { toast(r.message || 'Failed', 'error'); return; }
+      if (r.count === 0) { toast('No rows match filter', 'error'); return; }
+      const bytes = atob(r.base64);
+      const buf = new Uint8Array(bytes.length);
+      for (let i = 0; i < bytes.length; i++) buf[i] = bytes.charCodeAt(i);
+      const blob = new Blob([buf], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = r.filename;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 500);
+      toast('Exported ' + r.count + ' rows', 'success');
+    }).catch(e => { document.getElementById('anExpMsg').textContent = ''; toast(String(e), 'error'); });
+  }
+
+  /* ── JsAudit ──────────────────────────────────── */
+  const ADSTATE = { rows: [], actions: [] };
+
+  function loadAudit() {
+    if (STATE.user.role !== 'SuperAdmin') return;
+    document.getElementById('adRows').innerHTML = skeletonRows(4);
+
+    // Populate action dropdown once.
+    if (!ADSTATE.actions.length) {
+      rpc('getAuditActions').then(r => {
+        if (r.success) {
+          ADSTATE.actions = r.data || [];
+          const sel = document.getElementById('adAction');
+          const cur = sel.value;
+          sel.innerHTML = '<option value="">All</option>' +
+            ADSTATE.actions.map(a => '<option value="' + escapeHtml(a) + '">' + escapeHtml(a) + '</option>').join('');
+          sel.value = cur || '';
+        }
+      });
+    }
+
+    rpc('getAuditLog', _adFilters()).then(r => {
+      if (!r.success) { document.getElementById('adRows').innerHTML = '<div class="empty">' + escapeHtml(r.message || '') + '</div>'; return; }
+      ADSTATE.rows = r.data || [];
+      adRender();
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function _adFilters() {
+    return {
+      user: document.getElementById('adUser').value.trim().toLowerCase(),
+      action: document.getElementById('adAction').value,
+      dateFrom: document.getElementById('adFrom').value,
+      dateTo: document.getElementById('adTo').value
+    };
+  }
+
+  function adClear() {
+    document.getElementById('adUser').value = '';
+    document.getElementById('adAction').value = '';
+    document.getElementById('adFrom').value = '';
+    document.getElementById('adTo').value = '';
+    loadAudit();
+  }
+
+  function adRender() {
+    const list = ADSTATE.rows;
+    if (!list.length) { document.getElementById('adRows').innerHTML = '<div class="empty">No audit entries match filter.</div>'; return; }
+    document.getElementById('adRows').innerHTML =
+      '<div style="margin-bottom:8px; color:#94a3b8; font-size:12px;">' + list.length + ' entries (newest first)</div>' +
+      '<table><thead><tr><th>When</th><th>Actor</th><th>Action</th><th>Type</th><th>Target</th><th>Before</th><th>After</th><th>Proxy</th></tr></thead><tbody>' +
+      list.map(r =>
+        '<tr><td style="font-size:11px; white-space:nowrap;">' + escapeHtml(r.timestamp) + '</td>' +
+        '<td>' + escapeHtml(r.actor) + '</td>' +
+        '<td><span class="badge">' + escapeHtml(r.action) + '</span></td>' +
+        '<td>' + escapeHtml(r.targetType) + '</td>' +
+        '<td style="font-family:monospace; font-size:11px; max-width:160px; overflow:hidden; text-overflow:ellipsis;" title="' + escapeHtml(r.targetId) + '">' + escapeHtml(truncate(r.targetId, 30)) + '</td>' +
+        '<td style="font-family:monospace; font-size:11px; max-width:200px; overflow:hidden; text-overflow:ellipsis;" title="' + escapeHtml(r.before) + '">' + escapeHtml(truncate(r.before, 60)) + '</td>' +
+        '<td style="font-family:monospace; font-size:11px; max-width:200px; overflow:hidden; text-overflow:ellipsis;" title="' + escapeHtml(r.after) + '">' + escapeHtml(truncate(r.after, 60)) + '</td>' +
+        '<td>' + (r.isProxy ? '<span class="badge proxy">PROXY</span>' : '–') + '</td></tr>'
+      ).join('') + '</tbody></table>';
+  }
+
+  function truncate(s, n) {
+    s = String(s == null ? '' : s);
+    return s.length > n ? s.slice(0, n) + '…' : s;
+  }
+
+  function adExport() {
+    if (!ADSTATE.rows.length) { toast('Load entries first', 'error'); return; }
+    const cols = ['timestamp', 'actor', 'action', 'targetType', 'targetId', 'before', 'after', 'isProxy'];
+    const lines = [cols.join(',')].concat(ADSTATE.rows.map(r => cols.map(c => csvCell(r[c])).join(',')));
+    const blob = new Blob([lines.join('\n')], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'audit-' + STATE.today + '.csv';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 500);
+  }
+
+  /* ── JsLeaderControl ──────────────────────────────── */
+  const LC_VIEWS = ['dashboard', 'mis', 'du', 'task', 'roadster', 'kanban', 'analytics'];
+  const LC_STATE = { rows: [] };
+
+  function loadLeaderControl() {
+    if (!STATE.user || STATE.user.role !== 'SuperAdmin') return;
+    document.getElementById('lcTable').innerHTML = skeletonRows(3);
+    rpc('getLeaderConfig').then(r => {
+      if (!r || !r.success) {
+        document.getElementById('lcTable').innerHTML = '<div class="empty">' + escapeHtml(r && r.message || 'No leaders found') + '</div>';
+        return;
+      }
+      LC_STATE.rows = r.data || [];
+      lcRender();
+    }).catch(e => toast(String(e), 'error'));
+  }
+
+  function lcRender() {
+    const rows = LC_STATE.rows;
+    if (!rows.length) {
+      document.getElementById('lcTable').innerHTML = '<div class="empty">No Leader-role users found. Add users with role "Leader" in Admin.</div>';
+      return;
+    }
+
+    const viewLabels = {
+      dashboard: 'Dashboard', mis: 'MIS Report', du: 'Data Update', task: 'Tasks',
+      roadster: 'Daily Roster', kanban: 'Kanban', analytics: 'Analytics'
+    };
+
+    document.getElementById('lcTable').innerHTML =
+      '<table style="width:100%; border-collapse:collapse;">' +
+      '<thead><tr><th style="text-align:left; padding:8px; color:#94a3b8;">Leader</th>' +
+      LC_VIEWS.map(v => '<th style="padding:8px; color:#94a3b8; text-align:center; font-size:12px;">' + escapeHtml(viewLabels[v] || v) + '</th>').join('') +
+      '<th style="padding:8px;"></th></tr></thead><tbody>' +
+      rows.map(row => {
+        const allowed = new Set(row.views || []);
+        return '<tr style="border-top:1px solid #1e293b;">' +
+          '<td style="padding:8px;"><strong>' + escapeHtml(row.name || row.email) + '</strong><br><span style="font-size:11px;color:#94a3b8;">' + escapeHtml(row.email) + '</span></td>' +
+          LC_VIEWS.map(v =>
+            '<td style="text-align:center; padding:8px;">' +
+            '<input type="checkbox" class="lc-cb" data-email="' + escapeHtml(row.email) + '" data-view="' + v + '"' +
+            (allowed.has(v) ? ' checked' : '') + '></td>'
+          ).join('') +
+          '<td style="padding:8px;"><button class="primary" style="font-size:12px; padding:5px 12px;" onclick="saveLeaderRow(\'' + escapeHtml(row.email) + '\')">Save</button></td>' +
+          '</tr>';
+      }).join('') + '</tbody></table>';
+  }
+
+  function saveLeaderRow(email) {
+    const views = [];
+    document.querySelectorAll('.lc-cb[data-email="' + email + '"]').forEach(cb => {
+      if (cb.checked) views.push(cb.getAttribute('data-view'));
+    });
+    const msg = document.getElementById('lcMsg');
+    msg.textContent = 'Saving…';
+    rpc('saveLeaderConfig', email, views).then(r => {
+      msg.textContent = '';
+      if (r && r.success) {
+        toast('Leader access saved for ' + email, 'success');
+        const row = LC_STATE.rows.find(x => x.email === email);
+        if (row) row.views = views;
+      } else {
+        toast((r && r.message) || 'Failed', 'error');
+      }
+    }).catch(e => { msg.textContent = ''; toast(String(e), 'error'); });
+  }
+
+</script>

@@ -285,15 +285,46 @@ def _get_du_tasks(user, date_obj):
         if not configs:
             return []
 
-    # Single batched lookup of today's DU logs for this user, indexed by
-    # (topic, sub_topic). Replaces N+1 per-factor queries.
-    du_logs = MasterLog.query.filter_by(
-        on_behalf_of_email=user.email,
-        entry_date=date_obj,
-        entry_type='DataUpdate',
-        row_status='Active',
-    ).all()
-    du_log_index = {(l.topic, l.sub_topic or ''): l for l in du_logs}
+    # Single batched lookup of today's DU logs, filtered globally if Manager, otherwise scoped.
+    if role_at_least(user.role, 'Manager'):
+        du_logs = MasterLog.query.filter_by(
+            entry_date=date_obj,
+            entry_type='DataUpdate',
+            row_status='Active',
+        ).all()
+    else:
+        principals = _active_handover_principals(user, date_obj)
+        du_logs = MasterLog.query.filter(
+            MasterLog.entry_date == date_obj,
+            MasterLog.entry_type == 'DataUpdate',
+            MasterLog.row_status == 'Active',
+            MasterLog.on_behalf_of_email.in_(list(principals))
+        ).all()
+
+    # Index logs by (topic, sub_topic, on_behalf_of_email)
+    du_log_index = {(l.topic, l.sub_topic or '', l.on_behalf_of_email.lower()): l for l in du_logs}
+
+    # Pre-load user emails mapping
+    users_map = {}
+    for u in User.query.all():
+        users_map[u.email.lower()] = u.email.lower()
+        users_map[u.name.lower()] = u.email.lower()
+
+    def _get_email(assignee):
+        if not assignee:
+            return user.email.lower()
+        a = assignee.strip().lower()
+        if a in ('all', 'yes', 'no'):
+            return user.email.lower()
+        return users_map.get(a, user.email.lower())
+
+    def _get_du_email(c):
+        for assignee in (getattr(c, 'mode', ''), getattr(c, 'primary_assignee', '')):
+            if assignee:
+                email = _get_email(assignee)
+                if email:
+                    return email
+        return user.email.lower()
 
     # Group configs by (commodity, type) so the UI can show one heading per
     # combo with each factor as a sub-row below.
@@ -316,7 +347,8 @@ def _get_du_tasks(user, date_obj):
         if ci and len(ci) > len(gi):
             groups[key]['instructions'] = ci
 
-        log = du_log_index.get((key, c.factor))
+        email = _get_du_email(c)
+        log = du_log_index.get((key, c.factor, email))
         groups[key]['factors'].append({
             'factor': c.factor,
             'mode': c.mode or '',
@@ -340,8 +372,7 @@ def _get_du_tasks(user, date_obj):
             g['status'] = 'In Progress'
         else:
             g['status'] = 'Pending'
-        # Use today's iso date as a sortable createdAt fallback (DU rows don't
-        # have a per-row timestamp; the section is sorted Done-last, newest first).
+        # Use today's iso date as a sortable createdAt fallback
         g['createdAt'] = date_obj.isoformat()
         out.append(g)
     return out
@@ -353,8 +384,6 @@ def _get_mis_tasks(user, date_obj):
     else:
         principals = _active_handover_principals(user, date_obj)
         name_lookup = _build_name_lookup(principals)
-        # Only the report's PRIMARY assignee field matters here; backup_1/2
-        # are activated via BackupActivation rows, not by mere listing.
         from sqlalchemy import or_
         clauses = []
         for email in principals:
@@ -364,14 +393,38 @@ def _get_mis_tasks(user, date_obj):
                 clauses.append(Report.primary_assignee.ilike(f"%{n}%"))
         reports = Report.query.filter(or_(*clauses)).all() if clauses else []
     
-    # Batched lookup of today's MIS logs for this user.
-    mis_logs = MasterLog.query.filter_by(
-        on_behalf_of_email=user.email,
-        entry_date=date_obj,
-        entry_type='MISReport',
-        row_status='Active',
-    ).all()
-    mis_log_index = {l.topic: l for l in mis_logs}
+    # Batched lookup of today's MIS logs. Scoped to principals if teammate, else global.
+    if role_at_least(user.role, 'Manager'):
+        mis_logs = MasterLog.query.filter_by(
+            entry_date=date_obj,
+            entry_type='MISReport',
+            row_status='Active',
+        ).all()
+    else:
+        principals = _active_handover_principals(user, date_obj)
+        mis_logs = MasterLog.query.filter(
+            MasterLog.entry_date == date_obj,
+            MasterLog.entry_type == 'MISReport',
+            MasterLog.row_status == 'Active',
+            MasterLog.on_behalf_of_email.in_(list(principals))
+        ).all()
+
+    # Index logs by (topic, on_behalf_of_email)
+    mis_log_index = {(l.topic, l.on_behalf_of_email.lower()): l for l in mis_logs}
+
+    # Pre-load user emails mapping
+    users_map = {}
+    for u in User.query.all():
+        users_map[u.email.lower()] = u.email.lower()
+        users_map[u.name.lower()] = u.email.lower()
+
+    def _get_email(assignee):
+        if not assignee:
+            return user.email.lower()
+        a = assignee.strip().lower()
+        if a in ('all', 'yes', 'no'):
+            return user.email.lower()
+        return users_map.get(a, user.email.lower())
 
     override_index = _load_override_index(date_obj)
     mis_tasks = []
@@ -380,7 +433,9 @@ def _get_mis_tasks(user, date_obj):
                                           r.frequency, getattr(r, 'schedule_day', '') or '',
                                           date_obj, override_index):
             continue
-        log = mis_log_index.get(r.name)
+        
+        email = _get_email(r.primary_assignee)
+        log = mis_log_index.get((r.name, email))
         mis_tasks.append({
             'task_type': 'MISReport',
             'name': r.name,
@@ -403,17 +458,51 @@ def _get_report_group_tasks(user, date_obj):
     name_lookup = _build_name_lookup(principals) if not is_mgr else {}
     override_index = _load_override_index(date_obj)
     out = []
+    
+    # Batched lookup of report group logs.
+    if is_mgr:
+        group_logs = MasterLog.query.filter_by(
+            entry_date=date_obj,
+            entry_type='ReportGroup',
+            row_status='Active',
+        ).all()
+    else:
+        group_logs = MasterLog.query.filter(
+            MasterLog.entry_date == date_obj,
+            MasterLog.entry_type == 'ReportGroup',
+            MasterLog.row_status == 'Active',
+            MasterLog.on_behalf_of_email.in_(list(principals))
+        ).all()
+
+    group_log_index = {(l.topic, l.on_behalf_of_email.lower()): l for l in group_logs}
+
+    # Pre-load user emails mapping
+    users_map = {}
+    for u in User.query.all():
+        users_map[u.email.lower()] = u.email.lower()
+        users_map[u.name.lower()] = u.email.lower()
+
+    def _get_email(assignee):
+        if not assignee:
+            return user.email.lower()
+        a = assignee.strip().lower()
+        if a in ('all', 'yes', 'no'):
+            return user.email.lower()
+        return users_map.get(a, user.email.lower())
+
     for g in ReportGroup.query.all():
         if not should_fire_with_override('ReportGroup', f"{g.parent_category}::{g.group_name}", '',
                                           g.frequency, getattr(g, 'schedule_day', '') or '',
                                           date_obj, override_index):
             continue
         if not is_mgr:
-            # managers-only groups stay hidden from teammates
             if (g.visibility or 'managers') == 'managers':
                 continue
             if not _matches_any_principal(g.primary_assignee or '', principals, name_lookup):
                 continue
+        
+        email = _get_email(g.primary_assignee)
+        log = group_log_index.get((g.group_name, email))
         out.append({
             'task_type': 'ReportGroup',
             'name': f"Merged Report: {g.parent_category} — {g.group_name}",
@@ -424,8 +513,8 @@ def _get_report_group_tasks(user, date_obj):
             'frequency': g.frequency,
             'assignee': g.primary_assignee or '',
             'instructions': g.remark or '',
-            'status': 'Pending',
-            'createdAt': (g.created_at.isoformat() if g.created_at else date_obj.isoformat()),
+            'status': log.status if log else 'Pending',
+            'createdAt': (log.timestamp_submitted.isoformat() if log and log.timestamp_submitted else date_obj.isoformat()),
         })
     return out
 
@@ -463,14 +552,36 @@ def get_today_tasks():
         return items_pending + items_done
 
     if not holiday:
-        # Single batched lookup of today's logs for this user, indexed by
-        # (entry_type, topic, sub_topic) so each task can grab its log in O(1).
-        todays_logs = MasterLog.query.filter_by(
-            on_behalf_of_email=user.email,
-            entry_date=today,
-            row_status='Active',
-        ).all()
-        log_index = {(l.entry_type, l.topic, l.sub_topic or ''): l for l in todays_logs}
+        # Single batched lookup of today's logs. Scoped to principals if teammate, else global.
+        if role_at_least(user.role, 'Manager'):
+            todays_logs = MasterLog.query.filter_by(
+                entry_date=today,
+                row_status='Active',
+            ).all()
+        else:
+            principals = _active_handover_principals(user, today)
+            todays_logs = MasterLog.query.filter(
+                MasterLog.entry_date == today,
+                MasterLog.row_status == 'Active',
+                MasterLog.on_behalf_of_email.in_(list(principals))
+            ).all()
+
+        # Index logs by (entry_type, topic, sub_topic, on_behalf_of_email)
+        log_index = {(l.entry_type, l.topic, l.sub_topic or '', l.on_behalf_of_email.lower()): l for l in todays_logs}
+
+        # Pre-load user emails mapping
+        users_map = {}
+        for u in User.query.all():
+            users_map[u.email.lower()] = u.email.lower()
+            users_map[u.name.lower()] = u.email.lower()
+
+        def _get_email(assignee):
+            if not assignee:
+                return user.email.lower()
+            a = assignee.strip().lower()
+            if a in ('all', 'yes', 'no'):
+                return user.email.lower()
+            return users_map.get(a, user.email.lower())
 
         # Pre-fetch all overrides relevant to today's periods so we don't query
         # per-task. Passed into should_fire_with_override below.
@@ -478,17 +589,42 @@ def get_today_tasks():
 
         templates = TaskTemplate.query.all()
         filtered = _filter_tasks_for_user(templates, user, on_date=today)
+        fired_template_topics = set()
         for t in filtered:
             if should_fire_with_override('TaskTemplate', t.name, '',
                                           t.recurrence, getattr(t, 'schedule_day', '') or '',
                                           today, override_index):
+                fired_template_topics.add(t.name)
                 d = t.to_dict()
-                log = log_index.get(('Task', t.name, ''))
+                
+                email = _get_email(t.assignee)
+                log = log_index.get(('Task', t.name, '', email))
+                
                 d['status'] = log.status if log else 'Pending'
                 d['logId'] = log.log_id if log else ''
+                d['remarks'] = log.remarks if log else ''
                 d['createdAt'] = (log.timestamp_submitted.isoformat()
                                   if log and log.timestamp_submitted else today.isoformat())
+                d['isAdhoc'] = False
                 daily_tasks.append(d)
+
+        # Merge ad-hoc daily tasks that exist in MasterLog today but are not template-derived
+        for l in todays_logs:
+            if l.entry_type == 'Task' and l.topic not in fired_template_topics:
+                daily_tasks.append({
+                    'id': None,
+                    'name': l.topic,
+                    'assignee': l.on_behalf_of_email,
+                    'recurrence': 'adhoc',
+                    'scheduleDay': '',
+                    'instructions': '',
+                    'status': l.status,
+                    'logId': l.log_id,
+                    'remarks': l.remarks or '',
+                    'createdAt': l.timestamp_submitted.isoformat() if l.timestamp_submitted else today.isoformat(),
+                    'isAdhoc': True
+                })
+
         daily_tasks = _sort_section(daily_tasks)
 
         # Roster assignments for today — visible to self, manager, or active handover backup.
@@ -521,6 +657,46 @@ def get_today_tasks():
         mis_tasks = _sort_section(_get_mis_tasks(user, today))
         group_tasks = _sort_section(_get_report_group_tasks(user, today))
 
+    # ── Feature 7: Carry forward skipped tasks from PREVIOUS day only ──
+    carried_forward = []
+    # Look back exactly 1 day (the most recent working day)
+    yesterday = today - timedelta(days=1)
+    # Skip weekends — if yesterday was Sunday, look at Friday; if Saturday, look at Friday
+    while yesterday.weekday() in (5, 6):  # Sat=5, Sun=6
+        yesterday -= timedelta(days=1)
+
+    skipped_rows = MasterLog.query.filter(
+        MasterLog.on_behalf_of_email == user.email,
+        MasterLog.status == 'Skip',
+        MasterLog.row_status == 'Active',
+        MasterLog.entry_date == yesterday,
+    ).all()
+
+    # Build set of today's topics (across all types) so we skip entries already addressed
+    today_topics = set()
+    for l in (todays_logs if not holiday else []):
+        today_topics.add((l.entry_type, l.topic, l.sub_topic or ''))
+
+    seen_skip_topics = set()
+    for sk in skipped_rows:
+        key = (sk.entry_type, sk.topic, sk.sub_topic or '')
+        if key in today_topics:
+            continue  # already addressed today
+        if key in seen_skip_topics:
+            continue  # only carry the most recent skip per topic
+        seen_skip_topics.add(key)
+        carried_forward.append({
+            'logId': sk.log_id,
+            'topic': sk.topic,
+            'subTopic': sk.sub_topic or '',
+            'entryType': sk.entry_type,
+            'status': 'Pending',
+            'originalStatus': 'Skip',
+            'remarks': sk.remarks or '',
+            'carriedFrom': sk.entry_date.isoformat() if sk.entry_date else '',
+            'timestamp': sk.timestamp_submitted.isoformat() if sk.timestamp_submitted else '',
+        })
+
     # Always show today's submitted task entries (even on holidays — for audit)
     query = MasterLog.query.filter(
         MasterLog.entry_date == today,
@@ -542,8 +718,10 @@ def get_today_tasks():
         'duTasks': du_tasks,
         'misTasks': mis_tasks,
         'groupTasks': group_tasks,
+        'carriedForward': carried_forward,
         'submitted': submitted,
     })
+
 
 
 @tasks_bp.route('/weekly', methods=['GET'])
@@ -1057,6 +1235,54 @@ def add_task():
     return jsonify({'success': True, 'task': template.to_dict()})
 
 
+@tasks_bp.route('/add-adhoc', methods=['POST'])
+@jwt_required()
+def add_adhoc_task():
+    user = get_current_user()
+    if not user:
+        return jsonify({'success': False}), 401
+
+    data = request.get_json() or {}
+    name = (data.get('name') or '').strip()
+    if not name:
+        return jsonify({'success': False, 'message': 'Task name required'}), 400
+
+    today = date.today()
+    
+    # Check if an ad-hoc task with the same topic/name already exists today for this user
+    existing = MasterLog.query.filter_by(
+        on_behalf_of_email=user.email,
+        entry_date=today,
+        topic=name,
+        entry_type='Task',
+        row_status='Active'
+    ).first()
+    if existing:
+        return jsonify({'success': False, 'message': 'Task already exists for today'}), 400
+
+    new_log = MasterLog(
+        log_id=_new_log_id(),
+        timestamp_submitted=datetime.now(timezone.utc),
+        submitted_by_email=user.email,
+        on_behalf_of_email=user.email,
+        on_behalf_of_name=user.name,
+        entry_type='Task',
+        entry_date=today,
+        week_number=_get_week_number(today),
+        month_year=today.strftime('%B %Y'),
+        topic=name,
+        status='Pending',
+        remarks='',
+        row_status='Active',
+    )
+    db.session.add(new_log)
+    db.session.commit()
+
+    log_audit(user.email, 'ADD_ADHOC_TASK', 'task', name, after=new_log.to_dict())
+
+    return jsonify({'success': True, 'task': new_log.to_dict()})
+
+
 @tasks_bp.route('/snapshot', methods=['GET'])
 @jwt_required()
 def get_snapshot():
@@ -1075,3 +1301,112 @@ def get_snapshot():
 
     entries = [r.to_dict() for r in query.all()]
     return jsonify({'success': True, 'snapshot': entries})
+
+
+@tasks_bp.route('/history', methods=['GET'])
+@jwt_required()
+def get_task_history():
+    """Return paginated MasterLog entries (all types) for the current user.
+
+    Query params:
+        from   YYYY-MM-DD  (default: 30 days ago)
+        to     YYYY-MM-DD  (default: today)
+        type   entry type filter: Task | MISReport | Roster | DataUpdate | ReportGroup | '' (all)
+        status status filter: Done | Pending | Skip | '' (all)
+        page   page number (1-indexed, default 1)
+        per    items per page (default 50, max 200)
+    """
+    user = get_current_user()
+    if not user:
+        return jsonify({'success': False}), 401
+
+    today = date.today()
+    default_from = today - timedelta(days=30)
+
+    try:
+        from_date = date.fromisoformat(request.args.get('from', default_from.isoformat()))
+    except ValueError:
+        from_date = default_from
+    try:
+        to_date = date.fromisoformat(request.args.get('to', today.isoformat()))
+    except ValueError:
+        to_date = today
+
+    entry_type_filter = request.args.get('type', '').strip()
+    status_filter = request.args.get('status', '').strip()
+
+    try:
+        page = max(1, int(request.args.get('page', 1)))
+        per = min(200, max(1, int(request.args.get('per', 50))))
+    except ValueError:
+        page, per = 1, 50
+
+    query = MasterLog.query.filter(
+        MasterLog.row_status != 'Amended',
+        MasterLog.entry_date >= from_date,
+        MasterLog.entry_date <= to_date,
+    )
+
+    if not role_at_least(user.role, 'Manager'):
+        query = query.filter(MasterLog.on_behalf_of_email == user.email)
+    else:
+        # Managers see their dept; SuperAdmin sees all
+        if user.role != 'SuperAdmin':
+            dept_emails = [u.email for u in User.query.filter_by(department=user.department).all()]
+            query = query.filter(MasterLog.on_behalf_of_email.in_(dept_emails))
+
+    if entry_type_filter:
+        query = query.filter(MasterLog.entry_type == entry_type_filter)
+    if status_filter:
+        query = query.filter(MasterLog.status == status_filter)
+
+    query = query.order_by(MasterLog.entry_date.desc(), MasterLog.timestamp_submitted.desc())
+
+    total = query.count()
+    rows = query.offset((page - 1) * per).limit(per).all()
+
+    # Also pull Roster history from RosterLog for this user
+    roster_entries = []
+    if not entry_type_filter or entry_type_filter == 'Roster':
+        rq = RosterLog.query.filter(
+            RosterLog.date >= from_date,
+            RosterLog.date <= to_date,
+        )
+        if not role_at_least(user.role, 'Manager'):
+            rq = rq.filter(
+                db.or_(
+                    RosterLog.employee == user.email,
+                    RosterLog.employee == user.name,
+                )
+            )
+        if status_filter:
+            rq = rq.filter(RosterLog.status == status_filter)
+        for rl in rq.all():
+            roster_entries.append({
+                'logId': f'ROSTER_{rl.date}_{rl.role}',
+                'entryDate': rl.date.isoformat() if rl.date else '',
+                'entryType': 'Roster',
+                'topic': rl.role,
+                'subTopic': '',
+                'status': rl.status,
+                'remarks': '',
+                'onBehalfOfEmail': rl.employee,
+                'onBehalfOfName': rl.employee,
+                'timestampSubmitted': rl.updated_at.isoformat() if rl.updated_at else '',
+                'isLate': False,
+            })
+
+    entries = [r.to_dict() for r in rows]
+
+    return jsonify({
+        'success': True,
+        'entries': entries,
+        'rosterEntries': roster_entries,
+        'total': total,
+        'page': page,
+        'per': per,
+        'pages': (total + per - 1) // per if per > 0 else 1,
+        'fromDate': from_date.isoformat(),
+        'toDate': to_date.isoformat(),
+    })
+

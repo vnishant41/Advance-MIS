@@ -90,11 +90,21 @@ export default {
             'Done': 'var(--success)', 'Blocked': 'var(--danger)'
         };
 
+        const isMgr = ['SuperAdmin', 'Manager'].includes(window.currentUser?.role);
+
         board.innerHTML = this.statuses.map(status => {
             const columnTasks = filtered
                 .filter(t => t.status === status)
                 .slice()
                 .sort((a, b) => (a.position ?? 0) - (b.position ?? 0));
+
+            // "Clear Completed" button for Done column (Manager+ only)
+            const clearBtn = (status === 'Done' && isMgr && columnTasks.length > 0)
+                ? `<button class="kanban-clear-btn" id="kanban-clear-done" title="Delete all completed tasks">
+                       <i class="fas fa-trash-alt"></i> Clear
+                   </button>`
+                : '';
+
             return `
                 <div class="kanban-column" data-status="${status}">
                     <div class="kanban-column-header">
@@ -102,7 +112,10 @@ export default {
                             <span style="width:8px; height:8px; border-radius:50%; background:${statusColors[status] || 'var(--text-muted)'};"></span>
                             ${status}
                         </span>
-                        <span class="kanban-column-count">${columnTasks.length}</span>
+                        <span style="display:flex; align-items:center; gap:6px;">
+                            ${clearBtn}
+                            <span class="kanban-column-count">${columnTasks.length}</span>
+                        </span>
                     </div>
                     <div class="kanban-cards" data-status="${status}">
                         ${columnTasks.map(t => this.renderCard(t)).join('')}
@@ -113,6 +126,22 @@ export default {
         }).join('');
 
         this.attachDnD();
+
+        // Wire Clear Completed button
+        document.getElementById('kanban-clear-done')?.addEventListener('click', async (e) => {
+            e.stopPropagation();
+            const doneTasks = this.tasks.filter(t => t.status === 'Done');
+            if (!doneTasks.length) return;
+            if (!confirm(`Delete ${doneTasks.length} completed task(s)? This cannot be undone.`)) return;
+            try {
+                await Promise.all(doneTasks.map(t => api.delete(`/kanban/task/${t.id}`)));
+                this.tasks = this.tasks.filter(t => t.status !== 'Done');
+                this.renderBoard();
+                App.showToast(`${doneTasks.length} completed task(s) deleted`, 'success');
+            } catch (err) {
+                App.showToast(err.message || 'Failed to delete', 'error');
+            }
+        });
     },
 
     /**
@@ -272,6 +301,13 @@ export default {
         // CROSS-COLUMN MOVE
         if (task.status !== newStatus) {
             const oldStatus = task.status;
+
+            // ── Feature 5: Blocked requires a reason ──
+            if (newStatus === 'Blocked') {
+                this._promptBlockedReason(task, taskId, oldStatus);
+                return;
+            }
+
             // Optimistic: change status, put at top of destination
             const others = this.tasks.filter(t => t.status === newStatus && t.id !== taskId);
             const minPos = others.length ? Math.min(...others.map(t => t.position ?? 0)) : 0;
@@ -355,7 +391,13 @@ export default {
             </div>
         `;
 
-        App.showModal(task.title, bodyHtml);
+        const isMgr = ['SuperAdmin', 'Manager'].includes(window.currentUser?.role);
+        const deleteBtn = isMgr
+            ? `<button class="btn btn-danger btn-sm" id="btn-delete-kt" style="margin-right:auto;"><i class="fas fa-trash"></i> Delete Task</button>`
+            : '';
+
+        App.showModal(task.title, bodyHtml,
+            `${deleteBtn}<button class="btn btn-outline" onclick="App.closeModal()">Close</button>`);
 
         setTimeout(() => {
             document.getElementById('btn-add-comment')?.addEventListener('click', async () => {
@@ -368,6 +410,20 @@ export default {
                     this.showTaskDetail(taskId);
                 } catch (err) {
                     App.showToast('Failed to add comment', 'error');
+                }
+            });
+
+            // Delete task button (Manager+)
+            document.getElementById('btn-delete-kt')?.addEventListener('click', async () => {
+                if (!confirm('Delete this task permanently?')) return;
+                try {
+                    await api.delete(`/kanban/task/${taskId}`);
+                    this.tasks = this.tasks.filter(t => t.id !== taskId);
+                    this.renderBoard();
+                    App.closeModal();
+                    App.showToast('Task deleted', 'success');
+                } catch (err) {
+                    App.showToast(err.message || 'Failed to delete', 'error');
                 }
             });
         }, 50);
@@ -454,6 +510,46 @@ export default {
                     App.showToast('Sprint created', 'success');
                 } catch (err) {
                     App.showToast(err.message || 'Failed', 'error');
+                }
+            });
+        }, 50);
+    },
+
+    /** Feature 5: Prompt for blocked reason before moving to Blocked status */
+    _promptBlockedReason(task, taskId, oldStatus) {
+        App.showModal(
+            'Blocked Reason Required',
+            `<div style="margin-bottom:12px; color:var(--text-secondary); font-size:.85rem;">
+                Please provide a reason for blocking <strong>${App.escapeHtml(task.title)}</strong>
+            </div>
+            <label>Blocked Reason *</label>
+            <textarea id="blocked-reason-input" rows="3" style="width:100%; resize:vertical;" placeholder="E.g., Waiting for data from vendor"></textarea>`,
+            `<button class="btn btn-outline" onclick="App.closeModal()">Cancel</button>
+             <button class="btn btn-danger" id="blocked-reason-save"><i class="fas fa-ban"></i> Block Task</button>`
+        );
+
+        setTimeout(() => {
+            document.getElementById('blocked-reason-save')?.addEventListener('click', async () => {
+                const reason = document.getElementById('blocked-reason-input')?.value?.trim();
+                if (!reason) {
+                    App.showToast('Blocked reason is required', 'warning');
+                    return;
+                }
+                try {
+                    await api.put(`/kanban/task/${taskId}`, {
+                        status: 'Blocked',
+                        blockedReason: reason,
+                    });
+                    task.status = 'Blocked';
+                    task.blockedReason = reason;
+                    const others = this.tasks.filter(t => t.status === 'Blocked' && t.id !== taskId);
+                    const minPos = others.length ? Math.min(...others.map(t => t.position ?? 0)) : 0;
+                    task.position = minPos - 1;
+                    this.renderBoard();
+                    App.closeModal();
+                    App.showToast('Task blocked', 'success');
+                } catch (err) {
+                    App.showToast(err.message || 'Failed to block task', 'error');
                 }
             });
         }, 50);

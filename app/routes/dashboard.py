@@ -90,10 +90,12 @@ def get_stats():
             pending += 1
 
     # Recurring TaskTemplates the user should handle today
+    fired_template_topics = set()
     for t in _filter_tasks_for_user(TaskTemplate.query.all(), user, on_date=today):
         if should_fire_with_override('TaskTemplate', t.name, '',
                                       t.recurrence, getattr(t, 'schedule_day', '') or '',
                                       today, override_index):
+            fired_template_topics.add(t.name)
             _bump('Task', t.name, '')
 
     # MIS reports scheduled today
@@ -109,6 +111,17 @@ def get_stats():
     # Report Groups
     for gr in _get_report_group_tasks(user, today):
         _bump('ReportGroup', gr.get('name', ''), '')
+
+    # Ad-hoc tasks (stored in MasterLog but not template-derived)
+    for r in today_rows:
+        if r.entry_type == 'Task' and r.topic not in fired_template_topics:
+            scheduled += 1
+            if r.status == 'Done':
+                done += 1
+            elif r.status == 'Skip':
+                skip += 1
+            else:
+                pending += 1
 
     # Roster lives in RosterLog (not MasterLog) — bucket separately
     roster_principals = _active_handover_principals(user, today)
@@ -254,8 +267,8 @@ def get_pending():
 @jwt_required()
 def get_team():
     user = get_current_user()
-    if not user or not role_at_least(user.role, 'Manager'):
-        return jsonify({'success': False, 'message': 'Manager+ required'}), 403
+    if not user or not role_at_least(user.role, 'Teammate'):
+        return jsonify({'success': False, 'message': 'Teammate+ required'}), 403
 
     today = date.today()
 
@@ -263,6 +276,9 @@ def get_team():
         scoped_users = User.query.filter_by(active=True).all()
     else:
         scoped_users = User.query.filter_by(department=user.department, active=True).all()
+
+    # Only include Teammates in the KPI tracking (exclude Managers, Leaders like Garima)
+    scoped_users = [u for u in scoped_users if u.role == 'Teammate']
 
     emp_stats = {}
     for u in scoped_users:
@@ -273,6 +289,15 @@ def get_team():
             'dept': u.department,
             'done': 0, 'pending': 0, 'skip': 0, 'late': 0, 'total': 0,
             'lastActive': '',
+            # Per entry-type breakdown
+            'breakdown': {
+                'Task': {'done': 0, 'pending': 0, 'skip': 0},
+                'MISReport': {'done': 0, 'pending': 0, 'skip': 0},
+                'DataUpdate': {'done': 0, 'pending': 0, 'skip': 0},
+                'ReportGroup': {'done': 0, 'pending': 0, 'skip': 0},
+            },
+            'tasks': [],  # individual task entries for today
+            'score': 0,   # completion percentage
         }
 
     rows = MasterLog.query.filter(
@@ -288,17 +313,337 @@ def get_team():
         ds = r.entry_date.isoformat() if r.entry_date else ''
         if r.entry_date == today:
             emp_stats[em]['total'] += 1
-            if r.status == 'Done': emp_stats[em]['done'] += 1
-            elif r.status == 'Pending': emp_stats[em]['pending'] += 1
-            elif r.status == 'Skip': emp_stats[em]['skip'] += 1
-            if r.is_late: emp_stats[em]['late'] += 1
+            etype = r.entry_type or 'Task'
+            if r.status == 'Done':
+                emp_stats[em]['done'] += 1
+                if etype in emp_stats[em]['breakdown']:
+                    emp_stats[em]['breakdown'][etype]['done'] += 1
+            elif r.status == 'Pending':
+                emp_stats[em]['pending'] += 1
+                if etype in emp_stats[em]['breakdown']:
+                    emp_stats[em]['breakdown'][etype]['pending'] += 1
+            elif r.status == 'Skip':
+                emp_stats[em]['skip'] += 1
+                if etype in emp_stats[em]['breakdown']:
+                    emp_stats[em]['breakdown'][etype]['skip'] += 1
+            if r.is_late:
+                emp_stats[em]['late'] += 1
+            # Individual task entry
+            emp_stats[em]['tasks'].append({
+                'logId': r.log_id,
+                'topic': r.topic,
+                'subTopic': r.sub_topic or '',
+                'entryType': etype,
+                'status': r.status,
+                'remarks': r.remarks or '',
+                'timestamp': r.timestamp_submitted.isoformat() if r.timestamp_submitted else '',
+            })
         if not emp_stats[em]['lastActive'] or ds > emp_stats[em]['lastActive']:
             emp_stats[em]['lastActive'] = ds
+
+    # Compute score (percentage done of total)
+    for em, st in emp_stats.items():
+        if st['total'] > 0:
+            st['score'] = round((st['done'] / st['total']) * 100)
+        else:
+            st['score'] = 0
 
     return jsonify({
         'success': True,
         'today': today.isoformat(),
         'team': list(emp_stats.values()),
+    })
+
+
+@dashboard_bp.route('/team/<email>/detail', methods=['GET'])
+@jwt_required()
+def get_team_detail(email):
+    """Detailed task sheet for a specific teammate. Teammate+ only.
+    Query params: ?from=YYYY-MM-DD&to=YYYY-MM-DD (default: today)
+    """
+    user = get_current_user()
+    if not user or not role_at_least(user.role, 'Teammate'):
+        return jsonify({'success': False, 'message': 'Teammate+ required'}), 403
+
+    from flask import request as req
+    from_date = date.today()
+    to_date = date.today()
+    try:
+        if req.args.get('from'):
+            from_date = date.fromisoformat(req.args['from'])
+        if req.args.get('to'):
+            to_date = date.fromisoformat(req.args['to'])
+    except ValueError:
+        pass
+
+    target_user = User.query.filter_by(email=email.lower()).first()
+    if not target_user:
+        return jsonify({'success': False, 'message': 'User not found'}), 404
+
+    primary_rows = MasterLog.query.filter(
+        MasterLog.row_status != 'Amended',
+        MasterLog.on_behalf_of_email == email.lower(),
+        MasterLog.entry_date >= from_date,
+        MasterLog.entry_date <= to_date,
+    ).all()
+
+    # Fetch MasterLog rows where they acted as backup
+    backup_rows = MasterLog.query.filter(
+        MasterLog.row_status != 'Amended',
+        MasterLog.submitted_by_email == email.lower(),
+        MasterLog.on_behalf_of_email != email.lower(),
+        MasterLog.entry_date >= from_date,
+        MasterLog.entry_date <= to_date,
+    ).all()
+
+    from app.routes.tasks import should_fire_with_override, _load_override_index
+    from app.models import Report, RosterConfig, RosterLog, TaskTemplate, CommodityConfig
+
+    all_reports = Report.query.all()
+    primary_logs_map = {(l.entry_date, l.topic, l.sub_topic or ''): l for l in primary_rows}
+
+    users_map = {}
+    for u in User.query.all():
+        users_map[u.email.lower()] = u.email.lower()
+        users_map[u.name.lower()] = u.email.lower()
+
+    user_commodities = [uc.strip().lower() for uc in (target_user.commodities or '').split(',') if uc.strip()]
+
+    entries = []
+    visited_log_ids = set()
+
+    # Loop dates in range
+    curr_date = from_date
+    while curr_date <= to_date:
+        override_index = _load_override_index(curr_date)
+        for r in all_reports:
+            primary_assignee = (r.primary_assignee or '').lower()
+            if email.lower() not in primary_assignee and target_user.name.lower() not in primary_assignee:
+                continue
+
+
+            freq = r.frequency or 'Daily'
+            sched_day = r.schedule_day or ''
+            if not should_fire_with_override('Report', r.name, '', freq, sched_day, curr_date, override_index):
+                continue
+
+            log = primary_logs_map.get((curr_date, r.name, ''))
+            if log:
+                visited_log_ids.add(log.log_id)
+                entries.append({
+                    'logId': log.log_id,
+                    'entryDate': log.entry_date.isoformat(),
+                    'topic': log.topic,
+                    'subTopic': log.sub_topic or '',
+                    'entryType': log.entry_type or 'MISReport',
+                    'status': log.status,
+                    'remarks': log.remarks or '',
+                    'timestamp': log.timestamp_submitted.isoformat() if log.timestamp_submitted else '',
+                    'isLate': log.is_late,
+                    'isUnfilled': False
+                })
+            else:
+                entries.append({
+                    'logId': f"UNFILLED_{curr_date.isoformat()}_{r.name}",
+                    'entryDate': curr_date.isoformat(),
+                    'topic': r.name,
+                    'subTopic': '',
+                    'entryType': 'MISReport',
+                    'status': 'Pending',
+                    'remarks': 'Report scheduled but not submitted (unfilled)',
+                    'timestamp': '',
+                })
+
+        for t in TaskTemplate.query.all():
+            assignee = (t.assignee or '').strip().lower()
+            if not assignee or assignee in ('all', 'yes', 'no'):
+                assignee_email = email.lower()
+            else:
+                assignee_email = users_map.get(assignee, email.lower())
+
+            if assignee_email != email.lower():
+                continue
+
+            freq = t.recurrence or 'Daily'
+            sched_day = t.schedule_day or ''
+            if not should_fire_with_override('TaskTemplate', t.name, '', freq, sched_day, curr_date, override_index):
+                continue
+
+            log = primary_logs_map.get((curr_date, t.name, ''))
+            if log:
+                visited_log_ids.add(log.log_id)
+                entries.append({
+                    'logId': log.log_id,
+                    'entryDate': log.entry_date.isoformat(),
+                    'topic': log.topic,
+                    'subTopic': log.sub_topic or '',
+                    'entryType': log.entry_type or 'Task',
+                    'status': log.status,
+                    'remarks': log.remarks or '',
+                    'timestamp': log.timestamp_submitted.isoformat() if log.timestamp_submitted else '',
+                    'isLate': log.is_late,
+                    'isUnfilled': False
+                })
+            else:
+                entries.append({
+                    'logId': f"TASK_UNFILLED_{curr_date.isoformat()}_{t.name}",
+                    'entryDate': curr_date.isoformat(),
+                    'topic': t.name,
+                    'subTopic': '',
+                    'entryType': 'Task',
+                    'status': 'Pending',
+                    'remarks': 'Task scheduled but not submitted (unfilled)',
+                    'timestamp': '',
+                    'isLate': curr_date < date.today(),
+                    'isUnfilled': True
+                })
+
+        for c in CommodityConfig.query.all():
+            matched = False
+            for assignee in (c.mode, c.primary_assignee):
+                if assignee:
+                    a = assignee.strip().lower()
+                    if a in (email.lower(), target_user.name.lower()) or a in ('all', 'yes', 'no'):
+                        matched = True
+                        break
+                    if users_map.get(a) == email.lower():
+                        matched = True
+                        break
+
+            if not matched and user_commodities:
+                if any(uc in c.commodity.lower() for uc in user_commodities):
+                    matched = True
+
+            if not matched:
+                continue
+
+            freq = c.type or 'Daily'
+            sched_day = c.schedule_day or ''
+            if not should_fire_with_override('CommodityConfig', f"{c.commodity}::{c.type}", c.factor, freq, sched_day, curr_date, override_index):
+                continue
+
+            topic_name = f"{c.commodity}::{c.type}"
+            log = primary_logs_map.get((curr_date, topic_name, c.factor))
+            if log:
+                visited_log_ids.add(log.log_id)
+                entries.append({
+                    'logId': log.log_id,
+                    'entryDate': log.entry_date.isoformat(),
+                    'topic': log.topic,
+                    'subTopic': log.sub_topic or '',
+                    'entryType': log.entry_type or 'DataUpdate',
+                    'status': log.status,
+                    'remarks': log.remarks or '',
+                    'timestamp': log.timestamp_submitted.isoformat() if log.timestamp_submitted else '',
+                    'isLate': log.is_late,
+                    'isUnfilled': False
+                })
+            else:
+                entries.append({
+                    'logId': f"DU_UNFILLED_{curr_date.isoformat()}_{c.commodity}_{c.factor}",
+                    'entryDate': curr_date.isoformat(),
+                    'topic': topic_name,
+                    'subTopic': c.factor,
+                    'entryType': 'DataUpdate',
+                    'status': 'Pending',
+                    'remarks': 'Factor task scheduled but not submitted (unfilled)',
+                    'timestamp': '',
+                    'isLate': curr_date < date.today(),
+                    'isUnfilled': True
+                })
+
+        # ── Roster entries for this date ──────────────────────────────────────
+        roster_log_index = {l.role: l for l in RosterLog.query.filter_by(date=curr_date).all()}
+        for rc in RosterConfig.query.all():
+            # Check if this roster config belongs to the target user (email or name match)
+            emp = (rc.employee or '').lower().strip()
+            if emp != email.lower() and emp != target_user.name.lower():
+                continue
+            # Check if it should fire today
+            if not should_fire_with_override('RosterConfig', rc.role, '',
+                                              rc.frequency, rc.schedule_day or '',
+                                              curr_date, override_index):
+                continue
+            rl = roster_log_index.get(rc.role)
+            if rl:
+                entries.append({
+                    'logId': f"ROSTER_{curr_date.isoformat()}_{rc.role}",
+                    'entryDate': curr_date.isoformat(),
+                    'topic': rc.role,
+                    'subTopic': '',
+                    'entryType': 'Roster',
+                    'status': rl.status,
+                    'remarks': rc.remark or '',
+                    'timestamp': rl.updated_at.isoformat() if rl.updated_at else '',
+                    'isLate': curr_date < date.today() and rl.status != 'Done',
+                    'isUnfilled': False
+                })
+            else:
+                entries.append({
+                    'logId': f"ROSTER_UNFILLED_{curr_date.isoformat()}_{rc.role}",
+                    'entryDate': curr_date.isoformat(),
+                    'topic': rc.role,
+                    'subTopic': '',
+                    'entryType': 'Roster',
+                    'status': 'Pending',
+                    'remarks': rc.remark or 'Roster not marked yet',
+                    'timestamp': '',
+                    'isLate': curr_date < date.today(),
+                    'isUnfilled': True
+                })
+
+        curr_date += timedelta(days=1)
+
+    # Append any ad-hoc submissions
+    for l in primary_rows:
+        if l.log_id not in visited_log_ids:
+            entries.append({
+                'logId': l.log_id,
+                'entryDate': l.entry_date.isoformat(),
+                'topic': l.topic,
+                'subTopic': l.sub_topic or '',
+                'entryType': l.entry_type or 'MISReport',
+                'status': l.status,
+                'remarks': l.remarks or '',
+                'timestamp': l.timestamp_submitted.isoformat() if l.timestamp_submitted else '',
+                'isLate': l.is_late,
+                'isUnfilled': False
+            })
+
+    # Sort entries by entryDate desc, then timestamp desc
+    entries.sort(key=lambda x: (x['entryDate'], x['timestamp'] or ''), reverse=True)
+
+    # Process backup rows
+    backup_entries = []
+    for l in backup_rows:
+        backup_entries.append({
+            'logId': l.log_id,
+            'entryDate': l.entry_date.isoformat(),
+            'topic': l.topic,
+            'subTopic': l.sub_topic or '',
+            'entryType': l.entry_type or 'MISReport',
+            'status': l.status,
+            'remarks': l.remarks or '',
+            'timestamp': l.timestamp_submitted.isoformat() if l.timestamp_submitted else '',
+            'isLate': l.is_late,
+            'onBehalfOfEmail': l.on_behalf_of_email,
+            'onBehalfOfName': l.on_behalf_of_name or l.on_behalf_of_email
+        })
+    backup_entries.sort(key=lambda x: (x['entryDate'], x['timestamp'] or ''), reverse=True)
+
+    done_count = sum(1 for e in entries if e['status'] == 'Done')
+    total_count = len(entries)
+
+    return jsonify({
+        'success': True,
+        'user': target_user.to_dict(),
+        'fromDate': from_date.isoformat(),
+        'toDate': to_date.isoformat(),
+        'entries': entries,
+        'backupEntries': backup_entries,
+        'totalCount': total_count,
+        'doneCount': done_count,
+        'score': round((done_count / total_count) * 100) if total_count > 0 else 0,
     })
 
 

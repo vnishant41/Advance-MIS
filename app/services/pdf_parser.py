@@ -14,12 +14,13 @@ TYPE_TO_CATEGORY = {
     'text': 'Sections',
     'heading': 'Sections',
     'commentary': 'Comm',
+    'news': 'News',
     'table': 'Table',
     'chart': 'Chart',
     'image': 'Image',
 }
 
-CATEGORY_ORDER = ['Sections', 'Comm', 'Table', 'Chart', 'Image']
+CATEGORY_ORDER = ['Sections', 'Comm', 'News', 'Table', 'Chart', 'Image']
 
 
 def analyze_pdf(filepath, report_type='', template_config=None):
@@ -77,6 +78,7 @@ def analyze_pdf(filepath, report_type='', template_config=None):
                         'x1': float(b.get('x1', 0)),
                         'y1': float(b.get('y1', 0)),
                         'text': b.get('text', ''),
+                        'heading': b.get('heading', ''),
                     }
                     for b in template_config
                 ]
@@ -304,7 +306,7 @@ def _has_visual(page, zone_bbox):
 def _page_has_type(page, box_type):
     """Page-wide fallback: does the page contain ANY element of this type?"""
     try:
-        if box_type in ('text', 'commentary', 'name', 'date', 'heading'):
+        if box_type in ('text', 'commentary', 'name', 'date', 'heading', 'news'):
             text = page.extract_text() or ''
             return len(text.strip()) > 0
         if box_type == 'table':
@@ -329,6 +331,8 @@ def _check_box(page, box_type, x0, y0, x1, y1, tol):
     region, zone_bbox = _zone(page, x0, y0, x1, y1, tol)
     if box_type == 'commentary':
         return _has_text(region, 30)
+    if box_type == 'news':
+        return _has_text(region, 15)
     if box_type in ('text', 'name', 'date', 'heading'):
         return _has_text(region, 1)
     if box_type == 'table':
@@ -419,6 +423,8 @@ def _run_template_validation(pdf, config, result):
         page_num = int(box.get('page', 1))
         box_type = box.get('type', 'text').lower()
         category = TYPE_TO_CATEGORY.get(box_type, 'Sections')
+        heading_text = box.get('heading', '')
+        saved_text = (box.get('text') or '').strip()
 
         bucket = category_buckets.setdefault(
             category,
@@ -426,22 +432,33 @@ def _run_template_validation(pdf, config, result):
         )
         bucket['total'] += 1
 
-        if page_num < 1 or page_num > len(pdf.pages):
+        # Determine which page we should look at in the PDF.
+        # If there's an associated heading_text, find it in the PDF first.
+        actual_page = page_num
+        if heading_text:
+            found_page = _find_text_on_pdf(pdf, heading_text, prefer_page=page_num)
+            if found_page:
+                actual_page = found_page
+        elif box_type in ('name', 'date', 'heading') and saved_text:
+            found_page = _find_text_on_pdf(pdf, saved_text, prefer_page=page_num)
+            if found_page:
+                actual_page = found_page
+
+        if actual_page < 1 or actual_page > len(pdf.pages):
             validations[label] = 'fail'
             bucket['failedLabels'].append(label)
             detail_log.append({
                 'label': label, 'type': box_type, 'page': page_num,
+                'foundOnPage': actual_page,
                 'status': 'fail', 'extractedText': '',
             })
             continue
 
-        page = pdf.pages[page_num - 1]
+        page = pdf.pages[actual_page - 1]
         x0 = float(box.get('x0', 0))
         y0 = float(box.get('y0', 0))
         x1 = float(box.get('x1', 0))
         y1 = float(box.get('y1', 0))
-        saved_text = (box.get('text') or '').strip()
-        actual_page = page_num
 
         status = 'fail'
         try:
@@ -453,12 +470,11 @@ def _run_template_validation(pdf, config, result):
                 relaxed_passes += 1
             else:
                 # Cross-page text-content fallback: if we saved the text content of
-                # this element, search neighboring pages for it. Sections drift to
-                # different page numbers between report runs — text content is stable.
+                # this element, search neighboring pages for it.
                 relocated_page = None
-                if saved_text and box_type in ('name', 'date', 'heading', 'commentary', 'text'):
-                    relocated_page = _find_text_on_pdf(pdf, saved_text, prefer_page=page_num)
-                if relocated_page and relocated_page != page_num:
+                if saved_text and box_type in ('name', 'date', 'heading', 'commentary', 'text', 'news'):
+                    relocated_page = _find_text_on_pdf(pdf, saved_text, prefer_page=actual_page)
+                if relocated_page and relocated_page != actual_page:
                     actual_page = relocated_page
                     page = pdf.pages[relocated_page - 1]
                     # Count this as a 'pass' since we found the saved content — just
@@ -474,7 +490,7 @@ def _run_template_validation(pdf, config, result):
         # Extract the actual text content for text-like elements so we can
         # display report name / date / heading values in the analysis result.
         extracted_text = ''
-        if box_type in ('name', 'date', 'heading', 'text', 'commentary'):
+        if box_type in ('name', 'date', 'heading', 'text', 'commentary', 'news'):
             extracted_text = _extract_text_in_box(page, x0, y0, x1, y1)
 
         if extracted_text:
@@ -968,6 +984,7 @@ def auto_detect_elements(filepath):
                 # Track the y-bottom of the most recent heading on this page so we can
                 # mark "the paragraph directly below it" as commentary.
                 last_heading_bottom = None
+                current_heading_text = ''
                 for para in paras:
                     text = para['text']
                     px0, py0, px1, py1 = para['bbox']
@@ -1077,13 +1094,23 @@ def auto_detect_elements(filepath):
                     ):
                         is_heading = False
 
-                    if is_heading:
-                        ptype = 'heading'
+                    if is_noise_line:
+                        ptype = 'text'
+                    elif is_heading:
+                        h_lower = text.lower().strip()
+                        if 'market update' in h_lower or 'onion' in h_lower:
+                            ptype = 'news'
+                        else:
+                            ptype = 'heading'
                         last_heading_bottom = py1
+                        current_heading_text = text
                     elif para['word_count'] >= 30:
-                        # Substantial paragraph → commentary, regardless of heading
-                        # proximity. Captures bullet lists with multiple long items.
-                        ptype = 'commentary'
+                        # Substantial paragraph
+                        h_lower = current_heading_text.lower().strip()
+                        if 'market update' in h_lower or 'onion' in h_lower:
+                            ptype = 'news'
+                        else:
+                            ptype = 'commentary'
                         # Advance the "in-section" anchor so following short bullets
                         # still get attached if they continue the section.
                         if last_heading_bottom is not None:
@@ -1093,9 +1120,12 @@ def auto_detect_elements(filepath):
                         and 0 < (py0 - last_heading_bottom) <= 80
                         and para['word_count'] >= 10
                     ):
-                        # Shorter paragraph directly under the most recent heading or
-                        # commentary → still part of the section's commentary.
-                        ptype = 'commentary'
+                        # Shorter paragraph directly under the most recent heading or commentary
+                        h_lower = current_heading_text.lower().strip()
+                        if 'market update' in h_lower or 'onion' in h_lower:
+                            ptype = 'news'
+                        else:
+                            ptype = 'commentary'
                         last_heading_bottom = py1
                     else:
                         ptype = 'text'
@@ -1113,6 +1143,17 @@ def auto_detect_elements(filepath):
                     })
     except Exception as e:
         return [{'error': f'auto-detect failed: {e}'}]
+
+    # Associate each element with the most recent preceding heading/name/news.
+    try:
+        elements.sort(key=lambda e: (e.get('page', 1), e.get('y0', 0), e.get('x0', 0)))
+        current_heading = ''
+        for el in elements:
+            if el.get('type') in ('heading', 'name', 'news'):
+                current_heading = el.get('text', '')
+            el['heading'] = current_heading
+    except Exception as e:
+        return [{'error': f'auto-detect heading association failed: {e}'}]
 
     return elements
 

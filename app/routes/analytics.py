@@ -6,8 +6,9 @@ from datetime import datetime, date, timedelta, timezone
 from flask import Blueprint, request, jsonify, Response
 from flask_jwt_extended import jwt_required
 from app import db
-from app.models import MasterLog, User
+from app.models import MasterLog, User, Report
 from app.auth import get_current_user, role_at_least
+from app.routes.tasks import should_fire_with_override, _load_override_index
 
 analytics_bp = Blueprint('analytics', __name__)
 
@@ -99,3 +100,221 @@ def export_csv():
     for r in rows:
         writer.writerow([r.log_id, r.entry_date.isoformat() if r.entry_date else '', r.on_behalf_of_name, r.entry_type, r.topic, r.sub_topic, r.status, r.remarks, 'Yes' if r.is_late else 'No', r.submitted_by_email])
     return Response(output.getvalue(), mimetype='text/csv', headers={'Content-Disposition': f'attachment; filename=erp-export-{date.today().isoformat()}.csv'})
+
+
+@analytics_bp.route('/team-updates', methods=['GET'])
+@jwt_required()
+def get_team_updates():
+    user = get_current_user()
+    if not user or not role_at_least(user.role, 'Teammate'):
+        return jsonify({'success': False, 'message': 'Teammate+ required'}), 403
+
+    period = request.args.get('period', 'daily')
+    ref_date_str = request.args.get('date')
+
+    try:
+        if ref_date_str:
+            ref_date = date.fromisoformat(ref_date_str)
+        else:
+            ref_date = date.today()
+    except ValueError:
+        ref_date = date.today()
+
+    # Calculate start and end date based on period
+    if period == 'weekly':
+        start_date = ref_date - timedelta(days=ref_date.weekday())
+        end_date = start_date + timedelta(days=6)
+    elif period == 'monthly':
+        start_date = ref_date.replace(day=1)
+        if ref_date.month == 12:
+            next_month = ref_date.replace(year=ref_date.year + 1, month=1, day=1)
+        else:
+            next_month = ref_date.replace(month=ref_date.month + 1, day=1)
+        end_date = next_month - timedelta(days=1)
+    else:  # daily
+        start_date = ref_date
+        end_date = ref_date
+
+    # Query scope
+    if user.role == 'SuperAdmin':
+        scoped_users = User.query.filter_by(active=True).all()
+    else:
+        scoped_users = User.query.filter_by(department=user.department, active=True).all()
+
+    # Only include Teammates
+    scoped_users = [u for u in scoped_users if u.role == 'Teammate']
+    user_emails = [u.email.lower() for u in scoped_users]    # Initialize stats map
+    team_stats = {}
+    for u in scoped_users:
+        team_stats[u.email.lower()] = {
+            'email': u.email,
+            'name': u.name,
+            'role': u.role,
+            'dept': u.department,
+            'done': 0,
+            'pending': 0,
+            'skip': 0,
+            'late': 0,
+            'total': 0,
+            'score': 0,
+            'lastActive': ''
+        }
+
+
+
+    # Fetch all reports for schedule matching
+    all_reports = Report.query.all()
+
+    # Fetch MasterLog rows within date range for these users
+    logs = MasterLog.query.filter(
+        MasterLog.row_status != 'Amended',
+        MasterLog.entry_type == 'MISReport',
+        MasterLog.on_behalf_of_email.in_(user_emails),
+        MasterLog.entry_date >= start_date,
+        MasterLog.entry_date <= end_date
+    ).all()
+
+    # Index logs by (on_behalf_of_email, entry_date, topic)
+    logs_map = {}
+    for l in logs:
+        key = (l.on_behalf_of_email.lower(), l.entry_date, l.topic)
+        logs_map[key] = l
+
+    # Track which log IDs we've processed as part of the schedule
+    visited_log_ids = set()
+
+    # Loop through each date in the range to determine scheduled reports
+    curr_date = start_date
+    while curr_date <= end_date:
+        override_index = _load_override_index(curr_date)
+        for r in all_reports:
+            freq = r.frequency or 'Daily'
+            sched_day = r.schedule_day or ''
+            if not should_fire_with_override('Report', r.name, '', freq, sched_day, curr_date, override_index):
+                continue
+
+            # Does this report match any of our scoped teammates?
+            primary_assignee = (r.primary_assignee or '').lower()
+            for u in scoped_users:
+                email_lower = u.email.lower()
+                name_lower = u.name.lower()
+                if email_lower in primary_assignee or name_lower in primary_assignee:
+                    # This report is scheduled for teammate u on curr_date
+                    team_stats[email_lower]['total'] += 1
+                    
+                    # Check if they submitted a log for it
+                    log_key = (email_lower, curr_date, r.name)
+                    log = logs_map.get(log_key)
+                    if log:
+                        visited_log_ids.add(log.log_id)
+                        if log.status == 'Done':
+                            team_stats[email_lower]['done'] += 1
+                        elif log.status == 'Pending':
+                            team_stats[email_lower]['pending'] += 1
+                        elif log.status == 'Skip':
+                            team_stats[email_lower]['skip'] += 1
+                        if log.is_late:
+                            team_stats[email_lower]['late'] += 1
+                    else:
+                        # Report is scheduled but not filled (unfilled) -> counts as Pending
+                        team_stats[email_lower]['pending'] += 1
+
+        curr_date += timedelta(days=1)
+
+    # Process any logs that were submitted but were NOT in the official schedule (ad-hoc entries)
+    for log in logs:
+        if log.log_id in visited_log_ids:
+            continue
+        em = log.on_behalf_of_email.lower()
+        if em not in team_stats:
+            continue
+        if log.submitted_by_email.lower() == em:
+            team_stats[em]['total'] += 1
+            if log.status == 'Done':
+                team_stats[em]['done'] += 1
+            elif log.status == 'Pending':
+                team_stats[em]['pending'] += 1
+            elif log.status == 'Skip':
+                team_stats[em]['skip'] += 1
+            if log.is_late:
+                team_stats[em]['late'] += 1
+
+    # Get last active date overall for these users
+    active_dates = db.session.query(
+        MasterLog.on_behalf_of_email,
+        db.func.max(MasterLog.entry_date)
+    ).filter(
+        MasterLog.row_status != 'Amended',
+        MasterLog.entry_type == 'MISReport',
+        MasterLog.on_behalf_of_email.in_(user_emails)
+    ).group_by(MasterLog.on_behalf_of_email).all()
+    active_map = {email.lower(): mdate.isoformat() for email, mdate in active_dates if mdate}
+
+    for em, st in team_stats.items():
+        st['lastActive'] = active_map.get(em, '')
+        if st['total'] > 0:
+            st['score'] = round((st['done'] / st['total']) * 100)
+        else:
+            st['score'] = 0
+
+    # Calculate overall team sumup
+    total_tasks = sum(st['total'] for st in team_stats.values())
+    total_done = sum(st['done'] for st in team_stats.values())
+    total_pending = sum(st['pending'] for st in team_stats.values())
+    total_skip = sum(st['skip'] for st in team_stats.values())
+    total_late = sum(st['late'] for st in team_stats.values())
+    
+    overall_score = round((total_done / total_tasks) * 100) if total_tasks > 0 else 0
+
+    # Group by entry type for sumup breakdown
+    type_breakdown = {}
+    for r in logs:
+        etype = r.entry_type or 'MISReport'
+        if etype not in type_breakdown:
+            type_breakdown[etype] = {'total': 0, 'done': 0, 'pending': 0, 'skip': 0}
+        type_breakdown[etype]['total'] += 1
+        if r.status == 'Done':
+            type_breakdown[etype]['done'] += 1
+        elif r.status == 'Pending':
+            type_breakdown[etype]['pending'] += 1
+        elif r.status == 'Skip':
+            type_breakdown[etype]['skip'] += 1
+
+    # Daily breakdown for weekly/monthly trends
+    daily_trend = {}
+    curr = start_date
+    while curr <= end_date:
+        daily_trend[curr.isoformat()] = {'date': curr.isoformat(), 'total': 0, 'done': 0, 'pending': 0, 'skip': 0}
+        curr += timedelta(days=1)
+        
+    for r in logs:
+        rdate = r.entry_date.isoformat()
+        if rdate in daily_trend:
+            daily_trend[rdate]['total'] += 1
+            if r.status == 'Done':
+                daily_trend[rdate]['done'] += 1
+            elif r.status == 'Pending':
+                daily_trend[rdate]['pending'] += 1
+            elif r.status == 'Skip':
+                daily_trend[rdate]['skip'] += 1
+
+    sumup = {
+        'total': total_tasks,
+        'done': total_done,
+        'pending': total_pending,
+        'skip': total_skip,
+        'late': total_late,
+        'score': overall_score,
+        'byType': type_breakdown,
+        'trend': sorted(list(daily_trend.values()), key=lambda x: x['date'])
+    }
+
+    return jsonify({
+        'success': True,
+        'period': period,
+        'startDate': start_date.isoformat(),
+        'endDate': end_date.isoformat(),
+        'refDate': ref_date.isoformat(),
+        'sumup': sumup,
+        'team': list(team_stats.values())
+    })

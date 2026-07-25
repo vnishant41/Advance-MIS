@@ -66,6 +66,32 @@ export default {
         this.pendingAttachment = null;
         this.messagesEl = document.getElementById('chat-messages');
 
+        // Add event delegation for message deletion
+        this.messagesEl?.addEventListener('click', async (e) => {
+            const btn = e.target.closest('.chat-delete-btn');
+            if (!btn) return;
+            e.stopPropagation();
+            const msgId = btn.dataset.msgId;
+            if (!msgId) return;
+            if (msgId.startsWith('tmp-')) {
+                App.showToast('Please wait for the message to be sent', 'warning');
+                return;
+            }
+            if (!confirm('Delete this message?')) return;
+            try {
+                await api.delete(`/chat/message/${msgId}`);
+                const el = btn.closest('.chat-message');
+                if (el) {
+                    el.style.transition = 'opacity .3s';
+                    el.style.opacity = '0';
+                    setTimeout(() => el.remove(), 300);
+                }
+                App.showToast('Message deleted', 'success');
+            } catch (err) {
+                App.showToast(err.message || 'Failed to delete', 'error');
+            }
+        });
+
         try {
             const data = await api.get('/chat/channels');
             this.channels = data.channels || [];
@@ -112,11 +138,22 @@ export default {
             this.clearPendingAttachment();
 
             try {
-                await api.post('/chat/send', {
+                const res = await api.post('/chat/send', {
                     channel: this.currentChannel,
                     message: text,
                     attachment: attachment || undefined,
                 });
+                if (res.success && res.message) {
+                    // Update temporary ID with actual DB ID
+                    const tempEl = this.messagesEl.querySelector(`[data-id="${tempMsg.id}"]`);
+                    if (tempEl) {
+                        tempEl.setAttribute('data-id', res.message.id);
+                        const deleteBtn = tempEl.querySelector('.chat-delete-btn');
+                        if (deleteBtn) {
+                            deleteBtn.setAttribute('data-msg-id', res.message.id);
+                        }
+                    }
+                }
             } catch (err) {
                 App.showToast('Failed to send message', 'error');
             }
@@ -373,6 +410,17 @@ export default {
         const name = msg.senderName || msg.senderEmail || 'Unknown';
         const initial = (name.charAt(0) || '?').toUpperCase();
         const time = msg.timestamp ? new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '';
+        const myEmail = (window.currentUser?.email || '').toLowerCase();
+        const isMgr = ['SuperAdmin', 'Manager'].includes(window.currentUser?.role);
+        const isOwn = (msg.senderEmail || '').toLowerCase() === myEmail;
+        const canDelete = isOwn || isMgr;
+        const deleteBtn = canDelete && msg.id
+            ? `<div class="chat-msg-actions">
+                   <button class="btn-icon chat-delete-btn" data-msg-id="${msg.id}" title="Delete message">
+                       <i class="fas fa-trash"></i>
+                   </button>
+               </div>`
+            : '';
         return `
             <div class="chat-message" data-id="${msg.id}">
                 <div class="chat-msg-avatar">${initial}</div>
@@ -384,6 +432,7 @@ export default {
                     ${msg.message ? `<div class="chat-msg-text">${App.escapeHtml(msg.message)}</div>` : ''}
                     ${this.renderAttachment(msg.attachment)}
                 </div>
+                ${deleteBtn}
             </div>
         `;
     },
@@ -400,6 +449,18 @@ export default {
     onSocketMessage(msg) {
         if (msg.channel === this.currentChannel && msg.senderEmail !== window.currentUser?.email) {
             this.appendMessage(msg);
+        }
+    },
+
+    /** Handle real-time message deletion from socket */
+    onSocketMessageDeleted(data) {
+        if (data.channel === this.currentChannel) {
+            const el = this.messagesEl?.querySelector(`[data-id="${data.id}"]`);
+            if (el) {
+                el.style.transition = 'opacity .3s';
+                el.style.opacity = '0';
+                setTimeout(() => el.remove(), 300);
+            }
         }
     },
 };

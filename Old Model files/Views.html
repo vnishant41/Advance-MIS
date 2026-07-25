@@ -1,0 +1,978 @@
+<!-- ── ALL VIEWS (merged) ──────────────────────────────────── -->
+
+<div id="login" class="view active"
+  style="display:flex; align-items:center; justify-content:center; height:100vh; position:fixed; top:0; left:0; right:0; bottom:0; background:var(--bg); z-index:9999;">
+  <div class="card" style="width:100%; max-width:400px; padding:40px; text-align:center;">
+    <h2 style="margin-bottom:8px;">MIS Tracker</h2>
+    <p style="color:var(--text-muted); margin-bottom:24px;">Sign in to continue</p>
+
+    <div style="text-align:left; margin-bottom:16px;">
+      <label class="form-label">Email Address</label>
+      <input type="email" id="loginEmail" class="form-control" placeholder="name@example.com">
+    </div>
+
+    <div style="text-align:left; margin-bottom:24px;">
+      <label class="form-label">Password</label>
+      <input type="password" id="loginPassword" class="form-control" placeholder="••••••••">
+    </div>
+
+    <button id="loginBtn" class="btn btn-primary" style="width:100%; padding:12px; font-size:16px;"
+      onclick="doLogin()">Sign In</button>
+
+    <div id="loginError" style="color:var(--danger); margin-top:16px; font-size:14px; display:none;"></div>
+  </div>
+</div>
+
+<div id="dashboard" class="view">
+  <h2>Dashboard</h2>
+
+  <div id="alertBannerArea"></div>
+
+  <div class="kpi kpi-grid" id="kpiBoxes" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="box blue">
+      <h4>Total Today</h4>
+      <div class="num" id="kpiTotal">–</div>
+    </div>
+    <div class="box green">
+      <h4>Done</h4>
+      <div class="num" id="kpiDone">–</div>
+    </div>
+    <div class="box orange">
+      <h4>Pending</h4>
+      <div class="num" id="kpiPending">–</div>
+    </div>
+  </div>
+
+  <div class="card" id="kanbanSummaryCard">
+    <h3>Kanban Snapshot</h3>
+    <div id="kanbanSummary">
+      <div class="kpi">
+        <div class="sk-kpi"><span class="sk"></span><span class="sk sk-sub"></span></div>
+        <div class="sk-kpi"><span class="sk"></span><span class="sk sk-sub"></span></div>
+        <div class="sk-kpi"><span class="sk"></span><span class="sk sk-sub"></span></div>
+        <div class="sk-kpi"><span class="sk"></span><span class="sk sk-sub"></span></div>
+      </div>
+    </div>
+  </div>
+
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; flex-wrap:wrap;" class="dash-two-col">
+    <div class="card" id="roadsterCard">
+      <h3>Today's Daily Roster Tasks</h3>
+      <div id="roadsterTasks">
+        <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>
+        <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>
+      </div>
+    </div>
+
+    <div class="card" id="taskSnapshotCard">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+        <h3 style="margin:0;">Today's Tasks</h3>
+        <button id="btnAddTodayTask" class="primary" data-role="Manager" onclick="openTodayTaskModal()" style="font-size:12px;padding:5px 12px;display:none;">+ Add Today's Task</button>
+      </div>
+      <div id="taskSnapshot">
+        <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Today's Report Progress</h3>
+    <div id="reportProgress">
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>
+    </div>
+  </div>
+
+  <div class="card collapsible-card" id="weekTrendCard">
+    <h3 onclick="toggleDashCard('weekTrendCard', 'weekTrend')" style="cursor:pointer; user-select:none;">
+      Last 7 Days <span class="collapse-toggle" id="weekTrendToggle">▾</span>
+    </h3>
+    <div id="weekTrend">
+      <div style="display:flex; gap:6px; align-items:flex-end; height:100px;">
+        <div style="flex:1;"><div class="sk" style="height:40px; width:100%; border-radius:4px 4px 0 0;"></div></div>
+        <div style="flex:1;"><div class="sk" style="height:60px; width:100%; border-radius:4px 4px 0 0;"></div></div>
+        <div style="flex:1;"><div class="sk" style="height:30px; width:100%; border-radius:4px 4px 0 0;"></div></div>
+        <div style="flex:1;"><div class="sk" style="height:70px; width:100%; border-radius:4px 4px 0 0;"></div></div>
+        <div style="flex:1;"><div class="sk" style="height:50px; width:100%; border-radius:4px 4px 0 0;"></div></div>
+        <div style="flex:1;"><div class="sk" style="height:80px; width:100%; border-radius:4px 4px 0 0;"></div></div>
+        <div style="flex:1;"><div class="sk" style="height:45px; width:100%; border-radius:4px 4px 0 0;"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Recent Entries</h3>
+    <div id="recentEntries">
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>
+    </div>
+  </div>
+</div>
+
+<div id="mis" class="view">
+  <h2>MIS Report Entry</h2>
+
+  <div class="card">
+    <div class="row">
+      <div class="field">
+        <label>Date</label>
+        <input type="date" id="misDate">
+      </div>
+      <div class="field">
+        <label>Report</label>
+        <select id="misReport">
+          <option value="">— select —</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Backup By</label>
+        <input type="text" id="misBackupBy" placeholder="optional">
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="misComponentsCard" style="display:none">
+    <h3 id="misReportTitle">Components</h3>
+    <div id="misComponents"></div>
+    <div style="margin-top:12px; display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+      <button class="primary" onclick="submitMIS(false)">Submit</button>
+      <button class="secondary" onclick="submitMIS(true)">Force Amend</button>
+      <button class="secondary" onclick="quickAllDone('mis')">⚡ Mark all Done</button>
+      <span style="color:#64748b; font-size:11px;">Shortcuts: D=Done · P=Pending · S=Skip</span>
+      <span id="misMsg" style="color:#94a3b8; font-size:12px; margin-left:auto;"></span>
+    </div>
+  </div>
+</div>
+
+<div id="du" class="view">
+  <h2>Data Update Entry</h2>
+
+  <div class="card">
+    <div class="row">
+      <div class="field">
+        <label>Date</label>
+        <input type="date" id="duDate">
+      </div>
+      <div class="field">
+        <label>Commodity</label>
+        <select id="duCommodity">
+          <option value="">— select —</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Type</label>
+        <select id="duType">
+          <option value="">— select commodity first —</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="duFactorsCard" style="display:none">
+    <h3 id="duFactorsTitle">Factors</h3>
+    <div id="duFactors"></div>
+    <div style="margin-top:12px; display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+      <button class="primary" onclick="submitDU(false)">Submit</button>
+      <button class="secondary" onclick="submitDU(true)">Force Amend</button>
+      <button class="secondary" onclick="quickAllDone('du')">⚡ Mark all Done</button>
+      <span style="color:#64748b; font-size:11px;">Shortcuts: D=Done · P=Pending · S=Skip</span>
+      <span id="duMsg" style="color:#94a3b8; font-size:12px; margin-left:auto;"></span>
+    </div>
+  </div>
+</div>
+
+<div id="task" class="view">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+    <h2 style="margin:0;">Task Entry</h2>
+    <button class="primary" onclick="openAdhocModal()" style="white-space:nowrap;">+ New Task</button>
+  </div>
+
+  <!-- Daily Tasks -->
+  <div class="card task-section" id="taskDailyCard">
+    <div class="task-section-header" onclick="toggleTaskSection('Daily')">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span class="task-freq-icon daily">D</span>
+        <div>
+          <h3 style="margin:0;">Today's Tasks</h3>
+          <span style="font-size:11px; color:#94a3b8;">Daily recurring tasks</span>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span class="task-section-count" id="taskDailyCount">0</span>
+        <button class="secondary" style="font-size:11px; padding:4px 10px;"
+          onclick="event.stopPropagation(); quickAllDoneSection('Daily')">⚡ All Done</button>
+        <span class="task-section-toggle" id="taskDailyToggle">▾</span>
+      </div>
+    </div>
+    <div class="task-section-body" id="taskDailyList">
+      <div class="sk-row"><span class="sk"></span><span class="sk sk-w-30"></span><span class="sk sk-w-50"></span></div>
+      <div class="sk-row"><span class="sk"></span><span class="sk sk-w-30"></span><span class="sk sk-w-50"></span></div>
+    </div>
+  </div>
+
+  <!-- Weekly Tasks -->
+  <div class="card task-section" id="taskWeeklyCard">
+    <div class="task-section-header" onclick="toggleTaskSection('Weekly')">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span class="task-freq-icon weekly">W</span>
+        <div>
+          <h3 style="margin:0;">Weekly Tasks</h3>
+          <span style="font-size:11px; color:#94a3b8;">Reset every Monday</span>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span class="task-section-count" id="taskWeeklyCount">0</span>
+        <button class="secondary" style="font-size:11px; padding:4px 10px;"
+          onclick="event.stopPropagation(); quickAllDoneSection('Weekly')">⚡ All Done</button>
+        <span class="task-section-toggle" id="taskWeeklyToggle">▾</span>
+      </div>
+    </div>
+    <div class="task-section-body" id="taskWeeklyList">
+      <div class="sk-row"><span class="sk"></span><span class="sk sk-w-30"></span><span class="sk sk-w-50"></span></div>
+    </div>
+  </div>
+
+  <!-- Monthly Tasks -->
+  <div class="card task-section" id="taskMonthlyCard">
+    <div class="task-section-header" onclick="toggleTaskSection('Monthly')">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span class="task-freq-icon monthly">M</span>
+        <div>
+          <h3 style="margin:0;">Monthly Tasks</h3>
+          <span style="font-size:11px; color:#94a3b8;">Reset on 1st of each month</span>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span class="task-section-count" id="taskMonthlyCount">0</span>
+        <button class="secondary" style="font-size:11px; padding:4px 10px;"
+          onclick="event.stopPropagation(); quickAllDoneSection('Monthly')">⚡ All Done</button>
+        <span class="task-section-toggle" id="taskMonthlyToggle">▾</span>
+      </div>
+    </div>
+    <div class="task-section-body" id="taskMonthlyList">
+      <div class="sk-row"><span class="sk"></span><span class="sk sk-w-30"></span><span class="sk sk-w-50"></span></div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+    <span style="color:#64748b; font-size:11px;">Shortcuts: D=Done · P=Pending · S=Skip</span>
+    <span id="taskMsg" style="color:#94a3b8; font-size:12px; margin-left:auto;"></span>
+  </div>
+</div>
+
+<!-- Ad-hoc Task Modal (top-level: must NOT be inside any view div) -->
+<div id="adhocModal"
+  style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:600; align-items:center; justify-content:center;">
+  <div class="card" style="max-width:400px; width:90%; margin:0;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+      <h3 style="margin:0;">Create New Task</h3>
+      <button class="kbtn-icon" onclick="closeAdhocModal()"><svg width="18" height="18" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12" /></svg></button>
+    </div>
+    <div class="field">
+      <label>Task Frequency</label>
+      <select id="adhocFreq">
+        <option value="Daily">Daily</option>
+        <option value="Weekly">Weekly</option>
+        <option value="Monthly">Monthly</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Task Name</label>
+      <input type="text" id="adhocName" placeholder="e.g. Check MIS reports">
+    </div>
+    <div class="field">
+      <label>Due Date <span style="font-size:11px; color:#94a3b8; font-weight:normal;">(optional timeline)</span></label>
+      <input type="date" id="adhocDueDate">
+    </div>
+    <div style="margin-top:16px; display:flex; gap:8px;">
+      <button class="primary" onclick="submitAdhocTask()">Add Task</button>
+      <button class="secondary" onclick="closeAdhocModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div id="roadster" class="view">
+  <h2>Daily Roster</h2>
+
+  <div class="kpi" id="roadsterKpi">
+    <div class="box blue">
+      <h4>Total Tasks</h4>
+      <div class="num" id="rkTotal">–</div>
+    </div>
+    <div class="box green">
+      <h4>Done</h4>
+      <div class="num" id="rkDone">–</div>
+    </div>
+    <div class="box orange">
+      <h4>Pending</h4>
+      <div class="num" id="rkPending">–</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Today's Assignments</h3>
+    <div class="row" style="margin-bottom:12px; flex-wrap:wrap;">
+      <div class="field">
+        <label>Status</label>
+        <select id="rkFilter" onchange="renderRoadsterView()">
+          <option value="all">All Tasks</option>
+          <option value="pending">Pending Only</option>
+          <option value="done">Done Only</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Frequency</label>
+        <select id="rkFreqFilter" onchange="renderRoadsterView()">
+          <option value="all">All</option>
+          <option value="Daily">Daily</option>
+          <option value="Weekly">Weekly</option>
+          <option value="Monthly">Monthly</option>
+        </select>
+      </div>
+      <div class="field" style="align-self:flex-end;">
+        <button class="secondary" onclick="loadRoadster()">Refresh</button>
+      </div>
+    </div>
+    <div id="roadsterViewList">
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>
+    </div>
+  </div>
+</div>
+
+<div id="kanban" class="view">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+    <h2 style="margin:0;">Kanban Board</h2>
+    <button id="btnKanbanNewTask" class="primary" onclick="openKanbanCreate()" style="white-space:nowrap;">+ New
+      Task</button>
+  </div>
+
+  <div class="card" style="padding:12px 16px;">
+    <div class="row" style="gap:10px; flex-wrap:wrap;">
+      <div class="field" style="flex:2; min-width:140px;">
+        <label>Search</label>
+        <input type="text" id="kSearch" placeholder="Search tasks…" oninput="renderKanban()">
+      </div>
+      <div class="field" style="min-width:120px;">
+        <label>Assignee</label>
+        <select id="kAssignee" onchange="renderKanban()">
+          <option value="">All</option>
+        </select>
+      </div>
+      <div class="field" style="min-width:120px;">
+        <label>Timeline</label>
+        <select id="kDueFilter" onchange="renderKanban()">
+          <option value="">Any</option>
+          <option value="overdue">Overdue</option>
+          <option value="today">Today</option>
+          <option value="week">Within 7 days</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div id="kanbanBoard"></div>
+
+  <!-- Create / edit modal -->
+  <div id="kModal"
+    style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:500; align-items:center; justify-content:center;">
+    <div class="card" style="max-width:540px; width:90%; margin:0; max-height:90vh; overflow-y:auto;">
+      <h3 id="kModalTitle">New Task</h3>
+
+      <!-- Read-only chips shown only on edit -->
+      <div id="kMetaChips" style="display:none; gap:8px; flex-wrap:wrap; margin-bottom:10px;">
+        <span class="kchip"><span class="kchip-label">Task</span><span id="kChipId"></span></span>
+        <span class="kchip"><span class="kchip-label">Created</span><span id="kChipCreated"></span></span>
+        <span class="kchip" id="kChipStatusWrap"><span class="kchip-label">Status</span><span
+            id="kChipStatus"></span></span>
+      </div>
+
+      <div class="field">
+        <label>Task Name</label>
+        <input type="text" id="kTitle" placeholder="What needs doing?">
+      </div>
+      <div class="field">
+        <label>Description <span style="font-size:11px; color:#94a3b8; font-weight:normal;">(context —
+            optional)</span></label>
+        <textarea id="kDesc" rows="2"></textarea>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Factor <span style="font-size:11px; color:#94a3b8; font-weight:normal;">(optional tag)</span></label>
+          <input type="text" id="kFactor" placeholder="e.g. Agri-comm, Currency">
+        </div>
+        <div class="field">
+          <label>Priority</label>
+          <select id="kPriority">
+            <option value="High">High</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="Low">Low</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label>Assigned to <span style="font-size:11px; color:#94a3b8; font-weight:normal;">(select one or more — each
+            person gets their own task copy)</span></label>
+        <div id="kAssigneeField" class="kassignee-grid"></div>
+      </div>
+      <div class="field">
+        <label>Timeline (due date)</label>
+        <input type="date" id="kDue">
+      </div>
+      <div class="field">
+        <label>Remark</label>
+        <textarea id="kRemark" rows="3" placeholder="Status note / latest update"></textarea>
+      </div>
+
+      <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+        <button id="kSaveBtn" class="primary" onclick="submitKanbanCreate()">Create</button>
+        <button class="secondary" onclick="closeKanbanModal()">Cancel</button>
+        <button id="kDeleteBtn" class="danger" style="display:none; margin-left:auto;"
+          onclick="kDelete()">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blocked reason modal -->
+  <div id="kBlockModal"
+    style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:600; align-items:center; justify-content:center;">
+    <div class="card" style="max-width:420px; width:90%; margin:0;">
+      <h3>Blocked reason required</h3>
+      <p style="color:#94a3b8; font-size:13px;">Provide the reason this task is blocked. It will be saved with the task.
+      </p>
+      <div class="field">
+        <textarea id="kBlockReason" rows="3" placeholder="e.g. waiting on legal review"></textarea>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="primary" onclick="kBlockModalConfirm()">Save & Move</button>
+        <button class="secondary" onclick="kBlockModalCancel()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conversation / Comments modal -->
+  <div id="kCommentModal"
+    style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:600; align-items:center; justify-content:center;">
+    <div class="card"
+      style="max-width:520px; width:90%; margin:0; max-height:80vh; display:flex; flex-direction:column;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h3 id="kCommentTitle" style="margin:0;">Comments</h3>
+        <button style="background:transparent; border:none; color:#94a3b8; font-size:20px; cursor:pointer;"
+          onclick="closeCommentModal()">✕</button>
+      </div>
+      <div id="kCommentList" style="flex:1; overflow-y:auto; margin-bottom:12px; max-height:360px;">
+        <div class="empty">No comments yet.</div>
+      </div>
+      <div class="field" style="margin-bottom:8px;">
+        <label>Add Comment</label>
+        <textarea id="kCommentText" rows="3" placeholder="Write a comment…"></textarea>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="secondary" onclick="closeCommentModal()">Close</button>
+        <button class="primary" onclick="addKanbanComment()">Add Comment</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div id="analytics" class="view">
+  <h2>Analytics</h2>
+
+  <div class="card">
+    <h3>KPI Breakdown</h3>
+    <div id="anKpi">
+      <div class="kpi">
+        <div class="sk-kpi"><span class="sk"></span><span class="sk sk-sub"></span></div>
+        <div class="sk-kpi"><span class="sk"></span><span class="sk sk-sub"></span></div>
+        <div class="sk-kpi"><span class="sk"></span><span class="sk sk-sub"></span></div>
+        <div class="sk-kpi"><span class="sk"></span><span class="sk sk-sub"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>SLA Breaches (component-level)</h3>
+    <div id="anSla">
+      <div class="empty">Loading…</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Pending Analysis</h3>
+    <p style="color:#94a3b8; font-size:13px; margin-top:0;">Factors that consistently never resolve.</p>
+    <div id="anPending">
+      <div class="empty">Loading…</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Commodity Comparison</h3>
+    <div class="row">
+      <div class="field">
+        <label>Commodity</label>
+        <input type="text" id="anCommodity" placeholder="e.g. Coffee">
+      </div>
+      <div class="field" style="align-self:flex-end;"><button class="primary"
+          onclick="loadComparison()">Compare</button></div>
+    </div>
+    <div id="anComparison">
+      <div class="empty">Pick a commodity to see today vs yesterday vs last week.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Export</h3>
+    <div class="row">
+      <div class="field">
+        <label>Type</label>
+        <select id="anExpType">
+          <option value="">All</option>
+          <option value="MISReport">MIS</option>
+          <option value="DataUpdate">DU</option>
+          <option value="Task">Task</option>
+        </select>
+      </div>
+      <div class="field"><label>Commodity / topic</label><input type="text" id="anExpCommodity" placeholder="optional">
+      </div>
+      <div class="field"><label>User email</label><input type="email" id="anExpUser" placeholder="optional"></div>
+      <div class="field"><label>From</label><input type="date" id="anExpFrom"></div>
+      <div class="field"><label>To</label><input type="date" id="anExpTo"></div>
+    </div>
+    <div style="margin-top:10px; display:flex; gap:8px;">
+      <button class="primary" onclick="exportCsv()">Download CSV</button>
+      <button class="secondary" onclick="exportPdf()">Download PDF</button>
+      <span id="anExpMsg" style="color:#94a3b8; font-size:12px; align-self:center;"></span>
+    </div>
+  </div>
+</div>
+
+<div id="roadsterConfig" class="view">
+  <h2>Daily Roster Plan Configuration</h2>
+
+  <div class="card">
+    <h3>Daily Roster Roles</h3>
+    <p style="color:#94a3b8; font-size:13px; margin-bottom: 10px;">Manage tasks/roles for the team. This populates the
+      "Today's Daily Roster Tasks" widget on the Dashboard.</p>
+    <div style="margin-bottom:10px;">
+      <button class="primary" onclick="openRoadsterModal()">+ Add Role</button>
+      <button class="secondary" onclick="loadRoadsterConfig()">Refresh</button>
+    </div>
+    <div id="roadsterConfigTable">
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>
+    </div>
+  </div>
+
+
+  <div id="roadsterModal"
+    style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:500; align-items:center; justify-content:center;">
+    <div class="card" style="max-width:480px; width:90%; margin:0;">
+      <h3 id="roadsterModalTitle">Add Role</h3>
+      <div class="field">
+        <label>Role / Task Name</label>
+        <input type="text" id="rRole" placeholder="e.g. AW, Currency, Metals">
+        <input type="hidden" id="rOldRole">
+      </div>
+      <div class="field">
+        <label>Employee Name or Email</label>
+        <input type="text" id="rEmployee" placeholder="e.g. user@domain.com">
+      </div>
+      <div class="field">
+        <label>Frequency</label>
+        <select id="rFrequency">
+          <option value="Daily">Daily</option>
+          <option value="Weekly">Weekly</option>
+          <option value="Monthly">Monthly</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Remark</label>
+        <input type="text" id="rRemark" placeholder="Optional note about this role">
+      </div>
+      <div class="row" style="margin-top:20px;">
+        <button class="primary" onclick="saveRoadsterConfig()">Save</button>
+        <button class="secondary" onclick="closeRoadsterModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="admin" class="view">
+  <h2>Admin</h2>
+
+  <div class="card">
+    <h3>Users</h3>
+    <div style="margin-bottom:10px;">
+      <button class="primary" onclick="openUserModal()">+ Add User</button>
+      <button class="secondary" onclick="loadUsers()">Refresh</button>
+    </div>
+    <div id="usersTable">
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span
+          class="sk sk-w-30"></span></div>
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span
+          class="sk sk-w-30"></span></div>
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span
+          class="sk sk-w-30"></span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Settings</h3>
+    <div id="settingsForm">
+      <div class="row">
+        <div class="field"><span class="sk sk-line sk-w-30"></span><span class="sk sk-line sk-w-90"></span></div>
+        <div class="field"><span class="sk sk-line sk-w-30"></span><span class="sk sk-line sk-w-90"></span></div>
+        <div class="field"><span class="sk sk-line sk-w-30"></span><span class="sk sk-line sk-w-90"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Triggers</h3>
+    <p style="color:#94a3b8; font-size:13px;">Re-install scheduled email triggers (Daily Reminder 9AM, EOD 6PM, Late
+      Alerts every 15 min, Escalation 8AM).</p>
+    <button class="secondary" onclick="installTriggers()">Install / Reinstall Triggers</button>
+    <span id="triggerMsg" style="color:#94a3b8; font-size:12px; margin-left:10px;"></span>
+  </div>
+
+  <div id="userModal"
+    style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:500; align-items:center; justify-content:center;">
+    <div class="card" style="max-width:420px; width:90%; margin:0;">
+      <h3 id="userModalTitle">Add User</h3>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" id="uEmail">
+      </div>
+      <div class="field">
+        <label>Name</label>
+        <input type="text" id="uName">
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Role</label>
+          <select id="uRole">
+            <option>Teammate</option>
+            <option>Leader</option>
+            <option>Manager</option>
+            <option>SuperAdmin</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Department</label>
+          <input type="text" id="uDept">
+        </div>
+      </div>
+      <div class="field" id="uPasswordField">
+        <label>Password <span style="font-size:11px; color:#94a3b8; font-weight:normal;">(SuperAdmin
+            only)</span></label>
+        <input type="text" id="uPassword" placeholder="Set or change password">
+      </div>
+      <div class="field">
+        <label>Commodities <span style="font-size:11px; color:#94a3b8; font-weight:normal;">(comma-separated, e.g. Coffee,Wheat,Gold)</span></label>
+        <input type="text" id="uCommodities" placeholder="Coffee,Wheat,Gold">
+      </div>
+      <div class="field">
+        <label>Backup Of <span style="font-size:11px; color:#94a3b8; font-weight:normal;">(email of teammate to back up — inherits their commodities)</span></label>
+        <input type="email" id="uBackupOf" placeholder="user@example.com">
+      </div>
+      <div class="field">
+        <label><input type="checkbox" id="uActive" checked> Active</label>
+      </div>
+      <div style="margin-top:12px; display:flex; gap:8px;">
+        <button class="primary" onclick="saveUser()">Save</button>
+        <button class="secondary" onclick="closeUserModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="control" class="view">
+  <h2>SuperAdmin Control Center</h2>
+
+  <div class="card">
+    <h3>Users</h3>
+    <div class="row" style="margin-bottom:10px;">
+      <div class="field">
+        <label>Search</label>
+        <input type="text" id="ccSearch" placeholder="email / name…" oninput="ccRenderUsers()">
+      </div>
+      <div class="field">
+        <label>Role</label>
+        <select id="ccRoleFilter" onchange="ccRenderUsers()">
+          <option value="">All</option>
+          <option>Teammate</option>
+          <option>Leader</option>
+          <option>Manager</option>
+          <option>SuperAdmin</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Department</label>
+        <select id="ccDeptFilter" onchange="ccRenderUsers()">
+          <option value="">All</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Active</label>
+        <select id="ccActiveFilter" onchange="ccRenderUsers()">
+          <option value="">All</option>
+          <option value="yes">Active only</option>
+          <option value="no">Inactive only</option>
+        </select>
+      </div>
+    </div>
+
+    <div style="margin-bottom:10px; display:flex; gap:8px; flex-wrap:wrap;">
+      <button class="primary" onclick="ccBulkSetActive(true)">Activate selected</button>
+      <button class="danger" onclick="ccBulkSetActive(false)">Deactivate selected</button>
+      <button class="secondary" onclick="ccExportCsv()">Export CSV</button>
+      <button class="secondary" onclick="loadControl()">Refresh</button>
+      <span id="ccUserCount" style="margin-left:auto; color:#94a3b8; font-size:12px;"></span>
+    </div>
+
+    <div id="ccUsers">
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span
+          class="sk sk-w-30"></span><span class="sk sk-w-30"></span></div>
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span
+          class="sk sk-w-30"></span><span class="sk sk-w-30"></span></div>
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span
+          class="sk sk-w-30"></span><span class="sk sk-w-30"></span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Module Toggles</h3>
+    <p style="color:#94a3b8; font-size:13px; margin-top:0;">Toggle OFF hides the module from every sidebar and blocks
+      server-side. Changes apply on next page reload.</p>
+    <div id="ccToggles"></div>
+    <div style="margin-top:12px;">
+      <button class="primary" onclick="ccSaveToggles()">Save Toggles</button>
+      <span id="ccTogglesMsg" style="color:#94a3b8; font-size:12px;"></span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Proxy Entry</h3>
+    <p style="color:#94a3b8; font-size:13px; margin-top:0;">Submit MIS / DU / Task on behalf of any registered user.
+      Pick a user, then jump to the form — the on-behalf-of field is pre-filled.</p>
+    <div class="row">
+      <div class="field">
+        <label>User</label>
+        <select id="ccProxyUser">
+          <option value="">— select —</option>
+        </select>
+      </div>
+      <div class="field" style="align-self:flex-end; display:flex; gap:6px;">
+        <button class="primary" onclick="ccProxyTo('mis')">MIS</button>
+        <button class="primary" onclick="ccProxyTo('du')">DU</button>
+        <button class="primary" onclick="ccProxyTo('task')">Task</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Quick Actions</h3>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px;">
+
+      <div>
+        <h4 style="margin:0 0 6px 0; color:#cbd5e1;">Force unlock entry</h4>
+        <div class="row">
+          <div class="field"><input type="text" id="ccUnlockId" placeholder="log_id"></div>
+          <div class="field" style="align-self:flex-end;"><button class="danger"
+              onclick="ccForceUnlock()">Unlock</button></div>
+        </div>
+        <span id="ccUnlockMsg" style="color:#94a3b8; font-size:12px;"></span>
+      </div>
+
+      <div>
+        <h4 style="margin:0 0 6px 0; color:#cbd5e1;">Bulk amend</h4>
+        <div class="row">
+          <div class="field"><input type="email" id="ccBaEmail" placeholder="user email"></div>
+          <div class="field">
+            <select id="ccBaType">
+              <option value="MISReport">MIS</option>
+              <option value="DataUpdate">DU</option>
+              <option value="Task">Task</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field"><input type="text" id="ccBaTopic" placeholder="topic (optional)"></div>
+          <div class="field"><input type="date" id="ccBaDate"></div>
+          <div class="field" style="align-self:flex-end;"><button class="danger" onclick="ccBulkAmend()">Amend</button>
+          </div>
+        </div>
+        <span id="ccBaMsg" style="color:#94a3b8; font-size:12px;"></span>
+      </div>
+
+      <div>
+        <h4 style="margin:0 0 6px 0; color:#cbd5e1;">Reset duplicate lock</h4>
+        <p style="color:#64748b; font-size:12px; margin:4px 0;">Toggles the global Lock Duplicate setting. Current:
+          <span id="ccDupState">…</span></p>
+        <button class="secondary" onclick="ccToggleLock()">Toggle Lock</button>
+        <span id="ccLockMsg" style="color:#94a3b8; font-size:12px;"></span>
+      </div>
+
+      <div>
+        <h4 style="margin:0 0 6px 0; color:#cbd5e1;">Trigger alert manually</h4>
+        <div class="row">
+          <div class="field">
+            <select id="ccAlertName">
+              <option value="sendDailyReminder">Daily Reminder</option>
+              <option value="sendEODSummary">EOD Summary</option>
+              <option value="sendLateAlerts">Late Alerts</option>
+              <option value="checkPendingEscalation">Pending Escalation</option>
+            </select>
+          </div>
+          <div class="field" style="align-self:flex-end;"><button class="primary" onclick="ccTrigger()">Run Now</button>
+          </div>
+        </div>
+        <span id="ccAlertMsg" style="color:#94a3b8; font-size:12px;"></span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="audit" class="view">
+  <h2>Audit Trail</h2>
+
+  <div class="card" style="border-left:3px solid #f87171;">
+    <p style="margin:0; color:#fca5a5; font-size:13px;">
+      Immutable log of every privileged action. SuperAdmin only.
+      No exposed function modifies or deletes audit rows; the sheet is also write-protected.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Filter</h3>
+    <div class="row">
+      <div class="field">
+        <label>Actor email</label>
+        <input type="email" id="adUser" placeholder="optional">
+      </div>
+      <div class="field">
+        <label>Action</label>
+        <select id="adAction">
+          <option value="">All</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>From</label>
+        <input type="date" id="adFrom">
+      </div>
+      <div class="field">
+        <label>To</label>
+        <input type="date" id="adTo">
+      </div>
+      <div class="field" style="align-self:flex-end; display:flex; gap:6px;">
+        <button class="primary" onclick="loadAudit()">Apply</button>
+        <button class="secondary" onclick="adClear()">Clear</button>
+        <button class="secondary" onclick="adExport()">CSV</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Entries</h3>
+    <div id="adRows">
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span
+          class="sk sk-w-30"></span></div>
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span
+          class="sk sk-w-30"></span></div>
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span
+          class="sk sk-w-30"></span></div>
+    </div>
+  </div>
+</div>
+
+<div id="leaderControl" class="view">
+  <h2>Leader Access Control</h2>
+  <p style="color:#94a3b8; font-size:13px;">Configure which views each Leader-role user can access. Changes apply on their next login.</p>
+
+  <div class="card">
+    <div style="margin-bottom:10px; display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+      <button class="secondary" onclick="loadLeaderControl()">Refresh</button>
+      <span id="lcMsg" style="color:#94a3b8; font-size:12px;"></span>
+    </div>
+    <div id="lcTable">
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>
+      <div class="sk-row"><span class="sk"></span><span class="sk"></span><span class="sk sk-w-30"></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Profile / Logout Modal -->
+<div id="profileModal"
+  style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:900; align-items:center; justify-content:center;">
+  <div class="card" style="width:300px; padding:24px; display:flex; flex-direction:column; gap:16px;">
+    <h3 style="margin:0;">Profile & Security</h3>
+
+    <div style="background:#1e293b; padding:12px; border-radius:6px; font-size:13px; color:#cbd5e1;">
+      <div id="profileEmail" style="margin-bottom:4px;"></div>
+      <div id="profileRole" style="color:#60a5fa; font-weight:bold;"></div>
+    </div>
+
+    <div>
+      <h4 style="margin:0 0 8px 0; font-size:13px;">Change Password</h4>
+      <input type="password" id="profileOldPwd" placeholder="Current Password" style="margin-bottom:8px;">
+      <input type="password" id="profileNewPwd" placeholder="New Password" style="margin-bottom:8px;">
+      <button class="primary" style="width:100%;" onclick="submitPasswordChange()">Update Password</button>
+      <div id="pwdMsg" style="font-size:12px; margin-top:4px; text-align:center;"></div>
+    </div>
+
+    <hr style="border:0; border-top:1px solid #334155; margin:4px 0;">
+
+    <button class="danger" style="width:100%;" onclick="doLogout()">Log Out</button>
+    <button class="secondary" style="width:100%;"
+      onclick="document.getElementById('profileModal').style.display='none'">Close</button>
+  </div>
+</div>
+
+<!-- Smart Task Alert Modal (global — used from Dashboard) -->
+<div id="todayTaskModal"
+  style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:600; align-items:center; justify-content:center;">
+  <div class="card" style="max-width:480px; width:90%; margin:0;">
+    <h3 style="margin-bottom:16px;">Add Today's Task</h3>
+    <div class="field" style="margin-bottom:12px;">
+      <label>Task Name *</label>
+      <input type="text" id="ttTaskName" placeholder="Task name" style="width:100%;">
+    </div>
+    <div class="field" style="margin-bottom:12px;">
+      <label>Note / Instruction</label>
+      <textarea id="ttNote" rows="3" placeholder="Optional note or instruction…" style="width:100%;resize:vertical;"></textarea>
+    </div>
+    <div class="field" style="margin-bottom:12px;">
+      <label>Priority</label>
+      <div style="display:flex;gap:16px;margin-top:6px;">
+        <label style="display:flex;align-items:center;gap:6px;"><input type="radio" name="ttPriority" value="Normal" checked> Normal</label>
+        <label style="display:flex;align-items:center;gap:6px;"><input type="radio" name="ttPriority" value="Urgent"> Urgent</label>
+      </div>
+    </div>
+    <div class="field" style="margin-bottom:12px;">
+      <label>Notify</label>
+      <div style="display:flex;gap:16px;margin-top:6px;flex-wrap:wrap;">
+        <label style="display:flex;align-items:center;gap:6px;"><input type="radio" name="ttNotify" value="none" checked> None</label>
+        <label style="display:flex;align-items:center;gap:6px;"><input type="radio" name="ttNotify" value="all"> All Team</label>
+        <label style="display:flex;align-items:center;gap:6px;"><input type="radio" name="ttNotify" value="selected"> Selected Members</label>
+      </div>
+    </div>
+    <div id="ttSelectedWrap" style="display:none;margin-bottom:12px;">
+      <label>Select Members</label>
+      <div id="ttMemberList" style="max-height:140px;overflow-y:auto;border:1px solid var(--border);border-radius:6px;padding:8px;margin-top:6px;"></div>
+    </div>
+    <div style="margin-top:4px;color:#94a3b8;font-size:12px;" id="ttMsg"></div>
+    <div style="display:flex;gap:10px;margin-top:16px;">
+      <button class="primary" onclick="submitTodayTask()">Submit</button>
+      <button class="secondary" onclick="closeTodayTaskModal()">Cancel</button>
+    </div>
+  </div>
+</div>

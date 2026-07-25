@@ -6,6 +6,16 @@ Access: http://localhost:5000
 import os
 import sys
 
+# Auto-re-execute using virtual environment if run with global python
+if sys.prefix == sys.base_prefix:
+    import subprocess
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    venv_python = os.path.join(current_dir, '.venv', 'Scripts', 'python.exe')
+    if not os.path.exists(venv_python):
+        venv_python = os.path.join(current_dir, '.venv', 'bin', 'python')
+    if os.path.exists(venv_python):
+        sys.exit(subprocess.call([venv_python] + sys.argv))
+
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 

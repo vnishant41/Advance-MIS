@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIS Tracker v8 — Local</title>
+</head>
+<body>
+
+<!-- Mock data layer (sets window.BOOT and window.rpc) -->
+<script src="mock.js"></script>
+
+<script>
+(async function(){
+  const BASE = '..';
+  async function load(name){ return (await fetch(BASE+'/'+name)).text(); }
+  function stripTag(html, tag){
+    const re = new RegExp('^\\s*<'+tag+'[^>]*>([\\s\\S]*)<\\/'+tag+'>\\s*$','i');
+    const m = html.match(re);
+    return m ? m[1] : html;
+  }
+
+  // Load only 4 files (merged structure)
+  const [styles, sidebar, views, scripts] = await Promise.all([
+    load('Styles.html'),
+    load('Sidebar.html'),
+    load('Views.html'),
+    load('Scripts.html')
+  ]);
+
+  // Inject styles
+  document.head.insertAdjacentHTML('beforeend', styles);
+
+  // Build app shell with spiral preloader + footer
+  document.body.insertAdjacentHTML('beforeend', `
+<div id="preloader" class="preloader">
+  <div class="spiral-wrap">
+    <div class="spiral-ring r1"></div>
+    <div class="spiral-ring r2"></div>
+    <div class="spiral-ring r3"></div>
+    <div class="spiral-dot"></div>
+  </div>
+  <div class="preloader-label">Loading MIS…</div>
+</div>
+<div class="app">
+  ${sidebar}
+  <div class="main">
+    <div id="topbar">
+      <div id="userBadge"></div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <div id="windowBadge"></div>
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light">🌓</button>
+        <div class="user-menu-wrap" id="userMenuWrap">
+          <button class="user-menu-btn" id="userMenuBtn" onclick="toggleUserMenu()">
+            <span class="user-avatar" id="userMenuAvatar">N</span>
+            <span class="chevron">▾</span>
+          </button>
+          <div class="user-dropdown" id="userDropdown">
+            <div class="ud-header">
+              <div class="ud-name" id="udName">—</div>
+              <div class="ud-role" id="udRole">—</div>
+            </div>
+            <button class="ud-item" onclick="openProfileModal()">🔑 Change Password</button>
+            <div class="ud-divider"></div>
+            <button class="ud-item danger" onclick="doLogout()">⏻ Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    ${views}
+    <div id="toast" class="toast"></div>
+    <footer class="app-footer">
+      <span class="footer-version">MIS v2.0</span>
+      <span class="footer-sep">·</span>
+      <span class="footer-credit">by Nishant</span>
+    </footer>
+  </div>
+</div>`);
+
+  // Inject the merged script — strip outer <script> tag, patch DOMContentLoaded
+  let scriptCode = stripTag(scripts, 'script');
+  scriptCode = scriptCode.replace(
+    /window\.addEventListener\s*\(\s*['"]DOMContentLoaded['"]\s*,\s*\(\)\s*=>\s*\{[^}]*\}\s*\)\s*;?/,
+    '// [PATCHED] DOMContentLoaded removed — bootApp called manually'
+  );
+
+  // Inject as a real <script> tag so all functions land on GLOBAL scope
+  const s = document.createElement('script');
+  s.textContent = scriptCode;
+  document.body.appendChild(s);
+
+  // Now boot the app (DOM is ready, all functions defined in global scope)
+  if (typeof applyStoredTheme === 'function') applyStoredTheme();
+  if (typeof bootApp === 'function') bootApp();
+  if (typeof setupWindowClosePush === 'function') setupWindowClosePush();
+
+  // Dismiss spiral preloader
+  const pl = document.getElementById('preloader');
+  if (pl) {
+    pl.classList.add('hide');
+    setTimeout(() => pl.remove(), 600);
+  }
+
+  console.log('✅ MIS Tracker booted on localhost');
+})();
+</script>
+</body>
+</html>

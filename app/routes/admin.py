@@ -151,7 +151,30 @@ def get_settings():
     user = get_current_user()
     if not user or not role_at_least(user.role, 'Manager'): return jsonify({'success': False}), 403
     settings = {s.key: s.value for s in AppSetting.query.all()}
-    defaults = {'windowStart':'08:00','windowEnd':'22:00','managerEmail':'','escalateDays':'3','lockDuplicate':'YES','requireRemarks':'YES','skipWeekends':'YES'}
+    defaults = {
+        'windowStart': '08:00',
+        'windowEnd': '22:00',
+        'managerEmail': '',
+        'escalateDays': '3',
+        'lockDuplicate': 'YES',
+        'requireRemarks': 'YES',
+        'skipWeekends': 'YES',
+        'emailDigestEnabled': 'NO',
+        'emailDigestTime': '18:00',
+        'emailTeammateReminderEnabled': 'NO',
+        'emailTeammateReminderTime': '14:00',
+        'emailTeammateFinalEnabled': 'NO',
+        'emailTeammateFinalTime': '18:00',
+        'emailManagerDigestEnabled': 'NO',
+        'emailManagerDigestTime': '19:00',
+        'emailLeaderDigestEnabled': 'NO',
+        'emailLeaderDigestTime': '20:00',
+        'smtpHost': '',
+        'smtpPort': '587',
+        'smtpUser': '',
+        'smtpPassword': '',
+        'smtpFrom': '',
+    }
     for k,v in defaults.items():
         if k not in settings: settings[k] = v
     return jsonify({'success': True, 'settings': settings})
@@ -737,3 +760,85 @@ def csv_import(kind):
     except Exception as e:
         db.session.rollback()
         return jsonify({'success': False, 'message': f'Import failed: {e}'}), 500
+
+
+@admin_bp.route('/email-logs', methods=['GET'])
+@jwt_required()
+def get_email_logs():
+    user = get_current_user()
+    if not user or not role_at_least(user.role, 'Manager'): return jsonify({'success': False}), 403
+
+    from app.models import EmailLog
+    logs = EmailLog.query.order_by(EmailLog.sent_at.desc()).limit(100).all()
+    return jsonify({
+        'success': True,
+        'logs': [l.to_dict() for l in logs]
+    })
+
+
+@admin_bp.route('/email-test', methods=['POST'])
+@jwt_required()
+def send_test_email():
+    user = get_current_user()
+    if not user or not role_at_least(user.role, 'Manager'): return jsonify({'success': False}), 403
+
+    data = request.get_json() or {}
+    to_email = data.get('to_email', '').strip()
+    if not to_email:
+        return jsonify({'success': False, 'message': 'Recipient email is required.'}), 400
+
+    from app.services.email_service import send_email
+    subject = "Advanced MIS — Test Email Connection"
+    html_body = """
+    <div style="font-family: Arial, sans-serif; padding: 25px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; max-width: 500px; margin: 0 auto; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);">
+        <h2 style="color: #4f46e5; margin-top: 0; font-size: 1.25rem; font-weight: 700;">⚡ SMTP Connection Test Successful!</h2>
+        <p style="color: #334155; font-size: 0.95rem; line-height: 1.5;">This is an automated test email sent from your Advanced MIS platform to confirm that SMTP server configuration settings are completely correct.</p>
+        <p style="color: #64748b; font-size: 0.85rem; line-height: 1.5; margin-top: 15px;">Connection Details Checked: Host, Port, Authentication details, SSL/TLS handshake.</p>
+        <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;">
+        <p style="font-size: 11px; color: #94a3b8; text-align: center; margin-bottom: 0;">Automated System Check · Please do not reply directly to this email.</p>
+    </div>
+    """
+    
+    success = send_email(to_email, subject, html_body, force=True)
+    if success:
+        return jsonify({'success': True})
+    else:
+        return jsonify({'success': False, 'message': 'SMTP check failed. Check host, port, username, password and From email.'}), 500
+
+
+@admin_bp.route('/email-trigger-digest', methods=['POST'])
+@jwt_required()
+def trigger_email_digest():
+    user = get_current_user()
+    if not user or not role_at_least(user.role, 'Manager'): return jsonify({'success': False}), 403
+
+    data = request.get_json() or {}
+    stage = data.get('stage', 'all')
+
+    from datetime import date
+    from app.services.scheduler import (
+        _send_teammate_reminders, _send_teammate_finals,
+        _send_manager_digests, _send_leader_digests
+    )
+    from flask import current_app
+    
+    app_obj = current_app._get_current_object()
+    
+    try:
+        if stage == 'teammate-reminder':
+            _send_teammate_reminders(app_obj, date.today())
+        elif stage == 'teammate-final':
+            _send_teammate_finals(app_obj, date.today())
+        elif stage == 'manager-digest':
+            _send_manager_digests(app_obj, date.today())
+        elif stage == 'leader-digest':
+            _send_leader_digests(app_obj, date.today())
+        else:
+            _send_teammate_reminders(app_obj, date.today())
+            _send_teammate_finals(app_obj, date.today())
+            _send_manager_digests(app_obj, date.today())
+            _send_leader_digests(app_obj, date.today())
+            
+        return jsonify({'success': True, 'message': f'Digest stage "{stage}" triggered successfully.'})
+    except Exception as e:
+        return jsonify({'success': False, 'message': f'Failed to trigger digest stage: {str(e)}'}), 500

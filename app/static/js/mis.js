@@ -695,10 +695,11 @@ export default {
     },
 
     renderCategoryBadges(analysis) {
-        const order = ['Sections', 'Comm', 'Table', 'Chart', 'Image'];
+        const order = ['Sections', 'Comm', 'News', 'Table', 'Chart', 'Image'];
         const icons = {
             Sections: 'fa-list-ul',
             Comm: 'fa-align-left',
+            News: 'fa-newspaper',
             Table: 'fa-table',
             Chart: 'fa-chart-bar',
             Image: 'fa-image',
@@ -747,7 +748,7 @@ export default {
             `;
         }).join('');
 
-        return `<div style="display:grid; grid-template-columns:repeat(5,1fr); gap:12px;">${cards}</div>`;
+        return `<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:12px;">${cards}</div>`;
     },
 
     renderElementDetail(results, analysis) {
@@ -999,7 +1000,7 @@ export default {
             }
 
             const bodyHtml = `
-                <div style="max-height:400px; overflow:auto;">
+                <div style="max-height:70vh; overflow:auto; padding-right:4px;">
                     <p><strong>File:</strong> ${App.escapeHtml(a.filename)}</p>
                     <p><strong>Score:</strong> ${a.qualityScore}%</p>
                     ${a.summary ? `<p><strong>Summary:</strong> ${App.escapeHtml(a.summary)}</p>` : ''}
@@ -1007,7 +1008,7 @@ export default {
                     ${resHtml}
                 </div>
             `;
-            App.showModal(`Analysis — ${a.filename}`, bodyHtml);
+            App.showModal(`Analysis — ${a.filename}`, bodyHtml, '', 'modal-lg');
         } catch (err) {
             App.showToast('Failed to load analysis detail', 'error');
         }
@@ -1057,6 +1058,7 @@ export default {
                                 <option value="heading">Heading (Section Title)</option>
                                 <option value="text">Text</option>
                                 <option value="commentary">Commentary</option>
+                                <option value="news">News</option>
                                 <option value="table">Table</option>
                                 <option value="chart">Chart</option>
                                 <option value="image">Image</option>
@@ -1077,6 +1079,7 @@ export default {
                                 <button class="fmt-type-filter" data-type="heading" style="padding:2px 6px; border-radius:3px; border:1px solid var(--border); background:transparent; color:var(--text-muted); cursor:pointer;">Heading</button>
                                 <button class="fmt-type-filter" data-type="text" style="padding:2px 6px; border-radius:3px; border:1px solid var(--border); background:transparent; color:var(--text-muted); cursor:pointer;">Text</button>
                                 <button class="fmt-type-filter" data-type="commentary" style="padding:2px 6px; border-radius:3px; border:1px solid var(--border); background:transparent; color:var(--text-muted); cursor:pointer;">Comm</button>
+                                <button class="fmt-type-filter" data-type="news" style="padding:2px 6px; border-radius:3px; border:1px solid var(--border); background:transparent; color:var(--text-muted); cursor:pointer;">News</button>
                                 <button class="fmt-type-filter" data-type="table" style="padding:2px 6px; border-radius:3px; border:1px solid var(--border); background:transparent; color:var(--text-muted); cursor:pointer;">Table</button>
                                 <button class="fmt-type-filter" data-type="chart" style="padding:2px 6px; border-radius:3px; border:1px solid var(--border); background:transparent; color:var(--text-muted); cursor:pointer;">Chart</button>
                                 <button class="fmt-type-filter" data-type="image" style="padding:2px 6px; border-radius:3px; border:1px solid var(--border); background:transparent; color:var(--text-muted); cursor:pointer;">Image</button>
@@ -1088,7 +1091,7 @@ export default {
                     </div>
 
                     <!-- Right column: all pages stacked -->
-                    <div style="flex:1; border:1px solid var(--border); border-radius:8px; overflow:auto; min-height:600px; max-height:80vh; background:#2d3748; padding:12px;" id="fmt-pages-container">
+                    <div style="flex:1; border:1px solid var(--border); border-radius:8px; overflow:auto; min-height:850px; max-height:90vh; background:#2d3748; padding:12px;" id="fmt-pages-container">
                         <div id="fmt-empty-pages" style="text-align:center; padding:60px 0; color:var(--text-muted);">
                             <i class="fas fa-file-pdf" style="font-size:3rem; opacity:.5;"></i>
                             <p style="margin-top:12px;">Upload a Master PDF or load a saved template to begin</p>
@@ -1387,7 +1390,7 @@ export default {
         document.querySelectorAll('#fmt-pages-container .fmt-overlay').forEach(o => o.innerHTML = '');
         const colorByType = {
             name: '#3b82f6', date: '#3b82f6', text: '#3b82f6',
-            commentary: '#a855f7',
+            commentary: '#a855f7', news: '#ec4899',
             table: '#10b981',
             chart: '#f59e0b', image: '#ef4444',
         };
@@ -1422,6 +1425,7 @@ export default {
         const typeOptions = ['name', 'date', 'heading', 'text', 'commentary', 'table', 'chart', 'image'];
         const labelVal = App.escapeHtml(box.label || '');
         const textVal = App.escapeHtml(box.text || '');
+        const headingVal = App.escapeHtml(box.heading || '');
 
         const body = `
             <div style="display:flex; flex-direction:column; gap:10px;">
@@ -1434,6 +1438,13 @@ export default {
                     <select id="edit-box-type" style="width:100%;">
                         ${typeOptions.map(t => `<option value="${t}"${t === box.type ? ' selected' : ''}>${t}</option>`).join('')}
                     </select>
+                </div>
+                <div>
+                    <label style="font-size:.8rem; color:var(--text-muted);">Associated Heading (Section Title)</label>
+                    <input type="text" id="edit-box-heading" value="${headingVal}" style="width:100%;" placeholder="e.g. Market Update"/>
+                    <p style="font-size:.7rem; color:var(--text-muted); margin-top:4px;">
+                        If page numbers are not fixed, the validator searches for this heading in the PDF first to find the correct page.
+                    </p>
                 </div>
                 <div>
                     <label style="font-size:.8rem; color:var(--text-muted);">Expected text content (used to relocate across pages)</label>
@@ -1459,10 +1470,12 @@ export default {
             const nLabel = document.getElementById('edit-box-label').value.trim();
             const nType = document.getElementById('edit-box-type').value;
             const nText = document.getElementById('edit-box-text').value.trim();
+            const nHeading = document.getElementById('edit-box-heading') ? document.getElementById('edit-box-heading').value.trim() : '';
             if (!nLabel) { App.showToast('Label is required', 'warning'); return; }
             box.label = nLabel;
             box.type = nType;
             box.text = nText;
+            box.heading = nHeading;
             this.renderAllOverlays();
             this.renderBoxesList();
             App.closeModal && App.closeModal();
@@ -1501,10 +1514,10 @@ export default {
 
         const colorByType = {
             name: '#3b82f6', date: '#06b6d4', heading: '#8b5cf6', text: '#3b82f6',
-            commentary: '#a855f7', table: '#10b981',
+            commentary: '#a855f7', news: '#ec4899', table: '#10b981',
             chart: '#f59e0b', image: '#ef4444',
         };
-        const typeOptions = ['name', 'date', 'heading', 'text', 'commentary', 'table', 'chart', 'image'];
+        const typeOptions = ['name', 'date', 'heading', 'text', 'commentary', 'news', 'table', 'chart', 'image'];
 
         // Group filtered boxes into sections per page: a 'heading' (or name/date)
         // starts a new section; subsequent children attach to it. Boxes before any
@@ -1683,6 +1696,7 @@ export default {
                 label: b.label, type: b.type, page: b.page,
                 x0: b.x0, y0: b.y0, x1: b.x1, y1: b.y1,
                 text: b.text || '',
+                heading: b.heading || '',
             }));
             await api.post('/mis/templates', { reportType: rt, layoutConfig: payload });
             App.endProgress();

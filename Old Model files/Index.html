@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <?!= include('Styles'); ?>
+</head>
+
+<body>
+
+  <!-- ── SPIRAL PRELOADER ──────────────────────────────────────── -->
+  <div id="preloader" class="preloader">
+    <div class="spiral-wrap">
+      <div class="spiral-ring r1"></div>
+      <div class="spiral-ring r2"></div>
+      <div class="spiral-ring r3"></div>
+      <div class="spiral-dot"></div>
+    </div>
+    <div class="preloader-label">Loading MIS…</div>
+  </div>
+
+  <div class="app">
+
+    <?!= include('Sidebar'); ?>
+
+    <div class="main">
+
+      <div id="topbar">
+        <div id="userBadge"></div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div id="windowBadge"></div>
+          <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light">🌓</button>
+          <div class="user-menu-wrap" id="userMenuWrap">
+            <button class="user-menu-btn" id="userMenuBtn" onclick="toggleUserMenu()">
+              <span class="user-avatar" id="userMenuAvatar">N</span>
+              <span class="chevron">▾</span>
+            </button>
+            <div class="user-dropdown" id="userDropdown">
+              <div class="ud-header">
+                <div class="ud-name" id="udName">—</div>
+                <div class="ud-role" id="udRole">—</div>
+              </div>
+              <button class="ud-item" onclick="openProfileModal()">🔑 Change Password</button>
+              <div class="ud-divider"></div>
+              <button class="ud-item danger" onclick="doLogout()">⏻ Logout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <?!= include('Views'); ?>
+
+      <div id="toast" class="toast"></div>
+
+      <footer class="app-footer">
+        <span class="footer-version">MIS v8.3</span>
+        <span class="footer-sep">·</span>
+        <span class="footer-credit">by Nishant</span>
+      </footer>
+    </div>
+
+  </div>
+
+  <script>
+    window.BOOT = <?!= bootData ?>;
+  </script>
+
+  <?!= include('Scripts'); ?>
+
+</body>
+
+</html>

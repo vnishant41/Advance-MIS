@@ -90,7 +90,7 @@ const App = {
             'mis': 'MIS Reports',
             'kanban': 'Kanban Board',
             'chat': 'Team Chat',
-            'analytics': 'Analytics & Reports',
+            'analytics': 'Team Update',
             'roster': 'Roster Management',
             'admin': 'Admin Panel'
         };
@@ -159,15 +159,23 @@ const App = {
         }, 3500);
     },
 
-    showModal(title, bodyHtml, footerHtml = '') {
+    showModal(title, bodyHtml, footerHtml = '', sizeClass = '') {
         document.getElementById('modal-title').textContent = title;
         document.getElementById('modal-body').innerHTML = bodyHtml;
         document.getElementById('modal-footer').innerHTML = footerHtml;
+        
+        const card = document.getElementById('modal-card');
+        card.className = 'modal-card glass-card';
+        if (sizeClass) {
+            card.classList.add(sizeClass);
+        }
+        
         document.getElementById('modal-overlay').classList.remove('hidden');
     },
 
     closeModal() {
         document.getElementById('modal-overlay').classList.add('hidden');
+        document.getElementById('modal-card').className = 'modal-card glass-card';
     },
 
     // ---- Loading progress overlay -----------------------------------------
@@ -412,6 +420,12 @@ const App = {
                         badge.style.display = 'inline-flex';
                         badge.textContent = parseInt(badge.textContent || 0) + 1;
                     }
+                }
+            });
+
+            this.socket.on('message_deleted', (data) => {
+                if (window.location.hash === '#chat' && this.modules.chat?.onSocketMessageDeleted) {
+                    this.modules.chat.onSocketMessageDeleted(data);
                 }
             });
 

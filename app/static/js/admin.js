@@ -15,6 +15,7 @@ const TAB_DEFS = [
     { key: 'roster',         label: 'Roster',          icon: 'calendar-alt' },
     { key: 'handovers',      label: 'Backup Handovers',icon: 'people-arrows' },
     { key: 'bulk',           label: 'Bulk CSV Import', icon: 'file-csv' },
+    { key: 'emails',         label: 'Email Manager',   icon: 'envelope-open-text' },
     { key: 'settings',       label: 'Settings',        icon: 'sliders-h' },
     { key: 'modules',        label: 'Modules',         icon: 'puzzle-piece' },
     { key: 'audit',          label: 'Audit Trail',     icon: 'history' },
@@ -204,6 +205,7 @@ export default {
         else if (t === 'roster')       await this.loadRoster(container);
         else if (t === 'handovers')    await this.loadHandovers(container);
         else if (t === 'bulk')         await this.loadBulk(container);
+        else if (t === 'emails')       await this.loadEmails(container);
         else if (t === 'settings')     await this.loadSettings(container);
         else if (t === 'modules')      await this.loadModules(container);
         else if (t === 'audit')        await this.loadAudit(container);
@@ -319,18 +321,46 @@ export default {
         try {
             const data = await api.get('/admin/users');
             const users = data.data || [];
+            const escAttr = (s) => App.escapeHtml(s || '').replace(/'/g, '&#39;').replace(/"/g, '&quot;');
 
             container.innerHTML = `
                 <div class="glass-card" style="padding: 24px;">
-                    <div class="card-header">
+                    <div class="card-header" style="margin-bottom: 12px;">
                         <h3 class="card-title"><i class="fas fa-users" style="color:var(--accent);margin-right:8px;"></i>User Management (${users.length})</h3>
                         <button class="btn btn-primary btn-sm" id="btn-add-user"><i class="fas fa-user-plus"></i> Add User</button>
                     </div>
-                    <table class="data-table">
-                        <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Dept</th><th>Status</th><th>Actions</th></tr></thead>
+
+                    <div class="filter-bar" id="users-filter-bar">
+                        <label><i class="fas fa-search" style="margin-right:4px;"></i></label>
+                        <input type="text" id="users-search" placeholder="Search users by name or email..." />
+                        <select id="users-role-filter">
+                            <option value="">All Roles</option>
+                            <option value="SuperAdmin">SuperAdmin</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Leader">Leader</option>
+                            <option value="Teammate">Teammate</option>
+                        </select>
+                        <select id="users-status-filter">
+                            <option value="">All Statuses</option>
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+
+                    <table class="data-table" id="users-table">
+                        <thead>
+                            <tr>
+                                <th class="sortable-header" data-sort="name">Name <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th class="sortable-header" data-sort="email">Email <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th class="sortable-header" data-sort="role">Role <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th class="sortable-header" data-sort="dept">Dept <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th class="sortable-header" data-sort="status">Status <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             ${users.map(u => `
-                                <tr>
+                                <tr data-name="${escAttr(u.name)}" data-email="${escAttr(u.email)}" data-role="${u.role}" data-dept="${escAttr(u.department)}" data-status="${u.active ? 'Active' : 'Inactive'}">
                                     <td><div style="display:flex;align-items:center;gap:8px;"><span class="avatar-sm">${(u.name||'?').charAt(0).toUpperCase()}</span><strong>${App.escapeHtml(u.name)}</strong></div></td>
                                     <td style="font-size:.85rem;">${App.escapeHtml(u.email)}</td>
                                     <td><span class="tag">${u.role}</span></td>
@@ -348,6 +378,7 @@ export default {
                     </table>
                 </div>
             `;
+            this._wireFilterAndSort('users-table', 'users-search', { role: 'users-role-filter', status: 'users-status-filter' }, 'name');
             document.getElementById('btn-add-user').addEventListener('click', () => this.showUserModal());
         } catch (err) {
             container.innerHTML = '<div class="glass-card" style="padding:24px;"><p class="error-text">Failed to load users</p></div>';
@@ -422,9 +453,11 @@ export default {
             const items = data.data || [];
             const userList = users.data || [];
             this._userList = userList;
+            const escAttr = (s) => App.escapeHtml(s || '').replace(/'/g, '&#39;').replace(/"/g, '&quot;');
+
             container.innerHTML = `
                 <div class="glass-card" style="padding: 24px;">
-                    <div class="card-header">
+                    <div class="card-header" style="margin-bottom: 12px;">
                         <h3 class="card-title"><i class="fas fa-file-pdf" style="color:var(--accent);margin-right:8px;"></i>Reports (${items.length})</h3>
                         <div class="btn-group">
                             <button class="btn btn-outline btn-sm" id="btn-report-csv-sample"><i class="fas fa-download"></i> Sample CSV</button>
@@ -432,10 +465,37 @@ export default {
                             <button class="btn btn-primary btn-sm" id="btn-add-report"><i class="fas fa-plus"></i> Add Report</button>
                         </div>
                     </div>
-                    <table class="data-table">
-                        <thead><tr><th>Name</th><th>Frequency</th><th>Primary Assignee</th><th>Backup 1st</th><th>Backup 2nd</th><th>Deadline</th><th>Instructions</th><th>Actions</th></tr></thead>
-                        <tbody>${items.map(i => `
+
+                    <div class="filter-bar" id="reports-filter-bar">
+                        <label><i class="fas fa-search" style="margin-right:4px;"></i></label>
+                        <input type="text" id="reports-search" placeholder="Search reports by name or assignee..." />
+                        <select id="reports-freq-filter">
+                            <option value="">All Frequencies</option>
+                            <option value="Daily">Daily</option>
+                            <option value="Weekly">Weekly</option>
+                            <option value="Fortnightly">Fortnightly</option>
+                            <option value="Monthly">Monthly</option>
+                            <option value="Quarterly">Quarterly</option>
+                            <option value="Half-Yearly">Half-Yearly</option>
+                            <option value="Yearly">Yearly</option>
+                        </select>
+                    </div>
+
+                    <table class="data-table" id="reports-table">
+                        <thead>
                             <tr>
+                                <th class="sortable-header" data-sort="name">Name <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th class="sortable-header" data-sort="freq">Frequency <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th class="sortable-header" data-sort="assignee">Primary Assignee <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th>Backup 1st</th>
+                                <th>Backup 2nd</th>
+                                <th class="sortable-header" data-sort="deadline">Deadline <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th>Instructions</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>${items.map(i => `
+                            <tr data-name="${escAttr(i.name)}" data-freq="${i.frequency}" data-assignee="${escAttr(i.primaryAssignee)}" data-deadline="${escAttr(i.deadline)}">
                                 <td><strong>${App.escapeHtml(i.name)}</strong></td>
                                 <td><span class="tag">${i.frequency}</span></td>
                                 <td>${App.escapeHtml(i.primaryAssignee||'—')}</td>
@@ -456,10 +516,13 @@ export default {
                 </div>
             `;
             this._reportCache = items;
+            this._wireFilterAndSort('reports-table', 'reports-search', { freq: 'reports-freq-filter' }, 'name');
             document.getElementById('btn-add-report').addEventListener('click', () => this.showReportModal());
             document.getElementById('btn-report-csv-sample').addEventListener('click', () => this.downloadSample('reports'));
             document.getElementById('btn-report-bulk').addEventListener('click', () => this.switchTab('bulk'));
-        } catch(e) { container.innerHTML = '<p class="error-text">Failed to load reports</p>'; }
+        } catch (err) {
+            container.innerHTML = '<div class="glass-card" style="padding:24px;"><p class="error-text">Failed to load reports</p></div>';
+        }
     },
 
     /**
@@ -743,9 +806,11 @@ export default {
             const [data, users] = await Promise.all([api.get('/admin/commodities'), api.get('/admin/users')]);
             const items = data.data || [];
             this._userList = users.data || [];
+            const escAttr = (s) => App.escapeHtml(s || '').replace(/'/g, '&#39;').replace(/"/g, '&quot;');
+
             container.innerHTML = `
                 <div class="glass-card" style="padding: 24px;">
-                    <div class="card-header">
+                    <div class="card-header" style="margin-bottom: 12px;">
                         <h3 class="card-title"><i class="fas fa-cubes" style="color:var(--accent);margin-right:8px;"></i>Factor Task (${items.length})</h3>
                         <div class="btn-group">
                             <button class="btn btn-outline btn-sm" id="btn-com-sample"><i class="fas fa-download"></i> Sample CSV</button>
@@ -753,10 +818,38 @@ export default {
                             <button class="btn btn-primary btn-sm" id="btn-add-com"><i class="fas fa-plus"></i> Add Factor Task</button>
                         </div>
                     </div>
-                    <table class="data-table">
-                        <thead><tr><th>Commodity</th><th>Task Timing</th><th>Schedule Day</th><th>Factor or Task</th><th>User</th><th>Backup 1</th><th>Backup 2</th><th>Instructions</th><th>Actions</th></tr></thead>
-                        <tbody>${items.map(i => `
+
+                    <div class="filter-bar" id="com-filter-bar">
+                        <label><i class="fas fa-search" style="margin-right:4px;"></i></label>
+                        <input type="text" id="com-search" placeholder="Search factor tasks by commodity, factor or user..." />
+                        <select id="com-type-filter">
+                            <option value="">All Timings</option>
+                            <option value="Daily">Daily</option>
+                            <option value="Weekly">Weekly</option>
+                            <option value="Fortnightly">Fortnightly</option>
+                            <option value="Monthly">Monthly</option>
+                            <option value="Quarterly">Quarterly</option>
+                            <option value="Half-Yearly">Half-Yearly</option>
+                            <option value="Yearly">Yearly</option>
+                        </select>
+                    </div>
+
+                    <table class="data-table" id="com-table">
+                        <thead>
                             <tr>
+                                <th class="sortable-header" data-sort="commodity">Commodity <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th class="sortable-header" data-sort="type">Task Timing <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th>Schedule Day</th>
+                                <th class="sortable-header" data-sort="factor">Factor or Task <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th class="sortable-header" data-sort="user">User <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th>Backup 1</th>
+                                <th>Backup 2</th>
+                                <th>Instructions</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>${items.map(i => `
+                            <tr data-commodity="${escAttr(i.commodity)}" data-type="${escAttr(i.type)}" data-factor="${escAttr(i.factor)}" data-user="${escAttr(i.mode||i.primaryAssignee)}">
                                 <td><strong>${App.escapeHtml(i.commodity)}</strong></td>
                                 <td><span class="tag">${App.escapeHtml(i.type)}</span></td>
                                 <td style="color:var(--text-muted);">${App.escapeHtml(i.scheduleDay||'—')}</td>
@@ -778,6 +871,7 @@ export default {
                 </div>
             `;
             this._comCache = items;
+            this._wireFilterAndSort('com-table', 'com-search', { type: 'com-type-filter' }, 'commodity');
             document.getElementById('btn-add-com').addEventListener('click', () => this.showCommodityModal());
             document.getElementById('btn-com-sample').addEventListener('click', () => this.downloadSample('commodities'));
             document.getElementById('btn-com-bulk').addEventListener('click', () => this.switchTab('bulk'));
@@ -865,9 +959,11 @@ export default {
             const [data, users] = await Promise.all([api.get('/admin/tasks'), api.get('/admin/users')]);
             const items = data.data || [];
             this._userList = users.data || [];
+            const escAttr = (s) => App.escapeHtml(s || '').replace(/'/g, '&#39;').replace(/"/g, '&quot;');
+
             container.innerHTML = `
                 <div class="glass-card" style="padding: 24px;">
-                    <div class="card-header">
+                    <div class="card-header" style="margin-bottom: 12px;">
                         <h3 class="card-title"><i class="fas fa-tasks" style="color:var(--accent);margin-right:8px;"></i>Task Templates (${items.length})</h3>
                         <div class="btn-group">
                             <button class="btn btn-outline btn-sm" id="btn-task-sample"><i class="fas fa-download"></i> Sample CSV</button>
@@ -875,10 +971,37 @@ export default {
                             <button class="btn btn-primary btn-sm" id="btn-add-task-tpl"><i class="fas fa-plus"></i> Add Task</button>
                         </div>
                     </div>
-                    <table class="data-table">
-                        <thead><tr><th>Name</th><th>Assignee</th><th>Backup 1st</th><th>Backup 2nd</th><th>Recurrence</th><th>Instructions</th><th>Actions</th></tr></thead>
-                        <tbody>${items.map(i => `
+
+                    <div class="filter-bar" id="tasks-filter-bar">
+                        <label><i class="fas fa-search" style="margin-right:4px;"></i></label>
+                        <input type="text" id="tasks-search" placeholder="Search task templates by name or assignee..." />
+                        <select id="tasks-rec-filter">
+                            <option value="">All Recurrences</option>
+                            <option value="daily">daily</option>
+                            <option value="mon-fri">mon-fri</option>
+                            <option value="weekly">weekly</option>
+                            <option value="fortnightly">fortnightly</option>
+                            <option value="monthly">monthly</option>
+                            <option value="quarterly">quarterly</option>
+                            <option value="half-yearly">half-yearly</option>
+                            <option value="yearly">yearly</option>
+                        </select>
+                    </div>
+
+                    <table class="data-table" id="tasks-table">
+                        <thead>
                             <tr>
+                                <th class="sortable-header" data-sort="name">Name <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th class="sortable-header" data-sort="assignee">Assignee <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th>Backup 1st</th>
+                                <th>Backup 2nd</th>
+                                <th class="sortable-header" data-sort="recurrence">Recurrence <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th>Instructions</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>${items.map(i => `
+                            <tr data-name="${escAttr(i.name)}" data-assignee="${escAttr(i.assignee)}" data-recurrence="${escAttr(i.recurrence)}">
                                 <td><strong>${App.escapeHtml(i.name)}</strong></td>
                                 <td>${App.escapeHtml(i.assignee||'—')}</td>
                                 <td style="color:var(--text-muted);">${App.escapeHtml(i.backup1||'—')}</td>
@@ -898,6 +1021,7 @@ export default {
                 </div>
             `;
             this._taskCache = items;
+            this._wireFilterAndSort('tasks-table', 'tasks-search', { recurrence: 'tasks-rec-filter' }, 'name');
             document.getElementById('btn-add-task-tpl').addEventListener('click', () => this.showTaskModal());
             document.getElementById('btn-task-sample').addEventListener('click', () => this.downloadSample('tasks'));
             document.getElementById('btn-task-bulk').addEventListener('click', () => this.switchTab('bulk'));
@@ -973,9 +1097,11 @@ export default {
             const [data, users] = await Promise.all([api.get('/admin/roster'), api.get('/admin/users')]);
             const items = data.data || [];
             this._userList = users.data || [];
+            const escAttr = (s) => App.escapeHtml(s || '').replace(/'/g, '&#39;').replace(/"/g, '&quot;');
+
             container.innerHTML = `
                 <div class="glass-card" style="padding: 24px;">
-                    <div class="card-header">
+                    <div class="card-header" style="margin-bottom: 12px;">
                         <h3 class="card-title"><i class="fas fa-calendar-alt" style="color:var(--accent);margin-right:8px;"></i>Roster (${items.length})</h3>
                         <div class="btn-group">
                             <button class="btn btn-outline btn-sm" id="btn-ros-sample"><i class="fas fa-download"></i> Sample CSV</button>
@@ -983,10 +1109,34 @@ export default {
                             <button class="btn btn-primary btn-sm" id="btn-add-ros"><i class="fas fa-plus"></i> Add Roster</button>
                         </div>
                     </div>
-                    <table class="data-table">
-                        <thead><tr><th>Role</th><th>Employee</th><th>Frequency</th><th>Instructions</th><th>Actions</th></tr></thead>
-                        <tbody>${items.map(i => `
+
+                    <div class="filter-bar" id="roster-filter-bar">
+                        <label><i class="fas fa-search" style="margin-right:4px;"></i></label>
+                        <input type="text" id="roster-search" placeholder="Search roster by role or employee..." />
+                        <select id="roster-freq-filter">
+                            <option value="">All Frequencies</option>
+                            <option value="Daily">Daily</option>
+                            <option value="Weekly">Weekly</option>
+                            <option value="Fortnightly">Fortnightly</option>
+                            <option value="Monthly">Monthly</option>
+                            <option value="Quarterly">Quarterly</option>
+                            <option value="Half-Yearly">Half-Yearly</option>
+                            <option value="Yearly">Yearly</option>
+                        </select>
+                    </div>
+
+                    <table class="data-table" id="roster-table">
+                        <thead>
                             <tr>
+                                <th class="sortable-header" data-sort="role">Role <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th class="sortable-header" data-sort="employee">Employee <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th class="sortable-header" data-sort="freq">Frequency <i class="fas fa-sort" style="opacity:.3; font-size:.6rem; margin-left:4px;"></i></th>
+                                <th>Instructions</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>${items.map(i => `
+                            <tr data-role="${escAttr(i.role)}" data-employee="${escAttr(i.employee)}" data-freq="${escAttr(i.frequency)}">
                                 <td><strong>${App.escapeHtml(i.role)}</strong></td>
                                 <td>${App.escapeHtml(i.employee)}</td>
                                 <td><span class="tag">${i.frequency}</span></td>
@@ -1004,6 +1154,7 @@ export default {
                 </div>
             `;
             this._rosCache = items;
+            this._wireFilterAndSort('roster-table', 'roster-search', { freq: 'roster-freq-filter' }, 'role');
             document.getElementById('btn-add-ros').addEventListener('click', () => this.showRosterModal());
             document.getElementById('btn-ros-sample').addEventListener('click', () => this.downloadSample('roster'));
             document.getElementById('btn-ros-bulk').addEventListener('click', () => this.switchTab('bulk'));
@@ -1173,6 +1324,30 @@ export default {
                             <option value="NO" ${s.skipWeekends==='NO'?'selected':''}>No — Sat/Sun are working days</option>
                         </select>
                     </div>
+
+                    <h4 style="margin-top:24px; margin-bottom:12px; font-size:.9rem; font-weight:700; color:var(--accent); border-bottom:1px solid var(--border); padding-bottom:6px;">
+                        <i class="fas fa-envelope" style="margin-right:6px;"></i>SMTP &amp; Email Digest Settings
+                    </h4>
+                    <div class="form-grid">
+                        <div class="form-row">
+                            <label>Enable Daily Email Digest</label>
+                            <select id="set-digest-enabled" style="width:100%;">
+                                <option value="YES" ${s.emailDigestEnabled === 'YES' ? 'selected' : ''}>Yes — Send daily summary</option>
+                                <option value="NO" ${s.emailDigestEnabled !== 'YES' ? 'selected' : ''}>No — Disabled</option>
+                            </select>
+                        </div>
+                        <div class="form-row"><label>Digest Send Time</label><input type="time" id="set-digest-time" value="${s.emailDigestTime || '18:00'}" style="width:100%;"></div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-row"><label>SMTP Server Host</label><input type="text" id="set-smtp-host" value="${s.smtpHost || ''}" placeholder="e.g. smtp.gmail.com" style="width:100%;"></div>
+                        <div class="form-row"><label>SMTP Port</label><input type="number" id="set-smtp-port" value="${s.smtpPort || '587'}" placeholder="e.g. 587" style="width:100%;"></div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-row"><label>SMTP Username</label><input type="text" id="set-smtp-user" value="${s.smtpUser || ''}" placeholder="e.g. user@gmail.com" style="width:100%;"></div>
+                        <div class="form-row"><label>SMTP Password</label><input type="password" id="set-smtp-password" value="${s.smtpPassword || ''}" placeholder="••••••••" style="width:100%;"></div>
+                    </div>
+                    <div class="form-row"><label>SMTP Sender (From Email)</label><input type="email" id="set-smtp-from" value="${s.smtpFrom || ''}" placeholder="e.g. no-reply@company.com" style="width:100%;"></div>
+
                     <div style="display:flex; justify-content:flex-end; margin-top:20px;">
                         <button class="btn btn-primary" id="btn-save-settings"><i class="fas fa-save"></i> Save Settings</button>
                     </div>
@@ -1188,6 +1363,13 @@ export default {
                         lockDuplicate: document.getElementById('set-lock-dup').value,
                         requireRemarks: document.getElementById('set-remarks').value,
                         skipWeekends: document.getElementById('set-weekend').value,
+                        emailDigestEnabled: document.getElementById('set-digest-enabled').value,
+                        emailDigestTime: document.getElementById('set-digest-time').value,
+                        smtpHost: document.getElementById('set-smtp-host').value.trim(),
+                        smtpPort: document.getElementById('set-smtp-port').value.trim(),
+                        smtpUser: document.getElementById('set-smtp-user').value.trim(),
+                        smtpPassword: document.getElementById('set-smtp-password').value,
+                        smtpFrom: document.getElementById('set-smtp-from').value.trim(),
                     });
                     App.showToast('Settings saved', 'success');
                 } catch (err) { App.showToast('Failed to save settings', 'error'); }
@@ -1268,5 +1450,401 @@ export default {
         } catch (err) {
             container.innerHTML = '<div class="glass-card" style="padding:24px;"><p class="error-text">Failed to load audit trail</p></div>';
         }
+    },
+
+    _wireFilterAndSort(tableId, searchId, filterMap, defaultSortCol) {
+        const table = document.getElementById(tableId);
+        const search = document.getElementById(searchId);
+        if (!table || !search) return;
+
+        let currentSort = { col: defaultSortCol, dir: 'asc' };
+
+        const applyFilters = () => {
+            const tbody = table.querySelector('tbody');
+            if (!tbody) return;
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            const searchVal = search.value.toLowerCase();
+
+            const filterValues = {};
+            Object.keys(filterMap).forEach(key => {
+                const select = document.getElementById(filterMap[key]);
+                filterValues[key] = select?.value || '';
+            });
+
+            rows.forEach(tr => {
+                let searchText = '';
+                for (const k in tr.dataset) {
+                    searchText += ' ' + tr.dataset[k].toLowerCase();
+                }
+                const matchSearch = !searchVal || searchText.includes(searchVal);
+
+                let matchFilters = true;
+                for (const key in filterValues) {
+                    const requiredVal = filterValues[key];
+                    if (requiredVal) {
+                        const trVal = tr.dataset[key] || '';
+                        if (trVal !== requiredVal) {
+                            matchFilters = false;
+                            break;
+                        }
+                    }
+                }
+
+                tr.style.display = (matchSearch && matchFilters) ? '' : 'none';
+            });
+
+            const visibleRows = rows.filter(tr => tr.style.display !== 'none');
+            const { col, dir } = currentSort;
+
+            visibleRows.sort((a, b) => {
+                let va = a.dataset[col] || '';
+                let vb = b.dataset[col] || '';
+                const numA = Number(va), numB = Number(vb);
+                if (!isNaN(numA) && !isNaN(numB) && va !== '' && vb !== '') {
+                    return dir === 'asc' ? numA - numB : numB - numA;
+                }
+                if (va < vb) return dir === 'asc' ? -1 : 1;
+                if (va > vb) return dir === 'asc' ? 1 : -1;
+                return 0;
+            });
+
+            visibleRows.forEach(tr => tbody.appendChild(tr));
+        };
+
+        search.addEventListener('input', applyFilters);
+        Object.values(filterMap).forEach(id => {
+            document.getElementById(id)?.addEventListener('change', applyFilters);
+        });
+
+        table.querySelectorAll('.sortable-header').forEach(th => {
+            th.style.cursor = 'pointer';
+            th.addEventListener('click', () => {
+                const field = th.dataset.sort;
+                if (currentSort.col === field) {
+                    currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+                } else {
+                    currentSort = { col: field, dir: 'asc' };
+                }
+
+                table.querySelectorAll('.sortable-header i').forEach(icon => {
+                    icon.className = 'fas fa-sort';
+                    icon.style.opacity = '0.3';
+                });
+                const icon = th.querySelector('i');
+                if (icon) {
+                    icon.className = currentSort.dir === 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down';
+                    icon.style.opacity = '1';
+                }
+
+                applyFilters();
+            });
+        });
+
+        applyFilters();
+    },
+
+    async loadEmails(container) {
+        try {
+            const [settingsData, logsData] = await Promise.all([
+                api.get('/admin/settings'),
+                api.get('/admin/email-logs')
+            ]);
+            const s = settingsData.settings || {};
+            const logs = logsData.logs || [];
+            const escAttr = (val) => App.escapeHtml(val || '').replace(/'/g, '&#39;').replace(/"/g, '&quot;');
+
+            container.innerHTML = `
+                <div style="display:grid; grid-template-columns: 2fr 1fr; gap:16px; margin-bottom:16px;">
+                    <!-- Configuration Card -->
+                    <div class="glass-card" style="padding:24px;">
+                        <div class="card-header" style="margin-bottom:16px;">
+                            <h3 class="card-title"><i class="fas fa-envelope-open-text" style="color:var(--accent);margin-right:8px;"></i>SMTP Configuration &amp; Digest Settings</h3>
+                        </div>
+                        
+                        <div class="form-row" style="margin-bottom: 20px;">
+                            <label style="font-weight:700;">Global Email Master Switch</label>
+                            <select id="email-digest-enabled" style="width:100%;">
+                                <option value="YES" ${s.emailDigestEnabled === 'YES' ? 'selected' : ''}>Yes — Enable All System Email Dispatches</option>
+                                <option value="NO" ${s.emailDigestEnabled !== 'YES' ? 'selected' : ''}>No — Pause All System Email Dispatches</option>
+                            </select>
+                            <p style="font-size:.75rem; color:var(--text-muted); margin-top:4px;">When disabled, no automatically scheduled digest or reminder emails will be sent.</p>
+                        </div>
+
+                        <h4 style="margin-bottom:12px; font-size:.9rem; font-weight:700; color:var(--accent); border-bottom:1px solid var(--border); padding-bottom:6px;">
+                            <i class="fas fa-clock" style="margin-right:6px;"></i>Multi-Stage Digest Schedules
+                        </h4>
+                        
+                        <div class="form-grid" style="margin-bottom: 20px;">
+                            <div style="border: 1px solid var(--border); border-radius: 8px; padding: 14px; background: var(--bg-primary);">
+                                <label style="font-weight:600; font-size:.85rem; display:block; margin-bottom:4px;">1. Teammate Reminder (Pending tasks)</label>
+                                <div style="font-size:.78rem; color:var(--text-muted); margin-bottom:8px;">Sends a direct reminder of pending tasks to teammates.</div>
+                                <div style="display:flex; gap:8px;">
+                                    <select id="email-teammate-reminder-enabled" style="flex:1;">
+                                        <option value="YES" ${s.emailTeammateReminderEnabled === 'YES' ? 'selected' : ''}>Enabled</option>
+                                        <option value="NO" ${s.emailTeammateReminderEnabled !== 'YES' ? 'selected' : ''}>Disabled</option>
+                                    </select>
+                                    <input type="time" id="email-teammate-reminder-time" value="${s.emailTeammateReminderTime || '14:00'}" style="flex:1;">
+                                </div>
+                            </div>
+                            
+                            <div style="border: 1px solid var(--border); border-radius: 8px; padding: 14px; background: var(--bg-primary);">
+                                <label style="font-weight:600; font-size:.85rem; display:block; margin-bottom:4px;">2. Teammate Final Update (Full stats)</label>
+                                <div style="font-size:.78rem; color:var(--text-muted); margin-bottom:8px;">Sends daily stats and report update scores to teammates.</div>
+                                <div style="display:flex; gap:8px;">
+                                    <select id="email-teammate-final-enabled" style="flex:1;">
+                                        <option value="YES" ${s.emailTeammateFinalEnabled === 'YES' ? 'selected' : ''}>Enabled</option>
+                                        <option value="NO" ${s.emailTeammateFinalEnabled !== 'YES' ? 'selected' : ''}>Disabled</option>
+                                    </select>
+                                    <input type="time" id="email-teammate-final-time" value="${s.emailTeammateFinalTime || '18:00'}" style="flex:1;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-grid" style="margin-bottom: 20px;">
+                            <div style="border: 1px solid var(--border); border-radius: 8px; padding: 14px; background: var(--bg-primary);">
+                                <label style="font-weight:600; font-size:.85rem; display:block; margin-bottom:4px;">3. Manager Digest (Team status)</label>
+                                <div style="font-size:.78rem; color:var(--text-muted); margin-bottom:8px;">Sends team-wide KPI overview and task sheets to manager.</div>
+                                <div style="display:flex; gap:8px;">
+                                    <select id="email-manager-digest-enabled" style="flex:1;">
+                                        <option value="YES" ${s.emailManagerDigestEnabled === 'YES' ? 'selected' : ''}>Enabled</option>
+                                        <option value="NO" ${s.emailManagerDigestEnabled !== 'YES' ? 'selected' : ''}>Disabled</option>
+                                    </select>
+                                    <input type="time" id="email-manager-digest-time" value="${s.emailManagerDigestTime || '19:00'}" style="flex:1;">
+                                </div>
+                            </div>
+                            
+                            <div style="border: 1px solid var(--border); border-radius: 8px; padding: 14px; background: var(--bg-primary);">
+                                <label style="font-weight:600; font-size:.85rem; display:block; margin-bottom:4px;">4. Leader Digest (Research updates)</label>
+                                <div style="font-size:.78rem; color:var(--text-muted); margin-bottom:8px;">Sends detailed teamwise research update to leaders.</div>
+                                <div style="display:flex; gap:8px;">
+                                    <select id="email-leader-digest-enabled" style="flex:1;">
+                                        <option value="YES" ${s.emailLeaderDigestEnabled === 'YES' ? 'selected' : ''}>Enabled</option>
+                                        <option value="NO" ${s.emailLeaderDigestEnabled !== 'YES' ? 'selected' : ''}>Disabled</option>
+                                    </select>
+                                    <input type="time" id="email-leader-digest-time" value="${s.emailLeaderDigestTime || '20:00'}" style="flex:1;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top:24px; margin-bottom:12px; font-size:.9rem; font-weight:700; color:var(--accent); border-bottom:1px solid var(--border); padding-bottom:6px;">
+                            <i class="fas fa-server" style="margin-right:6px;"></i>SMTP Server Credentials
+                        </h4>
+                        <div class="form-grid">
+                            <div class="form-row"><label>SMTP Server Host</label><input type="text" id="email-smtp-host" value="${s.smtpHost || ''}" placeholder="e.g. smtp.gmail.com" style="width:100%;"></div>
+                            <div class="form-row"><label>SMTP Port</label><input type="number" id="email-smtp-port" value="${s.smtpPort || '587'}" placeholder="e.g. 587" style="width:100%;"></div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-row"><label>SMTP Username</label><input type="text" id="email-smtp-user" value="${s.smtpUser || ''}" placeholder="e.g. user@gmail.com" style="width:100%;"></div>
+                            <div class="form-row"><label>SMTP Password</label><input type="password" id="email-smtp-password" value="${s.smtpPassword || ''}" placeholder="••••••••" style="width:100%;"></div>
+                        </div>
+                        <div class="form-row"><label>SMTP Sender (From Email)</label><input type="email" id="email-smtp-from" value="${s.smtpFrom || ''}" placeholder="e.g. no-reply@company.com" style="width:100%;"></div>
+
+                        <div style="display:flex; justify-content:flex-end; margin-top:20px;">
+                            <button class="btn btn-primary" id="btn-save-email-settings"><i class="fas fa-save"></i> Save Settings</button>
+                        </div>
+                    </div>
+
+                    <!-- Operations Card -->
+                    <div style="display:flex; flex-direction:column; gap:16px;">
+                        <div class="glass-card" style="padding:20px; flex:1;">
+                            <h4 style="font-size:.9rem; font-weight:700; color:var(--warning); margin-bottom:8px;">
+                                <i class="fas fa-paper-plane" style="margin-right:6px;"></i>Send Test Email
+                            </h4>
+                            <p style="font-size:.78rem; color:var(--text-muted); margin-bottom:12px;">Test the SMTP connection immediately by sending a test email.</p>
+                            <div class="form-row">
+                                <label style="font-size:.75rem;">Recipient Email</label>
+                                <input type="email" id="email-test-recipient" placeholder="Enter recipient email..." style="width:100%; font-size:.8rem; padding:8px 12px; margin-bottom:10px;">
+                            </div>
+                            <button class="btn btn-outline btn-sm" id="btn-run-email-test" style="width:100%; justify-content:center;">
+                                <i class="fas fa-paper-plane"></i> Send Test Email
+                            </button>
+                        </div>
+
+                        <div class="glass-card" style="padding:20px; flex:1;">
+                            <h4 style="font-size:.9rem; font-weight:700; color:var(--danger); margin-bottom:8px;">
+                                <i class="fas fa-play" style="margin-right:6px;"></i>Manual Trigger
+                            </h4>
+                            <p style="font-size:.78rem; color:var(--text-muted); margin-bottom:12px;">Force-send a specific email digest stage or all stages immediately.</p>
+                            <div class="form-row" style="margin-bottom: 12px;">
+                                <label style="font-size:.75rem;">Digest Stage to Send</label>
+                                <select id="email-digest-stage-select" style="width:100%; font-size:.8rem; padding:8px 12px;">
+                                    <option value="all">All Stages</option>
+                                    <option value="teammate-reminder">1. Teammate Reminder (Pending only)</option>
+                                    <option value="teammate-final">2. Teammate Final (Full stats)</option>
+                                    <option value="manager-digest">3. Manager Digest (Team status)</option>
+                                    <option value="leader-digest">4. Leader Digest (Research updates)</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-outline btn-sm" id="btn-run-email-digest" style="width:100%; justify-content:center; border-color:var(--danger); color:var(--danger);">
+                                <i class="fas fa-rocket"></i> Trigger Selected Stage
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logs List Card -->
+                <div class="glass-card" style="padding:24px;">
+                    <div class="card-header" style="margin-bottom:16px;">
+                        <h3 class="card-title"><i class="fas fa-history" style="color:var(--accent);margin-right:8px;"></i>Sent Email Logs</h3>
+                        <div class="filter-bar" style="margin:0;">
+                            <input type="text" id="email-logs-search" placeholder="Search by recipient or subject..." style="font-size:.8rem; padding:6px 12px; border-radius:20px; width:220px;">
+                            <select id="email-logs-status" style="font-size:.8rem; padding:6px 12px; border-radius:20px; width:120px;">
+                                <option value="">All Statuses</option>
+                                <option value="Success">Success</option>
+                                <option value="Failed">Failed</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="overflow-x:auto;">
+                        <table class="data-table" id="email-logs-table">
+                            <thead>
+                                <tr>
+                                    <th class="sortable-header" data-sort="recipient">Recipient <i class="fas fa-sort" style="opacity:.3;"></i></th>
+                                    <th class="sortable-header" data-sort="subject">Subject <i class="fas fa-sort" style="opacity:.3;"></i></th>
+                                    <th class="sortable-header" data-sort="sentat" style="text-align:center;">Sent At <i class="fas fa-sort" style="opacity:.3;"></i></th>
+                                    <th class="sortable-header" data-sort="status" style="text-align:center;">Status <i class="fas fa-sort" style="opacity:.3;"></i></th>
+                                    <th style="text-align:center;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${logs.length === 0 ? `
+                                    <tr><td colspan="5" style="text-align:center; color:var(--text-muted); padding:30px;">No email logs found.</td></tr>
+                                ` : logs.map(l => {
+                                    const timeStr = l.sentAt ? new Date(l.sentAt).toLocaleString() : '—';
+                                    const badgeClass = l.status === 'Success' ? 'done' : 'pending';
+                                    const isFailed = l.status === 'Failed';
+                                    return `
+                                        <tr data-recipient="${escAttr(l.recipient)}" data-subject="${escAttr(l.subject)}" data-sentat="${l.sentAt || ''}" data-status="${l.status || ''}">
+                                            <td style="font-weight:600; font-size:.85rem; max-width:240px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${App.escapeHtml(l.recipient)}</td>
+                                            <td style="font-size:.85rem; max-width:260px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${App.escapeHtml(l.subject)}</td>
+                                            <td style="text-align:center; font-size:.8rem; color:var(--text-muted);">${timeStr}</td>
+                                            <td style="text-align:center;">
+                                                <span class="status-badge ${badgeClass}" ${isFailed ? `title="${App.escapeHtml(l.errorMessage || '')}" style="cursor:help;"` : ''}>
+                                                    ${l.status} ${isFailed ? '<i class="fas fa-info-circle" style="margin-left:4px;"></i>' : ''}
+                                                </span>
+                                            </td>
+                                            <td style="text-align:center;">
+                                                <button class="btn btn-sm btn-outline btn-view-body" data-id="${l.id}">
+                                                    <i class="fas fa-eye"></i> View Email
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    `;
+                                }).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+
+            // Save Settings Click handler
+            document.getElementById('btn-save-email-settings').addEventListener('click', async () => {
+                try {
+                    await api.post('/admin/settings', {
+                        emailDigestEnabled: document.getElementById('email-digest-enabled').value,
+                        emailTeammateReminderEnabled: document.getElementById('email-teammate-reminder-enabled').value,
+                        emailTeammateReminderTime: document.getElementById('email-teammate-reminder-time').value,
+                        emailTeammateFinalEnabled: document.getElementById('email-teammate-final-enabled').value,
+                        emailTeammateFinalTime: document.getElementById('email-teammate-final-time').value,
+                        emailManagerDigestEnabled: document.getElementById('email-manager-digest-enabled').value,
+                        emailManagerDigestTime: document.getElementById('email-manager-digest-time').value,
+                        emailLeaderDigestEnabled: document.getElementById('email-leader-digest-enabled').value,
+                        emailLeaderDigestTime: document.getElementById('email-leader-digest-time').value,
+                        
+                        smtpHost: document.getElementById('email-smtp-host').value.trim(),
+                        smtpPort: document.getElementById('email-smtp-port').value.trim(),
+                        smtpUser: document.getElementById('email-smtp-user').value.trim(),
+                        smtpPassword: document.getElementById('email-smtp-password').value,
+                        smtpFrom: document.getElementById('email-smtp-from').value.trim(),
+                    });
+                    App.showToast('Email Settings saved', 'success');
+                    this.loadTab(); // Reload
+                } catch (err) { App.showToast('Failed to save settings', 'error'); }
+            });
+
+            // Send Test Email handler
+            document.getElementById('btn-run-email-test').addEventListener('click', async () => {
+                const rec = document.getElementById('email-test-recipient').value.trim();
+                if (!rec) { App.showToast('Please specify a recipient email address.', 'warning'); return; }
+                
+                const btn = document.getElementById('btn-run-email-test');
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                try {
+                    await api.post('/admin/email-test', { to_email: rec });
+                    App.showToast('Test email sent successfully!', 'success');
+                    this.loadTab(); // Reload logs
+                } catch(err) {
+                    App.showToast(err.message || 'SMTP Connection test failed', 'error');
+                } finally {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Test Email';
+                }
+            });
+
+            // Manual digest trigger handler
+            document.getElementById('btn-run-email-digest').addEventListener('click', async () => {
+                const stage = document.getElementById('email-digest-stage-select').value;
+                if (!confirm(`This will immediately send out the daily email digest for stage "${stage}". Proceed?`)) return;
+                
+                const btn = document.getElementById('btn-run-email-digest');
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Triggering...';
+                try {
+                    const res = await api.post('/admin/email-trigger-digest', { stage });
+                    App.showToast(res.message || 'Digest triggered successfully!', 'success');
+                    this.loadTab(); // Reload logs
+                } catch(err) {
+                    App.showToast(err.message || 'Failed to trigger digest', 'error');
+                } finally {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-rocket"></i> Trigger Selected Stage';
+                }
+            });
+
+            // View email body button click handler
+            container.querySelectorAll('.btn-view-body').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const logId = parseInt(btn.dataset.id);
+                    const log = logs.find(x => x.id === logId);
+                    if (log) {
+                        this.viewEmailBody(log.subject, log.body);
+                    }
+                });
+            });
+
+            // Set up search/filters on logs
+            this._wireFilterAndSort('email-logs-table', 'email-logs-search', {
+                status: 'email-logs-status'
+            }, 'sentat');
+
+        } catch (err) {
+            container.innerHTML = `<div class="glass-card" style="padding:24px;"><p class="error-text">Failed to load email logs: ${err.message}</p></div>`;
+        }
+    },
+
+    viewEmailBody(subject, htmlBody) {
+        const iframe = document.createElement('iframe');
+        iframe.style.width = '100%';
+        iframe.style.height = '480px';
+        iframe.style.border = 'none';
+        iframe.style.borderRadius = '8px';
+        iframe.style.background = '#ffffff';
+        iframe.srcdoc = htmlBody;
+        
+        App.showModal(
+            subject,
+            `<div style="padding: 10px 0;"></div>`,
+            '<button class="btn btn-outline" onclick="App.closeModal()">Close</button>'
+        );
+        
+        setTimeout(() => {
+            const modalBody = document.querySelector('.modal-body');
+            if (modalBody) {
+                modalBody.innerHTML = '';
+                modalBody.appendChild(iframe);
+            }
+        }, 50);
     },
 };

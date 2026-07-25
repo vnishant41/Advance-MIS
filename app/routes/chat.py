@@ -196,7 +196,7 @@ def send_message():
     msg = ChatMessage(**msg_kwargs)
     db.session.add(msg)
     db.session.commit()
-    socketio.emit('new_message', msg.to_dict(), room=channel, namespace='/chat')
+    socketio.emit('chat_message', msg.to_dict(), room=channel)
     return jsonify({'success': True, 'message': msg.to_dict()})
 
 
@@ -299,21 +299,53 @@ def search_messages():
     return jsonify({'success': True, 'results': [m.to_dict() for m in results]})
 
 
+@chat_bp.route('/message/<int:msg_id>', methods=['DELETE'])
+@jwt_required()
+def delete_message(msg_id):
+    """Delete a chat message. Own messages always; Manager+ can delete any."""
+    user = get_current_user()
+    if not user:
+        return jsonify({'success': False}), 401
+
+    msg = ChatMessage.query.get(msg_id)
+    if not msg or msg.deleted:
+        return jsonify({'success': False, 'message': 'Message not found'}), 404
+
+    # Permission: own message OR manager+
+    is_own = (msg.sender_email or '').lower() == user.email.lower()
+    from app.auth import role_at_least
+    is_mgr = role_at_least(user.role, 'Manager')
+    if not is_own and not is_mgr:
+        return jsonify({'success': False, 'message': 'Not authorized'}), 403
+
+    msg.deleted = True
+    msg.message = '[This message was deleted]'
+    db.session.commit()
+
+    # Emit real-time deletion event
+    socketio.emit('message_deleted', {
+        'id': msg.id,
+        'channel': msg.channel,
+    }, room=msg.channel)
+
+    return jsonify({'success': True})
+
+
 # WebSocket events
-@socketio.on('join', namespace='/chat')
+@socketio.on('join')
 def on_join(data):
     room = data.get('channel', 'general')
     join_room(room)
     emit('user_joined', {'email': data.get('email', ''), 'channel': room}, room=room)
 
 
-@socketio.on('leave', namespace='/chat')
+@socketio.on('leave')
 def on_leave(data):
     room = data.get('channel', 'general')
     leave_room(room)
 
 
-@socketio.on('typing', namespace='/chat')
+@socketio.on('typing')
 def on_typing(data):
     room = data.get('channel', 'general')
     emit('user_typing', {'email': data.get('email', ''), 'name': data.get('name', '')}, room=room, include_self=False)
