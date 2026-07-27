@@ -708,10 +708,13 @@ export default {
             let curr = new Date(this.startDate + 'T00:00:00');
             const end = new Date(this.endDate + 'T00:00:00');
             while (curr <= end) {
-                const y = curr.getFullYear();
-                const m = String(curr.getMonth() + 1).padStart(2, '0');
-                const d = String(curr.getDate()).padStart(2, '0');
-                dates.push(`${y}-${m}-${d}`);
+                const dayOfWeek = curr.getDay(); // 0 = Sunday, 6 = Saturday
+                if (dayOfWeek !== 0 && dayOfWeek !== 6) { // Exclude Saturday & Sunday
+                    const y = curr.getFullYear();
+                    const m = String(curr.getMonth() + 1).padStart(2, '0');
+                    const d = String(curr.getDate()).padStart(2, '0');
+                    dates.push(`${y}-${m}-${d}`);
+                }
                 curr.setDate(curr.getDate() + 1);
             }
         } catch (e) {
@@ -881,6 +884,7 @@ export default {
                         tension: 0.3,
                         pointRadius: 4,
                         pointHoverRadius: 6,
+                        hidden: false,
                     },
                     {
                         label: 'Pending / Unfilled',
@@ -891,6 +895,7 @@ export default {
                         tension: 0.3,
                         pointRadius: 4,
                         pointHoverRadius: 6,
+                        hidden: true,
                     },
                     {
                         label: 'Total Scheduled',
@@ -900,6 +905,7 @@ export default {
                         fill: false,
                         tension: 0.3,
                         pointRadius: 3,
+                        hidden: true,
                     }
                 ]
             },
