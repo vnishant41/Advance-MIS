@@ -242,8 +242,8 @@ def get_pending():
         'open': sum(1 for t in tasks if t.status != 'Done'),
         'done': sum(1 for t in tasks if t.status == 'Done'),
         'blocked': sum(1 for t in tasks if t.status == 'Blocked'),
-        'overdue': [t.to_dict() for t in tasks if t.due_date and t.due_date < today and t.status != 'Done'],
-        'dueToday': [t.to_dict() for t in tasks if t.due_date and t.due_date == today and t.status != 'Done'],
+        'overdue': [t.to_dict() for t in tasks if t.due_date and (t.due_date.isoformat() if hasattr(t.due_date, 'isoformat') else str(t.due_date)) < today_str and t.status != 'Done'],
+        'dueToday': [t.to_dict() for t in tasks if t.due_date and (t.due_date.isoformat() if hasattr(t.due_date, 'isoformat') else str(t.due_date)) == today_str and t.status != 'Done'],
     }
 
     # Recent entries
