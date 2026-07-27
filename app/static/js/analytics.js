@@ -26,6 +26,10 @@ export default {
     selectedChartTopic: '__ALL__',
 
 
+    async render() {
+        return this.renderPage();
+    },
+
     renderPage() {
         return `
             <div class="team-update-layout">
