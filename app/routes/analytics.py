@@ -120,6 +120,25 @@ def get_team_updates():
     except ValueError:
         ref_date = date.today()
 
+    max_log_date = db.session.query(db.func.max(MasterLog.entry_date)).filter(MasterLog.row_status != 'Amended').scalar()
+
+    # If ref_date is default system date today (or not specified) and today's period has 0 done logs, default to max_log_date
+    if not ref_date_str or ref_date == date.today():
+        if max_log_date and max_log_date < ref_date:
+            if period == 'weekly':
+                s_check = ref_date - timedelta(days=ref_date.weekday())
+                e_check = s_check + timedelta(days=6)
+            elif period == 'monthly':
+                s_check = ref_date.replace(day=1)
+                e_check = (ref_date.replace(month=ref_date.month+1, day=1) if ref_date.month < 12 else ref_date.replace(year=ref_date.year+1, month=1, day=1)) - timedelta(days=1)
+            else:
+                s_check = ref_date
+                e_check = ref_date
+            
+            cnt = MasterLog.query.filter(MasterLog.row_status != 'Amended', MasterLog.entry_date >= s_check, MasterLog.entry_date <= e_check, MasterLog.status == 'Done').count()
+            if cnt == 0:
+                ref_date = max_log_date
+
     # Calculate start and end date based on period
     if period == 'weekly':
         start_date = ref_date - timedelta(days=ref_date.weekday())

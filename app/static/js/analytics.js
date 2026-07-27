@@ -724,27 +724,47 @@ export default {
         const select = document.getElementById('teammate-topic-select');
         if (!select) return;
         
-        const allEntries = [
-            ...(this.teammateDetail || []),
-            ...(this.teammateTaskHistory || []),
-            ...(this.teammateFactorTasks || [])
-        ];
-        const topicsSet = new Set();
-        allEntries.forEach(e => {
-            if (e.subTopic && e.entryType === 'DataUpdate') {
-                topicsSet.add(`${e.topic} (${e.subTopic})`);
+        const workLogs = this.teammateDetail || [];
+        const factorTasks = this.teammateFactorTasks || [];
+        const totalEntries = workLogs.length + factorTasks.length;
+
+        const workLogTopicsSet = new Set();
+        workLogs.forEach(e => { if (e.topic) workLogTopicsSet.add(e.topic); });
+        const workLogTopics = Array.from(workLogTopicsSet).sort();
+
+        const factorTopicsSet = new Set();
+        factorTasks.forEach(e => {
+            if (e.subTopic) {
+                factorTopicsSet.add(`${e.topic} (${e.subTopic})`);
             } else if (e.topic) {
-                topicsSet.add(e.topic);
+                factorTopicsSet.add(e.topic);
             }
         });
+        const factorTopics = Array.from(factorTopicsSet).sort();
         
-        const topics = Array.from(topicsSet).sort();
-        
-        let html = `<option value="__ALL__">📊 All Reports, Tasks & Factor Updates (${allEntries.length})</option>`;
-        topics.forEach(t => {
-            const isSelected = this.selectedChartTopic === t;
-            html += `<option value="${App.escapeHtml(t)}" ${isSelected ? 'selected' : ''}>${App.escapeHtml(t)}</option>`;
-        });
+        let html = `
+            <option value="__ALL__" ${this.selectedChartTopic === '__ALL__' ? 'selected' : ''}>📊 All Updates (${totalEntries})</option>
+            <option value="__ALL_WORK_LOGS__" ${this.selectedChartTopic === '__ALL_WORK_LOGS__' ? 'selected' : ''}>📋 All Work Logs (MIS Reports & Tasks) (${workLogs.length})</option>
+            <option value="__ALL_FACTOR_TASKS__" ${this.selectedChartTopic === '__ALL_FACTOR_TASKS__' ? 'selected' : ''}>⚡ All Factor Tasks (Commodity Updates) (${factorTasks.length})</option>
+        `;
+
+        if (workLogTopics.length > 0) {
+            html += `<optgroup label="MIS Reports & Tasks">`;
+            workLogTopics.forEach(t => {
+                const isSelected = this.selectedChartTopic === t;
+                html += `<option value="${App.escapeHtml(t)}" ${isSelected ? 'selected' : ''}>${App.escapeHtml(t)}</option>`;
+            });
+            html += `</optgroup>`;
+        }
+
+        if (factorTopics.length > 0) {
+            html += `<optgroup label="Factor Tasks (Commodity Factors)">`;
+            factorTopics.forEach(t => {
+                const isSelected = this.selectedChartTopic === t;
+                html += `<option value="${App.escapeHtml(t)}" ${isSelected ? 'selected' : ''}>${App.escapeHtml(t)}</option>`;
+            });
+            html += `</optgroup>`;
+        }
         
         select.innerHTML = html;
         select.value = this.selectedChartTopic || '__ALL__';
@@ -778,7 +798,6 @@ export default {
 
         const allEntries = [
             ...(this.teammateDetail || []),
-            ...(this.teammateTaskHistory || []),
             ...(this.teammateFactorTasks || [])
         ];
         const titleSpan = document.getElementById('teammate-chart-title');
@@ -796,6 +815,32 @@ export default {
 
             dateList.forEach(dStr => {
                 const dayEntries = allEntries.filter(e => e.entryDate === dStr);
+                const done = dayEntries.filter(e => (e.status || '').toLowerCase() === 'done').length;
+                const pending = dayEntries.filter(e => (e.status || '').toLowerCase() === 'pending' || e.isUnfilled).length;
+                doneData.push(done);
+                pendingData.push(pending);
+                totalData.push(dayEntries.length);
+            });
+        } else if (this.selectedChartTopic === '__ALL_WORK_LOGS__') {
+            if (titleSpan) titleSpan.innerHTML = `<i class="fas fa-clipboard-list" style="color:var(--accent); margin-right:6px;"></i>Updates Trend: <span style="color:var(--accent); font-weight:800;">All Work Logs (MIS Reports & Tasks)</span>`;
+            if (subtitleSpan) subtitleSpan.textContent = `Work logs & tasks daily trajectory over ${this.getDateRangeLabel()}`;
+            if (resetBtn) resetBtn.style.display = 'inline-flex';
+
+            dateList.forEach(dStr => {
+                const dayEntries = (this.teammateDetail || []).filter(e => e.entryDate === dStr);
+                const done = dayEntries.filter(e => (e.status || '').toLowerCase() === 'done').length;
+                const pending = dayEntries.filter(e => (e.status || '').toLowerCase() === 'pending' || e.isUnfilled).length;
+                doneData.push(done);
+                pendingData.push(pending);
+                totalData.push(dayEntries.length);
+            });
+        } else if (this.selectedChartTopic === '__ALL_FACTOR_TASKS__') {
+            if (titleSpan) titleSpan.innerHTML = `<i class="fas fa-cubes" style="color:#a78bfa; margin-right:6px;"></i>Updates Trend: <span style="color:#a78bfa; font-weight:800;">All Factor Tasks (Commodity Updates)</span>`;
+            if (subtitleSpan) subtitleSpan.textContent = `Commodity factor updates daily trajectory over ${this.getDateRangeLabel()}`;
+            if (resetBtn) resetBtn.style.display = 'inline-flex';
+
+            dateList.forEach(dStr => {
+                const dayEntries = (this.teammateFactorTasks || []).filter(e => e.entryDate === dStr);
                 const done = dayEntries.filter(e => (e.status || '').toLowerCase() === 'done').length;
                 const pending = dayEntries.filter(e => (e.status || '').toLowerCase() === 'pending' || e.isUnfilled).length;
                 doneData.push(done);
