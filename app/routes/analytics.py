@@ -143,7 +143,16 @@ def get_team_updates():
 
     # Only include Teammates
     scoped_users = [u for u in scoped_users if u.role == 'Teammate']
-    user_emails = [u.email.lower() for u in scoped_users]    # Initialize stats map
+    # Build user map (email -> list of emails with same user name for aliasing)
+    user_name_to_emails = {}
+    for u in scoped_users:
+        uname = (u.name or '').strip().lower()
+        if uname:
+            user_name_to_emails.setdefault(uname, []).append(u.email.lower())
+
+    user_emails = [u.email.lower() for u in scoped_users]
+
+    # Initialize stats map
     team_stats = {}
     for u in scoped_users:
         team_stats[u.email.lower()] = {
@@ -160,16 +169,12 @@ def get_team_updates():
             'lastActive': ''
         }
 
-
-
     # Fetch all reports for schedule matching
     all_reports = Report.query.all()
 
-    # Fetch MasterLog rows within date range for these users
+    # Fetch MasterLog rows within date range for all users
     logs = MasterLog.query.filter(
         MasterLog.row_status != 'Amended',
-        MasterLog.entry_type == 'MISReport',
-        MasterLog.on_behalf_of_email.in_(user_emails),
         MasterLog.entry_date >= start_date,
         MasterLog.entry_date <= end_date
     ).all()
@@ -198,13 +203,22 @@ def get_team_updates():
             for u in scoped_users:
                 email_lower = u.email.lower()
                 name_lower = u.name.lower()
-                if email_lower in primary_assignee or name_lower in primary_assignee:
+                matched = email_lower in primary_assignee or name_lower in primary_assignee
+                if not matched and name_lower in user_name_to_emails:
+                    matched = any(alias in primary_assignee for alias in user_name_to_emails[name_lower])
+                
+                if matched:
                     # This report is scheduled for teammate u on curr_date
                     team_stats[email_lower]['total'] += 1
                     
-                    # Check if they submitted a log for it
-                    log_key = (email_lower, curr_date, r.name)
-                    log = logs_map.get(log_key)
+                    # Check if they submitted a log for it (checking aliases too)
+                    log = None
+                    aliases = user_name_to_emails.get(name_lower, [email_lower])
+                    for alias_email in aliases:
+                        log = logs_map.get((alias_email, curr_date, r.name))
+                        if log:
+                            break
+                    
                     if log:
                         visited_log_ids.add(log.log_id)
                         if log.status == 'Done':
@@ -226,32 +240,42 @@ def get_team_updates():
         if log.log_id in visited_log_ids:
             continue
         em = log.on_behalf_of_email.lower()
-        if em not in team_stats:
-            continue
-        if log.submitted_by_email.lower() == em:
-            team_stats[em]['total'] += 1
+        target_stat = team_stats.get(em)
+        if not target_stat:
+            # Check by user name alias
+            for u in scoped_users:
+                if u.email.lower() in user_name_to_emails.get((u.name or '').strip().lower(), []):
+                    target_stat = team_stats.get(u.email.lower())
+                    break
+        if target_stat:
+            target_stat['total'] += 1
             if log.status == 'Done':
-                team_stats[em]['done'] += 1
+                target_stat['done'] += 1
             elif log.status == 'Pending':
-                team_stats[em]['pending'] += 1
+                target_stat['pending'] += 1
             elif log.status == 'Skip':
-                team_stats[em]['skip'] += 1
+                target_stat['skip'] += 1
             if log.is_late:
-                team_stats[em]['late'] += 1
+                target_stat['late'] += 1
 
     # Get last active date overall for these users
     active_dates = db.session.query(
         MasterLog.on_behalf_of_email,
         db.func.max(MasterLog.entry_date)
     ).filter(
-        MasterLog.row_status != 'Amended',
-        MasterLog.entry_type == 'MISReport',
-        MasterLog.on_behalf_of_email.in_(user_emails)
+        MasterLog.row_status != 'Amended'
     ).group_by(MasterLog.on_behalf_of_email).all()
     active_map = {email.lower(): mdate.isoformat() for email, mdate in active_dates if mdate}
 
     for em, st in team_stats.items():
-        st['lastActive'] = active_map.get(em, '')
+        # Check active date for alias emails too
+        aliases = user_name_to_emails.get((st['name'] or '').strip().lower(), [em])
+        latest_act = ''
+        for a in aliases:
+            act = active_map.get(a, '')
+            if act and act > latest_act:
+                latest_act = act
+        st['lastActive'] = latest_act
         if st['total'] > 0:
             st['score'] = round((st['done'] / st['total']) * 100)
         else:
@@ -298,6 +322,10 @@ def get_team_updates():
             elif r.status == 'Skip':
                 daily_trend[rdate]['skip'] += 1
 
+    # Get max log date in database
+    max_log = db.session.query(db.func.max(MasterLog.entry_date)).filter(MasterLog.row_status != 'Amended').scalar()
+    latest_log_date = max_log.isoformat() if max_log else None
+
     sumup = {
         'total': total_tasks,
         'done': total_done,
@@ -315,6 +343,7 @@ def get_team_updates():
         'startDate': start_date.isoformat(),
         'endDate': end_date.isoformat(),
         'refDate': ref_date.isoformat(),
+        'latestLogDate': latest_log_date,
         'sumup': sumup,
         'team': list(team_stats.values())
     })

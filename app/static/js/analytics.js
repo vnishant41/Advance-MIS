@@ -171,6 +171,15 @@ export default {
         try {
             const res = await api.get(`/analytics/team-updates?period=${this.period}&date=${this.refDate}`);
             if (res.success) {
+                // If current date has no logs but historical logs exist in database, auto-jump to latest log date once on load
+                if (!this._hasAutoJumped && res.latestLogDate && (res.sumup && res.sumup.total === 0)) {
+                    this._hasAutoJumped = true;
+                    this.refDate = res.latestLogDate;
+                    const picker = document.getElementById('ref-date-picker');
+                    if (picker) picker.value = this.refDate;
+                    return await this.loadData();
+                }
+
                 this.teamData = res.team || [];
                 this.sumupData = res.sumup || {};
                 this.startDate = res.startDate;

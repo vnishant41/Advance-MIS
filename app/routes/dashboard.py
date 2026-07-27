@@ -380,9 +380,13 @@ def get_team_detail(email):
     if not target_user:
         return jsonify({'success': False, 'message': 'User not found'}), 404
 
+    # Match all user emails associated with target user name or email
+    same_name_users = User.query.filter(db.func.lower(User.name) == target_user.name.lower()).all()
+    user_emails = list(set([u.email.lower() for u in same_name_users] + [email.lower()]))
+
     primary_rows = MasterLog.query.filter(
         MasterLog.row_status != 'Amended',
-        MasterLog.on_behalf_of_email == email.lower(),
+        MasterLog.on_behalf_of_email.in_(user_emails),
         MasterLog.entry_date >= from_date,
         MasterLog.entry_date <= to_date,
     ).all()
@@ -390,8 +394,8 @@ def get_team_detail(email):
     # Fetch MasterLog rows where they acted as backup
     backup_rows = MasterLog.query.filter(
         MasterLog.row_status != 'Amended',
-        MasterLog.submitted_by_email == email.lower(),
-        MasterLog.on_behalf_of_email != email.lower(),
+        MasterLog.submitted_by_email.in_(user_emails),
+        ~MasterLog.on_behalf_of_email.in_(user_emails),
         MasterLog.entry_date >= from_date,
         MasterLog.entry_date <= to_date,
     ).all()
@@ -418,7 +422,7 @@ def get_team_detail(email):
         override_index = _load_override_index(curr_date)
         for r in all_reports:
             primary_assignee = (r.primary_assignee or '').lower()
-            if email.lower() not in primary_assignee and target_user.name.lower() not in primary_assignee:
+            if not any(em in primary_assignee for em in user_emails) and target_user.name.lower() not in primary_assignee:
                 continue
 
 
@@ -461,7 +465,7 @@ def get_team_detail(email):
             else:
                 assignee_email = users_map.get(assignee, email.lower())
 
-            if assignee_email != email.lower():
+            if assignee_email not in user_emails:
                 continue
 
             freq = t.recurrence or 'Daily'
@@ -503,10 +507,10 @@ def get_team_detail(email):
             for assignee in (c.mode, c.primary_assignee):
                 if assignee:
                     a = assignee.strip().lower()
-                    if a in (email.lower(), target_user.name.lower()) or a in ('all', 'yes', 'no'):
+                    if a in user_emails or a == target_user.name.lower() or a in ('all', 'yes', 'no'):
                         matched = True
                         break
-                    if users_map.get(a) == email.lower():
+                    if users_map.get(a) in user_emails:
                         matched = True
                         break
 
@@ -555,9 +559,9 @@ def get_team_detail(email):
         # ── Roster entries for this date ──────────────────────────────────────
         roster_log_index = {l.role: l for l in RosterLog.query.filter_by(date=curr_date).all()}
         for rc in RosterConfig.query.all():
-            # Check if this roster config belongs to the target user (email or name match)
+            # Check if this roster config belongs to target user (email or name match)
             emp = (rc.employee or '').lower().strip()
-            if emp != email.lower() and emp != target_user.name.lower():
+            if emp not in user_emails and emp != target_user.name.lower():
                 continue
             # Check if it should fire today
             if not should_fire_with_override('RosterConfig', rc.role, '',
