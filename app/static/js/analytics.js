@@ -562,7 +562,7 @@ export default {
             <!-- Detailed task logs card -->
             <div class="glass-card" style="padding:20px; flex:1; display:flex; flex-direction:column; min-height: 300px;">
                 <div class="detail-filters-row work-logs-filters">
-                    <div style="font-weight:700; font-size:0.9rem; color:var(--text-primary);"><i class="fas fa-clipboard-list" style="color:var(--accent); margin-right:6px;"></i>Work Logs (MIS Reports)</div>
+                    <div style="font-weight:700; font-size:0.9rem; color:var(--text-primary);"><i class="fas fa-clipboard-list" style="color:var(--accent); margin-right:6px;"></i>Work Logs (MIS Reports & Tasks)</div>
                     <!-- Status Filter Pills -->
                     <div class="filter-pills" style="margin-left:auto;">
                         <button class="filter-pill active" data-status="all">All</button>
@@ -580,29 +580,6 @@ export default {
                 
                 <div id="teammate-detail-table-container" style="flex:1; overflow-y:auto;">
                     <div class="loading-skeleton" style="padding:20px;"><div class="skeleton-card" style="height:150px;"></div></div>
-                </div>
-            </div>
-
-            <!-- Task history card -->
-            <div id="teammate-task-history-card" class="glass-card" style="padding:20px; display:none; flex-direction:column; margin-top:16px; min-height: 200px;">
-                <div class="detail-filters-row task-history-filters">
-                    <div style="font-weight:700; font-size:0.9rem; color:var(--text-primary);"><i class="fas fa-history" style="color:var(--accent); margin-right:6px;"></i>Task History</div>
-                    <!-- Status Filter Pills -->
-                    <div class="filter-pills" style="margin-left:auto;">
-                        <button class="filter-pill active" data-status="all">All</button>
-                        <button class="filter-pill" data-status="done">Done</button>
-                        <button class="filter-pill" data-status="pending">Pending</button>
-                        <button class="filter-pill" data-status="skip">Skip</button>
-                        <button class="filter-pill" data-status="late">Late</button>
-                    </div>
-                    <!-- Inline search inside task history -->
-                    <div class="search-box" style="width: 220px; margin:0;">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="task-history-search" placeholder="Filter tasks..." style="padding: 6px 12px 6px 32px; border-radius:16px; font-size:0.78rem; width:100%;">
-                    </div>
-                </div>
-                <div id="teammate-task-history-table-container" style="flex:1; overflow-y:auto;">
-                    <!-- Task history table loaded dynamically -->
                 </div>
             </div>
 
@@ -646,8 +623,6 @@ export default {
         // Reset detail filters
         this.detailSearchQuery = '';
         this.statusFilter = 'all';
-        this.taskHistorySearchQuery = '';
-        this.taskHistoryStatusFilter = 'all';
         this.factorTasksSearchQuery = '';
         this.factorTasksStatusFilter = 'all';
 
@@ -667,25 +642,6 @@ export default {
             searchInput.addEventListener('input', (e) => {
                 this.detailSearchQuery = e.target.value;
                 this.renderDetailTable();
-            });
-        }
-
-        // Set filter listeners for Task History
-        const taskPills = container.querySelectorAll('.task-history-filters .filter-pill');
-        taskPills.forEach(pill => {
-            pill.addEventListener('click', () => {
-                taskPills.forEach(p => p.classList.remove('active'));
-                pill.classList.add('active');
-                this.taskHistoryStatusFilter = pill.dataset.status;
-                this.renderTaskHistoryTable();
-            });
-        });
-
-        const taskSearchInput = container.querySelector('#task-history-search');
-        if (taskSearchInput) {
-            taskSearchInput.addEventListener('input', (e) => {
-                this.taskHistorySearchQuery = e.target.value;
-                this.renderTaskHistoryTable();
             });
         }
 
@@ -712,8 +668,7 @@ export default {
         try {
             const details = await api.get(`/dash/team/${encodeURIComponent(email)}/detail?from=${this.startDate}&to=${this.endDate}`);
             const entries = details.entries || [];
-            this.teammateDetail = entries.filter(e => ['MISReport', 'Roster', 'ReportGroup'].includes(e.entryType));
-            this.teammateTaskHistory = entries.filter(e => e.entryType === 'Task');
+            this.teammateDetail = entries.filter(e => ['MISReport', 'Task', 'Roster', 'ReportGroup'].includes(e.entryType));
             this.teammateFactorTasks = entries.filter(e => e.entryType === 'DataUpdate');
             this.teammateBackupDetail = (details.backupEntries || []);
             
@@ -735,7 +690,6 @@ export default {
             }
 
             this.renderDetailTable();
-            this.renderTaskHistoryTable();
             this.renderFactorTasksTable();
             this.renderBackupTable();
         } catch (err) {
@@ -1048,139 +1002,6 @@ export default {
                     </thead>
                     <tbody>
                         ${filteredLogs.map(e => {
-                            const isUnfilled = e.isUnfilled;
-                            const rowStyle = isUnfilled ? 'opacity: 0.85; background: rgba(255,255,255,0.01);' : '';
-                            const unfilledLabel = isUnfilled ? '<span class="tag animate-pulse" style="background:rgba(245,158,11,0.15); color:#f59e0b; font-size:.62rem; padding:2px 6px; border-radius:4px; margin-left:8px; font-weight:700; border: 1px solid rgba(245,158,11,0.3);">UNFILLED</span>' : '';
-                            return `
-                                <tr style="${rowStyle}">
-                                    <td style="font-size:.75rem; color:var(--text-muted); white-space:nowrap; padding:10px 12px;">${fmtEntryDate(e.entryDate || '')}</td>
-                                    <td style="font-weight:600; color:var(--text-primary); padding:10px 14px;">
-                                        <div style="display:flex; align-items:center; flex-wrap:wrap; gap:4px;">
-                                            <span class="topic-link-clickable" data-topic="${App.escapeHtml(e.topic)}" style="cursor:pointer; color:var(--text-primary); font-weight:700; display:inline-flex; align-items:center; gap:4px;" title="Click to view line chart trend for '${App.escapeHtml(e.topic)}'">
-                                                <span class="topic-title-text" style="border-bottom: 1px dashed rgba(59,130,246,0.4);">${App.escapeHtml(e.topic)}</span>
-                                                <i class="fas fa-chart-line" style="font-size:0.65rem; color:var(--accent); opacity:0.8;"></i>
-                                            </span>
-                                            ${unfilledLabel}
-                                        </div>
-                                        ${e.subTopic ? `<div style="font-size:0.73rem; color:var(--text-secondary); margin-top:3px; font-weight:500; display:flex; align-items:center; gap:4px;"><i class="fas fa-level-down-alt" style="font-size:.6rem; opacity:.6;"></i>${App.escapeHtml(e.subTopic)}</div>` : ''}
-                                    </td>
-                                    <td style="padding:10px 14px;">${typeBadge(e.entryType)}</td>
-                                    <td style="padding:10px 14px;">${statusBadgeHtml(e.status, e.isLate)}</td>
-                                    <td style="font-size:.79rem; color:var(--text-secondary); white-space:normal; word-break:break-word; max-width:220px; padding:10px 14px;">
-                                        ${App.escapeHtml(e.remarks || '—')}
-                                    </td>
-                                    <td style="font-size:.78rem; color:var(--text-muted); font-weight:500; padding:10px 14px; white-space:nowrap;">
-                                        ${isUnfilled ? '<span style="font-style:italic; color:var(--text-muted); opacity:.7;">Pending Submission</span>' : formatTime(e.timestamp)}
-                                    </td>
-                                </tr>
-                            `;
-                        }).join('')}
-                    </tbody>
-                </table>
-            </div>
-        `;
-
-        tableContainer.innerHTML = html;
-        tableContainer.querySelectorAll('.topic-link-clickable').forEach(link => {
-            link.addEventListener('click', (ev) => {
-                ev.preventDefault();
-                ev.stopPropagation();
-                const topic = link.dataset.topic;
-                if (topic) this.selectChartTopic(topic);
-            });
-        });
-    },
-
-    renderTaskHistoryTable() {
-        const card = document.getElementById('teammate-task-history-card');
-        const tableContainer = document.getElementById('teammate-task-history-table-container');
-        if (!card || !tableContainer) return;
-
-        if (!this.teammateTaskHistory || this.teammateTaskHistory.length === 0) {
-            card.style.display = 'none';
-            return;
-        }
-
-        card.style.display = 'flex';
-
-        // Filter the tasks
-        let filteredTasks = [...this.teammateTaskHistory];
-
-        // 1. Status Filter
-        if (this.taskHistoryStatusFilter !== 'all') {
-            if (this.taskHistoryStatusFilter === 'late') {
-                filteredTasks = filteredTasks.filter(e => e.isLate);
-            } else {
-                filteredTasks = filteredTasks.filter(e => (e.status || '').toLowerCase() === this.taskHistoryStatusFilter);
-            }
-        }
-
-        // 2. Search query filter
-        const query = this.taskHistorySearchQuery.toLowerCase().trim();
-        if (query) {
-            filteredTasks = filteredTasks.filter(e => 
-                (e.topic || '').toLowerCase().includes(query) ||
-                (e.subTopic || '').toLowerCase().includes(query) ||
-                (e.remarks || '').toLowerCase().includes(query) ||
-                (e.entryType || '').toLowerCase().includes(query)
-            );
-        }
-
-        if (filteredTasks.length === 0) {
-            tableContainer.innerHTML = `<div class="empty-state" style="padding:40px;"><i class="fas fa-search-minus" style="opacity:.3; font-size:2rem;"></i><p style="margin-top:8px; color:var(--text-muted);">No matching tasks found.</p></div>`;
-            return;
-        }
-
-        const statusBadgeHtml = (status, isLate) => {
-            let text = status;
-            let cls = (status || '').toLowerCase();
-            if (isLate) {
-                return `<span class="status-badge late"><i class="fas fa-exclamation-triangle" style="margin-right:3px;"></i>${text} (Late)</span>`;
-            }
-            return `<span class="status-badge ${cls}">${text}</span>`;
-        };
-
-        const formatTime = (tsStr) => {
-            if (!tsStr) return '—';
-            try {
-                const dt = new Date(tsStr);
-                return dt.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) + '<br>' +
-                       `<span style="font-size:.72rem; color:var(--text-muted);">${dt.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true })}</span>`;
-            } catch (e) {
-                return tsStr;
-            }
-        };
-
-        const fmtEntryDate = (ds) => {
-            if (!ds) return '';
-            try { return new Date(ds + 'T00:00:00').toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }); }
-            catch { return ds; }
-        };
-
-        const typeBadge = (et) => {
-            const map = {
-                'Task':            { label: 'Task',          color: 'var(--accent)' },
-                'DataUpdate':      { label: 'Factor Task',   color: '#a78bfa' },
-            };
-            const m = map[et] || { label: et, color: 'var(--text-muted)' };
-            return `<span class="tag" style="background:${m.color}22; color:${m.color}; font-size:.68rem; font-weight:600; padding:2px 6px; border-radius:4px;">${m.label}</span>`;
-        };
-
-        const html = `
-            <div class="table-wrap" style="max-height: 400px; overflow-y: auto;">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th style="width:12%;">Date</th>
-                            <th style="width:32%;">Task Name</th>
-                            <th style="width:13%;">Type</th>
-                            <th style="width:12%;">Status</th>
-                            <th style="width:18%;">Remarks</th>
-                            <th style="width:13%;">Submitted At</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${filteredTasks.map(e => {
                             const isUnfilled = e.isUnfilled;
                             const rowStyle = isUnfilled ? 'opacity: 0.85; background: rgba(255,255,255,0.01);' : '';
                             const unfilledLabel = isUnfilled ? '<span class="tag animate-pulse" style="background:rgba(245,158,11,0.15); color:#f59e0b; font-size:.62rem; padding:2px 6px; border-radius:4px; margin-left:8px; font-weight:700; border: 1px solid rgba(245,158,11,0.3);">UNFILLED</span>' : '';
