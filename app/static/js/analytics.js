@@ -74,26 +74,60 @@ export default {
         `;
     },
 
+    getTodayStr() {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    },
+
+    updateDateNavControls() {
+        const todayStr = this.getTodayStr();
+        const picker = document.getElementById('ref-date-picker');
+        if (picker) {
+            picker.max = todayStr;
+        }
+        const btnNext = document.getElementById('btn-next-date');
+        if (btnNext) {
+            if (this.refDate >= todayStr) {
+                btnNext.disabled = true;
+                btnNext.style.opacity = '0.35';
+                btnNext.style.cursor = 'not-allowed';
+                btnNext.title = 'Cannot navigate past today';
+            } else {
+                btnNext.disabled = false;
+                btnNext.style.opacity = '1';
+                btnNext.style.cursor = 'pointer';
+                btnNext.title = 'Next Date';
+            }
+        }
+    },
+
     async init() {
         this.charts.forEach(c => c.destroy());
         this.charts = [];
         this.selectedTeammate = null;
         
         // Initialize refDate to local date in YYYY-MM-DD
-        const localDate = new Date();
-        const year = localDate.getFullYear();
-        const month = String(localDate.getMonth() + 1).padStart(2, '0');
-        const day = String(localDate.getDate()).padStart(2, '0');
-        this.refDate = `${year}-${month}-${day}`;
+        const todayStr = this.getTodayStr();
+        this.refDate = todayStr;
 
         const picker = document.getElementById('ref-date-picker');
         if (picker) {
+            picker.max = todayStr;
             picker.value = this.refDate;
             picker.addEventListener('change', (e) => {
-                this.refDate = e.target.value;
+                let val = e.target.value;
+                if (val > todayStr) {
+                    val = todayStr;
+                    e.target.value = todayStr;
+                }
+                this.refDate = val;
                 this.loadData();
             });
         }
+        this.updateDateNavControls();
 
         // Set up timeframe toggle
         const timeframeTabs = document.getElementById('timeframe-tabs');
@@ -132,11 +166,7 @@ export default {
         const btnToday = document.getElementById('btn-today');
         if (btnToday) {
             btnToday.addEventListener('click', () => {
-                const now = new Date();
-                const y = now.getFullYear();
-                const m = String(now.getMonth() + 1).padStart(2, '0');
-                const d = String(now.getDate()).padStart(2, '0');
-                this.refDate = `${y}-${m}-${d}`;
+                this.refDate = this.getTodayStr();
                 if (picker) picker.value = this.refDate;
                 this.loadData();
             });
@@ -147,6 +177,7 @@ export default {
     },
 
     stepDate(direction) {
+        const todayStr = this.getTodayStr();
         const d = new Date(this.refDate);
         if (isNaN(d.getTime())) return;
         
@@ -161,7 +192,13 @@ export default {
         const y = d.getFullYear();
         const m = String(d.getMonth() + 1).padStart(2, '0');
         const day = String(d.getDate()).padStart(2, '0');
-        this.refDate = `${y}-${m}-${day}`;
+        const nextDateStr = `${y}-${m}-${day}`;
+        
+        if (direction > 0 && nextDateStr > todayStr) {
+            return;
+        }
+
+        this.refDate = nextDateStr;
         
         const picker = document.getElementById('ref-date-picker');
         if (picker) picker.value = this.refDate;
@@ -170,6 +207,14 @@ export default {
     },
 
     async loadData() {
+        const todayStr = this.getTodayStr();
+        if (this.refDate > todayStr) {
+            this.refDate = todayStr;
+            const picker = document.getElementById('ref-date-picker');
+            if (picker) picker.value = todayStr;
+        }
+        this.updateDateNavControls();
+
         this.showLoadingMain();
         try {
             const res = await api.get(`/analytics/team-updates?period=${this.period}&date=${this.refDate}`);
@@ -649,16 +694,24 @@ export default {
     getDateList() {
         if (!this.startDate || !this.endDate) return [this.refDate];
         const dates = [];
+        const todayStr = this.getTodayStr();
         try {
             let curr = new Date(this.startDate + 'T00:00:00');
             const end = new Date(this.endDate + 'T00:00:00');
             while (curr <= end) {
+                const y = curr.getFullYear();
+                const m = String(curr.getMonth() + 1).padStart(2, '0');
+                const d = String(curr.getDate()).padStart(2, '0');
+                const dStr = `${y}-${m}-${d}`;
+
+                // Stop generating chart points beyond today's date
+                if (dStr > todayStr) {
+                    break;
+                }
+
                 const dayOfWeek = curr.getDay(); // 0 = Sunday, 6 = Saturday
                 if (dayOfWeek !== 0 && dayOfWeek !== 6) { // Exclude Saturday & Sunday
-                    const y = curr.getFullYear();
-                    const m = String(curr.getMonth() + 1).padStart(2, '0');
-                    const d = String(curr.getDate()).padStart(2, '0');
-                    dates.push(`${y}-${m}-${d}`);
+                    dates.push(dStr);
                 }
                 curr.setDate(curr.getDate() + 1);
             }
