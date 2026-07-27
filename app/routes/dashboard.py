@@ -300,6 +300,7 @@ def get_team():
             'score': 0,   # completion percentage
         }
 
+    today_str = today.isoformat()
     rows = MasterLog.query.filter(
         MasterLog.row_status != 'Amended',
         MasterLog.on_behalf_of_email.in_([u.email for u in scoped_users]),
