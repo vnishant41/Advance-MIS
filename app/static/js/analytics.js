@@ -255,9 +255,12 @@ export default {
             <option value="sumup" ${this.selectedTeammate === null ? 'selected' : ''}>👥 Team Sumup (Aggregate metrics & trends)</option>
         `;
         
-        this.teamData.forEach(t => {
+        // Filter to keep ONLY users with role 'Teammate'
+        const teammatesOnly = (this.teamData || []).filter(t => (t.role || '').toLowerCase() === 'teammate');
+        
+        teammatesOnly.forEach(t => {
             const isSelected = this.selectedTeammate === t.email;
-            html += `<option value="${t.email}" ${isSelected ? 'selected' : ''}>👤 ${App.escapeHtml(t.name)} (${t.score}%) — ${App.escapeHtml(t.role)}</option>`;
+            html += `<option value="${t.email}" ${isSelected ? 'selected' : ''}>👤 ${App.escapeHtml(t.name)} (${t.score}%)</option>`;
         });
         
         select.innerHTML = html;
