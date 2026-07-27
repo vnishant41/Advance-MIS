@@ -78,23 +78,29 @@ const App = {
             return;
         }
 
+        let moduleKey = page;
+        if (page === 'dashboard' || page === 'analytics') {
+            moduleKey = 'analytics';
+        }
+
         // Update nav highlight
         document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-        const activeNav = document.querySelector(`.nav-item[data-page="${page}"]`);
+        const activeNavKey = (page === 'analytics') ? 'dashboard' : page;
+        const activeNav = document.querySelector(`.nav-item[data-page="${activeNavKey}"]`) || document.querySelector(`.nav-item[data-page="${page}"]`);
         if (activeNav) activeNav.classList.add('active');
 
         // Update top bar
         const titleMap = {
             'dashboard': 'Dashboard',
+            'analytics': 'Dashboard',
             'tasks': 'Tasks & Roster',
             'mis': 'MIS Reports',
             'kanban': 'Kanban Board',
             'chat': 'Team Chat',
-            'analytics': 'Team Update',
             'roster': 'Roster Management',
             'admin': 'Admin Panel'
         };
-        document.getElementById('page-title').textContent = titleMap[page] || 'Advanced MIS';
+        document.getElementById('page-title').textContent = titleMap[page] || 'Dashboard';
         document.getElementById('page-date').textContent = new Date().toLocaleDateString('en-US', {
             weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
         });
@@ -102,16 +108,16 @@ const App = {
         this.showLoading();
 
         try {
-            if (!this.modules[page]) {
-                const mod = await import(`./${page}.js`);
-                this.modules[page] = mod.default;
+            if (!this.modules[moduleKey]) {
+                const mod = await import(`./${moduleKey}.js`);
+                this.modules[moduleKey] = mod.default;
             }
 
             const container = document.getElementById('page-container');
-            container.innerHTML = await this.modules[page].render();
+            container.innerHTML = await this.modules[moduleKey].render();
 
-            if (this.modules[page].init) {
-                await this.modules[page].init();
+            if (this.modules[moduleKey].init) {
+                await this.modules[moduleKey].init();
             }
 
         } catch (error) {
