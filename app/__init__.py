@@ -112,23 +112,22 @@ def _register_socket_handlers():
 
 
 def _run_lightweight_migrations():
-    """Add columns to existing SQLite tables when models grow new fields.
-    SQLite doesn't drop/rename here — we only ALTER TABLE ADD COLUMN if missing."""
-    from sqlalchemy import text
+    """Add columns to existing tables when models grow new fields."""
+    from sqlalchemy import text, inspect
     expected = {
         'reports':           [('backup_1', "VARCHAR(255) DEFAULT ''"),
                               ('backup_2', "VARCHAR(255) DEFAULT ''"),
                               ('schedule_day', "VARCHAR(50) DEFAULT ''"),
-                              ('instructions', "TEXT DEFAULT ''")],
+                              ('instructions', "TEXT")],
         'task_templates':    [('backup_1', "VARCHAR(255) DEFAULT ''"),
                               ('backup_2', "VARCHAR(255) DEFAULT ''"),
                               ('schedule_day', "VARCHAR(50) DEFAULT ''"),
-                              ('instructions', "TEXT DEFAULT ''")],
+                              ('instructions', "TEXT")],
         'commodity_configs': [('primary_assignee', "VARCHAR(255) DEFAULT ''"),
                               ('backup_1', "VARCHAR(255) DEFAULT ''"),
                               ('backup_2', "VARCHAR(255) DEFAULT ''"),
                               ('schedule_day', "VARCHAR(50) DEFAULT ''"),
-                              ('instructions', "TEXT DEFAULT ''")],
+                              ('instructions', "TEXT")],
         'report_groups':     [('backup_1', "VARCHAR(255) DEFAULT ''"),
                               ('backup_2', "VARCHAR(255) DEFAULT ''"),
                               ('schedule_day', "VARCHAR(50) DEFAULT ''")],
@@ -139,19 +138,16 @@ def _run_lightweight_migrations():
                               ('attachment_mime', "VARCHAR(100) DEFAULT ''")],
         'kanban_tasks':      [('position', "INTEGER DEFAULT 0")],
     }
-    conn = db.engine.connect()
     try:
+        inspector = inspect(db.engine)
         for table, cols in expected.items():
-            try:
-                existing_rows = conn.execute(text(f"PRAGMA table_info({table})")).fetchall()
-                existing = {r[1] for r in existing_rows}
-                if not existing:
-                    continue  # table not created yet (will be on next boot)
+            if not inspector.has_table(table):
+                continue
+            existing = {c['name'] for c in inspector.get_columns(table)}
+            with db.engine.connect() as conn:
                 for col_name, col_decl in cols:
                     if col_name not in existing:
-                        conn.execute(text(f"ALTER TABLE {table} ADD COLUMN {col_name} {col_decl}"))
+                        conn.execute(text(f"ALTER TABLE `{table}` ADD COLUMN `{col_name}` {col_decl}"))
                         conn.commit()
-            except Exception as e:
-                print(f"[migration] skipped {table}: {e}")
-    finally:
-        conn.close()
+    except Exception as e:
+        print(f"[migration] warning: {e}")
