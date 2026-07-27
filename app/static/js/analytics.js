@@ -26,46 +26,41 @@ export default {
     selectedChartTopic: '__ALL__',
 
 
-    async render() {
+    asy    renderPage() {
         return `
             <div class="team-update-layout">
-                <!-- Sidebar with Teammates List -->
-                <div class="team-update-sidebar">
-                    <div class="glass-card" style="padding: 16px; display: flex; flex-direction: column; gap: 12px; height: 100%;">
-                        <div style="font-weight: 700; font-size: 0.95rem; color: var(--text-primary); display: flex; align-items: center; justify-content: space-between;">
-                            <span>Teammates</span>
-                            <span class="badge" id="team-count" style="margin: 0; background: var(--bg-hover); color: var(--text-secondary); font-size: 0.75rem;">0</span>
-                        </div>
-                        <!-- Teammate Search -->
-                        <div class="search-box" style="width: 100%;">
-                            <i class="fas fa-search"></i>
-                            <input type="text" id="teammate-search" placeholder="Search teammates..." style="width: 100%; border-radius: 8px; padding-left: 36px; padding-top: 8px; padding-bottom: 8px;">
-                        </div>
-                        <!-- Teammates Container -->
-                        <div class="teammate-list-container" id="teammates-list" style="max-height: 500px;">
-                            <!-- Loaded dynamically -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Main Pane -->
-                <div class="team-update-main">
+                <!-- Main Pane (Full Width) -->
+                <div class="team-update-main" style="width: 100%;">
                     <!-- Controls Row -->
-                    <div class="glass-card" style="padding: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-                        <!-- Timeframe Toggle -->
-                        <div class="tabs" id="timeframe-tabs" style="margin-bottom: 0; padding: 3px;">
-                            <button class="tab active" data-period="daily">Daily</button>
-                            <button class="tab" data-period="weekly">Weekly</button>
-                            <button class="tab" data-period="monthly">Monthly</button>
+                    <div class="glass-card" style="padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+                        
+                        <!-- Left Group: Teammate Select Dropdown + Timeframe Toggle -->
+                        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+                            <!-- Teammate Dropdown -->
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <label for="teammate-dropdown-select" style="font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; white-space: nowrap;">
+                                    <i class="fas fa-users" style="color: var(--accent); font-size: 1rem;"></i> View:
+                                </label>
+                                <select id="teammate-dropdown-select" style="padding: 7px 14px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); cursor: pointer; min-width: 250px; box-shadow: var(--shadow-sm);">
+                                    <option value="sumup">👥 Team Sumup (Aggregate metrics & trends)</option>
+                                </select>
+                            </div>
+
+                            <!-- Timeframe Toggle -->
+                            <div class="tabs" id="timeframe-tabs" style="margin-bottom: 0; padding: 3px;">
+                                <button class="tab active" data-period="daily">Daily</button>
+                                <button class="tab" data-period="weekly">Weekly</button>
+                                <button class="tab" data-period="monthly">Monthly</button>
+                            </div>
                         </div>
 
-                        <!-- Date Selection Controls -->
+                        <!-- Right Group: Date Selection Controls -->
                         <div id="date-nav-controls" style="display: flex; align-items: center; gap: 8px;">
-                            <button class="btn btn-outline btn-sm" id="btn-prev-date" style="padding: 8px 12px;"><i class="fas fa-chevron-left"></i></button>
+                            <button class="btn btn-outline btn-sm" id="btn-prev-date" style="padding: 8px 12px;" title="Previous Date"><i class="fas fa-chevron-left"></i></button>
                             <div style="position: relative; display: flex; align-items: center;">
                                 <input type="date" id="ref-date-picker" style="padding: 6px 12px; font-weight: 600; font-size: 0.85rem; width: 150px; cursor: pointer;">
                             </div>
-                            <button class="btn btn-outline btn-sm" id="btn-next-date" style="padding: 8px 12px;"><i class="fas fa-chevron-right"></i></button>
+                            <button class="btn btn-outline btn-sm" id="btn-next-date" style="padding: 8px 12px;" title="Next Date"><i class="fas fa-chevron-right"></i></button>
                             <button class="btn btn-outline btn-sm" id="btn-today" style="padding: 8px 12px;">Today</button>
                         </div>
                     </div>
@@ -113,6 +108,20 @@ export default {
             });
         }
 
+        // Set up Teammate Dropdown listener
+        const teammateDropdown = document.getElementById('teammate-dropdown-select');
+        if (teammateDropdown) {
+            teammateDropdown.addEventListener('change', (e) => {
+                const val = e.target.value;
+                if (val === 'sumup') {
+                    this.selectedTeammate = null;
+                } else {
+                    this.selectedTeammate = val;
+                }
+                this.renderMainContent();
+            });
+        }
+
         // Prev/Next/Today buttons
         const btnPrev = document.getElementById('btn-prev-date');
         if (btnPrev) btnPrev.addEventListener('click', () => this.stepDate(-1));
@@ -130,15 +139,6 @@ export default {
                 this.refDate = `${y}-${m}-${d}`;
                 if (picker) picker.value = this.refDate;
                 this.loadData();
-            });
-        }
-
-        // Teammate search box
-        const searchBox = document.getElementById('teammate-search');
-        if (searchBox) {
-            searchBox.addEventListener('input', (e) => {
-                this.searchQuery = e.target.value;
-                this.renderSidebar();
             });
         }
 
@@ -174,8 +174,6 @@ export default {
         try {
             const res = await api.get(`/analytics/team-updates?period=${this.period}&date=${this.refDate}`);
             if (res.success) {
-                // If current selected timeframe has 0 completed logs, but historical submitted logs exist in database,
-                // auto-jump to latest active log date on initial load so user sees historical data immediately.
                 if (!this._hasAutoJumped && res.latestLogDate && (res.sumup && res.sumup.done === 0) && res.latestLogDate < (res.startDate || '')) {
                     this._hasAutoJumped = true;
                     this.refDate = res.latestLogDate;
@@ -189,7 +187,7 @@ export default {
                 this.startDate = res.startDate;
                 this.endDate = res.endDate;
                 
-                this.renderSidebar();
+                this.renderTeammateDropdown();
                 await this.renderMainContent();
             } else {
                 this.showErrorMain(res.message || 'Failed to load team updates.');
@@ -200,74 +198,21 @@ export default {
         }
     },
 
-    renderSidebar() {
-        const listContainer = document.getElementById('teammates-list');
-        if (!listContainer) return;
+    renderTeammateDropdown() {
+        const select = document.getElementById('teammate-dropdown-select');
+        if (!select) return;
         
-        const query = this.searchQuery.toLowerCase().trim();
-        const filteredTeam = this.teamData.filter(t => 
-            (t.name || '').toLowerCase().includes(query) || 
-            (t.email || '').toLowerCase().includes(query)
-        );
-        
-        const countSpan = document.getElementById('team-count');
-        if (countSpan) countSpan.textContent = filteredTeam.length;
-        
-        let html = '';
-        
-        // 1. Render Team Sumup item
-        const isSumupActive = this.selectedTeammate === null;
-        html += `
-            <div class="teammate-list-item ${isSumupActive ? 'active' : ''}" data-email="sumup">
-                <div class="avatar-circle" style="background: linear-gradient(135deg, var(--accent) 0%, #1d4ed8 100%);">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div class="teammate-meta">
-                    <div class="teammate-name">Team Sumup</div>
-                    <div class="teammate-email">Aggregate metrics & trends</div>
-                </div>
-            </div>
+        let html = `
+            <option value="sumup" ${this.selectedTeammate === null ? 'selected' : ''}>👥 Team Sumup (Aggregate metrics & trends)</option>
         `;
         
-        // 2. Render each Teammate
-        filteredTeam.forEach(t => {
-            const isActive = this.selectedTeammate === t.email;
-            const scoreClass = t.score >= 80 ? 'high' : t.score >= 50 ? 'medium' : 'low';
-            html += `
-                <div class="teammate-list-item ${isActive ? 'active' : ''}" data-email="${t.email}">
-                    <div class="avatar-circle">
-                        ${(t.name || '?').charAt(0).toUpperCase()}
-                    </div>
-                    <div class="teammate-meta">
-                        <div class="teammate-name">${App.escapeHtml(t.name)}</div>
-                        <div class="teammate-email">${App.escapeHtml(t.email)}</div>
-                        <div style="display:flex; align-items:center; gap:6px; margin-top:4px;">
-                            <div class="progress-bar" style="width:100%; height:4px; background:rgba(255,255,255,0.06); margin:0;">
-                                <div class="progress-fill" style="width:${t.score}%; background:var(--${scoreClass === 'high' ? 'success' : scoreClass === 'medium' ? 'warning' : 'danger'});"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <span class="teammate-score-badge ${scoreClass}">${t.score}%</span>
-                </div>
-            `;
+        this.teamData.forEach(t => {
+            const isSelected = this.selectedTeammate === t.email;
+            html += `<option value="${t.email}" ${isSelected ? 'selected' : ''}>👤 ${App.escapeHtml(t.name)} (${t.score}%) — ${App.escapeHtml(t.role)}</option>`;
         });
         
-        listContainer.innerHTML = html;
-        
-        // Click handlers
-        listContainer.querySelectorAll('.teammate-list-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const email = item.dataset.email;
-                if (email === 'sumup') {
-                    this.selectedTeammate = null;
-                } else {
-                    this.selectedTeammate = email;
-                }
-                listContainer.querySelectorAll('.teammate-list-item').forEach(el => el.classList.remove('active'));
-                item.classList.add('active');
-                this.renderMainContent();
-            });
-        });
+        select.innerHTML = html;
+        select.value = this.selectedTeammate === null ? 'sumup' : this.selectedTeammate;
     },
 
     async renderMainContent() {
