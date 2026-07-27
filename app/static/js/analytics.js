@@ -20,6 +20,7 @@ export default {
     teammateTaskHistory: [],
     taskHistorySearchQuery: '',
     taskHistoryStatusFilter: 'all',
+    selectedChartTopic: '__ALL__',
 
 
     async render() {
@@ -402,7 +403,7 @@ export default {
             this.charts.push(chart);
         }
         
-        // 2. Trend Bar Chart (or line)
+        // 2. Trend Line Chart
         if (trendCtx) {
             if (s.trend && s.trend.length > 0) {
                 const labels = s.trend.map(t => {
@@ -412,31 +413,50 @@ export default {
                 
                 const doneData = s.trend.map(t => t.done);
                 const totalData = s.trend.map(t => t.total);
+                const pendingData = s.trend.map(t => t.pending || Math.max(0, t.total - t.done));
                 
                 const chart = new Chart(trendCtx, {
-                    type: 'bar',
+                    type: 'line',
                     data: {
                         labels: labels,
                         datasets: [
                             {
-                                label: 'Done',
+                                label: 'Completed',
                                 data: doneData,
-                                backgroundColor: '#10b981',
-                                borderRadius: 4,
-                                maxBarThickness: 14
+                                borderColor: '#10b981',
+                                backgroundColor: 'rgba(16, 185, 129, 0.12)',
+                                tension: 0.35,
+                                fill: true,
+                                pointRadius: 4,
+                                pointBackgroundColor: '#10b981'
+                            },
+                            {
+                                label: 'Pending',
+                                data: pendingData,
+                                borderColor: '#f59e0b',
+                                backgroundColor: 'rgba(245, 158, 11, 0.06)',
+                                tension: 0.35,
+                                fill: true,
+                                borderDash: [4, 4],
+                                pointRadius: 4,
+                                pointBackgroundColor: '#f59e0b'
                             },
                             {
                                 label: 'Total Scheduled',
                                 data: totalData,
-                                backgroundColor: 'rgba(59, 130, 246, 0.2)',
-                                borderRadius: 4,
-                                maxBarThickness: 14
+                                borderColor: '#3b82f6',
+                                backgroundColor: 'transparent',
+                                tension: 0.35,
+                                fill: false,
+                                pointRadius: 3,
+                                pointBackgroundColor: '#3b82f6'
                             }
                         ]
                     },
                     options: {
                         responsive: true,
                         maintainAspectRatio: false,
+                        interaction: { mode: 'index', intersect: false },
                         plugins: {
                             legend: {
                                 position: 'bottom',
@@ -447,7 +467,7 @@ export default {
                             y: {
                                 beginAtZero: true,
                                 grid: { color: 'rgba(51,65,85,0.1)' },
-                                ticks: { color: '#64748b', font: { family: 'Inter', size: 9 } }
+                                ticks: { color: '#64748b', precision: 0, font: { family: 'Inter', size: 9 } }
                             },
                             x: {
                                 grid: { display: false },
@@ -475,6 +495,7 @@ export default {
         }
         
         const dateRangeLabel = this.getDateRangeLabel();
+        this.selectedChartTopic = '__ALL__';
         
         const container = document.getElementById('main-content-area');
         container.innerHTML = `
@@ -494,7 +515,36 @@ export default {
                 </div>
             </div>
 
-
+            <!-- Line Chart Representation Card (Weekly / Monthly updates trend & topic drilldown) -->
+            <div id="teammate-chart-card" class="glass-card" style="padding:20px; margin-bottom:4px; display:flex; flex-direction:column; min-height: 290px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:12px;">
+                    <div>
+                        <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary); display:flex; align-items:center; gap:8px;">
+                            <i class="fas fa-chart-line" style="color:var(--accent);"></i>
+                            <span id="teammate-chart-title">Updates Trend (All Reports & Tasks)</span>
+                        </div>
+                        <p style="font-size:0.75rem; color:var(--text-muted); margin-top:2px;" id="teammate-chart-subtitle">
+                            Line chart view of updates across ${dateRangeLabel}
+                        </p>
+                    </div>
+                    
+                    <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                        <div style="display:flex; align-items:center; gap:6px;">
+                            <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600;"><i class="fas fa-filter" style="margin-right:4px;"></i>Topic / Task:</span>
+                            <select id="teammate-topic-select" style="padding: 5px 10px; border-radius: 6px; font-size: 0.78rem; background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); max-width: 240px; cursor: pointer;">
+                                <option value="__ALL__">All Reports & Topics</option>
+                            </select>
+                        </div>
+                        <button id="btn-reset-chart-topic" class="btn btn-outline btn-sm" style="padding: 4px 10px; font-size: 0.75rem; display: none;">
+                            <i class="fas fa-sync-alt" style="margin-right:4px;"></i>Show All Updates
+                        </button>
+                    </div>
+                </div>
+                
+                <div style="flex:1; position:relative; min-height:210px;">
+                    <canvas id="chart-teammate-trend"></canvas>
+                </div>
+            </div>
 
             <!-- Detailed task logs card -->
             <div class="glass-card" style="padding:20px; flex:1; display:flex; flex-direction:column; min-height: 350px;">
@@ -605,6 +655,24 @@ export default {
             this.teammateDetail = (details.entries || []).filter(e => ['MISReport', 'Roster', 'ReportGroup'].includes(e.entryType));
             this.teammateTaskHistory = (details.entries || []).filter(e => ['Task', 'DataUpdate'].includes(e.entryType));
             this.teammateBackupDetail = (details.backupEntries || []).filter(e => ['MISReport', 'Task', 'Roster', 'DataUpdate', 'ReportGroup'].includes(e.entryType));
+            
+            this.populateTopicDropdown();
+            this.renderTeammateChart();
+            
+            const topicSelect = document.getElementById('teammate-topic-select');
+            if (topicSelect) {
+                topicSelect.addEventListener('change', (e) => {
+                    this.selectChartTopic(e.target.value);
+                });
+            }
+            
+            const resetBtn = document.getElementById('btn-reset-chart-topic');
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                    this.selectChartTopic('__ALL__');
+                });
+            }
+
             this.renderDetailTable();
             this.renderTaskHistoryTable();
             this.renderBackupTable();
@@ -614,6 +682,203 @@ export default {
             if (containerTable) {
                 containerTable.innerHTML = `<div class="empty-state" style="padding:40px;"><i class="fas fa-exclamation-circle" style="color:var(--danger); font-size:1.8rem;"></i><p style="margin-top:8px;">Failed to load report details.</p></div>`;
             }
+        }
+    },
+
+    getDateList() {
+        if (!this.startDate || !this.endDate) return [this.refDate];
+        const dates = [];
+        try {
+            let curr = new Date(this.startDate + 'T00:00:00');
+            const end = new Date(this.endDate + 'T00:00:00');
+            while (curr <= end) {
+                const y = curr.getFullYear();
+                const m = String(curr.getMonth() + 1).padStart(2, '0');
+                const d = String(curr.getDate()).padStart(2, '0');
+                dates.push(`${y}-${m}-${d}`);
+                curr.setDate(curr.getDate() + 1);
+            }
+        } catch (e) {
+            console.error(e);
+        }
+        return dates.length > 0 ? dates : [this.refDate];
+    },
+
+    populateTopicDropdown() {
+        const select = document.getElementById('teammate-topic-select');
+        if (!select) return;
+        
+        const allEntries = [...(this.teammateDetail || []), ...(this.teammateTaskHistory || [])];
+        const topicsSet = new Set();
+        allEntries.forEach(e => {
+            if (e.topic) topicsSet.add(e.topic);
+        });
+        
+        const topics = Array.from(topicsSet).sort();
+        
+        let html = `<option value="__ALL__">📊 All Reports & Topics (${topics.length})</option>`;
+        topics.forEach(t => {
+            const isSelected = this.selectedChartTopic === t;
+            html += `<option value="${App.escapeHtml(t)}" ${isSelected ? 'selected' : ''}>${App.escapeHtml(t)}</option>`;
+        });
+        
+        select.innerHTML = html;
+        select.value = this.selectedChartTopic || '__ALL__';
+    },
+
+    renderTeammateChart() {
+        const ctx = document.getElementById('chart-teammate-trend');
+        if (!ctx) return;
+
+        // Clean up active teammate chart
+        this.charts = this.charts.filter(c => {
+            if (c && c.canvas && c.canvas.id === 'chart-teammate-trend') {
+                c.destroy();
+                return false;
+            }
+            return true;
+        });
+
+        if (typeof Chart === 'undefined') {
+            if (ctx.parentElement) {
+                ctx.parentElement.innerHTML = '<div class="empty-state" style="padding:20px;"><i class="fas fa-chart-line" style="opacity:.3;"></i><p style="font-size:.8rem;">Chart library unavailable.</p></div>';
+            }
+            return;
+        }
+
+        const dateList = this.getDateList();
+        const dateLabels = dateList.map(dStr => {
+            const d = new Date(dStr + 'T00:00:00');
+            return isNaN(d.getTime()) ? dStr : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        });
+
+        const allEntries = [...(this.teammateDetail || []), ...(this.teammateTaskHistory || [])];
+        const titleSpan = document.getElementById('teammate-chart-title');
+        const subtitleSpan = document.getElementById('teammate-chart-subtitle');
+        const resetBtn = document.getElementById('btn-reset-chart-topic');
+
+        let doneData = [];
+        let pendingData = [];
+        let totalData = [];
+
+        if (this.selectedChartTopic === '__ALL__') {
+            if (titleSpan) titleSpan.innerHTML = `<i class="fas fa-chart-line" style="color:var(--accent); margin-right:6px;"></i>Updates Trend (All Reports & Tasks)`;
+            if (subtitleSpan) subtitleSpan.textContent = `Line chart view of all updates over ${this.getDateRangeLabel()}`;
+            if (resetBtn) resetBtn.style.display = 'none';
+
+            dateList.forEach(dStr => {
+                const dayEntries = allEntries.filter(e => e.entryDate === dStr);
+                const done = dayEntries.filter(e => (e.status || '').toLowerCase() === 'done').length;
+                const pending = dayEntries.filter(e => (e.status || '').toLowerCase() === 'pending' || e.isUnfilled).length;
+                doneData.push(done);
+                pendingData.push(pending);
+                totalData.push(dayEntries.length);
+            });
+        } else {
+            const topicName = this.selectedChartTopic;
+            if (titleSpan) titleSpan.innerHTML = `<i class="fas fa-filter" style="color:var(--accent); margin-right:6px;"></i>Updates Trend: <span style="color:var(--accent); font-weight:800;">${App.escapeHtml(topicName)}</span>`;
+            if (subtitleSpan) subtitleSpan.textContent = `Element history & status across ${this.getDateRangeLabel()}`;
+            if (resetBtn) resetBtn.style.display = 'inline-flex';
+
+            const topicEntries = allEntries.filter(e => e.topic === topicName);
+
+            dateList.forEach(dStr => {
+                const dayTopicEntries = topicEntries.filter(e => e.entryDate === dStr);
+                const done = dayTopicEntries.filter(e => (e.status || '').toLowerCase() === 'done').length;
+                const pending = dayTopicEntries.filter(e => (e.status || '').toLowerCase() === 'pending' || e.isUnfilled).length;
+                doneData.push(done);
+                pendingData.push(pending);
+                totalData.push(dayTopicEntries.length);
+            });
+        }
+
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: dateLabels,
+                datasets: [
+                    {
+                        label: 'Completed',
+                        data: doneData,
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.15)',
+                        tension: 0.35,
+                        fill: true,
+                        pointRadius: 4,
+                        pointHoverRadius: 6,
+                        pointBackgroundColor: '#10b981'
+                    },
+                    {
+                        label: 'Pending / Unfilled',
+                        data: pendingData,
+                        borderColor: '#f59e0b',
+                        backgroundColor: 'rgba(245, 158, 11, 0.08)',
+                        tension: 0.35,
+                        fill: true,
+                        borderDash: [4, 4],
+                        pointRadius: 4,
+                        pointHoverRadius: 6,
+                        pointBackgroundColor: '#f59e0b'
+                    },
+                    {
+                        label: 'Total Scheduled',
+                        data: totalData,
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'transparent',
+                        tension: 0.35,
+                        fill: false,
+                        pointRadius: 3,
+                        pointHoverRadius: 5,
+                        pointBackgroundColor: '#3b82f6'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { mode: 'index', intersect: false },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        align: 'end',
+                        labels: { color: '#94a3b8', usePointStyle: true, padding: 12, font: { family: 'Inter', size: 11 } }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                        titleColor: '#f8fafc',
+                        bodyColor: '#cbd5e1',
+                        borderColor: 'rgba(51, 65, 85, 0.5)',
+                        borderWidth: 1,
+                        padding: 10
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(51, 65, 85, 0.2)' },
+                        ticks: { color: '#64748b', precision: 0, font: { family: 'Inter', size: 10 } }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#64748b', font: { family: 'Inter', size: 10 } }
+                    }
+                }
+            }
+        });
+
+        this.charts.push(chart);
+    },
+
+    selectChartTopic(topicName) {
+        this.selectedChartTopic = topicName;
+        const select = document.getElementById('teammate-topic-select');
+        if (select) select.value = topicName;
+        
+        this.renderTeammateChart();
+        
+        const chartCard = document.getElementById('teammate-chart-card');
+        if (chartCard) {
+            chartCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     },
 
@@ -715,7 +980,10 @@ export default {
                                     <td style="font-size:.75rem; color:var(--text-muted); white-space:nowrap; padding:10px 12px;">${fmtEntryDate(e.entryDate || '')}</td>
                                     <td style="font-weight:600; color:var(--text-primary); padding:10px 14px;">
                                         <div style="display:flex; align-items:center; flex-wrap:wrap; gap:4px;">
-                                            <span>${App.escapeHtml(e.topic)}</span>
+                                            <span class="topic-link-clickable" data-topic="${App.escapeHtml(e.topic)}" style="cursor:pointer; color:var(--text-primary); font-weight:700; display:inline-flex; align-items:center; gap:4px;" title="Click to view line chart trend for '${App.escapeHtml(e.topic)}'">
+                                                <span class="topic-title-text" style="border-bottom: 1px dashed rgba(59,130,246,0.4);">${App.escapeHtml(e.topic)}</span>
+                                                <i class="fas fa-chart-line" style="font-size:0.65rem; color:var(--accent); opacity:0.8;"></i>
+                                            </span>
                                             ${unfilledLabel}
                                         </div>
                                         ${e.subTopic ? `<div style="font-size:0.73rem; color:var(--text-secondary); margin-top:3px; font-weight:500; display:flex; align-items:center; gap:4px;"><i class="fas fa-level-down-alt" style="font-size:.6rem; opacity:.6;"></i>${App.escapeHtml(e.subTopic)}</div>` : ''}
@@ -737,6 +1005,14 @@ export default {
         `;
 
         tableContainer.innerHTML = html;
+        tableContainer.querySelectorAll('.topic-link-clickable').forEach(link => {
+            link.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                ev.stopPropagation();
+                const topic = link.dataset.topic;
+                if (topic) this.selectChartTopic(topic);
+            });
+        });
     },
 
     renderTaskHistoryTable() {
@@ -837,7 +1113,10 @@ export default {
                                     <td style="font-size:.75rem; color:var(--text-muted); white-space:nowrap; padding:10px 12px;">${fmtEntryDate(e.entryDate || '')}</td>
                                     <td style="font-weight:600; color:var(--text-primary); padding:10px 14px;">
                                         <div style="display:flex; align-items:center; flex-wrap:wrap; gap:4px;">
-                                            <span>${App.escapeHtml(e.topic)}</span>
+                                            <span class="topic-link-clickable" data-topic="${App.escapeHtml(e.topic)}" style="cursor:pointer; color:var(--text-primary); font-weight:700; display:inline-flex; align-items:center; gap:4px;" title="Click to view line chart trend for '${App.escapeHtml(e.topic)}'">
+                                                <span class="topic-title-text" style="border-bottom: 1px dashed rgba(59,130,246,0.4);">${App.escapeHtml(e.topic)}</span>
+                                                <i class="fas fa-chart-line" style="font-size:0.65rem; color:var(--accent); opacity:0.8;"></i>
+                                            </span>
                                             ${unfilledLabel}
                                         </div>
                                         ${e.subTopic ? `<div style="font-size:0.73rem; color:var(--text-secondary); margin-top:3px; font-weight:500; display:flex; align-items:center; gap:4px;"><i class="fas fa-level-down-alt" style="font-size:.6rem; opacity:.6;"></i>${App.escapeHtml(e.subTopic)}</div>` : ''}
@@ -859,6 +1138,14 @@ export default {
         `;
 
         tableContainer.innerHTML = html;
+        tableContainer.querySelectorAll('.topic-link-clickable').forEach(link => {
+            link.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                ev.stopPropagation();
+                const topic = link.dataset.topic;
+                if (topic) this.selectChartTopic(topic);
+            });
+        });
     },
 
     renderBackupTable() {
