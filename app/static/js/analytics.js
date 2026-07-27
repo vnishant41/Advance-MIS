@@ -26,7 +26,7 @@ export default {
     selectedChartTopic: '__ALL__',
 
 
-    asy    renderPage() {
+    renderPage() {
         return `
             <div class="team-update-layout">
                 <!-- Main Pane (Full Width) -->
