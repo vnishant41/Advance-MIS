@@ -6,7 +6,7 @@ import { api } from './api.js';
 export default {
     charts: [],
     selectedTeammate: null,
-    period: 'daily',
+    period: 'monthly',
     refDate: '',
     searchQuery: '',
     detailSearchQuery: '',
@@ -52,9 +52,9 @@ export default {
 
                             <!-- Timeframe Toggle -->
                             <div class="tabs" id="timeframe-tabs" style="margin-bottom: 0; padding: 3px;">
-                                <button class="tab active" data-period="daily">Daily</button>
+                                <button class="tab" data-period="daily">Daily</button>
                                 <button class="tab" data-period="weekly">Weekly</button>
-                                <button class="tab" data-period="monthly">Monthly</button>
+                                <button class="tab active" data-period="monthly">Monthly</button>
                             </div>
                         </div>
 
