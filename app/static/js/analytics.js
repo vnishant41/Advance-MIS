@@ -824,10 +824,11 @@ export default {
             dateList.forEach(dStr => {
                 const dayEntries = allEntries.filter(e => e.entryDate === dStr);
                 const done = dayEntries.filter(e => (e.status || '').toLowerCase() === 'done').length;
-                const pending = dayEntries.filter(e => (e.status || '').toLowerCase() === 'pending' || e.isUnfilled).length;
+                const total = dayEntries.length;
+                const pending = Math.max(0, total - done);
                 doneData.push(done);
                 pendingData.push(pending);
-                totalData.push(dayEntries.length);
+                totalData.push(total);
             });
         } else if (this.selectedChartTopic === '__ALL_WORK_LOGS__') {
             if (titleSpan) titleSpan.innerHTML = `<i class="fas fa-clipboard-list" style="color:var(--accent); margin-right:6px;"></i>Updates Trend: <span style="color:var(--accent); font-weight:800;">All Work Logs (MIS Reports & Tasks)</span>`;
@@ -837,10 +838,11 @@ export default {
             dateList.forEach(dStr => {
                 const dayEntries = (this.teammateDetail || []).filter(e => e.entryDate === dStr);
                 const done = dayEntries.filter(e => (e.status || '').toLowerCase() === 'done').length;
-                const pending = dayEntries.filter(e => (e.status || '').toLowerCase() === 'pending' || e.isUnfilled).length;
+                const total = dayEntries.length;
+                const pending = Math.max(0, total - done);
                 doneData.push(done);
                 pendingData.push(pending);
-                totalData.push(dayEntries.length);
+                totalData.push(total);
             });
         } else if (this.selectedChartTopic === '__ALL_FACTOR_TASKS__') {
             if (titleSpan) titleSpan.innerHTML = `<i class="fas fa-cubes" style="color:#a78bfa; margin-right:6px;"></i>Updates Trend: <span style="color:#a78bfa; font-weight:800;">All Factor Tasks (Commodity Updates)</span>`;
@@ -850,10 +852,11 @@ export default {
             dateList.forEach(dStr => {
                 const dayEntries = (this.teammateFactorTasks || []).filter(e => e.entryDate === dStr);
                 const done = dayEntries.filter(e => (e.status || '').toLowerCase() === 'done').length;
-                const pending = dayEntries.filter(e => (e.status || '').toLowerCase() === 'pending' || e.isUnfilled).length;
+                const total = dayEntries.length;
+                const pending = Math.max(0, total - done);
                 doneData.push(done);
                 pendingData.push(pending);
-                totalData.push(dayEntries.length);
+                totalData.push(total);
             });
         } else {
             const topicKey = this.selectedChartTopic;
@@ -868,10 +871,11 @@ export default {
                     return combined === topicKey || e.topic === topicKey || e.subTopic === topicKey;
                 });
                 const done = dayTopicEntries.filter(e => (e.status || '').toLowerCase() === 'done').length;
-                const pending = dayTopicEntries.filter(e => (e.status || '').toLowerCase() === 'pending' || e.isUnfilled).length;
+                const total = dayTopicEntries.length;
+                const pending = Math.max(0, total - done);
                 doneData.push(done);
                 pendingData.push(pending);
-                totalData.push(dayTopicEntries.length);
+                totalData.push(total);
             });
         }
 
