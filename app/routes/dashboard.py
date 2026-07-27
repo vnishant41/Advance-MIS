@@ -173,7 +173,7 @@ def get_week_trend():
     rows = query.filter(MasterLog.entry_date >= week_ago).all()
 
     for r in rows:
-        ds = r.entry_date.isoformat() if r.entry_date else ''
+        ds = r.entry_date.isoformat() if hasattr(r.entry_date, 'isoformat') else str(r.entry_date or '')
         if ds in trend:
             trend[ds]['total'] += 1
             if r.status == 'Done':
@@ -310,8 +310,8 @@ def get_team():
         em = r.on_behalf_of_email
         if em not in emp_stats:
             continue
-        ds = r.entry_date.isoformat() if r.entry_date else ''
-        if r.entry_date == today:
+        ds = r.entry_date.isoformat() if hasattr(r.entry_date, 'isoformat') else str(r.entry_date or '')
+        if ds == today_str:
             emp_stats[em]['total'] += 1
             etype = r.entry_type or 'Task'
             if r.status == 'Done':
@@ -336,7 +336,7 @@ def get_team():
                 'entryType': etype,
                 'status': r.status,
                 'remarks': r.remarks or '',
-                'timestamp': r.timestamp_submitted.isoformat() if r.timestamp_submitted else '',
+                'timestamp': r.timestamp_submitted.isoformat() if hasattr(r.timestamp_submitted, 'isoformat') else str(r.timestamp_submitted or ''),
             })
         if not emp_stats[em]['lastActive'] or ds > emp_stats[em]['lastActive']:
             emp_stats[em]['lastActive'] = ds
@@ -436,13 +436,13 @@ def get_team_detail(email):
                 visited_log_ids.add(log.log_id)
                 entries.append({
                     'logId': log.log_id,
-                    'entryDate': log.entry_date.isoformat(),
+                    'entryDate': log.entry_date.isoformat() if hasattr(log.entry_date, 'isoformat') else str(log.entry_date or ''),
                     'topic': log.topic,
                     'subTopic': log.sub_topic or '',
                     'entryType': log.entry_type or 'MISReport',
                     'status': log.status,
                     'remarks': log.remarks or '',
-                    'timestamp': log.timestamp_submitted.isoformat() if log.timestamp_submitted else '',
+                    'timestamp': log.timestamp_submitted.isoformat() if hasattr(log.timestamp_submitted, 'isoformat') else str(log.timestamp_submitted or ''),
                     'isLate': log.is_late,
                     'isUnfilled': False
                 })
@@ -591,7 +591,7 @@ def get_team_detail(email):
                     'entryType': 'Roster',
                     'status': rl.status,
                     'remarks': rc.remark or '',
-                    'timestamp': rl.updated_at.isoformat() if rl.updated_at else '',
+                    'timestamp': rl.updated_at.isoformat() if hasattr(rl.updated_at, 'isoformat') else str(rl.updated_at or ''),
                     'isLate': curr_date < date.today() and rl.status != 'Done',
                     'isUnfilled': False
                 })
@@ -603,7 +603,7 @@ def get_team_detail(email):
                     'subTopic': '',
                     'entryType': 'Roster',
                     'status': 'Pending',
-                    'remarks': rc.remark or 'Roster not marked yet',
+                    'remarks': 'Shift assignment not updated (unfilled)',
                     'timestamp': '',
                     'isLate': curr_date < date.today(),
                     'isUnfilled': True
@@ -616,13 +616,13 @@ def get_team_detail(email):
         if l.log_id not in visited_log_ids:
             entries.append({
                 'logId': l.log_id,
-                'entryDate': l.entry_date.isoformat(),
+                'entryDate': l.entry_date.isoformat() if hasattr(l.entry_date, 'isoformat') else str(l.entry_date or ''),
                 'topic': l.topic,
                 'subTopic': l.sub_topic or '',
                 'entryType': l.entry_type or 'MISReport',
                 'status': l.status,
                 'remarks': l.remarks or '',
-                'timestamp': l.timestamp_submitted.isoformat() if l.timestamp_submitted else '',
+                'timestamp': l.timestamp_submitted.isoformat() if hasattr(l.timestamp_submitted, 'isoformat') else str(l.timestamp_submitted or ''),
                 'isLate': l.is_late,
                 'isUnfilled': False
             })
@@ -635,13 +635,13 @@ def get_team_detail(email):
     for l in backup_rows:
         backup_entries.append({
             'logId': l.log_id,
-            'entryDate': l.entry_date.isoformat(),
+            'entryDate': l.entry_date.isoformat() if hasattr(l.entry_date, 'isoformat') else str(l.entry_date or ''),
             'topic': l.topic,
             'subTopic': l.sub_topic or '',
             'entryType': l.entry_type or 'MISReport',
             'status': l.status,
             'remarks': l.remarks or '',
-            'timestamp': l.timestamp_submitted.isoformat() if l.timestamp_submitted else '',
+            'timestamp': l.timestamp_submitted.isoformat() if hasattr(l.timestamp_submitted, 'isoformat') else str(l.timestamp_submitted or ''),
             'isLate': l.is_late,
             'onBehalfOfEmail': l.on_behalf_of_email,
             'onBehalfOfName': l.on_behalf_of_name or l.on_behalf_of_email

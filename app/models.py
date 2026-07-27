@@ -5,6 +5,14 @@ All SQLAlchemy models for the application.
 from datetime import datetime, timezone
 from app import db
 
+def _safe_iso(val):
+    if val is None:
+        return None
+    if hasattr(val, 'isoformat'):
+        return val.isoformat()
+    return str(val)
+
+
 
 class User(db.Model):
     __tablename__ = 'users'
@@ -30,7 +38,7 @@ class User(db.Model):
             'active': self.active,
             'commodities': self.commodities or '',
             'backupOf': self.backup_of or '',
-            'lastLogin': self.last_login.isoformat() if self.last_login else None,
+            'lastLogin': _safe_iso(self.last_login),
         }
         if include_password:
             d['password'] = self.password_hash
@@ -150,7 +158,7 @@ class TaskTemplate(db.Model):
             'recurrence': self.recurrence,
             'scheduleDay': self.schedule_day or '',
             'instructions': self.instructions or '',
-            'dueDate': self.due_date.isoformat() if self.due_date else '',
+            'dueDate': _safe_iso(self.due_date) or '',
         }
 
 
@@ -185,12 +193,12 @@ class MasterLog(db.Model):
     def to_dict(self):
         return {
             'logId': self.log_id,
-            'timestampSubmitted': self.timestamp_submitted.isoformat() if self.timestamp_submitted else '',
+            'timestampSubmitted': _safe_iso(self.timestamp_submitted) or '',
             'submittedBy': self.submitted_by_email,
             'onBehalfOf': self.on_behalf_of_email,
             'onBehalfOfName': self.on_behalf_of_name,
             'entryType': self.entry_type,
-            'entryDate': self.entry_date.isoformat() if self.entry_date else '',
+            'entryDate': _safe_iso(self.entry_date) or '',
             'weekNumber': self.week_number,
             'monthYear': self.month_year,
             'topic': self.topic,
@@ -250,10 +258,10 @@ class KanbanTask(db.Model):
             'assignedToName': self.assigned_to_name,
             'assignedToNameList': name_list,
             'status': self.status,
-            'dueDate': self.due_date.isoformat() if self.due_date else '',
+            'dueDate': _safe_iso(self.due_date) or '',
             'createdBy': self.created_by,
-            'createdAt': self.created_at.isoformat() if self.created_at else '',
-            'updatedAt': self.updated_at.isoformat() if self.updated_at else '',
+            'createdAt': _safe_iso(self.created_at) or '',
+            'updatedAt': _safe_iso(self.updated_at) or '',
             'tags': self.tags,
             'sprintId': self.sprint_id,
             'storyPoints': self.story_points,
@@ -279,8 +287,8 @@ class Sprint(db.Model):
         return {
             'id': self.sprint_id,
             'name': self.name,
-            'startDate': self.start_date.isoformat() if self.start_date else '',
-            'endDate': self.end_date.isoformat() if self.end_date else '',
+            'startDate': _safe_iso(self.start_date) or '',
+            'endDate': _safe_iso(self.end_date) or '',
             'status': self.status,
             'goal': self.goal,
         }
@@ -321,11 +329,11 @@ class RosterLog(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'date': self.date.isoformat() if self.date else '',
+            'date': _safe_iso(self.date) or '',
             'role': self.role,
             'employee': self.employee,
             'status': self.status,
-            'updatedAt': self.updated_at.isoformat() if self.updated_at else '',
+            'updatedAt': _safe_iso(self.updated_at) or '',
         }
 
 
@@ -345,7 +353,7 @@ class AuditLog(db.Model):
     def to_dict(self):
         return {
             'auditId': self.audit_id,
-            'timestamp': self.timestamp.isoformat() if self.timestamp else '',
+            'timestamp': _safe_iso(self.timestamp) or '',
             'actor': self.actor_email,
             'action': self.action,
             'targetType': self.target_type,
@@ -381,7 +389,7 @@ class ChatMessage(db.Model):
             'senderName': self.sender_name,
             'message': self.message if not self.deleted else '[deleted]',
             'replyTo': self.reply_to,
-            'timestamp': self.timestamp.isoformat() if self.timestamp else '',
+            'timestamp': _safe_iso(self.timestamp) or '',
             'edited': self.edited,
             'deleted': self.deleted,
         }
@@ -410,7 +418,7 @@ class MISTemplate(db.Model):
             'reportType': self.report_type,
             'layoutConfig': json.loads(self.layout_config or '[]'),
             'createdBy': self.created_by,
-            'updatedAt': self.updated_at.isoformat() if self.updated_at else '',
+            'updatedAt': _safe_iso(self.updated_at) or '',
         }
 
 
@@ -442,7 +450,7 @@ class MISReportUpload(db.Model):
             'filename': self.original_filename or self.filename,
             'reportType': self.report_type,
             'uploadedBy': self.uploaded_by,
-            'uploadDate': self.upload_date.isoformat() if self.upload_date else '',
+            'uploadDate': _safe_iso(self.upload_date) or '',
             'fileSize': self.file_size,
             'parsed': self.parsed,
             'summary': self.summary,
@@ -483,7 +491,7 @@ class SemanticFeedback(db.Model):
             'feedback': self.feedback,
             'notes': self.notes,
             'userEmail': self.user_email,
-            'createdAt': self.created_at.isoformat() if self.created_at else '',
+            'createdAt': _safe_iso(self.created_at) or '',
         }
 
 
@@ -519,10 +527,10 @@ class TaskOverride(db.Model):
             'entityKey': self.entity_key,
             'subKey': self.sub_key or '',
             'periodKey': self.period_key,
-            'newDate': self.new_date.isoformat() if self.new_date else '',
+            'newDate': _safe_iso(self.new_date) or '',
             'reason': self.reason or '',
             'createdBy': self.created_by or '',
-            'createdAt': self.created_at.isoformat() if self.created_at else '',
+            'createdAt': _safe_iso(self.created_at) or '',
         }
 
 
@@ -563,7 +571,7 @@ class UserScheduleOverride(db.Model):
             'frequency': self.frequency,
             'scheduleDay': self.schedule_day or '',
             'reason': self.reason or '',
-            'createdAt': self.created_at.isoformat() if self.created_at else '',
+            'createdAt': _safe_iso(self.created_at) or '',
         }
 
 
@@ -589,13 +597,13 @@ class BackupActivation(db.Model):
             'id': self.id,
             'primaryEmail': self.primary_email,
             'backupEmail': self.backup_email,
-            'startDate': self.start_date.isoformat() if self.start_date else '',
-            'endDate': self.end_date.isoformat() if self.end_date else '',
+            'startDate': _safe_iso(self.start_date) or '',
+            'endDate': _safe_iso(self.end_date) or '',
             'reason': self.reason,
             'notes': self.notes,
             'grantedBy': self.granted_by,
             'active': self.active,
-            'createdAt': self.created_at.isoformat() if self.created_at else '',
+            'createdAt': _safe_iso(self.created_at) or '',
         }
 
 
@@ -633,7 +641,7 @@ class ReportGroup(db.Model):
             'visibility': self.visibility,
             'remark': self.remark,
             'createdBy': self.created_by,
-            'createdAt': self.created_at.isoformat() if self.created_at else '',
+            'createdAt': _safe_iso(self.created_at) or '',
         }
 
 
@@ -656,7 +664,7 @@ class Notification(db.Model):
             'message': self.message,
             'link': self.link,
             'read': self.read,
-            'createdAt': self.created_at.isoformat() if self.created_at else '',
+            'createdAt': _safe_iso(self.created_at) or '',
         }
 
 
@@ -678,5 +686,5 @@ class EmailLog(db.Model):
             'body': self.body,
             'status': self.status,
             'errorMessage': self.error_message,
-            'sentAt': self.sent_at.isoformat() if self.sent_at else '',
+            'sentAt': _safe_iso(self.sent_at) or '',
         }

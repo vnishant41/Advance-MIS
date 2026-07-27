@@ -693,8 +693,8 @@ def get_today_tasks():
             'status': 'Pending',
             'originalStatus': 'Skip',
             'remarks': sk.remarks or '',
-            'carriedFrom': sk.entry_date.isoformat() if sk.entry_date else '',
-            'timestamp': sk.timestamp_submitted.isoformat() if sk.timestamp_submitted else '',
+            'carriedFrom': sk.entry_date.isoformat() if hasattr(sk.entry_date, 'isoformat') else str(sk.entry_date or ''),
+            'timestamp': sk.timestamp_submitted.isoformat() if hasattr(sk.timestamp_submitted, 'isoformat') else str(sk.timestamp_submitted or ''),
         })
 
     # Always show today's submitted task entries (even on holidays — for audit)
@@ -932,7 +932,7 @@ def get_monthly_tasks():
         query = query.filter(MasterLog.on_behalf_of_email == user.email)
     entries_by_date = {}
     for r in query.all():
-        ds = r.entry_date.isoformat()
+        ds = r.entry_date.isoformat() if hasattr(r.entry_date, 'isoformat') else str(r.entry_date or '')
         entries_by_date.setdefault(ds, []).append(r.to_dict())
 
     return jsonify({
@@ -1384,7 +1384,7 @@ def get_task_history():
         for rl in rq.all():
             roster_entries.append({
                 'logId': f'ROSTER_{rl.date}_{rl.role}',
-                'entryDate': rl.date.isoformat() if rl.date else '',
+                'entryDate': rl.date.isoformat() if hasattr(rl.date, 'isoformat') else str(rl.date or ''),
                 'entryType': 'Roster',
                 'topic': rl.role,
                 'subTopic': '',
@@ -1392,7 +1392,7 @@ def get_task_history():
                 'remarks': '',
                 'onBehalfOfEmail': rl.employee,
                 'onBehalfOfName': rl.employee,
-                'timestampSubmitted': rl.updated_at.isoformat() if rl.updated_at else '',
+                'timestampSubmitted': rl.updated_at.isoformat() if hasattr(rl.updated_at, 'isoformat') else str(rl.updated_at or ''),
                 'isLate': False,
             })
 
