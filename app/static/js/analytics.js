@@ -255,8 +255,11 @@ export default {
             <option value="sumup" ${this.selectedTeammate === null ? 'selected' : ''}>👥 Team Sumup (Aggregate metrics & trends)</option>
         `;
         
-        // Filter to keep ONLY users with role 'Teammate'
-        const teammatesOnly = (this.teamData || []).filter(t => (t.role || '').toLowerCase() === 'teammate');
+        // Filter: Include Teammates and Nishant, excluding Balram / inactive users
+        const teammatesOnly = (this.teamData || []).filter(t => {
+            if (t.email === 'balram@agalabs.com' || t.active === false) return false;
+            return (t.role || '').toLowerCase() === 'teammate' || t.email === 'nishant@agalabs.com';
+        });
         
         teammatesOnly.forEach(t => {
             const isSelected = this.selectedTeammate === t.email;
