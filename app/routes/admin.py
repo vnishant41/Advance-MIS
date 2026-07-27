@@ -787,17 +787,9 @@ def send_test_email():
     if not to_email:
         return jsonify({'success': False, 'message': 'Recipient email is required.'}), 400
 
-    from app.services.email_service import send_email
-    subject = "Advanced MIS — Test Email Connection"
-    html_body = """
-    <div style="font-family: Arial, sans-serif; padding: 25px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; max-width: 500px; margin: 0 auto; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);">
-        <h2 style="color: #4f46e5; margin-top: 0; font-size: 1.25rem; font-weight: 700;">⚡ SMTP Connection Test Successful!</h2>
-        <p style="color: #334155; font-size: 0.95rem; line-height: 1.5;">This is an automated test email sent from your Advanced MIS platform to confirm that SMTP server configuration settings are completely correct.</p>
-        <p style="color: #64748b; font-size: 0.85rem; line-height: 1.5; margin-top: 15px;">Connection Details Checked: Host, Port, Authentication details, SSL/TLS handshake.</p>
-        <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;">
-        <p style="font-size: 11px; color: #94a3b8; text-align: center; margin-bottom: 0;">Automated System Check · Please do not reply directly to this email.</p>
-    </div>
-    """
+    from app.services.email_service import send_email, build_todays_live_updates_html
+    subject = "Advanced MIS — Today's Live Updates & Connection Test"
+    html_body = build_todays_live_updates_html(recipient_email=to_email, is_test=True)
     
     success = send_email(to_email, subject, html_body, force=True)
     if success:

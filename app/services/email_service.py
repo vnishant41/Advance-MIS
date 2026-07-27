@@ -83,6 +83,191 @@ def send_email(to_emails, subject, html_body, force=False):
         db.session.commit()
         return False
 
+def build_todays_live_updates_html(recipient_email=None, is_test=False):
+    """Build a rich, executive HTML report containing all of today's updates till now."""
+    from datetime import date, datetime
+    from app.models import MasterLog, User, AppSetting
+    from app import db
+
+    today = date.today()
+    date_str = datetime.now().strftime("%A, %B %d, %Y at %I:%M %p")
+
+    # Query all MasterLog entries submitted today
+    logs_today = MasterLog.query.filter(
+        MasterLog.entry_date == today,
+        MasterLog.row_status != 'Amended'
+    ).order_by(MasterLog.timestamp_submitted.desc()).all()
+
+    done_count = sum(1 for l in logs_today if l.status == 'Done')
+    pending_count = sum(1 for l in logs_today if l.status == 'Pending')
+    skip_count = sum(1 for l in logs_today if l.status == 'Skip')
+
+    # Total active teammates
+    teammates = User.query.filter(User.role == 'Teammate', User.active == True).all()
+
+    # Build Teammate Progress Rows for Today
+    teammate_rows_html = ""
+    for t in teammates:
+        user_logs = [l for l in logs_today if (l.on_behalf_of_email or '').lower() == t.email.lower()]
+        t_done = sum(1 for l in user_logs if l.status == 'Done')
+        t_pending = sum(1 for l in user_logs if l.status == 'Pending')
+        t_skip = sum(1 for l in user_logs if l.status == 'Skip')
+        t_total = t_done + t_pending + t_skip
+        t_rate = round((t_done / t_total * 100)) if t_total > 0 else (100 if t_done > 0 else 0)
+        
+        badge_color = "#10B981" if t_rate >= 80 else ("#F59E0B" if t_rate >= 50 else "#EF4444")
+        
+        teammate_rows_html += f"""
+        <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 10px 12px; font-weight: 600; color: #1e293b; font-size: 13px;">{t.name}</td>
+            <td style="padding: 10px 12px; color: #64748b; font-size: 12px;">{t.department or 'Research'}</td>
+            <td style="padding: 10px 12px; text-align: center; font-weight: 700; color: #10b981; font-size: 13px;">{t_done}</td>
+            <td style="padding: 10px 12px; text-align: center; font-weight: 700; color: #f59e0b; font-size: 13px;">{t_pending}</td>
+            <td style="padding: 10px 12px; text-align: center;">
+                <span style="background-color: {badge_color}18; color: {badge_color}; padding: 3px 8px; border-radius: 12px; font-weight: 700; font-size: 12px;">{t_rate}%</span>
+            </td>
+        </tr>
+        """
+
+    if not teammate_rows_html:
+        teammate_rows_html = '<tr><td colspan="5" style="padding: 12px; text-align: center; color: #94a3b8; font-size: 12px;">No active teammates found.</td></tr>'
+
+    # Build Recent Live Logs Table for Today
+    log_rows_html = ""
+    for l in logs_today[:15]: # Show top 15 submitted today
+        submitted_at = l.timestamp_submitted.strftime("%I:%M %p") if l.timestamp_submitted else "Today"
+        status_style = "background-color: #ecfdf5; color: #10b981;" if l.status == 'Done' else ("background-color: #fffbeb; color: #f59e0b;" if l.status == 'Pending' else "background-color: #f1f5f9; color: #64748b;")
+        
+        log_rows_html += f"""
+        <tr style="border-bottom: 1px solid #f1f5f9;">
+            <td style="padding: 8px 10px; font-size: 12px; color: #64748b;">{submitted_at}</td>
+            <td style="padding: 8px 10px; font-size: 12px; font-weight: 600; color: #1e293b;">{l.on_behalf_of_name or l.submitted_by_name or 'System'}</td>
+            <td style="padding: 8px 10px; font-size: 12px; font-weight: 600; color: #334155;">{l.topic}{f" ({l.sub_topic})" if l.sub_topic else ""}</td>
+            <td style="padding: 8px 10px; font-size: 11px; color: #4f46e5;"><span style="background-color: #e0e7ff; padding: 2px 6px; border-radius: 4px;">{l.entry_type or 'MIS'}</span></td>
+            <td style="padding: 8px 10px; text-align: center;">
+                <span style="padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; {status_style}">{l.status}</span>
+            </td>
+        </tr>
+        """
+
+    if not log_rows_html:
+        log_rows_html = '<tr><td colspan="5" style="padding: 16px; text-align: center; color: #94a3b8; font-size: 13px;">No updates submitted yet today.</td></tr>'
+
+    test_banner_html = ""
+    if is_test:
+        test_banner_html = """
+        <div style="background-color: #e0e7ff; border: 1px solid #c7d2fe; padding: 10px 16px; border-radius: 8px; margin-bottom: 16px; font-size: 12px; color: #3730a3; font-weight: 600; text-align: center;">
+            ⚡ SMTP Connection Successful! This live report demonstrates your active email setup & live today data.
+        </div>
+        """
+
+    total_submissions = len(logs_today)
+
+    html = f"""<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced MIS — Today's Live Updates Report</title>
+</head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f1f5f9; margin: 0; padding: 20px; -webkit-font-smoothing: antialiased;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 680px; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
+        
+        <!-- Header Banner -->
+        <tr>
+            <td style="padding: 24px; background: linear-gradient(135deg, #1e1b4b 0%, #312e81 60%, #4338ca 100%); color: #ffffff;">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <h1 style="margin: 0; font-size: 20px; font-weight: 800; letter-spacing: 0.5px; color: #ffffff;">Advanced MIS</h1>
+                            <p style="margin: 4px 0 0 0; font-size: 13px; color: #a5b4fc; font-weight: 500;">Today's Live Updates Report (As of Till Now)</p>
+                        </td>
+                        <td align="right">
+                            <span style="background-color: rgba(255,255,255,0.15); color: #ffffff; padding: 6px 12px; border-radius: 20px; font-size: 11px; font-weight: 700;">{date_str}</span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 20px 24px;">
+                {test_banner_html}
+
+                <!-- Summary Cards Row -->
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+                    <tr>
+                        <td width="31%" style="background-color: #ecfdf5; border: 1px solid #a7f3d0; padding: 14px; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 11px; font-weight: 700; color: #047857; text-transform: uppercase;">Completed</div>
+                            <div style="font-size: 24px; font-weight: 800; color: #059669; margin-top: 2px;">{done_count}</div>
+                        </td>
+                        <td width="3.5%"></td>
+                        <td width="31%" style="background-color: #fffbeb; border: 1px solid #fde68a; padding: 14px; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 11px; font-weight: 700; color: #b45309; text-transform: uppercase;">Pending</div>
+                            <div style="font-size: 24px; font-weight: 800; color: #d97706; margin-top: 2px;">{pending_count}</div>
+                        </td>
+                        <td width="3.5%"></td>
+                        <td width="31%" style="background-color: #f0f9ff; border: 1px solid #bae6fd; padding: 14px; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 11px; font-weight: 700; color: #0369a1; text-transform: uppercase;">Total Submitted</div>
+                            <div style="font-size: 24px; font-weight: 800; color: #0284c7; margin-top: 2px;">{total_submissions}</div>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Teammates Progress Summary -->
+                <h3 style="font-size: 14px; font-weight: 700; color: #1e293b; margin: 0 0 10px 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px;">
+                    👥 Teammates Live Progress Today
+                </h3>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 24px; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background-color: #f8fafc; border-bottom: 2px solid #e2e8f0;">
+                            <th align="left" style="padding: 8px 12px; font-size: 11px; color: #64748b; text-transform: uppercase;">Teammate</th>
+                            <th align="left" style="padding: 8px 12px; font-size: 11px; color: #64748b; text-transform: uppercase;">Department</th>
+                            <th align="center" style="padding: 8px 12px; font-size: 11px; color: #64748b; text-transform: uppercase;">Completed</th>
+                            <th align="center" style="padding: 8px 12px; font-size: 11px; color: #64748b; text-transform: uppercase;">Pending</th>
+                            <th align="center" style="padding: 8px 12px; font-size: 11px; color: #64748b; text-transform: uppercase;">Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {teammate_rows_html}
+                    </tbody>
+                </table>
+
+                <!-- Live Submissions Stream -->
+                <h3 style="font-size: 14px; font-weight: 700; color: #1e293b; margin: 0 0 10px 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px;">
+                    ⚡ Today's Live Submission Activity (Latest 15)
+                </h3>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 12px; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background-color: #f8fafc; border-bottom: 2px solid #e2e8f0;">
+                            <th align="left" style="padding: 8px 10px; font-size: 11px; color: #64748b; text-transform: uppercase;">Time</th>
+                            <th align="left" style="padding: 8px 10px; font-size: 11px; color: #64748b; text-transform: uppercase;">Teammate</th>
+                            <th align="left" style="padding: 8px 10px; font-size: 11px; color: #64748b; text-transform: uppercase;">Report / Topic</th>
+                            <th align="left" style="padding: 8px 10px; font-size: 11px; color: #64748b; text-transform: uppercase;">Type</th>
+                            <th align="center" style="padding: 8px 10px; font-size: 11px; color: #64748b; text-transform: uppercase;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {log_rows_html}
+                    </tbody>
+                </table>
+
+            </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+            <td style="padding: 16px 24px; background-color: #f8fafc; text-align: center; border-top: 1px solid #e2e8f0;">
+                <p style="margin: 0; font-size: 11px; color: #94a3b8;">Advanced MIS Research Team Management Hub &bull; Automated Live Status Report</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+"""
+    return html
+
+
 def build_daily_digest_html(user, date_str, summary):
     """Build a premium HTML template for the daily task digest."""
     score = summary['score']
