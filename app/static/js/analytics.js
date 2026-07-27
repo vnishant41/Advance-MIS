@@ -824,8 +824,9 @@ export default {
             dateList.forEach(dStr => {
                 const dayEntries = allEntries.filter(e => e.entryDate === dStr);
                 const done = dayEntries.filter(e => (e.status || '').toLowerCase() === 'done').length;
-                const total = dayEntries.length;
-                const pending = Math.max(0, total - done);
+                const pending = dayEntries.filter(e => (e.status || '').toLowerCase() === 'pending' || e.isUnfilled).length;
+                const skip = dayEntries.filter(e => (e.status || '').toLowerCase() === 'skip').length;
+                const total = done + pending + skip;
                 doneData.push(done);
                 pendingData.push(pending);
                 totalData.push(total);
@@ -838,8 +839,9 @@ export default {
             dateList.forEach(dStr => {
                 const dayEntries = (this.teammateDetail || []).filter(e => e.entryDate === dStr);
                 const done = dayEntries.filter(e => (e.status || '').toLowerCase() === 'done').length;
-                const total = dayEntries.length;
-                const pending = Math.max(0, total - done);
+                const pending = dayEntries.filter(e => (e.status || '').toLowerCase() === 'pending' || e.isUnfilled).length;
+                const skip = dayEntries.filter(e => (e.status || '').toLowerCase() === 'skip').length;
+                const total = done + pending + skip;
                 doneData.push(done);
                 pendingData.push(pending);
                 totalData.push(total);
@@ -852,8 +854,9 @@ export default {
             dateList.forEach(dStr => {
                 const dayEntries = (this.teammateFactorTasks || []).filter(e => e.entryDate === dStr);
                 const done = dayEntries.filter(e => (e.status || '').toLowerCase() === 'done').length;
-                const total = dayEntries.length;
-                const pending = Math.max(0, total - done);
+                const pending = dayEntries.filter(e => (e.status || '').toLowerCase() === 'pending' || e.isUnfilled).length;
+                const skip = dayEntries.filter(e => (e.status || '').toLowerCase() === 'skip').length;
+                const total = done + pending + skip;
                 doneData.push(done);
                 pendingData.push(pending);
                 totalData.push(total);
@@ -871,8 +874,9 @@ export default {
                     return combined === topicKey || e.topic === topicKey || e.subTopic === topicKey;
                 });
                 const done = dayTopicEntries.filter(e => (e.status || '').toLowerCase() === 'done').length;
-                const total = dayTopicEntries.length;
-                const pending = Math.max(0, total - done);
+                const pending = dayTopicEntries.filter(e => (e.status || '').toLowerCase() === 'pending' || e.isUnfilled).length;
+                const skip = dayTopicEntries.filter(e => (e.status || '').toLowerCase() === 'skip').length;
+                const total = done + pending + skip;
                 doneData.push(done);
                 pendingData.push(pending);
                 totalData.push(total);
