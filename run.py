@@ -27,6 +27,5 @@ if __name__ == '__main__':
     print("\n" + "="*60)
     print("  Advanced MIS - Research Team Management System")
     print("  Running at: http://localhost:5000")
-    print("  Default login: nishant@agalabs.com / admin123")
     print("="*60 + "\n")
     socketio.run(app, host='0.0.0.0', port=5000, debug=True, allow_unsafe_werkzeug=True)
