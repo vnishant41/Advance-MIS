@@ -744,12 +744,11 @@ export default {
         
         let html = `
             <option value="__ALL__" ${this.selectedChartTopic === '__ALL__' ? 'selected' : ''}>📊 All Updates (${totalEntries})</option>
-            <option value="__ALL_WORK_LOGS__" ${this.selectedChartTopic === '__ALL_WORK_LOGS__' ? 'selected' : ''}>📋 All Work Logs (MIS Reports & Tasks) (${workLogs.length})</option>
-            <option value="__ALL_FACTOR_TASKS__" ${this.selectedChartTopic === '__ALL_FACTOR_TASKS__' ? 'selected' : ''}>⚡ All Factor Tasks (Commodity Updates) (${factorTasks.length})</option>
         `;
 
         if (workLogTopics.length > 0) {
             html += `<optgroup label="MIS Reports & Tasks">`;
+            html += `<option value="__ALL_WORK_LOGS__" ${this.selectedChartTopic === '__ALL_WORK_LOGS__' ? 'selected' : ''}>📋 Select All MIS Reports & Tasks (${workLogs.length})</option>`;
             workLogTopics.forEach(t => {
                 const isSelected = this.selectedChartTopic === t;
                 html += `<option value="${App.escapeHtml(t)}" ${isSelected ? 'selected' : ''}>${App.escapeHtml(t)}</option>`;
@@ -759,6 +758,7 @@ export default {
 
         if (factorTopics.length > 0) {
             html += `<optgroup label="Factor Tasks (Commodity Factors)">`;
+            html += `<option value="__ALL_FACTOR_TASKS__" ${this.selectedChartTopic === '__ALL_FACTOR_TASKS__' ? 'selected' : ''}>⚡ Select All Factor Tasks (${factorTasks.length})</option>`;
             factorTopics.forEach(t => {
                 const isSelected = this.selectedChartTopic === t;
                 html += `<option value="${App.escapeHtml(t)}" ${isSelected ? 'selected' : ''}>${App.escapeHtml(t)}</option>`;
@@ -876,66 +876,66 @@ export default {
                         label: 'Completed',
                         data: doneData,
                         borderColor: '#10b981',
-                        backgroundColor: 'rgba(16, 185, 129, 0.15)',
-                        tension: 0.35,
+                        backgroundColor: 'rgba(16,185,129,0.1)',
                         fill: true,
+                        tension: 0.3,
                         pointRadius: 4,
                         pointHoverRadius: 6,
-                        pointBackgroundColor: '#10b981'
                     },
                     {
                         label: 'Pending / Unfilled',
                         data: pendingData,
                         borderColor: '#f59e0b',
-                        backgroundColor: 'rgba(245, 158, 11, 0.08)',
-                        tension: 0.35,
+                        backgroundColor: 'rgba(245,158,11,0.05)',
                         fill: true,
-                        borderDash: [4, 4],
+                        tension: 0.3,
                         pointRadius: 4,
                         pointHoverRadius: 6,
-                        pointBackgroundColor: '#f59e0b'
                     },
                     {
                         label: 'Total Scheduled',
                         data: totalData,
                         borderColor: '#3b82f6',
-                        backgroundColor: 'transparent',
-                        tension: 0.35,
+                        borderDash: [4, 4],
                         fill: false,
+                        tension: 0.3,
                         pointRadius: 3,
-                        pointHoverRadius: 5,
-                        pointBackgroundColor: '#3b82f6'
                     }
                 ]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                interaction: { mode: 'index', intersect: false },
                 plugins: {
                     legend: {
                         position: 'top',
-                        align: 'end',
-                        labels: { color: '#94a3b8', usePointStyle: true, padding: 12, font: { family: 'Inter', size: 11 } }
+                        labels: {
+                            color: '#94a3b8',
+                            boxWidth: 12,
+                            font: { size: 11 }
+                        }
                     },
                     tooltip: {
-                        backgroundColor: 'rgba(15, 23, 42, 0.9)',
-                        titleColor: '#f8fafc',
-                        bodyColor: '#cbd5e1',
-                        borderColor: 'rgba(51, 65, 85, 0.5)',
-                        borderWidth: 1,
-                        padding: 10
+                        mode: 'index',
+                        intersect: false,
+                        callbacks: {
+                            footer: (tooltipItems) => {
+                                const index = tooltipItems[0].dataIndex;
+                                const dStr = dateList[index];
+                                return `Date: ${dStr}`;
+                            }
+                        }
                     }
                 },
                 scales: {
+                    x: {
+                        ticks: { color: '#94a3b8', font: { size: 11 } },
+                        grid: { color: 'rgba(255,255,255,0.05)' }
+                    },
                     y: {
                         beginAtZero: true,
-                        grid: { color: 'rgba(51, 65, 85, 0.2)' },
-                        ticks: { color: '#64748b', precision: 0, font: { family: 'Inter', size: 10 } }
-                    },
-                    x: {
-                        grid: { display: false },
-                        ticks: { color: '#64748b', font: { family: 'Inter', size: 10 } }
+                        ticks: { color: '#94a3b8', precision: 0, font: { size: 11 } },
+                        grid: { color: 'rgba(255,255,255,0.05)' }
                     }
                 }
             }
@@ -950,6 +950,8 @@ export default {
         if (select) select.value = topicName;
         
         this.renderTeammateChart();
+        this.renderDetailTable();
+        this.renderFactorTasksTable();
         
         const chartCard = document.getElementById('teammate-chart-card');
         if (chartCard) {
@@ -961,15 +963,39 @@ export default {
         const tableContainer = document.getElementById('teammate-detail-table-container');
         if (!tableContainer) return;
         
-        if (!this.teammateDetail || this.teammateDetail.length === 0) {
+        const cardHeaderTitle = document.querySelector('.work-logs-filters div:first-child');
+
+        const workLogs = this.teammateDetail || [];
+        const factorTasks = this.teammateFactorTasks || [];
+        const allEntries = [...workLogs, ...factorTasks];
+        
+        if (allEntries.length === 0) {
             tableContainer.innerHTML = `<div class="empty-state" style="padding:40px;"><i class="fas fa-clipboard-list" style="opacity:.3; font-size:2rem;"></i><p style="margin-top:8px; color:var(--text-muted);">No log entries found for this period.</p></div>`;
             return;
         }
-        
-        // Filter the logs
-        let filteredLogs = [...this.teammateDetail];
+
+        // 0. Filter by selected chart topic / category
+        let baseLogs = [];
+        if (this.selectedChartTopic === '__ALL__') {
+            baseLogs = allEntries;
+            if (cardHeaderTitle) cardHeaderTitle.innerHTML = `<i class="fas fa-layer-group" style="color:var(--accent); margin-right:6px;"></i>All Work Logs & Factor Updates (${allEntries.length})`;
+        } else if (this.selectedChartTopic === '__ALL_WORK_LOGS__') {
+            baseLogs = [...workLogs];
+            if (cardHeaderTitle) cardHeaderTitle.innerHTML = `<i class="fas fa-clipboard-list" style="color:var(--accent); margin-right:6px;"></i>Work Logs (MIS Reports & Tasks) (${workLogs.length})`;
+        } else if (this.selectedChartTopic === '__ALL_FACTOR_TASKS__') {
+            baseLogs = [...factorTasks];
+            if (cardHeaderTitle) cardHeaderTitle.innerHTML = `<i class="fas fa-cubes" style="color:#a78bfa; margin-right:6px;"></i>Factor Tasks (Commodity Updates) (${factorTasks.length})`;
+        } else {
+            const topicKey = this.selectedChartTopic;
+            baseLogs = allEntries.filter(e => {
+                const combined = e.subTopic ? `${e.topic} (${e.subTopic})` : e.topic;
+                return combined === topicKey || e.topic === topicKey || e.subTopic === topicKey;
+            });
+            if (cardHeaderTitle) cardHeaderTitle.innerHTML = `<i class="fas fa-filter" style="color:var(--accent); margin-right:6px;"></i>Filtered Logs: <span style="color:var(--accent); font-weight:800;">${App.escapeHtml(topicKey)}</span> (${baseLogs.length})`;
+        }
         
         // 1. Status Filter
+        let filteredLogs = [...baseLogs];
         if (this.statusFilter !== 'all') {
             if (this.statusFilter === 'late') {
                 filteredLogs = filteredLogs.filter(e => e.isLate);
