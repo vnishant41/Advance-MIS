@@ -528,13 +528,26 @@ def get_team_detail(email):
 
             topic_name = f"{c.commodity}::{c.type}"
             log = primary_logs_map.get((curr_date, topic_name, c.factor))
+            if not log:
+                log = primary_logs_map.get((curr_date, f"{topic_name} {c.factor}", ''))
+            if not log:
+                tb = topic_name.lower()
+                fl = (c.factor or '').lower()
+                for l in primary_rows:
+                    if l.entry_date == curr_date and l.log_id not in visited_log_ids:
+                        lt = (l.topic or '').lower()
+                        ls = (l.sub_topic or '').lower()
+                        if (lt == tb or lt.startswith(tb)) and (ls == fl or fl in lt or fl in ls):
+                            log = l
+                            break
+
             if log:
                 visited_log_ids.add(log.log_id)
                 entries.append({
                     'logId': log.log_id,
                     'entryDate': log.entry_date.isoformat(),
                     'topic': log.topic,
-                    'subTopic': log.sub_topic or '',
+                    'subTopic': log.sub_topic or c.factor,
                     'entryType': log.entry_type or 'DataUpdate',
                     'status': log.status,
                     'remarks': log.remarks or '',

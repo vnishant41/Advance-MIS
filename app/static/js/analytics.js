@@ -18,8 +18,11 @@ export default {
     teammateDetail: [],
     teammateBackupDetail: [],
     teammateTaskHistory: [],
+    teammateFactorTasks: [],
     taskHistorySearchQuery: '',
     taskHistoryStatusFilter: 'all',
+    factorTasksSearchQuery: '',
+    factorTasksStatusFilter: 'all',
     selectedChartTopic: '__ALL__',
 
 
@@ -171,8 +174,9 @@ export default {
         try {
             const res = await api.get(`/analytics/team-updates?period=${this.period}&date=${this.refDate}`);
             if (res.success) {
-                // If current date has no logs but historical logs exist in database, auto-jump to latest log date once on load
-                if (!this._hasAutoJumped && res.latestLogDate && (res.sumup && res.sumup.total === 0)) {
+                // If current selected timeframe has 0 completed logs, but historical submitted logs exist in database,
+                // auto-jump to latest active log date on initial load so user sees historical data immediately.
+                if (!this._hasAutoJumped && res.latestLogDate && (res.sumup && res.sumup.done === 0) && res.latestLogDate < (res.startDate || '')) {
                     this._hasAutoJumped = true;
                     this.refDate = res.latestLogDate;
                     const picker = document.getElementById('ref-date-picker');
@@ -530,7 +534,7 @@ export default {
                     <div>
                         <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary); display:flex; align-items:center; gap:8px;">
                             <i class="fas fa-chart-line" style="color:var(--accent);"></i>
-                            <span id="teammate-chart-title">Updates Trend (All Reports & Tasks)</span>
+                            <span id="teammate-chart-title">Updates Trend (All Reports, Tasks & Factor Updates)</span>
                         </div>
                         <p style="font-size:0.75rem; color:var(--text-muted); margin-top:2px;" id="teammate-chart-subtitle">
                             Line chart view of updates across ${dateRangeLabel}
@@ -540,7 +544,7 @@ export default {
                     <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
                         <div style="display:flex; align-items:center; gap:6px;">
                             <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600;"><i class="fas fa-filter" style="margin-right:4px;"></i>Topic / Task:</span>
-                            <select id="teammate-topic-select" style="padding: 5px 10px; border-radius: 6px; font-size: 0.78rem; background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); max-width: 240px; cursor: pointer;">
+                            <select id="teammate-topic-select" style="padding: 5px 10px; border-radius: 6px; font-size: 0.78rem; background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); max-width: 280px; cursor: pointer;">
                                 <option value="__ALL__">All Reports & Topics</option>
                             </select>
                         </div>
@@ -556,9 +560,9 @@ export default {
             </div>
 
             <!-- Detailed task logs card -->
-            <div class="glass-card" style="padding:20px; flex:1; display:flex; flex-direction:column; min-height: 350px;">
+            <div class="glass-card" style="padding:20px; flex:1; display:flex; flex-direction:column; min-height: 300px;">
                 <div class="detail-filters-row work-logs-filters">
-                    <div style="font-weight:700; font-size:0.9rem; color:var(--text-primary);"><i class="fas fa-clipboard-list" style="color:var(--accent); margin-right:6px;"></i>Work Logs</div>
+                    <div style="font-weight:700; font-size:0.9rem; color:var(--text-primary);"><i class="fas fa-clipboard-list" style="color:var(--accent); margin-right:6px;"></i>Work Logs (MIS Reports)</div>
                     <!-- Status Filter Pills -->
                     <div class="filter-pills" style="margin-left:auto;">
                         <button class="filter-pill active" data-status="all">All</button>
@@ -594,11 +598,37 @@ export default {
                     <!-- Inline search inside task history -->
                     <div class="search-box" style="width: 220px; margin:0;">
                         <i class="fas fa-search"></i>
-                        <input type="text" id="task-history-search" placeholder="Filter reports..." style="padding: 6px 12px 6px 32px; border-radius:16px; font-size:0.78rem; width:100%;">
+                        <input type="text" id="task-history-search" placeholder="Filter tasks..." style="padding: 6px 12px 6px 32px; border-radius:16px; font-size:0.78rem; width:100%;">
                     </div>
                 </div>
                 <div id="teammate-task-history-table-container" style="flex:1; overflow-y:auto;">
                     <!-- Task history table loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Dedicated Factor Tasks Card -->
+            <div id="teammate-factor-tasks-card" class="glass-card" style="padding:20px; display:none; flex-direction:column; margin-top:16px; min-height: 250px;">
+                <div class="detail-filters-row factor-tasks-filters" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:12px;">
+                    <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary); display:flex; align-items:center; gap:8px;">
+                        <i class="fas fa-cubes" style="color:#a78bfa;"></i>
+                        <span>Factor Tasks (Commodity Updates)</span>
+                    </div>
+                    <!-- Status Filter Pills for Factor Tasks -->
+                    <div class="filter-pills" style="margin-left:auto;">
+                        <button class="filter-pill active" data-status="all">All</button>
+                        <button class="filter-pill" data-status="done">Done</button>
+                        <button class="filter-pill" data-status="pending">Pending</button>
+                        <button class="filter-pill" data-status="skip">Skip</button>
+                        <button class="filter-pill" data-status="late">Late</button>
+                    </div>
+                    <!-- Inline search inside Factor Tasks -->
+                    <div class="search-box" style="width: 220px; margin:0;">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="factor-tasks-search" placeholder="Filter factor tasks..." style="padding: 6px 12px 6px 32px; border-radius:16px; font-size:0.78rem; width:100%;">
+                    </div>
+                </div>
+                <div id="teammate-factor-tasks-table-container" style="flex:1; overflow-y:auto;">
+                    <!-- Factor tasks table loaded dynamically -->
                 </div>
             </div>
 
@@ -618,8 +648,10 @@ export default {
         this.statusFilter = 'all';
         this.taskHistorySearchQuery = '';
         this.taskHistoryStatusFilter = 'all';
+        this.factorTasksSearchQuery = '';
+        this.factorTasksStatusFilter = 'all';
 
-        // Set filter listeners
+        // Set filter listeners for Work Logs
         const pills = container.querySelectorAll('.work-logs-filters .filter-pill');
         pills.forEach(pill => {
             pill.addEventListener('click', () => {
@@ -657,13 +689,33 @@ export default {
             });
         }
 
+        // Set filter listeners for Factor Tasks
+        const factorPills = container.querySelectorAll('.factor-tasks-filters .filter-pill');
+        factorPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                factorPills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+                this.factorTasksStatusFilter = pill.dataset.status;
+                this.renderFactorTasksTable();
+            });
+        });
+
+        const factorSearchInput = container.querySelector('#factor-tasks-search');
+        if (factorSearchInput) {
+            factorSearchInput.addEventListener('input', (e) => {
+                this.factorTasksSearchQuery = e.target.value;
+                this.renderFactorTasksTable();
+            });
+        }
+
         // Fetch details
         try {
             const details = await api.get(`/dash/team/${encodeURIComponent(email)}/detail?from=${this.startDate}&to=${this.endDate}`);
-            // Show MISReport + Task + Roster entries in detail logs
-            this.teammateDetail = (details.entries || []).filter(e => ['MISReport', 'Roster', 'ReportGroup'].includes(e.entryType));
-            this.teammateTaskHistory = (details.entries || []).filter(e => ['Task', 'DataUpdate'].includes(e.entryType));
-            this.teammateBackupDetail = (details.backupEntries || []).filter(e => ['MISReport', 'Task', 'Roster', 'DataUpdate', 'ReportGroup'].includes(e.entryType));
+            const entries = details.entries || [];
+            this.teammateDetail = entries.filter(e => ['MISReport', 'Roster', 'ReportGroup'].includes(e.entryType));
+            this.teammateTaskHistory = entries.filter(e => e.entryType === 'Task');
+            this.teammateFactorTasks = entries.filter(e => e.entryType === 'DataUpdate');
+            this.teammateBackupDetail = (details.backupEntries || []);
             
             this.populateTopicDropdown();
             this.renderTeammateChart();
@@ -684,6 +736,7 @@ export default {
 
             this.renderDetailTable();
             this.renderTaskHistoryTable();
+            this.renderFactorTasksTable();
             this.renderBackupTable();
         } catch (err) {
             console.error(err);
@@ -717,15 +770,23 @@ export default {
         const select = document.getElementById('teammate-topic-select');
         if (!select) return;
         
-        const allEntries = [...(this.teammateDetail || []), ...(this.teammateTaskHistory || [])];
+        const allEntries = [
+            ...(this.teammateDetail || []),
+            ...(this.teammateTaskHistory || []),
+            ...(this.teammateFactorTasks || [])
+        ];
         const topicsSet = new Set();
         allEntries.forEach(e => {
-            if (e.topic) topicsSet.add(e.topic);
+            if (e.subTopic && e.entryType === 'DataUpdate') {
+                topicsSet.add(`${e.topic} (${e.subTopic})`);
+            } else if (e.topic) {
+                topicsSet.add(e.topic);
+            }
         });
         
         const topics = Array.from(topicsSet).sort();
         
-        let html = `<option value="__ALL__">📊 All Reports & Topics (${topics.length})</option>`;
+        let html = `<option value="__ALL__">📊 All Reports, Tasks & Factor Updates (${allEntries.length})</option>`;
         topics.forEach(t => {
             const isSelected = this.selectedChartTopic === t;
             html += `<option value="${App.escapeHtml(t)}" ${isSelected ? 'selected' : ''}>${App.escapeHtml(t)}</option>`;
@@ -761,7 +822,11 @@ export default {
             return isNaN(d.getTime()) ? dStr : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
         });
 
-        const allEntries = [...(this.teammateDetail || []), ...(this.teammateTaskHistory || [])];
+        const allEntries = [
+            ...(this.teammateDetail || []),
+            ...(this.teammateTaskHistory || []),
+            ...(this.teammateFactorTasks || [])
+        ];
         const titleSpan = document.getElementById('teammate-chart-title');
         const subtitleSpan = document.getElementById('teammate-chart-subtitle');
         const resetBtn = document.getElementById('btn-reset-chart-topic');
@@ -771,7 +836,7 @@ export default {
         let totalData = [];
 
         if (this.selectedChartTopic === '__ALL__') {
-            if (titleSpan) titleSpan.innerHTML = `<i class="fas fa-chart-line" style="color:var(--accent); margin-right:6px;"></i>Updates Trend (All Reports & Tasks)`;
+            if (titleSpan) titleSpan.innerHTML = `<i class="fas fa-chart-line" style="color:var(--accent); margin-right:6px;"></i>Updates Trend (All Reports, Tasks & Factor Updates)`;
             if (subtitleSpan) subtitleSpan.textContent = `Line chart view of all updates over ${this.getDateRangeLabel()}`;
             if (resetBtn) resetBtn.style.display = 'none';
 
@@ -784,15 +849,17 @@ export default {
                 totalData.push(dayEntries.length);
             });
         } else {
-            const topicName = this.selectedChartTopic;
-            if (titleSpan) titleSpan.innerHTML = `<i class="fas fa-filter" style="color:var(--accent); margin-right:6px;"></i>Updates Trend: <span style="color:var(--accent); font-weight:800;">${App.escapeHtml(topicName)}</span>`;
+            const topicKey = this.selectedChartTopic;
+            if (titleSpan) titleSpan.innerHTML = `<i class="fas fa-filter" style="color:var(--accent); margin-right:6px;"></i>Updates Trend: <span style="color:var(--accent); font-weight:800;">${App.escapeHtml(topicKey)}</span>`;
             if (subtitleSpan) subtitleSpan.textContent = `Element history & status across ${this.getDateRangeLabel()}`;
             if (resetBtn) resetBtn.style.display = 'inline-flex';
 
-            const topicEntries = allEntries.filter(e => e.topic === topicName);
-
             dateList.forEach(dStr => {
-                const dayTopicEntries = topicEntries.filter(e => e.entryDate === dStr);
+                const dayTopicEntries = allEntries.filter(e => {
+                    if (e.entryDate !== dStr) return false;
+                    const combined = e.subTopic ? `${e.topic} (${e.subTopic})` : e.topic;
+                    return combined === topicKey || e.topic === topicKey || e.subTopic === topicKey;
+                });
                 const done = dayTopicEntries.filter(e => (e.status || '').toLowerCase() === 'done').length;
                 const pending = dayTopicEntries.filter(e => (e.status || '').toLowerCase() === 'pending' || e.isUnfilled).length;
                 doneData.push(done);
@@ -801,6 +868,75 @@ export default {
             });
         }
 
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: dateLabels,
+                datasets: [
+                    {
+                        label: 'Completed',
+                        data: doneData,
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.15)',
+                        tension: 0.35,
+                        fill: true,
+                        pointRadius: 4,
+                        pointHoverRadius: 6,
+                        pointBackgroundColor: '#10b981'
+                    },
+                    {
+                        label: 'Pending / Unfilled',
+                        data: pendingData,
+                        borderColor: '#f59e0b',
+                        backgroundColor: 'rgba(245, 158, 11, 0.08)',
+                        tension: 0.35,
+                        fill: true,
+                        borderDash: [4, 4],
+                        pointRadius: 4,
+                        pointHoverRadius: 6,
+                        pointBackgroundColor: '#f59e0b'
+                    },
+                    {
+                        label: 'Total Scheduled',
+                        data: totalData,
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'transparent',
+                        tension: 0.35,
+                        fill: false,
+                        pointRadius: 3,
+                        pointHoverRadius: 5,
+                        pointBackgroundColor: '#3b82f6'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { mode: 'index', intersect: false },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        align: 'end',
+                        labels: { color: '#94a3b8', usePointStyle: true, padding: 12, font: { family: 'Inter', size: 11 } }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                        titleColor: '#f8fafc',
+                        bodyColor: '#cbd5e1',
+                        borderColor: 'rgba(51, 65, 85, 0.5)',
+                        borderWidth: 1,
+                        padding: 10
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(51, 65, 85, 0.2)' },
+                        ticks: { color: '#64748b', precision: 0, font: { family: 'Inter', size: 10 } }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#64748b', font: { family: 'Inter', size: 10 } }
         const chart = new Chart(ctx, {
             type: 'line',
             data: {
@@ -1133,6 +1269,131 @@ export default {
                                     <td style="padding:10px 14px;">${typeBadge(e.entryType)}</td>
                                     <td style="padding:10px 14px;">${statusBadgeHtml(e.status, e.isLate)}</td>
                                     <td style="font-size:.79rem; color:var(--text-secondary); white-space:normal; word-break:break-word; max-width:220px; padding:10px 14px;">
+                                        ${App.escapeHtml(e.remarks || '—')}
+                                    </td>
+                                    <td style="font-size:.78rem; color:var(--text-muted); font-weight:500; padding:10px 14px; white-space:nowrap;">
+                                        ${isUnfilled ? '<span style="font-style:italic; color:var(--text-muted); opacity:.7;">Pending Submission</span>' : formatTime(e.timestamp)}
+                                    </td>
+                                </tr>
+                            `;
+                        }).join('')}
+                    </tbody>
+                </table>
+            </div>
+        `;
+
+        tableContainer.innerHTML = html;
+        tableContainer.querySelectorAll('.topic-link-clickable').forEach(link => {
+            link.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                ev.stopPropagation();
+                const topic = link.dataset.topic;
+                if (topic) this.selectChartTopic(topic);
+            });
+        });
+    },
+
+    renderFactorTasksTable() {
+        const card = document.getElementById('teammate-factor-tasks-card');
+        const tableContainer = document.getElementById('teammate-factor-tasks-table-container');
+        if (!card || !tableContainer) return;
+
+        if (!this.teammateFactorTasks || this.teammateFactorTasks.length === 0) {
+            card.style.display = 'none';
+            return;
+        }
+
+        card.style.display = 'flex';
+
+        // Filter factor tasks
+        let filteredFactorTasks = [...this.teammateFactorTasks];
+
+        // 1. Status Filter
+        if (this.factorTasksStatusFilter !== 'all') {
+            if (this.factorTasksStatusFilter === 'late') {
+                filteredFactorTasks = filteredFactorTasks.filter(e => e.isLate);
+            } else {
+                filteredFactorTasks = filteredFactorTasks.filter(e => (e.status || '').toLowerCase() === this.factorTasksStatusFilter);
+            }
+        }
+
+        // 2. Search query filter
+        const query = this.factorTasksSearchQuery.toLowerCase().trim();
+        if (query) {
+            filteredFactorTasks = filteredFactorTasks.filter(e => 
+                (e.topic || '').toLowerCase().includes(query) ||
+                (e.subTopic || '').toLowerCase().includes(query) ||
+                (e.remarks || '').toLowerCase().includes(query)
+            );
+        }
+
+        if (filteredFactorTasks.length === 0) {
+            tableContainer.innerHTML = `<div class="empty-state" style="padding:30px;"><i class="fas fa-search-minus" style="opacity:.3; font-size:1.8rem;"></i><p style="margin-top:8px; color:var(--text-muted);">No matching factor tasks found.</p></div>`;
+            return;
+        }
+
+        const statusBadgeHtml = (status, isLate) => {
+            let text = status;
+            let cls = (status || '').toLowerCase();
+            if (isLate) {
+                return `<span class="status-badge late"><i class="fas fa-exclamation-triangle" style="margin-right:3px;"></i>${text} (Late)</span>`;
+            }
+            return `<span class="status-badge ${cls}">${text}</span>`;
+        };
+
+        const formatTime = (tsStr) => {
+            if (!tsStr) return '—';
+            try {
+                const dt = new Date(tsStr);
+                return dt.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) + '<br>' +
+                       `<span style="font-size:.72rem; color:var(--text-muted);">${dt.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true })}</span>`;
+            } catch (e) {
+                return tsStr;
+            }
+        };
+
+        const fmtEntryDate = (ds) => {
+            if (!ds) return '';
+            try { return new Date(ds + 'T00:00:00').toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }); }
+            catch { return ds; }
+        };
+
+        const html = `
+            <div class="table-wrap" style="max-height: 420px; overflow-y: auto;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th style="width:11%;">Date</th>
+                            <th style="width:24%;">Commodity / Frequency</th>
+                            <th style="width:28%;">Factor Task (Subtopic)</th>
+                            <th style="width:11%;">Status</th>
+                            <th style="width:14%;">Remarks</th>
+                            <th style="width:12%;">Submitted At</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${filteredFactorTasks.map(e => {
+                            const isUnfilled = e.isUnfilled;
+                            const rowStyle = isUnfilled ? 'opacity: 0.85; background: rgba(255,255,255,0.01);' : '';
+                            const unfilledLabel = isUnfilled ? '<span class="tag animate-pulse" style="background:rgba(245,158,11,0.15); color:#f59e0b; font-size:.62rem; padding:2px 6px; border-radius:4px; margin-left:8px; font-weight:700; border: 1px solid rgba(245,158,11,0.3);">UNFILLED</span>' : '';
+                            const topicKey = e.subTopic ? `${e.topic} (${e.subTopic})` : e.topic;
+                            return `
+                                <tr style="${rowStyle}">
+                                    <td style="font-size:.75rem; color:var(--text-muted); white-space:nowrap; padding:10px 12px;">${fmtEntryDate(e.entryDate || '')}</td>
+                                    <td style="font-weight:600; color:var(--text-primary); padding:10px 14px;">
+                                        <span>${App.escapeHtml(e.topic)}</span>
+                                    </td>
+                                    <td style="padding:10px 14px;">
+                                        <div style="display:flex; align-items:center; flex-wrap:wrap; gap:4px;">
+                                            <span class="topic-link-clickable" data-topic="${App.escapeHtml(topicKey)}" style="cursor:pointer; color:#a78bfa; font-weight:700; display:inline-flex; align-items:center; gap:4px;" title="Click to view line chart trend for '${App.escapeHtml(topicKey)}'">
+                                                <span class="topic-title-text" style="border-bottom: 1px dashed rgba(167,139,250,0.5);">${App.escapeHtml(e.subTopic || e.topic)}</span>
+                                                <i class="fas fa-chart-line" style="font-size:0.65rem; color:#a78bfa; opacity:0.8;"></i>
+                                            </span>
+                                            ${unfilledLabel}
+                                        </div>
+                                    </td>
+                                    <td style="padding:10px 14px;">${statusBadgeHtml(e.status, e.isLate)}</td>
+                                    <td style="font-size:.79rem; color:var(--text-secondary); white-space:normal; word-break:break-word; max-width:200px; padding:10px 14px;">
                                         ${App.escapeHtml(e.remarks || '—')}
                                     </td>
                                     <td style="font-size:.78rem; color:var(--text-muted); font-weight:500; padding:10px 14px; white-space:nowrap;">
