@@ -588,11 +588,19 @@ class BackupActivation(db.Model):
     end_date = db.Column(db.Date, nullable=False, index=True)
     reason = db.Column(db.String(255), default='')   # e.g. "On leave", "Sick"
     notes = db.Column(db.Text, default='')
+    scope_type = db.Column(db.String(50), default='all')   # 'all' | 'distributed'
+    items_json = db.Column(db.Text, default='[]')         # JSON array of distributed items
     granted_by = db.Column(db.String(255), default='')  # manager email
     active = db.Column(db.Boolean, default=True, index=True)
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
 
     def to_dict(self):
+        import json
+        items = []
+        try:
+            items = json.loads(self.items_json or '[]')
+        except Exception:
+            items = []
         return {
             'id': self.id,
             'primaryEmail': self.primary_email,
@@ -603,6 +611,8 @@ class BackupActivation(db.Model):
             'notes': self.notes,
             'grantedBy': self.granted_by,
             'active': self.active,
+            'scopeType': self.scope_type or 'all',
+            'items': items,
             'createdAt': _safe_iso(self.created_at) or '',
         }
 

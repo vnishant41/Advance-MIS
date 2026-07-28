@@ -12,7 +12,7 @@ from app.models import User, AuditLog
 
 auth_bp = Blueprint('auth', __name__)
 
-ROLE_LEVEL = {'Teammate': 1, 'Leader': 1.5, 'Manager': 2, 'SuperAdmin': 3}
+ROLE_LEVEL = {'Teammate': 1, 'Manager': 2, 'SuperAdmin': 3}
 
 
 def role_at_least(user_role, min_role):

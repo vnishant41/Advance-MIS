@@ -131,8 +131,8 @@ def get_team_updates():
             except ValueError:
                 max_log_date = None
 
-    # If ref_date is default system date today (or not specified) and today's period has 0 done logs, default to max_log_date
-    if not ref_date_str or ref_date == date.today():
+    # If ref_date is not specified and current period has 0 done logs, default to max_log_date
+    if not ref_date_str:
         if max_log_date and max_log_date < ref_date:
             if period == 'weekly':
                 s_check = ref_date - timedelta(days=ref_date.weekday())
@@ -166,7 +166,7 @@ def get_team_updates():
     # Query scope
     if user.role == 'SuperAdmin':
         scoped_users = User.query.filter_by(active=True).all()
-    elif user.role in ('Manager', 'Leader'):
+    elif user.role == 'Manager':
         dept_users = User.query.filter_by(department=user.department, active=True).all()
         scoped_users = list({u.email: u for u in ([user] + dept_users)}.values())
     else:

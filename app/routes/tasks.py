@@ -6,7 +6,7 @@ from datetime import datetime, date, timedelta, timezone
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required
 from app import db
-from app.models import TaskTemplate, MasterLog, RosterConfig, RosterLog, User, CommodityConfig, Report, AppSetting, BackupActivation, ReportGroup, TaskOverride
+from app.models import TaskTemplate, MasterLog, RosterConfig, RosterLog, User, CommodityConfig, Report, AppSetting, BackupActivation, ReportGroup, TaskOverride, _safe_iso
 from app.auth import get_current_user, role_at_least, log_audit
 
 tasks_bp = Blueprint('tasks', __name__)
@@ -183,16 +183,34 @@ def _active_handover_principals(user, on_date):
     A backup user only inherits a primary's tasks during a handover window
     explicitly granted by a manager.
     """
-    principals = {user.email.lower()}
+    u_email = user.email.lower()
+    principals = {u_email}
     rows = BackupActivation.query.filter(
-        BackupActivation.backup_email == user.email.lower(),
         BackupActivation.active.is_(True),
         BackupActivation.start_date <= on_date,
         BackupActivation.end_date >= on_date,
     ).all()
+
     for r in rows:
-        if r.primary_email:
-            principals.add(r.primary_email.lower())
+        if (r.scope_type or 'all') == 'all':
+            if r.backup_email and r.backup_email.lower() == u_email:
+                if r.primary_email:
+                    principals.add(r.primary_email.lower())
+        else:
+            import json
+            items = []
+            try: items = json.loads(r.items_json or '[]')
+            except Exception: items = []
+
+            is_assigned = (r.backup_email and r.backup_email.lower() == u_email)
+            if not is_assigned:
+                for it in items:
+                    if (it.get('backupEmail') or '').lower() == u_email:
+                        is_assigned = True
+                        break
+            if is_assigned and r.primary_email:
+                principals.add(r.primary_email.lower())
+
     return principals
 
 
@@ -235,6 +253,11 @@ def _filter_tasks_for_user(tasks, user, on_date=None):
             out.append(t)
             continue
         if _matches_any_principal(t.assignee, principals, name_lookup):
+            is_own = _matches_any_principal(t.assignee, {user.email.lower()}, name_lookup)
+            if not is_own:
+                freq = (t.recurrence or '').lower().strip()
+                if freq not in ('daily', 'mon-fri', ''):
+                    continue
             out.append(t)
     return out
 
@@ -276,6 +299,12 @@ def _get_du_tasks(user, date_obj):
         for c in all_configs:
             if not _du_fires(c):
                 continue
+            is_own = _matches_any_principal(getattr(c, 'mode', '') or '', {user.email.lower()}, name_lookup) or \
+                     _matches_any_principal(getattr(c, 'primary_assignee', '') or '', {user.email.lower()}, name_lookup)
+            if not is_own:
+                freq = (c.type or '').lower().strip()
+                if freq not in ('daily', 'mon-fri', ''):
+                    continue
             if _matches_any_principal(getattr(c, 'mode', '') or '', principals, name_lookup):
                 configs.append(c); continue
             if _matches_any_principal(getattr(c, 'primary_assignee', '') or '', principals, name_lookup):
@@ -434,6 +463,14 @@ def _get_mis_tasks(user, date_obj):
                                           date_obj, override_index):
             continue
         
+        if not role_at_least(user.role, 'Manager'):
+            primary_assignee = (r.primary_assignee or '').lower()
+            is_own = user.email.lower() in primary_assignee or (user.name and user.name.lower() in primary_assignee)
+            if not is_own:
+                freq = (r.frequency or '').lower().strip()
+                if freq not in ('daily', 'mon-fri', ''):
+                    continue
+
         email = _get_email(r.primary_assignee)
         log = mis_log_index.get((r.name, email))
         mis_tasks.append({
@@ -445,7 +482,7 @@ def _get_mis_tasks(user, date_obj):
             'instructions': getattr(r, 'instructions', '') or '',
             'logId': log.log_id if log else '',
             'status': log.status if log else 'Pending',
-            'createdAt': (log.timestamp_submitted.isoformat()
+            'createdAt': (_safe_iso(log.timestamp_submitted)
                           if log and log.timestamp_submitted else date_obj.isoformat()),
         })
     return mis_tasks
@@ -514,7 +551,8 @@ def _get_report_group_tasks(user, date_obj):
             'assignee': g.primary_assignee or '',
             'instructions': g.remark or '',
             'status': log.status if log else 'Pending',
-            'createdAt': (log.timestamp_submitted.isoformat() if log and log.timestamp_submitted else date_obj.isoformat()),
+            'createdAt': (_safe_iso(log.timestamp_submitted)
+                          if log and log.timestamp_submitted else date_obj.isoformat()),
         })
     return out
 
@@ -603,7 +641,7 @@ def get_today_tasks():
                 d['status'] = log.status if log else 'Pending'
                 d['logId'] = log.log_id if log else ''
                 d['remarks'] = log.remarks if log else ''
-                d['createdAt'] = (log.timestamp_submitted.isoformat()
+                d['createdAt'] = (_safe_iso(log.timestamp_submitted)
                                   if log and log.timestamp_submitted else today.isoformat())
                 d['isAdhoc'] = False
                 daily_tasks.append(d)
@@ -621,7 +659,7 @@ def get_today_tasks():
                     'status': l.status,
                     'logId': l.log_id,
                     'remarks': l.remarks or '',
-                    'createdAt': l.timestamp_submitted.isoformat() if l.timestamp_submitted else today.isoformat(),
+                    'createdAt': _safe_iso(l.timestamp_submitted) if l.timestamp_submitted else today.isoformat(),
                     'isAdhoc': True
                 })
 
@@ -648,7 +686,7 @@ def get_today_tasks():
                     'employee': rc.employee,
                     'instructions': rc.remark or '',
                     'status': log.status if log else 'Pending',
-                    'createdAt': (log.updated_at.isoformat()
+                    'createdAt': (_safe_iso(log.updated_at)
                                   if log and log.updated_at else today.isoformat()),
                 })
         roster_tasks = _sort_section(roster_tasks)
@@ -667,7 +705,7 @@ def get_today_tasks():
 
     skipped_rows = MasterLog.query.filter(
         MasterLog.on_behalf_of_email == user.email,
-        MasterLog.status == 'Skip',
+        MasterLog.status.in_(['Skip', 'Data Not Updated']),
         MasterLog.row_status == 'Active',
         MasterLog.entry_date == yesterday,
     ).all()
@@ -691,10 +729,10 @@ def get_today_tasks():
             'subTopic': sk.sub_topic or '',
             'entryType': sk.entry_type,
             'status': 'Pending',
-            'originalStatus': 'Skip',
+            'originalStatus': sk.status,
             'remarks': sk.remarks or '',
-            'carriedFrom': sk.entry_date.isoformat() if hasattr(sk.entry_date, 'isoformat') else str(sk.entry_date or ''),
-            'timestamp': sk.timestamp_submitted.isoformat() if hasattr(sk.timestamp_submitted, 'isoformat') else str(sk.timestamp_submitted or ''),
+            'carriedFrom': _safe_iso(sk.entry_date) or '',
+            'timestamp': _safe_iso(sk.timestamp_submitted) or '',
         })
 
     # Always show today's submitted task entries (even on holidays — for audit)
@@ -1409,4 +1447,279 @@ def get_task_history():
         'fromDate': from_date.isoformat(),
         'toDate': to_date.isoformat(),
     })
+
+
+@tasks_bp.route('/missed', methods=['GET'])
+@jwt_required()
+def get_missed_entries():
+    """Calculates missed entries based on working days for:
+    - Daily: Recent working days
+    - Weekly: Last week
+    - Monthly: Last month
+    For the logged in user (or teammate).
+    """
+    user = get_current_user()
+    if not user:
+        return jsonify({'success': False}), 401
+
+    today = date.today()
+    
+    # 1. Get recent working days (skipping weekends/holidays)
+    working_days = []
+    curr = today - timedelta(days=1)
+    while len(working_days) < 5 and (today - curr).days <= 14:
+        if not _is_holiday(curr):
+            working_days.append(curr)
+        curr -= timedelta(days=1)
+
+    primary_missed_date = working_days[0] if working_days else today - timedelta(days=1)
+
+    # 2. Last week (Weekly)
+    monday_this_week = today - timedelta(days=today.weekday())
+    last_week_start = monday_this_week - timedelta(days=7)
+    last_week_end = last_week_start + timedelta(days=6)
+
+    # 3. Last month (Monthly)
+    first_this_month = today.replace(day=1)
+    last_month_end = first_this_month - timedelta(days=1)
+    last_month_start = last_month_end.replace(day=1)
+
+    # Helper to check submitted logs for user on given date/period
+    user_logs = MasterLog.query.filter(
+        MasterLog.on_behalf_of_email == user.email,
+        MasterLog.row_status == 'Active'
+    ).all()
+
+    logs_by_date = {}
+    for l in user_logs:
+        ed = l.entry_date if hasattr(l.entry_date, 'strftime') else date.fromisoformat(str(l.entry_date)[:10])
+        key = (l.entry_type, l.topic, l.sub_topic or '', ed)
+        logs_by_date[key] = l
+
+    templates = TaskTemplate.query.all()
+    reports = Report.query.all()
+    if not role_at_least(user.role, 'Manager'):
+        me = user.email.lower()
+        nm = (user.name or '').lower()
+        reports = [r for r in reports if me in (r.primary_assignee or '').lower() or (nm and nm in (r.primary_assignee or '').lower())]
+
+    du_configs = CommodityConfig.query.all()
+    if not role_at_least(user.role, 'Manager'):
+        me = user.email.lower()
+        nm = (user.name or '').lower()
+        du_configs = [c for c in du_configs if me in (c.mode or c.primary_assignee or '').lower() or (nm and nm in (c.mode or c.primary_assignee or '').lower())]
+
+    # --- DAILY MISSED (across recent working days) ---
+    daily_missed = []
+    seen_daily_keys = set()
+
+    for w_date in working_days:
+        user_templates = _filter_tasks_for_user(templates, user, on_date=w_date)
+        for t in user_templates:
+            if (t.recurrence or '').lower() == 'daily':
+                key = ('Task', t.name, '', w_date)
+                if key in seen_daily_keys: continue
+                l = logs_by_date.get(key)
+                if not l or l.status not in ('Done',):
+                    seen_daily_keys.add(key)
+                    daily_missed.append({
+                        'entryType': 'Task',
+                        'topic': t.name,
+                        'subTopic': '',
+                        'name': t.name,
+                        'missedDate': w_date.isoformat(),
+                        'cadence': 'Daily',
+                        'status': l.status if l else 'Missed',
+                        'remarks': l.remarks if l else '',
+                        'instructions': t.instructions or '',
+                    })
+
+        for c in du_configs:
+            if (c.type or '').lower() in ('daily', 'mon-fri'):
+                topic = f"{c.commodity}::{c.type}"
+                key = ('DataUpdate', topic, c.factor, w_date)
+                if key in seen_daily_keys: continue
+                l = logs_by_date.get(key)
+                if not l or l.status not in ('Done',):
+                    seen_daily_keys.add(key)
+                    daily_missed.append({
+                        'entryType': 'DataUpdate',
+                        'topic': topic,
+                        'subTopic': c.factor,
+                        'name': f"Data Update: {c.commodity} — {c.factor}",
+                        'missedDate': w_date.isoformat(),
+                        'cadence': 'Daily',
+                        'status': l.status if l else 'Missed',
+                        'remarks': l.remarks if l else '',
+                        'instructions': getattr(c, 'instructions', '') or '',
+                    })
+
+        for r in reports:
+            if (r.frequency or '').lower() == 'daily':
+                key = ('MISReport', r.name, '', w_date)
+                if key in seen_daily_keys: continue
+                l = logs_by_date.get(key)
+                if not l or l.status not in ('Done',):
+                    seen_daily_keys.add(key)
+                    daily_missed.append({
+                        'entryType': 'MISReport',
+                        'topic': r.name,
+                        'subTopic': '',
+                        'name': f"MIS Report: {r.name}",
+                        'missedDate': w_date.isoformat(),
+                        'cadence': 'Daily',
+                        'status': l.status if l else 'Missed',
+                        'remarks': l.remarks if l else '',
+                        'instructions': getattr(r, 'instructions', '') or '',
+                    })
+
+    # --- WEEKLY MISSED ---
+    weekly_missed = []
+    for t in _filter_tasks_for_user(templates, user, on_date=last_week_start):
+        if (t.recurrence or '').lower() == 'weekly':
+            found_done = any(logs_by_date.get(('Task', t.name, '', last_week_start + timedelta(days=i)), None) and logs_by_date[('Task', t.name, '', last_week_start + timedelta(days=i))].status == 'Done' for i in range(7))
+            if not found_done:
+                weekly_missed.append({
+                    'entryType': 'Task',
+                    'topic': t.name,
+                    'subTopic': '',
+                    'name': t.name,
+                    'missedDate': last_week_start.isoformat(),
+                    'cadence': 'Weekly',
+                    'status': 'Missed',
+                    'remarks': '',
+                    'instructions': t.instructions or '',
+                })
+
+    for c in du_configs:
+        if (c.type or '').lower() == 'weekly':
+            topic = f"{c.commodity}::{c.type}"
+            found_done = any(logs_by_date.get(('DataUpdate', topic, c.factor, last_week_start + timedelta(days=i)), None) and logs_by_date[('DataUpdate', topic, c.factor, last_week_start + timedelta(days=i))].status == 'Done' for i in range(7))
+            if not found_done:
+                weekly_missed.append({
+                    'entryType': 'DataUpdate',
+                    'topic': topic,
+                    'subTopic': c.factor,
+                    'name': f"Data Update: {c.commodity} — {c.factor}",
+                    'missedDate': last_week_start.isoformat(),
+                    'cadence': 'Weekly',
+                    'status': 'Missed',
+                    'remarks': '',
+                    'instructions': getattr(c, 'instructions', '') or '',
+                })
+
+    # --- MONTHLY MISSED ---
+    monthly_missed = []
+    for t in _filter_tasks_for_user(templates, user, on_date=last_month_start):
+        if (t.recurrence or '').lower() == 'monthly':
+            found_done = any(l.entry_type == 'Task' and l.topic == t.name and l.status == 'Done' and last_month_start <= (l.entry_date if hasattr(l.entry_date, 'strftime') else date.fromisoformat(str(l.entry_date)[:10])) <= last_month_end for l in user_logs)
+            if not found_done:
+                monthly_missed.append({
+                    'entryType': 'Task',
+                    'topic': t.name,
+                    'subTopic': '',
+                    'name': t.name,
+                    'missedDate': last_month_end.isoformat(),
+                    'cadence': 'Monthly',
+                    'status': 'Missed',
+                    'remarks': '',
+                    'instructions': t.instructions or '',
+                })
+
+    for c in du_configs:
+        if (c.type or '').lower() == 'monthly':
+            topic = f"{c.commodity}::{c.type}"
+            found_done = any(l.entry_type == 'DataUpdate' and l.topic == topic and l.sub_topic == c.factor and l.status == 'Done' and last_month_start <= (l.entry_date if hasattr(l.entry_date, 'strftime') else date.fromisoformat(str(l.entry_date)[:10])) <= last_month_end for l in user_logs)
+            if not found_done:
+                monthly_missed.append({
+                    'entryType': 'DataUpdate',
+                    'topic': topic,
+                    'subTopic': c.factor,
+                    'name': f"Data Update: {c.commodity} — {c.factor}",
+                    'missedDate': last_month_end.isoformat(),
+                    'cadence': 'Monthly',
+                    'status': 'Missed',
+                    'remarks': '',
+                    'instructions': getattr(c, 'instructions', '') or '',
+                })
+
+    return jsonify({
+        'success': True,
+        'daily': {
+            'date': primary_missed_date.isoformat(),
+            'dayName': DAYS_OF_WEEK[primary_missed_date.weekday()],
+            'items': daily_missed
+        },
+        'weekly': {
+            'weekStart': last_week_start.isoformat(),
+            'weekEnd': last_week_end.isoformat(),
+            'items': weekly_missed
+        },
+        'monthly': {
+            'month': last_month_start.strftime('%B %Y'),
+            'monthStart': last_month_start.isoformat(),
+            'items': monthly_missed
+        }
+    })
+
+
+@tasks_bp.route('/submit-backdated', methods=['POST'])
+@jwt_required()
+def submit_backdated():
+    user = get_current_user()
+    if not user:
+        return jsonify({'success': False}), 401
+
+    data = request.get_json() or {}
+    entry_type = data.get('entryType', 'Task')
+    topic = data.get('topic', '')
+    sub_topic = data.get('subTopic', '')
+    status = data.get('status', 'Done')
+    remarks = data.get('remarks', '')
+    
+    if not topic or not data.get('entryDate'):
+        return jsonify({'success': False, 'message': 'Topic and entryDate required'}), 400
+
+    entry_date = date.fromisoformat(data['entryDate'])
+    target_email = data.get('onBehalfOf', user.email).lower()
+
+    existing = MasterLog.query.filter_by(
+        on_behalf_of_email=target_email,
+        entry_date=entry_date,
+        entry_type=entry_type,
+        topic=topic,
+        sub_topic=sub_topic,
+        row_status='Active',
+    ).all()
+    for e in existing:
+        e.row_status = 'Amended'
+
+    log_id = _new_log_id()
+    now = datetime.now(timezone.utc)
+    log = MasterLog(
+        log_id=log_id,
+        timestamp_submitted=now,
+        submitted_by_email=user.email,
+        on_behalf_of_email=target_email,
+        on_behalf_of_name=user.name,
+        entry_type=entry_type,
+        entry_date=entry_date,
+        week_number=entry_date.isocalendar()[1],
+        month_year=entry_date.strftime('%B %Y'),
+        topic=topic,
+        sub_topic=sub_topic,
+        status=status,
+        remarks=remarks,
+        row_status='Active',
+    )
+    db.session.add(log)
+    db.session.commit()
+
+    log_audit(user.email, 'TASK_BACKDATED_SUBMIT', 'MasterLog', log_id, after=log.to_dict())
+    return jsonify({
+        'success': True,
+        'logId': log_id,
+        'message': f'Backdated entry for {entry_date.isoformat()} saved successfully with status {status}.'
+    })
+
 

@@ -9,6 +9,7 @@ const App = {
     socket: null,
 
     init() {
+        this.initTheme();
         auth.init();
 
         // SPA routing
@@ -474,6 +475,42 @@ const App = {
         const div = document.createElement('div');
         div.textContent = str;
         return div.innerHTML;
+    },
+
+    // Theme Management (Light / Dark Mode)
+    initTheme() {
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        this.updateThemeIcons(currentTheme);
+
+        document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
+            btn.addEventListener('click', () => this.toggleTheme());
+        });
+    },
+
+    toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        const nextTheme = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', nextTheme);
+        localStorage.setItem('theme', nextTheme);
+        this.updateThemeIcons(nextTheme);
+        this.showToast(`Switched to ${nextTheme === 'light' ? 'Light' : 'Dark'} Mode`, 'info');
+        window.dispatchEvent(new CustomEvent('theme:changed', { detail: { theme: nextTheme } }));
+    },
+
+    updateThemeIcons(theme) {
+        document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
+            const icon = btn.querySelector('i');
+            if (icon) {
+                if (theme === 'light') {
+                    icon.className = 'fas fa-moon';
+                    btn.title = 'Switch to Dark Mode';
+                } else {
+                    icon.className = 'fas fa-sun';
+                    btn.title = 'Switch to Light Mode';
+                }
+            }
+        });
     }
 };
 

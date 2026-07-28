@@ -377,11 +377,11 @@ def _get_user_daily_summary(user, today):
     }
 
 
-def _send_teammate_reminders(app, today):
+def _send_teammate_reminders(app, today, force=False):
     from app.models import User
     from app.services.email_service import send_email, build_reminder_email_html
     
-    users = User.query.filter_by(active=True, role='Teammate').all()
+    users = User.query.filter(User.active == True, User.role.in_(['Teammate', 'SuperAdmin', 'Manager', 'Leader'])).all()
     date_str = today.strftime('%B %d, %Y')
     
     for user in users:
@@ -393,14 +393,14 @@ def _send_teammate_reminders(app, today):
             
         html_body = build_reminder_email_html(user, date_str, summary)
         subject = f"⏰ Daily MIS Task Reminder — {user.name} ({len(summary['pending'])} Pending)"
-        send_email([user.email], subject, html_body)
+        send_email([user.email], subject, html_body, force=force)
 
 
-def _send_teammate_finals(app, today):
+def _send_teammate_finals(app, today, force=False):
     from app.models import User
     from app.services.email_service import send_email, build_daily_digest_html
     
-    users = User.query.filter_by(active=True, role='Teammate').all()
+    users = User.query.filter(User.active == True, User.role.in_(['Teammate', 'SuperAdmin', 'Manager', 'Leader'])).all()
     date_str = today.strftime('%B %d, %Y')
     
     for user in users:
@@ -410,14 +410,14 @@ def _send_teammate_finals(app, today):
             
         html_body = build_daily_digest_html(user, date_str, summary)
         subject = f"Daily MIS Task Summary: Final Update — {user.name} ({summary['score']}% Done)"
-        send_email([user.email], subject, html_body)
+        send_email([user.email], subject, html_body, force=force)
 
 
-def _send_manager_digests(app, today):
+def _send_manager_digests(app, today, force=False):
     from app.models import User
     from app.services.email_service import send_email, build_manager_digest_html, get_setting
     
-    teammates = User.query.filter_by(active=True, role='Teammate').all()
+    teammates = User.query.filter(User.active == True, User.role.in_(['Teammate', 'SuperAdmin', 'Manager', 'Leader'])).all()
     date_str = today.strftime('%B %d, %Y')
     
     summaries = []
@@ -456,14 +456,14 @@ def _send_manager_digests(app, today):
         return
         
     subject = f"MIS Daily Manager Digest — {date_str}"
-    send_email(recipients, subject, html_body)
+    send_email(recipients, subject, html_body, force=force)
 
 
-def _send_leader_digests(app, today):
+def _send_leader_digests(app, today, force=False):
     from app.models import User
     from app.services.email_service import send_email, build_leader_digest_html
     
-    teammates = User.query.filter_by(active=True, role='Teammate').all()
+    teammates = User.query.filter(User.active == True, User.role.in_(['Teammate', 'SuperAdmin', 'Manager', 'Leader'])).all()
     date_str = today.strftime('%B %d, %Y')
     
     teammates_tasks = []
@@ -496,7 +496,7 @@ def _send_leader_digests(app, today):
         return
         
     subject = f"MIS Research Team Daily Summary — {date_str}"
-    send_email(recipients, subject, html_body)
+    send_email(recipients, subject, html_body, force=force)
 
 
 def _send_daily_digests(app, today):

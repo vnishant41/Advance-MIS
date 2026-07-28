@@ -54,18 +54,11 @@ export default {
             document.getElementById('kanban-board').innerHTML = '<div class="empty-state"><i class="fas fa-exclamation-circle"></i><p>Failed to load board</p></div>';
         }
 
-        // Only managers can create tasks
-        const isMgr = ['SuperAdmin', 'Manager'].includes(window.currentUser?.role);
+        // Enable task and sprint creation for everyone
         const newTaskBtn = document.getElementById('btn-new-task');
         const newSprintBtn = document.getElementById('btn-new-sprint');
-
-        if (!isMgr) {
-            newTaskBtn.style.display = 'none';
-            newSprintBtn.style.display = 'none';
-        } else {
-            newTaskBtn.addEventListener('click', () => this.showCreateTaskModal());
-            newSprintBtn.addEventListener('click', () => this.showCreateSprintModal());
-        }
+        if (newTaskBtn) newTaskBtn.addEventListener('click', () => this.showCreateTaskModal());
+        if (newSprintBtn) newSprintBtn.addEventListener('click', () => this.showCreateSprintModal());
 
         document.getElementById('kanban-sprint-filter').addEventListener('change', () => this.renderBoard());
     },

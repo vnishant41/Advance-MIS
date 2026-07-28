@@ -1,7 +1,7 @@
 # Advanced MIS / Advanced ERP System Documentation
 
 ## Overview
-**Advanced MIS** is a robust, full-stack Python web application built using Flask, SQLAlchemy (SQLite), and real-time Socket.IO communication. It serves as an Enterprise Resource Planning and Management Information System tailored specifically for a research team. 
+**Advanced MIS** is a robust, full-stack Python web application built using Flask, SQLAlchemy (MySQL), and real-time Socket.IO communication. It serves as an Enterprise Resource Planning and Management Information System tailored specifically for a research team. 
 
 Originally developed to replace a legacy, fragmented Google Apps Script-based tracker, this system centralizes daily workflows, automates report validation, and enhances team collaboration through structured task management and strict role-based access control.
 
@@ -86,7 +86,7 @@ To prevent "fat controllers", computationally expensive or highly specialized lo
 - **`scheduler.py`:** A daemonized APScheduler instance that runs in the background. It performs tasks like generating new `MasterLog` pending entries at midnight for Daily tasks, or rotating employees in the `RosterConfig`.
 
 ### 4. The Data Layer (Models in `app/models.py`)
-This layer defines the structural schema of the SQLite database using SQLAlchemy ORM (Object-Relational Mapping).
+This layer defines the structural schema of the MySQL database using SQLAlchemy ORM (Object-Relational Mapping).
 - **Entities:** Models correspond to database tables (e.g., `User`, `MasterLog`, `KanbanTask`, `MISReportUpload`, `MISTemplate`).
 - **Data Integrity:** Models enforce data types, primary/foreign keys, uniqueness constraints, and default values. 
 - **Serialization:** Each model includes a `to_dict()` helper method. This is crucial because when the backend needs to send data to the frontend via AJAX/JSON, SQLAlchemy objects must be serialized into Python dictionaries.

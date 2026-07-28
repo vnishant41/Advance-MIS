@@ -111,7 +111,12 @@ export default {
     async init() {
         this.charts.forEach(c => c.destroy());
         this.charts = [];
-        this.selectedTeammate = null;
+        const isTeammate = !['SuperAdmin', 'Manager', 'Leader'].includes(window.currentUser?.role);
+        if (isTeammate) {
+            this.selectedTeammate = window.currentUser?.email;
+        } else {
+            this.selectedTeammate = null;
+        }
         
         // Initialize refDate to local date in YYYY-MM-DD
         const todayStr = this.getTodayStr();
@@ -170,6 +175,7 @@ export default {
         const btnToday = document.getElementById('btn-today');
         if (btnToday) {
             btnToday.addEventListener('click', () => {
+                this._userNavigated = true;
                 this.refDate = this.getTodayStr();
                 if (picker) picker.value = this.refDate;
                 this.loadData();
@@ -182,31 +188,53 @@ export default {
 
     stepDate(direction) {
         const todayStr = this.getTodayStr();
-        const d = new Date(this.refDate);
-        if (isNaN(d.getTime())) return;
-        
+        const parts = (this.refDate || todayStr).split('-');
+        if (parts.length !== 3) return;
+        let y = parseInt(parts[0], 10);
+        let m = parseInt(parts[1], 10);
+        let d = parseInt(parts[2], 10);
+
+        this._userNavigated = true;
+
         if (this.period === 'daily') {
-            d.setDate(d.getDate() + direction);
+            const dt = new Date(y, m - 1, d);
+            dt.setDate(dt.getDate() + direction);
+            y = dt.getFullYear();
+            m = dt.getMonth() + 1;
+            d = dt.getDate();
         } else if (this.period === 'weekly') {
-            d.setDate(d.getDate() + (direction * 7));
+            const dt = new Date(y, m - 1, d);
+            dt.setDate(dt.getDate() + (direction * 7));
+            y = dt.getFullYear();
+            m = dt.getMonth() + 1;
+            d = dt.getDate();
         } else if (this.period === 'monthly') {
-            d.setMonth(d.getMonth() + direction);
+            m += direction;
+            if (m < 1) {
+                m = 12;
+                y -= 1;
+            } else if (m > 12) {
+                m = 1;
+                y += 1;
+            }
+            const maxDays = new Date(y, m, 0).getDate();
+            if (d > maxDays) d = maxDays;
         }
-        
-        const y = d.getFullYear();
-        const m = String(d.getMonth() + 1).padStart(2, '0');
-        const day = String(d.getDate()).padStart(2, '0');
-        const nextDateStr = `${y}-${m}-${day}`;
-        
+
+        const yStr = String(y);
+        const mStr = String(m).padStart(2, '0');
+        const dStr = String(d).padStart(2, '0');
+        const nextDateStr = `${yStr}-${mStr}-${dStr}`;
+
         if (direction > 0 && nextDateStr > todayStr) {
             return;
         }
 
         this.refDate = nextDateStr;
-        
+
         const picker = document.getElementById('ref-date-picker');
         if (picker) picker.value = this.refDate;
-        
+
         this.loadData();
     },
 
@@ -223,7 +251,7 @@ export default {
         try {
             const res = await api.get(`/analytics/team-updates?period=${this.period}&date=${this.refDate}`);
             if (res.success) {
-                if (!this._hasAutoJumped && res.latestLogDate && (res.sumup && res.sumup.done === 0) && res.latestLogDate < (res.startDate || '')) {
+                if (!this._hasAutoJumped && !this._userNavigated && res.latestLogDate && (res.sumup && res.sumup.done === 0) && res.latestLogDate < (res.startDate || '')) {
                     this._hasAutoJumped = true;
                     this.refDate = res.latestLogDate;
                     const picker = document.getElementById('ref-date-picker');
@@ -251,6 +279,18 @@ export default {
         const select = document.getElementById('teammate-dropdown-select');
         if (!select) return;
         
+        const isTeammate = !['SuperAdmin', 'Manager', 'Leader'].includes(window.currentUser?.role);
+        if (isTeammate) {
+            const myEmail = window.currentUser?.email;
+            const myName = window.currentUser?.name || myEmail;
+            this.selectedTeammate = myEmail;
+            select.innerHTML = `<option value="${App.escapeHtml(myEmail)}" selected>👤 ${App.escapeHtml(myName)} (My Analytics)</option>`;
+            select.value = myEmail;
+            select.disabled = true;
+            return;
+        }
+
+        select.disabled = false;
         let html = `
             <option value="sumup" ${this.selectedTeammate === null ? 'selected' : ''}>👥 Team Sumup (Aggregate metrics & trends)</option>
         `;
@@ -274,6 +314,11 @@ export default {
         const container = document.getElementById('main-content-area');
         if (!container) return;
         
+        const isTeammate = !['SuperAdmin', 'Manager', 'Leader'].includes(window.currentUser?.role);
+        if (isTeammate) {
+            this.selectedTeammate = window.currentUser?.email;
+        }
+
         if (this.selectedTeammate === null) {
             container.innerHTML = this.renderSumup();
             this.renderSumupCharts();
@@ -706,8 +751,10 @@ export default {
         const dates = [];
         const todayStr = this.getTodayStr();
         try {
-            let curr = new Date(this.startDate + 'T00:00:00');
-            const end = new Date(this.endDate + 'T00:00:00');
+            const [sY, sM, sD] = this.startDate.split('-').map(n => parseInt(n, 10));
+            const [eY, eM, eD] = this.endDate.split('-').map(n => parseInt(n, 10));
+            let curr = new Date(sY, sM - 1, sD);
+            const end = new Date(eY, eM - 1, eD);
             while (curr <= end) {
                 const y = curr.getFullYear();
                 const m = String(curr.getMonth() + 1).padStart(2, '0');
@@ -1337,8 +1384,10 @@ export default {
     getDateRangeLabel() {
         if (!this.startDate || !this.endDate) return '';
         
-        const start = new Date(this.startDate);
-        const end = new Date(this.endDate);
+        const [sY, sM, sD] = this.startDate.split('-').map(n => parseInt(n, 10));
+        const [eY, eM, eD] = this.endDate.split('-').map(n => parseInt(n, 10));
+        const start = new Date(sY, sM - 1, sD);
+        const end = new Date(eY, eM - 1, eD);
         
         if (isNaN(start.getTime()) || isNaN(end.getTime())) return '';
         

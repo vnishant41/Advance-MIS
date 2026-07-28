@@ -259,50 +259,260 @@ export default {
         }
     },
 
-    showHandoverModal() {
+    async showHandoverModal() {
         const today = new Date().toISOString().slice(0, 10);
+        let userList = this._userList || [];
+        if (!userList.length) {
+            try {
+                const uRes = await api.get('/admin/users');
+                userList = uRes.data || [];
+                this._userList = userList;
+            } catch (e) { userList = []; }
+        }
+
+        const userOptions = userList.map(u => `<option value="${App.escapeHtml(u.email)}">${App.escapeHtml(u.name || u.email)} (${App.escapeHtml(u.email)})</option>`).join('');
+
         const body = `
             <div class="form-grid">
-                <div class="form-row"><label>Primary (on leave) *</label>
-                    <select id="ho-primary" style="width:100%;">${this._assigneeOptions('')}</select>
+                <div class="form-row">
+                    <label>Primary Teammate (on leave) <span style="color:var(--danger)">*</span></label>
+                    <select id="ho-primary" style="width:100%;">
+                        <option value="">— Select Teammate —</option>
+                        ${userOptions}
+                    </select>
                 </div>
-                <div class="form-row"><label>Backup (will take over) *</label>
-                    <select id="ho-backup" style="width:100%;">${this._assigneeOptions('')}</select>
+                <div class="form-row" id="ho-default-backup-group">
+                    <label>Default / Main Backup Teammate <span style="color:var(--danger)">*</span></label>
+                    <select id="ho-backup" style="width:100%;">
+                        <option value="">— Select Backup —</option>
+                        ${userOptions}
+                    </select>
                 </div>
             </div>
-            <div class="form-grid">
-                <div class="form-row"><label>Start Date *</label><input type="date" id="ho-start" value="${today}" style="width:100%;"></div>
-                <div class="form-row"><label>End Date *</label><input type="date" id="ho-end" value="${today}" style="width:100%;"></div>
+
+            <div class="form-row" style="margin-top:12px; background:var(--bg-primary); padding:12px 14px; border-radius:8px; border:1px solid var(--border);">
+                <label style="font-weight:700; display:block; margin-bottom:8px;">
+                    <i class="fas fa-sitemap" style="color:var(--accent); margin-right:6px;"></i>Work Load Distribution Mode
+                </label>
+                <div style="display:flex; gap:20px; align-items:center;">
+                    <label style="cursor:pointer; font-size:.85rem; font-weight:600; display:flex; align-items:center; gap:6px;">
+                        <input type="radio" name="ho-scope-type" value="all" checked> Single Backup Teammate (Full Handover)
+                    </label>
+                    <label style="cursor:pointer; font-size:.85rem; font-weight:600; display:flex; align-items:center; gap:6px;">
+                        <input type="radio" name="ho-scope-type" value="distributed"> Distribute Work Load Across Teammates
+                    </label>
+                </div>
             </div>
-            <div class="form-row"><label>Reason</label>
-                <input type="text" id="ho-reason" value="On leave" style="width:100%;" placeholder="e.g. Sick leave, Vacation">
+
+            <!-- Dynamic Work Load Distribution Box -->
+            <div id="ho-distribution-container" style="display:none; margin-top:12px; padding:14px; border:1px solid var(--border); border-radius:8px; background:var(--bg-card);">
+                <div style="font-weight:700; font-size:.88rem; color:var(--text-primary); margin-bottom:8px; display:flex; justify-content:space-between; align-items:center;">
+                    <span><i class="fas fa-users-cog" style="color:var(--warning); margin-right:6px;"></i>Distribute Duties & Crops</span>
+                    <span style="font-size:.75rem; color:var(--text-muted);">Assign specific crops, roster duties & PDF upload access</span>
+                </div>
+                <div id="ho-duties-list">
+                    <p style="font-size:.8rem; color:var(--text-muted);">Select a primary teammate above to load their assigned crops & duties.</p>
+                </div>
             </div>
-            <div class="form-row"><label>Notes</label>
-                <textarea id="ho-notes" style="width:100%; min-height:60px;" placeholder="Optional context for the audit trail..."></textarea>
+
+            <div class="form-grid" style="margin-top:12px;">
+                <div class="form-row"><label>Start Date <span style="color:var(--danger)">*</span></label><input type="date" id="ho-start" value="${today}" style="width:100%;"></div>
+                <div class="form-row"><label>End Date <span style="color:var(--danger)">*</span></label><input type="date" id="ho-end" value="${today}" style="width:100%;"></div>
+            </div>
+            <div class="form-row" style="margin-top:12px;"><label>Reason</label>
+                <input type="text" id="ho-reason" value="On leave" style="width:100%;" placeholder="e.g. Sick leave, Vacation, Festival">
+            </div>
+            <div class="form-row" style="margin-top:12px;"><label>Notes / Context</label>
+                <textarea id="ho-notes" style="width:100%; min-height:50px;" placeholder="Optional context for audit trail..."></textarea>
             </div>
         `;
-        App.showModal('Grant Backup Handover', body,
-            '<button class="btn btn-outline" onclick="App.closeModal()">Cancel</button><button class="btn btn-primary" id="btn-save-handover">Grant</button>');
-        setTimeout(() => {
-            document.getElementById('btn-save-handover')?.addEventListener('click', async () => {
-                const payload = {
-                    primaryEmail: document.getElementById('ho-primary').value,
-                    backupEmail: document.getElementById('ho-backup').value,
-                    startDate: document.getElementById('ho-start').value,
-                    endDate: document.getElementById('ho-end').value,
-                    reason: document.getElementById('ho-reason').value,
-                    notes: document.getElementById('ho-notes').value,
-                };
-                if (!payload.primaryEmail || !payload.backupEmail) { App.showToast('Pick a primary and a backup', 'warning'); return; }
-                if (payload.primaryEmail === payload.backupEmail) { App.showToast('Primary and backup must differ', 'warning'); return; }
-                try {
-                    await api.post('/admin/handovers', payload);
-                    App.closeModal();
-                    App.showToast('Handover granted', 'success');
-                    this.loadTab();
-                } catch(err) { App.showToast(err.message || 'Failed', 'error'); }
+
+        App.showModal('Grant Backup Handover & Work Distribution', body,
+            '<button class="btn btn-outline" onclick="App.closeModal()">Cancel</button><button class="btn btn-primary" id="btn-save-handover">Grant Handover</button>');
+
+        const loadDutiesForPrimary = async (primaryEmail) => {
+            const container = document.getElementById('ho-duties-list');
+            if (!primaryEmail || !container) return;
+            container.innerHTML = '<div style="padding:10px; font-size:.8rem; color:var(--text-muted);"><i class="fas fa-spinner fa-spin"></i> Loading teammate duties...</div>';
+            try {
+                const res = await api.get(`/admin/user-duties/${encodeURIComponent(primaryEmail)}`);
+                const comms = res.commodities || [];
+                const rosters = res.rosterDuties || [];
+                const reports = res.reports || [];
+
+                if (!comms.length && !rosters.length && !reports.length) {
+                    container.innerHTML = '<p style="font-size:.8rem; color:var(--warning); margin:0;">No specific commodities or reports configured for this user. You can pick backup teammates below manually.</p>';
+                    return;
+                }
+
+                let html = '<div style="display:flex; flex-direction:column; gap:10px;">';
+                
+                // Map crop name -> default assigned backup email
+                const cropBackupMap = {};
+                if (comms.length > 0) {
+                    comms.forEach((c, idx) => {
+                        const defaultBackup = userList[idx % userList.length]?.email || '';
+                        cropBackupMap[c.toLowerCase().trim()] = defaultBackup;
+                    });
+                }
+
+                // Commodities (Crops)
+                if (comms.length > 0) {
+                    html += `<div><div style="font-size:.78rem; font-weight:700; color:var(--accent); margin-bottom:4px;"><i class="fas fa-cubes"></i> Crop / Commodity Tasks (Assign 1 crop per teammate)</div>`;
+                    comms.forEach((c, idx) => {
+                        const defaultBackup = userList[idx % userList.length]?.email || '';
+                        html += `
+                            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; padding:6px 10px; background:var(--bg-primary); border:1px solid var(--border); border-radius:6px; margin-bottom:4px;">
+                                <span style="font-size:.82rem; font-weight:600;"><i class="fas fa-seedling" style="color:var(--success); margin-right:6px;"></i>${App.escapeHtml(c)}</span>
+                                <select class="ho-item-assignee" data-type="commodity" data-item="${App.escapeHtml(c)}" style="padding:4px 8px; font-size:.78rem;">
+                                    ${userList.map(u => `<option value="${App.escapeHtml(u.email)}" ${u.email === defaultBackup ? 'selected' : ''}>${App.escapeHtml(u.name || u.email)}</option>`).join('')}
+                                </select>
+                            </div>
+                        `;
+                    });
+                    html += '</div>';
+                }
+
+                // Roster Duties
+                if (rosters.length > 0) {
+                    html += `<div><div style="font-size:.78rem; font-weight:700; color:#14b8a6; margin-bottom:4px; margin-top:8px;"><i class="fas fa-calendar-alt"></i> Roster Duties</div>`;
+                    rosters.forEach(r => {
+                        html += `
+                            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; padding:6px 10px; background:var(--bg-primary); border:1px solid var(--border); border-radius:6px; margin-bottom:4px;">
+                                <span style="font-size:.82rem; font-weight:600;"><i class="fas fa-user-clock" style="color:#14b8a6; margin-right:6px;"></i>${App.escapeHtml(r)}</span>
+                                <select class="ho-item-assignee" data-type="roster" data-item="${App.escapeHtml(r)}" style="padding:4px 8px; font-size:.78rem;">
+                                    ${userList.map(u => `<option value="${App.escapeHtml(u.email)}">${App.escapeHtml(u.name || u.email)}</option>`).join('')}
+                                </select>
+                            </div>
+                        `;
+                    });
+                    html += '</div>';
+                }
+
+                // MIS Reports & PDF Uploads
+                if (reports.length > 0) {
+                    html += `<div><div style="font-size:.78rem; font-weight:700; color:var(--info); margin-bottom:4px; margin-top:8px;"><i class="fas fa-file-pdf"></i> MIS Reports & PDF Upload Permissions</div>`;
+                    reports.forEach(rep => {
+                        // Pre-match report name to crop assigned backup if available
+                        let defaultReportBackup = userList[0]?.email || '';
+                        const repLower = rep.toLowerCase();
+                        for (const [cropName, bEmail] of Object.entries(cropBackupMap)) {
+                            if (repLower.includes(cropName) || cropName.includes(repLower.replace(' daily','').replace(' report',''))) {
+                                defaultReportBackup = bEmail;
+                                break;
+                            }
+                        }
+                        html += `
+                            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; padding:6px 10px; background:var(--bg-primary); border:1px solid var(--border); border-radius:6px; margin-bottom:4px;">
+                                <span style="font-size:.82rem; font-weight:600;"><i class="fas fa-file-invoice" style="color:var(--info); margin-right:6px;"></i>${App.escapeHtml(rep)}</span>
+                                <select class="ho-item-assignee" data-type="mis" data-item="${App.escapeHtml(rep)}" style="padding:4px 8px; font-size:.78rem;">
+                                    ${userList.map(u => `<option value="${App.escapeHtml(u.email)}" ${u.email === defaultReportBackup ? 'selected' : ''}>${App.escapeHtml(u.name || u.email)}</option>`).join('')}
+                                </select>
+                            </div>
+                        `;
+                    });
+                    html += '</div>';
+                }
+
+                html += '</div>';
+                container.innerHTML = html;
+
+                // Auto-sync listener: When a crop dropdown changes, update the corresponding MIS Report dropdown automatically!
+                container.querySelectorAll('.ho-item-assignee[data-type="commodity"]').forEach(cropSelect => {
+                    cropSelect.addEventListener('change', (e) => {
+                        const cropName = (e.target.dataset.item || '').toLowerCase().trim();
+                        const selectedBackup = e.target.value;
+                        
+                        container.querySelectorAll('.ho-item-assignee[data-type="mis"]').forEach(repSelect => {
+                            const repName = (repSelect.dataset.item || '').toLowerCase().trim();
+                            if (repName.includes(cropName) || cropName.includes(repName.replace(' daily','').replace(' report',''))) {
+                                repSelect.value = selectedBackup;
+                                const parent = repSelect.parentElement;
+                                if (parent) {
+                                    parent.style.transition = 'background 0.3s';
+                                    parent.style.background = 'rgba(59, 130, 246, 0.18)';
+                                    setTimeout(() => {
+                                        parent.style.background = 'var(--bg-primary)';
+                                    }, 600);
+                                }
+                            }
+                        });
+                    });
+                });
+            } catch (e) {
+                container.innerHTML = '<p style="font-size:.8rem; color:var(--danger);">Failed to load duties for teammate.</p>';
+            }
+        };
+
+        // Radio mode toggle listener
+        document.querySelectorAll('input[name="ho-scope-type"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const distBox = document.getElementById('ho-distribution-container');
+                if (distBox) {
+                    distBox.style.display = e.target.value === 'distributed' ? 'block' : 'none';
+                    if (e.target.value === 'distributed') {
+                        const prim = document.getElementById('ho-primary').value;
+                        if (prim) loadDutiesForPrimary(prim);
+                    }
+                }
             });
-        }, 50);
+        });
+
+        document.getElementById('ho-primary')?.addEventListener('change', (e) => {
+            const scopeType = document.querySelector('input[name="ho-scope-type"]:checked')?.value;
+            if (scopeType === 'distributed' && e.target.value) {
+                loadDutiesForPrimary(e.target.value);
+            }
+        });
+
+        document.getElementById('btn-save-handover')?.addEventListener('click', async () => {
+            const primaryEmail = document.getElementById('ho-primary').value;
+            const backupEmail = document.getElementById('ho-backup').value;
+            const startDate = document.getElementById('ho-start').value;
+            const endDate = document.getElementById('ho-end').value;
+            const reason = document.getElementById('ho-reason').value.trim();
+            const notes = document.getElementById('ho-notes').value.trim();
+            const scopeType = document.querySelector('input[name="ho-scope-type"]:checked')?.value || 'all';
+
+            if (!primaryEmail) {
+                App.showToast('Please select the primary teammate on leave.', 'warning');
+                return;
+            }
+
+            let distributedItems = [];
+            if (scopeType === 'distributed') {
+                document.querySelectorAll('.ho-item-assignee').forEach(sel => {
+                    distributedItems.push({
+                        type: sel.dataset.type,
+                        item: sel.dataset.item,
+                        backupEmail: sel.value
+                    });
+                });
+            } else {
+                if (!backupEmail) {
+                    App.showToast('Please select the backup teammate taking over.', 'warning');
+                    return;
+                }
+            }
+
+            try {
+                await api.post('/admin/handovers', {
+                    primaryEmail,
+                    backupEmail: backupEmail || primaryEmail,
+                    startDate,
+                    endDate,
+                    reason,
+                    notes,
+                    scopeType,
+                    items: distributedItems
+                });
+                App.closeModal();
+                App.showToast('Backup handover & work load distribution saved successfully', 'success');
+                this.loadTab();
+            } catch (err) {
+                App.showToast(err.message || 'Failed to save handover', 'error');
+            }
+        });
     },
 
     async toggleHandover(id, active) {

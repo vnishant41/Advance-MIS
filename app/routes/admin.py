@@ -440,10 +440,24 @@ def add_handover():
     data = request.get_json() or {}
     primary = (data.get('primaryEmail') or '').strip().lower()
     backup = (data.get('backupEmail') or '').strip().lower()
-    if not primary or not backup:
-        return jsonify({'success': False, 'message': 'primaryEmail and backupEmail required'}), 400
-    if primary == backup:
-        return jsonify({'success': False, 'message': 'Primary and backup must differ'}), 400
+    if not primary:
+        return jsonify({'success': False, 'message': 'primaryEmail required'}), 400
+    
+    import json
+    scope_type = data.get('scopeType', 'all')
+    items = data.get('items', [])
+    items_json = json.dumps(items) if items else '[]'
+
+    if scope_type == 'distributed' and items:
+        if not backup or backup == primary:
+            for it in items:
+                if it.get('backupEmail'):
+                    backup = it['backupEmail'].strip().lower()
+                    break
+
+    if not backup:
+        return jsonify({'success': False, 'message': 'Backup assignee required'}), 400
+
     try:
         from datetime import date as _date
         sd = _date.fromisoformat(data['startDate'])
@@ -452,6 +466,7 @@ def add_handover():
         return jsonify({'success': False, 'message': 'startDate / endDate (YYYY-MM-DD) required'}), 400
     if ed < sd:
         return jsonify({'success': False, 'message': 'endDate must be >= startDate'}), 400
+
     h = BackupActivation(
         primary_email=primary,
         backup_email=backup,
@@ -459,6 +474,8 @@ def add_handover():
         end_date=ed,
         reason=data.get('reason', 'On leave'),
         notes=data.get('notes', ''),
+        scope_type=scope_type,
+        items_json=items_json,
         granted_by=user.email,
         active=True,
     )
@@ -493,9 +510,91 @@ def modify_handover(h_id):
     if 'reason' in data: h.reason = data['reason']
     if 'notes' in data: h.notes = data['notes']
     if 'active' in data: h.active = bool(data['active'])
+    if 'scopeType' in data: h.scope_type = data['scopeType']
+    if 'items' in data:
+        import json
+        h.items_json = json.dumps(data['items'])
     db.session.commit()
     log_audit(user.email, 'HANDOVER_UPDATE', 'handover', h_id, before=before, after=h.to_dict())
     return jsonify({'success': True, 'data': h.to_dict()})
+
+
+@admin_bp.route('/user-duties/<email>', methods=['GET'])
+@jwt_required()
+def get_user_duties(email):
+    """Fetches commodities, roster duties, and MIS reports owned by the given user email for work distribution."""
+    user, err = _require_manager()
+    if err: return err
+
+    target_user = User.query.filter_by(email=email.strip().lower()).first()
+    if not target_user:
+        return jsonify({'success': False, 'message': 'User not found'}), 404
+
+    target_email = target_user.email.lower()
+    target_name = (target_user.name or '').lower()
+
+    # 1. Commodities (Daily only)
+    commodities = set()
+    configs = CommodityConfig.query.all()
+    for cfg in configs:
+        freq = (cfg.type or '').lower().strip()
+        if freq not in ('daily', 'mon-fri', ''):
+            continue
+        assignees = [
+            (cfg.mode or '').lower().strip(),
+            (cfg.primary_assignee or '').lower().strip(),
+            (cfg.backup_1 or '').lower().strip(),
+            (cfg.backup_2 or '').lower().strip(),
+        ]
+        if any(a and (a == target_email or a == target_name or (len(a) > 2 and a in target_email) or (len(target_name) > 2 and target_name == a)) for a in assignees):
+            if cfg.commodity and cfg.commodity.strip():
+                commodities.add(cfg.commodity.strip())
+
+    if not commodities and target_user.commodities:
+        for c in target_user.commodities.split(','):
+            if c.strip(): commodities.add(c.strip())
+
+    # 2. Roster Duties (Daily only)
+    rosters = RosterConfig.query.all()
+    user_rosters = []
+    for r in rosters:
+        freq = (r.frequency or '').lower().strip()
+        if freq not in ('daily', 'mon-fri', ''):
+            continue
+        if target_name and target_name in (r.employee or '').lower():
+            user_rosters.append(r.role or 'Roster Duty')
+
+    # 3. MIS Reports (Daily only)
+    reports = Report.query.all()
+    user_reports = []
+    for rep in reports:
+        freq = (rep.frequency or '').lower().strip()
+        if freq not in ('daily', 'mon-fri', ''):
+            continue
+        assignee = (rep.primary_assignee or '').lower()
+        if target_email in assignee or (target_name and target_name in assignee):
+            user_reports.append(rep.name)
+
+    # 4. Task Templates (Daily only)
+    tasks = TaskTemplate.query.all()
+    user_tasks = []
+    for t in tasks:
+        freq = (t.recurrence or '').lower().strip()
+        if freq not in ('daily', 'mon-fri', ''):
+            continue
+        assignee = (t.assignee or '').lower()
+        if target_email in assignee or (target_name and target_name in assignee):
+            user_tasks.append(t.name)
+
+    return jsonify({
+        'success': True,
+        'email': target_user.email,
+        'name': target_user.name,
+        'commodities': sorted(list(commodities)),
+        'rosterDuties': sorted(list(set(user_rosters))),
+        'reports': sorted(list(set(user_reports))),
+        'tasks': sorted(list(set(user_tasks)))
+    })
 
 
 # --- REPORT GROUPS (Report Merging window) ---
@@ -808,6 +907,7 @@ def trigger_email_digest():
     stage = data.get('stage', 'all')
 
     from datetime import date
+    import threading
     from app.services.scheduler import (
         _send_teammate_reminders, _send_teammate_finals,
         _send_manager_digests, _send_leader_digests
@@ -816,21 +916,25 @@ def trigger_email_digest():
     
     app_obj = current_app._get_current_object()
     
-    try:
-        if stage == 'teammate-reminder':
-            _send_teammate_reminders(app_obj, date.today())
-        elif stage == 'teammate-final':
-            _send_teammate_finals(app_obj, date.today())
-        elif stage == 'manager-digest':
-            _send_manager_digests(app_obj, date.today())
-        elif stage == 'leader-digest':
-            _send_leader_digests(app_obj, date.today())
-        else:
-            _send_teammate_reminders(app_obj, date.today())
-            _send_teammate_finals(app_obj, date.today())
-            _send_manager_digests(app_obj, date.today())
-            _send_leader_digests(app_obj, date.today())
-            
-        return jsonify({'success': True, 'message': f'Digest stage "{stage}" triggered successfully.'})
-    except Exception as e:
-        return jsonify({'success': False, 'message': f'Failed to trigger digest stage: {str(e)}'}), 500
+    def _run_digest():
+        with app_obj.app_context():
+            try:
+                today = date.today()
+                if stage == 'teammate-reminder':
+                    _send_teammate_reminders(app_obj, today, force=True)
+                elif stage == 'teammate-final':
+                    _send_teammate_finals(app_obj, today, force=True)
+                elif stage == 'manager-digest':
+                    _send_manager_digests(app_obj, today, force=True)
+                elif stage == 'leader-digest':
+                    _send_leader_digests(app_obj, today, force=True)
+                else:
+                    _send_teammate_reminders(app_obj, today, force=True)
+                    _send_teammate_finals(app_obj, today, force=True)
+                    _send_manager_digests(app_obj, today, force=True)
+                    _send_leader_digests(app_obj, today, force=True)
+            except Exception as e:
+                app_obj.logger.exception(f"[email_trigger] Background trigger failed: {e}")
+
+    threading.Thread(target=_run_digest, daemon=True).start()
+    return jsonify({'success': True, 'message': f'Digest stage "{stage}" triggered. Emails are being dispatched in background.'})

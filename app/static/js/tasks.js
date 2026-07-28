@@ -21,6 +21,9 @@ export default {
                 <button class="tab" data-tab="history">
                     <i class="fas fa-history"></i> Entry History
                 </button>
+                <button class="tab" data-tab="missed">
+                    <i class="fas fa-exclamation-triangle" style="color:var(--warning);"></i> Missed Entries
+                </button>
             </div>
 
             <div id="task-content">
@@ -56,6 +59,7 @@ export default {
             else if (this.currentTab === 'weekly') await this.loadWeekly(container);
             else if (this.currentTab === 'monthly') await this.loadMonthly(container);
             else if (this.currentTab === 'history') await this.loadHistory(container);
+            else if (this.currentTab === 'missed') await this.loadMissed(container);
         } catch (err) {
             container.innerHTML = `<div class="glass-card" style="padding:24px; text-align:center;"><p class="error-text"><i class="fas fa-exclamation-circle"></i> Failed to load tasks</p></div>`;
             App.showToast('Error loading tasks', 'error');
@@ -299,7 +303,14 @@ export default {
 
         // Factor Tasks (Data Updates) — heading per (commodity, type) with factor sub-rows.
         if (duTasks.length > 0) {
-            html += '<div class="section-title" style="margin-top:20px;"><i class="fas fa-database"></i> Factor Tasks (Data Updates)</div>';
+            html += `
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:24px; margin-bottom:12px; flex-wrap:wrap; gap:10px;">
+                    <div class="section-title" style="margin:0;"><i class="fas fa-database"></i> Factor Tasks (Data Updates)</div>
+                    <button class="btn btn-outline btn-sm" id="btn-add-factor-task" style="border-color:var(--accent); color:var(--accent);">
+                        <i class="fas fa-plus"></i> Add Factor Task
+                    </button>
+                </div>
+            `;
             html += duTasks.map(g => {
                 const topic = `${g.commodity}::${g.type}`;
                 const factorsHtml = (g.factors || []).map(f => `
@@ -313,6 +324,15 @@ export default {
                         <div style="display:flex; align-items:center; gap:6px; flex-shrink:0;">
                             ${infoBtn(`${g.commodity} — ${f.factor}`, f.instructions)}
                             ${statusBtn(f.status, 'DataUpdate', topic, f.factor)}
+                            <button type="button"
+                                    class="btn-data-not-updated"
+                                    data-entry-type="DataUpdate"
+                                    data-topic="${escAttr(topic)}"
+                                    data-sub-topic="${escAttr(f.factor || '')}"
+                                    title="Mark Data Not Updated"
+                                    style="padding:3px 8px; border-radius:12px; font-size:.72rem; font-weight:600; background:rgba(245,158,11,0.15); color:var(--warning); border:1px solid rgba(245,158,11,0.3); cursor:pointer;">
+                                <i class="fas fa-clock"></i> Not Updated
+                            </button>
                         </div>
                     </div>
                 `).join('');
@@ -419,8 +439,30 @@ export default {
 
         container.innerHTML = html;
 
-        // Add extra task button
+        // Add extra task & add factor task button listeners
         document.getElementById('btn-add-extra-task')?.addEventListener('click', () => this.showAddExtraTaskModal());
+        document.getElementById('btn-add-factor-task')?.addEventListener('click', () => this.showAddFactorTaskModal());
+
+        // Wire "Not Updated" buttons
+        container.querySelectorAll('.btn-data-not-updated').forEach(btn => {
+            btn.addEventListener('click', async (e) => {
+                e.stopPropagation();
+                const topic = btn.dataset.topic;
+                const subTopic = btn.dataset.subTopic;
+                const parts = topic.split('::');
+                try {
+                    await api.post('/du/submit', {
+                        commodity: parts[0],
+                        type: parts[1] || 'Daily',
+                        factors: [{ factor: subTopic, status: 'Data Not Updated', remarks: 'Data not updated at source' }]
+                    });
+                    App.showToast('Marked as Data Not Updated', 'warning');
+                    this.loadTab();
+                } catch (err) {
+                    App.showToast(err.message || 'Failed to update status', 'error');
+                }
+            });
+        });
 
         // (i) info button — opens a modal showing the admin-set instructions.
         container.querySelectorAll('.info-btn').forEach(btn => {
@@ -1640,6 +1682,240 @@ export default {
                 this._historyState.page = p;
                 this._fetchAndRenderHistory();
             });
+        });
+    },
+
+    // ─── Add Factor Task Modal (Teammates & Managers) ───
+    async showAddFactorTaskModal() {
+        let userComms = [];
+        try {
+            const res = await api.get('/du/commodities');
+            userComms = res.commodities || [];
+        } catch (e) { userComms = []; }
+
+        const commOptions = userComms.length > 0
+            ? userComms.map(c => `<option value="${App.escapeHtml(c)}">${App.escapeHtml(c)}</option>`).join('')
+            : '<option value="Pulses">Pulses</option>';
+
+        const bodyHtml = `
+            <div class="form-grid">
+                <div class="form-row">
+                    <label>Commodity <span style="color:var(--danger)">*</span></label>
+                    <select id="aft-commodity" style="width:100%;">
+                        ${commOptions}
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>Task Timing / Cadence <span style="color:var(--danger)">*</span></label>
+                    <select id="aft-type" style="width:100%;">
+                        <option value="Daily">Daily</option>
+                        <option value="Weekly">Weekly</option>
+                        <option value="Monthly">Monthly</option>
+                        <option value="Quarterly">Quarterly</option>
+                        <option value="Yearly">Yearly</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row" style="margin-top:12px;">
+                <label>Factor Name / Sub-topic <span style="color:var(--danger)">*</span></label>
+                <input type="text" id="aft-factor" placeholder="e.g. Sowing Progress / Rake Movement / Region Rainfall" style="width:100%;">
+            </div>
+            <div class="form-row" style="margin-top:12px;">
+                <label>Source URL (Optional)</label>
+                <input type="url" id="aft-source" placeholder="https://..." style="width:100%;">
+            </div>
+            <div class="form-row" style="margin-top:12px;">
+                <label>Instructions (Optional)</label>
+                <textarea id="aft-instructions" rows="2" placeholder="Specific steps or guidelines..." style="width:100%;"></textarea>
+            </div>
+        `;
+
+        App.showModal('Create New Factor Task (Data Update)', bodyHtml, `
+            <button class="btn btn-outline" onclick="App.closeModal()">Cancel</button>
+            <button class="btn btn-primary" id="btn-save-factor-task">Save Factor Task</button>
+        `);
+
+        document.getElementById('btn-save-factor-task')?.addEventListener('click', async () => {
+            const commodity = document.getElementById('aft-commodity').value;
+            const type_name = document.getElementById('aft-type').value;
+            const factor = document.getElementById('aft-factor').value.trim();
+            const source = document.getElementById('aft-source').value.trim();
+            const instructions = document.getElementById('aft-instructions').value.trim();
+
+            if (!commodity || !factor) {
+                App.showToast('Commodity and Factor Name are required', 'warning');
+                return;
+            }
+
+            try {
+                const res = await api.post('/du/factor-task', {
+                    commodity: commodity,
+                    type: type_name,
+                    factor: factor,
+                    source: source,
+                    instructions: instructions
+                });
+                App.closeModal();
+                App.showToast(res.message || 'Factor Task created successfully', 'success');
+                this.loadTab();
+            } catch (err) {
+                App.showToast(err.message || 'Failed to create Factor Task', 'error');
+            }
+        });
+    },
+
+    // ─── Missed Entries Tab ───
+    async loadMissed(container) {
+        try {
+            const data = await api.get('/tasks/missed');
+            this._missedItemsMap = {};
+
+            const registerItem = (item) => {
+                const key = `${item.entryType}_${item.topic}_${item.subTopic || ''}_${item.missedDate}`.replace(/[^a-zA-Z0-9_]/g, '_');
+                this._missedItemsMap[key] = item;
+                return key;
+            };
+
+            let html = `
+                <div class="glass-card" style="padding: 20px; margin-bottom: 16px;">
+                    <div style="margin-bottom: 16px;">
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color:var(--text-primary);">
+                            <i class="fas fa-exclamation-triangle" style="color:var(--warning);margin-right:8px;"></i>
+                            Missed Entries & Backdated Submissions
+                        </h3>
+                        <p style="font-size:.82rem; color:var(--text-muted); margin-top:4px;">
+                            Complete entries missed from the last working day (Daily), last week (Weekly), or last month (Monthly).
+                        </p>
+                    </div>
+
+                    <!-- Daily Missed -->
+                    <div class="section-title" style="margin-top:20px; color:var(--warning);">
+                        <i class="fas fa-calendar-day"></i> Daily Missed Entries — ${data.daily.dayName} (${data.daily.date})
+                    </div>
+            `;
+
+            if (data.daily.items && data.daily.items.length > 0) {
+                html += data.daily.items.map(item => this.renderMissedRow(item, registerItem(item))).join('');
+            } else {
+                html += '<div class="empty-state" style="padding:15px; margin-bottom:12px;"><p><i class="fas fa-check-circle" style="color:var(--success); margin-right:6px;"></i>No missed daily entries for ' + data.daily.date + '</p></div>';
+            }
+
+            // Weekly Missed
+            html += `
+                    <div class="section-title" style="margin-top:24px; color:var(--warning);">
+                        <i class="fas fa-calendar-week"></i> Weekly Missed Entries — ${data.weekly.weekStart} to ${data.weekly.weekEnd}
+                    </div>
+            `;
+            if (data.weekly.items && data.weekly.items.length > 0) {
+                html += data.weekly.items.map(item => this.renderMissedRow(item, registerItem(item))).join('');
+            } else {
+                html += '<div class="empty-state" style="padding:15px; margin-bottom:12px;"><p><i class="fas fa-check-circle" style="color:var(--success); margin-right:6px;"></i>No missed weekly entries for last week</p></div>';
+            }
+
+            // Monthly Missed
+            html += `
+                    <div class="section-title" style="margin-top:24px; color:var(--warning);">
+                        <i class="fas fa-calendar-alt"></i> Monthly Missed Entries — ${data.monthly.month}
+                    </div>
+            `;
+            if (data.monthly.items && data.monthly.items.length > 0) {
+                html += data.monthly.items.map(item => this.renderMissedRow(item, registerItem(item))).join('');
+            } else {
+                html += '<div class="empty-state" style="padding:15px;"><p><i class="fas fa-check-circle" style="color:var(--success); margin-right:6px;"></i>No missed monthly entries for last month</p></div>';
+            }
+
+            html += '</div>';
+            container.innerHTML = html;
+
+            // Attach event listeners to all Submit Backdated buttons
+            container.querySelectorAll('.btn-submit-backdated').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const key = btn.dataset.itemKey;
+                    const item = this._missedItemsMap[key];
+                    if (item) {
+                        this.showSubmitBackdatedModal(item);
+                    }
+                });
+            });
+        } catch (err) {
+            container.innerHTML = '<div class="empty-state"><p>Failed to load missed entries</p></div>';
+        }
+    },
+
+    renderMissedRow(item, itemKey) {
+        return `
+            <div class="today-row carried-row" style="display:flex; justify-content:space-between; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--border); border-radius:8px; margin-bottom:8px; background:var(--bg-primary); border-left:4px solid var(--warning);">
+                <div style="min-width:0; flex:1;">
+                    <div style="font-weight:600; font-size:.9rem; display:flex; align-items:center; gap:8px;">
+                        <span class="carried-badge"><i class="fas fa-history"></i> ${item.cadence}</span>
+                        ${App.escapeHtml(item.name)}
+                    </div>
+                    <div style="font-size:.78rem; color:var(--text-muted); margin-top:2px;">
+                        Target Date: <strong>${item.missedDate}</strong> · Current Status: <span class="status-badge ${item.status.toLowerCase().replace(/ /g, '-')}">${item.status}</span>
+                    </div>
+                    ${item.remarks ? `<div class="remark-text">${App.escapeHtml(item.remarks)}</div>` : ''}
+                </div>
+                <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
+                    <button type="button" class="btn btn-primary btn-sm btn-submit-backdated" data-item-key="${itemKey}">
+                        <i class="fas fa-edit"></i> Submit Backdated
+                    </button>
+                </div>
+            </div>
+        `;
+    },
+
+    showSubmitBackdatedModal(item) {
+        const bodyHtml = `
+            <div class="form-row">
+                <label>Task / Factor Name</label>
+                <p style="font-weight:700; font-size:.95rem;">${App.escapeHtml(item.name)}</p>
+            </div>
+            <div class="form-grid" style="margin-top:10px;">
+                <div>
+                    <label>Missed Target Date</label>
+                    <input type="text" value="${item.missedDate}" readonly style="background:var(--bg-hover); font-weight:700;">
+                </div>
+                <div>
+                    <label>Status <span style="color:var(--danger)">*</span></label>
+                    <select id="backdated-status" style="width:100%;">
+                        <option value="Done">Done</option>
+                        <option value="Data Not Updated">Data Not Updated</option>
+                        <option value="Skip">Skip</option>
+                        <option value="Pending">Pending</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row" style="margin-top:12px;">
+                <label>Remarks / Notes (Optional)</label>
+                <textarea id="backdated-remarks" rows="3" placeholder="Reason or notes for this backdated entry..." style="width:100%;">${App.escapeHtml(item.remarks || '')}</textarea>
+            </div>
+        `;
+
+        App.showModal(`Submit Backdated Entry (${item.missedDate})`, bodyHtml, `
+            <button class="btn btn-outline" onclick="App.closeModal()">Cancel</button>
+            <button class="btn btn-primary" id="btn-save-backdated">Submit Backdated Entry</button>
+        `);
+
+        document.getElementById('btn-save-backdated')?.addEventListener('click', async () => {
+            const status = document.getElementById('backdated-status').value;
+            const remarks = document.getElementById('backdated-remarks').value.trim();
+
+            try {
+                const res = await api.post('/tasks/submit-backdated', {
+                    entryType: item.entryType,
+                    topic: item.topic,
+                    subTopic: item.subTopic || '',
+                    entryDate: item.missedDate,
+                    status: status,
+                    remarks: remarks
+                });
+                App.closeModal();
+                App.showToast(res.message || 'Backdated entry submitted', 'success');
+                this.loadTab();
+            } catch (err) {
+                App.showToast(err.message || 'Failed to submit backdated entry', 'error');
+            }
         });
     }
 };

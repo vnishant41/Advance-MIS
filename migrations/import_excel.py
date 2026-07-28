@@ -1,5 +1,5 @@
 """
-Data Migration — Import all data from MIS_Tracker_Data.xlsx into SQLite.
+Data Migration — Import all data from MIS_Tracker_Data.xlsx into MySQL.
 Run: python -m migrations.import_excel
 """
 import os, sys, json

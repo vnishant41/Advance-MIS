@@ -405,6 +405,18 @@ def get_team_detail(email):
     from app.models import Report, RosterConfig, RosterLog, TaskTemplate, CommodityConfig
 
     all_reports = Report.query.all()
+    all_tasks = TaskTemplate.query.all()
+    all_commodities = CommodityConfig.query.all()
+    all_rosters = RosterConfig.query.all()
+
+    all_roster_logs = RosterLog.query.filter(
+        RosterLog.date >= from_date,
+        RosterLog.date <= to_date
+    ).all()
+    roster_logs_by_date = {}
+    for rl in all_roster_logs:
+        roster_logs_by_date.setdefault(rl.date, {})[rl.role] = rl
+
     primary_logs_map = {(l.entry_date, l.topic, l.sub_topic or ''): l for l in primary_rows}
 
     users_map = {}
@@ -425,7 +437,6 @@ def get_team_detail(email):
             primary_assignee = (r.primary_assignee or '').lower()
             if not any(em in primary_assignee for em in user_emails) and target_user.name.lower() not in primary_assignee:
                 continue
-
 
             freq = r.frequency or 'Daily'
             sched_day = r.schedule_day or ''
@@ -459,7 +470,7 @@ def get_team_detail(email):
                     'timestamp': '',
                 })
 
-        for t in TaskTemplate.query.all():
+        for t in all_tasks:
             assignee = (t.assignee or '').strip().lower()
             if not assignee or assignee in ('all', 'yes', 'no'):
                 assignee_email = email.lower()
@@ -503,7 +514,7 @@ def get_team_detail(email):
                     'isUnfilled': True
                 })
 
-        for c in CommodityConfig.query.all():
+        for c in all_commodities:
             matched = False
             for assignee in (c.mode, c.primary_assignee):
                 if assignee:
@@ -571,8 +582,8 @@ def get_team_detail(email):
                 })
 
         # ── Roster entries for this date ──────────────────────────────────────
-        roster_log_index = {l.role: l for l in RosterLog.query.filter_by(date=curr_date).all()}
-        for rc in RosterConfig.query.all():
+        roster_log_index = roster_logs_by_date.get(curr_date, {})
+        for rc in all_rosters:
             # Check if this roster config belongs to target user (email or name match)
             emp = (rc.employee or '').lower().strip()
             if emp not in user_emails and emp != target_user.name.lower():

@@ -53,8 +53,8 @@ def get_shell():
 @jwt_required()
 def create_task():
     user = get_current_user()
-    if not user or not role_at_least(user.role, 'Manager'):
-        return jsonify({'success': False, 'message': 'Manager+ required'}), 403
+    if not user:
+        return jsonify({'success': False, 'message': 'Authentication required'}), 401
     data = request.get_json()
     title = (data.get('title') or '').strip()
     if not title: return jsonify({'success': False, 'message': 'Title required'}), 400
@@ -104,8 +104,8 @@ def update_task(task_id):
         task.position = (min_pos if min_pos is not None else 0) - 1
 
     task.status = new_status
-    task.updated_at = datetime.now(timezone.utc)
-    if is_mgr:
+    is_creator = task.created_by == user.email
+    if is_mgr or is_creator or is_assignee:
         for field in ['title','desc','tags','sprintId','remark']:
             if field in data:
                 attr = {'desc':'description','sprintId':'sprint_id'}.get(field, field)
@@ -211,7 +211,7 @@ def reorder_column():
 @jwt_required()
 def create_sprint():
     user = get_current_user()
-    if not user or not role_at_least(user.role, 'Manager'): return jsonify({'success': False}), 403
+    if not user: return jsonify({'success': False, 'message': 'Authentication required'}), 401
     data = request.get_json()
     name = (data.get('name') or '').strip()
     if not name: return jsonify({'success': False, 'message': 'Name required'}), 400
