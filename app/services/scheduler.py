@@ -14,6 +14,13 @@ from datetime import datetime, date, timedelta
 import threading
 
 
+try:
+    from zoneinfo import ZoneInfo
+    IST = ZoneInfo('Asia/Kolkata')
+except ImportError:
+    import pytz
+    IST = pytz.timezone('Asia/Kolkata')
+
 # Module-level state so we can stop / restart cleanly (e.g., during reload).
 _scheduler = None
 _lock = threading.Lock()
@@ -31,7 +38,7 @@ def start_scheduler(app, socketio):
             app.logger.warning("apscheduler not installed — active notifications disabled")
             return None
 
-        sched = BackgroundScheduler(daemon=True, timezone='Asia/Kolkata')
+        sched = BackgroundScheduler(daemon=True, timezone=IST)
 
         def _tick():
             try:
@@ -43,69 +50,58 @@ def start_scheduler(app, socketio):
                     from app import db
                     from app.models import AppSetting
                     
-                    now = datetime.now()
-                    today = now.date()
-                    cur_hh_mm = now.strftime('%H:%M')
-
-                    # 1. Teammate Reminder
-                    if get_setting('emailTeammateReminderEnabled', 'NO').upper() == 'YES':
-                        reminder_time = get_setting('emailTeammateReminderTime', '14:00')
-                        last_run = get_setting('lastEmailReminderDate', '')
-                        if cur_hh_mm >= reminder_time and last_run != today.isoformat():
-                            setting = AppSetting.query.filter_by(key='lastEmailReminderDate').first()
-                            if setting: setting.value = today.isoformat()
-                            else: db.session.add(AppSetting(key='lastEmailReminderDate', value=today.isoformat()))
-                            db.session.commit()
-                            app.logger.info("[scheduler] Triggering teammate reminder digests...")
-                            _send_teammate_reminders(app, today)
-
-                    # 2. Teammate Final Update
-                    if get_setting('emailTeammateFinalEnabled', 'NO').upper() == 'YES':
-                        final_time = get_setting('emailTeammateFinalTime', '18:00')
-                        last_run = get_setting('lastEmailTeammateFinalDate', '')
-                        if cur_hh_mm >= final_time and last_run != today.isoformat():
-                            setting = AppSetting.query.filter_by(key='lastEmailTeammateFinalDate').first()
-                            if setting: setting.value = today.isoformat()
-                            else: db.session.add(AppSetting(key='lastEmailTeammateFinalDate', value=today.isoformat()))
-                            db.session.commit()
-                            app.logger.info("[scheduler] Triggering teammate final digests...")
-                            _send_teammate_finals(app, today)
-
-                    # 3. Manager Digest
-                    if get_setting('emailManagerDigestEnabled', 'NO').upper() == 'YES':
-                        mgr_time = get_setting('emailManagerDigestTime', '19:00')
-                        last_run = get_setting('lastEmailManagerDigestDate', '')
-                        if cur_hh_mm >= mgr_time and last_run != today.isoformat():
-                            setting = AppSetting.query.filter_by(key='lastEmailManagerDigestDate').first()
-                            if setting: setting.value = today.isoformat()
-                            else: db.session.add(AppSetting(key='lastEmailManagerDigestDate', value=today.isoformat()))
-                            db.session.commit()
-                            app.logger.info("[scheduler] Triggering manager digests...")
-                            _send_manager_digests(app, today)
-
-                    # 4. Leader Digest
-                    if get_setting('emailLeaderDigestEnabled', 'NO').upper() == 'YES':
-                        ldr_time = get_setting('emailLeaderDigestTime', '20:00')
-                        last_run = get_setting('lastEmailLeaderDigestDate', '')
-                        if cur_hh_mm >= ldr_time and last_run != today.isoformat():
-                            setting = AppSetting.query.filter_by(key='lastEmailLeaderDigestDate').first()
-                            if setting: setting.value = today.isoformat()
-                            else: db.session.add(AppSetting(key='lastEmailLeaderDigestDate', value=today.isoformat()))
-                            db.session.commit()
-                            app.logger.info("[scheduler] Triggering leader digests...")
-                            _send_leader_digests(app, today)
-
-                    # Original Daily Email Digest (backward compatibility)
                     if get_setting('emailDigestEnabled', 'NO').upper() == 'YES':
-                        digest_time = get_setting('emailDigestTime', '18:00')
-                        last_run = get_setting('lastEmailDigestDate', '')
-                        if cur_hh_mm >= digest_time and last_run != today.isoformat():
-                            setting = AppSetting.query.filter_by(key='lastEmailDigestDate').first()
-                            if setting: setting.value = today.isoformat()
-                            else: db.session.add(AppSetting(key='lastEmailDigestDate', value=today.isoformat()))
-                            db.session.commit()
-                            app.logger.info("[scheduler] Triggering daily email digest...")
-                            _send_daily_digests(app, today)
+                        now = datetime.now(IST)
+                        today = now.date()
+                        cur_hh_mm = now.strftime('%H:%M')
+
+                        # 1. Teammate Reminder
+                        if get_setting('emailTeammateReminderEnabled', 'NO').upper() == 'YES':
+                            reminder_time = get_setting('emailTeammateReminderTime', '14:00')
+                            last_run = get_setting('lastEmailReminderDate', '')
+                            if cur_hh_mm >= reminder_time and last_run != today.isoformat():
+                                setting = AppSetting.query.filter_by(key='lastEmailReminderDate').first()
+                                if setting: setting.value = today.isoformat()
+                                else: db.session.add(AppSetting(key='lastEmailReminderDate', value=today.isoformat()))
+                                db.session.commit()
+                                app.logger.info("[scheduler] Triggering teammate reminder digests...")
+                                _send_teammate_reminders(app, today)
+
+                        # 2. Teammate Final Update
+                        if get_setting('emailTeammateFinalEnabled', 'NO').upper() == 'YES':
+                            final_time = get_setting('emailTeammateFinalTime', '18:00')
+                            last_run = get_setting('lastEmailTeammateFinalDate', '')
+                            if cur_hh_mm >= final_time and last_run != today.isoformat():
+                                setting = AppSetting.query.filter_by(key='lastEmailTeammateFinalDate').first()
+                                if setting: setting.value = today.isoformat()
+                                else: db.session.add(AppSetting(key='lastEmailTeammateFinalDate', value=today.isoformat()))
+                                db.session.commit()
+                                app.logger.info("[scheduler] Triggering teammate final digests...")
+                                _send_teammate_finals(app, today)
+
+                        # 3. Manager Digest
+                        if get_setting('emailManagerDigestEnabled', 'NO').upper() == 'YES':
+                            mgr_time = get_setting('emailManagerDigestTime', '19:00')
+                            last_run = get_setting('lastEmailManagerDigestDate', '')
+                            if cur_hh_mm >= mgr_time and last_run != today.isoformat():
+                                setting = AppSetting.query.filter_by(key='lastEmailManagerDigestDate').first()
+                                if setting: setting.value = today.isoformat()
+                                else: db.session.add(AppSetting(key='lastEmailManagerDigestDate', value=today.isoformat()))
+                                db.session.commit()
+                                app.logger.info("[scheduler] Triggering manager digests...")
+                                _send_manager_digests(app, today)
+
+                        # 4. Leader Digest
+                        if get_setting('emailLeaderDigestEnabled', 'NO').upper() == 'YES':
+                            ldr_time = get_setting('emailLeaderDigestTime', '20:00')
+                            last_run = get_setting('lastEmailLeaderDigestDate', '')
+                            if cur_hh_mm >= ldr_time and last_run != today.isoformat():
+                                setting = AppSetting.query.filter_by(key='lastEmailLeaderDigestDate').first()
+                                if setting: setting.value = today.isoformat()
+                                else: db.session.add(AppSetting(key='lastEmailLeaderDigestDate', value=today.isoformat()))
+                                db.session.commit()
+                                app.logger.info("[scheduler] Triggering leader digests...")
+                                _send_leader_digests(app, today)
             except Exception as e:
                 app.logger.exception("[scheduler] tick failed: %s", e)
 
@@ -115,7 +111,7 @@ def start_scheduler(app, socketio):
         import os
         tick_min = int(os.environ.get('SCHEDULER_TICK_MINUTES', '5'))
         sched.add_job(_tick, 'interval', minutes=tick_min,
-                      next_run_time=datetime.now(), id='active-reminders',
+                      next_run_time=datetime.now(IST), id='active-reminders',
                       max_instances=1, coalesce=True)
         sched.start()
         app.logger.info("[scheduler] active reminders started (every %d min)", tick_min)
@@ -134,7 +130,7 @@ def _scan_and_notify(socketio):
     )
     from app.models import TaskTemplate
 
-    now = datetime.now()
+    now = datetime.now(IST)
     today = now.date()
     cur_hh_mm = now.strftime('%H:%M')
     weekend = today.weekday() >= 5
@@ -377,11 +373,28 @@ def _get_user_daily_summary(user, today):
     }
 
 
-def _send_teammate_reminders(app, today, force=False):
+def _send_teammate_reminders(app, today, force=False, target_email=None):
     from app.models import User
-    from app.services.email_service import send_email, build_reminder_email_html
+    from app.services.email_service import send_email, build_reminder_email_html, get_setting
+    from sqlalchemy import or_, and_
     
-    users = User.query.filter(User.active == True, User.role.in_(['Teammate', 'SuperAdmin', 'Manager', 'Leader'])).all()
+    if target_email:
+        users = User.query.filter(User.email.ilike(target_email.strip())).all()
+    else:
+        target_roles = [r.strip() for r in get_setting('emailTeammateTargetRoles', 'Teammate').split(',') if r.strip() and r.strip() == 'Teammate']
+        target_emails = [e.strip().lower() for e in get_setting('emailTeammateTargetEmails', '').split(',') if e.strip()]
+        conds = []
+        if target_roles: conds.append(and_(User.active == True, User.role.in_(target_roles)))
+        if target_emails: conds.append(User.email.in_(target_emails))
+        if conds:
+            users = User.query.filter(or_(*conds)).all()
+        else:
+            users = User.query.filter(User.active == True, User.role == 'Teammate').all()
+            
+        excluded_emails = [e.strip().lower() for e in get_setting('emailTeammateReminderExcludedEmails', '').split(',') if e.strip()]
+        if excluded_emails:
+            users = [u for u in users if u.email.lower() not in excluded_emails]
+        
     date_str = today.strftime('%B %d, %Y')
     
     for user in users:
@@ -392,15 +405,33 @@ def _send_teammate_reminders(app, today, force=False):
             continue
             
         html_body = build_reminder_email_html(user, date_str, summary)
-        subject = f"⏰ Daily MIS Task Reminder — {user.name} ({len(summary['pending'])} Pending)"
+        subject_tmpl = get_setting('emailTeammateReminderSubject', "⏰ Daily MIS Task Reminder — {user_name} ({pending_count} Pending)")
+        subject = subject_tmpl.format(user_name=user.name, pending_count=len(summary['pending']), date_str=date_str)
         send_email([user.email], subject, html_body, force=force)
 
 
-def _send_teammate_finals(app, today, force=False):
+def _send_teammate_finals(app, today, force=False, target_email=None):
     from app.models import User
-    from app.services.email_service import send_email, build_daily_digest_html
+    from app.services.email_service import send_email, build_daily_digest_html, get_setting
+    from sqlalchemy import or_, and_
     
-    users = User.query.filter(User.active == True, User.role.in_(['Teammate', 'SuperAdmin', 'Manager', 'Leader'])).all()
+    if target_email:
+        users = User.query.filter(User.email.ilike(target_email.strip())).all()
+    else:
+        target_roles = [r.strip() for r in get_setting('emailTeammateTargetRoles', 'Teammate').split(',') if r.strip() and r.strip() == 'Teammate']
+        target_emails = [e.strip().lower() for e in get_setting('emailTeammateTargetEmails', '').split(',') if e.strip()]
+        conds = []
+        if target_roles: conds.append(and_(User.active == True, User.role.in_(target_roles)))
+        if target_emails: conds.append(User.email.in_(target_emails))
+        if conds:
+            users = User.query.filter(or_(*conds)).all()
+        else:
+            users = User.query.filter(User.active == True, User.role == 'Teammate').all()
+
+        excluded_emails = [e.strip().lower() for e in get_setting('emailTeammateFinalExcludedEmails', '').split(',') if e.strip()]
+        if excluded_emails:
+            users = [u for u in users if u.email.lower() not in excluded_emails]
+
     date_str = today.strftime('%B %d, %Y')
     
     for user in users:
@@ -409,15 +440,17 @@ def _send_teammate_finals(app, today, force=False):
             continue
             
         html_body = build_daily_digest_html(user, date_str, summary)
-        subject = f"Daily MIS Task Summary: Final Update — {user.name} ({summary['score']}% Done)"
+        subject_tmpl = get_setting('emailTeammateSubject', "Daily MIS Task Summary: Final Update — {user_name} ({score}% Done)")
+        subject = subject_tmpl.format(user_name=user.name, score=summary['score'], date_str=date_str)
         send_email([user.email], subject, html_body, force=force)
 
 
-def _send_manager_digests(app, today, force=False):
+def _send_manager_digests(app, today, force=False, target_email=None):
     from app.models import User
     from app.services.email_service import send_email, build_manager_digest_html, get_setting
+    from sqlalchemy import or_
     
-    teammates = User.query.filter(User.active == True, User.role.in_(['Teammate', 'SuperAdmin', 'Manager', 'Leader'])).all()
+    teammates = User.query.filter(User.active == True, User.role == 'Teammate').all()
     date_str = today.strftime('%B %d, %Y')
     
     summaries = []
@@ -429,9 +462,9 @@ def _send_manager_digests(app, today, force=False):
             'name': user.name,
             'email': user.email,
             'department': user.department,
-            'done': len(summary['done']),
-            'pending': len(summary['pending']),
-            'skip': len(summary['skip']),
+            'done': summary['done'],
+            'pending': summary['pending'],
+            'skip': summary['skip'],
             'total': summary['total'],
             'score': summary['score']
         })
@@ -441,29 +474,41 @@ def _send_manager_digests(app, today, force=False):
         
     html_body = build_manager_digest_html(date_str, summaries)
     
-    managers = User.query.filter(
-        User.active == True,
-        User.role.in_(['Manager', 'SuperAdmin'])
-    ).all()
-    recipients = list(set(m.email.lower() for m in managers))
-    
-    global_mgr = get_setting('managerEmail').strip()
-    if global_mgr:
-        recipients.append(global_mgr.lower())
-    recipients = list(set(recipients))
+    if target_email:
+        recipients = [target_email.strip().lower()]
+    else:
+        target_roles = [r.strip() for r in get_setting('emailManagerTargetRoles', 'Manager,SuperAdmin').split(',') if r.strip()]
+        target_emails = [e.strip().lower() for e in get_setting('emailManagerTargetEmails', '').split(',') if e.strip()]
+        conds = []
+        if target_roles: conds.append(User.role.in_(target_roles))
+        if target_emails: conds.append(User.email.in_(target_emails))
+        if conds:
+            managers = User.query.filter(User.active == True, or_(*conds)).all()
+        else:
+            managers = User.query.filter(User.active == True, User.role.in_(['Manager', 'SuperAdmin'])).all()
+        recipients = list(set(m.email.lower() for m in managers))
+        
+        global_mgr = get_setting('managerEmail').strip()
+        if global_mgr:
+            recipients.append(global_mgr.lower())
+            
+        excluded_emails = [e.strip().lower() for e in get_setting('emailManagerDigestExcludedEmails', '').split(',') if e.strip()]
+        recipients = list(set(r for r in recipients if r.lower() not in excluded_emails))
     
     if not recipients:
         return
         
-    subject = f"MIS Daily Manager Digest — {date_str}"
+    subject_tmpl = get_setting('emailManagerSubject', "MIS Daily Manager Digest — {date_str}")
+    subject = subject_tmpl.format(date_str=date_str)
     send_email(recipients, subject, html_body, force=force)
 
 
-def _send_leader_digests(app, today, force=False):
+def _send_leader_digests(app, today, force=False, target_email=None):
     from app.models import User
-    from app.services.email_service import send_email, build_leader_digest_html
+    from app.services.email_service import send_email, build_leader_digest_html, get_setting
+    from sqlalchemy import or_
     
-    teammates = User.query.filter(User.active == True, User.role.in_(['Teammate', 'SuperAdmin', 'Manager', 'Leader'])).all()
+    teammates = User.query.filter(User.active == True, User.role == 'Teammate').all()
     date_str = today.strftime('%B %d, %Y')
     
     teammates_tasks = []
@@ -486,16 +531,28 @@ def _send_leader_digests(app, today, force=False):
         
     html_body = build_leader_digest_html(date_str, teammates_tasks)
     
-    leaders = User.query.filter(
-        User.active == True,
-        User.role == 'Leader'
-    ).all()
-    recipients = list(set(l.email.lower() for l in leaders))
+    if target_email:
+        recipients = [target_email.strip().lower()]
+    else:
+        target_roles = [r.strip() for r in get_setting('emailLeaderTargetRoles', 'Leader').split(',') if r.strip()]
+        target_emails = [e.strip().lower() for e in get_setting('emailLeaderTargetEmails', '').split(',') if e.strip()]
+        conds = []
+        if target_roles: conds.append(User.role.in_(target_roles))
+        if target_emails: conds.append(User.email.in_(target_emails))
+        if conds:
+            leaders = User.query.filter(User.active == True, or_(*conds)).all()
+        else:
+            leaders = User.query.filter(User.active == True, User.role == 'Leader').all()
+        recipients = list(set(l.email.lower() for l in leaders))
+        
+        excluded_emails = [e.strip().lower() for e in get_setting('emailLeaderDigestExcludedEmails', '').split(',') if e.strip()]
+        recipients = list(set(r for r in recipients if r.lower() not in excluded_emails))
     
     if not recipients:
         return
         
-    subject = f"MIS Research Team Daily Summary — {date_str}"
+    subject_tmpl = get_setting('emailLeaderSubject', "MIS Research Team Daily Summary — {date_str}")
+    subject = subject_tmpl.format(date_str=date_str)
     send_email(recipients, subject, html_body, force=force)
 
 

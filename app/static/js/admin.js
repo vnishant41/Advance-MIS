@@ -1755,112 +1755,319 @@ export default {
 
     async loadEmails(container) {
         try {
-            const [settingsData, logsData] = await Promise.all([
+            const [settingsData, logsData, usersData] = await Promise.all([
                 api.get('/admin/settings'),
-                api.get('/admin/email-logs')
+                api.get('/admin/email-logs'),
+                api.get('/admin/users')
             ]);
             const s = settingsData.settings || {};
             const logs = logsData.logs || [];
+            const users = usersData.data || [];
             const escAttr = (val) => App.escapeHtml(val || '').replace(/'/g, '&#39;').replace(/"/g, '&quot;');
 
-            container.innerHTML = `
-                <div style="display:grid; grid-template-columns: 2fr 1fr; gap:16px; margin-bottom:16px;">
-                    <!-- Configuration Card -->
-                    <div class="glass-card" style="padding:24px;">
-                        <div class="card-header" style="margin-bottom:16px;">
-                            <h3 class="card-title"><i class="fas fa-envelope-open-text" style="color:var(--accent);margin-right:8px;"></i>SMTP Configuration &amp; Digest Settings</h3>
+            const availableRoles = ['Teammate', 'Leader', 'Manager', 'SuperAdmin'];
+
+            const allowedRolesListMap = {
+                'stage-1': ['Teammate'],
+                'stage-2': ['Teammate'],
+                'stage-3': ['Manager', 'SuperAdmin'],
+                'stage-4': ['Leader', 'Manager', 'SuperAdmin']
+            };
+
+            // Helper to render Stage Card with Drag & Drop dual-column recipient manager (inline subject removed)
+            const renderStageCard = (stageId, stageNum, title, desc, icon, enabledKey, timeKey, defaultTime, rolesKey, defaultRoles, allowedRolesList, emailsKey, excludedEmailsKey) => {
+                const isEnabled = s[enabledKey] === 'YES';
+                const timeVal = s[timeKey] || defaultTime;
+
+                const savedRoles = (s[rolesKey] || defaultRoles).split(',').map(r => r.trim()).filter(Boolean);
+                const savedEmails = (s[emailsKey] || '').split(',').map(e => e.trim().toLowerCase()).filter(Boolean);
+                const savedExcludedEmails = (s[excludedEmailsKey] || '').split(',').map(e => e.trim().toLowerCase()).filter(Boolean);
+
+                const roleCheckboxes = allowedRolesList.map(r => `
+                    <label style="display:inline-flex; align-items:center; gap:4px; font-size:.75rem; font-weight:600; cursor:pointer; background:var(--bg-primary); padding:4px 8px; border-radius:14px; border:1px solid var(--border); user-select:none;">
+                        <input type="checkbox" class="stage-role-chk stage-role-${stageId}" value="${r}" ${savedRoles.includes(r) ? 'checked' : ''} data-stage="${stageId}">
+                        ${r}
+                    </label>
+                `).join(' ');
+
+                const stageUsers = users.filter(u => allowedRolesList.includes(u.role));
+                const userOptions = stageUsers.map(u => `
+                    <option value="${escAttr(u.email)}" ${savedEmails.includes(u.email.toLowerCase()) ? 'selected' : ''}>
+                        ${App.escapeHtml(u.name)} (${App.escapeHtml(u.email)})
+                    </option>
+                `).join('');
+
+                const userExcludeOptions = stageUsers.map(u => `
+                    <option value="${escAttr(u.email)}" ${savedExcludedEmails.includes(u.email.toLowerCase()) ? 'selected' : ''}>
+                        ${App.escapeHtml(u.name)} (${App.escapeHtml(u.email)})
+                    </option>
+                `).join('');
+
+                return `
+                    <div style="border: 1px solid var(--border); border-radius: 10px; padding: 16px; background: var(--bg-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.02); display:flex; flex-direction:column; gap:12px;">
+                        <!-- Header -->
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                            <div>
+                                <label style="font-weight:700; font-size:.9rem; color:var(--text-primary); display:flex; align-items:center; gap:6px;">
+                                    <i class="fas fa-${icon}" style="color:var(--accent);"></i> ${stageNum}. ${title}
+                                </label>
+                                <div style="font-size:.78rem; color:var(--text-muted); margin-top:2px;">${desc}</div>
+                            </div>
+                            <div style="display:flex; gap:8px; align-items:center;">
+                                <select id="${stageId}-enabled" style="font-size:.8rem; padding:4px 8px;">
+                                    <option value="YES" ${isEnabled ? 'selected' : ''}>Enabled</option>
+                                    <option value="NO" ${!isEnabled ? 'selected' : ''}>Disabled</option>
+                                </select>
+                                <input type="time" id="${stageId}-time" value="${timeVal}" style="font-size:.8rem; padding:4px 8px;">
+                            </div>
                         </div>
-                        
-                        <div class="form-row" style="margin-bottom: 20px;">
-                            <label style="font-weight:700;">Global Email Master Switch</label>
-                            <select id="email-digest-enabled" style="width:100%;">
-                                <option value="YES" ${s.emailDigestEnabled === 'YES' ? 'selected' : ''}>Yes — Enable All System Email Dispatches</option>
-                                <option value="NO" ${s.emailDigestEnabled !== 'YES' ? 'selected' : ''}>No — Pause All System Email Dispatches</option>
+
+                        <!-- Drag and Drop Dual-Column Recipient Manager -->
+                        <div style="border-top:1px dashed var(--border); padding-top:12px; margin-top:4px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                                <span style="font-size:.8rem; font-weight:700; color:var(--accent);">
+                                    <i class="fas fa-users" style="margin-right:4px;"></i>Target Recipients Manager:
+                                </span>
+                                <div style="display:flex; gap:6px; align-items:center;">
+                                    <span style="font-size:.72rem; color:var(--text-muted); font-weight:600;">Roles:</span>
+                                    ${roleCheckboxes}
+                                </div>
+                            </div>
+                            
+                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:8px;">
+                                <!-- Left Column: Available Team Members -->
+                                <div style="background:var(--bg-secondary); border:1px solid var(--border); border-radius:8px; padding:10px; display:flex; flex-direction:column;">
+                                    <div style="font-size:.74rem; font-weight:700; color:var(--text-secondary); margin-bottom:6px; display:flex; justify-content:space-between; align-items:center;">
+                                        <span><i class="fas fa-users" style="color:var(--text-muted); margin-right:4px;"></i>Team Members by Name:</span>
+                                        <span style="font-size:.65rem; color:var(--text-muted); font-weight:600;">Drag or click + to Add &rarr;</span>
+                                    </div>
+                                    <div id="${stageId}-available-list" class="drag-zone drag-available-zone" data-stage="${stageId}" style="min-height:76px; flex:1; display:flex; flex-wrap:wrap; gap:6px; padding:8px; background:var(--bg-primary); border:1.5px dashed var(--border); border-radius:6px; align-content:flex-start; transition:all 0.15s ease;">
+                                    </div>
+                                </div>
+
+                                <!-- Right Column: Will Be Sent To -->
+                                <div style="background:rgba(99,102,241,0.05); border:1px solid rgba(99,102,241,0.25); border-radius:8px; padding:10px; display:flex; flex-direction:column;">
+                                    <div style="font-size:.74rem; font-weight:700; color:var(--accent); margin-bottom:6px; display:flex; justify-content:space-between; align-items:center;">
+                                        <span><i class="fas fa-paper-plane" style="margin-right:4px;"></i>Will be sent to:</span>
+                                        <span style="font-size:.65rem; color:var(--accent); opacity:0.85; font-weight:600;">&larr; Drag or click &times; to Remove</span>
+                                    </div>
+                                    <div id="${stageId}-target-list" class="drag-zone drag-target-zone" data-stage="${stageId}" style="min-height:76px; flex:1; display:flex; flex-wrap:wrap; gap:6px; padding:8px; background:var(--bg-primary); border:1.5px dashed rgba(99,102,241,0.4); border-radius:6px; align-content:flex-start; transition:all 0.15s ease;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hidden select elements for state persistence -->
+                            <select id="${stageId}-target-emails" class="stage-user-select" data-stage="${stageId}" multiple style="display:none;">
+                                ${userOptions}
                             </select>
-                            <p style="font-size:.75rem; color:var(--text-muted); margin-top:4px;">When disabled, no automatically scheduled digest or reminder emails will be sent.</p>
+                            <select id="${stageId}-excluded-emails" class="stage-user-select-exclude" data-stage="${stageId}" multiple style="display:none;">
+                                ${userExcludeOptions}
+                            </select>
                         </div>
+                    </div>
+                `;
+            };
 
-                        <h4 style="margin-bottom:12px; font-size:.9rem; font-weight:700; color:var(--accent); border-bottom:1px solid var(--border); padding-bottom:6px;">
-                            <i class="fas fa-clock" style="margin-right:6px;"></i>Multi-Stage Digest Schedules
-                        </h4>
-                        
-                        <div class="form-grid" style="margin-bottom: 20px;">
-                            <div style="border: 1px solid var(--border); border-radius: 8px; padding: 14px; background: var(--bg-primary);">
-                                <label style="font-weight:600; font-size:.85rem; display:block; margin-bottom:4px;">1. Teammate Reminder (Pending tasks)</label>
-                                <div style="font-size:.78rem; color:var(--text-muted); margin-bottom:8px;">Sends a direct reminder of pending tasks to teammates.</div>
-                                <div style="display:flex; gap:8px;">
-                                    <select id="email-teammate-reminder-enabled" style="flex:1;">
-                                        <option value="YES" ${s.emailTeammateReminderEnabled === 'YES' ? 'selected' : ''}>Enabled</option>
-                                        <option value="NO" ${s.emailTeammateReminderEnabled !== 'YES' ? 'selected' : ''}>Disabled</option>
-                                    </select>
-                                    <input type="time" id="email-teammate-reminder-time" value="${s.emailTeammateReminderTime || '14:00'}" style="flex:1;">
-                                </div>
-                            </div>
-                            
-                            <div style="border: 1px solid var(--border); border-radius: 8px; padding: 14px; background: var(--bg-primary);">
-                                <label style="font-weight:600; font-size:.85rem; display:block; margin-bottom:4px;">2. Teammate Final Update (Full stats)</label>
-                                <div style="font-size:.78rem; color:var(--text-muted); margin-bottom:8px;">Sends daily stats and report update scores to teammates.</div>
-                                <div style="display:flex; gap:8px;">
-                                    <select id="email-teammate-final-enabled" style="flex:1;">
-                                        <option value="YES" ${s.emailTeammateFinalEnabled === 'YES' ? 'selected' : ''}>Enabled</option>
-                                        <option value="NO" ${s.emailTeammateFinalEnabled !== 'YES' ? 'selected' : ''}>Disabled</option>
-                                    </select>
-                                    <input type="time" id="email-teammate-final-time" value="${s.emailTeammateFinalTime || '18:00'}" style="flex:1;">
-                                </div>
-                            </div>
-                        </div>
+            const userDropdownOptions = users.map(u => 
+                `<option value="${escAttr(u.email)}">${App.escapeHtml(u.name)} (${App.escapeHtml(u.email)}) — ${App.escapeHtml(u.role)}</option>`
+            ).join('');
 
-                        <div class="form-grid" style="margin-bottom: 20px;">
-                            <div style="border: 1px solid var(--border); border-radius: 8px; padding: 14px; background: var(--bg-primary);">
-                                <label style="font-weight:600; font-size:.85rem; display:block; margin-bottom:4px;">3. Manager Digest (Team status)</label>
-                                <div style="font-size:.78rem; color:var(--text-muted); margin-bottom:8px;">Sends team-wide KPI overview and task sheets to manager.</div>
-                                <div style="display:flex; gap:8px;">
-                                    <select id="email-manager-digest-enabled" style="flex:1;">
-                                        <option value="YES" ${s.emailManagerDigestEnabled === 'YES' ? 'selected' : ''}>Enabled</option>
-                                        <option value="NO" ${s.emailManagerDigestEnabled !== 'YES' ? 'selected' : ''}>Disabled</option>
-                                    </select>
-                                    <input type="time" id="email-manager-digest-time" value="${s.emailManagerDigestTime || '19:00'}" style="flex:1;">
-                                </div>
-                            </div>
-                            
-                            <div style="border: 1px solid var(--border); border-radius: 8px; padding: 14px; background: var(--bg-primary);">
-                                <label style="font-weight:600; font-size:.85rem; display:block; margin-bottom:4px;">4. Leader Digest (Research updates)</label>
-                                <div style="font-size:.78rem; color:var(--text-muted); margin-bottom:8px;">Sends detailed teamwise research update to leaders.</div>
-                                <div style="display:flex; gap:8px;">
-                                    <select id="email-leader-digest-enabled" style="flex:1;">
-                                        <option value="YES" ${s.emailLeaderDigestEnabled === 'YES' ? 'selected' : ''}>Enabled</option>
-                                        <option value="NO" ${s.emailLeaderDigestEnabled !== 'YES' ? 'selected' : ''}>Disabled</option>
-                                    </select>
-                                    <input type="time" id="email-leader-digest-time" value="${s.emailLeaderDigestTime || '20:00'}" style="flex:1;">
-                                </div>
-                            </div>
-                        </div>
+            container.innerHTML = `
+                <!-- Main Configuration Card (Full Width) -->
+                <div class="glass-card" style="padding:24px; margin-bottom:16px;">
+                    <div class="card-header" style="margin-bottom:16px;">
+                        <h3 class="card-title"><i class="fas fa-envelope-open-text" style="color:var(--accent);margin-right:8px;"></i>SMTP Configuration &amp; Digest Schedule Manager</h3>
+                    </div>
+                    
+                    <div class="form-row" style="margin-bottom: 20px;">
+                        <label style="font-weight:700;">Global Email Master Switch</label>
+                        <select id="email-digest-enabled" style="width:100%;">
+                            <option value="YES" ${s.emailDigestEnabled === 'YES' ? 'selected' : ''}>Yes — Enable All System Email Dispatches</option>
+                            <option value="NO" ${s.emailDigestEnabled !== 'YES' ? 'selected' : ''}>No — Pause All System Email Dispatches</option>
+                        </select>
+                        <p style="font-size:.75rem; color:var(--text-muted); margin-top:4px;">When disabled, no automatically scheduled digest or reminder emails will be sent.</p>
+                    </div>
 
-                        <h4 style="margin-top:24px; margin-bottom:12px; font-size:.9rem; font-weight:700; color:var(--accent); border-bottom:1px solid var(--border); padding-bottom:6px;">
-                            <i class="fas fa-server" style="margin-right:6px;"></i>SMTP Server Credentials
-                        </h4>
-                        <div class="form-grid">
-                            <div class="form-row"><label>SMTP Server Host</label><input type="text" id="email-smtp-host" value="${s.smtpHost || ''}" placeholder="e.g. smtp.gmail.com" style="width:100%;"></div>
-                            <div class="form-row"><label>SMTP Port</label><input type="number" id="email-smtp-port" value="${s.smtpPort || '587'}" placeholder="e.g. 587" style="width:100%;"></div>
-                        </div>
-                        <div class="form-grid">
-                            <div class="form-row"><label>SMTP Username</label><input type="text" id="email-smtp-user" value="${s.smtpUser || ''}" placeholder="e.g. user@gmail.com" style="width:100%;"></div>
-                            <div class="form-row"><label>SMTP Password</label><input type="password" id="email-smtp-password" value="${s.smtpPassword || ''}" placeholder="••••••••" style="width:100%;"></div>
-                        </div>
-                        <div class="form-row"><label>SMTP Sender (From Email)</label><input type="email" id="email-smtp-from" value="${s.smtpFrom || ''}" placeholder="e.g. no-reply@company.com" style="width:100%;"></div>
+                    <h4 style="margin-bottom:14px; font-size:.92rem; font-weight:700; color:var(--accent); border-bottom:1px solid var(--border); padding-bottom:6px;">
+                        <i class="fas fa-clock" style="margin-right:6px;"></i>Multi-Stage Digest Schedules &amp; Target Recipients Manager
+                    </h4>
+                    
+                    <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:24px;">
+                        ${renderStageCard('stage-1', 1, 'Teammate Reminder (Pending tasks)', 'Sends direct pending task alerts to Teammates.', 'bell', 'emailTeammateReminderEnabled', 'emailTeammateReminderTime', '14:00', 'emailTeammateTargetRoles', 'Teammate', ['Teammate'], 'emailTeammateTargetEmails', 'emailTeammateReminderExcludedEmails')}
+                        ${renderStageCard('stage-2', 2, 'Teammate Final Update (Full stats)', 'Sends individual daily completion score & task updates to Teammates.', 'calendar-check', 'emailTeammateFinalEnabled', 'emailTeammateFinalTime', '18:00', 'emailTeammateTargetRoles', 'Teammate', ['Teammate'], 'emailTeammateTargetEmails', 'emailTeammateFinalExcludedEmails')}
+                        ${renderStageCard('stage-3', 3, 'Manager Digest (Team status)', 'Sends team-wide KPI overview & completion matrix to managers.', 'chart-pie', 'emailManagerDigestEnabled', 'emailManagerDigestTime', '19:00', 'emailManagerTargetRoles', 'Manager,SuperAdmin', ['Manager', 'SuperAdmin'], 'emailManagerTargetEmails', 'emailManagerDigestExcludedEmails')}
+                        ${renderStageCard('stage-4', 4, 'Leader Digest (Research updates)', 'Sends detailed teammate-wise research status update to leaders.', 'user-shield', 'emailLeaderDigestEnabled', 'emailLeaderDigestTime', '20:00', 'emailLeaderTargetRoles', 'Leader', ['Leader', 'Manager', 'SuperAdmin'], 'emailLeaderTargetEmails', 'emailLeaderDigestExcludedEmails')}
+                    </div>
 
-                        <div style="display:flex; justify-content:flex-end; margin-top:20px;">
-                            <button class="btn btn-primary" id="btn-save-email-settings"><i class="fas fa-save"></i> Save Settings</button>
+                    <h4 style="margin-top:24px; margin-bottom:12px; font-size:.9rem; font-weight:700; color:var(--accent); border-bottom:1px solid var(--border); padding-bottom:6px;">
+                        <i class="fas fa-server" style="margin-right:6px;"></i>SMTP Server Credentials
+                    </h4>
+                    <div class="form-grid">
+                        <div class="form-row"><label>SMTP Server Host</label><input type="text" id="email-smtp-host" value="${s.smtpHost || ''}" placeholder="e.g. smtp.gmail.com" style="width:100%;"></div>
+                        <div class="form-row"><label>SMTP Port</label><input type="number" id="email-smtp-port" value="${s.smtpPort || '587'}" placeholder="e.g. 587" style="width:100%;"></div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-row"><label>SMTP Username</label><input type="text" id="email-smtp-user" value="${s.smtpUser || ''}" placeholder="e.g. user@gmail.com" style="width:100%;"></div>
+                        <div class="form-row"><label>SMTP Password</label><input type="password" id="email-smtp-password" value="${s.smtpPassword || ''}" placeholder="••••••••" style="width:100%;"></div>
+                    </div>
+                    <div class="form-row"><label>SMTP Sender (From Email)</label><input type="email" id="email-smtp-from" value="${s.smtpFrom || ''}" placeholder="e.g. no-reply@company.com" style="width:100%;"></div>
+
+                    <div style="display:flex; justify-content:flex-end; margin-top:20px;">
+                        <button class="btn btn-primary" id="btn-save-email-settings"><i class="fas fa-save"></i> Save Settings &amp; Templates</button>
+                    </div>
+                </div>
+
+                <!-- Dedicated Mail Subject & Body Template Customizer Card (Full Width) -->
+                <div class="glass-card" style="padding:24px; margin-bottom:16px;">
+                    <div class="card-header" style="margin-bottom:16px;">
+                        <h3 class="card-title">
+                            <i class="fas fa-file-code" style="color:var(--accent);margin-right:8px;"></i>Mail Subject &amp; Body Template Customizer
+                        </h3>
+                    </div>
+                    
+                    <div style="font-size:.78rem; color:var(--text-muted); margin-bottom:14px;">
+                        Select a stage below to customize its email subject line and body notice/header template:
+                    </div>
+
+                    <!-- Stage Tabs -->
+                    <div style="display:flex; gap:8px; border-bottom:1px solid var(--border); padding-bottom:10px; margin-bottom:16px; overflow-x:auto;">
+                        <button type="button" class="btn btn-sm tmpl-tab btn-primary" data-tmpl-stage="stage-1" style="font-size:.78rem;"><i class="fas fa-bell"></i> 1. Teammate Reminder</button>
+                        <button type="button" class="btn btn-sm tmpl-tab btn-outline" data-tmpl-stage="stage-2" style="font-size:.78rem;"><i class="fas fa-calendar-check"></i> 2. Teammate Final Update</button>
+                        <button type="button" class="btn btn-sm tmpl-tab btn-outline" data-tmpl-stage="stage-3" style="font-size:.78rem;"><i class="fas fa-chart-pie"></i> 3. Manager Digest</button>
+                        <button type="button" class="btn btn-sm tmpl-tab btn-outline" data-tmpl-stage="stage-4" style="font-size:.78rem;"><i class="fas fa-user-shield"></i> 4. Leader Digest</button>
+                    </div>
+
+                    <!-- Pane 1: Teammate Reminder -->
+                    <div id="tmpl-pane-stage-1" class="tmpl-pane" style="display:block;">
+                        <div class="form-row" style="margin-bottom:12px;">
+                            <label style="font-weight:700; font-size:.82rem;">Subject Template:</label>
+                            <input type="text" id="stage-1-subject" value="${escAttr(s.emailTeammateReminderSubject || '⏰ Daily MIS Task Reminder — {user_name} ({pending_count} Pending)')}" style="width:100%; font-size:.85rem; padding:8px 12px;">
+                            <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; align-items:center;">
+                                <span style="font-size:.7rem; color:var(--text-muted); font-weight:600;">Insert tags:</span>
+                                <button type="button" class="btn-tag-pill" data-target="stage-1-subject" data-tag="{user_name}" style="font-size:.7rem; padding:2px 8px; background:var(--bg-hover); border:1px solid var(--border); border-radius:12px; cursor:pointer; color:var(--accent); font-weight:600;"><i class="fas fa-plus-circle"></i>{user_name}</button>
+                                <button type="button" class="btn-tag-pill" data-target="stage-1-subject" data-tag="{pending_count}" style="font-size:.7rem; padding:2px 8px; background:var(--bg-hover); border:1px solid var(--border); border-radius:12px; cursor:pointer; color:var(--accent); font-weight:600;"><i class="fas fa-plus-circle"></i>{pending_count}</button>
+                                <button type="button" class="btn-tag-pill" data-target="stage-1-subject" data-tag="{date_str}" style="font-size:.7rem; padding:2px 8px; background:var(--bg-hover); border:1px solid var(--border); border-radius:12px; cursor:pointer; color:var(--accent); font-weight:600;"><i class="fas fa-plus-circle"></i>{date_str}</button>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label style="font-weight:700; font-size:.82rem;">Custom Body Header Notice (Optional):</label>
+                            <textarea id="stage-1-body-tmpl" rows="3" placeholder="Enter custom message to display at the top of the email body..." style="width:100%; font-size:.82rem; padding:8px 12px; border-radius:6px; font-family:inherit; resize:vertical;">${escAttr(s.emailTeammateReminderBodyTmpl || '')}</textarea>
+                            <p style="font-size:.72rem; color:var(--text-muted); margin-top:2px;">This note will appear prominently at the top of the reminder email body.</p>
                         </div>
                     </div>
 
-                    <!-- Operations Card -->
-                    <div style="display:flex; flex-direction:column; gap:16px;">
-                        <div class="glass-card" style="padding:20px; flex:1;">
+                    <!-- Pane 2: Teammate Final Update -->
+                    <div id="tmpl-pane-stage-2" class="tmpl-pane" style="display:none;">
+                        <div class="form-row" style="margin-bottom:12px;">
+                            <label style="font-weight:700; font-size:.82rem;">Subject Template:</label>
+                            <input type="text" id="stage-2-subject" value="${escAttr(s.emailTeammateSubject || 'Daily MIS Task Summary: Final Update — {user_name} ({score}% Done)')}" style="width:100%; font-size:.85rem; padding:8px 12px;">
+                            <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; align-items:center;">
+                                <span style="font-size:.7rem; color:var(--text-muted); font-weight:600;">Insert tags:</span>
+                                <button type="button" class="btn-tag-pill" data-target="stage-2-subject" data-tag="{user_name}" style="font-size:.7rem; padding:2px 8px; background:var(--bg-hover); border:1px solid var(--border); border-radius:12px; cursor:pointer; color:var(--accent); font-weight:600;"><i class="fas fa-plus-circle"></i>{user_name}</button>
+                                <button type="button" class="btn-tag-pill" data-target="stage-2-subject" data-tag="{score}" style="font-size:.7rem; padding:2px 8px; background:var(--bg-hover); border:1px solid var(--border); border-radius:12px; cursor:pointer; color:var(--accent); font-weight:600;"><i class="fas fa-plus-circle"></i>{score}</button>
+                                <button type="button" class="btn-tag-pill" data-target="stage-2-subject" data-tag="{date_str}" style="font-size:.7rem; padding:2px 8px; background:var(--bg-hover); border:1px solid var(--border); border-radius:12px; cursor:pointer; color:var(--accent); font-weight:600;"><i class="fas fa-plus-circle"></i>{date_str}</button>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label style="font-weight:700; font-size:.82rem;">Custom Body Header Notice (Optional):</label>
+                            <textarea id="stage-2-body-tmpl" rows="3" placeholder="Enter custom message to display at the top of the email body..." style="width:100%; font-size:.82rem; padding:8px 12px; border-radius:6px; font-family:inherit; resize:vertical;">${escAttr(s.emailTeammateFinalBodyTmpl || '')}</textarea>
+                            <p style="font-size:.72rem; color:var(--text-muted); margin-top:2px;">This note will appear above the daily score breakdown.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pane 3: Manager Digest -->
+                    <div id="tmpl-pane-stage-3" class="tmpl-pane" style="display:none;">
+                        <div class="form-row" style="margin-bottom:12px;">
+                            <label style="font-weight:700; font-size:.82rem;">Subject Template:</label>
+                            <input type="text" id="stage-3-subject" value="${escAttr(s.emailManagerSubject || 'MIS Daily Manager Digest — {date_str}')}" style="width:100%; font-size:.85rem; padding:8px 12px;">
+                            <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; align-items:center;">
+                                <span style="font-size:.7rem; color:var(--text-muted); font-weight:600;">Insert tags:</span>
+                                <button type="button" class="btn-tag-pill" data-target="stage-3-subject" data-tag="{date_str}" style="font-size:.7rem; padding:2px 8px; background:var(--bg-hover); border:1px solid var(--border); border-radius:12px; cursor:pointer; color:var(--accent); font-weight:600;"><i class="fas fa-plus-circle"></i>{date_str}</button>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label style="font-weight:700; font-size:.82rem;">Custom Body Header Notice (Optional):</label>
+                            <textarea id="stage-3-body-tmpl" rows="3" placeholder="Enter custom message to display at the top of the email body..." style="width:100%; font-size:.82rem; padding:8px 12px; border-radius:6px; font-family:inherit; resize:vertical;">${escAttr(s.emailManagerDigestBodyTmpl || '')}</textarea>
+                            <p style="font-size:.72rem; color:var(--text-muted); margin-top:2px;">This note will appear above the manager KPI overview.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pane 4: Leader Digest -->
+                    <div id="tmpl-pane-stage-4" class="tmpl-pane" style="display:none;">
+                        <div class="form-row" style="margin-bottom:12px;">
+                            <label style="font-weight:700; font-size:.82rem;">Subject Template:</label>
+                            <input type="text" id="stage-4-subject" value="${escAttr(s.emailLeaderSubject || 'MIS Research Team Daily Summary — {date_str}')}" style="width:100%; font-size:.85rem; padding:8px 12px;">
+                            <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; align-items:center;">
+                                <span style="font-size:.7rem; color:var(--text-muted); font-weight:600;">Insert tags:</span>
+                                <button type="button" class="btn-tag-pill" data-target="stage-4-subject" data-tag="{date_str}" style="font-size:.7rem; padding:2px 8px; background:var(--bg-hover); border:1px solid var(--border); border-radius:12px; cursor:pointer; color:var(--accent); font-weight:600;"><i class="fas fa-plus-circle"></i>{date_str}</button>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label style="font-weight:700; font-size:.82rem;">Custom Body Header Notice (Optional):</label>
+                            <textarea id="stage-4-body-tmpl" rows="3" placeholder="Enter custom message to display at the top of the email body..." style="width:100%; font-size:.82rem; padding:8px 12px; border-radius:6px; font-family:inherit; resize:vertical;">${escAttr(s.emailLeaderDigestBodyTmpl || '')}</textarea>
+                            <p style="font-size:.72rem; color:var(--text-muted); margin-top:2px;">This note will appear above the leader teammate summary cards.</p>
+                        </div>
+                    </div>
+
+                    <!-- Live Email Message Inbox Preview & Simulator Frame -->
+                    <div style="border-top:1px dashed var(--border); padding-top:16px; margin-top:20px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:10px;">
+                            <div>
+                                <h4 style="font-size:.9rem; font-weight:700; color:var(--accent); margin:0; display:flex; align-items:center; gap:6px;">
+                                    <i class="fas fa-desktop"></i> Live Email Inbox Message View (Actual Rendered Preview)
+                                </h4>
+                                <div style="font-size:.72rem; color:var(--text-muted); margin-top:2px;">
+                                    Simulates exact email appearance in recipient inbox based on live today data &amp; recipient POV.
+                                </div>
+                            </div>
+                            
+                            <div style="display:flex; gap:8px; align-items:center;">
+                                <label style="font-weight:700; font-size:.78rem; color:var(--text-secondary);">Recipient POV:</label>
+                                <select id="preview-user-select" style="font-size:.8rem; padding:4px 10px; border-radius:6px; border:1px solid var(--border); min-width:220px; background:var(--bg-primary); color:var(--text-primary);">
+                                    <!-- Populated dynamically with users in 'Will be sent to:' ONLY -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Gmail-style Email Container Mockup -->
+                        <div style="background:#f8fafc; border:1px solid var(--border); border-radius:10px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
+                            <!-- Email Header Bar -->
+                            <div style="background:#ffffff; border-bottom:1px solid #e2e8f0; padding:12px 18px;">
+                                <h4 id="preview-email-subject" style="margin:0 0 6px 0; font-size:.95rem; font-weight:700; color:#1e293b;">
+                                    Subject Preview Loading...
+                                </h4>
+                                <div style="display:flex; align-items:center; justify-content:space-between; font-size:.78rem; color:#64748b;">
+                                    <div style="display:flex; align-items:center; gap:8px;">
+                                        <div style="width:26px; height:26px; border-radius:50%; background:#4f46e5; color:#ffffff; display:inline-flex; align-items:center; justify-content:center; font-weight:700; font-size:.75rem;">M</div>
+                                        <div>
+                                            <strong style="color:#1e293b;">Advanced MIS Emailer</strong> &lt;<span id="preview-email-from">mail.agalabs@gmail.com</span>&gt;
+                                            <br>
+                                            <span style="color:#64748b;">to <strong id="preview-email-to" style="color:#334155;">user@company.com</strong></span>
+                                        </div>
+                                    </div>
+                                    <div style="font-size:.7rem; color:#94a3b8; font-weight:600;">
+                                        <i class="fas fa-check-circle" style="color:#10b981; margin-right:3px;"></i>Live Today Data POV
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Rendered Iframe Body -->
+                            <div style="padding:16px; background:#f1f5f9; display:flex; justify-content:center;">
+                                <iframe id="preview-email-iframe" style="width:100%; max-width:680px; height:480px; border:none; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.06); background:#ffffff;"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Operations Card (Placed ABOVE Sent Email Logs) -->
+                <div class="glass-card" style="padding:24px; margin-bottom:16px;">
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+                        <!-- Left: Send Connection Test Email -->
+                        <div style="background:var(--bg-secondary); border:1px solid var(--border); border-radius:8px; padding:16px;">
                             <h4 style="font-size:.9rem; font-weight:700; color:var(--warning); margin-bottom:8px;">
-                                <i class="fas fa-paper-plane" style="margin-right:6px;"></i>Send Test Email
+                                <i class="fas fa-paper-plane" style="margin-right:6px;"></i>Send Connection Test Email
                             </h4>
-                            <p style="font-size:.78rem; color:var(--text-muted); margin-bottom:12px;">Test the SMTP connection immediately by sending a test email.</p>
+                            <p style="font-size:.78rem; color:var(--text-muted); margin-bottom:12px;">Test the SMTP connection immediately by sending a live test report email.</p>
                             <div class="form-row">
                                 <label style="font-size:.75rem;">Recipient Email</label>
                                 <input type="email" id="email-test-recipient" placeholder="Enter recipient email..." style="width:100%; font-size:.8rem; padding:8px 12px; margin-bottom:10px;">
@@ -1870,12 +2077,13 @@ export default {
                             </button>
                         </div>
 
-                        <div class="glass-card" style="padding:20px; flex:1;">
+                        <!-- Right: Manual Trigger / Person Dispatch -->
+                        <div style="background:var(--bg-secondary); border:1px solid var(--border); border-radius:8px; padding:16px;">
                             <h4 style="font-size:.9rem; font-weight:700; color:var(--danger); margin-bottom:8px;">
-                                <i class="fas fa-play" style="margin-right:6px;"></i>Manual Trigger
+                                <i class="fas fa-play" style="margin-right:6px;"></i>Manual Trigger / Person Dispatch
                             </h4>
-                            <p style="font-size:.78rem; color:var(--text-muted); margin-bottom:12px;">Force-send a specific email digest stage or all stages immediately.</p>
-                            <div class="form-row" style="margin-bottom: 12px;">
+                            <p style="font-size:.78rem; color:var(--text-muted); margin-bottom:12px;">Send a digest stage immediately to all target users or a specific selected team member.</p>
+                            <div class="form-row" style="margin-bottom: 10px;">
                                 <label style="font-size:.75rem;">Digest Stage to Send</label>
                                 <select id="email-digest-stage-select" style="width:100%; font-size:.8rem; padding:8px 12px;">
                                     <option value="all">All Stages</option>
@@ -1885,6 +2093,13 @@ export default {
                                     <option value="leader-digest">4. Leader Digest (Research updates)</option>
                                 </select>
                             </div>
+                            <div class="form-row" style="margin-bottom: 14px;">
+                                <label style="font-size:.75rem;">Target Recipient (Optional Individual Person Override)</label>
+                                <select id="email-digest-target-person" style="width:100%; font-size:.8rem; padding:8px 12px;">
+                                    <option value="">-- All Target Recipients for Stage --</option>
+                                    ${userDropdownOptions}
+                                </select>
+                            </div>
                             <button class="btn btn-outline btn-sm" id="btn-run-email-digest" style="width:100%; justify-content:center; border-color:var(--danger); color:var(--danger);">
                                 <i class="fas fa-rocket"></i> Trigger Selected Stage
                             </button>
@@ -1892,7 +2107,7 @@ export default {
                     </div>
                 </div>
 
-                <!-- Logs List Card -->
+                <!-- Sent Email Logs Card (Below Operations) -->
                 <div class="glass-card" style="padding:24px;">
                     <div class="card-header" style="margin-bottom:16px;">
                         <h3 class="card-title"><i class="fas fa-history" style="color:var(--accent);margin-right:8px;"></i>Sent Email Logs</h3>
@@ -1948,19 +2163,396 @@ export default {
                 </div>
             `;
 
+            let currentPreviewStage = 'stage-1';
+
+            const loadLiveEmailPreview = async (stageId, userEmail = '') => {
+                currentPreviewStage = stageId || currentPreviewStage;
+
+                const targetEl = document.getElementById(`${currentPreviewStage}-target-emails`);
+                const excludedEl = document.getElementById(`${currentPreviewStage}-excluded-emails`);
+                const rolesChks = container.querySelectorAll(`.stage-role-${currentPreviewStage}:checked`);
+
+                const targetEmails = targetEl ? Array.from(targetEl.selectedOptions).map(o => o.value).join(',') : '';
+                const excludedEmails = excludedEl ? Array.from(excludedEl.selectedOptions).map(o => o.value).join(',') : '';
+                const targetRoles = Array.from(rolesChks).map(c => c.value).join(',');
+
+                try {
+                    const res = await api.post('/admin/email-preview', {
+                        stage: currentPreviewStage,
+                        user_email: userEmail,
+                        target_roles: targetRoles,
+                        target_emails: targetEmails,
+                        excluded_emails: excludedEmails
+                    });
+
+                    if (!res || !res.success) return;
+
+                    const povSelect = document.getElementById('preview-user-select');
+                    if (povSelect) {
+                        const currentSelected = userEmail || res.to_addr;
+                        if (res.recipients.length === 0) {
+                            povSelect.innerHTML = `<option value="">⚠️ No recipients in "Will be sent to:"</option>`;
+                        } else {
+                            povSelect.innerHTML = res.recipients.map(r => `
+                                <option value="${escAttr(r.email)}" ${r.email.toLowerCase() === currentSelected.toLowerCase() ? 'selected' : ''}>
+                                    ${App.escapeHtml(r.name)} (${App.escapeHtml(r.email)}) — ${App.escapeHtml(r.role)}
+                                </option>
+                            `).join('');
+                        }
+                    }
+
+                    const subjEl = document.getElementById('preview-email-subject');
+                    const fromEl = document.getElementById('preview-email-from');
+                    const toEl = document.getElementById('preview-email-to');
+                    if (subjEl) subjEl.innerText = res.subject || 'No Subject';
+                    if (fromEl) fromEl.innerText = res.from_addr || 'system@company.com';
+                    if (toEl) toEl.innerText = res.to_addr ? `${res.active_user_name || ''} (${res.to_addr})` : 'None';
+
+                    const iframe = document.getElementById('preview-email-iframe');
+                    if (iframe) {
+                        const doc = iframe.contentDocument || iframe.contentWindow.document;
+                        doc.open();
+                        doc.write(res.html_body || '<div>No preview body available</div>');
+                        doc.close();
+                    }
+                } catch(err) {
+                    console.error('Failed to load live preview:', err);
+                }
+            };
+
+            // Wire Template Customizer Tabs
+            container.querySelectorAll('.tmpl-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    container.querySelectorAll('.tmpl-tab').forEach(t => {
+                        t.classList.remove('btn-primary');
+                        t.classList.add('btn-outline');
+                    });
+                    tab.classList.add('btn-primary');
+                    tab.classList.remove('btn-outline');
+
+                    const targetStage = tab.dataset.tmplStage;
+                    container.querySelectorAll('.tmpl-pane').forEach(pane => pane.style.display = 'none');
+                    const activePane = container.querySelector(`#tmpl-pane-${targetStage}`);
+                    if (activePane) activePane.style.display = 'block';
+
+                    loadLiveEmailPreview(targetStage, '');
+                });
+            });
+
+            // Wire Recipient POV Change event
+            document.getElementById('preview-user-select')?.addEventListener('change', (e) => {
+                loadLiveEmailPreview(currentPreviewStage, e.target.value);
+            });
+
+            // State management helpers for Drag-and-Drop recipient zones
+            const addUserToTarget = (stageId, email) => {
+                const selectTarget = document.getElementById(`${stageId}-target-emails`);
+                const selectExclude = document.getElementById(`${stageId}-excluded-emails`);
+                if (!selectTarget || !selectExclude) return;
+
+                const emailLower = email.toLowerCase();
+                Array.from(selectExclude.options).forEach(opt => {
+                    if (opt.value.toLowerCase() === emailLower) opt.selected = false;
+                });
+                Array.from(selectTarget.options).forEach(opt => {
+                    if (opt.value.toLowerCase() === emailLower) opt.selected = true;
+                });
+                updateStageDragDropUI(stageId);
+            };
+
+            const removeUserFromTarget = (stageId, email) => {
+                const selectTarget = document.getElementById(`${stageId}-target-emails`);
+                const selectExclude = document.getElementById(`${stageId}-excluded-emails`);
+                if (!selectTarget || !selectExclude) return;
+
+                const emailLower = email.toLowerCase();
+                Array.from(selectTarget.options).forEach(opt => {
+                    if (opt.value.toLowerCase() === emailLower) opt.selected = false;
+                });
+                Array.from(selectExclude.options).forEach(opt => {
+                    if (opt.value.toLowerCase() === emailLower) opt.selected = true;
+                });
+                updateStageDragDropUI(stageId);
+            };
+
+            // Main UI updater for Drag-and-Drop dual columns
+            const updateStageDragDropUI = (stageId) => {
+                const checkedRoles = Array.from(container.querySelectorAll(`.stage-role-${stageId}:checked`)).map(c => c.value);
+                const selectTarget = document.getElementById(`${stageId}-target-emails`);
+                const selectExclude = document.getElementById(`${stageId}-excluded-emails`);
+
+                const targetEmails = selectTarget ? Array.from(selectTarget.selectedOptions).map(o => o.value.toLowerCase()) : [];
+                const excludedEmails = selectExclude ? Array.from(selectExclude.selectedOptions).map(o => o.value.toLowerCase()) : [];
+
+                const availableContainer = document.getElementById(`${stageId}-available-list`);
+                const targetContainer = document.getElementById(`${stageId}-target-list`);
+
+                if (!availableContainer || !targetContainer) return;
+
+                const allowedRoles = allowedRolesListMap[stageId] || ['Teammate'];
+                const stageUsers = users.filter(u => allowedRoles.includes(u.role));
+
+                const leftUsers = [];
+                const rightUsers = [];
+
+                stageUsers.forEach(u => {
+                    const uEmail = u.email.toLowerCase();
+                    const isTargeted = ((u.active && checkedRoles.includes(u.role)) || targetEmails.includes(uEmail)) && !excludedEmails.includes(uEmail);
+
+                    if (isTargeted) {
+                        rightUsers.push(u);
+                    } else {
+                        leftUsers.push(u);
+                    }
+                });
+
+                // Render Left (Available) List
+                if (leftUsers.length === 0) {
+                    availableContainer.innerHTML = `<span style="font-size:.7rem; color:var(--text-muted); font-style:italic; padding:6px;">All team members added to recipient list.</span>`;
+                } else {
+                    availableContainer.innerHTML = leftUsers.map(u => `
+                        <div class="drag-user-chip chip-available" draggable="true" data-stage="${stageId}" data-email="${escAttr(u.email)}" style="font-size:.72rem; padding:4px 10px; background:var(--bg-secondary); border:1px solid var(--border); border-radius:14px; cursor:grab; user-select:none; display:inline-flex; align-items:center; gap:5px; transition:all 0.15s ease;">
+                            <i class="fas fa-grip-vertical" style="color:var(--text-muted); font-size:.65rem;"></i>
+                            <span><strong>${App.escapeHtml(u.name)}</strong> <span style="font-size:.65rem; color:var(--text-muted);">(${App.escapeHtml(u.role)})</span></span>
+                            <i class="fas fa-plus-circle btn-move-right" data-stage="${stageId}" data-email="${escAttr(u.email)}" style="color:var(--accent); cursor:pointer; font-size:.75rem; margin-left:3px;" title="Add to Recipient List"></i>
+                        </div>
+                    `).join('');
+                }
+
+                // Render Right (Target) List
+                if (rightUsers.length === 0) {
+                    targetContainer.innerHTML = `<span style="font-size:.7rem; color:var(--danger); font-style:italic; padding:6px;"><i class="fas fa-exclamation-triangle"></i> No recipients selected. Drag team members here.</span>`;
+                } else {
+                    targetContainer.innerHTML = rightUsers.map(u => `
+                        <div class="drag-user-chip chip-target" draggable="true" data-stage="${stageId}" data-email="${escAttr(u.email)}" style="font-size:.72rem; padding:4px 10px; background:rgba(99,102,241,0.12); color:var(--accent); border:1px solid rgba(99,102,241,0.3); border-radius:14px; cursor:grab; user-select:none; display:inline-flex; align-items:center; gap:5px; transition:all 0.15s ease;">
+                            <i class="fas fa-grip-vertical" style="opacity:0.6; font-size:.65rem;"></i>
+                            <span><strong>${App.escapeHtml(u.name)}</strong> <span style="font-size:.65rem; opacity:0.8;">(${App.escapeHtml(u.role)})</span></span>
+                            <i class="fas fa-times-circle btn-move-left" data-stage="${stageId}" data-email="${escAttr(u.email)}" style="color:var(--danger); cursor:pointer; font-size:.75rem; margin-left:3px;" title="Remove from Recipient List"></i>
+                        </div>
+                    `).join('');
+                }
+
+                // Attach event listeners for chips & drop zones
+                bindChipAndZoneEvents(stageId);
+
+                // Refresh live preview if active stage modified
+                if (stageId === currentPreviewStage) {
+                    loadLiveEmailPreview(stageId, '');
+                }
+            };
+
+            // Wire drag events and click transfer events
+            const bindChipAndZoneEvents = (stageId) => {
+                const availableContainer = document.getElementById(`${stageId}-available-list`);
+                const targetContainer = document.getElementById(`${stageId}-target-list`);
+
+                if (!availableContainer || !targetContainer) return;
+
+                // Drag Start on Chips
+                container.querySelectorAll(`.drag-user-chip[data-stage="${stageId}"]`).forEach(chip => {
+                    chip.addEventListener('dragstart', (e) => {
+                        e.dataTransfer.setData('text/plain', JSON.stringify({
+                            stageId: chip.dataset.stage,
+                            email: chip.dataset.email
+                        }));
+                        chip.style.opacity = '0.5';
+                    });
+                    chip.addEventListener('dragend', () => {
+                        chip.style.opacity = '1';
+                    });
+                });
+
+                // Click transfer buttons (+) and (x)
+                container.querySelectorAll(`.btn-move-right[data-stage="${stageId}"]`).forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        addUserToTarget(stageId, btn.dataset.email);
+                    });
+                });
+
+                container.querySelectorAll(`.btn-move-left[data-stage="${stageId}"]`).forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        removeUserFromTarget(stageId, btn.dataset.email);
+                    });
+                });
+
+                // Click on chip body to toggle
+                container.querySelectorAll(`.chip-available[data-stage="${stageId}"]`).forEach(chip => {
+                    chip.addEventListener('click', () => addUserToTarget(stageId, chip.dataset.email));
+                });
+                container.querySelectorAll(`.chip-target[data-stage="${stageId}"]`).forEach(chip => {
+                    chip.addEventListener('click', (e) => {
+                        if (!e.target.classList.contains('btn-move-left')) {
+                            removeUserFromTarget(stageId, chip.dataset.email);
+                        }
+                    });
+                });
+
+                // Drag Over and Drop on Available Container (Left Zone)
+                availableContainer.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    availableContainer.style.borderColor = 'var(--accent)';
+                    availableContainer.style.background = 'rgba(99,102,241,0.04)';
+                });
+                availableContainer.addEventListener('dragleave', () => {
+                    availableContainer.style.borderColor = 'var(--border)';
+                    availableContainer.style.background = 'var(--bg-primary)';
+                });
+                availableContainer.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    availableContainer.style.borderColor = 'var(--border)';
+                    availableContainer.style.background = 'var(--bg-primary)';
+                    try {
+                        const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+                        if (data.stageId === stageId && data.email) {
+                            removeUserFromTarget(stageId, data.email);
+                        }
+                    } catch(err){}
+                });
+
+                // Drag Over and Drop on Target Container (Right Zone)
+                targetContainer.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    targetContainer.style.borderColor = 'var(--accent)';
+                    targetContainer.style.background = 'rgba(99,102,241,0.08)';
+                });
+                targetContainer.addEventListener('dragleave', () => {
+                    targetContainer.style.borderColor = 'rgba(99,102,241,0.4)';
+                    targetContainer.style.background = 'var(--bg-primary)';
+                });
+                targetContainer.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    targetContainer.style.borderColor = 'rgba(99,102,241,0.4)';
+                    targetContainer.style.background = 'var(--bg-primary)';
+                    try {
+                        const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+                        if (data.stageId === stageId && data.email) {
+                            addUserToTarget(stageId, data.email);
+                        }
+                    } catch(err){}
+                });
+            };
+
+            // Initialize Drag & Drop dual-column UI for all 4 stages
+            ['stage-1', 'stage-2', 'stage-3', 'stage-4'].forEach(stageId => {
+                updateStageDragDropUI(stageId);
+
+                container.querySelectorAll(`.stage-role-${stageId}`).forEach(chk => {
+                    chk.addEventListener('change', () => updateStageDragDropUI(stageId));
+                });
+            });
+
+            // Initial load of live preview for Stage 1
+            loadLiveEmailPreview('stage-1', '');
+
+            // Wire tag pill click insertion
+            container.querySelectorAll('.btn-tag-pill').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetId = btn.dataset.target;
+                    const tag = btn.dataset.tag;
+                    const el = document.getElementById(targetId);
+                    if (el) {
+                        const start = el.selectionStart || el.value.length;
+                        const end = el.selectionEnd || el.value.length;
+                        el.value = el.value.substring(0, start) + tag + el.value.substring(end);
+                        el.focus();
+                        el.selectionStart = el.selectionEnd = start + tag.length;
+                    }
+                });
+            });
+
+            // Wire Expand Subject Template Modal
+            container.querySelectorAll('.btn-expand-subject').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const fieldId = btn.dataset.field;
+                    const textarea = document.getElementById(fieldId);
+                    if (!textarea) return;
+
+                    const currentText = textarea.value;
+                    const modalBody = `
+                        <div style="padding:10px 0;">
+                            <label style="font-weight:700; font-size:.85rem; display:block; margin-bottom:8px; color:var(--text-primary);">
+                                Expandable Subject Template Editor:
+                            </label>
+                            <textarea id="modal-subject-input" rows="6" style="width:100%; font-size:.95rem; padding:12px; border-radius:8px; font-family:inherit; line-height:1.5; border:1px solid var(--border); background:var(--bg-primary); color:var(--text-primary);">${App.escapeHtml(currentText)}</textarea>
+                            <div style="font-size:.75rem; color:var(--text-muted); margin-top:8px;">
+                                <i class="fas fa-info-circle" style="color:var(--accent);"></i> Available tags: <code>{user_name}</code>, <code>{score}</code>, <code>{date_str}</code>, <code>{pending_count}</code>
+                            </div>
+                        </div>
+                    `;
+                    App.showModal('Subject Template Full Window Editor', modalBody, `
+                        <button class="btn btn-outline" onclick="App.closeModal()">Cancel</button>
+                        <button class="btn btn-primary" id="btn-apply-modal-subject">Apply Changes</button>
+                    `);
+                    setTimeout(() => {
+                        document.getElementById('btn-apply-modal-subject')?.addEventListener('click', () => {
+                            const newVal = document.getElementById('modal-subject-input').value;
+                            textarea.value = newVal;
+                            App.closeModal();
+                            App.showToast('Subject template updated', 'info');
+                        });
+                    }, 50);
+                });
+            });
+
             // Save Settings Click handler
             document.getElementById('btn-save-email-settings').addEventListener('click', async () => {
+                const getRoles = (stageId) => Array.from(container.querySelectorAll(`.stage-role-${stageId}:checked`)).map(c => c.value).join(',');
+                const getEmails = (stageId) => {
+                    const el = document.getElementById(`${stageId}-target-emails`);
+                    return el ? Array.from(el.selectedOptions).map(o => o.value).join(',') : '';
+                };
+                const getExcludedEmails = (stageId) => {
+                    const el = document.getElementById(`${stageId}-excluded-emails`);
+                    return el ? Array.from(el.selectedOptions).map(o => o.value).join(',') : '';
+                };
+
+                const teammateRoles = getRoles('stage-2') || getRoles('stage-1') || 'Teammate';
+                const teammateEmails = getEmails('stage-2') || getEmails('stage-1');
+                const teammateReminderExcluded = getExcludedEmails('stage-1');
+                const teammateFinalExcluded = getExcludedEmails('stage-2');
+                
+                const managerRoles = getRoles('stage-3') || 'Manager,SuperAdmin';
+                const managerEmails = getEmails('stage-3');
+                const managerExcluded = getExcludedEmails('stage-3');
+                
+                const leaderRoles = getRoles('stage-4') || 'Leader';
+                const leaderEmails = getEmails('stage-4');
+                const leaderExcluded = getExcludedEmails('stage-4');
+
                 try {
                     await api.post('/admin/settings', {
                         emailDigestEnabled: document.getElementById('email-digest-enabled').value,
-                        emailTeammateReminderEnabled: document.getElementById('email-teammate-reminder-enabled').value,
-                        emailTeammateReminderTime: document.getElementById('email-teammate-reminder-time').value,
-                        emailTeammateFinalEnabled: document.getElementById('email-teammate-final-enabled').value,
-                        emailTeammateFinalTime: document.getElementById('email-teammate-final-time').value,
-                        emailManagerDigestEnabled: document.getElementById('email-manager-digest-enabled').value,
-                        emailManagerDigestTime: document.getElementById('email-manager-digest-time').value,
-                        emailLeaderDigestEnabled: document.getElementById('email-leader-digest-enabled').value,
-                        emailLeaderDigestTime: document.getElementById('email-leader-digest-time').value,
+                        emailTeammateReminderEnabled: document.getElementById('stage-1-enabled').value,
+                        emailTeammateReminderTime: document.getElementById('stage-1-time').value,
+                        emailTeammateReminderSubject: document.getElementById('stage-1-subject').value,
+                        emailTeammateReminderBodyTmpl: document.getElementById('stage-1-body-tmpl').value,
+                        emailTeammateReminderExcludedEmails: teammateReminderExcluded,
+
+                        emailTeammateFinalEnabled: document.getElementById('stage-2-enabled').value,
+                        emailTeammateFinalTime: document.getElementById('stage-2-time').value,
+                        emailTeammateTargetRoles: teammateRoles,
+                        emailTeammateTargetEmails: teammateEmails,
+                        emailTeammateFinalExcludedEmails: teammateFinalExcluded,
+                        emailTeammateSubject: document.getElementById('stage-2-subject').value,
+                        emailTeammateFinalBodyTmpl: document.getElementById('stage-2-body-tmpl').value,
+
+                        emailManagerDigestEnabled: document.getElementById('stage-3-enabled').value,
+                        emailManagerDigestTime: document.getElementById('stage-3-time').value,
+                        emailManagerTargetRoles: managerRoles,
+                        emailManagerTargetEmails: managerEmails,
+                        emailManagerDigestExcludedEmails: managerExcluded,
+                        emailManagerSubject: document.getElementById('stage-3-subject').value,
+                        emailManagerDigestBodyTmpl: document.getElementById('stage-3-body-tmpl').value,
+
+                        emailLeaderDigestEnabled: document.getElementById('stage-4-enabled').value,
+                        emailLeaderDigestTime: document.getElementById('stage-4-time').value,
+                        emailLeaderTargetRoles: leaderRoles,
+                        emailLeaderTargetEmails: leaderEmails,
+                        emailLeaderDigestExcludedEmails: leaderExcluded,
+                        emailLeaderSubject: document.getElementById('stage-4-subject').value,
+                        emailLeaderDigestBodyTmpl: document.getElementById('stage-4-body-tmpl').value,
                         
                         smtpHost: document.getElementById('email-smtp-host').value.trim(),
                         smtpPort: document.getElementById('email-smtp-port').value.trim(),
@@ -1968,7 +2560,7 @@ export default {
                         smtpPassword: document.getElementById('email-smtp-password').value,
                         smtpFrom: document.getElementById('email-smtp-from').value.trim(),
                     });
-                    App.showToast('Email Settings saved', 'success');
+                    App.showToast('Email Settings, Recipients & Exclusions saved!', 'success');
                     this.loadTab(); // Reload
                 } catch (err) { App.showToast('Failed to save settings', 'error'); }
             });
@@ -1996,13 +2588,16 @@ export default {
             // Manual digest trigger handler
             document.getElementById('btn-run-email-digest').addEventListener('click', async () => {
                 const stage = document.getElementById('email-digest-stage-select').value;
-                if (!confirm(`This will immediately send out the daily email digest for stage "${stage}". Proceed?`)) return;
+                const target_email = document.getElementById('email-digest-target-person').value;
+                
+                const targetText = target_email ? `to recipient "${target_email}"` : 'to all target recipients';
+                if (!confirm(`This will immediately send out the email digest stage "${stage}" ${targetText}. Proceed?`)) return;
                 
                 const btn = document.getElementById('btn-run-email-digest');
                 btn.disabled = true;
                 btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Triggering...';
                 try {
-                    const res = await api.post('/admin/email-trigger-digest', { stage });
+                    const res = await api.post('/admin/email-trigger-digest', { stage, target_email });
                     App.showToast(res.message || 'Digest triggered successfully!', 'success');
                     this.loadTab(); // Reload logs
                 } catch(err) {

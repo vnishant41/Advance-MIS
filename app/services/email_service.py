@@ -14,14 +14,8 @@ def get_setting(key, default=''):
 def send_email(to_emails, subject, html_body, force=False):
     """Send an HTML email using SMTP settings from database with strict recipient double-check."""
     master = get_setting('emailDigestEnabled', 'NO').upper() == 'YES'
-    stage1 = get_setting('emailTeammateReminderEnabled', 'NO').upper() == 'YES'
-    stage2 = get_setting('emailTeammateFinalEnabled', 'NO').upper() == 'YES'
-    stage3 = get_setting('emailManagerDigestEnabled', 'NO').upper() == 'YES'
-    stage4 = get_setting('emailLeaderDigestEnabled', 'NO').upper() == 'YES'
-    enabled = master or stage1 or stage2 or stage3 or stage4
-
-    if not enabled and not force:
-        current_app.logger.info("[email_service] Email sending is disabled (all email digest toggles are disabled)")
+    if not master and not force:
+        current_app.logger.info("[email_service] Email sending is disabled (Global Email Master Switch is set to NO)")
         return False
 
     # Double-check recipient format and validity
@@ -287,6 +281,8 @@ def build_todays_live_updates_html(recipient_email=None, is_test=False):
 def build_daily_digest_html(user, date_str, summary):
     """Build a premium HTML template for the daily task digest."""
     score = summary['score']
+    custom_note = get_setting('emailTeammateFinalBodyTmpl', '').strip()
+    custom_html = f'<div style="background-color: #F8FAFC; border-left: 4px solid #4F46E5; padding: 12px 16px; border-radius: 6px; margin-bottom: 16px; font-size: 13px; color: #1E293B; line-height: 1.5;">{custom_note}</div>' if custom_note else ''
     
     if score >= 80:
         score_color = '#10B981'
@@ -377,6 +373,7 @@ def build_daily_digest_html(user, date_str, summary):
         <!-- Summary Dashboard Card -->
         <tr>
             <td style="padding: 24px 24px 12px 24px;">
+                {custom_html}
                 <div style="background-color: {score_bg}; border: 1px solid {score_border}; padding: 18px; border-radius: 10px; text-align: center;">
                     <div style="font-size: 11px; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.8px;">Daily Completion Score</div>
                     <div style="font-size: 36px; font-weight: 900; color: {score_color}; margin: 4px 0;">{score}%</div>
@@ -427,6 +424,8 @@ def build_reminder_email_html(user, date_str, summary):
     """HTML email for daily pending tasks reminder."""
     pending_tasks = summary.get('pending', [])
     pending_count = len(pending_tasks)
+    custom_note = get_setting('emailTeammateReminderBodyTmpl', '').strip()
+    custom_html = f'<div style="background-color: #FFFBEB; border-left: 4px solid #D97706; padding: 12px 16px; border-radius: 6px; margin-bottom: 16px; font-size: 13px; color: #78350F; line-height: 1.5;">{custom_note}</div>' if custom_note else ''
     
     tasks_html = ''
     for item in pending_tasks:
@@ -455,6 +454,7 @@ def build_reminder_email_html(user, date_str, summary):
         <!-- Content -->
         <tr>
             <td style="padding: 24px;">
+                {custom_html}
                 <p style="font-size: 14px; color: #334155; margin-top: 0; line-height: 1.5;">Hi <strong>{user.name}</strong>,</p>
                 <p style="font-size: 14px; color: #334155; line-height: 1.5;">This is a friendly reminder that you have <strong>{pending_count} pending task{'s' if pending_count != 1 else ''}</strong> remaining for today in the MIS portal. Please update them at your earliest convenience.</p>
                 
@@ -477,30 +477,89 @@ def build_reminder_email_html(user, date_str, summary):
 
 
 def build_manager_digest_html(date_str, summaries):
-    """HTML email for managers showing status of all teammates."""
+    """HTML email for managers showing overall summary matrix at top and detailed teammate-wise task breakdown below."""
     rows_html = ''
+    cards_html = ''
     total_score = 0
     valid_count = 0
     total_done_all = 0
     total_pending_all = 0
+    custom_note = get_setting('emailManagerDigestBodyTmpl', '').strip()
+    custom_html = f'<div style="background-color: #F8FAFC; border-left: 4px solid #4F46E5; padding: 12px 16px; border-radius: 6px; margin-bottom: 16px; font-size: 13px; color: #1E293B; line-height: 1.5;">{custom_note}</div>' if custom_note else ''
     
     for s in summaries:
         score = s['score']
         total_score += score
         valid_count += 1
-        total_done_all += s['done']
-        total_pending_all += s['pending']
+
+        done_list = s['done'] if isinstance(s['done'], list) else []
+        pending_list = s['pending'] if isinstance(s['pending'], list) else []
+        skip_list = s['skip'] if isinstance(s['skip'], list) else []
+
+        done_cnt = len(done_list) if isinstance(s['done'], list) else s['done']
+        pending_cnt = len(pending_list) if isinstance(s['pending'], list) else s['pending']
+        skip_cnt = len(skip_list) if isinstance(s['skip'], list) else s['skip']
+        tot_cnt = s.get('total', done_cnt + pending_cnt + skip_cnt)
+
+        total_done_all += done_cnt
+        total_pending_all += pending_cnt
         
         score_color = '#10B981' if score >= 80 else ('#F59E0B' if score >= 50 else '#EF4444')
+        border_color = score_color
+
         rows_html += f"""
         <tr style="border-bottom: 1px solid #F1F5F9;">
-            <td style="padding: 12px 10px; font-weight: 600; font-size: 13px; color: #1E293B;">{s['name']}<br><span style="font-size: 11px; color: #64748B; font-weight: normal;">{s['email']}</span></td>
-            <td style="padding: 12px 10px; text-align: center; color: #10B981; font-weight: 700; font-size: 13px;">{s['done']}</td>
-            <td style="padding: 12px 10px; text-align: center; color: #F59E0B; font-weight: 700; font-size: 13px;">{s['pending']}</td>
-            <td style="padding: 12px 10px; text-align: center; color: #94A3B8; font-size: 13px;">{s['skip']}</td>
-            <td style="padding: 12px 10px; text-align: center; font-weight: 700; color: #334155; font-size: 13px;">{s['total']}</td>
-            <td style="padding: 12px 10px; text-align: right; font-weight: 800; color: {score_color}; font-size: 13px;">{score}%</td>
+            <td style="padding: 10px 12px; font-weight: 600; font-size: 13px; color: #1E293B;">{s['name']}<br><span style="font-size: 11px; color: #64748B; font-weight: normal;">{s['email']}</span></td>
+            <td style="padding: 10px 12px; text-align: right; font-weight: 800; color: {score_color}; font-size: 13px;">{score}% Done</td>
         </tr>"""
+
+        # Detailed card for teammate
+        done_items = ''
+        if done_list:
+            done_items = '<div style="margin-top:8px; font-weight:800; font-size:11px; color:#10B981; text-transform:uppercase; letter-spacing:0.5px;">✓ Completed</div>'
+            for item in done_list:
+                remark = f'<div style="font-size:11px; color:#64748B; font-style:italic; margin-top:2px;">Note: {item["remarks"]}</div>' if item.get('remarks') else ''
+                done_items += f"""
+                <div style="font-size:12px; color:#1E293B; padding:5px 0; border-bottom:1px solid #F1F5F9;">
+                    <strong>{item.get('label', item)}</strong>
+                    {remark}
+                </div>"""
+
+        pending_items = ''
+        if pending_list:
+            pending_items = '<div style="margin-top:8px; font-weight:800; font-size:11px; color:#F59E0B; text-transform:uppercase; letter-spacing:0.5px;">⚠ Pending</div>'
+            for item in pending_list:
+                remark = f'<div style="font-size:11px; color:#64748B; font-style:italic; margin-top:2px;">Note: {item["remarks"]}</div>' if item.get('remarks') else ''
+                pending_items += f"""
+                <div style="font-size:12px; color:#1E293B; padding:5px 0; border-bottom:1px solid #F1F5F9;">
+                    <strong>{item.get('label', item)}</strong>
+                    {remark}
+                </div>"""
+
+        skip_items = ''
+        if skip_list:
+            skip_items = '<div style="margin-top:8px; font-weight:800; font-size:11px; color:#94A3B8; text-transform:uppercase; letter-spacing:0.5px;">↩ Skipped</div>'
+            for item in skip_list:
+                remark = f'<div style="font-size:11px; color:#64748B; font-style:italic; margin-top:2px;">Reason: {item["remarks"]}</div>' if item.get('remarks') else ''
+                skip_items += f"""
+                <div style="font-size:12px; color:#334155; padding:5px 0; border-bottom:1px solid #F1F5F9;">
+                    <strong>{item.get('label', item)}</strong>
+                    {remark}
+                </div>"""
+
+        cards_html += f"""
+        <div style="background-color: #FFFFFF; border: 1px solid #E2E8F0; border-left: 5px solid {border_color}; border-radius: 8px; padding: 14px; margin-bottom: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+            <div style="border-bottom: 1px solid #F1F5F9; padding-bottom: 6px; margin-bottom: 8px;">
+                <div style="font-size: 15px; font-weight: 900; color: {score_color}; float: right; line-height: 1.2;">{score}% Done</div>
+                <strong style="font-size: 13px; color: #1E293B;">{s['name']}</strong>
+                <div style="font-size: 11px; color: #64748B; margin-top: 1px;">{s['email']} · {s.get('department') or 'Operations'}</div>
+                <div style="clear: both;"></div>
+            </div>
+            {done_items}
+            {pending_items}
+            {skip_items}
+            {'' if done_items or pending_items or skip_items else '<div style="font-size:11px; color:#94A3B8; font-style:italic; text-align:center; padding:6px 0;">No tasks assigned today.</div>'}
+        </div>"""
 
     avg_score = round(total_score / valid_count) if valid_count > 0 else 0
     avg_color = '#10B981' if avg_score >= 80 else ('#F59E0B' if avg_score >= 50 else '#EF4444')
@@ -524,6 +583,7 @@ def build_manager_digest_html(date_str, summaries):
         <!-- KPI Summary Cards Row -->
         <tr>
             <td style="padding: 20px 20px 10px 20px;">
+                {custom_html}
                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                         <td width="31%" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; padding: 12px; border-radius: 8px; text-align: center;">
@@ -544,24 +604,28 @@ def build_manager_digest_html(date_str, summaries):
                 </table>
             </td>
         </tr>
-        <!-- Content Table -->
+        <!-- Teammate Summary Matrix Table -->
         <tr>
-            <td style="padding: 10px 20px 20px 20px;">
-                <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
+            <td style="padding: 10px 20px;">
+                <h3 style="color: #1E293B; font-size: 12px; font-weight: 800; text-transform: uppercase; margin: 0 0 8px 0; letter-spacing: 0.5px;">📊 Teammate Summary Matrix</h3>
+                <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse; background:#FFFFFF; border-radius:8px; border:1px solid #E2E8F0; overflow:hidden;">
                     <thead>
                         <tr style="background-color: #F8FAFC; border-bottom: 2px solid #E2E8F0; color: #475569; font-weight: bold; text-transform: uppercase; font-size: 11px;">
-                            <th style="padding: 10px 8px; text-align: left; letter-spacing: 0.5px;">Teammate</th>
-                            <th style="padding: 10px 8px; text-align: center; letter-spacing: 0.5px;">Done</th>
-                            <th style="padding: 10px 8px; text-align: center; letter-spacing: 0.5px;">Pending</th>
-                            <th style="padding: 10px 8px; text-align: center; letter-spacing: 0.5px;">Skip</th>
-                            <th style="padding: 10px 8px; text-align: center; letter-spacing: 0.5px;">Total</th>
-                            <th style="padding: 10px 8px; text-align: right; letter-spacing: 0.5px;">Score</th>
+                            <th style="padding: 10px 12px; text-align: left; letter-spacing: 0.5px;">Teammate</th>
+                            <th style="padding: 10px 12px; text-align: right; letter-spacing: 0.5px;">Score</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {rows_html if summaries else '<tr><td colspan="6" style="text-align:center; padding:30px; color:#94A3B8; font-size: 13px;">No active teammates found today.</td></tr>'}
+                        {rows_html if summaries else '<tr><td colspan="2" style="text-align:center; padding:30px; color:#94A3B8; font-size: 13px;">No active teammates found today.</td></tr>'}
                     </tbody>
                 </table>
+            </td>
+        </tr>
+        <!-- Detailed Teammate-wise Task Cards -->
+        <tr>
+            <td style="padding: 10px 20px 20px 20px;">
+                <h3 style="color: #1E293B; font-size: 12px; font-weight: 800; text-transform: uppercase; margin: 10px 0 10px 0; letter-spacing: 0.5px;">📋 Detailed Teammate Breakdown</h3>
+                {cards_html if summaries else '<div style="text-align:center; padding:30px; color:#94A3B8; background:#fff; border-radius:8px; font-size: 13px;">No teammate tasks scheduled for today.</div>'}
             </td>
         </tr>
         <!-- Footer -->
@@ -578,53 +642,82 @@ def build_manager_digest_html(date_str, summaries):
 
 
 def build_leader_digest_html(date_str, teammates_tasks):
-    """HTML email for leaders showing detailed research team updates teammate-wise."""
+    """HTML email for leaders showing summary matrix at top and detailed teammate-wise research updates below."""
+    rows_html = ''
     cards_html = ''
+    total_score = 0
+    valid_count = 0
+    total_done_all = 0
+    total_pending_all = 0
+    custom_note = get_setting('emailLeaderDigestBodyTmpl', '').strip()
+    custom_html = f'<div style="background-color: #ECFDF5; border-left: 4px solid #059669; padding: 12px 16px; border-radius: 6px; margin-bottom: 16px; font-size: 13px; color: #065F46; line-height: 1.5;">{custom_note}</div>' if custom_note else ''
+    
     for t in teammates_tasks:
         score = t['score']
-        score_color = '#10B981' if score >= 80 else ('#F59E0B' if score >= 50 else '#EF4444')
-        border_color = '#10B981' if score >= 80 else ('#F59E0B' if score >= 50 else '#EF4444')
+        total_score += score
+        valid_count += 1
+
+        done_list = t['done'] if isinstance(t['done'], list) else []
+        pending_list = t['pending'] if isinstance(t['pending'], list) else []
+        skip_list = t['skip'] if isinstance(t['skip'], list) else []
+
+        done_cnt = len(done_list) if isinstance(t['done'], list) else t['done']
+        pending_cnt = len(pending_list) if isinstance(t['pending'], list) else t['pending']
+        skip_cnt = len(skip_list) if isinstance(t['skip'], list) else t['skip']
+        tot_cnt = t.get('total', done_cnt + pending_cnt + skip_cnt)
+
+        total_done_all += done_cnt
+        total_pending_all += pending_cnt
         
-        # Build tasks detail lists
+        score_color = '#10B981' if score >= 80 else ('#F59E0B' if score >= 50 else '#EF4444')
+        border_color = score_color
+
+        rows_html += f"""
+        <tr style="border-bottom: 1px solid #F1F5F9;">
+            <td style="padding: 10px 12px; font-weight: 600; font-size: 12px; color: #1E293B;">{t['name']}<br><span style="font-size: 10px; color: #64748B; font-weight: normal;">{t['email']}</span></td>
+            <td style="padding: 10px 12px; text-align: right; font-weight: 800; color: {score_color}; font-size: 12px;">{score}% Done</td>
+        </tr>"""
+
+        # Build detailed tasks cards
         done_items = ''
-        if t.get('done'):
-            done_items = '<div style="margin-top:10px; font-weight:800; font-size:11px; color:#10B981; text-transform:uppercase; letter-spacing:0.5px;">✓ Completed</div>'
-            for item in t['done']:
-                remark = f'<div style="font-size:11px; color:#64748B; font-style:italic; margin-top:2px;">Note: {item["remarks"]}</div>' if item['remarks'] else ''
+        if done_list:
+            done_items = '<div style="margin-top:8px; font-weight:800; font-size:11px; color:#10B981; text-transform:uppercase; letter-spacing:0.5px;">✓ Completed</div>'
+            for item in done_list:
+                remark = f'<div style="font-size:11px; color:#64748B; font-style:italic; margin-top:2px;">Note: {item["remarks"]}</div>' if item.get('remarks') else ''
                 done_items += f"""
-                <div style="font-size:12px; color:#1E293B; padding:6px 0; border-bottom:1px solid #F1F5F9;">
-                    <strong>{item['label']}</strong>
+                <div style="font-size:12px; color:#1E293B; padding:5px 0; border-bottom:1px solid #F1F5F9;">
+                    <strong>{item.get('label', item)}</strong>
                     {remark}
                 </div>"""
-                
+
         pending_items = ''
-        if t.get('pending'):
-            pending_items = '<div style="margin-top:10px; font-weight:800; font-size:11px; color:#F59E0B; text-transform:uppercase; letter-spacing:0.5px;">⚠ Pending</div>'
-            for item in t['pending']:
-                remark = f'<div style="font-size:11px; color:#64748B; font-style:italic; margin-top:2px;">Note: {item["remarks"]}</div>' if item['remarks'] else ''
+        if pending_list:
+            pending_items = '<div style="margin-top:8px; font-weight:800; font-size:11px; color:#F59E0B; text-transform:uppercase; letter-spacing:0.5px;">⚠ Pending</div>'
+            for item in pending_list:
+                remark = f'<div style="font-size:11px; color:#64748B; font-style:italic; margin-top:2px;">Note: {item["remarks"]}</div>' if item.get('remarks') else ''
                 pending_items += f"""
-                <div style="font-size:12px; color:#1E293B; padding:6px 0; border-bottom:1px solid #F1F5F9;">
-                    <strong>{item['label']}</strong>
+                <div style="font-size:12px; color:#1E293B; padding:5px 0; border-bottom:1px solid #F1F5F9;">
+                    <strong>{item.get('label', item)}</strong>
                     {remark}
                 </div>"""
 
         skip_items = ''
-        if t.get('skip'):
-            skip_items = '<div style="margin-top:10px; font-weight:800; font-size:11px; color:#94A3B8; text-transform:uppercase; letter-spacing:0.5px;">↩ Skipped</div>'
-            for item in t['skip']:
-                remark = f'<div style="font-size:11px; color:#64748B; font-style:italic; margin-top:2px;">Reason: {item["remarks"]}</div>' if item['remarks'] else ''
+        if skip_list:
+            skip_items = '<div style="margin-top:8px; font-weight:800; font-size:11px; color:#94A3B8; text-transform:uppercase; letter-spacing:0.5px;">↩ Skipped</div>'
+            for item in skip_list:
+                remark = f'<div style="font-size:11px; color:#64748B; font-style:italic; margin-top:2px;">Reason: {item["remarks"]}</div>' if item.get('remarks') else ''
                 skip_items += f"""
-                <div style="font-size:12px; color:#334155; padding:6px 0; border-bottom:1px solid #F1F5F9;">
-                    <strong>{item['label']}</strong>
+                <div style="font-size:12px; color:#334155; padding:5px 0; border-bottom:1px solid #F1F5F9;">
+                    <strong>{item.get('label', item)}</strong>
                     {remark}
                 </div>"""
 
         cards_html += f"""
-        <div style="background-color: #FFFFFF; border: 1px solid #E2E8F0; border-left: 5px solid {border_color}; border-radius: 8px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
-            <div style="border-bottom: 1px solid #F1F5F9; padding-bottom: 8px; margin-bottom: 10px;">
-                <div style="font-size: 16px; font-weight: 900; color: {score_color}; float: right; line-height: 1.2;">{score}% Done</div>
-                <strong style="font-size: 14px; color: #1E293B;">{t['name']}</strong>
-                <div style="font-size: 11px; color: #64748B; margin-top: 2px;">{t['email']} · {t['department'] or 'Research'}</div>
+        <div style="background-color: #FFFFFF; border: 1px solid #E2E8F0; border-left: 5px solid {border_color}; border-radius: 8px; padding: 14px; margin-bottom: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+            <div style="border-bottom: 1px solid #F1F5F9; padding-bottom: 6px; margin-bottom: 8px;">
+                <div style="font-size: 15px; font-weight: 900; color: {score_color}; float: right; line-height: 1.2;">{score}% Done</div>
+                <strong style="font-size: 13px; color: #1E293B;">{t['name']}</strong>
+                <div style="font-size: 11px; color: #64748B; margin-top: 1px;">{t['email']} · {t.get('department') or 'Research'}</div>
                 <div style="clear: both;"></div>
             </div>
             
@@ -632,8 +725,11 @@ def build_leader_digest_html(date_str, teammates_tasks):
             {pending_items}
             {skip_items}
             
-            {'' if done_items or pending_items or skip_items else '<div style="font-size:12px; color:#94A3B8; font-style:italic; text-align:center; padding:10px 0;">No tasks assigned today.</div>'}
+            {'' if done_items or pending_items or skip_items else '<div style="font-size:11px; color:#94A3B8; font-style:italic; text-align:center; padding:6px 0;">No tasks assigned today.</div>'}
         </div>"""
+
+    avg_score = round(total_score / valid_count) if valid_count > 0 else 0
+    avg_color = '#10B981' if avg_score >= 80 else ('#F59E0B' if avg_score >= 50 else '#EF4444')
 
     html = f"""<!DOCTYPE html>
 <html>
@@ -651,9 +747,51 @@ def build_leader_digest_html(date_str, teammates_tasks):
                 <p style="margin: 4px 0 0 0; font-size: 13px; opacity: 0.9;">Leader Board Summary · {date_str}</p>
             </td>
         </tr>
-        <!-- Content -->
+        <!-- Top KPI Summary Cards Row -->
         <tr>
-            <td style="padding: 20px;">
+            <td style="padding: 18px 18px 6px 18px;">
+                {custom_html}
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td width="31%" style="background-color: #FFFFFF; border: 1px solid #E2E8F0; padding: 10px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 10px; font-weight: 800; color: #64748B; text-transform: uppercase;">Team Average Score</div>
+                            <div style="font-size: 20px; font-weight: 900; color: {avg_color}; margin-top: 2px;">{avg_score}%</div>
+                        </td>
+                        <td width="3.5%"></td>
+                        <td width="31%" style="background-color: #ECFDF5; border: 1px solid #A7F3D0; padding: 10px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 10px; font-weight: 800; color: #047857; text-transform: uppercase;">Total Done</div>
+                            <div style="font-size: 20px; font-weight: 900; color: #059669; margin-top: 2px;">{total_done_all}</div>
+                        </td>
+                        <td width="3.5%"></td>
+                        <td width="31%" style="background-color: #FFFBEB; border: 1px solid #FDE68A; padding: 10px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 10px; font-weight: 800; color: #B45309; text-transform: uppercase;">Total Pending</div>
+                            <div style="font-size: 20px; font-weight: 900; color: #D97706; margin-top: 2px;">{total_pending_all}</div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- Teammates Summary Matrix Table -->
+        <tr>
+            <td style="padding: 10px 18px;">
+                <h3 style="color: #1E293B; font-size: 12px; font-weight: 800; text-transform: uppercase; margin: 0 0 8px 0; letter-spacing: 0.5px;">📊 Teammate Summary Matrix</h3>
+                <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse; background:#FFFFFF; border-radius:8px; border:1px solid #E2E8F0; overflow:hidden;">
+                    <thead>
+                        <tr style="background-color: #F1F5F9; border-bottom: 2px solid #E2E8F0; color: #475569; font-weight: bold; text-transform: uppercase; font-size: 10px;">
+                            <th style="padding: 8px 12px; text-align: left;">Teammate</th>
+                            <th style="padding: 8px 12px; text-align: right;">Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {rows_html if teammates_tasks else '<tr><td colspan="2" style="text-align:center; padding:20px; color:#94A3B8; font-size: 12px;">No active teammates found today.</td></tr>'}
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <!-- Detailed Teammate-wise Task Cards -->
+        <tr>
+            <td style="padding: 10px 18px 20px 18px;">
+                <h3 style="color: #1E293B; font-size: 12px; font-weight: 800; text-transform: uppercase; margin: 10px 0 10px 0; letter-spacing: 0.5px;">📋 Detailed Teammate Breakdown</h3>
                 {cards_html if teammates_tasks else '<div style="text-align:center; padding:30px; color:#94A3B8; background:#fff; border-radius:8px; font-size: 13px;">No research team tasks scheduled for today.</div>'}
             </td>
         </tr>

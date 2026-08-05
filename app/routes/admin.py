@@ -163,12 +163,30 @@ def get_settings():
         'emailDigestTime': '18:00',
         'emailTeammateReminderEnabled': 'NO',
         'emailTeammateReminderTime': '14:00',
+        'emailTeammateReminderSubject': '⏰ Daily MIS Task Reminder — {user_name} ({pending_count} Pending)',
+        'emailTeammateReminderBodyTmpl': '',
+        'emailTeammateReminderExcludedEmails': '',
         'emailTeammateFinalEnabled': 'NO',
         'emailTeammateFinalTime': '18:00',
+        'emailTeammateTargetRoles': 'Teammate',
+        'emailTeammateTargetEmails': '',
+        'emailTeammateFinalExcludedEmails': '',
+        'emailTeammateSubject': 'Daily MIS Task Summary: Final Update — {user_name} ({score}% Done)',
+        'emailTeammateFinalBodyTmpl': '',
         'emailManagerDigestEnabled': 'NO',
         'emailManagerDigestTime': '19:00',
+        'emailManagerTargetRoles': 'Manager,SuperAdmin',
+        'emailManagerTargetEmails': '',
+        'emailManagerDigestExcludedEmails': '',
+        'emailManagerSubject': 'MIS Daily Manager Digest — {date_str}',
+        'emailManagerDigestBodyTmpl': '',
         'emailLeaderDigestEnabled': 'NO',
         'emailLeaderDigestTime': '20:00',
+        'emailLeaderTargetRoles': 'Leader',
+        'emailLeaderTargetEmails': '',
+        'emailLeaderDigestExcludedEmails': '',
+        'emailLeaderSubject': 'MIS Research Team Daily Summary — {date_str}',
+        'emailLeaderDigestBodyTmpl': '',
         'smtpHost': '',
         'smtpPort': '587',
         'smtpUser': '',
@@ -905,6 +923,7 @@ def trigger_email_digest():
 
     data = request.get_json() or {}
     stage = data.get('stage', 'all')
+    target_email = data.get('target_email', '').strip() or None
 
     from datetime import date
     import threading
@@ -921,20 +940,192 @@ def trigger_email_digest():
             try:
                 today = date.today()
                 if stage == 'teammate-reminder':
-                    _send_teammate_reminders(app_obj, today, force=True)
+                    _send_teammate_reminders(app_obj, today, force=True, target_email=target_email)
                 elif stage == 'teammate-final':
-                    _send_teammate_finals(app_obj, today, force=True)
+                    _send_teammate_finals(app_obj, today, force=True, target_email=target_email)
                 elif stage == 'manager-digest':
-                    _send_manager_digests(app_obj, today, force=True)
+                    _send_manager_digests(app_obj, today, force=True, target_email=target_email)
                 elif stage == 'leader-digest':
-                    _send_leader_digests(app_obj, today, force=True)
+                    _send_leader_digests(app_obj, today, force=True, target_email=target_email)
                 else:
-                    _send_teammate_reminders(app_obj, today, force=True)
-                    _send_teammate_finals(app_obj, today, force=True)
-                    _send_manager_digests(app_obj, today, force=True)
-                    _send_leader_digests(app_obj, today, force=True)
+                    _send_teammate_reminders(app_obj, today, force=True, target_email=target_email)
+                    _send_teammate_finals(app_obj, today, force=True, target_email=target_email)
+                    _send_manager_digests(app_obj, today, force=True, target_email=target_email)
+                    _send_leader_digests(app_obj, today, force=True, target_email=target_email)
             except Exception as e:
                 app_obj.logger.exception(f"[email_trigger] Background trigger failed: {e}")
 
-    threading.Thread(target=_run_digest, daemon=True).start()
-    return jsonify({'success': True, 'message': f'Digest stage "{stage}" triggered. Emails are being dispatched in background.'})
+    thread = threading.Thread(target=_run_digest)
+    thread.daemon = True
+    thread.start()
+    return jsonify({'success': True, 'message': 'Digest dispatch triggered in background.'})
+
+
+@admin_bp.route('/email-preview', methods=['POST'])
+@jwt_required()
+def get_email_preview():
+    user = get_current_user()
+    if not user or not role_at_least(user.role, 'Manager'): return jsonify({'success': False}), 403
+
+    data = request.get_json() or {}
+    stage = data.get('stage', 'stage-1')
+    target_email = (data.get('user_email') or '').strip().lower()
+
+    from datetime import datetime, date
+    try:
+        from zoneinfo import ZoneInfo
+        IST = ZoneInfo('Asia/Kolkata')
+    except ImportError:
+        import pytz
+        IST = pytz.timezone('Asia/Kolkata')
+
+    from sqlalchemy import or_, and_
+    from app.models import User
+    from app.services.email_service import (
+        get_setting, build_reminder_email_html, build_daily_digest_html,
+        build_manager_digest_html, build_leader_digest_html
+    )
+    from app.services.scheduler import _get_user_daily_summary
+
+    today = datetime.now(IST).date()
+    date_str = today.strftime('%B %d, %Y')
+    from_addr = get_setting('smtpFrom', get_setting('smtpUser', 'mail.agalabs@gmail.com'))
+
+    # Determine matched target users strictly based on "Will be sent to:" rules for stage
+    matched_users = []
+    
+    if stage in ['stage-1', 'stage-2']:
+        roles_key = 'emailTeammateTargetRoles'
+        emails_key = 'emailTeammateTargetEmails'
+        excluded_key = 'emailTeammateReminderExcludedEmails' if stage == 'stage-1' else 'emailTeammateFinalExcludedEmails'
+        
+        raw_roles = data.get('target_roles') if 'target_roles' in data else get_setting(roles_key, 'Teammate')
+        raw_emails = data.get('target_emails') if 'target_emails' in data else get_setting(emails_key, '')
+        raw_excluded = data.get('excluded_emails') if 'excluded_emails' in data else get_setting(excluded_key, '')
+
+        target_roles = [r.strip() for r in (raw_roles or '').split(',') if r.strip() and r.strip() == 'Teammate']
+        target_emails = [e.strip().lower() for e in (raw_emails or '').split(',') if e.strip()]
+        excluded_emails = [e.strip().lower() for e in (raw_excluded or '').split(',') if e.strip()]
+        
+        conds = []
+        if target_roles: conds.append(and_(User.active == True, User.role.in_(target_roles)))
+        if target_emails: conds.append(User.email.in_(target_emails))
+        if conds:
+            users_db = User.query.filter(or_(*conds)).all()
+        else:
+            users_db = User.query.filter(User.active == True, User.role == 'Teammate').all()
+            
+        matched_users = [u for u in users_db if u.email.lower() not in excluded_emails]
+
+    elif stage == 'stage-3':
+        raw_roles = data.get('target_roles') if 'target_roles' in data else get_setting('emailManagerTargetRoles', 'Manager,SuperAdmin')
+        raw_emails = data.get('target_emails') if 'target_emails' in data else get_setting('emailManagerTargetEmails', '')
+        raw_excluded = data.get('excluded_emails') if 'excluded_emails' in data else get_setting('emailManagerDigestExcludedEmails', '')
+
+        target_roles = [r.strip() for r in (raw_roles or '').split(',') if r.strip()]
+        target_emails = [e.strip().lower() for e in (raw_emails or '').split(',') if e.strip()]
+        excluded_emails = [e.strip().lower() for e in (raw_excluded or '').split(',') if e.strip()]
+        
+        conds = []
+        if target_roles: conds.append(and_(User.active == True, User.role.in_(target_roles)))
+        if target_emails: conds.append(User.email.in_(target_emails))
+        if conds:
+            users_db = User.query.filter(or_(*conds)).all()
+        else:
+            users_db = User.query.filter(User.active == True, User.role.in_(['Manager', 'SuperAdmin'])).all()
+        
+        mgrs = list(set(u for u in users_db if u.email.lower() not in excluded_emails))
+        global_mgr = get_setting('managerEmail').strip().lower()
+        if global_mgr and global_mgr not in excluded_emails:
+            mgr_u = User.query.filter(User.email.ilike(global_mgr)).first()
+            if mgr_u and mgr_u not in mgrs: mgrs.append(mgr_u)
+        matched_users = mgrs
+
+    elif stage == 'stage-4':
+        raw_roles = data.get('target_roles') if 'target_roles' in data else get_setting('emailLeaderTargetRoles', 'Leader')
+        raw_emails = data.get('target_emails') if 'target_emails' in data else get_setting('emailLeaderTargetEmails', '')
+        raw_excluded = data.get('excluded_emails') if 'excluded_emails' in data else get_setting('emailLeaderDigestExcludedEmails', '')
+
+        target_roles = [r.strip() for r in (raw_roles or '').split(',') if r.strip()]
+        target_emails = [e.strip().lower() for e in (raw_emails or '').split(',') if e.strip()]
+        excluded_emails = [e.strip().lower() for e in (raw_excluded or '').split(',') if e.strip()]
+        
+        conds = []
+        if target_roles: conds.append(and_(User.active == True, User.role.in_(target_roles)))
+        if target_emails: conds.append(User.email.in_(target_emails))
+        if conds:
+            users_db = User.query.filter(or_(*conds)).all()
+        else:
+            users_db = User.query.filter(User.active == True, User.role == 'Leader').all()
+            
+        matched_users = [u for u in users_db if u.email.lower() not in excluded_emails]
+
+    recipients_info = [{'name': u.name, 'email': u.email, 'role': u.role} for u in matched_users]
+
+    if not matched_users:
+        return jsonify({
+            'success': True,
+            'subject': 'No Recipients Matched',
+            'from_addr': from_addr,
+            'to_addr': 'None',
+            'recipients': [],
+            'html_body': '<div style="padding:40px; text-align:center; font-family:sans-serif; color:#94a3b8;"><h3 style="margin-bottom:8px; color:#ef4444;">⚠️ No Target Recipients Matched</h3><p style="font-size:13px;">No active users are currently added to "Will be sent to:" for this stage.</p></div>'
+        })
+
+    active_user = None
+    if target_email:
+        active_user = next((u for u in matched_users if u.email.lower() == target_email), None)
+    if not active_user:
+        active_user = matched_users[0]
+
+    if stage == 'stage-1':
+        summary = _get_user_daily_summary(active_user, today)
+        html_body = build_reminder_email_html(active_user, date_str, summary)
+        subj_tmpl = get_setting('emailTeammateReminderSubject', "⏰ Daily MIS Task Reminder — {user_name} ({pending_count} Pending)")
+        subject = subj_tmpl.format(user_name=active_user.name, pending_count=len(summary['pending']), date_str=date_str)
+    
+    elif stage == 'stage-2':
+        summary = _get_user_daily_summary(active_user, today)
+        html_body = build_daily_digest_html(active_user, date_str, summary)
+        subj_tmpl = get_setting('emailTeammateSubject', "Daily MIS Task Summary: Final Update — {user_name} ({score}% Done)")
+        subject = subj_tmpl.format(user_name=active_user.name, score=summary['score'], date_str=date_str)
+
+    elif stage == 'stage-3':
+        teammates = User.query.filter(User.active == True, User.role == 'Teammate').all()
+        summaries = []
+        for u in teammates:
+            summary = _get_user_daily_summary(u, today)
+            if summary['is_holiday'] and summary['total'] == 0: continue
+            summaries.append({
+                'name': u.name, 'email': u.email, 'department': u.department,
+                'done': summary['done'], 'pending': summary['pending'],
+                'skip': summary['skip'], 'total': summary['total'], 'score': summary['score']
+            })
+        html_body = build_manager_digest_html(date_str, summaries)
+        subj_tmpl = get_setting('emailManagerSubject', "MIS Daily Manager Digest — {date_str}")
+        subject = subj_tmpl.format(date_str=date_str)
+
+    elif stage == 'stage-4':
+        teammates = User.query.filter(User.active == True, User.role == 'Teammate').all()
+        teammates_tasks = []
+        for u in teammates:
+            summary = _get_user_daily_summary(u, today)
+            if summary['is_holiday'] and summary['total'] == 0: continue
+            teammates_tasks.append({
+                'name': u.name, 'email': u.email, 'department': u.department,
+                'score': summary['score'], 'done': summary['done'],
+                'pending': summary['pending'], 'skip': summary['skip']
+            })
+        html_body = build_leader_digest_html(date_str, teammates_tasks)
+        subj_tmpl = get_setting('emailLeaderSubject', "MIS Research Team Daily Summary — {date_str}")
+        subject = subj_tmpl.format(date_str=date_str)
+
+    return jsonify({
+        'success': True,
+        'subject': subject,
+        'from_addr': from_addr,
+        'to_addr': active_user.email,
+        'active_user_name': active_user.name,
+        'recipients': recipients_info,
+        'html_body': html_body
+    })
