@@ -32,10 +32,15 @@ export const api = {
         try {
             const response = await fetch(`/api${endpoint}`, config);
 
-            // Handle non-JSON responses (e.g. CSV download)
+            // Handle non-JSON responses (e.g. 413 HTML page, CSV download)
             const ct = response.headers.get('content-type') || '';
             if (!ct.includes('application/json')) {
-                if (!response.ok) throw new Error('Request failed');
+                if (!response.ok) {
+                    if (response.status === 413) {
+                        throw new Error('File size exceeds server upload limit (413 Payload Too Large)');
+                    }
+                    throw new Error(`Request failed (${response.status} ${response.statusText || ''})`.trim());
+                }
                 return response;
             }
 
@@ -45,7 +50,10 @@ export const api = {
                 if (response.status === 401) {
                     window.dispatchEvent(new Event('auth:unauthorized'));
                 }
-                throw new Error(data.message || data.error || data.msg || 'Request failed');
+                if (response.status === 413) {
+                    throw new Error('File size exceeds server upload limit (413 Payload Too Large)');
+                }
+                throw new Error(data.message || data.error || data.msg || `Request failed (${response.status})`);
             }
 
             return data;
