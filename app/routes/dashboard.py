@@ -458,7 +458,7 @@ def get_team_detail(email):
                     'isLate': log.is_late,
                     'isUnfilled': False
                 })
-            else:
+            elif curr_date == date.today():
                 entries.append({
                     'logId': f"UNFILLED_{curr_date.isoformat()}_{r.name}",
                     'entryDate': curr_date.isoformat(),
@@ -468,6 +468,8 @@ def get_team_detail(email):
                     'status': 'Pending',
                     'remarks': 'Report scheduled but not submitted (unfilled)',
                     'timestamp': '',
+                    'isLate': False,
+                    'isUnfilled': True
                 })
 
         for t in all_tasks:
@@ -500,7 +502,7 @@ def get_team_detail(email):
                     'isLate': log.is_late,
                     'isUnfilled': False
                 })
-            else:
+            elif curr_date == date.today():
                 entries.append({
                     'logId': f"TASK_UNFILLED_{curr_date.isoformat()}_{t.name}",
                     'entryDate': curr_date.isoformat(),
@@ -510,7 +512,7 @@ def get_team_detail(email):
                     'status': 'Pending',
                     'remarks': 'Task scheduled but not submitted (unfilled)',
                     'timestamp': '',
-                    'isLate': curr_date < date.today(),
+                    'isLate': False,
                     'isUnfilled': True
                 })
 
@@ -567,7 +569,7 @@ def get_team_detail(email):
                     'isLate': log.is_late,
                     'isUnfilled': False
                 })
-            else:
+            elif curr_date == date.today():
                 entries.append({
                     'logId': f"DU_UNFILLED_{curr_date.isoformat()}_{c.commodity}_{c.factor}",
                     'entryDate': curr_date.isoformat(),
@@ -577,7 +579,7 @@ def get_team_detail(email):
                     'status': 'Pending',
                     'remarks': 'Factor task scheduled but not submitted (unfilled)',
                     'timestamp': '',
-                    'isLate': curr_date < date.today(),
+                    'isLate': False,
                     'isUnfilled': True
                 })
 
@@ -607,7 +609,7 @@ def get_team_detail(email):
                     'isLate': curr_date < date.today() and rl.status != 'Done',
                     'isUnfilled': False
                 })
-            else:
+            elif curr_date == date.today():
                 entries.append({
                     'logId': f"ROSTER_UNFILLED_{curr_date.isoformat()}_{rc.role}",
                     'entryDate': curr_date.isoformat(),
@@ -617,7 +619,7 @@ def get_team_detail(email):
                     'status': 'Pending',
                     'remarks': 'Shift assignment not updated (unfilled)',
                     'timestamp': '',
-                    'isLate': curr_date < date.today(),
+                    'isLate': False,
                     'isUnfilled': True
                 })
 

@@ -261,9 +261,6 @@ def get_team_updates():
                     matched = any(alias in primary_assignee for alias in user_name_to_emails[name_lower])
                 
                 if matched:
-                    # This report is scheduled for teammate u on curr_date
-                    team_stats[email_lower]['total'] += 1
-                    
                     # Check if they submitted a log for it (checking aliases too)
                     log = None
                     aliases = user_name_to_emails.get(name_lower, [email_lower])
@@ -274,6 +271,7 @@ def get_team_updates():
                     
                     if log:
                         visited_log_ids.add(log.log_id)
+                        team_stats[email_lower]['total'] += 1
                         if log.status == 'Done':
                             team_stats[email_lower]['done'] += 1
                         elif log.status == 'Pending':
@@ -282,8 +280,9 @@ def get_team_updates():
                             team_stats[email_lower]['skip'] += 1
                         if log.is_late:
                             team_stats[email_lower]['late'] += 1
-                    else:
-                        # Report is scheduled but not filled (unfilled) -> counts as Pending
+                    elif curr_date == date.today():
+                        # Report is scheduled for TODAY but not filled -> counts as Total and Pending for today
+                        team_stats[email_lower]['total'] += 1
                         team_stats[email_lower]['pending'] += 1
 
         curr_date += timedelta(days=1)

@@ -1068,6 +1068,9 @@ export default {
         if (this.statusFilter !== 'all') {
             if (this.statusFilter === 'late') {
                 filteredLogs = filteredLogs.filter(e => e.isLate);
+            } else if (this.statusFilter === 'pending') {
+                const todayStr = this.getTodayStr();
+                filteredLogs = filteredLogs.filter(e => (e.status || '').toLowerCase() === 'pending' && (e.entryDate || '') === todayStr);
             } else {
                 filteredLogs = filteredLogs.filter(e => (e.status || '').toLowerCase() === this.statusFilter);
             }
@@ -1197,13 +1200,15 @@ export default {
 
         card.style.display = 'flex';
 
-        // Filter factor tasks
+        // 1. Status Filter
         let filteredFactorTasks = [...this.teammateFactorTasks];
 
-        // 1. Status Filter
         if (this.factorTasksStatusFilter !== 'all') {
             if (this.factorTasksStatusFilter === 'late') {
                 filteredFactorTasks = filteredFactorTasks.filter(e => e.isLate);
+            } else if (this.factorTasksStatusFilter === 'pending') {
+                const todayStr = this.getTodayStr();
+                filteredFactorTasks = filteredFactorTasks.filter(e => (e.status || '').toLowerCase() === 'pending' && (e.entryDate || '') === todayStr);
             } else {
                 filteredFactorTasks = filteredFactorTasks.filter(e => (e.status || '').toLowerCase() === this.factorTasksStatusFilter);
             }
