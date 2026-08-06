@@ -17,7 +17,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     UPLOAD_FOLDER = os.path.join(BASE_DIR, 'uploads')
-    MAX_CONTENT_LENGTH = 50 * 1024 * 1024  # 50MB max upload
+    MAX_CONTENT_LENGTH = 100 * 1024 * 1024  # 100MB max upload
 
     # Default settings (can be overridden in DB)
     DEFAULT_WINDOW_START = '08:00'

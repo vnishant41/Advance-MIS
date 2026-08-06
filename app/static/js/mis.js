@@ -573,8 +573,8 @@ export default {
         }
 
         // PDF upload runs parsing + template validation.
-        // First call is slow (Ollama cold-load ~60s); warm calls ~20-25s.
-        const eta = file.size > 5 * 1024 * 1024 ? 60 : 35;
+        // Scaling ETA based on file size and estimated page count for large reports
+        const eta = Math.max(35, Math.min(120, Math.round(file.size / (250 * 1024))));
         App.startProgress('Checking PDF', {
             etaSeconds: eta,
             subtitle: `Verifying report name & date in ${file.name}...`,
@@ -1197,9 +1197,9 @@ export default {
         const empty = document.getElementById('fmt-empty-pages');
         if (empty) empty.style.display = 'none';
 
-        // Rough estimate: large multi-page PDFs take a few seconds to render.
+        // Estimate: large multi-page PDFs take time to parse and render.
         App.startProgress('Rendering PDF', {
-            etaSeconds: Math.max(4, Math.min(20, Math.round(file.size / (250 * 1024)))),
+            etaSeconds: Math.max(5, Math.min(60, Math.round(file.size / (150 * 1024)))),
             subtitle: `Loading ${file.name}...`,
         });
 
@@ -1259,6 +1259,9 @@ export default {
             // Now that the wrap is in the DOM, recompute the overlay top to match the label height precisely.
             overlay.style.top = label.offsetHeight + 'px';
 
+            // Update progress with page count
+            App.updateProgress(`Rendering page ${p} of ${this.numPages}...`);
+
             await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
 
             canvas.addEventListener('mousedown', (e) => this.startDrawing(e, p));
@@ -1280,8 +1283,8 @@ export default {
         const orig = btn.innerHTML;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Detecting...';
 
-        // Estimate ~0.6s per page + 2s overhead, clamped 4-30s
-        const eta = Math.max(4, Math.min(30, Math.round((this.numPages || 10) * 0.6 + 2)));
+        // Estimate ~0.6s per page + 2s overhead, clamped 5-60s for large PDFs
+        const eta = Math.max(5, Math.min(60, Math.round((this.numPages || 10) * 0.6 + 2)));
         App.startProgress('Auto-detecting elements', {
             etaSeconds: eta,
             subtitle: `Scanning ${this.numPages || '?'} pages for headings, tables, charts, images...`,
