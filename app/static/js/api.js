@@ -58,7 +58,9 @@ export const api = {
 
             return data;
         } catch (error) {
-            console.error(`API ${endpoint}:`, error);
+            if (!options.silent) {
+                console.error(`API ${endpoint}:`, error);
+            }
             throw error;
         }
     },

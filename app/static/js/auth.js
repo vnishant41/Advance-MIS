@@ -41,7 +41,7 @@ export const auth = {
         }
 
         try {
-            const data = await api.get('/auth/me');
+            const data = await api.request('/auth/me', { method: 'GET', silent: true });
             if (data.success) {
                 this.setupUser(data.user, data.modules);
                 this.showApp();

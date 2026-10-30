@@ -37,6 +37,22 @@ def create_app():
     # Initialize extensions
     db.init_app(app)
     jwt.init_app(app)
+
+    # JWT Error handlers to return standard RFC 401 Unauthorized instead of default 422
+    from flask import jsonify
+
+    @jwt.invalid_token_loader
+    def _handle_invalid_token(reason):
+        return jsonify({'success': False, 'message': f'Invalid session: {reason}'}), 401
+
+    @jwt.expired_token_loader
+    def _handle_expired_token(jwt_header, jwt_payload):
+        return jsonify({'success': False, 'message': 'Session expired. Please sign in again.'}), 401
+
+    @jwt.unauthorized_loader
+    def _handle_unauthorized(reason):
+        return jsonify({'success': False, 'message': f'Authentication required: {reason}'}), 401
+
     CORS(app)
     socketio.init_app(app, async_mode='eventlet')
 
