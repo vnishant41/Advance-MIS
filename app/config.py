@@ -12,8 +12,8 @@ class Config:
     JWT_TOKEN_LOCATION = ['headers', 'cookies']
     JWT_COOKIE_SECURE = True  # Set True in production with HTTPS
 
-    MYSQL_URI = os.environ.get('MYSQL_URI', 'mysql+pymysql://root:Nishant%40321@127.0.0.1:3306/advance_erp')
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', MYSQL_URI)
+    MYSQL_URI = os.environ.get('MYSQL_URI', '')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or MYSQL_URI or 'mysql+pymysql://localhost/advance_erp'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ENGINE_OPTIONS = {
         'pool_pre_ping': True,

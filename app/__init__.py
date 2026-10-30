@@ -156,6 +156,7 @@ def _run_lightweight_migrations():
                               ('attachment_original', "VARCHAR(255) DEFAULT ''"),
                               ('attachment_size', "INTEGER DEFAULT 0"),
                               ('attachment_mime', "VARCHAR(100) DEFAULT ''")],
+        'db_task_catalog':   [('commodity_config', "TEXT NULL")],
         'kanban_tasks':      [('position', "INTEGER DEFAULT 0")],
         'users':             [('is_roster_sub_admin', "TINYINT(1) DEFAULT 0"),
                               ('backup_1', "VARCHAR(255) DEFAULT ''"),

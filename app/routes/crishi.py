@@ -1292,13 +1292,13 @@ def _build_companion_report(report_id, cat, freq, date_str, sender=None):
             }
         },
         'is_gmail': True,
-        'source': 'Gmail (mail.agalabs@gmail.com)'
+        'source': 'Gmail Ingestion'
     }
 
 
 def get_all_scanned_reports():
     """Scans and builds a unified catalog of all market and research reports:
-    1. EmailReport table in ERP database (Live reports ingested from mail.agalabs@gmail.com)
+    1. EmailReport table in ERP database (Live reports ingested from Gmail inbox)
     2. MISReportUpload table in ERP database (280+ real commodity reports across all team members)
     3. pyexcel_market_report table/CSV (23 policy, NABCONS, NITI Aayog publications)
     4. ipga_reports table/CSV (official IPGA releases)
@@ -1308,7 +1308,7 @@ def get_all_scanned_reports():
     seen = set()
     idx = 1
 
-    # 0. Live Ingested Reports from Gmail (mail.agalabs@gmail.com)
+    # 0. Live Ingested Reports from Gmail
     try:
         from app.models import EmailReport
         gmail_reps = EmailReport.query.order_by(EmailReport.date_sent.desc(), EmailReport.id.desc()).all()
@@ -1362,7 +1362,7 @@ def get_all_scanned_reports():
                         {'name': 'Futures & Port Position', 'status': 'PASS'}
                     ],
                     'price_points': _get_benchmarks(cat),
-                    'anomalies': ['Forwarded market intelligence report ingested from mail.agalabs@gmail.com.']
+                    'anomalies': ['Forwarded market intelligence report ingested from Gmail inbox.']
                 }
 
             if 'report_overview' not in ai_data:
@@ -1387,15 +1387,15 @@ def get_all_scanned_reports():
                 'date': date_str,
                 'time_sent': gr.time_sent or '08:30 PM',
                 'subject': gr.subject or f"[{cat}] {r_name} - {date_str}",
-                'sender': gr.sender_email or 'Ram Gopal Yadav <reports@agalabs.com>',
+                'sender': gr.sender_email or 'Market Intelligence Desk',
                 'category': cat,
                 'status': gr.status or 'Analyzed',
                 'size': f_size,
                 'pdf_url': f"/api/crishi/reports/pdf?folder=gmail_reports&file={fn}&cat={cat}",
-                'email_body': gr.email_body_html or f'<p>Official market report for {r_name} received via mail.agalabs@gmail.com.</p>',
+                'email_body': gr.email_body_html or f'<p>Official market report for {r_name} received via Gmail inbox.</p>',
                 'ai_analysis': ai_data,
                 'is_gmail': True,
-                'source': 'Gmail (mail.agalabs@gmail.com)'
+                'source': 'Gmail Ingestion'
             })
             idx += 1
     except Exception as e:
@@ -1752,7 +1752,7 @@ def get_all_reports():
 @crishi_bp.route('/reports/sync-gmail', methods=['POST'])
 @jwt_required()
 def sync_gmail_reports_route():
-    """Triggers live ingestion of market reports from mail.agalabs@gmail.com inbox via IMAP SSL."""
+    """Triggers live ingestion of market reports from Gmail inbox via IMAP SSL."""
     try:
         from app.services.email_ingestion import ingest_gmail_reports
         result = ingest_gmail_reports(base_dir=BASE_DIR)
@@ -1776,11 +1776,12 @@ def get_gmail_status_route():
             'status': status
         })
     except Exception as e:
+        mailbox_name = os.getenv('GMAIL_USER') or os.getenv('SMTP_USER') or 'Gmail Inbox'
         return jsonify({
             'success': False,
             'status': {
                 'connected': False,
-                'mailbox': 'mail.agalabs@gmail.com',
+                'mailbox': mailbox_name,
                 'error': str(e)
             }
         })

@@ -181,9 +181,12 @@ def get_live_mysql_connection():
 
     host = os.getenv('STAGE_DB_HOST', '127.0.0.1')
     port = int(os.getenv('STAGE_DB_PORT', 3306))
-    user = os.getenv('STAGE_DB_USER', 'root')
-    password = os.getenv('STAGE_DB_PASS') or 'Nishant@321'
+    user = os.getenv('STAGE_DB_USER', '')
+    password = os.getenv('STAGE_DB_PASS', '')
     database = os.getenv('STAGE_DB_NAME', 'agalabsdev_stage')
+
+    if not user or not database:
+        return None
 
     try:
         conn = pymysql.connect(

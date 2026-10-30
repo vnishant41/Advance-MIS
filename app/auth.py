@@ -118,7 +118,8 @@ def login():
         return jsonify({'success': False, 'message': 'Email/username and password required'}), 400
 
     # Resolve user by email, name, or alias
-    if ident in ['mail.agalabs@gmail.com', 'mail.agalabs', 'gmail']:
+    admin_aliases = [a.lower() for a in [os.getenv('GMAIL_USER', ''), os.getenv('SMTP_USER', ''), 'admin'] if a]
+    if ident.lower() in admin_aliases:
         user = User.query.filter(User.role == 'SuperAdmin').first()
     else:
         user = User.query.filter_by(email=ident).first()
@@ -143,15 +144,12 @@ def login():
         except Exception:
             pass
 
-    # SuperAdmin / Manager master password fallback:
-    # Accept 'admin123', the .env password 'Qdi@cK@Swc8YR5T', or any configured SMTP/DB pass
+    # SuperAdmin / Manager master password fallback from active environment variables:
     env_passwords = [
-        'admin123',
         (os.getenv('GMAIL_ACCOUNT_PASSWORD') or '').strip(),
         (os.getenv('GMAIL_APP_PASSWORD') or '').strip(),
         (os.getenv('SMTP_PASSWORD') or '').strip(),
-        (os.getenv('STAGE_DB_PASS') or '').strip(),
-        'Qdi@cK@Swc8YR5T'
+        (os.getenv('STAGE_DB_PASS') or '').strip()
     ]
     env_passwords = [p for p in env_passwords if p]
 

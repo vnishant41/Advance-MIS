@@ -1,6 +1,6 @@
 """
 Automated Gmail Ingestion Service — Advanced MIS
-Connects securely to mail.agalabs@gmail.com via IMAP SSL,
+Connects securely to Gmail via IMAP SSL,
 fetches incoming market intelligence reports and forwarded email dossiers,
 extracts and saves real PDF attachments, parses email bodies,
 and registers records into the EmailReport database catalog.
@@ -39,15 +39,13 @@ def get_gmail_credentials():
     username = (
         os.getenv('GMAIL_USER') or 
         os.getenv('SMTP_USER') or 
-        (s_user.value if s_user and s_user.value else '') or 
-        'mail.agalabs@gmail.com'
+        (s_user.value if s_user and s_user.value else '')
     ).strip()
 
     password = (
         os.getenv('GMAIL_APP_PASSWORD') or 
         os.getenv('SMTP_PASSWORD') or 
-        (s_pass.value if s_pass and s_pass.value else '') or 
-        'xxij wedp xmag cllj'
+        (s_pass.value if s_pass and s_pass.value else '')
     ).strip()
 
     host = os.getenv('GMAIL_IMAP_SERVER', 'imap.gmail.com')
@@ -208,7 +206,7 @@ def generate_ai_analysis(report_name, commodity, report_date):
 
 def ingest_gmail_reports(base_dir=None):
     """
-    Connects to mail.agalabs@gmail.com with fast batch-header scanning:
+    Connects to Gmail inbox with fast batch-header scanning:
     - Fetches headers in a SINGLE batch command (~1 second total).
     - Processes newest emails first, skipping duplicate older dispatches for the same commodity & date.
     - Only downloads RFC822 attachments for genuinely NEW reports (skipping already cached files).

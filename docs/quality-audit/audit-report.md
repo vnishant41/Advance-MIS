@@ -342,7 +342,7 @@ Direct inspection of the live MySQL database confirmed complete data preservatio
 ### 7.3 Domain 3: Email Ingestion & Processing
 - **Purpose:** Automated email processing pipeline that connects to Gmail via IMAP SSL, filters incoming market reports, extracts PDF attachments, and stores metadata in the local database. Also provides outbound SMTP notification and automated HTML daily digests.
 - **Service Layer:**
-  - `app/services/email_ingestion.py` — Automated client connecting to `mail.agalabs@gmail.com:993` via IMAP SSL. Performs batch subject scanning, regex date/commodity extraction, and PDF file extraction to `uploads/gmail_reports/`.
+  - `app/services/email_ingestion.py` — Automated client connecting via IMAP SSL. Performs batch subject scanning, regex date/commodity extraction, and PDF file extraction to `uploads/gmail_reports/`.
   - `app/services/email_service.py` — SMTP dispatch engine via `smtp.gmail.com:465/587` generating HTML daily digests.
 - **API Routes:** `/api/admin/email-logs`, `/api/admin/email-test`, `/api/admin/email-trigger-digest`, `/api/admin/email-preview` (in `admin_bp`), and `/api/crishi/reports/sync-gmail` (in `crishi_bp`).
 - **Database Models:** `EmailReport`, `EmailLog`, `AppSetting`.
@@ -401,7 +401,7 @@ Direct inspection of the live MySQL database confirmed complete data preservatio
   - Primary MySQL: `advance_erp` (34 tables) on `127.0.0.1:3306` via PyMySQL.
   - Surveillance MySQL: `agalabsdev_stage` (140+ commodity tables) via PyMySQL with disk snapshot fallback.
 - **Mail Services:**
-  - IMAP SSL: `mail.agalabs@gmail.com:993` for automated report fetching.
+  - IMAP SSL: Port 993 for automated Gmail report fetching.
   - SMTP: `smtp.gmail.com:465` (SSL) / `587` (TLS) for operational alerts.
 - **Real-Time WebSockets:** Flask-SocketIO eventlet gateway with user email room multiplexing.
 - **Visualization & Document Engines:**

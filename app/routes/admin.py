@@ -466,11 +466,11 @@ def get_settings():
         'emailLeaderDigestExcludedEmails': '',
         'emailLeaderSubject': 'MIS Research Team Daily Summary — {date_str}',
         'emailLeaderDigestBodyTmpl': '',
-        'smtpHost': os.getenv('SMTP_HOST', 'smtp.gmail.com'),
-        'smtpPort': os.getenv('SMTP_PORT', '465'),
-        'smtpUser': os.getenv('SMTP_USER', 'mail.agalabs@gmail.com'),
-        'smtpPassword': os.getenv('SMTP_PASSWORD', 'xxij wedp xmag cllj'),
-        'smtpFrom': os.getenv('SMTP_FROM', 'mail.agalabs@gmail.com'),
+        'smtpHost': os.getenv('SMTP_HOST', ''),
+        'smtpPort': os.getenv('SMTP_PORT', '587'),
+        'smtpUser': os.getenv('SMTP_USER', ''),
+        'smtpPassword': os.getenv('SMTP_PASSWORD', ''),
+        'smtpFrom': os.getenv('SMTP_FROM', ''),
     }
     for k, v in defaults.items():
         if k not in settings or not settings[k]:
@@ -681,7 +681,7 @@ def modify_task_template(t_id):
 @jwt_required(optional=True)
 def get_roster():
     user = get_current_user()
-    if user and not role_at_least(user.role, 'Manager') and user.email != 'nishant@agalabs.com':
+    if user and not role_at_least(user.role, 'Manager'):
         return jsonify({'success': False}), 403
     return jsonify({'success': True, 'data': [r.to_dict() for r in RosterConfig.query.all()]})
 
@@ -689,7 +689,7 @@ def get_roster():
 @jwt_required(optional=True)
 def add_roster():
     user = get_current_user()
-    if user and not role_at_least(user.role, 'Manager') and user.email != 'nishant@agalabs.com':
+    if user and not role_at_least(user.role, 'Manager'):
         return jsonify({'success': False}), 403
     data = request.get_json() or {}
     r = RosterConfig(role=data.get('role'), employee=data.get('employee', ''), frequency=data.get('frequency', 'Daily'), schedule_day=data.get('scheduleDay', ''), remark=data.get('remark', ''))
@@ -701,7 +701,7 @@ def add_roster():
 @jwt_required(optional=True)
 def modify_roster(r_id):
     user = get_current_user()
-    if user and not role_at_least(user.role, 'Manager') and user.email != 'nishant@agalabs.com':
+    if user and not role_at_least(user.role, 'Manager'):
         return jsonify({'success': False}), 403
     r = db.session.get(RosterConfig, r_id)
     if not r: return jsonify({'success': False}), 404
@@ -1273,7 +1273,7 @@ def get_email_preview():
 
     today = datetime.now(IST).date()
     date_str = today.strftime('%B %d, %Y')
-    from_addr = get_setting('smtpFrom', get_setting('smtpUser', 'mail.agalabs@gmail.com'))
+    from_addr = get_setting('smtpFrom', get_setting('smtpUser', os.getenv('SMTP_FROM', os.getenv('SMTP_USER', ''))))
 
     # Determine matched target users strictly based on "Will be sent to:" rules for stage
     matched_users = []

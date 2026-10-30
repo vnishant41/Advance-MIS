@@ -14,7 +14,7 @@ env/
 
 # Environment Variables & Secrets
 .env
-.env.*
+*.env.
 !.env.example
 
 # Databases, Local Backups, and SQL dumps

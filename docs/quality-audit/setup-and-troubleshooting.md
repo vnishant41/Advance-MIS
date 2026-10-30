@@ -99,12 +99,12 @@ MAX_CONTENT_LENGTH=16777216
 # Email / SMTP Configuration (Outbound Alerts & Daily Digests)
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=465
-SMTP_USER=mail.agalabs@gmail.com
+SMTP_USER=your_email@gmail.com
 SMTP_PASSWORD=your_gmail_app_password
-SMTP_FROM=mail.agalabs@gmail.com
+SMTP_FROM=your_email@gmail.com
 
 # Email / IMAP Configuration (Inbound Report Fetching)
-GMAIL_USER=mail.agalabs@gmail.com
+GMAIL_USER=your_email@gmail.com
 GMAIL_APP_PASSWORD=your_gmail_app_password
 IMAP_SERVER=imap.gmail.com
 IMAP_PORT=993
@@ -261,6 +261,6 @@ Verify that all 9 users, 27 reports, and 158 catalog entries remain intact:
 - **Symptom:** `/api/crishi/reports/sync-gmail` returns `Authentication failed` or `IMAP error`.
 - **Cause:** Missing or expired Google Account App Password.
 - **Solution:**
-  1. Enable 2-Step Verification on the Google account `mail.agalabs@gmail.com`.
+  1. Enable 2-Step Verification on the configured Google account.
   2. Generate a 16-character App Password under Google Account Security > App Passwords.
   3. Set `GMAIL_APP_PASSWORD` and `SMTP_PASSWORD` in `.env`.
