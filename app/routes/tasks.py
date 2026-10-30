@@ -1038,7 +1038,7 @@ def clear_override(ov_id):
     user = get_current_user()
     if not user or not role_at_least(user.role, 'Manager'):
         return jsonify({'success': False, 'message': 'Manager access required'}), 403
-    ov = TaskOverride.query.get(ov_id)
+    ov = db.session.get(TaskOverride, ov_id)
     if not ov:
         return jsonify({'success': False, 'message': 'Not found'}), 404
     before = ov.to_dict()

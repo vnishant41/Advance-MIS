@@ -1,0 +1,89 @@
+﻿id,District,State,Zone,ZoneName,CreatedBy,CreatedDate
+88,Dhenkanal,Odisha,10,Mid Central Table Land,Research,2026-08-21 00:00:00
+59,Sundargarh,Odisha,1,North Western Plateau,Research,2026-08-21 00:00:00
+60,Mayurbhanj,Odisha,2,North Central Plateau,Research,2026-08-21 00:00:00
+61,Keonjhar,Odisha,2,North Central Plateau,Research,2026-08-21 00:00:00
+62,Balasore,Odisha,3,North Eastern Coastal Plain,Research,2026-08-21 00:00:00
+63,Bhadrak,Odisha,3,North Eastern Coastal Plain,Research,2026-08-21 00:00:00
+64,Jajpur,Odisha,3,North Eastern Coastal Plain,Research,2026-08-21 00:00:00
+65,Cuttack,Odisha,4,East and South Eastern Coastal Plain,Research,2026-08-21 00:00:00
+66,Jagatsinghpur,Odisha,4,East and South Eastern Coastal Plain,Research,2026-08-21 00:00:00
+67,Kendrapara,Odisha,4,East and South Eastern Coastal Plain,Research,2026-08-21 00:00:00
+68,Khordha,Odisha,4,East and South Eastern Coastal Plain,Research,2026-08-21 00:00:00
+69,Puri,Odisha,4,East and South Eastern Coastal Plain,Research,2026-08-21 00:00:00
+70,Nayagarh,Odisha,4,East and South Eastern Coastal Plain,Research,2026-08-21 00:00:00
+71,Keonjhar,Odisha,5,North Eastern Ghat,Research,2026-08-21 00:00:00
+72,Mayurbhanj,Odisha,5,North Eastern Ghat,Research,2026-08-21 00:00:00
+73,Kandhamal,Odisha,6,Eastern Ghat High Land,Research,2026-08-21 00:00:00
+75,Koraput,Odisha,6,Eastern Ghat High Land,Research,2026-08-21 00:00:00
+74,Rayagada,Odisha,6,Eastern Ghat High Land,Research,2026-08-21 00:00:00
+87,Angul,Odisha,10,Mid Central Table Land,Research,2026-08-21 00:00:00
+86,Deogarh,Odisha,10,Mid Central Table Land,Research,2026-08-21 00:00:00
+85,Jharsuguda,Odisha,10,Mid Central Table Land,Research,2026-08-21 00:00:00
+84,Sambalpur,Odisha,10,Mid Central Table Land,Research,2026-08-21 00:00:00
+83,Nuapada,Odisha,9,Western Central Table Land,Research,2026-08-21 00:00:00
+82,Kalahandi,Odisha,9,Western Central Table Land,Research,2026-08-21 00:00:00
+81,Boudh,Odisha,8,Western Undulating Zone,Research,2026-08-21 00:00:00
+80,Bargarh,Odisha,8,Western Undulating Zone,Research,2026-08-21 00:00:00
+79,Subarnapur,Odisha,8,Western Undulating Zone,Research,2026-08-21 00:00:00
+78,Bolangir,Odisha,8,Western Undulating Zone,Research,2026-08-21 00:00:00
+77,Ganjam,Odisha,7,South Eastern Ghat,Research,2026-08-21 00:00:00
+76,Gajapati,Odisha,7,South Eastern Ghat,Research,2026-08-21 00:00:00
+46,Jamtara,Jharkhand,I,Central and North-Eastern Plateau Zone,Research,2025-11-19 00:00:00
+47,Sahibganj,Jharkhand,I,Central and North-Eastern Plateau Zone,Research,2025-11-19 00:00:00
+48,Giridih,Jharkhand,I,Central and North-Eastern Plateau Zone,Research,2025-11-19 00:00:00
+49,Ranchi (part),Jharkhand,I,Central and North-Eastern Plateau Zone,Research,2025-11-19 00:00:00
+50,Garhwa,Jharkhand,II,Western Plateau Zone,Research,2025-11-19 00:00:00
+51,Palamu,Jharkhand,II,Western Plateau Zone,Research,2025-11-19 00:00:00
+52,Latehar,Jharkhand,II,Western Plateau Zone,Research,2025-11-19 00:00:00
+53,Gumla,Jharkhand,II,Western Plateau Zone,Research,2025-11-19 00:00:00
+54,Lohardaga,Jharkhand,II,Western Plateau Zone,Research,2025-11-19 00:00:00
+55,Simdega,Jharkhand,II,Western Plateau Zone,Research,2025-11-19 00:00:00
+56,East Singhbhum,Jharkhand,III,South-Eastern Plateau Zone,Research,2025-11-19 00:00:00
+57,West Singhbhum,Jharkhand,III,South-Eastern Plateau Zone,Research,2025-11-19 00:00:00
+58,Seraikela-Kharsawan,Jharkhand,III,South-Eastern Plateau Zone,Research,2025-11-19 00:00:00
+45,Godda,Jharkhand,I,Central and North-Eastern Plateau Zone,Research,2025-11-19 00:00:00
+12, Begusarai,Bihar,I,North West Alluvial Plain Zone,Research,2025-11-19 00:00:00
+22,Bhagalpur,Bihar,IIIA,South Bihar Alluvial Zone,Research,2025-11-19 00:00:00
+21,Araria,Bihar,II,North East Alluvial Zone,Research,2025-11-19 00:00:00
+20,Kishanganj,Bihar,II,North East Alluvial Zone,Research,2025-11-19 00:00:00
+19,Madhepura,Bihar,II,North East Alluvial Zone,Research,2025-11-19 00:00:00
+18,Khagaria,Bihar,II,North East Alluvial Zone,Research,2025-11-19 00:00:00
+17,Supaul,Bihar,II,North East Alluvial Zone,Research,2025-11-19 00:00:00
+16,Katihar,Bihar,II,North East Alluvial Zone,Research,2025-11-19 00:00:00
+15,Purnia,Bihar,II,North East Alluvial Zone,Research,2025-11-19 00:00:00
+14,Saharsa,Bihar,II,North East Alluvial Zone,Research,2025-11-19 00:00:00
+13, Vaishali,Bihar,I,North West Alluvial Plain Zone,Research,2025-11-19 00:00:00
+23, Sheikhpura,Bihar,IIIA,South Bihar Alluvial Zone,Research,2025-11-19 00:00:00
+11, Sheohar,Bihar,I,North West Alluvial Plain Zone,Research,2025-11-19 00:00:00
+10, Samastipur,Bihar,I,North West Alluvial Plain Zone,Research,2025-11-19 00:00:00
+9, Darbhanga,Bihar,I,North West Alluvial Plain Zone,Research,2025-11-19 00:00:00
+8, Madhubani,Bihar,I,North West Alluvial Plain Zone,Research,2025-11-19 00:00:00
+7, Muzaffarpur,Bihar,I,North West Alluvial Plain Zone,Research,2025-11-19 00:00:00
+6, Sitamarhi,Bihar,I,North West Alluvial Plain Zone,Research,2025-11-19 00:00:00
+5, Saran,Bihar,I,North West Alluvial Plain Zone,Research,2025-11-19 00:00:00
+4, Siwan,Bihar,I,North West Alluvial Plain Zone,Research,2025-11-19 00:00:00
+3, Gopalganj,Bihar,I,North West Alluvial Plain Zone,Research,2025-11-19 00:00:00
+2, East Champaran,Bihar,I,North West Alluvial Plain Zone,Research,2025-11-19 00:00:00
+34,Nalanda,Bihar,IIIB,South Bihar Alluvial Zone,Research,2025-11-19 00:00:00
+44,Pakur,Jharkhand,I,Central and North-Eastern Plateau Zone,Research,2025-11-19 00:00:00
+43,Dumka,Jharkhand,I,Central and North-Eastern Plateau Zone,Research,2025-11-19 00:00:00
+42,Deoghar,Jharkhand,I,Central and North-Eastern Plateau Zone,Research,2025-11-19 00:00:00
+41,Dhanbad,Jharkhand,I,Central and North-Eastern Plateau Zone,Research,2025-11-19 00:00:00
+40,Bokaro,Jharkhand,I,Central and North-Eastern Plateau Zone,Research,2025-11-19 00:00:00
+39,Hazaribagh,Jharkhand,I,Central and North-Eastern Plateau Zone,Research,2025-11-19 00:00:00
+38,Koderma,Jharkhand,I,Central and North-Eastern Plateau Zone,Research,2025-11-19 00:00:00
+37,Chatra,Jharkhand,I,Central and North-Eastern Plateau Zone,Research,2025-11-19 00:00:00
+36,Patna,Bihar,IIIB,South Bihar Alluvial Zone,Research,2025-11-19 00:00:00
+35,Nawada,Bihar,IIIB,South Bihar Alluvial Zone,Research,2025-11-19 00:00:00
+1,West Champaran,Bihar,I,North West Alluvial Plain Zone,Research,2025-11-19 00:00:00
+33,Gaya,Bihar,IIIB,South Bihar Alluvial Zone,Research,2025-11-19 00:00:00
+32,Jahanabad,Bihar,IIIB,South Bihar Alluvial Zone,Research,2025-11-19 00:00:00
+31,Buxar,Bihar,IIIB,South Bihar Alluvial Zone,Research,2025-11-19 00:00:00
+30,Aurangabad,Bihar,IIIB,South Bihar Alluvial Zone,Research,2025-11-19 00:00:00
+29,Rohtas,Bihar,IIIB,South Bihar Alluvial Zone,Research,2025-11-19 00:00:00
+28,Bhabua,Bihar,IIIB,South Bihar Alluvial Zone,Research,2025-11-19 00:00:00
+27, Banka,Bihar,IIIA,South Bihar Alluvial Zone,Research,2025-11-19 00:00:00
+26, Munger,Bihar,IIIA,South Bihar Alluvial Zone,Research,2025-11-19 00:00:00
+25, Jamui,Bihar,IIIA,South Bihar Alluvial Zone,Research,2025-11-19 00:00:00
+24, Lakhisarai,Bihar,IIIA,South Bihar Alluvial Zone,Research,2025-11-19 00:00:00

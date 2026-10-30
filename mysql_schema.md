@@ -406,6 +406,31 @@ CREATE TABLE IF NOT EXISTS `user_schedule_overrides` (
   `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+-- 22. Table Update History (Person-Basis Immutable Audit Log)
+-- --------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `table_update_history` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `catalog_id` INT DEFAULT NULL,
+  `person_name` VARCHAR(255) NOT NULL,
+  `table_name` VARCHAR(255) NOT NULL,
+  `final_name` VARCHAR(255) NOT NULL,
+  `commodity` VARCHAR(255) NOT NULL,
+  `db_update_timestamp` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `report_date` DATE NOT NULL,
+  `status` VARCHAR(50) NOT NULL DEFAULT 'Verified',
+  `row_count` INT NOT NULL DEFAULT '0',
+  `remarks` TEXT,
+  `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `ix_table_update_history_catalog_id` (`catalog_id`),
+  KEY `ix_table_update_history_person_name` (`person_name`),
+  KEY `ix_table_update_history_table_name` (`table_name`),
+  KEY `ix_table_update_history_commodity` (`commodity`),
+  KEY `ix_table_update_history_report_date` (`report_date`),
+  CONSTRAINT `fk_tuh_catalog` FOREIGN KEY (`catalog_id`) REFERENCES `db_task_catalog` (`id`) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 ```
 
 ---

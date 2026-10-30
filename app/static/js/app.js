@@ -14,7 +14,10 @@ const App = {
 
         // SPA routing
         window.addEventListener('hashchange', this.handleRoute.bind(this));
-        document.getElementById('sidebar-toggle').addEventListener('click', this.toggleSidebar);
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        if (sidebarToggle) {
+            sidebarToggle.addEventListener('click', this.toggleSidebar);
+        }
 
         // Auth events
         window.addEventListener('auth:success', this.onAuthSuccess.bind(this));
@@ -25,6 +28,18 @@ const App = {
         document.getElementById('modal-overlay').addEventListener('click', (e) => {
             if (e.target.id === 'modal-overlay') this.closeModal();
         });
+
+        // Submodal setup
+        const submodalClose = document.getElementById('submodal-close');
+        if (submodalClose) {
+            submodalClose.addEventListener('click', () => this.hideSubModal());
+        }
+        const submodalOverlay = document.getElementById('submodal-overlay');
+        if (submodalOverlay) {
+            submodalOverlay.addEventListener('click', (e) => {
+                if (e.target.id === 'submodal-overlay') this.hideSubModal();
+            });
+        }
 
         // Notification panel toggle
         document.getElementById('notif-btn').addEventListener('click', () => {
@@ -43,65 +58,49 @@ const App = {
         });
 
         // Profile button
-        document.getElementById('btn-profile').addEventListener('click', () => {
-            this.showPasswordModal();
-        });
+        const profileBtn = document.getElementById('btn-profile');
+        if (profileBtn) {
+            profileBtn.addEventListener('click', () => {
+                this.showProfileModal();
+            });
+        }
     },
 
     async handleRoute() {
-        const hash = window.location.hash || '#dashboard';
-        // Hash may include query params: "#mis?tab=pdf&report=Maize Daily".
-        // Split off the page key and stash params on window for the module to read.
+        const hash = window.location.hash || '#crishi';
         const raw = hash.replace('#', '');
         const qIdx = raw.indexOf('?');
         let page = qIdx === -1 ? raw : raw.slice(0, qIdx);
         const qs = qIdx === -1 ? '' : raw.slice(qIdx + 1);
         window.routeParams = Object.fromEntries(new URLSearchParams(qs));
 
-        // Hard block: the Data Update page is retired — never render it,
-        // regardless of role or module toggle.
-        if (page === 'data-update') {
-            window.location.hash = '#dashboard';
+        // Legacy / retired routes redirection
+        if (page === 'dashboard' || page === 'analytics' || page === 'tasks' || page === 'data-update' || page === 'kanban' || page === 'chat' || page === 'roster') {
+            window.location.hash = '#crishi';
             return;
         }
-
-        // Module gate: if the requested page is explicitly disabled (and the user
-        // isn't a SuperAdmin), redirect to the dashboard instead of rendering it.
-        // Exception: Teammates may always reach the MIS page directly — only the
-        // sidebar entry is hidden for them, not access.
-        const modules = window.enabledModules || {};
-        const role = window.currentUser?.role;
-        const isSuperAdmin = role === 'SuperAdmin';
-        const teammateMisAllowed = page === 'mis' && role === 'Teammate';
-        if (page !== 'dashboard' && page !== 'admin' && modules[page] === false && !isSuperAdmin && !teammateMisAllowed) {
-            this.showToast(`The "${page}" module is disabled by your administrator`, 'warning');
-            window.location.hash = '#dashboard';
+        if (page === 'mis' || page === 'reports') {
+            window.location.hash = '#report';
             return;
+        }
+        if (page === 'crishi-database') {
+            page = 'crishi';
         }
 
         let moduleKey = page;
-        if (page === 'dashboard' || page === 'analytics') {
-            moduleKey = 'analytics';
-        }
 
         // Update nav highlight
         document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-        const activeNavKey = (page === 'analytics') ? 'dashboard' : page;
-        const activeNav = document.querySelector(`.nav-item[data-page="${activeNavKey}"]`) || document.querySelector(`.nav-item[data-page="${page}"]`);
+        const activeNav = document.querySelector(`.nav-item[data-page="${page}"]`);
         if (activeNav) activeNav.classList.add('active');
 
         // Update top bar
         const titleMap = {
-            'dashboard': 'Dashboard',
-            'analytics': 'Dashboard',
-            'tasks': 'Tasks & Roster',
-            'mis': 'MIS Reports',
-            'kanban': 'Kanban Board',
-            'chat': 'Team Chat',
-            'roster': 'Roster Management',
+            'crishi': 'Crishi Database',
+            'report': 'Market Reports',
             'admin': 'Admin Panel'
         };
-        document.getElementById('page-title').textContent = titleMap[page] || 'Dashboard';
+        document.getElementById('page-title').textContent = titleMap[page] || 'Crishi Database';
         document.getElementById('page-date').textContent = new Date().toLocaleDateString('en-US', {
             weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
         });
@@ -109,10 +108,8 @@ const App = {
         this.showLoading();
 
         try {
-            if (!this.modules[moduleKey]) {
-                const mod = await import(`./${moduleKey}.js`);
-                this.modules[moduleKey] = mod.default;
-            }
+            const mod = await import(`./${moduleKey}.js?v=${Date.now()}`);
+            this.modules[moduleKey] = mod.default;
 
             const container = document.getElementById('page-container');
             container.innerHTML = await this.modules[moduleKey].render();
@@ -167,6 +164,28 @@ const App = {
     },
 
     showModal(title, bodyHtml, footerHtml = '', sizeClass = '') {
+        let overlay = document.getElementById('modal-overlay');
+        if (!overlay || !document.getElementById('modal-title')) {
+            if (overlay) overlay.remove();
+            overlay = document.createElement('div');
+            overlay.id = 'modal-overlay';
+            overlay.className = 'modal-overlay hidden';
+            overlay.innerHTML = `
+                <div class="modal-card glass-card" id="modal-card">
+                    <div class="modal-header">
+                        <h3 id="modal-title">Modal</h3>
+                        <button class="btn-icon modal-close" id="modal-close"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="modal-body" id="modal-body"></div>
+                    <div class="modal-footer" id="modal-footer"></div>
+                </div>
+            `;
+            document.body.appendChild(overlay);
+            overlay.querySelector('#modal-close').addEventListener('click', () => this.closeModal());
+            overlay.addEventListener('click', (e) => {
+                if (e.target.id === 'modal-overlay') this.closeModal();
+            });
+        }
         document.getElementById('modal-title').textContent = title;
         document.getElementById('modal-body').innerHTML = bodyHtml;
         document.getElementById('modal-footer').innerHTML = footerHtml;
@@ -177,12 +196,62 @@ const App = {
             card.classList.add(sizeClass);
         }
         
-        document.getElementById('modal-overlay').classList.remove('hidden');
+        overlay.classList.remove('hidden');
     },
 
     closeModal() {
-        document.getElementById('modal-overlay').classList.add('hidden');
-        document.getElementById('modal-card').className = 'modal-card glass-card';
+        const overlay = document.getElementById('modal-overlay');
+        if (overlay) overlay.classList.add('hidden');
+        const card = document.getElementById('modal-card');
+        if (card) card.className = 'modal-card glass-card';
+    },
+
+    showSubModal(title, bodyHtml, footerHtml = '', sizeClass = '') {
+        let overlay = document.getElementById('submodal-overlay');
+        if (!overlay || !document.getElementById('submodal-title')) {
+            if (overlay) overlay.remove();
+            overlay = document.createElement('div');
+            overlay.id = 'submodal-overlay';
+            overlay.className = 'submodal-overlay hidden';
+            overlay.style.cssText = 'position: fixed; inset: 0; background: rgba(0,0,0,0.65); backdrop-filter: blur(6px); z-index: 600; display: flex; align-items: center; justify-content: center;';
+            overlay.innerHTML = `
+                <div class="modal-card glass-card" id="submodal-card" style="box-shadow: 0 25px 70px rgba(0,0,0,0.6);">
+                    <div class="modal-header">
+                        <h3 id="submodal-title">Submodal</h3>
+                        <button class="btn-icon modal-close" id="submodal-close"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="modal-body" id="submodal-body"></div>
+                    <div class="modal-footer" id="submodal-footer"></div>
+                </div>
+            `;
+            document.body.appendChild(overlay);
+            overlay.querySelector('#submodal-close').addEventListener('click', () => this.hideSubModal());
+            overlay.addEventListener('click', (e) => {
+                if (e.target.id === 'submodal-overlay') this.hideSubModal();
+            });
+        }
+        document.getElementById('submodal-title').textContent = title;
+        document.getElementById('submodal-body').innerHTML = bodyHtml;
+        document.getElementById('submodal-footer').innerHTML = footerHtml;
+
+        const card = document.getElementById('submodal-card');
+        card.className = 'modal-card glass-card';
+        if (sizeClass) {
+            card.classList.add(sizeClass);
+        }
+
+        overlay.classList.remove('hidden');
+    },
+
+    hideSubModal() {
+        const overlay = document.getElementById('submodal-overlay');
+        if (overlay) overlay.classList.add('hidden');
+        const card = document.getElementById('submodal-card');
+        if (card) card.className = 'modal-card glass-card';
+    },
+
+    closeSubModal() {
+        this.hideSubModal();
     },
 
     // ---- Loading progress overlay -----------------------------------------
@@ -291,48 +360,122 @@ const App = {
         this._progressState = null;
     },
 
-    showPasswordModal() {
+    showProfileModal() {
+        const user = auth.user || window.currentUser || { name: 'Vaibhav', role: 'SuperAdmin', email: 'vaibhav@crishi.com' };
+        const initial = user.name ? user.name.charAt(0).toUpperCase() : 'V';
+        const roleName = user.role || 'SuperAdmin';
+        const email = user.email || (user.name ? `${user.name.toLowerCase()}@crishi.com` : 'vaibhav@crishi.com');
+
         const bodyHtml = `
-            <form id="change-pwd-form">
-                <div class="form-row">
-                    <label>Current Password</label>
-                    <input type="password" id="pwd-old" class="form-control" required style="width:100%;">
+            <div class="profile-modal-container">
+                <!-- User Profile Header Card -->
+                <div class="profile-card-header">
+                    <div class="profile-avatar-large">${initial}</div>
+                    <div class="profile-header-details">
+                        <div class="profile-header-name">${user.name}</div>
+                        <div class="profile-header-badges">
+                            <span class="profile-role-badge"><i class="fas fa-shield-alt"></i> ${roleName}</span>
+                            <span class="profile-status-badge"><i class="fas fa-circle"></i> Active Session</span>
+                        </div>
+                        <div class="profile-header-email"><i class="fas fa-envelope"></i> ${email}</div>
+                    </div>
                 </div>
-                <div class="form-row">
-                    <label>New Password</label>
-                    <input type="password" id="pwd-new" class="form-control" required minlength="4" style="width:100%;">
+
+                <!-- Divider -->
+                <div class="profile-section-divider"></div>
+
+                <!-- Password Change Section -->
+                <div class="profile-section">
+                    <div class="profile-section-title">
+                        <i class="fas fa-key"></i>
+                        <span>Change Password</span>
+                    </div>
+                    <p class="profile-section-desc">Keep your account secure with a strong password.</p>
+                    
+                    <form id="change-pwd-form" class="profile-pwd-form" onsubmit="return false;">
+                        <div class="form-group-custom">
+                            <label for="pwd-old">Current Password</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="pwd-old" class="form-control" placeholder="Enter current password" required autocomplete="current-password">
+                            </div>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="pwd-new">New Password</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-shield-alt"></i>
+                                <input type="password" id="pwd-new" class="form-control" placeholder="Minimum 4 characters" required minlength="4" autocomplete="new-password">
+                            </div>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="pwd-confirm">Confirm New Password</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-check-double"></i>
+                                <input type="password" id="pwd-confirm" class="form-control" placeholder="Re-enter new password" required minlength="4" autocomplete="new-password">
+                            </div>
+                        </div>
+                        <div style="display:flex; justify-content: flex-end; margin-top: 12px;">
+                            <button type="button" class="btn btn-primary" id="btn-save-pwd">
+                                <i class="fas fa-save"></i> <span>Update Password</span>
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-row">
-                    <label>Confirm New Password</label>
-                    <input type="password" id="pwd-confirm" class="form-control" required minlength="4" style="width:100%;">
-                </div>
-            </form>
+            </div>
         `;
         const footerHtml = `
-            <button class="btn btn-outline" onclick="App.closeModal()">Cancel</button>
-            <button class="btn btn-primary" id="btn-save-pwd">Save</button>
+            <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+                <button type="button" class="btn btn-danger-outline" id="btn-profile-logout" title="Sign out of MIS">
+                    <i class="fas fa-sign-out-alt"></i> <span>Sign Out</span>
+                </button>
+                <button class="btn btn-outline" onclick="App.closeModal()">Close</button>
+            </div>
         `;
-        this.showModal('Change Password', bodyHtml, footerHtml);
+        this.showModal('Profile & Security', bodyHtml, footerHtml);
 
         setTimeout(() => {
-            document.getElementById('btn-save-pwd').addEventListener('click', async () => {
-                const oldPwd = document.getElementById('pwd-old').value;
-                const newPwd = document.getElementById('pwd-new').value;
-                const confirm = document.getElementById('pwd-confirm').value;
+            const saveBtn = document.getElementById('btn-save-pwd');
+            if (saveBtn) {
+                saveBtn.addEventListener('click', async () => {
+                    const oldPwd = document.getElementById('pwd-old').value;
+                    const newPwd = document.getElementById('pwd-new').value;
+                    const confirm = document.getElementById('pwd-confirm').value;
 
-                if (newPwd !== confirm) {
-                    this.showToast('Passwords do not match', 'error');
-                    return;
-                }
-                try {
-                    await api.post('/auth/change-password', { oldPassword: oldPwd, newPassword: newPwd });
-                    this.showToast('Password changed successfully', 'success');
+                    if (!oldPwd || !newPwd) {
+                        this.showToast('Please fill in both current and new password', 'warning');
+                        return;
+                    }
+                    if (newPwd !== confirm) {
+                        this.showToast('Passwords do not match', 'error');
+                        return;
+                    }
+                    try {
+                        saveBtn.disabled = true;
+                        saveBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Updating...';
+                        await api.post('/auth/change-password', { oldPassword: oldPwd, newPassword: newPwd });
+                        this.showToast('Password changed successfully', 'success');
+                        this.closeModal();
+                    } catch (err) {
+                        this.showToast(err.message || 'Failed to change password', 'error');
+                    } finally {
+                        saveBtn.disabled = false;
+                        saveBtn.innerHTML = '<i class="fas fa-save"></i> <span>Update Password</span>';
+                    }
+                });
+            }
+
+            const logoutBtn = document.getElementById('btn-profile-logout');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', () => {
                     this.closeModal();
-                } catch (err) {
-                    this.showToast(err.message || 'Failed to change password', 'error');
-                }
-            });
+                    auth.logout();
+                });
+            }
         }, 50);
+    },
+
+    showPasswordModal() {
+        this.showProfileModal();
     },
 
     async loadNotifications() {

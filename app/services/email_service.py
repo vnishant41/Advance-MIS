@@ -1,15 +1,31 @@
 """
 Email Service — Handles rendering and sending daily HTML digests via SMTP.
 """
+import os
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from app.models import AppSetting, User
 from flask import current_app
 
+ENV_KEY_MAP = {
+    'smtpHost': 'SMTP_HOST',
+    'smtpPort': 'SMTP_PORT',
+    'smtpUser': 'SMTP_USER',
+    'smtpPassword': 'SMTP_PASSWORD',
+    'smtpFrom': 'SMTP_FROM',
+}
+
 def get_setting(key, default=''):
     s = AppSetting.query.filter_by(key=key).first()
-    return s.value if s else default
+    if s and s.value and s.value.strip():
+        return s.value.strip()
+    env_var = ENV_KEY_MAP.get(key)
+    if env_var:
+        env_val = os.getenv(env_var)
+        if env_val and env_val.strip():
+            return env_val.strip()
+    return default
 
 def send_email(to_emails, subject, html_body, force=False):
     """Send an HTML email using SMTP settings from database with strict recipient double-check."""

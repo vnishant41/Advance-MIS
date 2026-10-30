@@ -1,0 +1,7 @@
+﻿RecordIndex,Date,SourceCommodityName,SourceLocationName,Unit,Variety,MarketRate,Value,CommodityName,Source,CreatedDate,CreatedBy,StateName
+207,2026-08-29,Maize DDGS,Bihar,INR per Tonne,Maize,23500.00,23500.00,DDGS,RK SINGHAL,2026-09-01 00:00:00,Research,Bihar
+208,2026-08-29,Maize DDGS,West Bengal,INR per Tonne,Maize,24500.00,24500.00,DDGS,RK SINGHAL,2026-09-01 00:00:00,Research,West Bengal
+209,2026-08-29,Rice DDGS,Haryana,INR per Tonne,Rice,30000.00,30000.00,DDGS,RK SINGHAL,2026-09-01 00:00:00,Research,Haryana
+204,2026-08-24,Maize DDGS,Bihar,INR per Tonne,Maize,26000.00,26000.00,DDGS,RK SINGHAL,2026-09-01 00:00:00,Research,Bihar
+205,2026-08-24,Maize DDGS,West Bengal,INR per Tonne,Maize,25500.00,25500.00,DDGS,RK SINGHAL,2026-09-01 00:00:00,Research,West Bengal
+206,2026-08-24,Rice DDGS,Haryana,INR per Tonne,Rice,30000.00,30000.00,DDGS,RK SINGHAL,2026-09-01 00:00:00,Research,Haryana

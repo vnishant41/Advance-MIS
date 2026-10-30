@@ -263,127 +263,13 @@ def get_pending():
     })
 
 
-@dashboard_bp.route('/team', methods=['GET'])
-@jwt_required()
-def get_team():
-    user = get_current_user()
-    if not user or not role_at_least(user.role, 'Teammate'):
-        return jsonify({'success': False, 'message': 'Teammate+ required'}), 403
-
-    today = date.today()
-
-    if user.role == 'SuperAdmin':
-        scoped_users = User.query.filter_by(active=True).all()
-    else:
-        scoped_users = User.query.filter_by(department=user.department, active=True).all()
-
-    # Only include Teammates in the KPI tracking (exclude Managers, Leaders like Garima)
-    scoped_users = [u for u in scoped_users if u.role == 'Teammate']
-
-    emp_stats = {}
-    for u in scoped_users:
-        emp_stats[u.email] = {
-            'email': u.email,
-            'name': u.name,
-            'role': u.role,
-            'dept': u.department,
-            'done': 0, 'pending': 0, 'skip': 0, 'late': 0, 'total': 0,
-            'lastActive': '',
-            # Per entry-type breakdown
-            'breakdown': {
-                'Task': {'done': 0, 'pending': 0, 'skip': 0},
-                'MISReport': {'done': 0, 'pending': 0, 'skip': 0},
-                'DataUpdate': {'done': 0, 'pending': 0, 'skip': 0},
-                'ReportGroup': {'done': 0, 'pending': 0, 'skip': 0},
-            },
-            'tasks': [],  # individual task entries for today
-            'score': 0,   # completion percentage
-        }
-
-    today_str = today.isoformat()
-    rows = MasterLog.query.filter(
-        MasterLog.row_status != 'Amended',
-        MasterLog.on_behalf_of_email.in_([u.email for u in scoped_users]),
-        MasterLog.entry_date >= today - timedelta(days=7)
-    ).all()
-
-    for r in rows:
-        em = r.on_behalf_of_email
-        if em not in emp_stats:
-            continue
-        ds = r.entry_date.isoformat() if hasattr(r.entry_date, 'isoformat') else str(r.entry_date or '')
-        if ds == today_str:
-            emp_stats[em]['total'] += 1
-            etype = r.entry_type or 'Task'
-            if r.status == 'Done':
-                emp_stats[em]['done'] += 1
-                if etype in emp_stats[em]['breakdown']:
-                    emp_stats[em]['breakdown'][etype]['done'] += 1
-            elif r.status == 'Pending':
-                emp_stats[em]['pending'] += 1
-                if etype in emp_stats[em]['breakdown']:
-                    emp_stats[em]['breakdown'][etype]['pending'] += 1
-            elif r.status == 'Skip':
-                emp_stats[em]['skip'] += 1
-                if etype in emp_stats[em]['breakdown']:
-                    emp_stats[em]['breakdown'][etype]['skip'] += 1
-            if r.is_late:
-                emp_stats[em]['late'] += 1
-            # Individual task entry
-            emp_stats[em]['tasks'].append({
-                'logId': r.log_id,
-                'topic': r.topic,
-                'subTopic': r.sub_topic or '',
-                'entryType': etype,
-                'status': r.status,
-                'remarks': r.remarks or '',
-                'timestamp': r.timestamp_submitted.isoformat() if hasattr(r.timestamp_submitted, 'isoformat') else str(r.timestamp_submitted or ''),
-            })
-        if not emp_stats[em]['lastActive'] or ds > emp_stats[em]['lastActive']:
-            emp_stats[em]['lastActive'] = ds
-
-    # Compute score (percentage done of total)
-    for em, st in emp_stats.items():
-        if st['total'] > 0:
-            st['score'] = round((st['done'] / st['total']) * 100)
-        else:
-            st['score'] = 0
-
-    return jsonify({
-        'success': True,
-        'today': today.isoformat(),
-        'team': list(emp_stats.values()),
-    })
-
-
-@dashboard_bp.route('/team/<email>/detail', methods=['GET'])
-@jwt_required()
-def get_team_detail(email):
-    """Detailed task sheet for a specific teammate. Teammate+ only.
-    Query params: ?from=YYYY-MM-DD&to=YYYY-MM-DD (default: today)
+def _build_teammate_detail(target_user, from_date, to_date):
+    """Computes all scheduled items (MIS Reports, TaskTemplates, Commodities/DU, and Roster duties)
+    for a teammate over the date range [from_date, to_date], correlating with MasterLog and RosterLog.
     """
-    user = get_current_user()
-    if not user or not role_at_least(user.role, 'Teammate'):
-        return jsonify({'success': False, 'message': 'Teammate+ required'}), 403
-
-    from flask import request as req
-    from_date = date.today()
-    to_date = date.today()
-    try:
-        if req.args.get('from'):
-            from_date = date.fromisoformat(req.args['from'])
-        if req.args.get('to'):
-            to_date = date.fromisoformat(req.args['to'])
-    except ValueError:
-        pass
-
-    target_user = User.query.filter_by(email=email.lower()).first()
-    if not target_user:
-        return jsonify({'success': False, 'message': 'User not found'}), 404
-
-    # Match all user emails associated with target user name or email
+    email = target_user.email.lower()
     same_name_users = User.query.filter(db.func.lower(User.name) == target_user.name.lower()).all()
-    user_emails = list(set([u.email.lower() for u in same_name_users] + [email.lower()]))
+    user_emails = list(set([u.email.lower() for u in same_name_users] + [email]))
 
     primary_rows = MasterLog.query.filter(
         MasterLog.row_status != 'Amended',
@@ -392,7 +278,6 @@ def get_team_detail(email):
         MasterLog.entry_date <= to_date,
     ).all()
 
-    # Fetch MasterLog rows where they acted as backup
     backup_rows = MasterLog.query.filter(
         MasterLog.row_status != 'Amended',
         MasterLog.submitted_by_email.in_(user_emails),
@@ -428,8 +313,8 @@ def get_team_detail(email):
 
     entries = []
     visited_log_ids = set()
+    last_active = ''
 
-    # Loop dates in range
     curr_date = from_date
     while curr_date <= to_date:
         override_index = _load_override_index(curr_date)
@@ -446,6 +331,9 @@ def get_team_detail(email):
             log = primary_logs_map.get((curr_date, r.name, ''))
             if log:
                 visited_log_ids.add(log.log_id)
+                ts_str = log.timestamp_submitted.isoformat() if hasattr(log.timestamp_submitted, 'isoformat') else str(log.timestamp_submitted or '')
+                if ts_str and ts_str > last_active:
+                    last_active = ts_str
                 entries.append({
                     'logId': log.log_id,
                     'entryDate': log.entry_date.isoformat() if hasattr(log.entry_date, 'isoformat') else str(log.entry_date or ''),
@@ -454,7 +342,7 @@ def get_team_detail(email):
                     'entryType': log.entry_type or 'MISReport',
                     'status': log.status,
                     'remarks': log.remarks or '',
-                    'timestamp': log.timestamp_submitted.isoformat() if hasattr(log.timestamp_submitted, 'isoformat') else str(log.timestamp_submitted or ''),
+                    'timestamp': ts_str,
                     'isLate': log.is_late,
                     'isUnfilled': False
                 })
@@ -475,9 +363,9 @@ def get_team_detail(email):
         for t in all_tasks:
             assignee = (t.assignee or '').strip().lower()
             if not assignee or assignee in ('all', 'yes', 'no'):
-                assignee_email = email.lower()
+                assignee_email = email
             else:
-                assignee_email = users_map.get(assignee, email.lower())
+                assignee_email = users_map.get(assignee, email)
 
             if assignee_email not in user_emails:
                 continue
@@ -490,6 +378,9 @@ def get_team_detail(email):
             log = primary_logs_map.get((curr_date, t.name, ''))
             if log:
                 visited_log_ids.add(log.log_id)
+                ts_str = log.timestamp_submitted.isoformat() if log.timestamp_submitted else ''
+                if ts_str and ts_str > last_active:
+                    last_active = ts_str
                 entries.append({
                     'logId': log.log_id,
                     'entryDate': log.entry_date.isoformat(),
@@ -498,7 +389,7 @@ def get_team_detail(email):
                     'entryType': log.entry_type or 'Task',
                     'status': log.status,
                     'remarks': log.remarks or '',
-                    'timestamp': log.timestamp_submitted.isoformat() if log.timestamp_submitted else '',
+                    'timestamp': ts_str,
                     'isLate': log.is_late,
                     'isUnfilled': False
                 })
@@ -557,6 +448,9 @@ def get_team_detail(email):
 
             if log:
                 visited_log_ids.add(log.log_id)
+                ts_str = log.timestamp_submitted.isoformat() if log.timestamp_submitted else ''
+                if ts_str and ts_str > last_active:
+                    last_active = ts_str
                 entries.append({
                     'logId': log.log_id,
                     'entryDate': log.entry_date.isoformat(),
@@ -565,7 +459,7 @@ def get_team_detail(email):
                     'entryType': log.entry_type or 'DataUpdate',
                     'status': log.status,
                     'remarks': log.remarks or '',
-                    'timestamp': log.timestamp_submitted.isoformat() if log.timestamp_submitted else '',
+                    'timestamp': ts_str,
                     'isLate': log.is_late,
                     'isUnfilled': False
                 })
@@ -586,17 +480,18 @@ def get_team_detail(email):
         # ── Roster entries for this date ──────────────────────────────────────
         roster_log_index = roster_logs_by_date.get(curr_date, {})
         for rc in all_rosters:
-            # Check if this roster config belongs to target user (email or name match)
             emp = (rc.employee or '').lower().strip()
             if emp not in user_emails and emp != target_user.name.lower():
                 continue
-            # Check if it should fire today
             if not should_fire_with_override('RosterConfig', rc.role, '',
                                               rc.frequency, rc.schedule_day or '',
                                               curr_date, override_index):
                 continue
             rl = roster_log_index.get(rc.role)
             if rl:
+                ts_str = rl.updated_at.isoformat() if hasattr(rl.updated_at, 'isoformat') else str(rl.updated_at or '')
+                if ts_str and ts_str > last_active:
+                    last_active = ts_str
                 entries.append({
                     'logId': f"ROSTER_{curr_date.isoformat()}_{rc.role}",
                     'entryDate': curr_date.isoformat(),
@@ -605,7 +500,7 @@ def get_team_detail(email):
                     'entryType': 'Roster',
                     'status': rl.status,
                     'remarks': rc.remark or '',
-                    'timestamp': rl.updated_at.isoformat() if hasattr(rl.updated_at, 'isoformat') else str(rl.updated_at or ''),
+                    'timestamp': ts_str,
                     'isLate': curr_date < date.today() and rl.status != 'Done',
                     'isUnfilled': False
                 })
@@ -625,9 +520,11 @@ def get_team_detail(email):
 
         curr_date += timedelta(days=1)
 
-    # Append any ad-hoc submissions
     for l in primary_rows:
         if l.log_id not in visited_log_ids:
+            ts_str = l.timestamp_submitted.isoformat() if hasattr(l.timestamp_submitted, 'isoformat') else str(l.timestamp_submitted or '')
+            if ts_str and ts_str > last_active:
+                last_active = ts_str
             entries.append({
                 'logId': l.log_id,
                 'entryDate': l.entry_date.isoformat() if hasattr(l.entry_date, 'isoformat') else str(l.entry_date or ''),
@@ -636,15 +533,13 @@ def get_team_detail(email):
                 'entryType': l.entry_type or 'MISReport',
                 'status': l.status,
                 'remarks': l.remarks or '',
-                'timestamp': l.timestamp_submitted.isoformat() if hasattr(l.timestamp_submitted, 'isoformat') else str(l.timestamp_submitted or ''),
+                'timestamp': ts_str,
                 'isLate': l.is_late,
                 'isUnfilled': False
             })
 
-    # Sort entries by entryDate desc, then timestamp desc
     entries.sort(key=lambda x: (x['entryDate'], x['timestamp'] or ''), reverse=True)
 
-    # Process backup rows
     backup_entries = []
     for l in backup_rows:
         backup_entries.append({
@@ -663,18 +558,128 @@ def get_team_detail(email):
     backup_entries.sort(key=lambda x: (x['entryDate'], x['timestamp'] or ''), reverse=True)
 
     done_count = sum(1 for e in entries if e['status'] == 'Done')
+    skip_count = sum(1 for e in entries if e['status'] == 'Skip')
+    pending_count = sum(1 for e in entries if e['status'] not in ('Done', 'Skip'))
     total_count = len(entries)
+    score = round((done_count / total_count) * 100) if total_count > 0 else 0
+
+    breakdown = {
+        'Task': {'done': 0, 'pending': 0, 'skip': 0},
+        'MISReport': {'done': 0, 'pending': 0, 'skip': 0},
+        'DataUpdate': {'done': 0, 'pending': 0, 'skip': 0},
+        'Roster': {'done': 0, 'pending': 0, 'skip': 0},
+        'ReportGroup': {'done': 0, 'pending': 0, 'skip': 0},
+    }
+    for e in entries:
+        et = e.get('entryType') or 'Task'
+        if et not in breakdown:
+            breakdown[et] = {'done': 0, 'pending': 0, 'skip': 0}
+        st = e.get('status')
+        if st == 'Done':
+            breakdown[et]['done'] += 1
+        elif st == 'Skip':
+            breakdown[et]['skip'] += 1
+        else:
+            breakdown[et]['pending'] += 1
+
+    return {
+        'entries': entries,
+        'backupEntries': backup_entries,
+        'totalCount': total_count,
+        'doneCount': done_count,
+        'skipCount': skip_count,
+        'pendingCount': pending_count,
+        'score': score,
+        'breakdown': breakdown,
+        'lastActive': last_active
+    }
+
+
+@dashboard_bp.route('/team', methods=['GET'])
+@jwt_required()
+def get_team():
+    user = get_current_user()
+    if not user or not role_at_least(user.role, 'Teammate'):
+        return jsonify({'success': False, 'message': 'Teammate+ required'}), 403
+
+    today = date.today()
+
+    if user.role == 'SuperAdmin':
+        scoped_users = User.query.filter_by(active=True).all()
+    else:
+        scoped_users = User.query.filter_by(department=user.department, active=True).all()
+
+    # Track all active teammates and members with duties
+    scoped_users = [u for u in scoped_users if u.role in ('Teammate', 'SuperAdmin', 'Manager')]
+
+    team_stats = []
+    for u in scoped_users:
+        detail = _build_teammate_detail(u, today, today)
+        if detail['totalCount'] == 0 and u.role != 'Teammate':
+            continue
+
+        team_stats.append({
+            'email': u.email,
+            'name': u.name,
+            'role': u.role,
+            'dept': u.department,
+            'done': detail['doneCount'],
+            'pending': detail['pendingCount'],
+            'skip': detail['skipCount'],
+            'total': detail['totalCount'],
+            'score': detail['score'],
+            'breakdown': detail['breakdown'],
+            'tasks': detail['entries'],
+            'lastActive': detail['lastActive'],
+        })
+
+    return jsonify({
+        'success': True,
+        'today': today.isoformat(),
+        'team': team_stats,
+    })
+
+
+@dashboard_bp.route('/team/<email>/detail', methods=['GET'])
+@jwt_required()
+def get_team_detail(email):
+    """Detailed task sheet for a specific teammate. Teammate+ only.
+    Query params: ?from=YYYY-MM-DD&to=YYYY-MM-DD (default: today)
+    """
+    user = get_current_user()
+    if not user or not role_at_least(user.role, 'Teammate'):
+        return jsonify({'success': False, 'message': 'Teammate+ required'}), 403
+
+    from flask import request as req
+    from_date = date.today()
+    to_date = date.today()
+    try:
+        if req.args.get('from'):
+            from_date = date.fromisoformat(req.args['from'])
+        if req.args.get('to'):
+            to_date = date.fromisoformat(req.args['to'])
+    except ValueError:
+        pass
+
+    target_user = User.query.filter_by(email=email.lower()).first()
+    if not target_user:
+        return jsonify({'success': False, 'message': 'User not found'}), 404
+
+    detail = _build_teammate_detail(target_user, from_date, to_date)
 
     return jsonify({
         'success': True,
         'user': target_user.to_dict(),
         'fromDate': from_date.isoformat(),
         'toDate': to_date.isoformat(),
-        'entries': entries,
-        'backupEntries': backup_entries,
-        'totalCount': total_count,
-        'doneCount': done_count,
-        'score': round((done_count / total_count) * 100) if total_count > 0 else 0,
+        'entries': detail['entries'],
+        'backupEntries': detail['backupEntries'],
+        'totalCount': detail['totalCount'],
+        'doneCount': detail['doneCount'],
+        'skipCount': detail['skipCount'],
+        'pendingCount': detail['pendingCount'],
+        'score': detail['score'],
+        'breakdown': detail['breakdown']
     })
 
 

@@ -1,0 +1,5 @@
+﻿RecordIndex,CommodityName,Date,OperationalStock,StrategicReserve,Total,Source,CreatedBy,CreatedDate
+21,Wheat,2025-10-01,17.52,3.0,20.52,FCI,Research,2026-02-16
+33,Rice,2025-10-01,8.3,2.0,10.3,FCI,Research,2026-02-16
+18,Wheat,2025-07-01,24.58,3.0,27.58,FCI,Research,2026-02-16
+30,Rice,2025-07-01,11.5,2.0,13.5,FCI,Research,2026-02-16

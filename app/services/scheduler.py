@@ -103,7 +103,13 @@ def start_scheduler(app, socketio):
                                 app.logger.info("[scheduler] Triggering leader digests...")
                                 _send_leader_digests(app, today)
             except Exception as e:
-                app.logger.exception("[scheduler] tick failed: %s", e)
+                try:
+                    from app import db
+                    db.session.rollback()
+                    db.session.remove()
+                except Exception:
+                    pass
+                app.logger.warning("[scheduler] tick failed: %s", e)
 
         # Every 5 minutes is a sweet spot: frequent enough that deadline-window
         # alerts (±30 min) catch their target, infrequent enough not to thrash

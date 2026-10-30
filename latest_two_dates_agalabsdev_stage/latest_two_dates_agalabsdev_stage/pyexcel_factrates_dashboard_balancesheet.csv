@@ -1,0 +1,128 @@
+﻿RecordIndex,MarketYear,SourceCommodityCode,CommodityName,Country,AttributeName,Value,Unit,Source,CreatedBy,CreatedDate,MarketYearDate,Season
+2645778,2026,Maize,Maize,India,Area,14410.0,1000 HA,PSD,Research,2026-06-16,2026-06-01,
+2645779,2026,Maize,Maize,India,Beginning Stock,7547.0,1000 MT,PSD,Research,2026-06-16,2026-06-01,
+2645780,2026,Maize,Maize,India,Production,52000.0,1000 MT,PSD,Research,2026-06-16,2026-06-01,
+2645781,2026,Maize,Maize,India,Import,100.0,1000 MT,PSD,Research,2026-06-16,2026-06-01,
+2645782,2026,Maize,Maize,India,Total Supply,59647.0,1000 MT,PSD,Research,2026-06-16,2026-06-01,
+2645783,2026,Maize,Maize,India,Export,1500.0,1000 MT,PSD,Research,2026-06-16,2026-06-01,
+2645784,2026,Maize,Maize,India,Feed Dom. Consumption,30000.0,1000 MT,PSD,Research,2026-06-16,2026-06-01,
+2645785,2026,Maize,Maize,India,FSI Consumption,22000.0,1000 MT,PSD,Research,2026-06-16,2026-06-01,
+2645786,2026,Maize,Maize,India,Total Domestic Consumption,52000.0,1000 MT,PSD,Research,2026-06-16,2026-06-01,
+2645787,2026,Maize,Maize,India,Ending Stocks,6147.0,1000 MT,PSD,Research,2026-06-16,2026-06-01,
+2645788,2026,Maize,Maize,India,Yield,4.0,MT/HA,PSD,Research,2026-06-16,2026-06-01,
+2645789,2026,Maize,Maize,India,Stock to Use Ratio,12.0,Percent,PSD,Research,2026-06-16,2026-06-01,
+2645790,2026,410000,Wheat,India,Area,32804.0,000 Ha,USDA,Research,2026-06-11,2026-06-01,Rabi
+2645791,2026,410000,Wheat,India,Beginning Stock,11800.0,000 MT,USDA,Research,2026-06-11,2026-06-01,Rabi
+2645792,2026,410000,Wheat,India,Total Domestic Consumption,107636.0,000 MT,USDA,Research,2026-06-11,2026-06-01,Rabi
+2645793,2026,410000,Wheat,India,Ending Stocks,22000.0,000 MT,USDA,Research,2026-06-11,2026-06-01,Rabi
+2645794,2026,410000,Wheat,India,Export,237.0,000 MT,USDA,Research,2026-06-11,2026-06-01,Rabi
+2645795,2026,410000,Wheat,India,Feed Dom. Consumption,6000.0,000 MT,USDA,Research,2026-06-11,2026-06-01,Rabi
+2645796,2026,410000,Wheat,India,FSI Consumption,101636.0,000 MT,USDA,Research,2026-06-11,2026-06-01,Rabi
+2645797,2026,410000,Wheat,India,Import,128.0,000 MT,USDA,Research,2026-06-11,2026-06-01,Rabi
+2645798,2026,410000,Wheat,India,Production,117945.0,000 MT,USDA,Research,2026-06-11,2026-06-01,Rabi
+2645799,2026,410000,Wheat,India,Total Distribution,129873.0,000 MT,USDA,Research,2026-06-11,2026-06-01,Rabi
+2645800,2026,410000,Wheat,India,Total Supply,129873.0,000 MT,USDA,Research,2026-06-11,2026-06-01,Rabi
+2645801,2026,410000,Wheat,India,Stock to Use Ratio,20.0,Percent,USDA,Research,2026-06-11,2026-06-01,Rabi
+2645802,2026,410000,Wheat,India,Yield,3.6,MT/HA,USDA,Research,2026-06-11,2026-06-01,Rabi
+2645803,2026,422110,Rice,India,Area,52832.0,000 Ha,USDA,Research,2026-06-11,2026-06-01,All Seasons
+2645804,2026,422110,Rice,India,Beginning Stock,48000.0,000 MT,USDA,Research,2026-06-11,2026-06-01,All Seasons
+2645805,2026,422110,Rice,India,Production,154024.0,000 MT,USDA,Research,2026-06-11,2026-06-01,All Seasons
+2645806,2026,422110,Rice,India,Rough Production,231059.0,000 Ha,USDA,Research,2026-06-11,2026-06-01,All Seasons
+2645807,2026,422110,Rice,India,Milling Rate (.9999),6666.0,000 MT,USDA,Research,2026-06-11,2026-06-01,All Seasons
+2645808,2026,422110,Rice,India,Total Supply,202024.0,000 MT,USDA,Research,2026-06-11,2026-06-01,All Seasons
+2645809,2026,422110,Rice,India,Stock to Use Ratio,42.0,Percent,USDA,Research,2026-06-11,2026-06-01,All Seasons
+2645810,2026,422110,Rice,India,Export,23500.0,000 MT,USDA,Research,2026-06-11,2026-06-01,All Seasons
+2645811,2026,422110,Rice,India,Total Domestic Consumption,125524.0,000 MT,USDA,Research,2026-06-11,2026-06-01,All Seasons
+2645812,2026,422110,Rice,India,Ending Stocks,53000.0,000 MT,USDA,Research,2026-06-11,2026-06-01,All Seasons
+2645813,2026,422110,Rice,India,Yield,4.37,MT/HA,USDA,Research,2026-06-11,2026-06-01,All Seasons
+2645814,2026,422110,Rice,India,Total Distribution,202024.0,000 MT,USDA,Research,2026-06-11,2026-06-01,All Seasons
+2645831,2026,Cumin,Cumin,India,Production,1104200.0,Tonnes,Agalabs,Research,2026-08-20,2026-06-01,Rabi
+2645832,2026,Cumin,Cumin,India,Import,1180.61,Tonnes,Agalabs,Research,2026-08-20,2026-06-01,Rabi
+2645833,2026,Cumin,Cumin,India,Export,226329.0,Tonnes,Agalabs,Research,2026-08-20,2026-06-01,Rabi
+2645834,2026,Cumin,Cumin,India,Total Availability(for Consumption),1329350.0,Tonnes,Agalabs,Research,2026-08-20,2026-06-01,Rabi
+2645835,2026,Coriander,Coriander,India,Production,860630.0,Tonnes,Agalabs,Research,2026-08-20,2026-06-01,Rabi
+2645836,2026,Coriander,Coriander,India,Import,19240.5,Tonnes,Agalabs,Research,2026-08-20,2026-06-01,Rabi
+2645837,2026,Coriander,Coriander,India,Export,69116.1,Tonnes,Agalabs,Research,2026-08-20,2026-06-01,Rabi
+2645838,2026,Coriander,Coriander,India,Total Availability(for Consumption),810754.0,Tonnes,Agalabs,Research,2026-08-20,2026-06-01,Rabi
+2645839,2026,Turmeric,Turmeric,India,Production,1207530.0,Tonnes,Agalabs,Research,2026-08-20,2026-06-01,Kharif
+2645840,2026,Turmeric,Turmeric,India,Import,6119.4,Tonnes,Agalabs,Research,2026-08-20,2026-06-01,Kharif
+2645841,2026,Turmeric,Turmeric,India,Export,66535.4,Tonnes,Agalabs,Research,2026-08-20,2026-06-01,Kharif
+2645842,2026,Turmeric,Turmeric,India,Total Availability(for Consumption),1147110.0,Tonnes,Agalabs,Research,2026-08-20,2026-06-01,Kharif
+2645843,2026,Chilli,Chilli,India,Production,2132070.0,Tonnes,Agalabs,Research,2026-08-20,2026-06-01,Rabi
+2645844,2026,Chilli,Chilli,India,Import,3431.36,Tonnes,Agalabs,Research,2026-08-20,2026-06-01,Rabi
+2645845,2026,Chilli,Chilli,India,Export,224484.0,Tonnes,Agalabs,Research,2026-08-20,2026-06-01,Rabi
+2645846,2026,Chilli,Chilli,India,Total Availability(for Consumption),1911020.0,Tonnes,Agalabs,Research,2026-08-20,2026-06-01,Rabi
+2645584,2026,Rapeseed M,Rapeseed Meal,India,Crush,11200.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645585,2026,Rapeseed M,Rapeseed Meal,India,"Extr. Rate, 999.9999",0.6,PERCENT,WASDE,Research,2026-05-17,2026-05-01,
+2645586,2026,Rapeseed M,Rapeseed Meal,India,Beginning Stock,208.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645587,2026,Rapeseed M,Rapeseed Meal,India,Production,6664.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645588,2026,Rapeseed M,Rapeseed Meal,India,Import,5.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645589,2026,Rapeseed M,Rapeseed Meal,India,Total Supply,6877.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645590,2026,Rapeseed M,Rapeseed Meal,India,Export,1400.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645591,2026,Rapeseed M,Rapeseed Meal,India,Industrial Dom. Cons.,0.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645592,2026,Rapeseed M,Rapeseed Meal,India,Food Use Dom. Cons.,0.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645593,2026,Rapeseed M,Rapeseed Meal,India,Feed Waste Dom. Cons.,5250.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645594,2026,Rapeseed M,Rapeseed Meal,India,Total Total Domestic Consumption,5250.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645595,2026,Rapeseed M,Rapeseed Meal,India,Ending Stocks,227.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645596,2026,Soybean Me,Soybean Meal,India,Crush,10000.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645597,2026,Soybean Me,Soybean Meal,India,"Extr. Rate, 999.9999",0.8,PERCENT,WASDE,Research,2026-05-17,2026-05-01,
+2645598,2026,Soybean Me,Soybean Meal,India,Beginning Stock,190.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645599,2026,Soybean Me,Soybean Meal,India,Production,8000.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645600,2026,Soybean Me,Soybean Meal,India,Import,100.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645601,2026,Soybean Me,Soybean Meal,India,Total Supply,8290.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645602,2026,Soybean Me,Soybean Meal,India,Export,1000.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645603,2026,Soybean Me,Soybean Meal,India,Industrial Dom. Cons.,0.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645604,2026,Soybean Me,Soybean Meal,India,Food Use Dom. Cons.,400.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645605,2026,Soybean Me,Soybean Meal,India,Feed Waste Dom. Cons.,6700.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645606,2026,Soybean Me,Soybean Meal,India,Total Total Domestic Consumption,7100.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645607,2026,Soybean Me,Soybean Meal,India,Ending Stocks,190.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645608,2026,Rapeseed M,Rapeseed Meal,India,Stock to Use Ratio,4.32,PERCENT,WASDE,Research,2026-05-17,2026-05-01,
+2645609,2026,Soybean Me,Soybean Meal,India,Stock to Use Ratio,3.0,PERCENT,WASDE,Research,2026-05-17,2026-05-01,
+2645610,2026,Soybean Oi,Soybean Oil,India,Crush,10000.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645611,2026,Soybean Oi,Soybean Oil,India,"Extr. Rate, 999.9999",0.18,PERCENT,WASDE,Research,2026-05-17,2026-05-01,
+2645612,2026,Soybean Oi,Soybean Oil,India,Beginning Stock,916.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645613,2026,Soybean Oi,Soybean Oil,India,Production,1800.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645614,2026,Soybean Oi,Soybean Oil,India,Import,4300.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645615,2026,Soybean Oi,Soybean Oil,India,Total Supply,7016.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645616,2026,Soybean Oi,Soybean Oil,India,Export,15.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645617,2026,Soybean Oi,Soybean Oil,India,Industrial Dom. Cons.,0.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645618,2026,Soybean Oi,Soybean Oil,India,Food Use Dom. Cons.,6180.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645619,2026,Soybean Oi,Soybean Oil,India,Feed Waste Dom. Cons.,0.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645620,2026,Soybean Oi,Soybean Oil,India,Total Domestic Consumption,6180.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645621,2026,Soybean Oi,Soybean Oil,India,Ending Stocks,821.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645622,2026,Rapeseed O,Rapeseed Oil,India,Crush,11200.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645623,2026,Rapeseed O,Rapeseed Oil,India,"Extr. Rate, 999.9999",0.38,PERCENT,WASDE,Research,2026-05-17,2026-05-01,
+2645624,2026,Rapeseed O,Rapeseed Oil,India,Beginning Stock,397.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645625,2026,Rapeseed O,Rapeseed Oil,India,Production,4261.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645626,2026,Rapeseed O,Rapeseed Oil,India,Import,40.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645627,2026,Rapeseed O,Rapeseed Oil,India,Total Supply,4698.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645628,2026,Rapeseed O,Rapeseed Oil,India,Export,10.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645629,2026,Rapeseed O,Rapeseed Oil,India,Industrial Dom. Cons.,80.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645630,2026,Rapeseed O,Rapeseed Oil,India,Food Use Dom. Cons.,4200.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645631,2026,Rapeseed O,Rapeseed Oil,India,Feed Waste Dom. Cons.,0.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645632,2026,Rapeseed O,Rapeseed Oil,India,Total Domestic Consumption,4280.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645633,2026,Rapeseed O,Rapeseed Oil,India,Ending Stocks,408.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645634,2026,Soybean Oi,Soybean Oil,India,Stock to Use Ratio,13.28,PERCENT,WASDE,Research,2026-05-17,2026-05-01,
+2645635,2026,Rapeseed O,Rapeseed Oil,India,Stock to Use Ratio,9.53,PERCENT,WASDE,Research,2026-05-17,2026-05-01,
+2645636,2026,Rapeseed,Rapeseed,India,Beginning Stock,564.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645637,2026,Rapeseed,Rapeseed,India,Production,12400.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645638,2026,Rapeseed,Rapeseed,India,Imports,0.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645639,2026,Rapeseed,Rapeseed,India,Total Supply,12964.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645640,2026,Rapeseed,Rapeseed,India,Export,0.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645641,2026,Rapeseed,Rapeseed,India,Crush,11200.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645642,2026,Rapeseed,Rapeseed,India,Food Use Dom. Cons.,650.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645643,2026,Rapeseed,Rapeseed,India,Feed Waste Dom. Cons.,575.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645644,2026,Rapeseed,Rapeseed,India,Total Domestic Consumption,12425.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645645,2026,Rapeseed,Rapeseed,India,Ending Stocks,539.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645646,2026,Soybeans,Soybeans,India,Beginning Stock,741.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645647,2026,Soybeans,Soybeans,India,Production,11500.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645648,2026,Soybeans,Soybeans,India,Imports,200.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645649,2026,Soybeans,Soybeans,India,Total Supply,12441.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645650,2026,Soybeans,Soybeans,India,Export,25.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645651,2026,Soybeans,Soybeans,India,Crush,10000.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645652,2026,Soybeans,Soybeans,India,Food Use Dom. Cons.,775.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645653,2026,Soybeans,Soybeans,India,Feed Waste Dom. Cons.,1100.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645654,2026,Soybeans,Soybeans,India,Total Domestic Consumption,11875.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645655,2026,Soybeans,Soybeans,India,Ending Stocks,541.0,1000 MT,WASDE,Research,2026-05-17,2026-05-01,
+2645656,2026,Rapeseed,Rapeseed,India,Stock to Use Ratio,4.34,PERCENT,WASDE,Research,2026-05-17,2026-05-01,
+2645657,2026,Soybeans,Soybeans,India,Stock to Use Ratio,4.56,PERCENT,WASDE,Research,2026-05-17,2026-05-01,

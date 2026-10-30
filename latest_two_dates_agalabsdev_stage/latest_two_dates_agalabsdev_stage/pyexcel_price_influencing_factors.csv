@@ -1,0 +1,44 @@
+﻿RecordIndex,CommodityName,Factors,CurrentStatus,ExpectedImpact,Source,CreatedBy,CreatedDate,Date
+9093,Cotton,Currency (INR/USD),Strong (95.7),Bullish,,Bhawna,2026-10-14,2026-10-14
+9083,Cotton,Production (Mln Tonnes),Estimated Low,Bullish,,Bhawna,2026-10-14,2026-10-14
+9084,Cotton,Import,Low (43.5 lakh bales vs 33 lakh bales) (April'26 vs  April'25),Bearish,,Bhawna,2026-10-14,2026-10-14
+9085,Cotton,Export,Slightly high (43.56 billion Vs 38.28 billion),Bullish,,Bhawna,2026-10-14,2026-10-14
+9086,Cotton,Current Price Trend,Upward (Rajkot),Bullish,,Bhawna,2026-10-14,2026-10-14
+9087,Cotton,Crude Oil Prices,Upward (as they support biofuel demand),Bullish,,Bhawna,2026-10-14,2026-10-14
+9088,Cotton,MSP,"Relative Increase (8,267 vs 7,710) (2026 vs 2025)",Bullish,,Bhawna,2026-10-14,2026-10-14
+9089,Cotton,Substitute Crops,"Upward (Soybeans, Maize, Tur, Moong)",Bullish,,Bhawna,2026-10-14,2026-10-14
+9090,Cotton,Rainfall Status,Below rainfall risks sustains,Bullish,,Bhawna,2026-10-14,2026-10-14
+9091,Cotton,Rainfall Outlook,Below rainfall risks sustains,Bullish,,Bhawna,2026-10-14,2026-10-14
+9092,Cotton,Temperature Outlook,Not stable due to Rainfall Deficit,Bullish,,Bhawna,2026-10-14,2026-10-14
+9082,Cotton,Yield ( tonnes/Ha.),Low (2025 Vs 2024),Bullish,,Bhawna,2026-10-14,2026-10-14
+9094,Cotton,Substitute Prices,Upward,Bullish,,Bhawna,2026-10-14,2026-10-14
+9095,Cotton,Price Seasonality,High (Oct Avg),Bullish,,Bhawna,2026-10-14,2026-10-14
+9096,Cotton,Policy / Regulation,Normal,Neutral,,Bhawna,2026-10-14,2026-10-14
+9097,Cotton,Geopolitical,"Russian-Ukraine, US-China, Middle East Iran conflict tensions still persist",Bullish,,Bhawna,2026-10-14,2026-10-14
+9098,Cotton,Global Prod. Outlook,"High (25.2 million 480-lb bales, 7% increase from previous year 2025)",Bearish,,Bhawna,2026-10-14,2026-10-14
+9099,Cotton,Weather (Major Prod.),Production uncertainties in key regions of world,Bullish,,Bhawna,2026-10-14,2026-10-14
+9100,Cotton,Global Weather,Development of El Niño conditions suggested for SW Monsoon,Bullish,,Bhawna,2026-10-14,2026-10-14
+9101,Cotton,Feed Raw Material,Upward(WoW),Bullish,,Bhawna,2026-10-14,2026-10-14
+9102,Cotton,Egg price,Upward(WoW),Bullish,,Bhawna,2026-10-14,2026-10-14
+9103,Cotton,Competing (Demand),Upward(WoW),Bullish,,Bhawna,2026-10-14,2026-10-14
+9081,Cotton,Crop Condition,"Industry surveys point to an estimated overall production drop of around 10% compared to the previous season, driven by erratic weather and heavy rainfall in key belts. [1]",Bullish,,Bhawna,2026-10-14,2026-10-14
+9080,Cotton,Area( '000.ha),Low (11500 vs 11525) (2026 Vs 2025),Bullish,,Bhawna,2026-10-14,2026-10-14
+9079,Cotton,Sowing Acerage ( '000.ha),High ( 11052.92 vs 11002.6) (2026 Vs 2025),Bearish,,Bhawna,2026-10-14,2026-10-14
+9062,Bajra,Sowing Acerage ( '000.ha),High(6496 Vs 6287) (Kharif-2026 Vs Kharif 2025),Bearish,Agalabs,Research,2026-10-13,2026-10-13
+9061,Bajra,Area( '000.ha),High(540.3 Vs 520)(Summer2025-26 vs Summer 2024-25),Bearish,Agalabs,Research,2026-10-13,2026-10-13
+9063,Bajra,Crop Condition,Below Average(Kharif 2026) (Affected by low rainfall),Bullish,Agalabs,Research,2026-10-13,2026-10-13
+9064,Bajra,Yield ( Tonnes/Ha.),Low( Affected by low rainfall),Bullish,Agalabs,Research,2026-10-13,2026-10-13
+9065,Bajra,Production (Mln Tonnes),Low( Affected by low rainfall),Bullish,Agalabs,Research,2026-10-13,2026-10-13
+9066,Bajra,Arrivals ( '000 tonnes)(Oct-Sep),High(169 Vs 133),Bearish,Agalabs,Research,2026-10-13,2026-10-13
+9067,Bajra,Export(in Tonnes),Low (321 Vs 676)(July 2026- July2025),Bearish,Agalabs,Research,2026-10-13,2026-10-13
+9068,Bajra,Current Price Trend,Upward(Jaipur),Bullish,Agalabs,Research,2026-10-13,2026-10-13
+9069,Bajra,WPI,High(110.3 Vs 108.6)(August 2026 Vs July2026),Bullish,Agalabs,Research,2026-10-13,2026-10-13
+9070,Bajra,Inflation,High(-0.5 Vs -2.2)(August 2026 Vs July 2026),Bullish,Agalabs,Research,2026-10-13,2026-10-13
+9071,Bajra,MSP ( INR/ Tonne),High(29000 Vs 27750)(2026-27 Vs 2025-26),Bullish,Agalabs,Research,2026-10-13,2026-10-13
+9072,Bajra,Substitute Crops,High,Bullish,Agalabs,Research,2026-10-13,2026-10-13
+9073,Bajra,Rainfall Status,Weak Monsoon,Bullish,Agalabs,Research,2026-10-13,2026-10-13
+9074,Bajra,Rainfall Outlook,Below Normal Monsoon,Bullish,Agalabs,Research,2026-10-13,2026-10-13
+9075,Bajra,Currency (INR vs USD),Slight Strong(95.7)(W-o-W),Bearish,Agalabs,Research,2026-10-13,2026-10-13
+9076,Bajra,Price Seasonality,High (Oct. average),Bullish,Agalabs,Research,2026-10-13,2026-10-13
+9077,Bajra,Geopolitical Condition,Uncertain(US-Iran conflict concerns),Bullish,Agalabs,Research,2026-10-13,2026-10-13
+9078,Bajra,Feed Raw Material Prices,High(W-o-W),Bullish,Agalabs,Research,2026-10-13,2026-10-13

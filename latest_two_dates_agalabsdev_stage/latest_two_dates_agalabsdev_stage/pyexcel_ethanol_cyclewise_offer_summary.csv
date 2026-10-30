@@ -1,0 +1,55 @@
+﻿Year,Commodity,Value,Unit,Period,Cycle,FeedStock,Source,CreatedDate,CreatedBy,id
+2025,Ethanol,201270.00,KL,Q-4,C1,BHM,Research,2025-11-18 00:00:00,Research,42
+2025,Ethanol,1429965.00,KL,Q-3,C1,FCI,Research,2025-11-18 00:00:00,Research,29
+2025,Ethanol,1891202.00,KL,Q-3,C1,Maize,Research,2025-11-18 00:00:00,Research,30
+2025,Ethanol,3472201.00,KL,Q-3,C1,Grain Based,Research,2025-11-18 00:00:00,Research,31
+2025,Ethanol,140367.00,KL,Q-3,C1,SCJ,Research,2025-11-18 00:00:00,Research,32
+2025,Ethanol,619629.00,KL,Q-3,C1,BHM,Research,2025-11-18 00:00:00,Research,33
+2025,Ethanol,46340.00,KL,Q-3,C1,CHM,Research,2025-11-18 00:00:00,Research,34
+2025,Ethanol,806336.00,KL,Q-3,C1,Sugar Based,Research,2025-11-18 00:00:00,Research,35
+2025,Ethanol,4278537.00,KL,Q-3,C1,Total,Research,2025-11-18 00:00:00,Research,36
+2025,Ethanol,320991.00,KL,Q-4,C1,DFG,Research,2025-11-18 00:00:00,Research,37
+2025,Ethanol,3141963.00,KL,Q-4,C1,FCI,Research,2025-11-18 00:00:00,Research,38
+2025,Ethanol,3141963.00,KL,Q-4,C1,Maize,Research,2025-11-18 00:00:00,Research,39
+2025,Ethanol,3462954.00,KL,Q-4,C1,Grain Based,Research,2025-11-18 00:00:00,Research,40
+2025,Ethanol,23700.00,KL,Q-4,C1,SCJ,Research,2025-11-18 00:00:00,Research,41
+2025,Ethanol,151034.00,KL,Q-3,C1,DFG,Research,2025-11-18 00:00:00,Research,28
+2025,Ethanol,10280.00,KL,Q-4,C1,CHM,Research,2025-11-18 00:00:00,Research,43
+2025,Ethanol,235250.00,KL,Q-4,C1,Sugar Based,Research,2025-11-18 00:00:00,Research,44
+2025,Ethanol,3698204.00,KL,Q-4,C1,Total,Research,2025-11-18 00:00:00,Research,45
+2025,Ethanol,763736.00,KL,Grand Total,C1,DFG,Research,2025-11-18 00:00:00,Research,46
+2025,Ethanol,3965963.00,KL,Grand Total,C1,FCI,Research,2025-11-18 00:00:00,Research,47
+2025,Ethanol,8318882.00,KL,Grand Total,C1,Maize,Research,2025-11-18 00:00:00,Research,48
+2025,Ethanol,13048581.00,KL,Grand Total,C1,Grain Based,Research,2025-11-18 00:00:00,Research,49
+2025,Ethanol,2994755.00,KL,Grand Total,C1,SCJ,Research,2025-11-18 00:00:00,Research,50
+2025,Ethanol,1587011.00,KL,Grand Total,C1,BHM,Research,2025-11-18 00:00:00,Research,51
+2025,Ethanol,134520.00,KL,Grand Total,C1,CHM,Research,2025-11-18 00:00:00,Research,52
+2025,Ethanol,4716286.00,KL,Grand Total,C1,Sugar Based,Research,2025-11-18 00:00:00,Research,53
+2025,Ethanol,17764867.00,KL,Grand Total,C1,Total,Research,2025-11-18 00:00:00,Research,54
+2025,Ethanol,221300.00,KL,Q-1 Dec Jan,C1,BHM,Research,2025-11-18 00:00:00,Research,15
+2025,Ethanol,371220.00,KL,Q-1 Nov,C1,FCI,Research,2025-11-18 00:00:00,Research,2
+2025,Ethanol,470749.00,KL,Q-1 Nov,C1,Maize,Research,2025-11-18 00:00:00,Research,3
+2025,Ethanol,888185.00,KL,Q-1 Nov,C1,Grain Based,Research,2025-11-18 00:00:00,Research,4
+2025,Ethanol,452199.00,KL,Q-1 Nov,C1,SCJ,Research,2025-11-18 00:00:00,Research,5
+2025,Ethanol,35100.00,KL,Q-1 Nov,C1,BHM,Research,2025-11-18 00:00:00,Research,6
+2025,Ethanol,5800.00,KL,Q-1 Nov,C1,CHM,Research,2025-11-18 00:00:00,Research,7
+2025,Ethanol,493099.00,KL,Q-1 Nov,C1,Sugar Based,Research,2025-11-18 00:00:00,Research,8
+2025,Ethanol,1381284.00,KL,Q-1 Nov,C1,Total,Research,2025-11-18 00:00:00,Research,9
+2025,Ethanol,101385.00,KL,Q-1 Dec Jan,C1,DFG,Research,2025-11-18 00:00:00,Research,10
+2025,Ethanol,841779.00,KL,Q-1 Dec Jan,C1,FCI,Research,2025-11-18 00:00:00,Research,11
+2025,Ethanol,1084848.00,KL,Q-1 Dec Jan,C1,Maize,Research,2025-11-18 00:00:00,Research,12
+2025,Ethanol,2028012.00,KL,Q-1 Dec Jan,C1,Grain Based,Research,2025-11-18 00:00:00,Research,13
+2025,Ethanol,1286997.00,KL,Q-1 Dec Jan,C1,SCJ,Research,2025-11-18 00:00:00,Research,14
+2025,Ethanol,46216.00,KL,Q-1 Nov,C1,DFG,Research,2025-11-18 00:00:00,Research,1
+2025,Ethanol,33270.00,KL,Q-1 Dec Jan,C1,CHM,Research,2025-11-18 00:00:00,Research,16
+2025,Ethanol,1541567.00,KL,Q-1 Dec Jan,C1,Sugar Based,Research,2025-11-18 00:00:00,Research,17
+2025,Ethanol,3569579.00,KL,Q-1 Dec Jan,C1,Total,Research,2025-11-18 00:00:00,Research,18
+2025,Ethanol,144110.00,KL,Q-2,C1,DFG,Research,2025-11-18 00:00:00,Research,19
+2025,Ethanol,1322999.00,KL,Q-2,C1,FCI,Research,2025-11-18 00:00:00,Research,20
+2025,Ethanol,1730120.00,KL,Q-2,C1,Maize,Research,2025-11-18 00:00:00,Research,21
+2025,Ethanol,3197229.00,KL,Q-2,C1,Grain Based,Research,2025-11-18 00:00:00,Research,22
+2025,Ethanol,1091492.00,KL,Q-2,C1,SCJ,Research,2025-11-18 00:00:00,Research,23
+2025,Ethanol,509712.00,KL,Q-2,C1,BHM,Research,2025-11-18 00:00:00,Research,24
+2025,Ethanol,38830.00,KL,Q-2,C1,CHM,Research,2025-11-18 00:00:00,Research,25
+2025,Ethanol,1640034.00,KL,Q-2,C1,Sugar Based,Research,2025-11-18 00:00:00,Research,26
+2025,Ethanol,4837263.00,KL,Q-2,C1,Total,Research,2025-11-18 00:00:00,Research,27

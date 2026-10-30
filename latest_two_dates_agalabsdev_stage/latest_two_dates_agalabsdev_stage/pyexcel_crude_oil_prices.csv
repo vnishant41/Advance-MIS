@@ -1,0 +1,9 @@
+﻿id,Commodity,Price,Unit,Date,CreatedDate,Source
+12723,Crude Oil,8980.00,Bbl,2026-10-12,2026-10-13,Mcx
+12724,Brent Crude,105.08,USD/bbl,2026-10-12,2026-10-13,Bloomberg
+12725,Crude Oil (Tokyo),110000.00,JPY/kl,2026-10-12,2026-10-13,Bloomberg
+12726,WTI Crude Oil (Nymex),92.09,USD/bbl,2026-10-12,2026-10-13,Bloomberg
+12719,Crude Oil,8881.00,Bbl,2026-10-09,2026-10-12,Mcx
+12720,Brent Crude,106.05,USD/bbl,2026-10-09,2026-10-12,Bloomberg
+12721,Crude Oil (Tokyo),108500.00,JPY/kl,2026-10-09,2026-10-12,Bloomberg
+12722,WTI Crude Oil (Nymex),92.98,USD/bbl,2026-10-09,2026-10-12,Bloomberg

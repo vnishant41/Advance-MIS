@@ -1,0 +1,6 @@
+﻿id,name,email,phone,password,created_by,created_at,tabs_allowed
+27,Sopa,sopa@demo.com,32765467881,$2b$12$SDyb9AXiDCseVPCkaAFwB.iIG/cktKwCSj7zOgcpx.5It.VxIZ4ga,Tech,2026-07-01 00:00:00,sopa
+24,Deep,de@agalabs.com,7264536788,$2b$12$c11isVhma7YfwLStTpvY..l4VAHe/SPiurdYwZitfITJQZ4Rc0pgm,Tech,2026-05-23 11:23:22,gis
+25,Manish,mani@agalabs.com,36298190888,$2b$12$7IO5KFoDBQw06HEqZRPO6u3vrHa5GEx3btqk.QeVxU1QPr59kCNnS,Tech,2026-05-23 11:23:22,gis
+26,Priyanshi,priyanshi@agalabs.com,35637927999,$2b$12$xEiMN8F/qncUx29Ui2.hIuNLxIsu9sOo7M7GzF8RwZcI3aPXk5F1.,Tech,2026-05-23 11:23:22,gis
+31,Poorvi,poorvi@provenance-agri.com,9217407236,$2b$12$8y65wMNIf2NV8nRL3UodK.nGOakqCIOwaq5qtniYzaJ7J8FADnC/S,Tech,2026-05-23 11:23:22,"gis,stage"

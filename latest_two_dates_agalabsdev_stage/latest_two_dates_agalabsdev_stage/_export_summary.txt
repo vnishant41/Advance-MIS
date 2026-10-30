@@ -1,0 +1,169 @@
+MYSQL LATEST TWO DATES EXPORT SUMMARY
+======================================================================
+Database: agalabsdev_stage
+Export time: 2026-10-14 15:03:49
+Total tables found: 156
+Exported tables: 132
+Skipped/failed tables: 24
+
+EXPORTED TABLES
+----------------------------------------------------------------------
+Table: admin_user | Rows: 5 | Date column: created_at | Dates: 2026-07-01 00:00:00, 2026-05-23 11:23:22 | File: admin_user.csv
+Table: ipga_arrivals_marketwise | Rows: 258 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: ipga_arrivals_marketwise.csv
+Table: ipga_articles | Rows: 2 | Date column: published_at | Dates: 2026-06-17 00:00:00, 2026-06-16 00:00:00 | File: ipga_articles.csv
+Table: ipga_blogs | Rows: 2 | Date column: published_at | Dates: 2026-06-17 00:00:00, 2026-06-16 00:00:00 | File: ipga_blogs.csv
+Table: ipga_chennai_manifest | Rows: 22 | Date column: EndDate | Dates: 2026-09-22, 2026-09-14 | File: ipga_chennai_manifest.csv
+Table: ipga_cnf | Rows: 41 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: ipga_cnf.csv
+Table: ipga_international_prices | Rows: 20 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: ipga_international_prices.csv
+Table: ipga_portstock | Rows: 22 | Date column: Date | Dates: 2026-10-05, 2026-09-15 | File: ipga_portstock.csv
+Table: ipga_reports | Rows: 6 | Date column: report_date | Dates: 2026-10-12, 2026-10-05 | File: ipga_reports.csv
+Table: ipga_spot | Rows: 622 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: ipga_spot.csv
+Table: ipga_tenders | Rows: 76 | Date column: Date | Dates: 2026-07-06 | File: ipga_tenders.csv
+Table: ipga_videos | Rows: 2 | Date column: published_at | Dates: 2026-06-01 00:00:00, 2026-05-22 00:00:00 | File: ipga_videos.csv
+Table: pyexcel_agro_climatic | Rows: 88 | Date column: CreatedDate | Dates: 2026-08-21 00:00:00, 2025-11-19 00:00:00 | File: pyexcel_agro_climatic.csv
+Table: pyexcel_allocation_offtake | Rows: 104 | Date column: Date | Dates: 2026-08-01, 2026-07-01 | File: pyexcel_allocation_offtake.csv
+Table: pyexcel_articles | Rows: 1 | Date column: published_at | Dates: 2026-09-22 00:00:00 | File: pyexcel_articles.csv
+Table: pyexcel_auction | Rows: 963 | Date column: CreatedDate | Dates: 2026-06-07 00:00:00, 2026-05-31 00:00:00 | File: pyexcel_auction.csv
+Table: pyexcel_auction_results | Rows: 387 | Date column: CreatedDate | Dates: 2026-06-07 00:00:00, 2026-05-31 00:00:00 | File: pyexcel_auction_results.csv
+Table: pyexcel_australian_fob | Rows: 38 | Date column: Date | Dates: 2026-10-09, 2026-10-08 | File: pyexcel_australian_fob.csv
+Table: pyexcel_balancesheet_agalabs | Rows: 2 | Date column: CreatedDate | Dates: 2026-01-31, 2026-01-30 | File: pyexcel_balancesheet_agalabs.csv
+Table: pyexcel_buffer_stock | Rows: 4 | Date column: Date | Dates: 2025-10-01, 2025-07-01 | File: pyexcel_buffer_stock.csv
+Table: pyexcel_buffernorms | Rows: 8 | Date column: Date | Dates: 2026-03-01, 2026-02-01 | File: pyexcel_buffernorms.csv
+Table: pyexcel_central_pool_stock | Rows: 5 | Date column: CreatedDate | Dates: 2026-09-21, 2026-09-18 | File: pyexcel_central_pool_stock.csv
+Table: pyexcel_commodity_consumption | Rows: 1353 | Date column: CreatedDate | Dates: 2025-11-17, 2025-09-03 | File: pyexcel_commodity_consumption.csv
+Table: pyexcel_cost_of_cultivation | Rows: 454 | Date column: CreatedDate | Dates: 2025-12-03, 2025-09-12 | File: pyexcel_cost_of_cultivation.csv
+Table: pyexcel_cpi | Rows: 174 | Date column: CreatedDate | Dates: 2026-10-13 00:00:00, 2026-09-28 00:00:00 | File: pyexcel_cpi.csv
+Table: pyexcel_crop_pattern_countrywise_apy | Rows: 2 | Date column: CreatedDate | Dates: 2103-10-27, 2103-10-26 | File: pyexcel_crop_pattern_countrywise_apy.csv
+Table: pyexcel_crude_oil_prices | Rows: 8 | Date column: Date | Dates: 2026-10-12, 2026-10-09 | File: pyexcel_crude_oil_prices.csv
+Table: pyexcel_daily_weather_data | Rows: 1586 | Date column: Date | Dates: 2026-10-04, 2026-10-03 | File: pyexcel_daily_weather_data.csv
+Table: pyexcel_dashboard_news | Rows: 49 | Date column: Date | Dates: 2026-10-14, 2026-10-13 | File: pyexcel_dashboard_news.csv
+Table: pyexcel_dashboard_news_test | Rows: 31 | Date column: Date | Dates: 2026-08-14, 2026-08-13 | File: pyexcel_dashboard_news_test.csv
+Table: pyexcel_ddgs_price | Rows: 6 | Date column: Date | Dates: 2026-08-29, 2026-08-24 | File: pyexcel_ddgs_price.csv
+Table: pyexcel_de_oiled_bran_cake_prices | Rows: 2 | Date column: Date | Dates: 2026-04-17, 2026-04-16 | File: pyexcel_de_oiled_bran_cake_prices.csv
+Table: pyexcel_eastern_australian_wheat | Rows: 14 | Date column: Date | Dates: 2025-12-12, 2025-12-11 | File: pyexcel_eastern_australian_wheat.csv
+Table: pyexcel_edible_oil_tariff_structure | Rows: 14 | Date column: createdDate | Dates: 2026-09-16 00:00:00, 2026-09-01 00:00:00 | File: pyexcel_edible_oil_tariff_structure.csv
+Table: pyexcel_egg_poultry_data | Rows: 880 | Date column: CreatedDate | Dates: 0000-00-00 00:00:00 | File: pyexcel_egg_poultry_data.csv
+Table: pyexcel_egg_prices | Rows: 66 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: pyexcel_egg_prices.csv
+Table: pyexcel_ethanol_basic_price | Rows: 36 | Date column: CreatedDate | Dates: 2025-12-03 00:00:00, 2025-11-18 00:00:00 | File: pyexcel_ethanol_basic_price.csv
+Table: pyexcel_ethanol_capacity_rawmaterial | Rows: 28 | Date column: CreatedDate | Dates: 0000-00-00 00:00:00 | File: pyexcel_ethanol_capacity_rawmaterial.csv
+Table: pyexcel_ethanol_cyclewise_offer_summary | Rows: 54 | Date column: CreatedDate | Dates: 2025-11-18 00:00:00 | File: pyexcel_ethanol_cyclewise_offer_summary.csv
+Table: pyexcel_ethanol_recap | Rows: 279 | Date column: CreatedDate | Dates: 2026-02-23 | File: pyexcel_ethanol_recap.csv
+Table: pyexcel_ethanol_supplied | Rows: 12 | Date column: CreatedDate | Dates: 2026-03-11 00:00:00, 2025-12-08 00:00:00 | File: pyexcel_ethanol_supplied.csv
+Table: pyexcel_factrates_dashboard_balancesheet | Rows: 127 | Date column: MarketYearDate | Dates: 2026-06-01, 2026-05-01 | File: pyexcel_factrates_dashboard_balancesheet.csv
+Table: pyexcel_factrates_rainfall_district | Rows: 1592 | Date column: Date | Dates: 2026-10-14, 2026-10-13 | File: pyexcel_factrates_rainfall_district.csv
+Table: pyexcel_factrates_spot | Rows: 48 | Date column: Date | Dates: 2026-08-01, 2026-07-01 | File: pyexcel_factrates_spot.csv
+Table: pyexcel_fob_monthly_prices | Rows: 24 | Date column: date | Dates: 2026-10-09, 2026-09-25 | File: pyexcel_fob_monthly_prices.csv
+Table: pyexcel_fob_prices_manual | Rows: 4 | Date column: Date | Dates: 2023-12-21, 2023-12-20 | File: pyexcel_fob_prices_manual.csv
+Table: pyexcel_freight_movement | Rows: 2016 | Date column: effectiveDate | Dates: 2025-12-09 | File: pyexcel_freight_movement.csv
+Table: pyexcel_gis_gt_points | Rows: 1548 | Date column: survey_date | Dates: 2025-12-10, 2025-12-09 | File: pyexcel_gis_gt_points.csv
+Table: pyexcel_gis_ndvi | Rows: 876 | Date column: Date | Dates: 2026-06-26, 2026-06-10 | File: pyexcel_gis_ndvi.csv
+Table: pyexcel_government_monthly_sugar_sale_quota | Rows: 34 | Date column: Date | Dates: 2026-10-01, 2026-09-01 | File: pyexcel_government_monthly_sugar_sale_quota.csv
+Table: pyexcel_govt_notifications | Rows: 7 | Date column: Date | Dates: 2026-10-06, 2026-09-30 | File: pyexcel_govt_notifications.csv
+Table: pyexcel_govt_procurement_daily | Rows: 24 | Date column: Date | Dates: 2026-08-04, 2026-08-03 | File: pyexcel_govt_procurement_daily.csv
+Table: pyexcel_igc_outlook | Rows: 8 | Date column: CreatedDate | Dates: 2026-09-21, 2026-09-17 | File: pyexcel_igc_outlook.csv
+Table: pyexcel_imported_market_prices | Rows: 73 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: pyexcel_imported_market_prices.csv
+Table: pyexcel_inflation | Rows: 172 | Date column: Date | Dates: 2026-08-01, 2026-07-01 | File: pyexcel_inflation.csv
+Table: pyexcel_inflation_composite | Rows: 108 | Date column: Date | Dates: 2026-07-01, 2026-06-01 | File: pyexcel_inflation_composite.csv
+Table: pyexcel_international_prices | Rows: 40 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: pyexcel_international_prices.csv
+Table: pyexcel_key_producing_countries | Rows: 131 | Date column: CreatedDate | Dates: 2026-10-13, 2026-10-12 | File: pyexcel_key_producing_countries.csv
+Table: pyexcel_maize_matured_rake | Rows: 13 | Date column: Date | Dates: 2026-08-17, 2026-08-16 | File: pyexcel_maize_matured_rake.csv
+Table: pyexcel_mandi_list | Rows: 66 | Date column: CreatedDate | Dates: 2026-08-24 | File: pyexcel_mandi_list.csv
+Table: pyexcel_market_report | Rows: 23 | Date column: report_date | Dates: 2026-08-06 | File: pyexcel_market_report.csv
+Table: pyexcel_msp | Rows: 2 | Date column: CreatedDate | Dates: 2026-10-19, 2026-10-18 | File: pyexcel_msp.csv
+Table: pyexcel_normal_weather_data | Rows: 1576 | Date column: Date | Dates: 2026-12-31, 2026-12-30 | File: pyexcel_normal_weather_data.csv
+Table: pyexcel_oecd_data | Rows: 1650 | Date column: CreatedDate | Dates: 2025-12-10 | File: pyexcel_oecd_data.csv
+Table: pyexcel_omss_monthly | Rows: 4 | Date column: Date | Dates: 2024-12-01, 2024-11-01 | File: pyexcel_omss_monthly.csv
+Table: pyexcel_omss_state | Rows: 95 | Date column: Date | Dates: 2024-02-28, 2024-01-31 | File: pyexcel_omss_state.csv
+Table: pyexcel_port_lineup | Rows: 32 | Date column: CreatedDate | Dates: 2026-10-08, 2026-10-07 | File: pyexcel_port_lineup.csv
+Table: pyexcel_port_stocks | Rows: 22 | Date column: Date | Dates: 2026-10-05, 2026-09-15 | File: pyexcel_port_stocks.csv
+Table: pyexcel_portstock | Rows: 11 | Date column: date | Dates: 2026-09-01, 2026-08-01 | File: pyexcel_portstock.csv
+Table: pyexcel_poultry | Rows: 112 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: pyexcel_poultry.csv
+Table: pyexcel_price_influencing_factors | Rows: 43 | Date column: Date | Dates: 2026-10-14, 2026-10-13 | File: pyexcel_price_influencing_factors.csv
+Table: pyexcel_production_table_country | Rows: 299 | Date column: CreatedDate | Dates: 2026-04-06 | File: pyexcel_production_table_country.csv
+Table: pyexcel_pulses_cnf_prices | Rows: 93 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: pyexcel_pulses_cnf_prices.csv
+Table: pyexcel_pulses_international_prices | Rows: 10 | Date column: Date | Dates: 2025-10-13, 2025-10-10 | File: pyexcel_pulses_international_prices.csv
+Table: pyexcel_pulses_port_prices | Rows: 16 | Date column: Date | Dates: 2024-07-02, 2024-07-01 | File: pyexcel_pulses_port_prices.csv
+Table: pyexcel_rakemovement | Rows: 28556 | Date column: CreatedDate | Dates: 2026-10-14 00:00:00, 2026-10-13 00:00:00 | File: pyexcel_rakemovement.csv
+Table: pyexcel_rksinghal | Rows: 563 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: pyexcel_rksinghal.csv
+Table: pyexcel_soybean_basis | Rows: 46 | Date column: date | Dates: 2026-08-11, 2026-08-10 | File: pyexcel_soybean_basis.csv
+Table: pyexcel_soybean_meal_export | Rows: 4 | Date column: Date | Dates: 2026-02-01, 2026-01-01 | File: pyexcel_soybean_meal_export.csv
+Table: pyexcel_soybean_plant_quote | Rows: 21 | Date column: Date | Dates: 2026-08-29, 2026-08-27 | File: pyexcel_soybean_plant_quote.csv
+Table: pyexcel_spices_fob_prices | Rows: 6 | Date column: Date | Dates: 2026-10-10, 2026-10-09 | File: pyexcel_spices_fob_prices.csv
+Table: pyexcel_statewise_arrival_price | Rows: 499 | Date column: Date | Dates: 2026-08-19, 2026-08-18 | File: pyexcel_statewise_arrival_price.csv
+Table: pyexcel_sugar_mill_distillery | Rows: 51 | Date column: CreatedDate | Dates: 2025-11-21 00:00:00, 2025-11-19 00:00:00 | File: pyexcel_sugar_mill_distillery.csv
+Table: pyexcel_tops_prices | Rows: 3 | Date column: Date | Dates: 2026-02-25 | File: pyexcel_tops_prices.csv
+Table: pyexcel_total_agri_land_states | Rows: 913 | Date column: CreatedDate | Dates: 0000-00-00 | File: pyexcel_total_agri_land_states.csv
+Table: pyexcel_trade_flow | Rows: 3268 | Date column: Date | Dates: 2026-07-01, 2026-06-01 | File: pyexcel_trade_flow.csv
+Table: pyexcel_videos | Rows: 1 | Date column: published_at | Dates: 2026-09-02 00:00:00 | File: pyexcel_videos.csv
+Table: pystage_factrates_advance_estimates | Rows: 10 | Date column: CreatedDate | Dates: 2026-06-17, 2026-06-02 | File: pystage_factrates_advance_estimates.csv
+Table: pystage_factrates_annual_exports | Rows: 18100 | Date column: CreatedDate | Dates: 2023-02-14 | File: pystage_factrates_annual_exports.csv
+Table: pystage_factrates_annual_imports | Rows: 2385 | Date column: CreatedDate | Dates: 2023-02-14 | File: pystage_factrates_annual_imports.csv
+Table: pystage_factrates_apy_district | Rows: 32531 | Date column: MarketYearDate | Dates: 2025-01-01, 2024-01-01 | File: pystage_factrates_apy_district.csv
+Table: pystage_factrates_apy_state | Rows: 3316 | Date column: MarketYearDate | Dates: 2026-01-01, 2025-01-01 | File: pystage_factrates_apy_state.csv
+Table: pystage_factrates_arrivalsbystate | Rows: 60 | Date column: Date | Dates: 2026-10-12, 2026-10-11 | File: pystage_factrates_arrivalsbystate.csv
+Table: pystage_factrates_cme_futures | Rows: 129 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: pystage_factrates_cme_futures.csv
+Table: pystage_factrates_exchangerate | Rows: 65 | Date column: Date | Dates: 2026-10-13, 2026-10-09 | File: pystage_factrates_exchangerate.csv
+Table: pystage_factrates_exchangerate_xe | Rows: 38 | Date column: Date | Dates: 2026-10-14, 2026-10-13 | File: pystage_factrates_exchangerate_xe.csv
+Table: pystage_factrates_govt_procurement | Rows: 860 | Date column: CreatedDate | Dates: 2025-05-26, 2023-02-01 | File: pystage_factrates_govt_procurement.csv
+Table: pystage_factrates_govt_procurement_trends | Rows: 20 | Date column: Date | Dates: 2022-08-15, 2022-07-31 | File: pystage_factrates_govt_procurement_trends.csv
+Table: pystage_factrates_govt_stockPosition | Rows: 10 | Date column: Date | Dates: 2023-04-01, 2023-03-01 | File: pystage_factrates_govt_stockPosition.csv
+Table: pystage_factrates_govt_stockposition | Rows: 2 | Date column: Date | Dates: 2025-11-01, 2025-10-01 | File: pystage_factrates_govt_stockposition.csv
+Table: pystage_factrates_govt_stocksale | Rows: 5172 | Date column: CreatedDate | Dates: 2023-03-28 | File: pystage_factrates_govt_stocksale.csv
+Table: pystage_factrates_govt_stocksale_final | Rows: 314 | Date column: CreatedDate | Dates: 2023-09-04 | File: pystage_factrates_govt_stocksale_final.csv
+Table: pystage_factrates_igc_fobprice | Rows: 14 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: pystage_factrates_igc_fobprice.csv
+Table: pystage_factrates_iso_sugar | Rows: 2 | Date column: Date | Dates: 2026-10-12, 2026-10-09 | File: pystage_factrates_iso_sugar.csv
+Table: pystage_factrates_monthly_exports | Rows: 2021 | Date column: Date | Dates: 2024-10-01, 2024-09-01 | File: pystage_factrates_monthly_exports.csv
+Table: pystage_factrates_monthly_imports | Rows: 240 | Date column: Date | Dates: 2024-10-01, 2024-09-01 | File: pystage_factrates_monthly_imports.csv
+Table: pystage_factrates_ncdex_edd | Rows: 46 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: pystage_factrates_ncdex_edd.csv
+Table: pystage_factrates_ncdex_futures | Rows: 12 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: pystage_factrates_ncdex_futures.csv
+Table: pystage_factrates_ncdex_spot | Rows: 120 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: pystage_factrates_ncdex_spot.csv
+Table: pystage_factrates_ncdex_stock | Rows: 38 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: pystage_factrates_ncdex_stock.csv
+Table: pystage_factrates_rainfall_district_monthly | Rows: 1367 | Date column: Date | Dates: 2020-12-01, 2020-11-01 | File: pystage_factrates_rainfall_district_monthly.csv
+Table: pystage_factrates_rainfall_region | Rows: 7675 | Date column: CreatedDate | Dates: 2023-11-22 | File: pystage_factrates_rainfall_region.csv
+Table: pystage_factrates_retailprice | Rows: 2493 | Date column: Date | Dates: 2026-10-09, 2026-10-08 | File: pystage_factrates_retailprice.csv
+Table: pystage_factrates_solventextract | Rows: 102 | Date column: Date | Dates: 2026-10-12, 2026-10-09 | File: pystage_factrates_solventextract.csv
+Table: pystage_factrates_sowingprogress | Rows: 363 | Date column: WeekEndingDate | Dates: 2026-10-02, 2026-09-25 | File: pystage_factrates_sowingprogress.csv
+Table: pystage_factrates_sowingprogress_final | Rows: 1920 | Date column: WeekEndingDate | Dates: 2024-05-03, 2024-04-26 | File: pystage_factrates_sowingprogress_final.csv
+Table: pystage_factrates_spot | Rows: 1463 | Date column: Date | Dates: 2026-10-13, 2026-10-12 | File: pystage_factrates_spot.csv
+Table: pystage_factrates_usda_balancesheet | Rows: 22 | Date column: MarketYearDate | Dates: 2027-12-01, 2027-04-01 | File: pystage_factrates_usda_balancesheet.csv
+Table: pystage_factrates_usda_balancesheet_world | Rows: 233 | Date column: MarketYearDate | Dates: 2026-08-01, 2026-07-01 | File: pystage_factrates_usda_balancesheet_world.csv
+Table: pystage_factrates_wholesaleprice | Rows: 1382 | Date column: Date | Dates: 2026-10-09, 2026-10-08 | File: pystage_factrates_wholesaleprice.csv
+Table: pystage_oilseed_crush_margin | Rows: 2 | Date column: date | Dates: 2026-10-13, 2026-10-12 | File: pystage_oilseed_crush_margin.csv
+Table: pystage_price_forecast | Rows: 756 | Date column: run_date | Dates: 2026-10-14, 2026-10-12 | File: pystage_price_forecast.csv
+Table: pystage_price_forecast_metrics | Rows: 10 | Date column: updated_at | Dates: 2026-10-09 11:08:16, 2026-10-09 11:08:01 | File: pystage_price_forecast_metrics.csv
+Table: sopa_apy_state | Rows: 22 | Date column: MarketYearDate | Dates: 2025-04-01, 2024-04-01 | File: sopa_apy_state.csv
+Table: sopa_arrivalsbystate | Rows: 14 | Date column: Date | Dates: 2019-06-01, 2019-05-01 | File: sopa_arrivalsbystate.csv
+Table: sopa_balancesheet | Rows: 30 | Date column: MarketYearDate | Dates: 2025-01-01, 2024-01-01 | File: sopa_balancesheet.csv
+Table: sopa_balancesheet_world | Rows: 26982 | Date column: MarketYearDate | Dates: 2027-01-01, 2026-01-01 | File: sopa_balancesheet_world.csv
+Table: sopa_countrywise_apy | Rows: 65 | Date column: CreatedDate | Dates: 2026-07-01 | File: sopa_countrywise_apy.csv
+Table: sopa_glossary_terms | Rows: 162 | Date column: date | Dates: 2024-05-24 10:00:00 | File: sopa_glossary_terms.csv
+Table: sopa_lab | Rows: 4 | Date column: created_at | Dates: 2026-07-07 05:31:40, 2026-07-07 05:31:23 | File: sopa_lab.csv
+Table: sopa_labs_surveyors | Rows: 16 | Date column: created_at | Dates: 2026-07-07 05:57:46, 2026-07-07 05:55:11 | File: sopa_labs_surveyors.csv
+Table: sopa_spot_price | Rows: 6 | Date column: Date | Dates: 2026-10-14, 2026-10-13 | File: sopa_spot_price.csv
+
+SKIPPED / FAILED TABLES
+----------------------------------------------------------------------
+highlight_signups: No supported date column found
+ipga_govt_notifications: No non-NULL dates found
+ipga_news: No non-NULL dates found
+pyexcel_agalabs_contact_form: No non-NULL dates found
+pyexcel_blogs: No non-NULL dates found
+pyexcel_buyer_quotes: No non-NULL dates found
+pyexcel_crop_calender_country_statewise: No supported date column found
+pyexcel_gis_normal_ndvi: No non-NULL dates found
+pyexcel_gis_rainfall: No supported date column found
+pyexcel_gis_tempmax: No supported date column found
+pyexcel_landuse_clasification: No non-NULL dates found
+pyexcel_market_outlook: No non-NULL dates found
+pystage_calculation_arrivalsbystate: No supported date column found
+pystage_district_mapping: No supported date column found
+pystage_factrates_agmarknet_spot: No non-NULL dates found
+pystage_factrates_agmarknet_spot_monthly: No non-NULL dates found
+pystage_factrates_apy_dynamic_panel: No non-NULL dates found
+pystage_region_rainfall: No non-NULL dates found
+sopa_apy_district: No non-NULL dates found
+sopa_articles: No non-NULL dates found
+sopa_blogs: No non-NULL dates found
+sopa_reports: No non-NULL dates found
+sopa_trade_flow: No non-NULL dates found
+sopa_videos: No non-NULL dates found

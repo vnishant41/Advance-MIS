@@ -307,7 +307,7 @@ def delete_message(msg_id):
     if not user:
         return jsonify({'success': False}), 401
 
-    msg = ChatMessage.query.get(msg_id)
+    msg = db.session.get(ChatMessage, msg_id)
     if not msg or msg.deleted:
         return jsonify({'success': False, 'message': 'Message not found'}), 404
 

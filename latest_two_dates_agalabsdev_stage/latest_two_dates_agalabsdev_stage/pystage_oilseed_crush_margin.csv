@@ -1,0 +1,3 @@
+﻿id,date,commodity_name,seed_price,claim,crush_expenses,quality_tolerance,cash_discount,total_cost,oil_price,oil_share,meal_price,meal_share,total_realization,net_crush_margin,created_by,created_date
+5361,2026-10-13,Rapeseed,90000.0,0.0,1250.0,-675.0,-900.0,89675.0,175000.0,64750.0,29500.0,18585.0,83335.0,-6340.0,app@agalabs.com,2026-10-13
+5360,2026-10-12,Rapeseed,89500.0,0.0,1250.0,-671.25,-895.0,89183.8,175000.0,64750.0,28700.0,18081.0,82831.0,-6352.75,app@agalabs.com,2026-10-13

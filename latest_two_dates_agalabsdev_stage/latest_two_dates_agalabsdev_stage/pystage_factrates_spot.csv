@@ -1,0 +1,1464 @@
+﻿RecordIndex,Date,SourceCommodityName,SourceLocationName,Unit,Variety,MarketRate,Value,CommodityName,DistrictName,Source,CreatedDate,CreatedBy,StateName
+2318352,2026-10-13,Guar-gum,Dabwali,INR per 100 KG,Guargum,15200.0,15200.0,Guar Gum,Sirsa,Agalabs_Spot,2026-10-13,Research,
+2318353,2026-10-13,Wheat,Dabwali,INR per 100 KG,Mill Quality (Loose),2800.0,2800.0,Wheat,Sirsa,Agalabs_Spot,2026-10-13,Research,
+2318354,2026-10-13,Guar-seed,Dabwali,INR per 100 KG,Guarseed,7600.0,7600.0,Guar Seed,Sirsa,Agalabs_Spot,2026-10-13,Research,
+2318355,2026-10-13,Guar-gum,Jodhpur,INR per 100 KG,Guargum,15200.0,15200.0,Guar Gum,Jodhpur,Agalabs_Spot,2026-10-13,Research,
+2318356,2026-10-13,Jeera-cumin-seed,Jodhpur,INR per 100 KG,Local (loose),25500.0,25500.0,Cumin,Jodhpur,Agalabs_Spot,2026-10-13,Research,
+2318357,2026-10-13,Guar-seed,Jodhpur,INR per 100 KG,Guarseed,7500.0,7500.0,Guar Seed,Jodhpur,Agalabs_Spot,2026-10-13,Research,
+2318358,2026-10-13,Guar-gum,Sirsa,INR per 100 KG,Guargum,15200.0,15200.0,Guar Gum,Sirsa,Agalabs_Spot,2026-10-13,Research,
+2318359,2026-10-13,Guar-seed,Sirsa,INR per 100 KG,Guarseed,7935.0,7935.0,Guar Seed,Sirsa,Agalabs_Spot,2026-10-13,Research,
+2318360,2026-10-13,Guar-gum,Bhiwani,INR per 100 KG,Guargum,14900.0,14900.0,Guar Gum,Bhiwani,Agalabs_Spot,2026-10-13,Research,
+2318361,2026-10-13,Cotton,Bhiwani,INR per 100 KG,Bt (Narma),9150.0,9150.0,Cotton,Bhiwani,Agalabs_Spot,2026-10-13,Research,
+2318362,2026-10-13,Guar-seed,Bhiwani,INR per 100 KG,Guarseed,7900.0,7900.0,Guar Seed,Bhiwani,Agalabs_Spot,2026-10-13,Research,
+2318363,2026-10-13,Mustard-rapeseed,Bhind,INR per 100 KG,Non-Condition,8000.0,8000.0,Rapeseed,Bhind,Agalabs_Spot,2026-10-13,Research,
+2318364,2026-10-13,Mustard-rapeseed,Baran,INR per 100 KG,Non-Condition,8450.0,8450.0,Rapeseed,Baran,Agalabs_Spot,2026-10-13,Research,
+2318365,2026-10-13,Soybean,Baran,INR per 100 KG,Yellow Soyabean,6580.0,6580.0,Soybeans,Baran,Agalabs_Spot,2026-10-13,Research,
+2318366,2026-10-13,Dhaniya-coriander-seed,Baran,INR per 100 KG,Eagle,15500.0,15500.0,Coriander,Baran,Agalabs_Spot,2026-10-13,Research,
+2318367,2026-10-13,Dhaniya-coriander-seed,Baran,INR per 100 KG,Badami,15000.0,15000.0,Coriander,Baran,Agalabs_Spot,2026-10-13,Research,
+2318368,2026-10-13,Mustard-rapeseed,Hapur,INR per 100 KG,Condition,8850.0,8850.0,Rapeseed,Hapur,Agalabs_Spot,2026-10-13,Research,
+2318369,2026-10-13,Mustard-rapeseed,Kota,INR per 100 KG,Condition,8700.0,8700.0,Rapeseed,Kota,Agalabs_Spot,2026-10-13,Research,
+2318370,2026-10-13,Mustard-rapeseed,Kota,INR per 100 KG,Non-Condition,8285.0,8285.0,Rapeseed,Kota,Agalabs_Spot,2026-10-13,Research,
+2318371,2026-10-13,Wheat,Kota,INR per 100 KG,FAQ,2700.0,2700.0,Wheat,Kota,Agalabs_Spot,2026-10-13,Research,
+2318372,2026-10-13,Mustard-oil-rapeseed-oil,Kota,INR per 100 KG,Kacchi Ghani,17800.0,17800.0,Rapeseed Oil,Kota,Agalabs_Spot,2026-10-13,Research,
+2318373,2026-10-13,Soybean,Kota,INR per 100 KG,Plant,6600.0,6600.0,Soybeans,Kota,Agalabs_Spot,2026-10-13,Research,
+2318374,2026-10-13,Soybean,Kota,INR per 100 KG,Mandi,6650.0,6650.0,Soybeans,Kota,Agalabs_Spot,2026-10-13,Research,
+2318375,2026-10-13,Dhaniya-coriander-seed,Kota,INR per 100 KG,Badami,14600.0,14600.0,Coriander,Kota,Agalabs_Spot,2026-10-13,Research,
+2318376,2026-10-13,Dhaniya-coriander-seed,Kota,INR per 100 KG,Eagle,15000.0,15000.0,Coriander,Kota,Agalabs_Spot,2026-10-13,Research,
+2318377,2026-10-13,Mustard-rapeseed,Delhi,INR per 100 KG,Condition,8925.0,8925.0,Rapeseed,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318378,2026-10-13,Jeera-cumin-seed,Delhi,INR per 100 KG,Ganesh,27000.0,27000.0,Cumin,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318379,2026-10-13,Jeera-cumin-seed,Delhi,INR per 100 KG,Machine Cut,28000.0,28000.0,Cumin,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318380,2026-10-13,Rice,Delhi,INR per 100 KG,Parmal Sella,4700.0,4700.0,Rice,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318381,2026-10-13,Rice,Delhi,INR per 100 KG,Sarbati Sella,6900.0,6900.0,Rice,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318382,2026-10-13,Rice,Delhi,INR per 100 KG,Basmati,10600.0,10600.0,Rice,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318383,2026-10-13,Rice,Delhi,INR per 100 KG,Parmal Raw,4800.0,4800.0,Rice,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318384,2026-10-13,Rice,Delhi,INR per 100 KG,Sarbati Raw,7400.0,7400.0,Rice,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318385,2026-10-13,Rice,Delhi,INR per 100 KG,DB,9200.0,9200.0,Rice,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318386,2026-10-13,Rice,Delhi,INR per 100 KG,Sugandha Steam,8000.0,8000.0,Rice,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318387,2026-10-13,Rice,Delhi,INR per 100 KG,1509 Steam,8600.0,8600.0,Rice,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318388,2026-10-13,Chana-chickpeas,Delhi,INR per 100 KG,M.P.,7550.0,7550.0,Bengal Gram,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318389,2026-10-13,Chana-chickpeas,Delhi,INR per 100 KG,Rajasthan,7600.0,7600.0,Bengal Gram,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318390,2026-10-13,Chana-chickpeas,Delhi,INR per 100 KG,Chana Dal,8600.0,8600.0,Bengal Gram,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318391,2026-10-13,Tur-pigeon-peas,Delhi,INR per 100 KG,Burmese Lemon,9900.0,9900.0,Tur,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318392,2026-10-13,White-and-raw-sugar,Delhi,INR per 100 KG,S-30,5410.0,5410.0,Sugar,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318393,2026-10-13,White-and-raw-sugar,Delhi,INR per 100 KG,M-30,5430.0,5430.0,Sugar,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318394,2026-10-13,Black-pepper,Delhi,INR per 100 KG,Number 11.5,79000.0,79000.0,Black Pepper,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318395,2026-10-13,Masoor-masur-red-lentils,Delhi,INR per 100 KG,Chanti - Export quality,12500.0,12500.0,Masoor,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318396,2026-10-13,Masoor-masur-red-lentils,Delhi,INR per 100 KG,U.P./Sikri Line,7200.0,7200.0,Masoor,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318397,2026-10-13,Masoor-masur-red-lentils,Delhi,INR per 100 KG,M.P./Kotaline,6900.0,6900.0,Masoor,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318398,2026-10-13,Masoor-masur-red-lentils,Delhi,INR per 100 KG,Malkadal,7400.0,7400.0,Masoor,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318399,2026-10-13,Masoor-masur-red-lentils,Delhi,INR per 100 KG,Masur Dal,7500.0,7500.0,Masoor,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318400,2026-10-13,Urad-black-gram,Delhi,INR per 100 KG,FAQ,9900.0,9900.0,Urad,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318401,2026-10-13,Moong-mung-beans,Delhi,INR per 100 KG,Moong Mertha City Polish,9500.0,9500.0,Moong,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318402,2026-10-13,Moong-mung-beans,Delhi,INR per 100 KG,Moong Mertha City Mogar,8600.0,8600.0,Moong,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318403,2026-10-13,Mustard-rapeseed,Sri Ganganagar,INR per 100 KG,Non-Condition,8350.0,8350.0,Rapeseed,Sri Ganganagar,Agalabs_Spot,2026-10-13,Research,
+2318404,2026-10-13,Rapeseed-mustard-meal,Sri Ganganagar,INR per 100 KG,FAQ,3600.0,3600.0,Rapeseed Meal,Sri Ganganagar,Agalabs_Spot,2026-10-13,Research,
+2318405,2026-10-13,Mustard-oil-rapeseed-oil,Sri Ganganagar,INR per 100 KG,Kacchi Ghani,17800.0,17800.0,Rapeseed Oil,Sri Ganganagar,Agalabs_Spot,2026-10-13,Research,
+2318406,2026-10-13,Guar-seed,Sri Ganganagar,INR per 100 KG,Guarseed,7950.0,7950.0,Guar Seed,Sri Ganganagar,Agalabs_Spot,2026-10-13,Research,
+2318407,2026-10-13,Mustard-rapeseed,Alwar,INR per 100 KG,Condition,8750.0,8750.0,Rapeseed,Alwar,Agalabs_Spot,2026-10-13,Research,
+2318408,2026-10-13,Chana-chickpeas,Alwar,INR per 100 KG,Desi,7300.0,7300.0,Bengal Gram,Alwar,Agalabs_Spot,2026-10-13,Research,
+2318409,2026-10-13,Guar-seed,Alwar,INR per 100 KG,Guarseed,6600.0,6600.0,Guar Seed,Alwar,Agalabs_Spot,2026-10-13,Research,
+2318410,2026-10-13,Mustard-rapeseed,Khajuwala,INR per 100 KG,Non-Condition,8000.0,8000.0,Rapeseed,Bikaner,Agalabs_Spot,2026-10-13,Research,
+2318411,2026-10-13,Mustard-rapeseed,Dabra,INR per 100 KG,Non-Condition,8000.0,8000.0,Rapeseed,Gwalior,Agalabs_Spot,2026-10-13,Research,
+2318412,2026-10-13,Mustard-rapeseed,Neewai,INR per 100 KG,Non-Condition,8600.0,8600.0,Rapeseed,Tonk,Agalabs_Spot,2026-10-13,Research,
+2318413,2026-10-13,Mustard-oil-rapeseed-oil,Neewai,INR per 100 KG,Kacchi Ghani,17750.0,17750.0,Rapeseed Oil,Tonk,Agalabs_Spot,2026-10-13,Research,
+2318414,2026-10-13,Mustard-rapeseed,Jaipur,INR per 100 KG,Condition,9000.0,9000.0,Rapeseed,Jaipur,Agalabs_Spot,2026-10-13,Research,
+2318415,2026-10-13,Mustard-oil-rapeseed-oil,Jaipur,INR per 100 KG,Kacchi Ghani,17900.0,17900.0,Rapeseed Oil,Jaipur,Agalabs_Spot,2026-10-13,Research,
+2318416,2026-10-13,Chana-chickpeas,Jaipur,INR per 100 KG,Desi,7650.0,7650.0,Bengal Gram,Jaipur,Agalabs_Spot,2026-10-13,Research,
+2318417,2026-10-13,Urad-black-gram,Jaipur,INR per 100 KG,Desi,9200.0,9200.0,Urad,Jaipur,Agalabs_Spot,2026-10-13,Research,
+2318418,2026-10-13,Moong-mung-beans,Jaipur,INR per 100 KG,Moong Chamki,8500.0,8500.0,Moong,Jaipur,Agalabs_Spot,2026-10-13,Research,
+2318419,2026-10-13,Mustard-rapeseed,Agra,INR per 100 KG,Condition,9405.0,9405.0,Rapeseed,Agra,Agalabs_Spot,2026-10-13,Research,
+2318420,2026-10-13,Mustard-oil-rapeseed-oil,Agra,INR per 100 KG,Kacchi Ghani,17650.0,17650.0,Rapeseed Oil,Agra,Agalabs_Spot,2026-10-13,Research,
+2318421,2026-10-13,Mustard-rapeseed,Morena,INR per 100 KG,Condition,8700.0,8700.0,Rapeseed,Morena,Agalabs_Spot,2026-10-13,Research,
+2318422,2026-10-13,Mustard-rapeseed,Morena,INR per 100 KG,Non-Condition,8300.0,8300.0,Rapeseed,Morena,Agalabs_Spot,2026-10-13,Research,
+2318423,2026-10-13,Wheat,Kosi,INR per 100 KG,FAQ,2590.0,2590.0,Wheat,Madhepura,Agalabs_Spot,2026-10-13,Research,
+2318424,2026-10-13,Wheat,Acchnera,INR per 100 KG,Mill Quality (Loose),2650.0,2650.0,Wheat,Agra,Agalabs_Spot,2026-10-13,Research,
+2318425,2026-10-13,Wheat,Rajkot,INR per 100 KG,Mill Quality (Mill Delivery),2875.0,2875.0,Wheat,Rajkot,Agalabs_Spot,2026-10-13,Research,
+2318426,2026-10-13,Wheat,Rajkot,INR per 100 KG,Mill Quality (Loose),2800.0,2800.0,Wheat,Rajkot,Agalabs_Spot,2026-10-13,Research,
+2318427,2026-10-13,Jeera-cumin-seed,Rajkot,INR per 100 KG,Local (loose),25500.0,25500.0,Cumin,Rajkot,Agalabs_Spot,2026-10-13,Research,
+2318428,2026-10-13,Cotton,Rajkot,INR per 100 KG,Bt Cotton,10010.0,10010.0,Cotton,Rajkot,Agalabs_Spot,2026-10-13,Research,
+2318429,2026-10-13,Guar-seed,Rajkot,INR per 100 KG,Guarseed,7750.0,7750.0,Guar Seed,Rajkot,Agalabs_Spot,2026-10-13,Research,
+2318430,2026-10-13,Dhaniya-coriander-seed,Rajkot,INR per 100 KG,Rajkot Loose,15400.0,15400.0,Coriander,Rajkot,Agalabs_Spot,2026-10-13,Research,
+2318431,2026-10-13,Groundnut-peanut,Rajkot,INR per 100 KG,GN Bold,8315.0,8315.0,Groundnut,Rajkot,Agalabs_Spot,2026-10-13,Research,
+2318432,2026-10-13,Wheat,Chennai,INR per 100 KG,Mill Quality (Mill Delivery),3080.0,3080.0,Wheat,Chennai,Agalabs_Spot,2026-10-13,Research,
+2318433,2026-10-13,Wheat,Chennai,INR per 100 KG,Lokwan (Mill Delivery),3250.0,3250.0,Wheat,Chennai,Agalabs_Spot,2026-10-13,Research,
+2318434,2026-10-13,White-and-raw-sugar,Chennai,INR per 100 KG,S-Grade,5400.0,5400.0,Sugar,Chennai,Agalabs_Spot,2026-10-13,Research,
+2318435,2026-10-13,Urad-black-gram,Chennai,INR per 100 KG,FAQ,9600.0,9600.0,Urad,Chennai,Agalabs_Spot,2026-10-13,Research,
+2318436,2026-10-13,Urad-black-gram,Chennai,INR per 100 KG,Urad SQ,10000.0,10000.0,Urad,Chennai,Agalabs_Spot,2026-10-13,Research,
+2318437,2026-10-13,Wheat,Indore,INR per 100 KG,Lokwan (Loose),3100.0,3100.0,Wheat,Indore,Agalabs_Spot,2026-10-13,Research,
+2318438,2026-10-13,Wheat,Indore,INR per 100 KG,Mill Quality (Mill Delivery),2800.0,2800.0,Wheat,Indore,Agalabs_Spot,2026-10-13,Research,
+2318439,2026-10-13,Wheat,Indore,INR per 100 KG,Mill Quality (Loose),2700.0,2700.0,Wheat,Indore,Agalabs_Spot,2026-10-13,Research,
+2318440,2026-10-13,Chana-chickpeas,Indore,INR per 100 KG,Chana Dal,9300.0,9300.0,Bengal Gram,Indore,Agalabs_Spot,2026-10-13,Research,
+2318441,2026-10-13,Chana-chickpeas,Indore,INR per 100 KG,Kantewala,7600.0,7600.0,Bengal Gram,Indore,Agalabs_Spot,2026-10-13,Research,
+2318442,2026-10-13,Tur-pigeon-peas,Indore,INR per 100 KG,FAQ,11000.0,11000.0,Tur,Indore,Agalabs_Spot,2026-10-13,Research,
+2318443,2026-10-13,Tur-pigeon-peas,Indore,INR per 100 KG,Tur Dal,15000.0,15000.0,Tur,Indore,Agalabs_Spot,2026-10-13,Research,
+2318444,2026-10-13,Soybean,Indore,INR per 100 KG,Mandi,6600.0,6600.0,Soybeans,Indore,Agalabs_Spot,2026-10-13,Research,
+2318445,2026-10-13,Soybean,Indore,INR per 100 KG,Plant,6800.0,6800.0,Soybeans,Indore,Agalabs_Spot,2026-10-13,Research,
+2318446,2026-10-13,Masoor-masur-red-lentils,Indore,INR per 100 KG,FAQ,6275.0,6275.0,Masoor,Indore,Agalabs_Spot,2026-10-13,Research,
+2318447,2026-10-13,Masoor-masur-red-lentils,Indore,INR per 100 KG,Masra,6300.0,6300.0,Masoor,Indore,Agalabs_Spot,2026-10-13,Research,
+2318448,2026-10-13,Masoor-masur-red-lentils,Indore,INR per 100 KG,Masur Dal,7800.0,7800.0,Masoor,Indore,Agalabs_Spot,2026-10-13,Research,
+2318449,2026-10-13,Masoor-masur-red-lentils,Indore,INR per 100 KG,Medium Barik,6250.0,6250.0,Masoor,Indore,Agalabs_Spot,2026-10-13,Research,
+2318450,2026-10-13,Urad-black-gram,Indore,INR per 100 KG,FAQ,10100.0,10100.0,Urad,Indore,Agalabs_Spot,2026-10-13,Research,
+2318451,2026-10-13,Moong-mung-beans,Indore,INR per 100 KG,Moong Chamki,9000.0,9000.0,Moong,Indore,Agalabs_Spot,2026-10-13,Research,
+2318452,2026-10-13,Wheat,Kanpur,INR per 100 KG,Mill Quality (Loose),2675.0,2675.0,Wheat,Kanpur,Agalabs_Spot,2026-10-13,Research,
+2318453,2026-10-13,Wheat,Kanpur,INR per 100 KG,Mill Quality (Mill Delivery),2750.0,2750.0,Wheat,Kanpur,Agalabs_Spot,2026-10-13,Research,
+2318454,2026-10-13,Chana-chickpeas,Kanpur,INR per 100 KG,FAQ,7800.0,7800.0,Bengal Gram,Kanpur,Agalabs_Spot,2026-10-13,Research,
+2318455,2026-10-13,Chana-chickpeas,Kanpur,INR per 100 KG,Chana Dal,8700.0,8700.0,Bengal Gram,Kanpur,Agalabs_Spot,2026-10-13,Research,
+2318456,2026-10-13,Tur-pigeon-peas,Kanpur,INR per 100 KG,Tur New UP Line,8500.0,8500.0,Tur,Kanpur,Agalabs_Spot,2026-10-13,Research,
+2318457,2026-10-13,Tur-pigeon-peas,Kanpur,INR per 100 KG,Tur New MP Line,8400.0,8400.0,Tur,Kanpur,Agalabs_Spot,2026-10-13,Research,
+2318458,2026-10-13,Peas-dry-peas,Kanpur,INR per 100 KG,Desi,4900.0,4900.0,Pea,Kanpur,Agalabs_Spot,2026-10-13,Research,
+2318459,2026-10-13,Peas-dry-peas,Kanpur,INR per 100 KG,White Canadian,5000.0,5000.0,Pea,Kanpur,Agalabs_Spot,2026-10-13,Research,
+2318460,2026-10-13,Masoor-masur-red-lentils,Kanpur,INR per 100 KG,Bareily,6900.0,6900.0,Masoor,Kanpur,Agalabs_Spot,2026-10-13,Research,
+2318461,2026-10-13,Masoor-masur-red-lentils,Kanpur,INR per 100 KG,Kanpur,6800.0,6800.0,Masoor,Kanpur,Agalabs_Spot,2026-10-13,Research,
+2318462,2026-10-13,Urad-black-gram,Kanpur,INR per 100 KG,FAQ,9500.0,9500.0,Urad,Kanpur,Agalabs_Spot,2026-10-13,Research,
+2318463,2026-10-13,Moong-mung-beans,Kanpur,INR per 100 KG,FAQ,8500.0,8500.0,Moong,Kanpur,Agalabs_Spot,2026-10-13,Research,
+2318464,2026-10-13,Wheat,Kirawali,INR per 100 KG,Mill Quality (Loose),2600.0,2600.0,Wheat,Agra,Agalabs_Spot,2026-10-13,Research,
+2318465,2026-10-13,Wheat,Madurai,INR per 100 KG,Mill Quality (Mill Delivery),3137.0,3137.0,Wheat,Madurai,Agalabs_Spot,2026-10-13,Research,
+2318466,2026-10-13,Wheat,Madurai,INR per 100 KG,Lokwan (Mill Delivery),3300.0,3300.0,Wheat,Madurai,Agalabs_Spot,2026-10-13,Research,
+2318467,2026-10-13,Wheat,Bareilly,INR per 100 KG,FAQ,2685.0,2685.0,Wheat,Bareilly,Agalabs_Spot,2026-10-13,Research,
+2318468,2026-10-13,Wheat,Ujjain,INR per 100 KG,FAQ,2800.0,2800.0,Wheat,Ujjain,Agalabs_Spot,2026-10-13,Research,
+2318469,2026-10-13,Soybean,Ujjain,INR per 100 KG,Yellow Soyabean,6650.0,6650.0,Soybeans,Ujjain,Agalabs_Spot,2026-10-13,Research,
+2318470,2026-10-13,Wheat,Hodal,INR per 100 KG,Mill Quality (Loose),2600.0,2600.0,Wheat,Palwal,Agalabs_Spot,2026-10-13,Research,
+2318471,2026-10-13,Wheat,Mathura,INR per 100 KG,FAQ,2570.0,2570.0,Wheat,Mathura,Agalabs_Spot,2026-10-13,Research,
+2318472,2026-10-13,Wheat,Ahmedabad,INR per 100 KG,Mill Quality (Mill Delivery),2970.0,2970.0,Wheat,Ahmedabad,Agalabs_Spot,2026-10-13,Research,
+2318473,2026-10-13,Cotton,Ahmedabad,INR per 100 KG,Shankar-6,10000.0,10000.0,Cotton,Ahmedabad,Agalabs_Spot,2026-10-13,Research,
+2318474,2026-10-13,Rice,Ahmedabad,INR per 100 KG,Parmal Sortex,3800.0,3800.0,Rice,Ahmedabad,Agalabs_Spot,2026-10-13,Research,
+2318475,2026-10-13,Rice,Ahmedabad,INR per 100 KG,Kolam Sortex,4600.0,4600.0,Rice,Ahmedabad,Agalabs_Spot,2026-10-13,Research,
+2318476,2026-10-13,Corn-maize,Ahmedabad,INR per 100 KG,Poultry Feed Mills,2800.0,2800.0,Maize,Ahmedabad,Agalabs_Spot,2026-10-13,Research,
+2318477,2026-10-13,Corn-maize,Ahmedabad,INR per 100 KG,Starch,2750.0,2750.0,Maize,Ahmedabad,Agalabs_Spot,2026-10-13,Research,
+2318478,2026-10-13,Wheat,Bhopal,INR per 100 KG,FAQ,2670.0,2670.0,Wheat,Bhopal,Agalabs_Spot,2026-10-13,Research,
+2318479,2026-10-13,Wheat,Coimbatore,INR per 100 KG,Lokwan (Mill Delivery),3300.0,3300.0,Wheat,Coimbatore,Agalabs_Spot,2026-10-13,Research,
+2318480,2026-10-13,Wheat,Coimbatore,INR per 100 KG,Mill Quality (Mill Delivery),3137.0,3137.0,Wheat,Coimbatore,Agalabs_Spot,2026-10-13,Research,
+2318481,2026-10-13,Wheat,Panipat,INR per 100 KG,Mill Quality (Loose),2810.0,2810.0,Wheat,Panipat,Agalabs_Spot,2026-10-13,Research,
+2318482,2026-10-13,Wheat,Karnal,INR per 100 KG,FAQ,2860.0,2860.0,Wheat,Karnal,Agalabs_Spot,2026-10-13,Research,
+2318483,2026-10-13,Rice,Karnal,INR per 100 KG,Basmati,10500.0,10500.0,Rice,Karnal,Agalabs_Spot,2026-10-13,Research,
+2318484,2026-10-13,Rice,Karnal,INR per 100 KG,DB Sella,8800.0,8800.0,Rice,Karnal,Agalabs_Spot,2026-10-13,Research,
+2318485,2026-10-13,Rice,Karnal,INR per 100 KG,IR8,3800.0,3800.0,Rice,Karnal,Agalabs_Spot,2026-10-13,Research,
+2318486,2026-10-13,Rice,Karnal,INR per 100 KG,1121 Sella (Parboiled),9300.0,9300.0,Rice,Karnal,Agalabs_Spot,2026-10-13,Research,
+2318487,2026-10-13,Rice,Karnal,INR per 100 KG,Sarbati Sella,6700.0,6700.0,Rice,Karnal,Agalabs_Spot,2026-10-13,Research,
+2318488,2026-10-13,Rice,Karnal,INR per 100 KG,1121 Steam,9800.0,9800.0,Rice,Karnal,Agalabs_Spot,2026-10-13,Research,
+2318489,2026-10-13,Rice,Karnal,INR per 100 KG,Parmal Sella,4700.0,4700.0,Rice,Karnal,Agalabs_Spot,2026-10-13,Research,
+2318490,2026-10-13,Rice,Karnal,INR per 100 KG,Parmal Raw,4700.0,4700.0,Rice,Karnal,Agalabs_Spot,2026-10-13,Research,
+2318491,2026-10-13,Rice,Karnal,INR per 100 KG,1509 Paddy,3940.0,3940.0,Rice,Karnal,Agalabs_Spot,2026-10-13,Research,
+2318492,2026-10-13,Rice,Karnal,INR per 100 KG,Sarbati Steam,7300.0,7300.0,Rice,Karnal,Agalabs_Spot,2026-10-13,Research,
+2318493,2026-10-13,Rice,Karnal,INR per 100 KG,1121 Paddy,5100.0,5100.0,Rice,Karnal,Agalabs_Spot,2026-10-13,Research,
+2318494,2026-10-13,Wheat,Bharatpur,INR per 100 KG,Mill Quality (Loose),2700.0,2700.0,Wheat,Kalaburagi,Agalabs_Spot,2026-10-13,Research,
+2318495,2026-10-13,Wheat,Surat,INR per 100 KG,Mill Quality (Mill Delivery),3070.0,3070.0,Wheat,Surat,Agalabs_Spot,2026-10-13,Research,
+2318496,2026-10-13,Turmeric,Khari Baoli,INR per 100 KG,Gattah,22000.0,22000.0,Turmeric,Khari Baoli,Agalabs_Spot,2026-10-13,Research,
+2318497,2026-10-13,Red-chilli,Khari Baoli,INR per 100 KG,Teja,24000.0,24000.0,Red Chilli,Khari Baoli,Agalabs_Spot,2026-10-13,Research,
+2318498,2026-10-13,Red-chilli,Khari Baoli,INR per 100 KG,No.5/ fatki,18000.0,18000.0,Red Chilli,Khari Baoli,Agalabs_Spot,2026-10-13,Research,
+2318499,2026-10-13,Red-chilli,Khari Baoli,INR per 100 KG,LCA 334 - loose,28000.0,28000.0,Red Chilli,Khari Baoli,Agalabs_Spot,2026-10-13,Research,
+2318500,2026-10-13,Turmeric,Nizamabad,INR per 100 KG,Finger,22500.0,22500.0,Turmeric,Nizamabad,Agalabs_Spot,2026-10-13,Research,
+2318501,2026-10-13,Turmeric,Nizamabad,INR per 100 KG,Gattah,20000.0,20000.0,Turmeric,Nizamabad,Agalabs_Spot,2026-10-13,Research,
+2318502,2026-10-13,Turmeric,Nizamabad,INR per 100 KG,Nizam,21000.0,21000.0,Turmeric,Nizamabad,Agalabs_Spot,2026-10-13,Research,
+2318503,2026-10-13,Rice,Nizamabad,INR per 100 KG,BPT Raw,7300.0,7300.0,Rice,Nizamabad,Agalabs_Spot,2026-10-13,Research,
+2318504,2026-10-13,Rice,Nizamabad,INR per 100 KG,BPT Steam,7200.0,7200.0,Rice,Nizamabad,Agalabs_Spot,2026-10-13,Research,
+2318505,2026-10-13,Corn-maize,Nizamabad,INR per 100 KG,Feed grade,2600.0,2600.0,Maize,Nizamabad,Agalabs_Spot,2026-10-13,Research,
+2318506,2026-10-13,Turmeric,Sangli,INR per 100 KG,Selam Finger,26500.0,26500.0,Turmeric,Sangli,Agalabs_Spot,2026-10-13,Research,
+2318507,2026-10-13,Turmeric,Sangli,INR per 100 KG,Rajapuri,25000.0,25000.0,Turmeric,Sangli,Agalabs_Spot,2026-10-13,Research,
+2318508,2026-10-13,Turmeric,Sangli,INR per 100 KG,Desi Cudappa,19000.0,19000.0,Turmeric,Sangli,Agalabs_Spot,2026-10-13,Research,
+2318509,2026-10-13,Corn-maize,Sangli,INR per 100 KG,Bilty [Feed grade],2800.0,2800.0,Maize,Sangli,Agalabs_Spot,2026-10-13,Research,
+2318510,2026-10-13,Turmeric,Warangal,INR per 100 KG,Round,16300.0,16300.0,Turmeric,Warangal,Agalabs_Spot,2026-10-13,Research,
+2318511,2026-10-13,Turmeric,Warangal,INR per 100 KG,Finger,16700.0,16700.0,Turmeric,Warangal,Agalabs_Spot,2026-10-13,Research,
+2318512,2026-10-13,Red-chilli,Warangal,INR per 100 KG,Teja,21200.0,21200.0,Red Chilli,Warangal,Agalabs_Spot,2026-10-13,Research,
+2318513,2026-10-13,Red-chilli,Warangal,INR per 100 KG,Fatki,14500.0,14500.0,Red Chilli,Warangal,Agalabs_Spot,2026-10-13,Research,
+2318514,2026-10-13,Red-chilli,Warangal,INR per 100 KG,Wonder Hot,31000.0,31000.0,Red Chilli,Warangal,Agalabs_Spot,2026-10-13,Research,
+2318515,2026-10-13,Red-chilli,Warangal,INR per 100 KG,Paprika,38000.0,38000.0,Red Chilli,Warangal,Agalabs_Spot,2026-10-13,Research,
+2318516,2026-10-13,Red-chilli,Warangal,INR per 100 KG,Chilli No.341,25000.0,25000.0,Red Chilli,Warangal,Agalabs_Spot,2026-10-13,Research,
+2318517,2026-10-13,Red-chilli,Warangal,INR per 100 KG,Devanoor Deluxe,25000.0,25000.0,Red Chilli,Warangal,Agalabs_Spot,2026-10-13,Research,
+2318518,2026-10-13,Turmeric,Erode,INR per 100 KG,Gattah,19500.0,19500.0,Turmeric,Erode,Agalabs_Spot,2026-10-13,Research,
+2318519,2026-10-13,Turmeric,Erode,INR per 100 KG,Finger,21500.0,21500.0,Turmeric,Erode,Agalabs_Spot,2026-10-13,Research,
+2318520,2026-10-13,Turmeric,Duggirala,INR per 100 KG,Bulb,18400.0,18400.0,Turmeric,Guntur,Agalabs_Spot,2026-10-13,Research,
+2318521,2026-10-13,Turmeric,Duggirala,INR per 100 KG,Duggirala Finger,18400.0,18400.0,Turmeric,Guntur,Agalabs_Spot,2026-10-13,Research,
+2318522,2026-10-13,Jeera-cumin-seed,Nagaur,INR per 100 KG,FAQ,25700.0,25700.0,Cumin,Nagaur,Agalabs_Spot,2026-10-13,Research,
+2318523,2026-10-13,Guar-seed,Nagaur,INR per 100 KG,Guarseed,7450.0,7450.0,Guar Seed,Nagaur,Agalabs_Spot,2026-10-13,Research,
+2318524,2026-10-13,Jeera-cumin-seed,Gondal,INR per 100 KG,Local,25500.0,25500.0,Cumin,Rajkot,Agalabs_Spot,2026-10-13,Research,
+2318525,2026-10-13,Cotton,Gondal,INR per 100 KG,Shankar-6,10005.0,10005.0,Cotton,Rajkot,Agalabs_Spot,2026-10-13,Research,
+2318526,2026-10-13,Dhaniya-coriander-seed,Gondal,INR per 100 KG,Badami,15000.0,15000.0,Coriander,Rajkot,Agalabs_Spot,2026-10-13,Research,
+2318527,2026-10-13,Dhaniya-coriander-seed,Gondal,INR per 100 KG,Eagle Plus,15600.0,15600.0,Coriander,Rajkot,Agalabs_Spot,2026-10-13,Research,
+2318528,2026-10-13,Jeera-cumin-seed,Dhrol,INR per 100 KG,Local (loose),25000.0,25000.0,Cumin,Jamnagar,Agalabs_Spot,2026-10-13,Research,
+2318529,2026-10-13,Cotton,Dhrol,INR per 100 KG,Bt Cotton,9840.0,9840.0,Cotton,Jamnagar,Agalabs_Spot,2026-10-13,Research,
+2318530,2026-10-13,Jeera-cumin-seed,Unjha,INR per 100 KG,FAQ,23500.0,23500.0,Cumin,Mehsana,Agalabs_Spot,2026-10-13,Research,
+2318531,2026-10-13,Jeera-cumin-seed,Unjha,INR per 100 KG,Machine Cleaned,27000.0,27000.0,Cumin,Mehsana,Agalabs_Spot,2026-10-13,Research,
+2318532,2026-10-13,Jeera-cumin-seed,Merta City,INR per 100 KG,Local,26500.0,26500.0,Cumin,Nagaur,Agalabs_Spot,2026-10-13,Research,
+2318533,2026-10-13,Moong-mung-beans,Merta City,INR per 100 KG,Polish,9200.0,9200.0,Moong,Nagaur,Agalabs_Spot,2026-10-13,Research,
+2318534,2026-10-13,Moong-mung-beans,Merta City,INR per 100 KG,Moong Mogar,8700.0,8700.0,Moong,Nagaur,Agalabs_Spot,2026-10-13,Research,
+2318535,2026-10-13,Moong-mung-beans,Merta City,INR per 100 KG,Chilka Dal Quality,9200.0,9200.0,Moong,Nagaur,Agalabs_Spot,2026-10-13,Research,
+2318536,2026-10-13,Jeera-cumin-seed,Anandpur Kalu,INR per 100 KG,Local,26000.0,26000.0,Cumin,Ropar,Agalabs_Spot,2026-10-13,Research,
+2318537,2026-10-13,Jeera-cumin-seed,Patan,INR per 100 KG,Local (loose),25000.0,25000.0,Cumin,Patan,Agalabs_Spot,2026-10-13,Research,
+2318538,2026-10-13,Cotton,Patan,INR per 100 KG,Bt Cotton,9845.0,9845.0,Cotton,Patan,Agalabs_Spot,2026-10-13,Research,
+2318539,2026-10-13,Guar-seed,Patan,INR per 100 KG,Guarseed,6425.0,6425.0,Guar Seed,Patan,Agalabs_Spot,2026-10-13,Research,
+2318540,2026-10-13,Red-chilli,Bedia,INR per 100 KG,No.12 (Full Cut),22000.0,22000.0,Red Chilli,khargone,Agalabs_Spot,2026-10-13,Research,
+2318541,2026-10-13,Red-chilli,Guntur,INR per 100 KG,Bedki,27500.0,27500.0,Red Chilli,Guntur,Agalabs_Spot,2026-10-13,Research,
+2318542,2026-10-13,Red-chilli,Guntur,INR per 100 KG,Sannam,28500.0,28500.0,Red Chilli,Guntur,Agalabs_Spot,2026-10-13,Research,
+2318543,2026-10-13,Red-chilli,Guntur,INR per 100 KG,No.5/ fatki,25500.0,25500.0,Red Chilli,Guntur,Agalabs_Spot,2026-10-13,Research,
+2318544,2026-10-13,Red-chilli,Guntur,INR per 100 KG,Teja,22000.0,22000.0,Red Chilli,Guntur,Agalabs_Spot,2026-10-13,Research,
+2318545,2026-10-13,Red-chilli,Guntur,INR per 100 KG,No. 273,26000.0,26000.0,Red Chilli,Guntur,Agalabs_Spot,2026-10-13,Research,
+2318546,2026-10-13,Red-chilli,Guntur,INR per 100 KG,LCA 334 - loose,28500.0,28500.0,Red Chilli,Guntur,Agalabs_Spot,2026-10-13,Research,
+2318547,2026-10-13,Cotton,Hanumangarh,INR per 100 KG,Bt (Narma),9000.0,9000.0,Cotton,Hanumangarh,Agalabs_Spot,2026-10-13,Research,
+2318548,2026-10-13,Cotton,Adampur,INR per 100 KG,Bt (Narma),9000.0,9000.0,Cotton,Jalandhar,Agalabs_Spot,2026-10-13,Research,
+2318549,2026-10-13,Guar-seed,Adampur,INR per 100 KG,Guarseed,7900.0,7900.0,Guar Seed,Jalandhar,Agalabs_Spot,2026-10-13,Research,
+2318550,2026-10-13,Cotton,Fatehabad,INR per 100 KG,Bt Cotton,8940.0,8940.0,Cotton,Fatehabad,Agalabs_Spot,2026-10-13,Research,
+2318551,2026-10-13,Cotton,Amravati,INR per 100 KG,MECH -I 29 MM,9080.0,9080.0,Cotton,Amravati,Agalabs_Spot,2026-10-13,Research,
+2318552,2026-10-13,Chana-chickpeas,Amravati,INR per 100 KG,Desi,7500.0,7500.0,Bengal Gram,Amravati,Agalabs_Spot,2026-10-13,Research,
+2318553,2026-10-13,Tur-pigeon-peas,Amravati,INR per 100 KG,Red,10500.0,10500.0,Tur,Amravati,Agalabs_Spot,2026-10-13,Research,
+2318554,2026-10-13,Soybean,Amravati,INR per 100 KG,Yellow Soyabean,6500.0,6500.0,Soybeans,Amravati,Agalabs_Spot,2026-10-13,Research,
+2318555,2026-10-13,Cotton,Kadi,INR per 100 KG,Bt (Narma),9750.0,9750.0,Cotton, Mehsana,Agalabs_Spot,2026-10-13,Research,
+2318556,2026-10-13,Rice,Udhamsingh Nagar,INR per 100 KG,Parmal Sella,4550.0,4550.0,Rice,Udhamsingh Nagar,Agalabs_Spot,2026-10-13,Research,
+2318557,2026-10-13,Rice,Udhamsingh Nagar,INR per 100 KG,1509 Steam,8400.0,8400.0,Rice,Udhamsingh Nagar,Agalabs_Spot,2026-10-13,Research,
+2318558,2026-10-13,Rice,Udhamsingh Nagar,INR per 100 KG,Dehraduni Basmati,10500.0,10500.0,Rice,Udhamsingh Nagar,Agalabs_Spot,2026-10-13,Research,
+2318559,2026-10-13,Rice,Udhamsingh Nagar,INR per 100 KG,Sugandha Sella,7500.0,7500.0,Rice,Udhamsingh Nagar,Agalabs_Spot,2026-10-13,Research,
+2318560,2026-10-13,Rice,Udhamsingh Nagar,INR per 100 KG,1121 Steam,9800.0,9800.0,Rice,Udhamsingh Nagar,Agalabs_Spot,2026-10-13,Research,
+2318561,2026-10-13,Rice,Raichur,INR per 100 KG,Sona Masuri Raw,7800.0,7800.0,Rice,Raichur,Agalabs_Spot,2026-10-13,Research,
+2318562,2026-10-13,Rice,Raichur,INR per 100 KG,HMT Steam,8100.0,8100.0,Rice,Raichur,Agalabs_Spot,2026-10-13,Research,
+2318563,2026-10-13,Rice,Raichur,INR per 100 KG,Sona Masuri Steam,7800.0,7800.0,Rice,Raichur,Agalabs_Spot,2026-10-13,Research,
+2318564,2026-10-13,Rice,Gondia,INR per 100 KG,HMT Raw,7500.0,7500.0,Rice,Gondia,Agalabs_Spot,2026-10-13,Research,
+2318565,2026-10-13,Rice,Amritsar,INR per 100 KG,Sarbati Raw,7200.0,7200.0,Rice,Amritsar,Agalabs_Spot,2026-10-13,Research,
+2318566,2026-10-13,Rice,Amritsar,INR per 100 KG,Sarbati Sella,6600.0,6600.0,Rice,Amritsar,Agalabs_Spot,2026-10-13,Research,
+2318567,2026-10-13,Rice,Amritsar,INR per 100 KG,Sarbati Steam,7200.0,7200.0,Rice,Amritsar,Agalabs_Spot,2026-10-13,Research,
+2318568,2026-10-13,Rice,Amritsar,INR per 100 KG,Basmati,10600.0,10600.0,Rice,Amritsar,Agalabs_Spot,2026-10-13,Research,
+2318569,2026-10-13,Rice,Amritsar,INR per 100 KG,Parmal Wand,4700.0,4700.0,Rice,Amritsar,Agalabs_Spot,2026-10-13,Research,
+2318570,2026-10-13,Rice,Amritsar,INR per 100 KG,1121 Steam,9900.0,9900.0,Rice,Amritsar,Agalabs_Spot,2026-10-13,Research,
+2318571,2026-10-13,Rice,Amritsar,INR per 100 KG,1509 Paddy,4320.0,4320.0,Rice,Amritsar,Agalabs_Spot,2026-10-13,Research,
+2318572,2026-10-13,Rice,Kolkata,INR per 100 KG,Swarna Parboiled -100% Broken-Silky Sortex,3675.0,3675.0,Rice,Kolkata,Agalabs_Spot,2026-10-13,Research,
+2318573,2026-10-13,Rice,Kolkata,INR per 100 KG,IR-36-Parboiled 5% Silky sortex,3700.0,3700.0,Rice,Kolkata,Agalabs_Spot,2026-10-13,Research,
+2318574,2026-10-13,Rice,Kolkata,INR per 100 KG,Miniket 5% broken,5400.0,5400.0,Rice,Kolkata,Agalabs_Spot,2026-10-13,Research,
+2318575,2026-10-13,Rice,Kolkata,INR per 100 KG,Swarna Parboiled 5%- Silky Sortex,3625.0,3625.0,Rice,Kolkata,Agalabs_Spot,2026-10-13,Research,
+2318576,2026-10-13,White-and-raw-sugar,Kolkata,INR per 100 KG,S-Grade,5500.0,5500.0,Sugar,Kolkata,Agalabs_Spot,2026-10-13,Research,
+2318577,2026-10-13,White-and-raw-sugar,Kolkata,INR per 100 KG,M-Grade,5600.0,5600.0,Sugar,Kolkata,Agalabs_Spot,2026-10-13,Research,
+2318578,2026-10-13,Corn-maize,Kolkata,INR per 100 KG,Mill Delivery [Feed grade],2750.0,2750.0,Maize,Kolkata,Agalabs_Spot,2026-10-13,Research,
+2318579,2026-10-13,Rice,Burdwan,INR per 100 KG,Minikit Sankar,5300.0,5300.0,Rice,Purba Bardhaman,Agalabs_Spot,2026-10-13,Research,
+2318580,2026-10-13,Rice,Burdwan,INR per 100 KG,IR36 Super,3600.0,3600.0,Rice,Purba Bardhaman,Agalabs_Spot,2026-10-13,Research,
+2318581,2026-10-13,Rice,Burdwan,INR per 100 KG,Govindobhog,16400.0,16400.0,Rice,Purba Bardhaman,Agalabs_Spot,2026-10-13,Research,
+2318582,2026-10-13,Rice,Burdwan,INR per 100 KG,Swarna Parboiled,3575.0,3575.0,Rice,Purba Bardhaman,Agalabs_Spot,2026-10-13,Research,
+2318583,2026-10-13,Rice,Burdwan,INR per 100 KG,Swarna,3400.0,3400.0,Rice,Purba Bardhaman,Agalabs_Spot,2026-10-13,Research,
+2318584,2026-10-13,Rice,Bhatapara,INR per 100 KG,HMT Raw,7100.0,7100.0,Rice,Baloda Bazar,Agalabs_Spot,2026-10-13,Research,
+2318585,2026-10-13,Rice,Bhatapara,INR per 100 KG,Vishnu Bhog,15900.0,15900.0,Rice,Baloda Bazar,Agalabs_Spot,2026-10-13,Research,
+2318586,2026-10-13,Rice,Bhatapara,INR per 100 KG,Swarna,3500.0,3500.0,Rice,Baloda Bazar,Agalabs_Spot,2026-10-13,Research,
+2318587,2026-10-13,Rice,Rudrapur,INR per 100 KG,Parmal Raw,4575.0,4575.0,Rice,Udham Singh Nagar,Agalabs_Spot,2026-10-13,Research,
+2318588,2026-10-13,Rice,Rudrapur,INR per 100 KG,Sarbati Sella,7000.0,7000.0,Rice,Udham Singh Nagar,Agalabs_Spot,2026-10-13,Research,
+2318589,2026-10-13,Rice,Rudrapur,INR per 100 KG,DB Steam,9300.0,9300.0,Rice,Udham Singh Nagar,Agalabs_Spot,2026-10-13,Research,
+2318590,2026-10-13,Rice,Nagpur,INR per 100 KG,BPT,6000.0,6000.0,Rice,Nagpur,Agalabs_Spot,2026-10-13,Research,
+2318591,2026-10-13,Rice,Nagpur,INR per 100 KG,HMT Raw,7700.0,7700.0,Rice,Nagpur,Agalabs_Spot,2026-10-13,Research,
+2318592,2026-10-13,Soybean,Nagpur,INR per 100 KG,Mandi,6700.0,6700.0,Soybeans,Nagpur,Agalabs_Spot,2026-10-13,Research,
+2318593,2026-10-13,Soybean,Nagpur,INR per 100 KG,Plant,6900.0,6900.0,Soybeans,Nagpur,Agalabs_Spot,2026-10-13,Research,
+2318594,2026-10-13,Rice,Nandyal,INR per 100 KG,BPT,7400.0,7400.0,Rice,Nandyal,Agalabs_Spot,2026-10-13,Research,
+2318595,2026-10-13,Rice,Machilipatnam,INR per 100 KG,Sona Masuri - Fine Grade,7500.0,7500.0,Rice,Krishna district,Agalabs_Spot,2026-10-13,Research,
+2318596,2026-10-13,Chana-chickpeas,Solapur,INR per 100 KG,Annagiri,8000.0,8000.0,Bengal Gram,Solapur,Agalabs_Spot,2026-10-13,Research,
+2318597,2026-10-13,Tur-pigeon-peas,Solapur,INR per 100 KG,Maruti,10800.0,10800.0,Tur,Solapur,Agalabs_Spot,2026-10-13,Research,
+2318598,2026-10-13,Chana-chickpeas,Akola,INR per 100 KG,Chapa,7900.0,7900.0,Bengal Gram,Akola,Agalabs_Spot,2026-10-13,Research,
+2318599,2026-10-13,Chana-chickpeas,Akola,INR per 100 KG,Mixed,7700.0,7700.0,Bengal Gram,Akola,Agalabs_Spot,2026-10-13,Research,
+2318600,2026-10-13,Chana-chickpeas,Akola,INR per 100 KG,Chana Dal,9600.0,9600.0,Bengal Gram,Akola,Agalabs_Spot,2026-10-13,Research,
+2318601,2026-10-13,Tur-pigeon-peas,Akola,INR per 100 KG,Vidarbha,10900.0,10900.0,Tur,Akola,Agalabs_Spot,2026-10-13,Research,
+2318602,2026-10-13,Chana-chickpeas,Latur,INR per 100 KG,Chana Dal,9600.0,9600.0,Bengal Gram,Latur,Agalabs_Spot,2026-10-13,Research,
+2318603,2026-10-13,Chana-chickpeas,Latur,INR per 100 KG,G 12,8500.0,8500.0,Bengal Gram,Latur,Agalabs_Spot,2026-10-13,Research,
+2318604,2026-10-13,Chana-chickpeas,Latur,INR per 100 KG,Annagiri,8000.0,8000.0,Bengal Gram,Latur,Agalabs_Spot,2026-10-13,Research,
+2318605,2026-10-13,Chana-chickpeas,Latur,INR per 100 KG,Gauran,7600.0,7600.0,Bengal Gram,Latur,Agalabs_Spot,2026-10-13,Research,
+2318606,2026-10-13,Chana-chickpeas,Latur,INR per 100 KG,Mixed,7600.0,7600.0,Bengal Gram,Latur,Agalabs_Spot,2026-10-13,Research,
+2318607,2026-10-13,Tur-pigeon-peas,Latur,INR per 100 KG,Red,11000.0,11000.0,Tur,Latur,Agalabs_Spot,2026-10-13,Research,
+2318608,2026-10-13,Tur-pigeon-peas,Latur,INR per 100 KG,Tur Dal,16000.0,16000.0,Tur,Latur,Agalabs_Spot,2026-10-13,Research,
+2318609,2026-10-13,Tur-pigeon-peas,Latur,INR per 100 KG,White,11100.0,11100.0,Tur,Latur,Agalabs_Spot,2026-10-13,Research,
+2318610,2026-10-13,Soybean,Latur,INR per 100 KG,Yellow Soyabean,6750.0,6750.0,Soybeans,Latur,Agalabs_Spot,2026-10-13,Research,
+2318611,2026-10-13,Urad-black-gram,Latur,INR per 100 KG,FAQ,9200.0,9200.0,Urad,Latur,Agalabs_Spot,2026-10-13,Research,
+2318612,2026-10-13,Moong-mung-beans,Latur,INR per 100 KG,FAQ,10000.0,10000.0,Moong,Latur,Agalabs_Spot,2026-10-13,Research,
+2318613,2026-10-13,Chana-chickpeas,Jalna,INR per 100 KG,Pila,7300.0,7300.0,Bengal Gram,Jalna,Agalabs_Spot,2026-10-13,Research,
+2318614,2026-10-13,Chana-chickpeas,Jalna,INR per 100 KG,Gauran,7200.0,7200.0,Bengal Gram,Jalna,Agalabs_Spot,2026-10-13,Research,
+2318615,2026-10-13,Tur-pigeon-peas,Jalna,INR per 100 KG,White,10800.0,10800.0,Tur,Jalna,Agalabs_Spot,2026-10-13,Research,
+2318616,2026-10-13,Tur-pigeon-peas,Jalna,INR per 100 KG,Red,10800.0,10800.0,Tur,Jalna,Agalabs_Spot,2026-10-13,Research,
+2318617,2026-10-13,Urad-black-gram,Jalna,INR per 100 KG,FAQ,9500.0,9500.0,Urad,Jalna,Agalabs_Spot,2026-10-13,Research,
+2318618,2026-10-13,Moong-mung-beans,Jalna,INR per 100 KG,FAQ,9300.0,9300.0,Moong,Jalna,Agalabs_Spot,2026-10-13,Research,
+2318619,2026-10-13,Chana-chickpeas,Mumbai,INR per 100 KG,Chickpea - Australia,7650.0,7650.0,Bengal Gram,Mumbai,Agalabs_Spot,2026-10-13,Research,
+2318620,2026-10-13,Tur-pigeon-peas,Mumbai,INR per 100 KG,FAQ,9725.0,9725.0,Tur,Mumbai,Agalabs_Spot,2026-10-13,Research,
+2318621,2026-10-13,Peas-dry-peas,Mumbai,INR per 100 KG,White Canadian,4725.0,4725.0,Pea,Mumbai,Agalabs_Spot,2026-10-13,Research,
+2318622,2026-10-13,White-and-raw-sugar,Mumbai,INR per 100 KG,M-Grade,5260.0,5260.0,Sugar,Mumbai,Agalabs_Spot,2026-10-13,Research,
+2318623,2026-10-13,White-and-raw-sugar,Mumbai,INR per 100 KG,S-Grade,5080.0,5080.0,Sugar,Mumbai,Agalabs_Spot,2026-10-13,Research,
+2318624,2026-10-13,Urad-black-gram,Mumbai,INR per 100 KG,FAQ,9650.0,9650.0,Urad,Mumbai,Agalabs_Spot,2026-10-13,Research,
+2318625,2026-10-13,Chana-chickpeas,Bundi,INR per 100 KG,Desi,6975.0,6975.0,Bengal Gram,Bundi,Agalabs_Spot,2026-10-13,Research,
+2318626,2026-10-13,Soybean,Bundi,INR per 100 KG,Yellow Soyabean,6700.0,6700.0,Soybeans,Bundi,Agalabs_Spot,2026-10-13,Research,
+2318627,2026-10-13,Urad-black-gram,Bundi,INR per 100 KG,Desi,8600.0,8600.0,Urad,Bundi,Agalabs_Spot,2026-10-13,Research,
+2318628,2026-10-13,Chana-chickpeas,Gwalior,INR per 100 KG,Desi,7300.0,7300.0,Bengal Gram,Gwalior,Agalabs_Spot,2026-10-13,Research,
+2318629,2026-10-13,Chana-chickpeas,Gwalior,INR per 100 KG,Chana Dal,8700.0,8700.0,Bengal Gram,Gwalior,Agalabs_Spot,2026-10-13,Research,
+2318630,2026-10-13,Peas-dry-peas,Gwalior,INR per 100 KG,White Peas,4900.0,4900.0,Pea,Gwalior,Agalabs_Spot,2026-10-13,Research,
+2318631,2026-10-13,Peas-dry-peas,Gwalior,INR per 100 KG,White Pea Dal (Split),5500.0,5500.0,Pea,Gwalior,Agalabs_Spot,2026-10-13,Research,
+2318632,2026-10-13,Masoor-masur-red-lentils,Gwalior,INR per 100 KG,Masur Dal,7400.0,7400.0,Masoor,Gwalior,Agalabs_Spot,2026-10-13,Research,
+2318633,2026-10-13,Masoor-masur-red-lentils,Gwalior,INR per 100 KG,Desi,6000.0,6000.0,Masoor,Gwalior,Agalabs_Spot,2026-10-13,Research,
+2318634,2026-10-13,Chana-chickpeas,Jalgaon,INR per 100 KG,Mixed,7800.0,7800.0,Bengal Gram,Jalgaon,Agalabs_Spot,2026-10-13,Research,
+2318635,2026-10-13,Chana-chickpeas,Jalgaon,INR per 100 KG,Chana Dal,9000.0,9000.0,Bengal Gram,Jalgaon,Agalabs_Spot,2026-10-13,Research,
+2318636,2026-10-13,Tur-pigeon-peas,Jalgaon,INR per 100 KG,Tur Dal,14400.0,14400.0,Tur,Jalgaon,Agalabs_Spot,2026-10-13,Research,
+2318637,2026-10-13,Tur-pigeon-peas,Jalgaon,INR per 100 KG,White,10200.0,10200.0,Tur,Jalgaon,Agalabs_Spot,2026-10-13,Research,
+2318638,2026-10-13,Urad-black-gram,Jalgaon,INR per 100 KG,Desi,9900.0,9900.0,Urad,Jalgaon,Agalabs_Spot,2026-10-13,Research,
+2318639,2026-10-13,Moong-mung-beans,Jalgaon,INR per 100 KG,Moong Chamki,9800.0,9800.0,Moong,Jalgaon,Agalabs_Spot,2026-10-13,Research,
+2318640,2026-10-13,Chana-chickpeas,Ashok Nagar,INR per 100 KG,Desi,7300.0,7300.0,Bengal Gram,Ashoknagar,Agalabs_Spot,2026-10-13,Research,
+2318641,2026-10-13,Chana-chickpeas,Dahod,INR per 100 KG,Desi,7450.0,7450.0,Bengal Gram,Dahod,Agalabs_Spot,2026-10-13,Research,
+2318642,2026-10-13,Chana-chickpeas,Dewas,INR per 100 KG,Kabuli,10300.0,10300.0,Bengal Gram,Dewas,Agalabs_Spot,2026-10-13,Research,
+2318643,2026-10-13,Soybean,Dewas,INR per 100 KG,Yellow Soyabean,6700.0,6700.0,Soybeans,Dewas,Agalabs_Spot,2026-10-13,Research,
+2318644,2026-10-13,Chana-chickpeas,Bikaner,INR per 100 KG,Chana Dal,9300.0,9300.0,Bengal Gram,Bikaner,Agalabs_Spot,2026-10-13,Research,
+2318645,2026-10-13,Chana-chickpeas,Bikaner,INR per 100 KG,FAQ,7400.0,7400.0,Bengal Gram,Bikaner,Agalabs_Spot,2026-10-13,Research,
+2318646,2026-10-13,Guar-seed,Bikaner,INR per 100 KG,Guarseed,7600.0,7600.0,Guar Seed,Bikaner,Agalabs_Spot,2026-10-13,Research,
+2318647,2026-10-13,Urad-black-gram,Bikaner,INR per 100 KG,Urad Split Dal,12500.0,12500.0,Urad,Bikaner,Agalabs_Spot,2026-10-13,Research,
+2318648,2026-10-13,Chana-chickpeas,Sedam,INR per 100 KG,Desi,8400.0,8400.0,Bengal Gram,Kalaburagi,Agalabs_Spot,2026-10-13,Research,
+2318649,2026-10-13,Tur-pigeon-peas,Sedam,INR per 100 KG,Red,11000.0,11000.0,Tur,Kalaburagi,Agalabs_Spot,2026-10-13,Research,
+2318650,2026-10-13,Chana-chickpeas,Vijaywada,INR per 100 KG,FAQ,7200.0,7200.0,Bengal Gram,Krishna ,Agalabs_Spot,2026-10-13,Research,
+2318651,2026-10-13,Tur-pigeon-peas,Vijaywada,INR per 100 KG,FAQ,9900.0,9900.0,Tur,Krishna ,Agalabs_Spot,2026-10-13,Research,
+2318652,2026-10-13,White-and-raw-sugar,Vijaywada,INR per 100 KG,M-Grade,5660.0,5660.0,Sugar,Krishna ,Agalabs_Spot,2026-10-13,Research,
+2318653,2026-10-13,White-and-raw-sugar,Vijaywada,INR per 100 KG,S-Grade,5500.0,5500.0,Sugar,Krishna ,Agalabs_Spot,2026-10-13,Research,
+2318654,2026-10-13,Urad-black-gram,Vijaywada,INR per 100 KG,FAQ,10100.0,10100.0,Urad,Krishna ,Agalabs_Spot,2026-10-13,Research,
+2318655,2026-10-13,Moong-mung-beans,Vijaywada,INR per 100 KG,FAQ,7900.0,7900.0,Moong,Krishna ,Agalabs_Spot,2026-10-13,Research,
+2318656,2026-10-13,Chana-chickpeas,Kekri,INR per 100 KG,Desi,7000.0,7000.0,Bengal Gram,Ajmer,Agalabs_Spot,2026-10-13,Research,
+2318657,2026-10-13,Urad-black-gram,Kekri,INR per 100 KG,Desi,9000.0,9000.0,Urad,Ajmer,Agalabs_Spot,2026-10-13,Research,
+2318658,2026-10-13,Moong-mung-beans,Kekri,INR per 100 KG,Desi,8600.0,8600.0,Moong,Ajmer,Agalabs_Spot,2026-10-13,Research,
+2318659,2026-10-13,Chana-chickpeas,Gulbarga,INR per 100 KG,Annagiri,8100.0,8100.0,Bengal Gram,Gulbarga,Agalabs_Spot,2026-10-13,Research,
+2318660,2026-10-13,Tur-pigeon-peas,Gulbarga,INR per 100 KG,FAQ,11500.0,11500.0,Tur,Gulbarga,Agalabs_Spot,2026-10-13,Research,
+2318661,2026-10-13,Tur-pigeon-peas,Gulbarga,INR per 100 KG,Fathka Dal,15197.0,15197.0,Tur,Gulbarga,Agalabs_Spot,2026-10-13,Research,
+2318662,2026-10-13,Urad-black-gram,Gulbarga,INR per 100 KG,FAQ,10200.0,10200.0,Urad,Gulbarga,Agalabs_Spot,2026-10-13,Research,
+2318663,2026-10-13,Moong-mung-beans,Gulbarga,INR per 100 KG,FAQ,9900.0,9900.0,Moong,Gulbarga,Agalabs_Spot,2026-10-13,Research,
+2318664,2026-10-13,Guar-seed,Nokha,INR per 100 KG,Guarseed,7500.0,7500.0,Guar Seed,Bikaner,Agalabs_Spot,2026-10-13,Research,
+2318665,2026-10-13,Tur-pigeon-peas,Pipariya,INR per 100 KG,Desi,10000.0,10000.0,Tur,Hoshangabad,Agalabs_Spot,2026-10-13,Research,
+2318666,2026-10-13,White-and-raw-sugar,Shamli,INR per 100 KG,M-Grade,5120.0,5120.0,Sugar,Shamli,Agalabs_Spot,2026-10-13,Research,
+2318667,2026-10-13,White-and-raw-sugar,Kolhapur,INR per 100 KG,S-30,4850.0,4850.0,Sugar,Kolhapur,Agalabs_Spot,2026-10-13,Research,
+2318668,2026-10-13,White-and-raw-sugar,Kolhapur,INR per 100 KG,M-30,4950.0,4950.0,Sugar,Kolhapur,Agalabs_Spot,2026-10-13,Research,
+2318669,2026-10-13,White-and-raw-sugar,Deoband,INR per 100 KG,Mill,5350.0,5350.0,Sugar,Saharanpur,Agalabs_Spot,2026-10-13,Research,
+2318670,2026-10-13,White-and-raw-sugar,Morna,INR per 100 KG,M-Grade,5060.0,5060.0,Sugar,Morena,Agalabs_Spot,2026-10-13,Research,
+2318671,2026-10-13,White-and-raw-sugar,Nanoata,INR per 100 KG,Mill,5060.0,5060.0,Sugar,Saharanpur,Agalabs_Spot,2026-10-13,Research,
+2318672,2026-10-13,White-and-raw-sugar,Bijnor,INR per 100 KG,M-Grade,5070.0,5070.0,Sugar,Bijnor,Agalabs_Spot,2026-10-13,Research,
+2318673,2026-10-13,White-and-raw-sugar,Khatauli,INR per 100 KG,Mill,5350.0,5350.0,Sugar,Muzaffarnagar,Agalabs_Spot,2026-10-13,Research,
+2318674,2026-10-13,Dhaniya-coriander-seed,Guna,INR per 100 KG,Eagle,15500.0,15500.0,Coriander,Guna,Agalabs_Spot,2026-10-13,Research,
+2318675,2026-10-13,Dhaniya-coriander-seed,Guna,INR per 100 KG,Badami,14800.0,14800.0,Coriander,Guna,Agalabs_Spot,2026-10-13,Research,
+2318676,2026-10-13,Dhaniya-coriander-seed,Ramganj,INR per 100 KG,Badami,14500.0,14500.0,Coriander,Kota,Agalabs_Spot,2026-10-13,Research,
+2318677,2026-10-13,Dhaniya-coriander-seed,Ramganj,INR per 100 KG,Eagle,15000.0,15000.0,Coriander,Kota,Agalabs_Spot,2026-10-13,Research,
+2318678,2026-10-13,Dhaniya-coriander-seed,Neemuch,INR per 100 KG,Eagle,15600.0,15600.0,Coriander,Neemuch,Agalabs_Spot,2026-10-13,Research,
+2318679,2026-10-13,Dhaniya-coriander-seed,Neemuch,INR per 100 KG,Scotter,16500.0,16500.0,Coriander,Neemuch,Agalabs_Spot,2026-10-13,Research,
+2318680,2026-10-13,Dhaniya-coriander-seed,Neemuch,INR per 100 KG,Badami,15000.0,15000.0,Coriander,Neemuch,Agalabs_Spot,2026-10-13,Research,
+2318681,2026-10-13,Black-pepper,Kochi,INR per 100 KG,Garbled,73000.0,73000.0,Black Pepper,Ernakulam,Agalabs_Spot,2026-10-13,Research,
+2318682,2026-10-13,Black-pepper,Kochi,INR per 100 KG,Ungarbled,71000.0,71000.0,Black Pepper,Ernakulam,Agalabs_Spot,2026-10-13,Research,
+2318683,2026-10-13,Corn-maize,Naugachia,INR per 100 KG,Red [Feed grade],2550.0,2550.0,Maize,Bhagalpur,Agalabs_Spot,2026-10-13,Research,
+2318684,2026-10-13,Soymeal,Kota,INR per Tonne,FAQ,56000.0,56000.0,Soybean Meal,Kota,Agalabs_Spot,2026-10-13,Research,
+2318685,2026-10-13,Rapeseed-mustard-meal,Jaipur,INR per Tonne,DOC - FAQ [Animal Feed - Feed Ingredients],29500.0,29500.0,Rapeseed Meal,Jaipur,Agalabs_Spot,2026-10-13,Research,
+2318686,2026-10-13,Soymeal,Indore,INR per Tonne,FAQ,53000.0,53000.0,Soybean Meal,Indore,Agalabs_Spot,2026-10-13,Research,
+2318687,2026-10-13,Soymeal,Sangli,INR per Tonne,FAQ,53500.0,53500.0,Soybean Meal,Sangli,Agalabs_Spot,2026-10-13,Research,
+2318688,2026-10-13,Soymeal,Nagpur,INR per Tonne,FAQ,57500.0,57500.0,Soybean Meal,Nagpur,Agalabs_Spot,2026-10-13,Research,
+2318689,2026-10-13,Soymeal,Hingoli,INR per Tonne,FAQ,52500.0,52500.0,Soybean Meal,Hingoli,Agalabs_Spot,2026-10-13,Research,
+2318690,2026-10-13,Soymeal,Solapur,INR per Tonne,FAQ,58500.0,58500.0,Soybean Meal,Solapur,Agalabs_Spot,2026-10-13,Research,
+2318691,2026-10-13,Soymeal,Akola,INR per Tonne,FAQ,50000.0,50000.0,Soybean Meal,Akola,Agalabs_Spot,2026-10-13,Research,
+2318692,2026-10-13,Soymeal,Latur,INR per Tonne,FAQ,59000.0,59000.0,Soybean Meal,Latur,Agalabs_Spot,2026-10-13,Research,
+2318693,2026-10-13,Soymeal,Kandla,INR per Tonne,FAQ,56000.0,56000.0,Soybean Meal,Kutch,Agalabs_Spot,2026-10-13,Research,
+2318694,2026-10-13,Palm-oil,Kandla,INR per Tonne,Crude - CIF,1235.0,1235.0,Palm Oil,Kutch,Agalabs_Spot,2026-10-13,Research,
+2318695,2026-10-13,Soyoil-soybean-oil,Kandla,INR per Tonne,Crude - CIF,1310.0,1310.0,Soybean Oil,Kutch,Agalabs_Spot,2026-10-13,Research,
+2318696,2026-10-13,Soymeal,Dhule,INR per Tonne,FAQ,59500.0,59500.0,Soybean Meal,Dhule,Agalabs_Spot,2026-10-13,Research,
+2318697,2026-10-13,Soymeal,Jalna,INR per Tonne,FAQ,58500.0,58500.0,Soybean Meal,Jalna,Agalabs_Spot,2026-10-13,Research,
+2318698,2026-10-13,Soymeal,Mumbai,INR per Tonne,FAQ,55305.0,55305.0,Soybean Meal,Mumbai,Agalabs_Spot,2026-10-13,Research,
+2318699,2026-10-13,Soymeal,Bundi,INR per Tonne,FAQ,56000.0,56000.0,Soybean Meal,Bundi,Agalabs_Spot,2026-10-13,Research,
+2318700,2026-10-13,Soymeal,Nanded,INR per Tonne,FAQ,58000.0,58000.0,Soybean Meal,Nanded,Agalabs_Spot,2026-10-13,Research,
+2318701,2026-10-13,Mustard-oil-rapeseed-oil,Kota,INR per 10 KG,Mustard Expeller Oil,1750.0,1750.0,Rapeseed Oil,Kota,Agalabs_Spot,2026-10-13,Research,
+2318702,2026-10-13,Soyoil-soybean-oil,Kota,INR per 10 KG,Refined,1440.0,1440.0,Soybean Oil,Kota,Agalabs_Spot,2026-10-13,Research,
+2318703,2026-10-13,Mustard-oil-rapeseed-oil,Delhi,INR per 10 KG,Mustard Expeller Oil,1760.0,1760.0,Rapeseed Oil,Delhi,Agalabs_Spot,2026-10-13,Research,
+2318704,2026-10-13,Mustard-oil-rapeseed-oil,Sri Ganganagar,INR per 10 KG,Mustard Expeller Oil,1750.0,1750.0,Rapeseed Oil,Sri Ganganagar,Agalabs_Spot,2026-10-13,Research,
+2318705,2026-10-13,Mustard-oil-rapeseed-oil,Neewai,INR per 10 KG,Mustard Expeller Oil,1765.0,1765.0,Rapeseed Oil,Tonk,Agalabs_Spot,2026-10-13,Research,
+2318706,2026-10-13,Mustard-oil-rapeseed-oil,Jaipur,INR per 10 KG,Mustard Expeller Oil,1750.0,1750.0,Rapeseed Oil,Jaipur,Agalabs_Spot,2026-10-13,Research,
+2318707,2026-10-13,Soyoil-soybean-oil,Rajkot,INR per 10 KG,Refined,1420.0,1420.0,Soybean Oil,Rajkot,Agalabs_Spot,2026-10-13,Research,
+2318708,2026-10-13,Groundnut-peanut,Rajkot,INR per 10 KG,GN Oil (FAQ),1775.0,1775.0,Groundnut,Rajkot,Agalabs_Spot,2026-10-13,Research,
+2318709,2026-10-13,Palm-oil,Chennai,INR per 10 KG,RBD Palmolien,1415.0,1415.0,Palm Oil,Chennai,Agalabs_Spot,2026-10-13,Research,
+2318710,2026-10-13,Groundnut-peanut,Chennai,INR per 10 KG,GN Oil (FAQ),1720.0,1720.0,Groundnut,Chennai,Agalabs_Spot,2026-10-13,Research,
+2318711,2026-10-13,Soyoil-soybean-oil,Indore,INR per 10 KG,Refined,1440.0,1440.0,Soybean Oil,Indore,Agalabs_Spot,2026-10-13,Research,
+2318712,2026-10-13,Soyoil-soybean-oil,Indore,INR per 10 KG,Solvent Extr,1370.0,1370.0,Soybean Oil,Indore,Agalabs_Spot,2026-10-13,Research,
+2318713,2026-10-13,Soyoil-soybean-oil,Kolkata,INR per 10 KG,Refined,1425.0,1425.0,Soybean Oil,Kolkata,Agalabs_Spot,2026-10-13,Research,
+2318714,2026-10-13,Soyoil-soybean-oil,Nagpur,INR per 10 KG,Refined,1455.0,1455.0,Soybean Oil,Nagpur,Agalabs_Spot,2026-10-13,Research,
+2318715,2026-10-13,Soyoil-soybean-oil,Akola,INR per 10 KG,Refined,1455.0,1455.0,Soybean Oil,Akola,Agalabs_Spot,2026-10-13,Research,
+2318716,2026-10-13,Palm-oil,Kandla,INR per 10 KG,Crude,1350.0,1350.0,Palm Oil,Kutch,Agalabs_Spot,2026-10-13,Research,
+2318717,2026-10-13,Palm-oil,Kandla,INR per 10 KG,RBD Palmolien,1415.0,1415.0,Palm Oil,Kutch,Agalabs_Spot,2026-10-13,Research,
+2318718,2026-10-13,Soyoil-soybean-oil,Kandla,INR per 10 KG,Refined,1420.0,1420.0,Soybean Oil,Kutch,Agalabs_Spot,2026-10-13,Research,
+2318719,2026-10-13,Soyoil-soybean-oil,Jalna,INR per 10 KG,Refined,1470.0,1470.0,Soybean Oil,Jalna,Agalabs_Spot,2026-10-13,Research,
+2318720,2026-10-13,Mustard-oil-rapeseed-oil,Mumbai,INR per 10 KG,Mustard Expeller Oil,1790.0,1790.0,Rapeseed Oil,Mumbai,Agalabs_Spot,2026-10-13,Research,
+2318721,2026-10-13,Palm-oil,Mumbai,INR per 10 KG,RBD Palmolien,1450.0,1450.0,Palm Oil,Mumbai,Agalabs_Spot,2026-10-13,Research,
+2318722,2026-10-13,Soyoil-soybean-oil,Mumbai,INR per 10 KG,Soy Degum,1395.0,1395.0,Soybean Oil,Mumbai,Agalabs_Spot,2026-10-13,Research,
+2318723,2026-10-13,Soyoil-soybean-oil,Mumbai,INR per 10 KG,Refined,1465.0,1465.0,Soybean Oil,Mumbai,Agalabs_Spot,2026-10-13,Research,
+2318724,2026-10-13,Groundnut-peanut,Mumbai,INR per 10 KG,GN Oil (FAQ),1800.0,1800.0,Groundnut,Mumbai,Agalabs_Spot,2026-10-13,Research,
+2318725,2026-10-13,Palm-oil,Mangalore,INR per 10 KG,RBD Palmolien,1425.0,1425.0,Palm Oil,Dakshina Kannada,Agalabs_Spot,2026-10-13,Research,
+2318726,2026-10-13,Palm-oil,Krishnapatnam,INR per 10 KG,RBD Palmolien,1410.0,1410.0,Palm Oil,Nellore,Agalabs_Spot,2026-10-13,Research,
+2318727,2026-10-13,Palm-oil,Haldia,INR per 10 KG,RBD Palmolien,1420.0,1420.0,Palm Oil,Purba Medinipur,Agalabs_Spot,2026-10-13,Research,
+2318728,2026-10-13,Palm-oil,Kakinada,INR per 10 KG,RBD Palmolien,1410.0,1410.0,Palm Oil,Kakinada,Agalabs_Spot,2026-10-13,Research,
+2318729,2026-10-13,Palm-oil,Hyderabad,INR per 10 KG,RBD Palmolien,1425.0,1425.0,Palm Oil,Hyderabad,Agalabs_Spot,2026-10-13,Research,
+2318730,2026-10-13,Groundnut-peanut,Hyderabad,INR per 10 KG,GN Oil (FAQ),1680.0,1680.0,Groundnut,Hyderabad,Agalabs_Spot,2026-10-13,Research,
+2318731,2026-10-13,Groundnut-peanut,Rajkot,INR per 15 Kg,GN Oil (Telia),2770.0,2770.0,Groundnut,Rajkot,Agalabs_Spot,2026-10-13,Research,
+2318732,2026-10-13,Maize,Bagalkot,INR per 100 KG,Kar. Origin Hybrid,,2465.0,Maize,Bagalkot (Hybrid),Mandi,2026-10-13,Research,Karnataka
+2318733,2026-10-13,Maize,Bengaluru,INR per 100 KG,FAQ,,2590.0,Maize,Bangalore,WASEDA,2026-10-13,Research,Karnataka
+2318734,2026-10-13,Maize,Chitradurga,INR per 100 KG,Kar. Origin,,2430.0,Maize,Chitradurga,Mandi,2026-10-13,Research,Karnataka
+2318735,2026-10-13,Maize,Davangere,INR per 100 KG,Kar. Origin,,2567.0,Maize,Karnataka,Mandi,2026-10-13,Research,Karnataka
+2318736,2026-10-13,Maize,Gadag,INR per 100 KG,Kar. Origin,,2465.0,Maize,Gadag,Mandi,2026-10-13,Research,Karnataka
+2318737,2026-10-13,Maize,Haveri,INR per 100 KG,Kar. Origin,,2360.0,Maize,Haveri,Mandi,2026-10-13,Research,Karnataka
+2318738,2026-10-13,Maize,Hubli,INR per 100 KG,Kar. Origin,,2164.0,Maize,Hubli,Mandi,2026-10-13,Research,Karnataka
+2318739,2026-10-13,Maize,Ranebennur,INR per 100 KG,FAQ/Hybrid,,2590.0,Maize,Ranebennur(Hybrid),Mandi,2026-10-13,Research,Karnataka
+2318740,2026-10-13,Maize,Harda (New Crop),INR per 100 KG,FAQ,,2180.0,Maize,Harda,WASEDA,2026-10-13,Research,Madhya Pradesh
+2318741,2026-10-13,Maize,Indore,INR per 100 KG,M.P. Origin,,2340.0,Maize,Indore,Mandi,2026-10-13,Research,Madhya Pradesh
+2318742,2026-10-13,Maize,Jabalpur,INR per 100 KG,M.P. Origin,,2435.0,Maize,Jabalpur,WASEDA,2026-10-13,Research,Madhya Pradesh
+2318743,2026-10-13,Maize,Guna,INR per 100 KG,M.P. Origin,,2210.0,Maize,Guna,WASEDA,2026-10-13,Research,Madhya Pradesh
+2318744,2026-10-13,Maize,Ashoknagar,INR per 100 KG,M.P. Origin,,2270.0,Maize,Ashoknagar,WASEDA,2026-10-13,Research,Madhya Pradesh
+2318745,2026-10-13,Maize,Baramati,INR per 100 KG,Delivered,,2650.0,Maize,Pune,WASEDA,2026-10-13,Research,Maharashtra
+2318746,2026-10-13,Maize,Yeola,INR per 100 KG,Mah. Origin,,2400.0,Maize,Nashik,WASEDA,2026-10-13,Research,Maharashtra
+2318747,2026-10-13,Maize,Dhule,INR per 100 KG,Mah. Origin,,2390.0,Maize,Dhule,WASEDA,2026-10-13,Research,Maharashtra
+2318748,2026-10-13,Maize,Malegaon,INR per 100 KG,Mah. Origin,,2436.0,Maize,Nashik,WASEDA,2026-10-13,Research,Maharashtra
+2318749,2026-10-13,Maize,Warangal,INR per 100 KG,TL. Origin,,2410.0,Maize,Warangal,Mandi,2026-10-13,Research,Telangana
+2318750,2026-10-13,Maize,Aligarh,INR per 100 KG,FAQ,,2018.0,Maize,Aligarh,Mandi,2026-10-13,Research,Uttar Pradesh
+2318751,2026-10-13,Maize,Kannauj,INR per 100 KG,FAQ,,2100.0,Maize,Kannauj,WASEDA,2026-10-13,Research,Uttar Pradesh
+2318752,2026-10-13,Maize,Kasganj,INR per 100 KG,FAQ,,1830.0,Maize,Kasganj,Mandi,2026-10-13,Research,Uttar Pradesh
+2318753,2026-10-13,Maize,Dalkhola,INR per 100 KG,W.B. Origin,,2540.0,Maize,Dalkhola,Mandi,2026-10-13,Research,West Bengal
+2318754,2026-10-13,Onion,Bengaluru,INR per 100 KG,Bangalore Small,1500.0,1500.0,Onion,Bengaluru,KRAMA,2026-10-13,Research,Karnataka
+2318755,2026-10-13,Onion,Hunsur,INR per 100 KG,Bombay (U.P.),4165.0,4165.0,Onion,Hunsur,KRAMA,2026-10-13,Research,Karnataka
+2318756,2026-10-13,Onion,Bengaluru,INR per 100 KG,Local,3200.0,3200.0,Onion,Bengaluru,KRAMA,2026-10-13,Research,Karnataka
+2318757,2026-10-13,Onion,Hubballi,INR per 100 KG,Local,3800.0,3800.0,Onion,Hubballi,KRAMA,2026-10-13,Research,Karnataka
+2318758,2026-10-13,Onion,Ranibennur,INR per 100 KG,Local,1000.0,1000.0,Onion,Ranibennur,KRAMA,2026-10-13,Research,Karnataka
+2318759,2026-10-13,Onion,Bangarpet,INR per 100 KG,Onion,3700.0,3700.0,Onion,Bangarpet,KRAMA,2026-10-13,Research,Karnataka
+2318760,2026-10-13,Onion,Bengaluru,INR per 100 KG,Onion,4200.0,4200.0,Onion,Bengaluru,KRAMA,2026-10-13,Research,Karnataka
+2318761,2026-10-13,Onion,Davanagere,INR per 100 KG,Onion,4200.0,4200.0,Onion,Davanagere,KRAMA,2026-10-13,Research,Karnataka
+2318762,2026-10-13,Onion,Shivamogga,INR per 100 KG,Onion,4500.0,4500.0,Onion,Shivamogga,KRAMA,2026-10-13,Research,Karnataka
+2318763,2026-10-13,Onion,Bengaluru,INR per 100 KG,Puna,4000.0,4000.0,Onion,Bengaluru,KRAMA,2026-10-13,Research,Karnataka
+2318764,2026-10-13,Onion,Hubballi,INR per 100 KG,Puna,4200.0,4200.0,Onion,Hubballi,KRAMA,2026-10-13,Research,Karnataka
+2318765,2026-10-13,Potato,Bangarpet,INR per 100 KG,Jalander,1833.0,1833.0,Potato,Bangarpet,KRAMA,2026-10-13,Research,Karnataka
+2318766,2026-10-13,Potato,Bangarpet,INR per 100 KG,Local,1600.0,1600.0,Potato,Bangarpet,KRAMA,2026-10-13,Research,Karnataka
+2318767,2026-10-13,Potato,Bengaluru,INR per 100 KG,Local,1800.0,1800.0,Potato,Bengaluru,KRAMA,2026-10-13,Research,Karnataka
+2318768,2026-10-13,Potato,Bengaluru,INR per 100 KG,Potato,1700.0,1700.0,Potato,Bengaluru,KRAMA,2026-10-13,Research,Karnataka
+2318769,2026-10-13,Potato,Davanagere,INR per 100 KG,Potato,1500.0,1500.0,Potato,Davanagere,KRAMA,2026-10-13,Research,Karnataka
+2318770,2026-10-13,Potato,Hubballi,INR per 100 KG,Potato,1500.0,1500.0,Potato,Hubballi,KRAMA,2026-10-13,Research,Karnataka
+2318771,2026-10-13,Potato,Kalaburagi,INR per 100 KG,Potato,1250.0,1250.0,Potato,Kalaburagi,KRAMA,2026-10-13,Research,Karnataka
+2318772,2026-10-13,Potato,Nanjangud,INR per 100 KG,Potato,4166.0,4166.0,Potato,Nanjangud,KRAMA,2026-10-13,Research,Karnataka
+2318773,2026-10-13,Potato,Shivamogga,INR per 100 KG,Potato,2000.0,2000.0,Potato,Shivamogga,KRAMA,2026-10-13,Research,Karnataka
+2318774,2026-10-13,Tomato,Bagepalli,INR per 100 KG,Tomato,1800.0,1800.0,Tomato,Bagepalli,KRAMA,2026-10-13,Research,Karnataka
+2318775,2026-10-13,Tomato,Bangarpet,INR per 100 KG,Tomato,1000.0,1000.0,Tomato,Bangarpet,KRAMA,2026-10-13,Research,Karnataka
+2318776,2026-10-13,Tomato,Belagavi,INR per 100 KG,Tomato,4500.0,4500.0,Tomato,Belagavi,KRAMA,2026-10-13,Research,Karnataka
+2318777,2026-10-13,Tomato,Binny Mill (F&V),INR per 100 KG,Tomato,1900.0,1900.0,Tomato,Binny Mill (F&V),KRAMA,2026-10-13,Research,Karnataka
+2318778,2026-10-13,Tomato,C.R. Nagar,INR per 100 KG,Tomato,1450.0,1450.0,Tomato,C.R. Nagar,KRAMA,2026-10-13,Research,Karnataka
+2318779,2026-10-13,Tomato,Channapatna,INR per 100 KG,Tomato,1750.0,1750.0,Tomato,Channapatna,KRAMA,2026-10-13,Research,Karnataka
+2318780,2026-10-13,Tomato,Chintamani,INR per 100 KG,Tomato,1333.0,1333.0,Tomato,Chintamani,KRAMA,2026-10-13,Research,Karnataka
+2318781,2026-10-13,Tomato,Davanagere,INR per 100 KG,Tomato,1700.0,1700.0,Tomato,Davanagere,KRAMA,2026-10-13,Research,Karnataka
+2318782,2026-10-13,Tomato,Gundlupet,INR per 100 KG,Tomato,1700.0,1700.0,Tomato,Gundlupet,KRAMA,2026-10-13,Research,Karnataka
+2318783,2026-10-13,Tomato,Kadur,INR per 100 KG,Tomato,2000.0,2000.0,Tomato,Kadur,KRAMA,2026-10-13,Research,Karnataka
+2318784,2026-10-13,Tomato,Kalaburagi,INR per 100 KG,Tomato,875.0,875.0,Tomato,Kalaburagi,KRAMA,2026-10-13,Research,Karnataka
+2318785,2026-10-13,Tomato,Mysuru,INR per 100 KG,Tomato,1800.0,1800.0,Tomato,Mysuru,KRAMA,2026-10-13,Research,Karnataka
+2318786,2026-10-13,Tomato,Nanjangud,INR per 100 KG,Tomato,4166.0,4166.0,Tomato,Nanjangud,KRAMA,2026-10-13,Research,Karnataka
+2318787,2026-10-13,Tomato,Ramanagara,INR per 100 KG,Tomato,2500.0,2500.0,Tomato,Ramanagara,KRAMA,2026-10-13,Research,Karnataka
+2318788,2026-10-13,Tomato,Ranibennur,INR per 100 KG,Tomato,900.0,900.0,Tomato,Ranibennur,KRAMA,2026-10-13,Research,Karnataka
+2318789,2026-10-13,Tomato,Shivamogga,INR per 100 KG,Tomato,1400.0,1400.0,Tomato,Shivamogga,KRAMA,2026-10-13,Research,Karnataka
+2318790,2026-10-13,Onion,Kolhapur,INR per 100 KG,Onion,2600.0,2600.0,Onion,Kolhapur,MSAMB,2026-10-13,Research,Maharashtra
+2318791,2026-10-13,Onion,Akola,INR per 100 KG,Onion,2500.0,2500.0,Onion,Akola,MSAMB,2026-10-13,Research,Maharashtra
+2318792,2026-10-13,Onion,Chhatrapati Sambhajinagar,INR per 100 KG,Onion,2550.0,2550.0,Onion,Chhatrapati Sambhajinagar,MSAMB,2026-10-13,Research,Maharashtra
+2318793,2026-10-13,Onion,Chandrapur-Ganjwad,INR per 100 KG,Onion,4500.0,4500.0,Onion,Chandrapur-Ganjwad,MSAMB,2026-10-13,Research,Maharashtra
+2318794,2026-10-13,Onion,Mumbai-Onion And Potato Mkt,INR per 100 KG,Onion,3300.0,3300.0,Onion,Mumbai-Onion And Potato Mkt,MSAMB,2026-10-13,Research,Maharashtra
+2318795,2026-10-13,Onion,Khed-Chakan,INR per 100 KG,Onion,3500.0,3500.0,Onion,Khed-Chakan,MSAMB,2026-10-13,Research,Maharashtra
+2318796,2026-10-13,Onion,Navapur,INR per 100 KG,Onion,2600.0,2600.0,Onion,Navapur,MSAMB,2026-10-13,Research,Maharashtra
+2318797,2026-10-13,Onion,Satara,INR per 100 KG,Onion,3200.0,3200.0,Onion,Satara,MSAMB,2026-10-13,Research,Maharashtra
+2318798,2026-10-13,Onion,Rahata,INR per 100 KG,Onion,3500.0,3500.0,Onion,Rahata,MSAMB,2026-10-13,Research,Maharashtra
+2318799,2026-10-13,Onion,Solapur,INR per 100 KG,Lal,2800.0,2800.0,Onion,Solapur,MSAMB,2026-10-13,Research,Maharashtra
+2318800,2026-10-13,Onion,Jalgaon,INR per 100 KG,Lal,2625.0,2625.0,Onion,Jalgaon,MSAMB,2026-10-13,Research,Maharashtra
+2318801,2026-10-13,Onion,Nagpur,INR per 100 KG,Lal,3750.0,3750.0,Onion,Nagpur,MSAMB,2026-10-13,Research,Maharashtra
+2318802,2026-10-13,Onion,Indapur,INR per 100 KG,Lal,2500.0,2500.0,Onion,Indapur,MSAMB,2026-10-13,Research,Maharashtra
+2318803,2026-10-13,Onion,Hingna,INR per 100 KG,Lal,4000.0,4000.0,Onion,Hingna,MSAMB,2026-10-13,Research,Maharashtra
+2318804,2026-10-13,Onion,Amravati-Fruit And Vegetables,INR per 100 KG,Local,2900.0,2900.0,Onion,Amravati-Fruit And Vegetables,MSAMB,2026-10-13,Research,Maharashtra
+2318805,2026-10-13,Onion,Sangli-Phale Bhaji Pala Mrkt,INR per 100 KG,Local,2750.0,2750.0,Onion,Sangli-Phale Bhaji Pala Mrkt,MSAMB,2026-10-13,Research,Maharashtra
+2318806,2026-10-13,Onion,Pune,INR per 100 KG,Local,2650.0,2650.0,Onion,Pune,MSAMB,2026-10-13,Research,Maharashtra
+2318807,2026-10-13,Onion,Pune-Khadki,INR per 100 KG,Local,1800.0,1800.0,Onion,Pune-Khadki,MSAMB,2026-10-13,Research,Maharashtra
+2318808,2026-10-13,Onion,Pune-Pimpri,INR per 100 KG,Local,3900.0,3900.0,Onion,Pune-Pimpri,MSAMB,2026-10-13,Research,Maharashtra
+2318809,2026-10-13,Onion,Pune-Manjri,INR per 100 KG,Local,3500.0,3500.0,Onion,Pune-Manjri,MSAMB,2026-10-13,Research,Maharashtra
+2318810,2026-10-13,Onion,Pune-Moshi,INR per 100 KG,Local,2750.0,2750.0,Onion,Pune-Moshi,MSAMB,2026-10-13,Research,Maharashtra
+2318811,2026-10-13,Onion,Vaduj,INR per 100 KG,Local,4000.0,4000.0,Onion,Vaduj,MSAMB,2026-10-13,Research,Maharashtra
+2318812,2026-10-13,Onion,Vai,INR per 100 KG,Local,3500.0,3500.0,Onion,Vai,MSAMB,2026-10-13,Research,Maharashtra
+2318813,2026-10-13,Onion,Kamthi,INR per 100 KG,Local,5650.0,5650.0,Onion,Kamthi,MSAMB,2026-10-13,Research,Maharashtra
+2318814,2026-10-13,Onion,Kalyan,INR per 100 KG,No. 1,3750.0,3750.0,Onion,Kalyan,MSAMB,2026-10-13,Research,Maharashtra
+2318815,2026-10-13,Onion,Nagpur,INR per 100 KG,Pandhra,3875.0,3875.0,Onion,Nagpur,MSAMB,2026-10-13,Research,Maharashtra
+2318816,2026-10-13,Onion,Yeola-Aandarsul,INR per 100 KG,Unhali,3391.0,3391.0,Onion,Yeola-Aandarsul,MSAMB,2026-10-13,Research,Maharashtra
+2318817,2026-10-13,Onion,Nashik,INR per 100 KG,Unhali,3500.0,3500.0,Onion,Nashik,MSAMB,2026-10-13,Research,Maharashtra
+2318818,2026-10-13,Onion,Lasalgaon,INR per 100 KG,Unhali,4051.0,4051.0,Onion,Lasalgaon,MSAMB,2026-10-13,Research,Maharashtra
+2318819,2026-10-13,Onion,Lasalgaon-Niphad,INR per 100 KG,Unhali,3900.0,3900.0,Onion,Lasalgaon-Niphad,MSAMB,2026-10-13,Research,Maharashtra
+2318820,2026-10-13,Onion,Lasalgaon-Vinchur,INR per 100 KG,Unhali,4000.0,4000.0,Onion,Lasalgaon-Vinchur,MSAMB,2026-10-13,Research,Maharashtra
+2318821,2026-10-13,Onion,Sinnar,INR per 100 KG,Unhali,4250.0,4250.0,Onion,Sinnar,MSAMB,2026-10-13,Research,Maharashtra
+2318822,2026-10-13,Onion,Sinnar-Naigaon,INR per 100 KG,Unhali,4000.0,4000.0,Onion,Sinnar-Naigaon,MSAMB,2026-10-13,Research,Maharashtra
+2318823,2026-10-13,Onion,Kalvan,INR per 100 KG,Unhali,4000.0,4000.0,Onion,Kalvan,MSAMB,2026-10-13,Research,Maharashtra
+2318824,2026-10-13,Onion,Sangamner,INR per 100 KG,Unhali,2700.0,2700.0,Onion,Sangamner,MSAMB,2026-10-13,Research,Maharashtra
+2318825,2026-10-13,Onion,Chandvad,INR per 100 KG,Unhali,3760.0,3760.0,Onion,Chandvad,MSAMB,2026-10-13,Research,Maharashtra
+2318826,2026-10-13,Onion,Manmad,INR per 100 KG,Unhali,3860.0,3860.0,Onion,Manmad,MSAMB,2026-10-13,Research,Maharashtra
+2318827,2026-10-13,Onion,Satana,INR per 100 KG,Unhali,3495.0,3495.0,Onion,Satana,MSAMB,2026-10-13,Research,Maharashtra
+2318828,2026-10-13,Onion,Kopargaon,INR per 100 KG,Unhali,3700.0,3700.0,Onion,Kopargaon,MSAMB,2026-10-13,Research,Maharashtra
+2318829,2026-10-13,Onion,Kopargaon-Shirasgaon Tilwani,INR per 100 KG,Unhali,3800.0,3800.0,Onion,Kopargaon-Shirasgaon Tilwani,MSAMB,2026-10-13,Research,Maharashtra
+2318830,2026-10-13,Onion,Newasa,INR per 100 KG,Unhali,3500.0,3500.0,Onion,Newasa,MSAMB,2026-10-13,Research,Maharashtra
+2318831,2026-10-13,Onion,Pimpalgaon Basawant,INR per 100 KG,Unhali,4000.0,4000.0,Onion,Pimpalgaon Basawant,MSAMB,2026-10-13,Research,Maharashtra
+2318832,2026-10-13,Onion,Pimpalgaon (B)-Saykheda,INR per 100 KG,Unhali,3951.0,3951.0,Onion,Pimpalgaon (B)-Saykheda,MSAMB,2026-10-13,Research,Maharashtra
+2318833,2026-10-13,Onion,Sakri,INR per 100 KG,Unhali,3500.0,3500.0,Onion,Sakri,MSAMB,2026-10-13,Research,Maharashtra
+2318834,2026-10-13,Onion,Bhusaval,INR per 100 KG,Unhali,4000.0,4000.0,Onion,Bhusaval,MSAMB,2026-10-13,Research,Maharashtra
+2318835,2026-10-13,Onion,Nandgaon,INR per 100 KG,Unhali,3350.0,3350.0,Onion,Nandgaon,MSAMB,2026-10-13,Research,Maharashtra
+2318836,2026-10-13,Onion,Dindori-Vani,INR per 100 KG,Unhali,3371.0,3371.0,Onion,Dindori-Vani,MSAMB,2026-10-13,Research,Maharashtra
+2318837,2026-10-13,Onion,Ramtek,INR per 100 KG,Unhali,4500.0,4500.0,Onion,Ramtek,MSAMB,2026-10-13,Research,Maharashtra
+2318838,2026-10-13,Onion,Devala,INR per 100 KG,Unhali,3900.0,3900.0,Onion,Devala,MSAMB,2026-10-13,Research,Maharashtra
+2318839,2026-10-13,Onion,Nampur,INR per 100 KG,Unhali,3700.0,3700.0,Onion,Nampur,MSAMB,2026-10-13,Research,Maharashtra
+2318840,2026-10-13,Onion,Nampur- Karanjad,INR per 100 KG,Unhali,3900.0,3900.0,Onion,Nampur- Karanjad,MSAMB,2026-10-13,Research,Maharashtra
+2318841,2026-10-13,Onion,Ambedkar Nagar,INR per 100 KG,Onion,3880.0,3880.0,Onion,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318842,2026-10-13,Tomato,Ambedkar Nagar,INR per 100 KG,Tomato,2350.0,2350.0,Tomato,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318843,2026-10-13,Potato,Ambedkar Nagar,INR per 100 KG,Potato,900.0,900.0,Potato,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318844,2026-10-13,Garlic,Ambedkar Nagar,INR per 100 KG,Garlic,10750.0,10750.0,Garlic,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318845,2026-10-13,Ginger,Ambedkar Nagar,INR per 100 KG,Ginger,7850.0,7850.0,Ginger,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318846,2026-10-13,Green Chilli,Ambedkar Nagar,INR per 100 KG,Green Chilli,3260.0,3260.0,Green Chilli,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318847,2026-10-13,Sponge Gourd,Ambedkar Nagar,INR per 100 KG,Sponge Gourd,2160.0,2160.0,Sponge Gourd,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318848,2026-10-13,Cabbage,Ambedkar Nagar,INR per 100 KG,Cabbage,2050.0,2050.0,Cabbage,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318849,2026-10-13,Cauliflower,Ambedkar Nagar,INR per 100 KG,Cauliflower,2650.0,2650.0,Cauliflower,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318850,2026-10-13,Brinjal,Ambedkar Nagar,INR per 100 KG,Brinjal,1870.0,1870.0,Brinjal,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318851,2026-10-13,Bottle Gourd,Ambedkar Nagar,INR per 100 KG,Bottle Gourd,1750.0,1750.0,Bottle Gourd,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318852,2026-10-13,Pointed Gourd,Ambedkar Nagar,INR per 100 KG,Pointed Gourd,3860.0,3860.0,Pointed Gourd,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318853,2026-10-13,Cucumber,Ambedkar Nagar,INR per 100 KG,Cucumber,2185.0,2185.0,Cucumber,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318854,2026-10-13,Okra,Ambedkar Nagar,INR per 100 KG,Okra,2280.0,2280.0,Okra,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318855,2026-10-13,Pumpkin,Ambedkar Nagar,INR per 100 KG,Pumpkin,1620.0,1620.0,Pumpkin,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318856,2026-10-13,Bitter Gourd,Ambedkar Nagar,INR per 100 KG,Bitter Gourd,2440.0,2440.0,Bitter Gourd,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318857,2026-10-13,Capsicum,Ambedkar Nagar,INR per 100 KG,Capsicum,4560.0,4560.0,Capsicum,Ambedkar Nagar,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318858,2026-10-13,Onion,Amroha,INR per 100 KG,Onion,3800.0,3800.0,Onion,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318859,2026-10-13,Tomato,Amroha,INR per 100 KG,Tomato,2200.0,2200.0,Tomato,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318860,2026-10-13,Potato,Amroha,INR per 100 KG,Potato,800.0,800.0,Potato,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318861,2026-10-13,Garlic,Amroha,INR per 100 KG,Garlic,11540.0,11540.0,Garlic,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318862,2026-10-13,Arvi (Colocasia),Amroha,INR per 100 KG,Arvi (Colocasia),2350.0,2350.0,Arvi (Colocasia),Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318863,2026-10-13,Ginger,Amroha,INR per 100 KG,Ginger,7300.0,7300.0,Ginger,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318864,2026-10-13,Green Chilli,Amroha,INR per 100 KG,Green Chilli,3700.0,3700.0,Green Chilli,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318865,2026-10-13,Sponge Gourd,Amroha,INR per 100 KG,Sponge Gourd,2500.0,2500.0,Sponge Gourd,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318866,2026-10-13,Cabbage,Amroha,INR per 100 KG,Cabbage,2130.0,2130.0,Cabbage,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318867,2026-10-13,Cauliflower,Amroha,INR per 100 KG,Cauliflower,2900.0,2900.0,Cauliflower,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318868,2026-10-13,Radish,Amroha,INR per 100 KG,Radish,1830.0,1830.0,Radish,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318869,2026-10-13,Brinjal,Amroha,INR per 100 KG,Brinjal,1800.0,1800.0,Brinjal,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318870,2026-10-13,Bottle Gourd,Amroha,INR per 100 KG,Bottle Gourd,1520.0,1520.0,Bottle Gourd,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318871,2026-10-13,Cucumber,Amroha,INR per 100 KG,Cucumber,2550.0,2550.0,Cucumber,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318872,2026-10-13,Okra,Amroha,INR per 100 KG,Okra,2100.0,2100.0,Okra,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318873,2026-10-13,Pumpkin,Amroha,INR per 100 KG,Pumpkin,1400.0,1400.0,Pumpkin,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318874,2026-10-13,Bitter Gourd,Amroha,INR per 100 KG,Bitter Gourd,2650.0,2650.0,Bitter Gourd,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318875,2026-10-13,Capsicum,Amroha,INR per 100 KG,Capsicum,4800.0,4800.0,Capsicum,Amroha,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318876,2026-10-13,Onion,Ayodhya,INR per 100 KG,Onion,4125.0,4125.0,Onion,Ayodhya,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318877,2026-10-13,Tomato,Ayodhya,INR per 100 KG,Tomato,2150.0,2150.0,Tomato,Ayodhya,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318878,2026-10-13,Potato,Ayodhya,INR per 100 KG,Potato,890.0,890.0,Potato,Ayodhya,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318879,2026-10-13,Garlic,Ayodhya,INR per 100 KG,Garlic,10700.0,10700.0,Garlic,Ayodhya,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318880,2026-10-13,Ginger,Ayodhya,INR per 100 KG,Ginger,7100.0,7100.0,Ginger,Ayodhya,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318881,2026-10-13,Green Chilli,Ayodhya,INR per 100 KG,Green Chilli,3650.0,3650.0,Green Chilli,Ayodhya,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318882,2026-10-13,Sponge Gourd,Ayodhya,INR per 100 KG,Sponge Gourd,2200.0,2200.0,Sponge Gourd,Ayodhya,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318883,2026-10-13,Cauliflower,Ayodhya,INR per 100 KG,Cauliflower,2750.0,2750.0,Cauliflower,Ayodhya,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318884,2026-10-13,Brinjal,Ayodhya,INR per 100 KG,Brinjal,2400.0,2400.0,Brinjal,Ayodhya,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318885,2026-10-13,Bottle Gourd,Ayodhya,INR per 100 KG,Bottle Gourd,1370.0,1370.0,Bottle Gourd,Ayodhya,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318886,2026-10-13,Pointed Gourd,Ayodhya,INR per 100 KG,Pointed Gourd,4200.0,4200.0,Pointed Gourd,Ayodhya,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318887,2026-10-13,Okra,Ayodhya,INR per 100 KG,Okra,2170.0,2170.0,Okra,Ayodhya,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318888,2026-10-13,Pumpkin,Ayodhya,INR per 100 KG,Pumpkin,1290.0,1290.0,Pumpkin,Ayodhya,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318889,2026-10-13,Bitter Gourd,Ayodhya,INR per 100 KG,Bitter Gourd,2900.0,2900.0,Bitter Gourd,Ayodhya,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318890,2026-10-13,Capsicum,Ayodhya,INR per 100 KG,Capsicum,4900.0,4900.0,Capsicum,Ayodhya,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318891,2026-10-13,Onion,Aligarh,INR per 100 KG,Onion,3740.0,3740.0,Onion,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318892,2026-10-13,Tomato,Aligarh,INR per 100 KG,Tomato,2580.0,2580.0,Tomato,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318893,2026-10-13,Potato,Aligarh,INR per 100 KG,Potato,860.0,860.0,Potato,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318894,2026-10-13,Garlic,Aligarh,INR per 100 KG,Garlic,11000.0,11000.0,Garlic,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318895,2026-10-13,Arvi (Colocasia),Aligarh,INR per 100 KG,Arvi (Colocasia),2280.0,2280.0,Arvi (Colocasia),Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318896,2026-10-13,Ginger,Aligarh,INR per 100 KG,Ginger,6300.0,6300.0,Ginger,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318897,2026-10-13,Green Chilli,Aligarh,INR per 100 KG,Green Chilli,3360.0,3360.0,Green Chilli,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318898,2026-10-13,Sponge Gourd,Aligarh,INR per 100 KG,Sponge Gourd,2800.0,2800.0,Sponge Gourd,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318899,2026-10-13,Cabbage,Aligarh,INR per 100 KG,Cabbage,1850.0,1850.0,Cabbage,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318900,2026-10-13,Cauliflower,Aligarh,INR per 100 KG,Cauliflower,2800.0,2800.0,Cauliflower,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318901,2026-10-13,Radish,Aligarh,INR per 100 KG,Radish,1480.0,1480.0,Radish,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318902,2026-10-13,Brinjal,Aligarh,INR per 100 KG,Brinjal,1500.0,1500.0,Brinjal,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318903,2026-10-13,Bottle Gourd,Aligarh,INR per 100 KG,Bottle Gourd,1250.0,1250.0,Bottle Gourd,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318904,2026-10-13,Cucumber,Aligarh,INR per 100 KG,Cucumber,2400.0,2400.0,Cucumber,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318905,2026-10-13,Okra,Aligarh,INR per 100 KG,Okra,2180.0,2180.0,Okra,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318906,2026-10-13,Pumpkin,Aligarh,INR per 100 KG,Pumpkin,1360.0,1360.0,Pumpkin,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318907,2026-10-13,Spinach,Aligarh,INR per 100 KG,Spinach,1400.0,1400.0,Spinach,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318908,2026-10-13,Bitter Gourd,Aligarh,INR per 100 KG,Bitter Gourd,2400.0,2400.0,Bitter Gourd,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318909,2026-10-13,Capsicum,Aligarh,INR per 100 KG,Capsicum,4050.0,4050.0,Capsicum,Aligarh,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318910,2026-10-13,Onion,Agra,INR per 100 KG,Onion,3720.0,3720.0,Onion,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318911,2026-10-13,Tomato,Agra,INR per 100 KG,Tomato,2350.0,2350.0,Tomato,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318912,2026-10-13,Potato,Agra,INR per 100 KG,Potato,810.0,810.0,Potato,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318913,2026-10-13,Garlic,Agra,INR per 100 KG,Garlic,11400.0,11400.0,Garlic,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318914,2026-10-13,Arvi (Colocasia),Agra,INR per 100 KG,Arvi (Colocasia),2280.0,2280.0,Arvi (Colocasia),Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318915,2026-10-13,Ginger,Agra,INR per 100 KG,Ginger,6450.0,6450.0,Ginger,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318916,2026-10-13,Green Chilli,Agra,INR per 100 KG,Green Chilli,3800.0,3800.0,Green Chilli,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318917,2026-10-13,Sponge Gourd,Agra,INR per 100 KG,Sponge Gourd,2700.0,2700.0,Sponge Gourd,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318918,2026-10-13,Cabbage,Agra,INR per 100 KG,Cabbage,1850.0,1850.0,Cabbage,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318919,2026-10-13,Cauliflower,Agra,INR per 100 KG,Cauliflower,2700.0,2700.0,Cauliflower,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318920,2026-10-13,Radish,Agra,INR per 100 KG,Radish,1650.0,1650.0,Radish,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318921,2026-10-13,Brinjal,Agra,INR per 100 KG,Brinjal,1650.0,1650.0,Brinjal,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318922,2026-10-13,Bottle Gourd,Agra,INR per 100 KG,Bottle Gourd,1270.0,1270.0,Bottle Gourd,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318923,2026-10-13,Cucumber,Agra,INR per 100 KG,Cucumber,2500.0,2500.0,Cucumber,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318924,2026-10-13,Okra,Agra,INR per 100 KG,Okra,2200.0,2200.0,Okra,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318925,2026-10-13,Pumpkin,Agra,INR per 100 KG,Pumpkin,1280.0,1280.0,Pumpkin,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318926,2026-10-13,Spinach,Agra,INR per 100 KG,Spinach,1920.0,1920.0,Spinach,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318927,2026-10-13,Bitter Gourd,Agra,INR per 100 KG,Bitter Gourd,2600.0,2600.0,Bitter Gourd,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318928,2026-10-13,Capsicum,Agra,INR per 100 KG,Capsicum,4600.0,4600.0,Capsicum,Agra,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318929,2026-10-13,Onion,Kanpur,INR per 100 KG,Onion,4010.0,4010.0,Onion,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318930,2026-10-13,Tomato,Kanpur,INR per 100 KG,Tomato,2450.0,2450.0,Tomato,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318931,2026-10-13,Potato,Kanpur,INR per 100 KG,Potato,750.0,750.0,Potato,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318932,2026-10-13,Garlic,Kanpur,INR per 100 KG,Garlic,13915.0,13915.0,Garlic,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318933,2026-10-13,Ginger,Kanpur,INR per 100 KG,Ginger,7210.0,7210.0,Ginger,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318934,2026-10-13,Green Chilli,Kanpur,INR per 100 KG,Green Chilli,3260.0,3260.0,Green Chilli,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318935,2026-10-13,Sponge Gourd,Kanpur,INR per 100 KG,Sponge Gourd,1640.0,1640.0,Sponge Gourd,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318936,2026-10-13,Cabbage,Kanpur,INR per 100 KG,Cabbage,2260.0,2260.0,Cabbage,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318937,2026-10-13,Cauliflower,Kanpur,INR per 100 KG,Cauliflower,3620.0,3620.0,Cauliflower,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318938,2026-10-13,Radish,Kanpur,INR per 100 KG,Radish,2215.0,2215.0,Radish,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318939,2026-10-13,Brinjal,Kanpur,INR per 100 KG,Brinjal,1610.0,1610.0,Brinjal,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318940,2026-10-13,Bottle Gourd,Kanpur,INR per 100 KG,Bottle Gourd,2110.0,2110.0,Bottle Gourd,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318941,2026-10-13,Cucumber,Kanpur,INR per 100 KG,Cucumber,2670.0,2670.0,Cucumber,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318942,2026-10-13,Okra,Kanpur,INR per 100 KG,Okra,2425.0,2425.0,Okra,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318943,2026-10-13,Pumpkin,Kanpur,INR per 100 KG,Pumpkin,1310.0,1310.0,Pumpkin,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318944,2026-10-13,Bitter Gourd,Kanpur,INR per 100 KG,Bitter Gourd,2440.0,2440.0,Bitter Gourd,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318945,2026-10-13,Onion,Kanpur,INR per 100 KG,Onion,4000.0,4000.0,Onion,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318946,2026-10-13,Tomato,Kanpur,INR per 100 KG,Tomato,2500.0,2500.0,Tomato,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318947,2026-10-13,Potato,Kanpur,INR per 100 KG,Potato,720.0,720.0,Potato,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318948,2026-10-13,Garlic,Kanpur,INR per 100 KG,Garlic,13300.0,13300.0,Garlic,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318949,2026-10-13,Arvi (Colocasia),Kanpur,INR per 100 KG,Arvi (Colocasia),2310.0,2310.0,Arvi (Colocasia),Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318950,2026-10-13,Ginger,Kanpur,INR per 100 KG,Ginger,7800.0,7800.0,Ginger,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318951,2026-10-13,Green Chilli,Kanpur,INR per 100 KG,Green Chilli,4100.0,4100.0,Green Chilli,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318952,2026-10-13,Sponge Gourd,Kanpur,INR per 100 KG,Sponge Gourd,2800.0,2800.0,Sponge Gourd,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318953,2026-10-13,Cabbage,Kanpur,INR per 100 KG,Cabbage,2050.0,2050.0,Cabbage,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318954,2026-10-13,Cauliflower,Kanpur,INR per 100 KG,Cauliflower,3650.0,3650.0,Cauliflower,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318955,2026-10-13,Radish,Kanpur,INR per 100 KG,Radish,1760.0,1760.0,Radish,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318956,2026-10-13,Brinjal,Kanpur,INR per 100 KG,Brinjal,1860.0,1860.0,Brinjal,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318957,2026-10-13,Bottle Gourd,Kanpur,INR per 100 KG,Bottle Gourd,1500.0,1500.0,Bottle Gourd,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318958,2026-10-13,Pointed Gourd,Kanpur,INR per 100 KG,Pointed Gourd,4570.0,4570.0,Pointed Gourd,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318959,2026-10-13,Cucumber,Kanpur,INR per 100 KG,Cucumber,2450.0,2450.0,Cucumber,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318960,2026-10-13,Okra,Kanpur,INR per 100 KG,Okra,2500.0,2500.0,Okra,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318961,2026-10-13,Pumpkin,Kanpur,INR per 100 KG,Pumpkin,1450.0,1450.0,Pumpkin,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318962,2026-10-13,Bitter Gourd,Kanpur,INR per 100 KG,Bitter Gourd,2620.0,2620.0,Bitter Gourd,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318963,2026-10-13,Capsicum,Kanpur,INR per 100 KG,Capsicum,4570.0,4570.0,Capsicum,Kanpur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318964,2026-10-13,Onion,Farrukhabad,INR per 100 KG,Onion,3925.0,3925.0,Onion,Farrukhabad,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318965,2026-10-13,Tomato,Farrukhabad,INR per 100 KG,Tomato,2325.0,2325.0,Tomato,Farrukhabad,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318966,2026-10-13,Potato,Farrukhabad,INR per 100 KG,Potato,565.0,565.0,Potato,Farrukhabad,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318967,2026-10-13,Garlic,Farrukhabad,INR per 100 KG,Garlic,12700.0,12700.0,Garlic,Farrukhabad,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318968,2026-10-13,Arvi (Colocasia),Farrukhabad,INR per 100 KG,Arvi (Colocasia),2150.0,2150.0,Arvi (Colocasia),Farrukhabad,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318969,2026-10-13,Ginger,Farrukhabad,INR per 100 KG,Ginger,7700.0,7700.0,Ginger,Farrukhabad,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318970,2026-10-13,Green Chilli,Farrukhabad,INR per 100 KG,Green Chilli,4050.0,4050.0,Green Chilli,Farrukhabad,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318971,2026-10-13,Sponge Gourd,Farrukhabad,INR per 100 KG,Sponge Gourd,2300.0,2300.0,Sponge Gourd,Farrukhabad,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318972,2026-10-13,Cabbage,Farrukhabad,INR per 100 KG,Cabbage,2100.0,2100.0,Cabbage,Farrukhabad,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318973,2026-10-13,Brinjal,Farrukhabad,INR per 100 KG,Brinjal,1800.0,1800.0,Brinjal,Farrukhabad,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318974,2026-10-13,Bottle Gourd,Farrukhabad,INR per 100 KG,Bottle Gourd,1400.0,1400.0,Bottle Gourd,Farrukhabad,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318975,2026-10-13,Pointed Gourd,Farrukhabad,INR per 100 KG,Pointed Gourd,4300.0,4300.0,Pointed Gourd,Farrukhabad,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318976,2026-10-13,Cucumber,Farrukhabad,INR per 100 KG,Cucumber,2300.0,2300.0,Cucumber,Farrukhabad,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318977,2026-10-13,Okra,Farrukhabad,INR per 100 KG,Okra,2200.0,2200.0,Okra,Farrukhabad,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318978,2026-10-13,Pumpkin,Farrukhabad,INR per 100 KG,Pumpkin,1400.0,1400.0,Pumpkin,Farrukhabad,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318979,2026-10-13,Onion,Badaun,INR per 100 KG,Onion,3800.0,3800.0,Onion,Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318980,2026-10-13,Tomato,Badaun,INR per 100 KG,Tomato,2315.0,2315.0,Tomato,Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318981,2026-10-13,Potato,Badaun,INR per 100 KG,Potato,780.0,780.0,Potato,Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318982,2026-10-13,Garlic,Badaun,INR per 100 KG,Garlic,11140.0,11140.0,Garlic,Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318983,2026-10-13,Arvi (Colocasia),Badaun,INR per 100 KG,Arvi (Colocasia),2210.0,2210.0,Arvi (Colocasia),Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318984,2026-10-13,Ginger,Badaun,INR per 100 KG,Ginger,7730.0,7730.0,Ginger,Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318985,2026-10-13,Green Chilli,Badaun,INR per 100 KG,Green Chilli,3240.0,3240.0,Green Chilli,Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318986,2026-10-13,Sponge Gourd,Badaun,INR per 100 KG,Sponge Gourd,2385.0,2385.0,Sponge Gourd,Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318987,2026-10-13,Cabbage,Badaun,INR per 100 KG,Cabbage,2040.0,2040.0,Cabbage,Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318988,2026-10-13,Radish,Badaun,INR per 100 KG,Radish,2080.0,2080.0,Radish,Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318989,2026-10-13,Brinjal,Badaun,INR per 100 KG,Brinjal,1950.0,1950.0,Brinjal,Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318990,2026-10-13,Bottle Gourd,Badaun,INR per 100 KG,Bottle Gourd,1565.0,1565.0,Bottle Gourd,Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318991,2026-10-13,Cucumber,Badaun,INR per 100 KG,Cucumber,2315.0,2315.0,Cucumber,Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318992,2026-10-13,Okra,Badaun,INR per 100 KG,Okra,2090.0,2090.0,Okra,Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318993,2026-10-13,Pumpkin,Badaun,INR per 100 KG,Pumpkin,1470.0,1470.0,Pumpkin,Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318994,2026-10-13,Bitter Gourd,Badaun,INR per 100 KG,Bitter Gourd,2630.0,2630.0,Bitter Gourd,Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318995,2026-10-13,Capsicum,Badaun,INR per 100 KG,Capsicum,4455.0,4455.0,Capsicum,Badaun,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318996,2026-10-13,Onion,Bahraich,INR per 100 KG,Onion,4150.0,4150.0,Onion,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318997,2026-10-13,Tomato,Bahraich,INR per 100 KG,Tomato,2500.0,2500.0,Tomato,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318998,2026-10-13,Potato,Bahraich,INR per 100 KG,Potato,910.0,910.0,Potato,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2318999,2026-10-13,Garlic,Bahraich,INR per 100 KG,Garlic,12975.0,12975.0,Garlic,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319000,2026-10-13,Arvi (Colocasia),Bahraich,INR per 100 KG,Arvi (Colocasia),2350.0,2350.0,Arvi (Colocasia),Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319001,2026-10-13,Ginger,Bahraich,INR per 100 KG,Ginger,6850.0,6850.0,Ginger,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319002,2026-10-13,Green Chilli,Bahraich,INR per 100 KG,Green Chilli,4600.0,4600.0,Green Chilli,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319003,2026-10-13,Sponge Gourd,Bahraich,INR per 100 KG,Sponge Gourd,2675.0,2675.0,Sponge Gourd,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319004,2026-10-13,Cabbage,Bahraich,INR per 100 KG,Cabbage,2275.0,2275.0,Cabbage,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319005,2026-10-13,Cauliflower,Bahraich,INR per 100 KG,Cauliflower,2450.0,2450.0,Cauliflower,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319006,2026-10-13,Carrot,Bahraich,INR per 100 KG,Carrot,3500.0,3500.0,Carrot,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319007,2026-10-13,Radish,Bahraich,INR per 100 KG,Radish,2260.0,2260.0,Radish,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319008,2026-10-13,Brinjal,Bahraich,INR per 100 KG,Brinjal,2450.0,2450.0,Brinjal,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319009,2026-10-13,Bottle Gourd,Bahraich,INR per 100 KG,Bottle Gourd,1900.0,1900.0,Bottle Gourd,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319010,2026-10-13,Pointed Gourd,Bahraich,INR per 100 KG,Pointed Gourd,6175.0,6175.0,Pointed Gourd,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319011,2026-10-13,Cucumber,Bahraich,INR per 100 KG,Cucumber,2800.0,2800.0,Cucumber,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319012,2026-10-13,Okra,Bahraich,INR per 100 KG,Okra,2650.0,2650.0,Okra,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319013,2026-10-13,Pumpkin,Bahraich,INR per 100 KG,Pumpkin,1850.0,1850.0,Pumpkin,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319014,2026-10-13,Bitter Gourd,Bahraich,INR per 100 KG,Bitter Gourd,2980.0,2980.0,Bitter Gourd,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319015,2026-10-13,Capsicum,Bahraich,INR per 100 KG,Capsicum,5900.0,5900.0,Capsicum,Bahraich,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319016,2026-10-13,Onion,Meerut,INR per 100 KG,Onion,3900.0,3900.0,Onion,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319017,2026-10-13,Tomato,Meerut,INR per 100 KG,Tomato,2410.0,2410.0,Tomato,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319018,2026-10-13,Potato,Meerut,INR per 100 KG,Potato,850.0,850.0,Potato,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319019,2026-10-13,Garlic,Meerut,INR per 100 KG,Garlic,10760.0,10760.0,Garlic,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319020,2026-10-13,Ginger,Meerut,INR per 100 KG,Ginger,7320.0,7320.0,Ginger,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319021,2026-10-13,Green Chilli,Meerut,INR per 100 KG,Green Chilli,4050.0,4050.0,Green Chilli,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319022,2026-10-13,Sponge Gourd,Meerut,INR per 100 KG,Sponge Gourd,2430.0,2430.0,Sponge Gourd,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319023,2026-10-13,Cabbage,Meerut,INR per 100 KG,Cabbage,1970.0,1970.0,Cabbage,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319024,2026-10-13,Cauliflower,Meerut,INR per 100 KG,Cauliflower,3060.0,3060.0,Cauliflower,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319025,2026-10-13,Brinjal,Meerut,INR per 100 KG,Brinjal,2010.0,2010.0,Brinjal,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319026,2026-10-13,Bottle Gourd,Meerut,INR per 100 KG,Bottle Gourd,1460.0,1460.0,Bottle Gourd,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319027,2026-10-13,Cucumber,Meerut,INR per 100 KG,Cucumber,2100.0,2100.0,Cucumber,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319028,2026-10-13,Okra,Meerut,INR per 100 KG,Okra,2140.0,2140.0,Okra,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319029,2026-10-13,Pumpkin,Meerut,INR per 100 KG,Pumpkin,1600.0,1600.0,Pumpkin,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319030,2026-10-13,Spinach,Meerut,INR per 100 KG,Spinach,1810.0,1810.0,Spinach,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319031,2026-10-13,Bitter Gourd,Meerut,INR per 100 KG,Bitter Gourd,2480.0,2480.0,Bitter Gourd,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319032,2026-10-13,Capsicum,Meerut,INR per 100 KG,Capsicum,5050.0,5050.0,Capsicum,Meerut,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319033,2026-10-13,Onion,Lucknow,INR per 100 KG,Onion,3900.0,3900.0,Onion,Lucknow,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319034,2026-10-13,Tomato,Lucknow,INR per 100 KG,Tomato,2450.0,2450.0,Tomato,Lucknow,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319035,2026-10-13,Potato,Lucknow,INR per 100 KG,Potato,900.0,900.0,Potato,Lucknow,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319036,2026-10-13,Garlic,Lucknow,INR per 100 KG,Garlic,11750.0,11750.0,Garlic,Lucknow,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319037,2026-10-13,Arvi (Colocasia),Lucknow,INR per 100 KG,Arvi (Colocasia),2260.0,2260.0,Arvi (Colocasia),Lucknow,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319038,2026-10-13,Ginger,Lucknow,INR per 100 KG,Ginger,8450.0,8450.0,Ginger,Lucknow,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319039,2026-10-13,Green Chilli,Lucknow,INR per 100 KG,Green Chilli,3500.0,3500.0,Green Chilli,Lucknow,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319040,2026-10-13,Sponge Gourd,Lucknow,INR per 100 KG,Sponge Gourd,2450.0,2450.0,Sponge Gourd,Lucknow,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319041,2026-10-13,Brinjal,Lucknow,INR per 100 KG,Brinjal,2220.0,2220.0,Brinjal,Lucknow,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319042,2026-10-13,Bottle Gourd,Lucknow,INR per 100 KG,Bottle Gourd,1680.0,1680.0,Bottle Gourd,Lucknow,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319043,2026-10-13,Pointed Gourd,Lucknow,INR per 100 KG,Pointed Gourd,4600.0,4600.0,Pointed Gourd,Lucknow,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319044,2026-10-13,Cucumber,Lucknow,INR per 100 KG,Cucumber,2400.0,2400.0,Cucumber,Lucknow,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319045,2026-10-13,Okra,Lucknow,INR per 100 KG,Okra,2250.0,2250.0,Okra,Lucknow,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319046,2026-10-13,Pumpkin,Lucknow,INR per 100 KG,Pumpkin,1710.0,1710.0,Pumpkin,Lucknow,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319047,2026-10-13,Bitter Gourd,Lucknow,INR per 100 KG,Bitter Gourd,2750.0,2750.0,Bitter Gourd,Lucknow,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319048,2026-10-13,Capsicum,Lucknow,INR per 100 KG,Capsicum,4750.0,4750.0,Capsicum,Lucknow,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319049,2026-10-13,Onion,Varanasi,INR per 100 KG,Onion,3770.0,3770.0,Onion,Varanasi,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319050,2026-10-13,Tomato,Varanasi,INR per 100 KG,Tomato,2360.0,2360.0,Tomato,Varanasi,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319051,2026-10-13,Potato,Varanasi,INR per 100 KG,Potato,770.0,770.0,Potato,Varanasi,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319052,2026-10-13,Onion,Sitapur,INR per 100 KG,Onion,3920.0,3920.0,Onion,Sitapur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319053,2026-10-13,Tomato,Sitapur,INR per 100 KG,Tomato,2440.0,2440.0,Tomato,Sitapur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319054,2026-10-13,Potato,Sitapur,INR per 100 KG,Potato,865.0,865.0,Potato,Sitapur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319055,2026-10-13,Garlic,Sitapur,INR per 100 KG,Garlic,10955.0,10955.0,Garlic,Sitapur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319056,2026-10-13,Ginger,Sitapur,INR per 100 KG,Ginger,8040.0,8040.0,Ginger,Sitapur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319057,2026-10-13,Green Chilli,Sitapur,INR per 100 KG,Green Chilli,3475.0,3475.0,Green Chilli,Sitapur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319058,2026-10-13,Brinjal,Sitapur,INR per 100 KG,Brinjal,1895.0,1895.0,Brinjal,Sitapur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319059,2026-10-13,Bottle Gourd,Sitapur,INR per 100 KG,Bottle Gourd,1590.0,1590.0,Bottle Gourd,Sitapur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319060,2026-10-13,Pumpkin,Sitapur,INR per 100 KG,Pumpkin,1615.0,1615.0,Pumpkin,Sitapur,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319061,2026-10-13,Onion,Hathras,INR per 100 KG,Onion,3710.0,3710.0,Onion,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319062,2026-10-13,Tomato,Hathras,INR per 100 KG,Tomato,2600.0,2600.0,Tomato,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319063,2026-10-13,Potato,Hathras,INR per 100 KG,Potato,830.0,830.0,Potato,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319064,2026-10-13,Garlic,Hathras,INR per 100 KG,Garlic,11000.0,11000.0,Garlic,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319065,2026-10-13,Ginger,Hathras,INR per 100 KG,Ginger,6330.0,6330.0,Ginger,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319066,2026-10-13,Green Chilli,Hathras,INR per 100 KG,Green Chilli,3250.0,3250.0,Green Chilli,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319067,2026-10-13,Sponge Gourd,Hathras,INR per 100 KG,Sponge Gourd,2670.0,2670.0,Sponge Gourd,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319068,2026-10-13,Cabbage,Hathras,INR per 100 KG,Cabbage,1860.0,1860.0,Cabbage,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319069,2026-10-13,Cauliflower,Hathras,INR per 100 KG,Cauliflower,3050.0,3050.0,Cauliflower,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319070,2026-10-13,Radish,Hathras,INR per 100 KG,Radish,1500.0,1500.0,Radish,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319071,2026-10-13,Brinjal,Hathras,INR per 100 KG,Brinjal,1500.0,1500.0,Brinjal,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319072,2026-10-13,Bottle Gourd,Hathras,INR per 100 KG,Bottle Gourd,1200.0,1200.0,Bottle Gourd,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319073,2026-10-13,Cucumber,Hathras,INR per 100 KG,Cucumber,2500.0,2500.0,Cucumber,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319074,2026-10-13,Okra,Hathras,INR per 100 KG,Okra,2100.0,2100.0,Okra,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319075,2026-10-13,Pumpkin,Hathras,INR per 100 KG,Pumpkin,1280.0,1280.0,Pumpkin,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319076,2026-10-13,Spinach,Hathras,INR per 100 KG,Spinach,1700.0,1700.0,Spinach,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319077,2026-10-13,Capsicum,Hathras,INR per 100 KG,Capsicum,4070.0,4070.0,Capsicum,Hathras,UP_KRISHI,2026-10-13,Research,Uttar Pradesh
+2319078,2026-10-13,Tomato,Kolar,INR per 100 KG,Super Top,330.0,330.0,Tomato,Kolar,YOUTUBE_MANDI,2026-10-13,Research,Karnataka
+2319079,2026-10-13,Tomato,Kolar,INR per 100 KG,Medium,330.0,330.0,Tomato,Kolar,YOUTUBE_MANDI,2026-10-13,Research,Karnataka
+2317595,2026-10-12,Guar-gum,Dabwali,INR per 100 KG,Guargum,15300.0,15300.0,Guar Gum,Sirsa,Agalabs_Spot,2026-10-12,Research,
+2317596,2026-10-12,Wheat,Dabwali,INR per 100 KG,Mill Quality (Loose),2800.0,2800.0,Wheat,Sirsa,Agalabs_Spot,2026-10-12,Research,
+2317597,2026-10-12,Guar-seed,Dabwali,INR per 100 KG,Guarseed,7650.0,7650.0,Guar Seed,Sirsa,Agalabs_Spot,2026-10-12,Research,
+2317598,2026-10-12,Guar-gum,Jodhpur,INR per 100 KG,Guargum,15400.0,15400.0,Guar Gum,Jodhpur,Agalabs_Spot,2026-10-12,Research,
+2317599,2026-10-12,Jeera-cumin-seed,Jodhpur,INR per 100 KG,Local (loose),25500.0,25500.0,Cumin,Jodhpur,Agalabs_Spot,2026-10-12,Research,
+2317600,2026-10-12,Guar-seed,Jodhpur,INR per 100 KG,Guarseed,7600.0,7600.0,Guar Seed,Jodhpur,Agalabs_Spot,2026-10-12,Research,
+2317601,2026-10-12,Guar-gum,Sirsa,INR per 100 KG,Guargum,15300.0,15300.0,Guar Gum,Sirsa,Agalabs_Spot,2026-10-12,Research,
+2317602,2026-10-12,Guar-seed,Sirsa,INR per 100 KG,Guarseed,8150.0,8150.0,Guar Seed,Sirsa,Agalabs_Spot,2026-10-12,Research,
+2317603,2026-10-12,Guar-gum,Bhiwani,INR per 100 KG,Guargum,14900.0,14900.0,Guar Gum,Bhiwani,Agalabs_Spot,2026-10-12,Research,
+2317604,2026-10-12,Cotton,Bhiwani,INR per 100 KG,Bt (Narma),9100.0,9100.0,Cotton,Bhiwani,Agalabs_Spot,2026-10-12,Research,
+2317605,2026-10-12,Guar-seed,Bhiwani,INR per 100 KG,Guarseed,7650.0,7650.0,Guar Seed,Bhiwani,Agalabs_Spot,2026-10-12,Research,
+2317606,2026-10-12,Mustard-rapeseed,Bhind,INR per 100 KG,Non-Condition,8000.0,8000.0,Rapeseed,Bhind,Agalabs_Spot,2026-10-12,Research,
+2317607,2026-10-12,Mustard-rapeseed,Baran,INR per 100 KG,Non-Condition,8500.0,8500.0,Rapeseed,Baran,Agalabs_Spot,2026-10-12,Research,
+2317608,2026-10-12,Soybean,Baran,INR per 100 KG,Yellow Soyabean,6500.0,6500.0,Soybeans,Baran,Agalabs_Spot,2026-10-12,Research,
+2317609,2026-10-12,Dhaniya-coriander-seed,Baran,INR per 100 KG,Eagle,15500.0,15500.0,Coriander,Baran,Agalabs_Spot,2026-10-12,Research,
+2317610,2026-10-12,Dhaniya-coriander-seed,Baran,INR per 100 KG,Badami,15000.0,15000.0,Coriander,Baran,Agalabs_Spot,2026-10-12,Research,
+2317611,2026-10-12,Mustard-rapeseed,Hapur,INR per 100 KG,Condition,8850.0,8850.0,Rapeseed,Hapur,Agalabs_Spot,2026-10-12,Research,
+2317612,2026-10-12,Wheat,Hapur,INR per 100 KG,Mill Quality (Loose),2770.0,2770.0,Wheat,Hapur,Agalabs_Spot,2026-10-12,Research,
+2317613,2026-10-12,Mustard-rapeseed,Kota,INR per 100 KG,Condition,8700.0,8700.0,Rapeseed,Kota,Agalabs_Spot,2026-10-12,Research,
+2317614,2026-10-12,Mustard-rapeseed,Kota,INR per 100 KG,Non-Condition,8500.0,8500.0,Rapeseed,Kota,Agalabs_Spot,2026-10-12,Research,
+2317615,2026-10-12,Wheat,Kota,INR per 100 KG,FAQ,2700.0,2700.0,Wheat,Kota,Agalabs_Spot,2026-10-12,Research,
+2317616,2026-10-12,Mustard-oil-rapeseed-oil,Kota,INR per 100 KG,Kacchi Ghani,17800.0,17800.0,Rapeseed Oil,Kota,Agalabs_Spot,2026-10-12,Research,
+2317617,2026-10-12,Soybean,Kota,INR per 100 KG,Plant,6650.0,6650.0,Soybeans,Kota,Agalabs_Spot,2026-10-12,Research,
+2317618,2026-10-12,Soybean,Kota,INR per 100 KG,Mandi,6500.0,6500.0,Soybeans,Kota,Agalabs_Spot,2026-10-12,Research,
+2317619,2026-10-12,Dhaniya-coriander-seed,Kota,INR per 100 KG,Badami,14600.0,14600.0,Coriander,Kota,Agalabs_Spot,2026-10-12,Research,
+2317620,2026-10-12,Dhaniya-coriander-seed,Kota,INR per 100 KG,Eagle,15000.0,15000.0,Coriander,Kota,Agalabs_Spot,2026-10-12,Research,
+2317621,2026-10-12,Mustard-rapeseed,Delhi,INR per 100 KG,Condition,8800.0,8800.0,Rapeseed,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317622,2026-10-12,Jeera-cumin-seed,Delhi,INR per 100 KG,Ganesh,27000.0,27000.0,Cumin,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317623,2026-10-12,Jeera-cumin-seed,Delhi,INR per 100 KG,Machine Cut,28000.0,28000.0,Cumin,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317624,2026-10-12,Rice,Delhi,INR per 100 KG,Parmal Sella,4600.0,4600.0,Rice,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317625,2026-10-12,Rice,Delhi,INR per 100 KG,Sarbati Sella,7200.0,7200.0,Rice,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317626,2026-10-12,Rice,Delhi,INR per 100 KG,Basmati,10800.0,10800.0,Rice,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317627,2026-10-12,Rice,Delhi,INR per 100 KG,Parmal Raw,4600.0,4600.0,Rice,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317628,2026-10-12,Rice,Delhi,INR per 100 KG,Sarbati Raw,7500.0,7500.0,Rice,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317629,2026-10-12,Rice,Delhi,INR per 100 KG,DB,9300.0,9300.0,Rice,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317630,2026-10-12,Rice,Delhi,INR per 100 KG,Sugandha Steam,8100.0,8100.0,Rice,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317631,2026-10-12,Rice,Delhi,INR per 100 KG,1509 Steam,8600.0,8600.0,Rice,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317632,2026-10-12,Chana-chickpeas,Delhi,INR per 100 KG,M.P.,7550.0,7550.0,Bengal Gram,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317633,2026-10-12,Chana-chickpeas,Delhi,INR per 100 KG,Rajasthan,7600.0,7600.0,Bengal Gram,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317634,2026-10-12,Chana-chickpeas,Delhi,INR per 100 KG,Chana Dal,8600.0,8600.0,Bengal Gram,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317635,2026-10-12,Tur-pigeon-peas,Delhi,INR per 100 KG,Burmese Lemon,10200.0,10200.0,Tur,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317636,2026-10-12,White-and-raw-sugar,Delhi,INR per 100 KG,S-30,5360.0,5360.0,Sugar,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317637,2026-10-12,White-and-raw-sugar,Delhi,INR per 100 KG,M-30,5380.0,5380.0,Sugar,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317638,2026-10-12,Black-pepper,Delhi,INR per 100 KG,Number 11.5,79000.0,79000.0,Black Pepper,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317639,2026-10-12,Masoor-masur-red-lentils,Delhi,INR per 100 KG,Chanti - Export quality,12500.0,12500.0,Masoor,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317640,2026-10-12,Masoor-masur-red-lentils,Delhi,INR per 100 KG,U.P./Sikri Line,7200.0,7200.0,Masoor,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317641,2026-10-12,Masoor-masur-red-lentils,Delhi,INR per 100 KG,M.P./Kotaline,6900.0,6900.0,Masoor,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317642,2026-10-12,Masoor-masur-red-lentils,Delhi,INR per 100 KG,Malkadal,7300.0,7300.0,Masoor,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317643,2026-10-12,Masoor-masur-red-lentils,Delhi,INR per 100 KG,Masur Dal,7400.0,7400.0,Masoor,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317644,2026-10-12,Urad-black-gram,Delhi,INR per 100 KG,FAQ,10100.0,10100.0,Urad,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317645,2026-10-12,Moong-mung-beans,Delhi,INR per 100 KG,Moong Mertha City Polish,9500.0,9500.0,Moong,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317646,2026-10-12,Moong-mung-beans,Delhi,INR per 100 KG,Moong Mertha City Mogar,8600.0,8600.0,Moong,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317647,2026-10-12,Mustard-rapeseed,Sri Ganganagar,INR per 100 KG,Non-Condition,7800.0,7800.0,Rapeseed,Sri Ganganagar,Agalabs_Spot,2026-10-12,Research,
+2317648,2026-10-12,Rapeseed-mustard-meal,Sri Ganganagar,INR per 100 KG,FAQ,3570.0,3570.0,Rapeseed Meal,Sri Ganganagar,Agalabs_Spot,2026-10-12,Research,
+2317649,2026-10-12,Mustard-oil-rapeseed-oil,Sri Ganganagar,INR per 100 KG,Kacchi Ghani,17800.0,17800.0,Rapeseed Oil,Sri Ganganagar,Agalabs_Spot,2026-10-12,Research,
+2317650,2026-10-12,Guar-seed,Sri Ganganagar,INR per 100 KG,Guarseed,7850.0,7850.0,Guar Seed,Sri Ganganagar,Agalabs_Spot,2026-10-12,Research,
+2317651,2026-10-12,Mustard-rapeseed,Alwar,INR per 100 KG,Condition,8700.0,8700.0,Rapeseed,Alwar,Agalabs_Spot,2026-10-12,Research,
+2317652,2026-10-12,Wheat,Alwar,INR per 100 KG,Mill Quality (Loose),2665.0,2665.0,Wheat,Alwar,Agalabs_Spot,2026-10-12,Research,
+2317653,2026-10-12,Chana-chickpeas,Alwar,INR per 100 KG,Desi,7400.0,7400.0,Bengal Gram,Alwar,Agalabs_Spot,2026-10-12,Research,
+2317654,2026-10-12,Guar-seed,Alwar,INR per 100 KG,Guarseed,6800.0,6800.0,Guar Seed,Alwar,Agalabs_Spot,2026-10-12,Research,
+2317655,2026-10-12,Mustard-rapeseed,Khajuwala,INR per 100 KG,Non-Condition,8000.0,8000.0,Rapeseed,Bikaner,Agalabs_Spot,2026-10-12,Research,
+2317656,2026-10-12,Guar-seed,Khajuwala,INR per 100 KG,Guarseed,7900.0,7900.0,Guar Seed,Bikaner,Agalabs_Spot,2026-10-12,Research,
+2317657,2026-10-12,Mustard-rapeseed,Dabra,INR per 100 KG,Non-Condition,7870.0,7870.0,Rapeseed,Gwalior,Agalabs_Spot,2026-10-12,Research,
+2317658,2026-10-12,Mustard-rapeseed,Neewai,INR per 100 KG,Non-Condition,8400.0,8400.0,Rapeseed,Tonk,Agalabs_Spot,2026-10-12,Research,
+2317659,2026-10-12,Mustard-oil-rapeseed-oil,Neewai,INR per 100 KG,Kacchi Ghani,17600.0,17600.0,Rapeseed Oil,Tonk,Agalabs_Spot,2026-10-12,Research,
+2317660,2026-10-12,Mustard-rapeseed,Jaipur,INR per 100 KG,Condition,8950.0,8950.0,Rapeseed,Jaipur,Agalabs_Spot,2026-10-12,Research,
+2317661,2026-10-12,Mustard-oil-rapeseed-oil,Jaipur,INR per 100 KG,Kacchi Ghani,17900.0,17900.0,Rapeseed Oil,Jaipur,Agalabs_Spot,2026-10-12,Research,
+2317662,2026-10-12,Chana-chickpeas,Jaipur,INR per 100 KG,Desi,7650.0,7650.0,Bengal Gram,Jaipur,Agalabs_Spot,2026-10-12,Research,
+2317663,2026-10-12,Urad-black-gram,Jaipur,INR per 100 KG,Desi,9200.0,9200.0,Urad,Jaipur,Agalabs_Spot,2026-10-12,Research,
+2317664,2026-10-12,Moong-mung-beans,Jaipur,INR per 100 KG,Moong Chamki,8500.0,8500.0,Moong,Jaipur,Agalabs_Spot,2026-10-12,Research,
+2317665,2026-10-12,Mustard-rapeseed,Agra,INR per 100 KG,Condition,9381.0,9381.0,Rapeseed,Agra,Agalabs_Spot,2026-10-12,Research,
+2317666,2026-10-12,Mustard-oil-rapeseed-oil,Agra,INR per 100 KG,Kacchi Ghani,17650.0,17650.0,Rapeseed Oil,Agra,Agalabs_Spot,2026-10-12,Research,
+2317667,2026-10-12,Mustard-rapeseed,Morena,INR per 100 KG,Condition,8500.0,8500.0,Rapeseed,Morena,Agalabs_Spot,2026-10-12,Research,
+2317668,2026-10-12,Mustard-rapeseed,Morena,INR per 100 KG,Non-Condition,8185.0,8185.0,Rapeseed,Morena,Agalabs_Spot,2026-10-12,Research,
+2317669,2026-10-12,Wheat,Kosi,INR per 100 KG,FAQ,2590.0,2590.0,Wheat,Madhepura,Agalabs_Spot,2026-10-12,Research,
+2317670,2026-10-12,Wheat,Acchnera,INR per 100 KG,Mill Quality (Loose),2650.0,2650.0,Wheat,Agra,Agalabs_Spot,2026-10-12,Research,
+2317671,2026-10-12,Wheat,Rajkot,INR per 100 KG,Mill Quality (Mill Delivery),2875.0,2875.0,Wheat,Rajkot,Agalabs_Spot,2026-10-12,Research,
+2317672,2026-10-12,Wheat,Rajkot,INR per 100 KG,Mill Quality (Loose),2775.0,2775.0,Wheat,Rajkot,Agalabs_Spot,2026-10-12,Research,
+2317673,2026-10-12,Jeera-cumin-seed,Rajkot,INR per 100 KG,Local (loose),25950.0,25950.0,Cumin,Rajkot,Agalabs_Spot,2026-10-12,Research,
+2317674,2026-10-12,Cotton,Rajkot,INR per 100 KG,Bt Cotton,9950.0,9950.0,Cotton,Rajkot,Agalabs_Spot,2026-10-12,Research,
+2317675,2026-10-12,Guar-seed,Rajkot,INR per 100 KG,Guarseed,7500.0,7500.0,Guar Seed,Rajkot,Agalabs_Spot,2026-10-12,Research,
+2317676,2026-10-12,Dhaniya-coriander-seed,Rajkot,INR per 100 KG,Rajkot Loose,15000.0,15000.0,Coriander,Rajkot,Agalabs_Spot,2026-10-12,Research,
+2317677,2026-10-12,Groundnut-peanut,Rajkot,INR per 100 KG,GN Bold,8045.0,8045.0,Groundnut,Rajkot,Agalabs_Spot,2026-10-12,Research,
+2317678,2026-10-12,Wheat,Chennai,INR per 100 KG,Mill Quality (Mill Delivery),3080.0,3080.0,Wheat,Chennai,Agalabs_Spot,2026-10-12,Research,
+2317679,2026-10-12,Wheat,Chennai,INR per 100 KG,Lokwan (Mill Delivery),3250.0,3250.0,Wheat,Chennai,Agalabs_Spot,2026-10-12,Research,
+2317680,2026-10-12,White-and-raw-sugar,Chennai,INR per 100 KG,S-Grade,5300.0,5300.0,Sugar,Chennai,Agalabs_Spot,2026-10-12,Research,
+2317681,2026-10-12,Urad-black-gram,Chennai,INR per 100 KG,FAQ,9600.0,9600.0,Urad,Chennai,Agalabs_Spot,2026-10-12,Research,
+2317682,2026-10-12,Urad-black-gram,Chennai,INR per 100 KG,Urad SQ,10200.0,10200.0,Urad,Chennai,Agalabs_Spot,2026-10-12,Research,
+2317683,2026-10-12,Wheat,Indore,INR per 100 KG,Lokwan (Loose),2850.0,2850.0,Wheat,Indore,Agalabs_Spot,2026-10-12,Research,
+2317684,2026-10-12,Wheat,Indore,INR per 100 KG,Mill Quality (Mill Delivery),2800.0,2800.0,Wheat,Indore,Agalabs_Spot,2026-10-12,Research,
+2317685,2026-10-12,Wheat,Indore,INR per 100 KG,Mill Quality (Loose),2700.0,2700.0,Wheat,Indore,Agalabs_Spot,2026-10-12,Research,
+2317686,2026-10-12,Chana-chickpeas,Indore,INR per 100 KG,Chana Dal,9300.0,9300.0,Bengal Gram,Indore,Agalabs_Spot,2026-10-12,Research,
+2317687,2026-10-12,Chana-chickpeas,Indore,INR per 100 KG,Kantewala,7600.0,7600.0,Bengal Gram,Indore,Agalabs_Spot,2026-10-12,Research,
+2317688,2026-10-12,Tur-pigeon-peas,Indore,INR per 100 KG,FAQ,10500.0,10500.0,Tur,Indore,Agalabs_Spot,2026-10-12,Research,
+2317689,2026-10-12,Tur-pigeon-peas,Indore,INR per 100 KG,Tur Dal,15000.0,15000.0,Tur,Indore,Agalabs_Spot,2026-10-12,Research,
+2317690,2026-10-12,Soybean,Indore,INR per 100 KG,Mandi,6600.0,6600.0,Soybeans,Indore,Agalabs_Spot,2026-10-12,Research,
+2317691,2026-10-12,Soybean,Indore,INR per 100 KG,Plant,6650.0,6650.0,Soybeans,Indore,Agalabs_Spot,2026-10-12,Research,
+2317692,2026-10-12,Masoor-masur-red-lentils,Indore,INR per 100 KG,FAQ,6325.0,6325.0,Masoor,Indore,Agalabs_Spot,2026-10-12,Research,
+2317693,2026-10-12,Masoor-masur-red-lentils,Indore,INR per 100 KG,Masra,6350.0,6350.0,Masoor,Indore,Agalabs_Spot,2026-10-12,Research,
+2317694,2026-10-12,Masoor-masur-red-lentils,Indore,INR per 100 KG,Masur Dal,7800.0,7800.0,Masoor,Indore,Agalabs_Spot,2026-10-12,Research,
+2317695,2026-10-12,Masoor-masur-red-lentils,Indore,INR per 100 KG,Medium Barik,6300.0,6300.0,Masoor,Indore,Agalabs_Spot,2026-10-12,Research,
+2317696,2026-10-12,Urad-black-gram,Indore,INR per 100 KG,FAQ,9600.0,9600.0,Urad,Indore,Agalabs_Spot,2026-10-12,Research,
+2317697,2026-10-12,Moong-mung-beans,Indore,INR per 100 KG,Moong Chamki,9000.0,9000.0,Moong,Indore,Agalabs_Spot,2026-10-12,Research,
+2317698,2026-10-12,Wheat,Kanpur,INR per 100 KG,Mill Quality (Loose),2675.0,2675.0,Wheat,Kanpur,Agalabs_Spot,2026-10-12,Research,
+2317699,2026-10-12,Wheat,Kanpur,INR per 100 KG,Mill Quality (Mill Delivery),2750.0,2750.0,Wheat,Kanpur,Agalabs_Spot,2026-10-12,Research,
+2317700,2026-10-12,Chana-chickpeas,Kanpur,INR per 100 KG,FAQ,7850.0,7850.0,Bengal Gram,Kanpur,Agalabs_Spot,2026-10-12,Research,
+2317701,2026-10-12,Chana-chickpeas,Kanpur,INR per 100 KG,Chana Dal,8700.0,8700.0,Bengal Gram,Kanpur,Agalabs_Spot,2026-10-12,Research,
+2317702,2026-10-12,Tur-pigeon-peas,Kanpur,INR per 100 KG,Tur New UP Line,8500.0,8500.0,Tur,Kanpur,Agalabs_Spot,2026-10-12,Research,
+2317703,2026-10-12,Tur-pigeon-peas,Kanpur,INR per 100 KG,Tur New MP Line,8400.0,8400.0,Tur,Kanpur,Agalabs_Spot,2026-10-12,Research,
+2317704,2026-10-12,Peas-dry-peas,Kanpur,INR per 100 KG,Desi,4900.0,4900.0,Pea,Kanpur,Agalabs_Spot,2026-10-12,Research,
+2317705,2026-10-12,Peas-dry-peas,Kanpur,INR per 100 KG,White Canadian,5000.0,5000.0,Pea,Kanpur,Agalabs_Spot,2026-10-12,Research,
+2317706,2026-10-12,Masoor-masur-red-lentils,Kanpur,INR per 100 KG,Bareily,6900.0,6900.0,Masoor,Kanpur,Agalabs_Spot,2026-10-12,Research,
+2317707,2026-10-12,Masoor-masur-red-lentils,Kanpur,INR per 100 KG,Kanpur,6800.0,6800.0,Masoor,Kanpur,Agalabs_Spot,2026-10-12,Research,
+2317708,2026-10-12,Urad-black-gram,Kanpur,INR per 100 KG,FAQ,9500.0,9500.0,Urad,Kanpur,Agalabs_Spot,2026-10-12,Research,
+2317709,2026-10-12,Moong-mung-beans,Kanpur,INR per 100 KG,FAQ,8500.0,8500.0,Moong,Kanpur,Agalabs_Spot,2026-10-12,Research,
+2317710,2026-10-12,Wheat,Kirawali,INR per 100 KG,Mill Quality (Loose),2600.0,2600.0,Wheat,Agra,Agalabs_Spot,2026-10-12,Research,
+2317711,2026-10-12,Wheat,Madurai,INR per 100 KG,Mill Quality (Mill Delivery),3137.0,3137.0,Wheat,Madurai,Agalabs_Spot,2026-10-12,Research,
+2317712,2026-10-12,Wheat,Madurai,INR per 100 KG,Lokwan (Mill Delivery),3300.0,3300.0,Wheat,Madurai,Agalabs_Spot,2026-10-12,Research,
+2317713,2026-10-12,Wheat,Bareilly,INR per 100 KG,FAQ,2685.0,2685.0,Wheat,Bareilly,Agalabs_Spot,2026-10-12,Research,
+2317714,2026-10-12,Wheat,Ujjain,INR per 100 KG,FAQ,2800.0,2800.0,Wheat,Ujjain,Agalabs_Spot,2026-10-12,Research,
+2317715,2026-10-12,Soybean,Ujjain,INR per 100 KG,Yellow Soyabean,6550.0,6550.0,Soybeans,Ujjain,Agalabs_Spot,2026-10-12,Research,
+2317716,2026-10-12,Wheat,Mathura,INR per 100 KG,FAQ,2570.0,2570.0,Wheat,Mathura,Agalabs_Spot,2026-10-12,Research,
+2317717,2026-10-12,Wheat,Ahmedabad,INR per 100 KG,Mill Quality (Mill Delivery),2970.0,2970.0,Wheat,Ahmedabad,Agalabs_Spot,2026-10-12,Research,
+2317718,2026-10-12,Cotton,Ahmedabad,INR per 100 KG,Shankar-6,10000.0,10000.0,Cotton,Ahmedabad,Agalabs_Spot,2026-10-12,Research,
+2317719,2026-10-12,Rice,Ahmedabad,INR per 100 KG,Parmal Sortex,3800.0,3800.0,Rice,Ahmedabad,Agalabs_Spot,2026-10-12,Research,
+2317720,2026-10-12,Rice,Ahmedabad,INR per 100 KG,Kolam Sortex,4600.0,4600.0,Rice,Ahmedabad,Agalabs_Spot,2026-10-12,Research,
+2317721,2026-10-12,Corn-maize,Ahmedabad,INR per 100 KG,Poultry Feed Mills,2800.0,2800.0,Maize,Ahmedabad,Agalabs_Spot,2026-10-12,Research,
+2317722,2026-10-12,Corn-maize,Ahmedabad,INR per 100 KG,Starch,2750.0,2750.0,Maize,Ahmedabad,Agalabs_Spot,2026-10-12,Research,
+2317723,2026-10-12,Wheat,Bhopal,INR per 100 KG,FAQ,2670.0,2670.0,Wheat,Bhopal,Agalabs_Spot,2026-10-12,Research,
+2317724,2026-10-12,Wheat,Coimbatore,INR per 100 KG,Lokwan (Mill Delivery),3300.0,3300.0,Wheat,Coimbatore,Agalabs_Spot,2026-10-12,Research,
+2317725,2026-10-12,Wheat,Coimbatore,INR per 100 KG,Mill Quality (Mill Delivery),3137.0,3137.0,Wheat,Coimbatore,Agalabs_Spot,2026-10-12,Research,
+2317726,2026-10-12,Wheat,Panipat,INR per 100 KG,Mill Quality (Loose),2800.0,2800.0,Wheat,Panipat,Agalabs_Spot,2026-10-12,Research,
+2317727,2026-10-12,Wheat,Karnal,INR per 100 KG,FAQ,2840.0,2840.0,Wheat,Karnal,Agalabs_Spot,2026-10-12,Research,
+2317728,2026-10-12,Rice,Karnal,INR per 100 KG,Basmati,10700.0,10700.0,Rice,Karnal,Agalabs_Spot,2026-10-12,Research,
+2317729,2026-10-12,Rice,Karnal,INR per 100 KG,DB Sella,8500.0,8500.0,Rice,Karnal,Agalabs_Spot,2026-10-12,Research,
+2317730,2026-10-12,Rice,Karnal,INR per 100 KG,IR8,3800.0,3800.0,Rice,Karnal,Agalabs_Spot,2026-10-12,Research,
+2317731,2026-10-12,Rice,Karnal,INR per 100 KG,1121 Sella (Parboiled),9400.0,9400.0,Rice,Karnal,Agalabs_Spot,2026-10-12,Research,
+2317732,2026-10-12,Rice,Karnal,INR per 100 KG,Sarbati Sella,6900.0,6900.0,Rice,Karnal,Agalabs_Spot,2026-10-12,Research,
+2317733,2026-10-12,Rice,Karnal,INR per 100 KG,1121 Steam,10000.0,10000.0,Rice,Karnal,Agalabs_Spot,2026-10-12,Research,
+2317734,2026-10-12,Rice,Karnal,INR per 100 KG,Parmal Sella,4500.0,4500.0,Rice,Karnal,Agalabs_Spot,2026-10-12,Research,
+2317735,2026-10-12,Rice,Karnal,INR per 100 KG,Parmal Raw,4500.0,4500.0,Rice,Karnal,Agalabs_Spot,2026-10-12,Research,
+2317736,2026-10-12,Rice,Karnal,INR per 100 KG,1509 Paddy,3925.0,3925.0,Rice,Karnal,Agalabs_Spot,2026-10-12,Research,
+2317737,2026-10-12,Rice,Karnal,INR per 100 KG,Sarbati Steam,7300.0,7300.0,Rice,Karnal,Agalabs_Spot,2026-10-12,Research,
+2317738,2026-10-12,Rice,Karnal,INR per 100 KG,1121 Paddy,5100.0,5100.0,Rice,Karnal,Agalabs_Spot,2026-10-12,Research,
+2317739,2026-10-12,Wheat,Bharatpur,INR per 100 KG,Mill Quality (Loose),2700.0,2700.0,Wheat,Kalaburagi,Agalabs_Spot,2026-10-12,Research,
+2317740,2026-10-12,Wheat,Surat,INR per 100 KG,Mill Quality (Mill Delivery),3060.0,3060.0,Wheat,Surat,Agalabs_Spot,2026-10-12,Research,
+2317741,2026-10-12,Turmeric,Khari Baoli,INR per 100 KG,Gattah,21500.0,21500.0,Turmeric,Khari Baoli,Agalabs_Spot,2026-10-12,Research,
+2317742,2026-10-12,Red-chilli,Khari Baoli,INR per 100 KG,Teja,24000.0,24000.0,Red Chilli,Khari Baoli,Agalabs_Spot,2026-10-12,Research,
+2317743,2026-10-12,Red-chilli,Khari Baoli,INR per 100 KG,No.5/ fatki,18000.0,18000.0,Red Chilli,Khari Baoli,Agalabs_Spot,2026-10-12,Research,
+2317744,2026-10-12,Red-chilli,Khari Baoli,INR per 100 KG,LCA 334 - loose,28000.0,28000.0,Red Chilli,Khari Baoli,Agalabs_Spot,2026-10-12,Research,
+2317745,2026-10-12,Turmeric,Nizamabad,INR per 100 KG,Finger,22500.0,22500.0,Turmeric,Nizamabad,Agalabs_Spot,2026-10-12,Research,
+2317746,2026-10-12,Turmeric,Nizamabad,INR per 100 KG,Gattah,19500.0,19500.0,Turmeric,Nizamabad,Agalabs_Spot,2026-10-12,Research,
+2317747,2026-10-12,Turmeric,Nizamabad,INR per 100 KG,Nizam,21000.0,21000.0,Turmeric,Nizamabad,Agalabs_Spot,2026-10-12,Research,
+2317748,2026-10-12,Rice,Nizamabad,INR per 100 KG,BPT Raw,7200.0,7200.0,Rice,Nizamabad,Agalabs_Spot,2026-10-12,Research,
+2317749,2026-10-12,Rice,Nizamabad,INR per 100 KG,BPT Steam,7100.0,7100.0,Rice,Nizamabad,Agalabs_Spot,2026-10-12,Research,
+2317750,2026-10-12,Corn-maize,Nizamabad,INR per 100 KG,Feed grade,2570.0,2570.0,Maize,Nizamabad,Agalabs_Spot,2026-10-12,Research,
+2317751,2026-10-12,Turmeric,Sangli,INR per 100 KG,Selam Finger,26500.0,26500.0,Turmeric,Sangli,Agalabs_Spot,2026-10-12,Research,
+2317752,2026-10-12,Turmeric,Sangli,INR per 100 KG,Rajapuri,25000.0,25000.0,Turmeric,Sangli,Agalabs_Spot,2026-10-12,Research,
+2317753,2026-10-12,Turmeric,Sangli,INR per 100 KG,Desi Cudappa,19000.0,19000.0,Turmeric,Sangli,Agalabs_Spot,2026-10-12,Research,
+2317754,2026-10-12,Corn-maize,Sangli,INR per 100 KG,Bilty [Feed grade],2800.0,2800.0,Maize,Sangli,Agalabs_Spot,2026-10-12,Research,
+2317755,2026-10-12,Turmeric,Warangal,INR per 100 KG,Round,15900.0,15900.0,Turmeric,Warangal,Agalabs_Spot,2026-10-12,Research,
+2317756,2026-10-12,Turmeric,Warangal,INR per 100 KG,Finger,16300.0,16300.0,Turmeric,Warangal,Agalabs_Spot,2026-10-12,Research,
+2317757,2026-10-12,Red-chilli,Warangal,INR per 100 KG,Teja,21200.0,21200.0,Red Chilli,Warangal,Agalabs_Spot,2026-10-12,Research,
+2317758,2026-10-12,Red-chilli,Warangal,INR per 100 KG,Fatki,14500.0,14500.0,Red Chilli,Warangal,Agalabs_Spot,2026-10-12,Research,
+2317759,2026-10-12,Red-chilli,Warangal,INR per 100 KG,Wonder Hot,31000.0,31000.0,Red Chilli,Warangal,Agalabs_Spot,2026-10-12,Research,
+2317760,2026-10-12,Red-chilli,Warangal,INR per 100 KG,Paprika,38000.0,38000.0,Red Chilli,Warangal,Agalabs_Spot,2026-10-12,Research,
+2317761,2026-10-12,Red-chilli,Warangal,INR per 100 KG,Chilli No.341,25000.0,25000.0,Red Chilli,Warangal,Agalabs_Spot,2026-10-12,Research,
+2317762,2026-10-12,Red-chilli,Warangal,INR per 100 KG,Devanoor Deluxe,25000.0,25000.0,Red Chilli,Warangal,Agalabs_Spot,2026-10-12,Research,
+2317763,2026-10-12,Turmeric,Erode,INR per 100 KG,Gattah,18500.0,18500.0,Turmeric,Erode,Agalabs_Spot,2026-10-12,Research,
+2317764,2026-10-12,Turmeric,Erode,INR per 100 KG,Finger,20300.0,20300.0,Turmeric,Erode,Agalabs_Spot,2026-10-12,Research,
+2317765,2026-10-12,Turmeric,Duggirala,INR per 100 KG,Bulb,17500.0,17500.0,Turmeric,Guntur,Agalabs_Spot,2026-10-12,Research,
+2317766,2026-10-12,Turmeric,Duggirala,INR per 100 KG,Duggirala Finger,17500.0,17500.0,Turmeric,Guntur,Agalabs_Spot,2026-10-12,Research,
+2317767,2026-10-12,Jeera-cumin-seed,Nagaur,INR per 100 KG,FAQ,26000.0,26000.0,Cumin,Nagaur,Agalabs_Spot,2026-10-12,Research,
+2317768,2026-10-12,Guar-seed,Nagaur,INR per 100 KG,Guarseed,7500.0,7500.0,Guar Seed,Nagaur,Agalabs_Spot,2026-10-12,Research,
+2317769,2026-10-12,Jeera-cumin-seed,Gondal,INR per 100 KG,Local,25500.0,25500.0,Cumin,Rajkot,Agalabs_Spot,2026-10-12,Research,
+2317770,2026-10-12,Cotton,Gondal,INR per 100 KG,Shankar-6,9780.0,9780.0,Cotton,Rajkot,Agalabs_Spot,2026-10-12,Research,
+2317771,2026-10-12,Dhaniya-coriander-seed,Gondal,INR per 100 KG,Badami,14800.0,14800.0,Coriander,Rajkot,Agalabs_Spot,2026-10-12,Research,
+2317772,2026-10-12,Dhaniya-coriander-seed,Gondal,INR per 100 KG,Eagle Plus,15400.0,15400.0,Coriander,Rajkot,Agalabs_Spot,2026-10-12,Research,
+2317773,2026-10-12,Jeera-cumin-seed,Dhrol,INR per 100 KG,Local (loose),24800.0,24800.0,Cumin,Jamnagar,Agalabs_Spot,2026-10-12,Research,
+2317774,2026-10-12,Cotton,Dhrol,INR per 100 KG,Bt Cotton,9755.0,9755.0,Cotton,Jamnagar,Agalabs_Spot,2026-10-12,Research,
+2317775,2026-10-12,Jeera-cumin-seed,Unjha,INR per 100 KG,FAQ,23500.0,23500.0,Cumin,Mehsana,Agalabs_Spot,2026-10-12,Research,
+2317776,2026-10-12,Jeera-cumin-seed,Unjha,INR per 100 KG,Machine Cleaned,27000.0,27000.0,Cumin,Mehsana,Agalabs_Spot,2026-10-12,Research,
+2317777,2026-10-12,Jeera-cumin-seed,Merta City,INR per 100 KG,Local,27500.0,27500.0,Cumin,Nagaur,Agalabs_Spot,2026-10-12,Research,
+2317778,2026-10-12,Moong-mung-beans,Merta City,INR per 100 KG,Polish,9200.0,9200.0,Moong,Nagaur,Agalabs_Spot,2026-10-12,Research,
+2317779,2026-10-12,Moong-mung-beans,Merta City,INR per 100 KG,Moong Mogar,8700.0,8700.0,Moong,Nagaur,Agalabs_Spot,2026-10-12,Research,
+2317780,2026-10-12,Moong-mung-beans,Merta City,INR per 100 KG,Chilka Dal Quality,9200.0,9200.0,Moong,Nagaur,Agalabs_Spot,2026-10-12,Research,
+2317781,2026-10-12,Jeera-cumin-seed,Anandpur Kalu,INR per 100 KG,Local,26000.0,26000.0,Cumin,Ropar,Agalabs_Spot,2026-10-12,Research,
+2317782,2026-10-12,Red-chilli,Bedia,INR per 100 KG,No.12 (Full Cut),22000.0,22000.0,Red Chilli,khargone,Agalabs_Spot,2026-10-12,Research,
+2317783,2026-10-12,Red-chilli,Guntur,INR per 100 KG,Bedki,27500.0,27500.0,Red Chilli,Guntur,Agalabs_Spot,2026-10-12,Research,
+2317784,2026-10-12,Red-chilli,Guntur,INR per 100 KG,Sannam,28500.0,28500.0,Red Chilli,Guntur,Agalabs_Spot,2026-10-12,Research,
+2317785,2026-10-12,Red-chilli,Guntur,INR per 100 KG,No.5/ fatki,25500.0,25500.0,Red Chilli,Guntur,Agalabs_Spot,2026-10-12,Research,
+2317786,2026-10-12,Red-chilli,Guntur,INR per 100 KG,Teja,21500.0,21500.0,Red Chilli,Guntur,Agalabs_Spot,2026-10-12,Research,
+2317787,2026-10-12,Red-chilli,Guntur,INR per 100 KG,No. 273,25500.0,25500.0,Red Chilli,Guntur,Agalabs_Spot,2026-10-12,Research,
+2317788,2026-10-12,Red-chilli,Guntur,INR per 100 KG,LCA 334 - loose,28500.0,28500.0,Red Chilli,Guntur,Agalabs_Spot,2026-10-12,Research,
+2317789,2026-10-12,Cotton,Hanumangarh,INR per 100 KG,Bt (Narma),9000.0,9000.0,Cotton,Hanumangarh,Agalabs_Spot,2026-10-12,Research,
+2317790,2026-10-12,Guar-seed,Hanumangarh,INR per 100 KG,Guarseed,7900.0,7900.0,Guar Seed,Hanumangarh,Agalabs_Spot,2026-10-12,Research,
+2317791,2026-10-12,Cotton,Patan,INR per 100 KG,Bt Cotton,9770.0,9770.0,Cotton,Patan,Agalabs_Spot,2026-10-12,Research,
+2317792,2026-10-12,Cotton,Adampur,INR per 100 KG,Bt (Narma),9070.0,9070.0,Cotton,Jalandhar,Agalabs_Spot,2026-10-12,Research,
+2317793,2026-10-12,Guar-seed,Adampur,INR per 100 KG,Guarseed,7900.0,7900.0,Guar Seed,Jalandhar,Agalabs_Spot,2026-10-12,Research,
+2317794,2026-10-12,Cotton,Fatehabad,INR per 100 KG,Bt Cotton,8970.0,8970.0,Cotton,Fatehabad,Agalabs_Spot,2026-10-12,Research,
+2317795,2026-10-12,Cotton,Amravati,INR per 100 KG,MECH -I 29 MM,9000.0,9000.0,Cotton,Amravati,Agalabs_Spot,2026-10-12,Research,
+2317796,2026-10-12,Chana-chickpeas,Amravati,INR per 100 KG,Desi,7500.0,7500.0,Bengal Gram,Amravati,Agalabs_Spot,2026-10-12,Research,
+2317797,2026-10-12,Tur-pigeon-peas,Amravati,INR per 100 KG,Red,11000.0,11000.0,Tur,Amravati,Agalabs_Spot,2026-10-12,Research,
+2317798,2026-10-12,Soybean,Amravati,INR per 100 KG,Yellow Soyabean,6800.0,6800.0,Soybeans,Amravati,Agalabs_Spot,2026-10-12,Research,
+2317799,2026-10-12,Cotton,Kadi,INR per 100 KG,Bt (Narma),9750.0,9750.0,Cotton, Mehsana,Agalabs_Spot,2026-10-12,Research,
+2317800,2026-10-12,Rice,Udhamsingh Nagar,INR per 100 KG,Parmal Sella,4500.0,4500.0,Rice,Udhamsingh Nagar,Agalabs_Spot,2026-10-12,Research,
+2317801,2026-10-12,Rice,Udhamsingh Nagar,INR per 100 KG,1509 Steam,8550.0,8550.0,Rice,Udhamsingh Nagar,Agalabs_Spot,2026-10-12,Research,
+2317802,2026-10-12,Rice,Udhamsingh Nagar,INR per 100 KG,Dehraduni Basmati,10500.0,10500.0,Rice,Udhamsingh Nagar,Agalabs_Spot,2026-10-12,Research,
+2317803,2026-10-12,Rice,Udhamsingh Nagar,INR per 100 KG,Sugandha Sella,7500.0,7500.0,Rice,Udhamsingh Nagar,Agalabs_Spot,2026-10-12,Research,
+2317804,2026-10-12,Rice,Udhamsingh Nagar,INR per 100 KG,1121 Steam,9850.0,9850.0,Rice,Udhamsingh Nagar,Agalabs_Spot,2026-10-12,Research,
+2317805,2026-10-12,Rice,Raichur,INR per 100 KG,Sona Masuri Raw,7500.0,7500.0,Rice,Raichur,Agalabs_Spot,2026-10-12,Research,
+2317806,2026-10-12,Rice,Raichur,INR per 100 KG,HMT Steam,7800.0,7800.0,Rice,Raichur,Agalabs_Spot,2026-10-12,Research,
+2317807,2026-10-12,Rice,Raichur,INR per 100 KG,Sona Masuri Steam,7500.0,7500.0,Rice,Raichur,Agalabs_Spot,2026-10-12,Research,
+2317808,2026-10-12,Rice,Gondia,INR per 100 KG,HMT Raw,7300.0,7300.0,Rice,Gondia,Agalabs_Spot,2026-10-12,Research,
+2317809,2026-10-12,Rice,Amritsar,INR per 100 KG,Sarbati Raw,7300.0,7300.0,Rice,Amritsar,Agalabs_Spot,2026-10-12,Research,
+2317810,2026-10-12,Rice,Amritsar,INR per 100 KG,Sarbati Sella,6800.0,6800.0,Rice,Amritsar,Agalabs_Spot,2026-10-12,Research,
+2317811,2026-10-12,Rice,Amritsar,INR per 100 KG,Sarbati Steam,7400.0,7400.0,Rice,Amritsar,Agalabs_Spot,2026-10-12,Research,
+2317812,2026-10-12,Rice,Amritsar,INR per 100 KG,Basmati,10800.0,10800.0,Rice,Amritsar,Agalabs_Spot,2026-10-12,Research,
+2317813,2026-10-12,Rice,Amritsar,INR per 100 KG,Parmal Wand,4600.0,4600.0,Rice,Amritsar,Agalabs_Spot,2026-10-12,Research,
+2317814,2026-10-12,Rice,Amritsar,INR per 100 KG,1121 Steam,10100.0,10100.0,Rice,Amritsar,Agalabs_Spot,2026-10-12,Research,
+2317815,2026-10-12,Rice,Amritsar,INR per 100 KG,1509 Paddy,4200.0,4200.0,Rice,Amritsar,Agalabs_Spot,2026-10-12,Research,
+2317816,2026-10-12,Rice,Kolkata,INR per 100 KG,Swarna Parboiled -100% Broken-Silky Sortex,3700.0,3700.0,Rice,Kolkata,Agalabs_Spot,2026-10-12,Research,
+2317817,2026-10-12,Rice,Kolkata,INR per 100 KG,IR-36-Parboiled 5% Silky sortex,3900.0,3900.0,Rice,Kolkata,Agalabs_Spot,2026-10-12,Research,
+2317818,2026-10-12,Rice,Kolkata,INR per 100 KG,Miniket 5% broken,5600.0,5600.0,Rice,Kolkata,Agalabs_Spot,2026-10-12,Research,
+2317819,2026-10-12,Rice,Kolkata,INR per 100 KG,Swarna Parboiled 5%- Silky Sortex,3650.0,3650.0,Rice,Kolkata,Agalabs_Spot,2026-10-12,Research,
+2317820,2026-10-12,White-and-raw-sugar,Kolkata,INR per 100 KG,S-Grade,5300.0,5300.0,Sugar,Kolkata,Agalabs_Spot,2026-10-12,Research,
+2317821,2026-10-12,White-and-raw-sugar,Kolkata,INR per 100 KG,M-Grade,5400.0,5400.0,Sugar,Kolkata,Agalabs_Spot,2026-10-12,Research,
+2317822,2026-10-12,Corn-maize,Kolkata,INR per 100 KG,Mill Delivery [Feed grade],2750.0,2750.0,Maize,Kolkata,Agalabs_Spot,2026-10-12,Research,
+2317823,2026-10-12,Rice,Burdwan,INR per 100 KG,Minikit Sankar,5500.0,5500.0,Rice,Purba Bardhaman,Agalabs_Spot,2026-10-12,Research,
+2317824,2026-10-12,Rice,Burdwan,INR per 100 KG,IR36 Super,3800.0,3800.0,Rice,Purba Bardhaman,Agalabs_Spot,2026-10-12,Research,
+2317825,2026-10-12,Rice,Burdwan,INR per 100 KG,Govindobhog,16600.0,16600.0,Rice,Purba Bardhaman,Agalabs_Spot,2026-10-12,Research,
+2317826,2026-10-12,Rice,Burdwan,INR per 100 KG,Swarna Parboiled,3600.0,3600.0,Rice,Purba Bardhaman,Agalabs_Spot,2026-10-12,Research,
+2317827,2026-10-12,Rice,Burdwan,INR per 100 KG,Swarna,3500.0,3500.0,Rice,Purba Bardhaman,Agalabs_Spot,2026-10-12,Research,
+2317828,2026-10-12,Rice,Bhatapara,INR per 100 KG,HMT Raw,7300.0,7300.0,Rice,Baloda Bazar,Agalabs_Spot,2026-10-12,Research,
+2317829,2026-10-12,Rice,Bhatapara,INR per 100 KG,Vishnu Bhog,16100.0,16100.0,Rice,Baloda Bazar,Agalabs_Spot,2026-10-12,Research,
+2317830,2026-10-12,Rice,Bhatapara,INR per 100 KG,Swarna,3500.0,3500.0,Rice,Baloda Bazar,Agalabs_Spot,2026-10-12,Research,
+2317831,2026-10-12,Rice,Rudrapur,INR per 100 KG,Parmal Raw,4600.0,4600.0,Rice,Udham Singh Nagar,Agalabs_Spot,2026-10-12,Research,
+2317832,2026-10-12,Rice,Rudrapur,INR per 100 KG,Sarbati Sella,7100.0,7100.0,Rice,Udham Singh Nagar,Agalabs_Spot,2026-10-12,Research,
+2317833,2026-10-12,Rice,Rudrapur,INR per 100 KG,DB Steam,9200.0,9200.0,Rice,Udham Singh Nagar,Agalabs_Spot,2026-10-12,Research,
+2317834,2026-10-12,Rice,Nagpur,INR per 100 KG,BPT,5800.0,5800.0,Rice,Nagpur,Agalabs_Spot,2026-10-12,Research,
+2317835,2026-10-12,Rice,Nagpur,INR per 100 KG,HMT Raw,7300.0,7300.0,Rice,Nagpur,Agalabs_Spot,2026-10-12,Research,
+2317836,2026-10-12,Soybean,Nagpur,INR per 100 KG,Mandi,6600.0,6600.0,Soybeans,Nagpur,Agalabs_Spot,2026-10-12,Research,
+2317837,2026-10-12,Soybean,Nagpur,INR per 100 KG,Plant,6800.0,6800.0,Soybeans,Nagpur,Agalabs_Spot,2026-10-12,Research,
+2317838,2026-10-12,Rice,Nandyal,INR per 100 KG,BPT,7100.0,7100.0,Rice,Nandyal,Agalabs_Spot,2026-10-12,Research,
+2317839,2026-10-12,Rice,Machilipatnam,INR per 100 KG,Sona Masuri - Fine Grade,7300.0,7300.0,Rice,Krishna district,Agalabs_Spot,2026-10-12,Research,
+2317840,2026-10-12,Chana-chickpeas,Solapur,INR per 100 KG,Annagiri,8100.0,8100.0,Bengal Gram,Solapur,Agalabs_Spot,2026-10-12,Research,
+2317841,2026-10-12,Tur-pigeon-peas,Solapur,INR per 100 KG,Maruti,11000.0,11000.0,Tur,Solapur,Agalabs_Spot,2026-10-12,Research,
+2317842,2026-10-12,Chana-chickpeas,Akola,INR per 100 KG,Chapa,8000.0,8000.0,Bengal Gram,Akola,Agalabs_Spot,2026-10-12,Research,
+2317843,2026-10-12,Chana-chickpeas,Akola,INR per 100 KG,Mixed,7800.0,7800.0,Bengal Gram,Akola,Agalabs_Spot,2026-10-12,Research,
+2317844,2026-10-12,Chana-chickpeas,Akola,INR per 100 KG,Chana Dal,9600.0,9600.0,Bengal Gram,Akola,Agalabs_Spot,2026-10-12,Research,
+2317845,2026-10-12,Tur-pigeon-peas,Akola,INR per 100 KG,Vidarbha,11100.0,11100.0,Tur,Akola,Agalabs_Spot,2026-10-12,Research,
+2317846,2026-10-12,Chana-chickpeas,Latur,INR per 100 KG,Chana Dal,9700.0,9700.0,Bengal Gram,Latur,Agalabs_Spot,2026-10-12,Research,
+2317847,2026-10-12,Chana-chickpeas,Latur,INR per 100 KG,G 12,8500.0,8500.0,Bengal Gram,Latur,Agalabs_Spot,2026-10-12,Research,
+2317848,2026-10-12,Chana-chickpeas,Latur,INR per 100 KG,Annagiri,8000.0,8000.0,Bengal Gram,Latur,Agalabs_Spot,2026-10-12,Research,
+2317849,2026-10-12,Chana-chickpeas,Latur,INR per 100 KG,Gauran,7700.0,7700.0,Bengal Gram,Latur,Agalabs_Spot,2026-10-12,Research,
+2317850,2026-10-12,Chana-chickpeas,Latur,INR per 100 KG,Mixed,7700.0,7700.0,Bengal Gram,Latur,Agalabs_Spot,2026-10-12,Research,
+2317851,2026-10-12,Tur-pigeon-peas,Latur,INR per 100 KG,Red,11000.0,11000.0,Tur,Latur,Agalabs_Spot,2026-10-12,Research,
+2317852,2026-10-12,Tur-pigeon-peas,Latur,INR per 100 KG,Tur Dal,16000.0,16000.0,Tur,Latur,Agalabs_Spot,2026-10-12,Research,
+2317853,2026-10-12,Tur-pigeon-peas,Latur,INR per 100 KG,White,11100.0,11100.0,Tur,Latur,Agalabs_Spot,2026-10-12,Research,
+2317854,2026-10-12,Soybean,Latur,INR per 100 KG,Yellow Soyabean,6700.0,6700.0,Soybeans,Latur,Agalabs_Spot,2026-10-12,Research,
+2317855,2026-10-12,Urad-black-gram,Latur,INR per 100 KG,FAQ,9200.0,9200.0,Urad,Latur,Agalabs_Spot,2026-10-12,Research,
+2317856,2026-10-12,Moong-mung-beans,Latur,INR per 100 KG,FAQ,10000.0,10000.0,Moong,Latur,Agalabs_Spot,2026-10-12,Research,
+2317857,2026-10-12,Chana-chickpeas,Jalna,INR per 100 KG,Pila,7300.0,7300.0,Bengal Gram,Jalna,Agalabs_Spot,2026-10-12,Research,
+2317858,2026-10-12,Chana-chickpeas,Jalna,INR per 100 KG,Gauran,7500.0,7500.0,Bengal Gram,Jalna,Agalabs_Spot,2026-10-12,Research,
+2317859,2026-10-12,Tur-pigeon-peas,Jalna,INR per 100 KG,White,10800.0,10800.0,Tur,Jalna,Agalabs_Spot,2026-10-12,Research,
+2317860,2026-10-12,Tur-pigeon-peas,Jalna,INR per 100 KG,Red,10800.0,10800.0,Tur,Jalna,Agalabs_Spot,2026-10-12,Research,
+2317861,2026-10-12,Urad-black-gram,Jalna,INR per 100 KG,FAQ,950.0,950.0,Urad,Jalna,Agalabs_Spot,2026-10-12,Research,
+2317862,2026-10-12,Moong-mung-beans,Jalna,INR per 100 KG,FAQ,9300.0,9300.0,Moong,Jalna,Agalabs_Spot,2026-10-12,Research,
+2317863,2026-10-12,Chana-chickpeas,Mumbai,INR per 100 KG,Chickpea - Australia,7750.0,7750.0,Bengal Gram,Mumbai,Agalabs_Spot,2026-10-12,Research,
+2317864,2026-10-12,Tur-pigeon-peas,Mumbai,INR per 100 KG,FAQ,9725.0,9725.0,Tur,Mumbai,Agalabs_Spot,2026-10-12,Research,
+2317865,2026-10-12,Peas-dry-peas,Mumbai,INR per 100 KG,White Canadian,4750.0,4750.0,Pea,Mumbai,Agalabs_Spot,2026-10-12,Research,
+2317866,2026-10-12,White-and-raw-sugar,Mumbai,INR per 100 KG,M-Grade,5220.0,5220.0,Sugar,Mumbai,Agalabs_Spot,2026-10-12,Research,
+2317867,2026-10-12,White-and-raw-sugar,Mumbai,INR per 100 KG,S-Grade,5060.0,5060.0,Sugar,Mumbai,Agalabs_Spot,2026-10-12,Research,
+2317868,2026-10-12,Urad-black-gram,Mumbai,INR per 100 KG,FAQ,9650.0,9650.0,Urad,Mumbai,Agalabs_Spot,2026-10-12,Research,
+2317869,2026-10-12,Chana-chickpeas,Bundi,INR per 100 KG,Desi,6975.0,6975.0,Bengal Gram,Bundi,Agalabs_Spot,2026-10-12,Research,
+2317870,2026-10-12,Soybean,Bundi,INR per 100 KG,Yellow Soyabean,6600.0,6600.0,Soybeans,Bundi,Agalabs_Spot,2026-10-12,Research,
+2317871,2026-10-12,Urad-black-gram,Bundi,INR per 100 KG,Desi,8600.0,8600.0,Urad,Bundi,Agalabs_Spot,2026-10-12,Research,
+2317872,2026-10-12,Chana-chickpeas,Gwalior,INR per 100 KG,Desi,7300.0,7300.0,Bengal Gram,Gwalior,Agalabs_Spot,2026-10-12,Research,
+2317873,2026-10-12,Chana-chickpeas,Gwalior,INR per 100 KG,Chana Dal,8700.0,8700.0,Bengal Gram,Gwalior,Agalabs_Spot,2026-10-12,Research,
+2317874,2026-10-12,Peas-dry-peas,Gwalior,INR per 100 KG,White Peas,4900.0,4900.0,Pea,Gwalior,Agalabs_Spot,2026-10-12,Research,
+2317875,2026-10-12,Peas-dry-peas,Gwalior,INR per 100 KG,White Pea Dal (Split),5500.0,5500.0,Pea,Gwalior,Agalabs_Spot,2026-10-12,Research,
+2317876,2026-10-12,Masoor-masur-red-lentils,Gwalior,INR per 100 KG,Masur Dal,7400.0,7400.0,Masoor,Gwalior,Agalabs_Spot,2026-10-12,Research,
+2317877,2026-10-12,Masoor-masur-red-lentils,Gwalior,INR per 100 KG,Desi,6000.0,6000.0,Masoor,Gwalior,Agalabs_Spot,2026-10-12,Research,
+2317878,2026-10-12,Chana-chickpeas,Jalgaon,INR per 100 KG,Mixed,7800.0,7800.0,Bengal Gram,Jalgaon,Agalabs_Spot,2026-10-12,Research,
+2317879,2026-10-12,Chana-chickpeas,Jalgaon,INR per 100 KG,Chana Dal,9000.0,9000.0,Bengal Gram,Jalgaon,Agalabs_Spot,2026-10-12,Research,
+2317880,2026-10-12,Tur-pigeon-peas,Jalgaon,INR per 100 KG,Tur Dal,14400.0,14400.0,Tur,Jalgaon,Agalabs_Spot,2026-10-12,Research,
+2317881,2026-10-12,Tur-pigeon-peas,Jalgaon,INR per 100 KG,White,10500.0,10500.0,Tur,Jalgaon,Agalabs_Spot,2026-10-12,Research,
+2317882,2026-10-12,Urad-black-gram,Jalgaon,INR per 100 KG,Desi,9900.0,9900.0,Urad,Jalgaon,Agalabs_Spot,2026-10-12,Research,
+2317883,2026-10-12,Moong-mung-beans,Jalgaon,INR per 100 KG,Moong Chamki,9800.0,9800.0,Moong,Jalgaon,Agalabs_Spot,2026-10-12,Research,
+2317884,2026-10-12,Chana-chickpeas,Ashok Nagar,INR per 100 KG,Desi,7320.0,7320.0,Bengal Gram,Ashoknagar,Agalabs_Spot,2026-10-12,Research,
+2317885,2026-10-12,Chana-chickpeas,Dahod,INR per 100 KG,Desi,7400.0,7400.0,Bengal Gram,Dahod,Agalabs_Spot,2026-10-12,Research,
+2317886,2026-10-12,Chana-chickpeas,Dewas,INR per 100 KG,Kabuli,10200.0,10200.0,Bengal Gram,Dewas,Agalabs_Spot,2026-10-12,Research,
+2317887,2026-10-12,Soybean,Dewas,INR per 100 KG,Yellow Soyabean,6520.0,6520.0,Soybeans,Dewas,Agalabs_Spot,2026-10-12,Research,
+2317888,2026-10-12,Chana-chickpeas,Bikaner,INR per 100 KG,Chana Dal,9300.0,9300.0,Bengal Gram,Bikaner,Agalabs_Spot,2026-10-12,Research,
+2317889,2026-10-12,Chana-chickpeas,Bikaner,INR per 100 KG,FAQ,7400.0,7400.0,Bengal Gram,Bikaner,Agalabs_Spot,2026-10-12,Research,
+2317890,2026-10-12,Guar-seed,Bikaner,INR per 100 KG,Guarseed,7650.0,7650.0,Guar Seed,Bikaner,Agalabs_Spot,2026-10-12,Research,
+2317891,2026-10-12,Urad-black-gram,Bikaner,INR per 100 KG,Urad Split Dal,12500.0,12500.0,Urad,Bikaner,Agalabs_Spot,2026-10-12,Research,
+2317892,2026-10-12,Chana-chickpeas,Sedam,INR per 100 KG,Desi,8500.0,8500.0,Bengal Gram,Kalaburagi,Agalabs_Spot,2026-10-12,Research,
+2317893,2026-10-12,Tur-pigeon-peas,Sedam,INR per 100 KG,Red,11000.0,11000.0,Tur,Kalaburagi,Agalabs_Spot,2026-10-12,Research,
+2317894,2026-10-12,Chana-chickpeas,Vijaywada,INR per 100 KG,FAQ,7200.0,7200.0,Bengal Gram,Krishna ,Agalabs_Spot,2026-10-12,Research,
+2317895,2026-10-12,Tur-pigeon-peas,Vijaywada,INR per 100 KG,FAQ,9850.0,9850.0,Tur,Krishna ,Agalabs_Spot,2026-10-12,Research,
+2317896,2026-10-12,White-and-raw-sugar,Vijaywada,INR per 100 KG,M-Grade,5540.0,5540.0,Sugar,Krishna ,Agalabs_Spot,2026-10-12,Research,
+2317897,2026-10-12,White-and-raw-sugar,Vijaywada,INR per 100 KG,S-Grade,5400.0,5400.0,Sugar,Krishna ,Agalabs_Spot,2026-10-12,Research,
+2317898,2026-10-12,Urad-black-gram,Vijaywada,INR per 100 KG,FAQ,10100.0,10100.0,Urad,Krishna ,Agalabs_Spot,2026-10-12,Research,
+2317899,2026-10-12,Moong-mung-beans,Vijaywada,INR per 100 KG,FAQ,7850.0,7850.0,Moong,Krishna ,Agalabs_Spot,2026-10-12,Research,
+2317900,2026-10-12,Chana-chickpeas,Kekri,INR per 100 KG,Desi,7000.0,7000.0,Bengal Gram,Ajmer,Agalabs_Spot,2026-10-12,Research,
+2317901,2026-10-12,Urad-black-gram,Kekri,INR per 100 KG,Desi,9200.0,9200.0,Urad,Ajmer,Agalabs_Spot,2026-10-12,Research,
+2317902,2026-10-12,Moong-mung-beans,Kekri,INR per 100 KG,Desi,8500.0,8500.0,Moong,Ajmer,Agalabs_Spot,2026-10-12,Research,
+2317903,2026-10-12,Chana-chickpeas,Gulbarga,INR per 100 KG,Annagiri,8100.0,8100.0,Bengal Gram,Gulbarga,Agalabs_Spot,2026-10-12,Research,
+2317904,2026-10-12,Tur-pigeon-peas,Gulbarga,INR per 100 KG,FAQ,11600.0,11600.0,Tur,Gulbarga,Agalabs_Spot,2026-10-12,Research,
+2317905,2026-10-12,Tur-pigeon-peas,Gulbarga,INR per 100 KG,Fathka Dal,15200.0,15200.0,Tur,Gulbarga,Agalabs_Spot,2026-10-12,Research,
+2317906,2026-10-12,Urad-black-gram,Gulbarga,INR per 100 KG,FAQ,10200.0,10200.0,Urad,Gulbarga,Agalabs_Spot,2026-10-12,Research,
+2317907,2026-10-12,Moong-mung-beans,Gulbarga,INR per 100 KG,FAQ,9900.0,9900.0,Moong,Gulbarga,Agalabs_Spot,2026-10-12,Research,
+2317908,2026-10-12,Guar-seed,Ellenabad,INR per 100 KG,Guarseed,7750.0,7750.0,Guar Seed,Sirsa,Agalabs_Spot,2026-10-12,Research,
+2317909,2026-10-12,Guar-seed,Nokha,INR per 100 KG,Guarseed,7600.0,7600.0,Guar Seed,Bikaner,Agalabs_Spot,2026-10-12,Research,
+2317910,2026-10-12,Tur-pigeon-peas,Pipariya,INR per 100 KG,Desi,10100.0,10100.0,Tur,Hoshangabad,Agalabs_Spot,2026-10-12,Research,
+2317911,2026-10-12,White-and-raw-sugar,Shamli,INR per 100 KG,M-Grade,5070.0,5070.0,Sugar,Shamli,Agalabs_Spot,2026-10-12,Research,
+2317912,2026-10-12,White-and-raw-sugar,Kolhapur,INR per 100 KG,S-30,4900.0,4900.0,Sugar,Kolhapur,Agalabs_Spot,2026-10-12,Research,
+2317913,2026-10-12,White-and-raw-sugar,Kolhapur,INR per 100 KG,M-30,5000.0,5000.0,Sugar,Kolhapur,Agalabs_Spot,2026-10-12,Research,
+2317914,2026-10-12,White-and-raw-sugar,Deoband,INR per 100 KG,Mill,5300.0,5300.0,Sugar,Saharanpur,Agalabs_Spot,2026-10-12,Research,
+2317915,2026-10-12,White-and-raw-sugar,Morna,INR per 100 KG,M-Grade,5010.0,5010.0,Sugar,Morena,Agalabs_Spot,2026-10-12,Research,
+2317916,2026-10-12,White-and-raw-sugar,Nanoata,INR per 100 KG,Mill,5010.0,5010.0,Sugar,Saharanpur,Agalabs_Spot,2026-10-12,Research,
+2317917,2026-10-12,White-and-raw-sugar,Bijnor,INR per 100 KG,M-Grade,5020.0,5020.0,Sugar,Bijnor,Agalabs_Spot,2026-10-12,Research,
+2317918,2026-10-12,White-and-raw-sugar,Khatauli,INR per 100 KG,Mill,5300.0,5300.0,Sugar,Muzaffarnagar,Agalabs_Spot,2026-10-12,Research,
+2317919,2026-10-12,Dhaniya-coriander-seed,Guna,INR per 100 KG,Eagle,15800.0,15800.0,Coriander,Guna,Agalabs_Spot,2026-10-12,Research,
+2317920,2026-10-12,Dhaniya-coriander-seed,Guna,INR per 100 KG,Badami,15000.0,15000.0,Coriander,Guna,Agalabs_Spot,2026-10-12,Research,
+2317921,2026-10-12,Dhaniya-coriander-seed,Ramganj,INR per 100 KG,Badami,14500.0,14500.0,Coriander,Kota,Agalabs_Spot,2026-10-12,Research,
+2317922,2026-10-12,Dhaniya-coriander-seed,Ramganj,INR per 100 KG,Eagle,15000.0,15000.0,Coriander,Kota,Agalabs_Spot,2026-10-12,Research,
+2317923,2026-10-12,Dhaniya-coriander-seed,Neemuch,INR per 100 KG,Eagle,15800.0,15800.0,Coriander,Neemuch,Agalabs_Spot,2026-10-12,Research,
+2317924,2026-10-12,Dhaniya-coriander-seed,Neemuch,INR per 100 KG,Scotter,16800.0,16800.0,Coriander,Neemuch,Agalabs_Spot,2026-10-12,Research,
+2317925,2026-10-12,Dhaniya-coriander-seed,Neemuch,INR per 100 KG,Badami,15300.0,15300.0,Coriander,Neemuch,Agalabs_Spot,2026-10-12,Research,
+2317926,2026-10-12,Black-pepper,Kochi,INR per 100 KG,Garbled,72900.0,72900.0,Black Pepper,Ernakulam,Agalabs_Spot,2026-10-12,Research,
+2317927,2026-10-12,Black-pepper,Kochi,INR per 100 KG,Ungarbled,70900.0,70900.0,Black Pepper,Ernakulam,Agalabs_Spot,2026-10-12,Research,
+2317928,2026-10-12,Corn-maize,Naugachia,INR per 100 KG,Red [Feed grade],2450.0,2450.0,Maize,Bhagalpur,Agalabs_Spot,2026-10-12,Research,
+2317929,2026-10-12,Soymeal,Kota,INR per Tonne,FAQ,55000.0,55000.0,Soybean Meal,Kota,Agalabs_Spot,2026-10-12,Research,
+2317930,2026-10-12,Rapeseed-mustard-meal,Jaipur,INR per Tonne,DOC - FAQ [Animal Feed - Feed Ingredients],28700.0,28700.0,Rapeseed Meal,Jaipur,Agalabs_Spot,2026-10-12,Research,
+2317931,2026-10-12,Soymeal,Indore,INR per Tonne,FAQ,52000.0,52000.0,Soybean Meal,Indore,Agalabs_Spot,2026-10-12,Research,
+2317932,2026-10-12,Soymeal,Sangli,INR per Tonne,FAQ,53500.0,53500.0,Soybean Meal,Sangli,Agalabs_Spot,2026-10-12,Research,
+2317933,2026-10-12,Soymeal,Nagpur,INR per Tonne,FAQ,56000.0,56000.0,Soybean Meal,Nagpur,Agalabs_Spot,2026-10-12,Research,
+2317934,2026-10-12,Soymeal,Hingoli,INR per Tonne,FAQ,52500.0,52500.0,Soybean Meal,Hingoli,Agalabs_Spot,2026-10-12,Research,
+2317935,2026-10-12,Soymeal,Solapur,INR per Tonne,FAQ,57000.0,57000.0,Soybean Meal,Solapur,Agalabs_Spot,2026-10-12,Research,
+2317936,2026-10-12,Soymeal,Akola,INR per Tonne,FAQ,50000.0,50000.0,Soybean Meal,Akola,Agalabs_Spot,2026-10-12,Research,
+2317937,2026-10-12,Soymeal,Latur,INR per Tonne,FAQ,58000.0,58000.0,Soybean Meal,Latur,Agalabs_Spot,2026-10-12,Research,
+2317938,2026-10-12,Soymeal,Kandla,INR per Tonne,FAQ,53000.0,53000.0,Soybean Meal,Kutch,Agalabs_Spot,2026-10-12,Research,
+2317939,2026-10-12,Palm-oil,Kandla,INR per Tonne,Crude - CIF,1245.0,1245.0,Palm Oil,Kutch,Agalabs_Spot,2026-10-12,Research,
+2317940,2026-10-12,Soyoil-soybean-oil,Kandla,INR per Tonne,Crude - CIF,1305.0,1305.0,Soybean Oil,Kutch,Agalabs_Spot,2026-10-12,Research,
+2317941,2026-10-12,Soymeal,Dhule,INR per Tonne,FAQ,58000.0,58000.0,Soybean Meal,Dhule,Agalabs_Spot,2026-10-12,Research,
+2317942,2026-10-12,Soymeal,Jalna,INR per Tonne,FAQ,57500.0,57500.0,Soybean Meal,Jalna,Agalabs_Spot,2026-10-12,Research,
+2317943,2026-10-12,Soymeal,Mumbai,INR per Tonne,FAQ,54785.0,54785.0,Soybean Meal,Mumbai,Agalabs_Spot,2026-10-12,Research,
+2317944,2026-10-12,Soymeal,Bundi,INR per Tonne,FAQ,56000.0,56000.0,Soybean Meal,Bundi,Agalabs_Spot,2026-10-12,Research,
+2317945,2026-10-12,Soymeal,Nanded,INR per Tonne,FAQ,58000.0,58000.0,Soybean Meal,Nanded,Agalabs_Spot,2026-10-12,Research,
+2317946,2026-10-12,Mustard-oil-rapeseed-oil,Kota,INR per 10 KG,Mustard Expeller Oil,1750.0,1750.0,Rapeseed Oil,Kota,Agalabs_Spot,2026-10-12,Research,
+2317947,2026-10-12,Soyoil-soybean-oil,Kota,INR per 10 KG,Refined,1440.0,1440.0,Soybean Oil,Kota,Agalabs_Spot,2026-10-12,Research,
+2317948,2026-10-12,Mustard-oil-rapeseed-oil,Delhi,INR per 10 KG,Mustard Expeller Oil,1750.0,1750.0,Rapeseed Oil,Delhi,Agalabs_Spot,2026-10-12,Research,
+2317949,2026-10-12,Mustard-oil-rapeseed-oil,Sri Ganganagar,INR per 10 KG,Mustard Expeller Oil,1750.0,1750.0,Rapeseed Oil,Sri Ganganagar,Agalabs_Spot,2026-10-12,Research,
+2317950,2026-10-12,Mustard-oil-rapeseed-oil,Neewai,INR per 10 KG,Mustard Expeller Oil,1750.0,1750.0,Rapeseed Oil,Tonk,Agalabs_Spot,2026-10-12,Research,
+2317951,2026-10-12,Mustard-oil-rapeseed-oil,Jaipur,INR per 10 KG,Mustard Expeller Oil,1750.0,1750.0,Rapeseed Oil,Jaipur,Agalabs_Spot,2026-10-12,Research,
+2317952,2026-10-12,Soyoil-soybean-oil,Rajkot,INR per 10 KG,Refined,1410.0,1410.0,Soybean Oil,Rajkot,Agalabs_Spot,2026-10-12,Research,
+2317953,2026-10-12,Groundnut-peanut,Rajkot,INR per 10 KG,GN Oil (FAQ),1750.0,1750.0,Groundnut,Rajkot,Agalabs_Spot,2026-10-12,Research,
+2317954,2026-10-12,Palm-oil,Chennai,INR per 10 KG,RBD Palmolien,1425.0,1425.0,Palm Oil,Chennai,Agalabs_Spot,2026-10-12,Research,
+2317955,2026-10-12,Groundnut-peanut,Chennai,INR per 10 KG,GN Oil (FAQ),1700.0,1700.0,Groundnut,Chennai,Agalabs_Spot,2026-10-12,Research,
+2317956,2026-10-12,Soyoil-soybean-oil,Indore,INR per 10 KG,Refined,1430.0,1430.0,Soybean Oil,Indore,Agalabs_Spot,2026-10-12,Research,
+2317957,2026-10-12,Soyoil-soybean-oil,Indore,INR per 10 KG,Solvent Extr,1370.0,1370.0,Soybean Oil,Indore,Agalabs_Spot,2026-10-12,Research,
+2317958,2026-10-12,Soyoil-soybean-oil,Kolkata,INR per 10 KG,Refined,1435.0,1435.0,Soybean Oil,Kolkata,Agalabs_Spot,2026-10-12,Research,
+2317959,2026-10-12,Soyoil-soybean-oil,Nagpur,INR per 10 KG,Refined,1450.0,1450.0,Soybean Oil,Nagpur,Agalabs_Spot,2026-10-12,Research,
+2317960,2026-10-12,Soyoil-soybean-oil,Akola,INR per 10 KG,Refined,1450.0,1450.0,Soybean Oil,Akola,Agalabs_Spot,2026-10-12,Research,
+2317961,2026-10-12,Palm-oil,Kandla,INR per 10 KG,Crude,1355.0,1355.0,Palm Oil,Kutch,Agalabs_Spot,2026-10-12,Research,
+2317962,2026-10-12,Palm-oil,Kandla,INR per 10 KG,RBD Palmolien,1420.0,1420.0,Palm Oil,Kutch,Agalabs_Spot,2026-10-12,Research,
+2317963,2026-10-12,Soyoil-soybean-oil,Kandla,INR per 10 KG,Refined,1425.0,1425.0,Soybean Oil,Kutch,Agalabs_Spot,2026-10-12,Research,
+2317964,2026-10-12,Soyoil-soybean-oil,Jalna,INR per 10 KG,Refined,1455.0,1455.0,Soybean Oil,Jalna,Agalabs_Spot,2026-10-12,Research,
+2317965,2026-10-12,Mustard-oil-rapeseed-oil,Mumbai,INR per 10 KG,Mustard Expeller Oil,1790.0,1790.0,Rapeseed Oil,Mumbai,Agalabs_Spot,2026-10-12,Research,
+2317966,2026-10-12,Palm-oil,Mumbai,INR per 10 KG,RBD Palmolien,1450.0,1450.0,Palm Oil,Mumbai,Agalabs_Spot,2026-10-12,Research,
+2317967,2026-10-12,Soyoil-soybean-oil,Mumbai,INR per 10 KG,Soy Degum,1395.0,1395.0,Soybean Oil,Mumbai,Agalabs_Spot,2026-10-12,Research,
+2317968,2026-10-12,Soyoil-soybean-oil,Mumbai,INR per 10 KG,Refined,1460.0,1460.0,Soybean Oil,Mumbai,Agalabs_Spot,2026-10-12,Research,
+2317969,2026-10-12,Groundnut-peanut,Mumbai,INR per 10 KG,GN Oil (FAQ),1760.0,1760.0,Groundnut,Mumbai,Agalabs_Spot,2026-10-12,Research,
+2317970,2026-10-12,Palm-oil,Mangalore,INR per 10 KG,RBD Palmolien,1435.0,1435.0,Palm Oil,Dakshina Kannada,Agalabs_Spot,2026-10-12,Research,
+2317971,2026-10-12,Palm-oil,Krishnapatnam,INR per 10 KG,RBD Palmolien,1420.0,1420.0,Palm Oil,Nellore,Agalabs_Spot,2026-10-12,Research,
+2317972,2026-10-12,Palm-oil,Haldia,INR per 10 KG,RBD Palmolien,1420.0,1420.0,Palm Oil,Purba Medinipur,Agalabs_Spot,2026-10-12,Research,
+2317973,2026-10-12,Palm-oil,Kakinada,INR per 10 KG,RBD Palmolien,1420.0,1420.0,Palm Oil,Kakinada,Agalabs_Spot,2026-10-12,Research,
+2317974,2026-10-12,Palm-oil,Hyderabad,INR per 10 KG,RBD Palmolien,1435.0,1435.0,Palm Oil,Hyderabad,Agalabs_Spot,2026-10-12,Research,
+2317975,2026-10-12,Groundnut-peanut,Hyderabad,INR per 10 KG,GN Oil (FAQ),1680.0,1680.0,Groundnut,Hyderabad,Agalabs_Spot,2026-10-12,Research,
+2317976,2026-10-12,Groundnut-peanut,Rajkot,INR per 15 Kg,GN Oil (Telia),2715.0,2715.0,Groundnut,Rajkot,Agalabs_Spot,2026-10-12,Research,
+2317977,2026-10-12,Maize,Bagalkot,INR per 100 KG,Kar. Origin Hybrid,,2460.0,Maize,Bagalkot (Hybrid),Mandi,2026-10-12,Research,Karnataka
+2317978,2026-10-12,Maize,Bengaluru,INR per 100 KG,FAQ,,2596.0,Maize,Bangalore,WASEDA,2026-10-12,Research,Karnataka
+2317979,2026-10-12,Maize,Chitradurga,INR per 100 KG,Kar. Origin,,2430.0,Maize,Chitradurga,Mandi,2026-10-12,Research,Karnataka
+2317980,2026-10-12,Maize,Davangere,INR per 100 KG,Kar. Origin,,2560.0,Maize,Karnataka,Mandi,2026-10-12,Research,Karnataka
+2317981,2026-10-12,Maize,Gadag,INR per 100 KG,Kar. Origin,,2460.0,Maize,Gadag,Mandi,2026-10-12,Research,Karnataka
+2317982,2026-10-12,Maize,Haveri,INR per 100 KG,Kar. Origin,,2390.0,Maize,Haveri,Mandi,2026-10-12,Research,Karnataka
+2317983,2026-10-12,Maize,Hubli,INR per 100 KG,Kar. Origin,,2160.0,Maize,Hubli,Mandi,2026-10-12,Research,Karnataka
+2317984,2026-10-12,Maize,Ranebennur,INR per 100 KG,FAQ/Hybrid,,2597.0,Maize,Ranebennur(Hybrid),Mandi,2026-10-12,Research,Karnataka
+2317985,2026-10-12,Maize,Harda (New Crop),INR per 100 KG,FAQ,,2184.0,Maize,Harda,WASEDA,2026-10-12,Research,Madhya Pradesh
+2317986,2026-10-12,Maize,Indore,INR per 100 KG,M.P. Origin,,2325.0,Maize,Indore,Mandi,2026-10-12,Research,Madhya Pradesh
+2317987,2026-10-12,Maize,Jabalpur,INR per 100 KG,M.P. Origin,,2430.0,Maize,Jabalpur,WASEDA,2026-10-12,Research,Madhya Pradesh
+2317988,2026-10-12,Maize,Guna,INR per 100 KG,M.P. Origin,,2200.0,Maize,Guna,WASEDA,2026-10-12,Research,Madhya Pradesh
+2317989,2026-10-12,Maize,Ashoknagar,INR per 100 KG,M.P. Origin,,2255.0,Maize,Ashoknagar,WASEDA,2026-10-12,Research,Madhya Pradesh
+2317990,2026-10-12,Maize,Baramati,INR per 100 KG,Delivered,,2650.0,Maize,Pune,WASEDA,2026-10-12,Research,Maharashtra
+2317991,2026-10-12,Maize,Yeola,INR per 100 KG,Mah. Origin,,2400.0,Maize,Nashik,WASEDA,2026-10-12,Research,Maharashtra
+2317992,2026-10-12,Maize,Dhule,INR per 100 KG,Mah. Origin,,2390.0,Maize,Dhule,WASEDA,2026-10-12,Research,Maharashtra
+2317993,2026-10-12,Maize,Malegaon,INR per 100 KG,Mah. Origin,,2430.0,Maize,Nashik,WASEDA,2026-10-12,Research,Maharashtra
+2317994,2026-10-12,Maize,Warangal,INR per 100 KG,TL. Origin,,2420.0,Maize,Warangal,Mandi,2026-10-12,Research,Telangana
+2317995,2026-10-12,Maize,Aligarh,INR per 100 KG,FAQ,,2010.0,Maize,Aligarh,Mandi,2026-10-12,Research,Uttar Pradesh
+2317996,2026-10-12,Maize,Kannauj,INR per 100 KG,FAQ,,2098.0,Maize,Kannauj,WASEDA,2026-10-12,Research,Uttar Pradesh
+2317997,2026-10-12,Maize,Kasganj,INR per 100 KG,FAQ,,1810.0,Maize,Kasganj,Mandi,2026-10-12,Research,Uttar Pradesh
+2317998,2026-10-12,Maize,Dalkhola,INR per 100 KG,W.B. Origin,,2520.0,Maize,Dalkhola,Mandi,2026-10-12,Research,West Bengal
+2317999,2026-10-12,Onion,Bengaluru,INR per 100 KG,Bangalore Small,1500.0,1500.0,Onion,Bengaluru,KRAMA,2026-10-12,Research,Karnataka
+2318000,2026-10-12,Onion,Bengaluru,INR per 100 KG,Local,3200.0,3200.0,Onion,Bengaluru,KRAMA,2026-10-12,Research,Karnataka
+2318001,2026-10-12,Onion,Hubballi,INR per 100 KG,Local,3500.0,3500.0,Onion,Hubballi,KRAMA,2026-10-12,Research,Karnataka
+2318002,2026-10-12,Onion,Bangarpet,INR per 100 KG,Onion,3000.0,3000.0,Onion,Bangarpet,KRAMA,2026-10-12,Research,Karnataka
+2318003,2026-10-12,Onion,Bengaluru,INR per 100 KG,Onion,4200.0,4200.0,Onion,Bengaluru,KRAMA,2026-10-12,Research,Karnataka
+2318004,2026-10-12,Onion,Davanagere,INR per 100 KG,Onion,4000.0,4000.0,Onion,Davanagere,KRAMA,2026-10-12,Research,Karnataka
+2318005,2026-10-12,Onion,Doddaballapur,INR per 100 KG,Onion,4500.0,4500.0,Onion,Doddaballapur,KRAMA,2026-10-12,Research,Karnataka
+2318006,2026-10-12,Onion,Kadur,INR per 100 KG,Onion,3332.0,3332.0,Onion,Kadur,KRAMA,2026-10-12,Research,Karnataka
+2318007,2026-10-12,Onion,Shivamogga,INR per 100 KG,Onion,4500.0,4500.0,Onion,Shivamogga,KRAMA,2026-10-12,Research,Karnataka
+2318008,2026-10-12,Onion,Vijayapura,INR per 100 KG,Onion,3000.0,3000.0,Onion,Vijayapura,KRAMA,2026-10-12,Research,Karnataka
+2318009,2026-10-12,Onion,Bengaluru,INR per 100 KG,Puna,4000.0,4000.0,Onion,Bengaluru,KRAMA,2026-10-12,Research,Karnataka
+2318010,2026-10-12,Onion,Hubballi,INR per 100 KG,Puna,3800.0,3800.0,Onion,Hubballi,KRAMA,2026-10-12,Research,Karnataka
+2318011,2026-10-12,Potato,Bangarpet,INR per 100 KG,Jalander,1832.0,1832.0,Potato,Bangarpet,KRAMA,2026-10-12,Research,Karnataka
+2318012,2026-10-12,Potato,Bangarpet,INR per 100 KG,Local,1500.0,1500.0,Potato,Bangarpet,KRAMA,2026-10-12,Research,Karnataka
+2318013,2026-10-12,Potato,Bengaluru,INR per 100 KG,Local,1800.0,1800.0,Potato,Bengaluru,KRAMA,2026-10-12,Research,Karnataka
+2318014,2026-10-12,Potato,Doddaballapur,INR per 100 KG,Local,1800.0,1800.0,Potato,Doddaballapur,KRAMA,2026-10-12,Research,Karnataka
+2318015,2026-10-12,Potato,Kolar,INR per 100 KG,Local,1700.0,1700.0,Potato,Kolar,KRAMA,2026-10-12,Research,Karnataka
+2318016,2026-10-12,Potato,Bengaluru,INR per 100 KG,Potato,1700.0,1700.0,Potato,Bengaluru,KRAMA,2026-10-12,Research,Karnataka
+2318017,2026-10-12,Potato,Hubballi,INR per 100 KG,Potato,1500.0,1500.0,Potato,Hubballi,KRAMA,2026-10-12,Research,Karnataka
+2318018,2026-10-12,Potato,Shivamogga,INR per 100 KG,Potato,2000.0,2000.0,Potato,Shivamogga,KRAMA,2026-10-12,Research,Karnataka
+2318019,2026-10-12,Tomato,Bagepalli,INR per 100 KG,Tomato,1900.0,1900.0,Tomato,Bagepalli,KRAMA,2026-10-12,Research,Karnataka
+2318020,2026-10-12,Tomato,Bangarpet,INR per 100 KG,Tomato,1000.0,1000.0,Tomato,Bangarpet,KRAMA,2026-10-12,Research,Karnataka
+2318021,2026-10-12,Tomato,Binny Mill (F&V),INR per 100 KG,Tomato,1800.0,1800.0,Tomato,Binny Mill (F&V),KRAMA,2026-10-12,Research,Karnataka
+2318022,2026-10-12,Tomato,C.R. Nagar,INR per 100 KG,Tomato,1700.0,1700.0,Tomato,C.R. Nagar,KRAMA,2026-10-12,Research,Karnataka
+2318023,2026-10-12,Tomato,Channapatna,INR per 100 KG,Tomato,2500.0,2500.0,Tomato,Channapatna,KRAMA,2026-10-12,Research,Karnataka
+2318024,2026-10-12,Tomato,Chintamani,INR per 100 KG,Tomato,1333.0,1333.0,Tomato,Chintamani,KRAMA,2026-10-12,Research,Karnataka
+2318025,2026-10-12,Tomato,Doddaballapur,INR per 100 KG,Tomato,1700.0,1700.0,Tomato,Doddaballapur,KRAMA,2026-10-12,Research,Karnataka
+2318026,2026-10-12,Tomato,Gundlupet,INR per 100 KG,Tomato,1700.0,1700.0,Tomato,Gundlupet,KRAMA,2026-10-12,Research,Karnataka
+2318027,2026-10-12,Tomato,Kadur,INR per 100 KG,Tomato,1850.0,1850.0,Tomato,Kadur,KRAMA,2026-10-12,Research,Karnataka
+2318028,2026-10-12,Tomato,Kalaburagi,INR per 100 KG,Tomato,1000.0,1000.0,Tomato,Kalaburagi,KRAMA,2026-10-12,Research,Karnataka
+2318029,2026-10-12,Tomato,Kolar,INR per 100 KG,Tomato,1000.0,1000.0,Tomato,Kolar,KRAMA,2026-10-12,Research,Karnataka
+2318030,2026-10-12,Tomato,Mulbagal,INR per 100 KG,Tomato,1000.0,1000.0,Tomato,Mulbagal,KRAMA,2026-10-12,Research,Karnataka
+2318031,2026-10-12,Tomato,Ramanagara,INR per 100 KG,Tomato,2500.0,2500.0,Tomato,Ramanagara,KRAMA,2026-10-12,Research,Karnataka
+2318032,2026-10-12,Tomato,Ranibennur,INR per 100 KG,Tomato,900.0,900.0,Tomato,Ranibennur,KRAMA,2026-10-12,Research,Karnataka
+2318033,2026-10-12,Tomato,Shivamogga,INR per 100 KG,Tomato,1400.0,1400.0,Tomato,Shivamogga,KRAMA,2026-10-12,Research,Karnataka
+2318034,2026-10-12,Onion,Kolhapur,INR per 100 KG,Onion,2800.0,2800.0,Onion,Kolhapur,MSAMB,2026-10-12,Research,Maharashtra
+2318035,2026-10-12,Onion,Akola,INR per 100 KG,Onion,3000.0,3000.0,Onion,Akola,MSAMB,2026-10-12,Research,Maharashtra
+2318036,2026-10-12,Onion,Chhatrapati Sambhajinagar,INR per 100 KG,Onion,2050.0,2050.0,Onion,Chhatrapati Sambhajinagar,MSAMB,2026-10-12,Research,Maharashtra
+2318037,2026-10-12,Onion,Chandrapur-Ganjwad,INR per 100 KG,Onion,4200.0,4200.0,Onion,Chandrapur-Ganjwad,MSAMB,2026-10-12,Research,Maharashtra
+2318038,2026-10-12,Onion,Rahuri-Vambori,INR per 100 KG,Onion,3100.0,3100.0,Onion,Rahuri-Vambori,MSAMB,2026-10-12,Research,Maharashtra
+2318039,2026-10-12,Onion,Mumbai-Onion And Potato Mkt,INR per 100 KG,Onion,3200.0,3200.0,Onion,Mumbai-Onion And Potato Mkt,MSAMB,2026-10-12,Research,Maharashtra
+2318040,2026-10-12,Onion,Manchar- Loni,INR per 100 KG,Onion,3250.0,3250.0,Onion,Manchar- Loni,MSAMB,2026-10-12,Research,Maharashtra
+2318041,2026-10-12,Onion,Vita,INR per 100 KG,Onion,4000.0,4000.0,Onion,Vita,MSAMB,2026-10-12,Research,Maharashtra
+2318042,2026-10-12,Onion,Satara,INR per 100 KG,Onion,3200.0,3200.0,Onion,Satara,MSAMB,2026-10-12,Research,Maharashtra
+2318043,2026-10-12,Onion,Khed,INR per 100 KG,Fursungi,3000.0,3000.0,Onion,Khed,MSAMB,2026-10-12,Research,Maharashtra
+2318044,2026-10-12,Onion,Karad,INR per 100 KG,Halva,4000.0,4000.0,Onion,Karad,MSAMB,2026-10-12,Research,Maharashtra
+2318045,2026-10-12,Onion,Solapur,INR per 100 KG,Lal,2700.0,2700.0,Onion,Solapur,MSAMB,2026-10-12,Research,Maharashtra
+2318046,2026-10-12,Onion,Jalgaon,INR per 100 KG,Lal,2377.0,2377.0,Onion,Jalgaon,MSAMB,2026-10-12,Research,Maharashtra
+2318047,2026-10-12,Onion,Nagpur,INR per 100 KG,Lal,3750.0,3750.0,Onion,Nagpur,MSAMB,2026-10-12,Research,Maharashtra
+2318048,2026-10-12,Onion,Indapur,INR per 100 KG,Lal,2500.0,2500.0,Onion,Indapur,MSAMB,2026-10-12,Research,Maharashtra
+2318049,2026-10-12,Onion,Hingna,INR per 100 KG,Lal,4214.0,4214.0,Onion,Hingna,MSAMB,2026-10-12,Research,Maharashtra
+2318050,2026-10-12,Onion,Amravati-Fruit And Vegetables,INR per 100 KG,Local,2850.0,2850.0,Onion,Amravati-Fruit And Vegetables,MSAMB,2026-10-12,Research,Maharashtra
+2318051,2026-10-12,Onion,Sangli-Phale Bhaji Pala Mrkt,INR per 100 KG,Local,2700.0,2700.0,Onion,Sangli-Phale Bhaji Pala Mrkt,MSAMB,2026-10-12,Research,Maharashtra
+2318052,2026-10-12,Onion,Pune,INR per 100 KG,Local,2650.0,2650.0,Onion,Pune,MSAMB,2026-10-12,Research,Maharashtra
+2318053,2026-10-12,Onion,Pune-Khadki,INR per 100 KG,Local,1600.0,1600.0,Onion,Pune-Khadki,MSAMB,2026-10-12,Research,Maharashtra
+2318054,2026-10-12,Onion,Pune-Pimpri,INR per 100 KG,Local,3400.0,3400.0,Onion,Pune-Pimpri,MSAMB,2026-10-12,Research,Maharashtra
+2318055,2026-10-12,Onion,Pune-Moshi,INR per 100 KG,Local,2350.0,2350.0,Onion,Pune-Moshi,MSAMB,2026-10-12,Research,Maharashtra
+2318056,2026-10-12,Onion,Chalisgaon-Nagadroad,INR per 100 KG,Local,3250.0,3250.0,Onion,Chalisgaon-Nagadroad,MSAMB,2026-10-12,Research,Maharashtra
+2318057,2026-10-12,Onion,Karjat (a- Nagar),INR per 100 KG,Local,2500.0,2500.0,Onion,Karjat (a- Nagar),MSAMB,2026-10-12,Research,Maharashtra
+2318058,2026-10-12,Onion,Vaduj,INR per 100 KG,Local,3800.0,3800.0,Onion,Vaduj,MSAMB,2026-10-12,Research,Maharashtra
+2318059,2026-10-12,Onion,Mangalwedha,INR per 100 KG,Local,4500.0,4500.0,Onion,Mangalwedha,MSAMB,2026-10-12,Research,Maharashtra
+2318060,2026-10-12,Onion,Kamthi,INR per 100 KG,Local,5650.0,5650.0,Onion,Kamthi,MSAMB,2026-10-12,Research,Maharashtra
+2318061,2026-10-12,Onion,Baramati-Jalochi,INR per 100 KG,No. 1,3200.0,3200.0,Onion,Baramati-Jalochi,MSAMB,2026-10-12,Research,Maharashtra
+2318062,2026-10-12,Onion,Shevgaon,INR per 100 KG,No. 1,3300.0,3300.0,Onion,Shevgaon,MSAMB,2026-10-12,Research,Maharashtra
+2318063,2026-10-12,Onion,Shevgaon,INR per 100 KG,No. 2,2500.0,2500.0,Onion,Shevgaon,MSAMB,2026-10-12,Research,Maharashtra
+2318064,2026-10-12,Onion,Shevgaon,INR per 100 KG,No. 3,1500.0,1500.0,Onion,Shevgaon,MSAMB,2026-10-12,Research,Maharashtra
+2318065,2026-10-12,Onion,Nagpur,INR per 100 KG,Pandhra,3875.0,3875.0,Onion,Nagpur,MSAMB,2026-10-12,Research,Maharashtra
+2318066,2026-10-12,Onion,Yeola,INR per 100 KG,Unhali,3100.0,3100.0,Onion,Yeola,MSAMB,2026-10-12,Research,Maharashtra
+2318067,2026-10-12,Onion,Yeola-Aandarsul,INR per 100 KG,Unhali,3150.0,3150.0,Onion,Yeola-Aandarsul,MSAMB,2026-10-12,Research,Maharashtra
+2318068,2026-10-12,Onion,Nashik,INR per 100 KG,Unhali,3200.0,3200.0,Onion,Nashik,MSAMB,2026-10-12,Research,Maharashtra
+2318069,2026-10-12,Onion,Lasalgaon,INR per 100 KG,Unhali,3751.0,3751.0,Onion,Lasalgaon,MSAMB,2026-10-12,Research,Maharashtra
+2318070,2026-10-12,Onion,Lasalgaon-Niphad,INR per 100 KG,Unhali,3451.0,3451.0,Onion,Lasalgaon-Niphad,MSAMB,2026-10-12,Research,Maharashtra
+2318071,2026-10-12,Onion,Lasalgaon-Vinchur,INR per 100 KG,Unhali,3350.0,3350.0,Onion,Lasalgaon-Vinchur,MSAMB,2026-10-12,Research,Maharashtra
+2318072,2026-10-12,Onion,Malegaon-Mungse,INR per 100 KG,Unhali,2950.0,2950.0,Onion,Malegaon-Mungse,MSAMB,2026-10-12,Research,Maharashtra
+2318073,2026-10-12,Onion,Sinnar,INR per 100 KG,Unhali,3400.0,3400.0,Onion,Sinnar,MSAMB,2026-10-12,Research,Maharashtra
+2318074,2026-10-12,Onion,Sinnar-Naigaon,INR per 100 KG,Unhali,3572.0,3572.0,Onion,Sinnar-Naigaon,MSAMB,2026-10-12,Research,Maharashtra
+2318075,2026-10-12,Onion,Kalvan,INR per 100 KG,Unhali,3550.0,3550.0,Onion,Kalvan,MSAMB,2026-10-12,Research,Maharashtra
+2318076,2026-10-12,Onion,Sangamner,INR per 100 KG,Unhali,2650.0,2650.0,Onion,Sangamner,MSAMB,2026-10-12,Research,Maharashtra
+2318077,2026-10-12,Onion,Chandvad,INR per 100 KG,Unhali,3350.0,3350.0,Onion,Chandvad,MSAMB,2026-10-12,Research,Maharashtra
+2318078,2026-10-12,Onion,Manmad,INR per 100 KG,Unhali,3300.0,3300.0,Onion,Manmad,MSAMB,2026-10-12,Research,Maharashtra
+2318079,2026-10-12,Onion,Satana,INR per 100 KG,Unhali,3240.0,3240.0,Onion,Satana,MSAMB,2026-10-12,Research,Maharashtra
+2318080,2026-10-12,Onion,Kopargaon,INR per 100 KG,Unhali,3150.0,3150.0,Onion,Kopargaon,MSAMB,2026-10-12,Research,Maharashtra
+2318081,2026-10-12,Onion,Newasa-Ghodegaon,INR per 100 KG,Unhali,3500.0,3500.0,Onion,Newasa-Ghodegaon,MSAMB,2026-10-12,Research,Maharashtra
+2318082,2026-10-12,Onion,Pimpalgaon Basawant,INR per 100 KG,Unhali,3500.0,3500.0,Onion,Pimpalgaon Basawant,MSAMB,2026-10-12,Research,Maharashtra
+2318083,2026-10-12,Onion,Pimpalgaon (B)-Saykheda,INR per 100 KG,Unhali,3250.0,3250.0,Onion,Pimpalgaon (B)-Saykheda,MSAMB,2026-10-12,Research,Maharashtra
+2318084,2026-10-12,Onion,Sakri,INR per 100 KG,Unhali,3300.0,3300.0,Onion,Sakri,MSAMB,2026-10-12,Research,Maharashtra
+2318085,2026-10-12,Onion,Devala,INR per 100 KG,Unhali,3500.0,3500.0,Onion,Devala,MSAMB,2026-10-12,Research,Maharashtra
+2318086,2026-10-12,Onion,Umrane,INR per 100 KG,Unhali,3000.0,3000.0,Onion,Umrane,MSAMB,2026-10-12,Research,Maharashtra
+2318087,2026-10-12,Onion,Nampur,INR per 100 KG,Unhali,3100.0,3100.0,Onion,Nampur,MSAMB,2026-10-12,Research,Maharashtra
+2318088,2026-10-12,Onion,Nampur- Karanjad,INR per 100 KG,Unhali,3400.0,3400.0,Onion,Nampur- Karanjad,MSAMB,2026-10-12,Research,Maharashtra
+2318089,2026-10-12,Onion,Ambedkar Nagar,INR per 100 KG,Onion,3880.0,3880.0,Onion,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318090,2026-10-12,Tomato,Ambedkar Nagar,INR per 100 KG,Tomato,2360.0,2360.0,Tomato,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318091,2026-10-12,Potato,Ambedkar Nagar,INR per 100 KG,Potato,920.0,920.0,Potato,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318092,2026-10-12,Garlic,Ambedkar Nagar,INR per 100 KG,Garlic,10750.0,10750.0,Garlic,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318093,2026-10-12,Ginger,Ambedkar Nagar,INR per 100 KG,Ginger,7860.0,7860.0,Ginger,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318094,2026-10-12,Green Chilli,Ambedkar Nagar,INR per 100 KG,Green Chilli,3260.0,3260.0,Green Chilli,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318095,2026-10-12,Sponge Gourd,Ambedkar Nagar,INR per 100 KG,Sponge Gourd,2150.0,2150.0,Sponge Gourd,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318096,2026-10-12,Cabbage,Ambedkar Nagar,INR per 100 KG,Cabbage,2060.0,2060.0,Cabbage,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318097,2026-10-12,Cauliflower,Ambedkar Nagar,INR per 100 KG,Cauliflower,2670.0,2670.0,Cauliflower,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318098,2026-10-12,Brinjal,Ambedkar Nagar,INR per 100 KG,Brinjal,1870.0,1870.0,Brinjal,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318099,2026-10-12,Bottle Gourd,Ambedkar Nagar,INR per 100 KG,Bottle Gourd,1660.0,1660.0,Bottle Gourd,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318100,2026-10-12,Pointed Gourd,Ambedkar Nagar,INR per 100 KG,Pointed Gourd,3870.0,3870.0,Pointed Gourd,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318101,2026-10-12,Cucumber,Ambedkar Nagar,INR per 100 KG,Cucumber,2185.0,2185.0,Cucumber,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318102,2026-10-12,Okra,Ambedkar Nagar,INR per 100 KG,Okra,2275.0,2275.0,Okra,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318103,2026-10-12,Pumpkin,Ambedkar Nagar,INR per 100 KG,Pumpkin,1620.0,1620.0,Pumpkin,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318104,2026-10-12,Bitter Gourd,Ambedkar Nagar,INR per 100 KG,Bitter Gourd,2460.0,2460.0,Bitter Gourd,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318105,2026-10-12,Capsicum,Ambedkar Nagar,INR per 100 KG,Capsicum,4570.0,4570.0,Capsicum,Ambedkar Nagar,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318106,2026-10-12,Onion,Amroha,INR per 100 KG,Onion,3860.0,3860.0,Onion,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318107,2026-10-12,Tomato,Amroha,INR per 100 KG,Tomato,2300.0,2300.0,Tomato,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318108,2026-10-12,Potato,Amroha,INR per 100 KG,Potato,780.0,780.0,Potato,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318109,2026-10-12,Garlic,Amroha,INR per 100 KG,Garlic,11550.0,11550.0,Garlic,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318110,2026-10-12,Arvi (Colocasia),Amroha,INR per 100 KG,Arvi (Colocasia),2350.0,2350.0,Arvi (Colocasia),Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318111,2026-10-12,Ginger,Amroha,INR per 100 KG,Ginger,7470.0,7470.0,Ginger,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318112,2026-10-12,Green Chilli,Amroha,INR per 100 KG,Green Chilli,3600.0,3600.0,Green Chilli,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318113,2026-10-12,Sponge Gourd,Amroha,INR per 100 KG,Sponge Gourd,2600.0,2600.0,Sponge Gourd,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318114,2026-10-12,Cabbage,Amroha,INR per 100 KG,Cabbage,2150.0,2150.0,Cabbage,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318115,2026-10-12,Cauliflower,Amroha,INR per 100 KG,Cauliflower,3000.0,3000.0,Cauliflower,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318116,2026-10-12,Radish,Amroha,INR per 100 KG,Radish,1880.0,1880.0,Radish,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318117,2026-10-12,Brinjal,Amroha,INR per 100 KG,Brinjal,1860.0,1860.0,Brinjal,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318118,2026-10-12,Bottle Gourd,Amroha,INR per 100 KG,Bottle Gourd,1500.0,1500.0,Bottle Gourd,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318119,2026-10-12,Cucumber,Amroha,INR per 100 KG,Cucumber,2550.0,2550.0,Cucumber,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318120,2026-10-12,Okra,Amroha,INR per 100 KG,Okra,2100.0,2100.0,Okra,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318121,2026-10-12,Pumpkin,Amroha,INR per 100 KG,Pumpkin,1350.0,1350.0,Pumpkin,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318122,2026-10-12,Bitter Gourd,Amroha,INR per 100 KG,Bitter Gourd,2630.0,2630.0,Bitter Gourd,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318123,2026-10-12,Capsicum,Amroha,INR per 100 KG,Capsicum,4750.0,4750.0,Capsicum,Amroha,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318124,2026-10-12,Onion,Ayodhya,INR per 100 KG,Onion,4110.0,4110.0,Onion,Ayodhya,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318125,2026-10-12,Tomato,Ayodhya,INR per 100 KG,Tomato,2140.0,2140.0,Tomato,Ayodhya,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318126,2026-10-12,Potato,Ayodhya,INR per 100 KG,Potato,895.0,895.0,Potato,Ayodhya,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318127,2026-10-12,Garlic,Ayodhya,INR per 100 KG,Garlic,10500.0,10500.0,Garlic,Ayodhya,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318128,2026-10-12,Ginger,Ayodhya,INR per 100 KG,Ginger,7100.0,7100.0,Ginger,Ayodhya,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318129,2026-10-12,Green Chilli,Ayodhya,INR per 100 KG,Green Chilli,3650.0,3650.0,Green Chilli,Ayodhya,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318130,2026-10-12,Sponge Gourd,Ayodhya,INR per 100 KG,Sponge Gourd,2200.0,2200.0,Sponge Gourd,Ayodhya,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318131,2026-10-12,Cauliflower,Ayodhya,INR per 100 KG,Cauliflower,2750.0,2750.0,Cauliflower,Ayodhya,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318132,2026-10-12,Brinjal,Ayodhya,INR per 100 KG,Brinjal,2300.0,2300.0,Brinjal,Ayodhya,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318133,2026-10-12,Bottle Gourd,Ayodhya,INR per 100 KG,Bottle Gourd,1350.0,1350.0,Bottle Gourd,Ayodhya,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318134,2026-10-12,Pointed Gourd,Ayodhya,INR per 100 KG,Pointed Gourd,4175.0,4175.0,Pointed Gourd,Ayodhya,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318135,2026-10-12,Okra,Ayodhya,INR per 100 KG,Okra,2150.0,2150.0,Okra,Ayodhya,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318136,2026-10-12,Pumpkin,Ayodhya,INR per 100 KG,Pumpkin,1290.0,1290.0,Pumpkin,Ayodhya,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318137,2026-10-12,Bitter Gourd,Ayodhya,INR per 100 KG,Bitter Gourd,2800.0,2800.0,Bitter Gourd,Ayodhya,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318138,2026-10-12,Capsicum,Ayodhya,INR per 100 KG,Capsicum,4900.0,4900.0,Capsicum,Ayodhya,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318139,2026-10-12,Onion,Aligarh,INR per 100 KG,Onion,3720.0,3720.0,Onion,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318140,2026-10-12,Tomato,Aligarh,INR per 100 KG,Tomato,2600.0,2600.0,Tomato,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318141,2026-10-12,Potato,Aligarh,INR per 100 KG,Potato,840.0,840.0,Potato,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318142,2026-10-12,Garlic,Aligarh,INR per 100 KG,Garlic,11000.0,11000.0,Garlic,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318143,2026-10-12,Arvi (Colocasia),Aligarh,INR per 100 KG,Arvi (Colocasia),2300.0,2300.0,Arvi (Colocasia),Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318144,2026-10-12,Ginger,Aligarh,INR per 100 KG,Ginger,6320.0,6320.0,Ginger,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318145,2026-10-12,Green Chilli,Aligarh,INR per 100 KG,Green Chilli,3220.0,3220.0,Green Chilli,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318146,2026-10-12,Sponge Gourd,Aligarh,INR per 100 KG,Sponge Gourd,2730.0,2730.0,Sponge Gourd,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318147,2026-10-12,Cabbage,Aligarh,INR per 100 KG,Cabbage,1900.0,1900.0,Cabbage,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318148,2026-10-12,Cauliflower,Aligarh,INR per 100 KG,Cauliflower,3090.0,3090.0,Cauliflower,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318149,2026-10-12,Radish,Aligarh,INR per 100 KG,Radish,1500.0,1500.0,Radish,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318150,2026-10-12,Brinjal,Aligarh,INR per 100 KG,Brinjal,1520.0,1520.0,Brinjal,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318151,2026-10-12,Bottle Gourd,Aligarh,INR per 100 KG,Bottle Gourd,1200.0,1200.0,Bottle Gourd,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318152,2026-10-12,Cucumber,Aligarh,INR per 100 KG,Cucumber,2520.0,2520.0,Cucumber,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318153,2026-10-12,Okra,Aligarh,INR per 100 KG,Okra,2140.0,2140.0,Okra,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318154,2026-10-12,Pumpkin,Aligarh,INR per 100 KG,Pumpkin,1300.0,1300.0,Pumpkin,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318155,2026-10-12,Spinach,Aligarh,INR per 100 KG,Spinach,1980.0,1980.0,Spinach,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318156,2026-10-12,Bitter Gourd,Aligarh,INR per 100 KG,Bitter Gourd,2580.0,2580.0,Bitter Gourd,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318157,2026-10-12,Capsicum,Aligarh,INR per 100 KG,Capsicum,4080.0,4080.0,Capsicum,Aligarh,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318158,2026-10-12,Onion,Agra,INR per 100 KG,Onion,3750.0,3750.0,Onion,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318159,2026-10-12,Tomato,Agra,INR per 100 KG,Tomato,2400.0,2400.0,Tomato,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318160,2026-10-12,Potato,Agra,INR per 100 KG,Potato,800.0,800.0,Potato,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318161,2026-10-12,Garlic,Agra,INR per 100 KG,Garlic,11600.0,11600.0,Garlic,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318162,2026-10-12,Arvi (Colocasia),Agra,INR per 100 KG,Arvi (Colocasia),2320.0,2320.0,Arvi (Colocasia),Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318163,2026-10-12,Ginger,Agra,INR per 100 KG,Ginger,6480.0,6480.0,Ginger,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318164,2026-10-12,Green Chilli,Agra,INR per 100 KG,Green Chilli,3600.0,3600.0,Green Chilli,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318165,2026-10-12,Sponge Gourd,Agra,INR per 100 KG,Sponge Gourd,2720.0,2720.0,Sponge Gourd,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318166,2026-10-12,Cabbage,Agra,INR per 100 KG,Cabbage,1820.0,1820.0,Cabbage,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318167,2026-10-12,Cauliflower,Agra,INR per 100 KG,Cauliflower,2650.0,2650.0,Cauliflower,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318168,2026-10-12,Radish,Agra,INR per 100 KG,Radish,1690.0,1690.0,Radish,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318169,2026-10-12,Brinjal,Agra,INR per 100 KG,Brinjal,1620.0,1620.0,Brinjal,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318170,2026-10-12,Bottle Gourd,Agra,INR per 100 KG,Bottle Gourd,1260.0,1260.0,Bottle Gourd,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318171,2026-10-12,Cucumber,Agra,INR per 100 KG,Cucumber,2550.0,2550.0,Cucumber,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318172,2026-10-12,Okra,Agra,INR per 100 KG,Okra,2240.0,2240.0,Okra,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318173,2026-10-12,Pumpkin,Agra,INR per 100 KG,Pumpkin,1300.0,1300.0,Pumpkin,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318174,2026-10-12,Spinach,Agra,INR per 100 KG,Spinach,1925.0,1925.0,Spinach,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318175,2026-10-12,Bitter Gourd,Agra,INR per 100 KG,Bitter Gourd,2620.0,2620.0,Bitter Gourd,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318176,2026-10-12,Capsicum,Agra,INR per 100 KG,Capsicum,4450.0,4450.0,Capsicum,Agra,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318177,2026-10-12,Onion,Kanpur,INR per 100 KG,Onion,4000.0,4000.0,Onion,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318178,2026-10-12,Tomato,Kanpur,INR per 100 KG,Tomato,2560.0,2560.0,Tomato,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318179,2026-10-12,Potato,Kanpur,INR per 100 KG,Potato,740.0,740.0,Potato,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318180,2026-10-12,Onion,Kanpur,INR per 100 KG,Onion,4040.0,4040.0,Onion,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318181,2026-10-12,Tomato,Kanpur,INR per 100 KG,Tomato,2470.0,2470.0,Tomato,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318182,2026-10-12,Potato,Kanpur,INR per 100 KG,Potato,710.0,710.0,Potato,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318183,2026-10-12,Garlic,Kanpur,INR per 100 KG,Garlic,13250.0,13250.0,Garlic,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318184,2026-10-12,Arvi (Colocasia),Kanpur,INR per 100 KG,Arvi (Colocasia),2150.0,2150.0,Arvi (Colocasia),Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318185,2026-10-12,Ginger,Kanpur,INR per 100 KG,Ginger,7850.0,7850.0,Ginger,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318186,2026-10-12,Green Chilli,Kanpur,INR per 100 KG,Green Chilli,4110.0,4110.0,Green Chilli,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318187,2026-10-12,Sponge Gourd,Kanpur,INR per 100 KG,Sponge Gourd,2750.0,2750.0,Sponge Gourd,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318188,2026-10-12,Cabbage,Kanpur,INR per 100 KG,Cabbage,2060.0,2060.0,Cabbage,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318189,2026-10-12,Cauliflower,Kanpur,INR per 100 KG,Cauliflower,3620.0,3620.0,Cauliflower,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318190,2026-10-12,Radish,Kanpur,INR per 100 KG,Radish,1780.0,1780.0,Radish,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318191,2026-10-12,Brinjal,Kanpur,INR per 100 KG,Brinjal,1800.0,1800.0,Brinjal,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318192,2026-10-12,Bottle Gourd,Kanpur,INR per 100 KG,Bottle Gourd,1400.0,1400.0,Bottle Gourd,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318193,2026-10-12,Pointed Gourd,Kanpur,INR per 100 KG,Pointed Gourd,4550.0,4550.0,Pointed Gourd,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318194,2026-10-12,Cucumber,Kanpur,INR per 100 KG,Cucumber,2380.0,2380.0,Cucumber,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318195,2026-10-12,Okra,Kanpur,INR per 100 KG,Okra,2450.0,2450.0,Okra,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318196,2026-10-12,Pumpkin,Kanpur,INR per 100 KG,Pumpkin,1410.0,1410.0,Pumpkin,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318197,2026-10-12,Bitter Gourd,Kanpur,INR per 100 KG,Bitter Gourd,2600.0,2600.0,Bitter Gourd,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318198,2026-10-12,Capsicum,Kanpur,INR per 100 KG,Capsicum,4550.0,4550.0,Capsicum,Kanpur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318199,2026-10-12,Onion,Farrukhabad,INR per 100 KG,Onion,4000.0,4000.0,Onion,Farrukhabad,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318200,2026-10-12,Tomato,Farrukhabad,INR per 100 KG,Tomato,2350.0,2350.0,Tomato,Farrukhabad,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318201,2026-10-12,Potato,Farrukhabad,INR per 100 KG,Potato,560.0,560.0,Potato,Farrukhabad,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318202,2026-10-12,Garlic,Farrukhabad,INR per 100 KG,Garlic,12700.0,12700.0,Garlic,Farrukhabad,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318203,2026-10-12,Arvi (Colocasia),Farrukhabad,INR per 100 KG,Arvi (Colocasia),2125.0,2125.0,Arvi (Colocasia),Farrukhabad,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318204,2026-10-12,Ginger,Farrukhabad,INR per 100 KG,Ginger,7800.0,7800.0,Ginger,Farrukhabad,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318205,2026-10-12,Green Chilli,Farrukhabad,INR per 100 KG,Green Chilli,4050.0,4050.0,Green Chilli,Farrukhabad,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318206,2026-10-12,Sponge Gourd,Farrukhabad,INR per 100 KG,Sponge Gourd,2200.0,2200.0,Sponge Gourd,Farrukhabad,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318207,2026-10-12,Cabbage,Farrukhabad,INR per 100 KG,Cabbage,2125.0,2125.0,Cabbage,Farrukhabad,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318208,2026-10-12,Brinjal,Farrukhabad,INR per 100 KG,Brinjal,1825.0,1825.0,Brinjal,Farrukhabad,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318209,2026-10-12,Bottle Gourd,Farrukhabad,INR per 100 KG,Bottle Gourd,1400.0,1400.0,Bottle Gourd,Farrukhabad,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318210,2026-10-12,Pointed Gourd,Farrukhabad,INR per 100 KG,Pointed Gourd,4250.0,4250.0,Pointed Gourd,Farrukhabad,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318211,2026-10-12,Cucumber,Farrukhabad,INR per 100 KG,Cucumber,2300.0,2300.0,Cucumber,Farrukhabad,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318212,2026-10-12,Okra,Farrukhabad,INR per 100 KG,Okra,2150.0,2150.0,Okra,Farrukhabad,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318213,2026-10-12,Pumpkin,Farrukhabad,INR per 100 KG,Pumpkin,1450.0,1450.0,Pumpkin,Farrukhabad,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318214,2026-10-12,Onion,Badaun,INR per 100 KG,Onion,3810.0,3810.0,Onion,Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318215,2026-10-12,Tomato,Badaun,INR per 100 KG,Tomato,2330.0,2330.0,Tomato,Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318216,2026-10-12,Potato,Badaun,INR per 100 KG,Potato,780.0,780.0,Potato,Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318217,2026-10-12,Garlic,Badaun,INR per 100 KG,Garlic,11130.0,11130.0,Garlic,Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318218,2026-10-12,Arvi (Colocasia),Badaun,INR per 100 KG,Arvi (Colocasia),2200.0,2200.0,Arvi (Colocasia),Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318219,2026-10-12,Ginger,Badaun,INR per 100 KG,Ginger,7725.0,7725.0,Ginger,Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318220,2026-10-12,Green Chilli,Badaun,INR per 100 KG,Green Chilli,3240.0,3240.0,Green Chilli,Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318221,2026-10-12,Sponge Gourd,Badaun,INR per 100 KG,Sponge Gourd,2380.0,2380.0,Sponge Gourd,Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318222,2026-10-12,Cabbage,Badaun,INR per 100 KG,Cabbage,2040.0,2040.0,Cabbage,Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318223,2026-10-12,Radish,Badaun,INR per 100 KG,Radish,2080.0,2080.0,Radish,Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318224,2026-10-12,Brinjal,Badaun,INR per 100 KG,Brinjal,1950.0,1950.0,Brinjal,Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318225,2026-10-12,Bottle Gourd,Badaun,INR per 100 KG,Bottle Gourd,1560.0,1560.0,Bottle Gourd,Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318226,2026-10-12,Cucumber,Badaun,INR per 100 KG,Cucumber,2310.0,2310.0,Cucumber,Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318227,2026-10-12,Okra,Badaun,INR per 100 KG,Okra,2080.0,2080.0,Okra,Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318228,2026-10-12,Pumpkin,Badaun,INR per 100 KG,Pumpkin,1465.0,1465.0,Pumpkin,Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318229,2026-10-12,Bitter Gourd,Badaun,INR per 100 KG,Bitter Gourd,2625.0,2625.0,Bitter Gourd,Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318230,2026-10-12,Capsicum,Badaun,INR per 100 KG,Capsicum,4450.0,4450.0,Capsicum,Badaun,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318231,2026-10-12,Onion,Bahraich,INR per 100 KG,Onion,4100.0,4100.0,Onion,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318232,2026-10-12,Tomato,Bahraich,INR per 100 KG,Tomato,2525.0,2525.0,Tomato,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318233,2026-10-12,Potato,Bahraich,INR per 100 KG,Potato,900.0,900.0,Potato,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318234,2026-10-12,Garlic,Bahraich,INR per 100 KG,Garlic,12950.0,12950.0,Garlic,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318235,2026-10-12,Arvi (Colocasia),Bahraich,INR per 100 KG,Arvi (Colocasia),2375.0,2375.0,Arvi (Colocasia),Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318236,2026-10-12,Ginger,Bahraich,INR per 100 KG,Ginger,6900.0,6900.0,Ginger,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318237,2026-10-12,Green Chilli,Bahraich,INR per 100 KG,Green Chilli,4450.0,4450.0,Green Chilli,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318238,2026-10-12,Sponge Gourd,Bahraich,INR per 100 KG,Sponge Gourd,2650.0,2650.0,Sponge Gourd,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318239,2026-10-12,Cabbage,Bahraich,INR per 100 KG,Cabbage,2250.0,2250.0,Cabbage,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318240,2026-10-12,Cauliflower,Bahraich,INR per 100 KG,Cauliflower,2900.0,2900.0,Cauliflower,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318241,2026-10-12,Carrot,Bahraich,INR per 100 KG,Carrot,3550.0,3550.0,Carrot,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318242,2026-10-12,Radish,Bahraich,INR per 100 KG,Radish,2250.0,2250.0,Radish,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318243,2026-10-12,Brinjal,Bahraich,INR per 100 KG,Brinjal,2375.0,2375.0,Brinjal,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318244,2026-10-12,Bottle Gourd,Bahraich,INR per 100 KG,Bottle Gourd,1875.0,1875.0,Bottle Gourd,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318245,2026-10-12,Pointed Gourd,Bahraich,INR per 100 KG,Pointed Gourd,6150.0,6150.0,Pointed Gourd,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318246,2026-10-12,Cucumber,Bahraich,INR per 100 KG,Cucumber,2550.0,2550.0,Cucumber,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318247,2026-10-12,Okra,Bahraich,INR per 100 KG,Okra,2675.0,2675.0,Okra,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318248,2026-10-12,Pumpkin,Bahraich,INR per 100 KG,Pumpkin,1780.0,1780.0,Pumpkin,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318249,2026-10-12,Bitter Gourd,Bahraich,INR per 100 KG,Bitter Gourd,2950.0,2950.0,Bitter Gourd,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318250,2026-10-12,Capsicum,Bahraich,INR per 100 KG,Capsicum,5850.0,5850.0,Capsicum,Bahraich,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318251,2026-10-12,Onion,Meerut,INR per 100 KG,Onion,3800.0,3800.0,Onion,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318252,2026-10-12,Tomato,Meerut,INR per 100 KG,Tomato,2400.0,2400.0,Tomato,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318253,2026-10-12,Potato,Meerut,INR per 100 KG,Potato,850.0,850.0,Potato,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318254,2026-10-12,Garlic,Meerut,INR per 100 KG,Garlic,10760.0,10760.0,Garlic,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318255,2026-10-12,Ginger,Meerut,INR per 100 KG,Ginger,7360.0,7360.0,Ginger,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318256,2026-10-12,Green Chilli,Meerut,INR per 100 KG,Green Chilli,4000.0,4000.0,Green Chilli,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318257,2026-10-12,Sponge Gourd,Meerut,INR per 100 KG,Sponge Gourd,2400.0,2400.0,Sponge Gourd,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318258,2026-10-12,Cabbage,Meerut,INR per 100 KG,Cabbage,2010.0,2010.0,Cabbage,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318259,2026-10-12,Cauliflower,Meerut,INR per 100 KG,Cauliflower,3050.0,3050.0,Cauliflower,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318260,2026-10-12,Brinjal,Meerut,INR per 100 KG,Brinjal,2020.0,2020.0,Brinjal,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318261,2026-10-12,Bottle Gourd,Meerut,INR per 100 KG,Bottle Gourd,1480.0,1480.0,Bottle Gourd,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318262,2026-10-12,Cucumber,Meerut,INR per 100 KG,Cucumber,2000.0,2000.0,Cucumber,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318263,2026-10-12,Okra,Meerut,INR per 100 KG,Okra,2130.0,2130.0,Okra,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318264,2026-10-12,Pumpkin,Meerut,INR per 100 KG,Pumpkin,1540.0,1540.0,Pumpkin,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318265,2026-10-12,Spinach,Meerut,INR per 100 KG,Spinach,1820.0,1820.0,Spinach,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318266,2026-10-12,Bitter Gourd,Meerut,INR per 100 KG,Bitter Gourd,2440.0,2440.0,Bitter Gourd,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318267,2026-10-12,Capsicum,Meerut,INR per 100 KG,Capsicum,5000.0,5000.0,Capsicum,Meerut,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318268,2026-10-12,Onion,Lucknow,INR per 100 KG,Onion,3900.0,3900.0,Onion,Lucknow,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318269,2026-10-12,Tomato,Lucknow,INR per 100 KG,Tomato,2450.0,2450.0,Tomato,Lucknow,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318270,2026-10-12,Potato,Lucknow,INR per 100 KG,Potato,900.0,900.0,Potato,Lucknow,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318271,2026-10-12,Garlic,Lucknow,INR per 100 KG,Garlic,11750.0,11750.0,Garlic,Lucknow,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318272,2026-10-12,Arvi (Colocasia),Lucknow,INR per 100 KG,Arvi (Colocasia),2270.0,2270.0,Arvi (Colocasia),Lucknow,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318273,2026-10-12,Ginger,Lucknow,INR per 100 KG,Ginger,8460.0,8460.0,Ginger,Lucknow,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318274,2026-10-12,Green Chilli,Lucknow,INR per 100 KG,Green Chilli,3500.0,3500.0,Green Chilli,Lucknow,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318275,2026-10-12,Sponge Gourd,Lucknow,INR per 100 KG,Sponge Gourd,2450.0,2450.0,Sponge Gourd,Lucknow,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318276,2026-10-12,Brinjal,Lucknow,INR per 100 KG,Brinjal,2200.0,2200.0,Brinjal,Lucknow,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318277,2026-10-12,Bottle Gourd,Lucknow,INR per 100 KG,Bottle Gourd,1680.0,1680.0,Bottle Gourd,Lucknow,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318278,2026-10-12,Pointed Gourd,Lucknow,INR per 100 KG,Pointed Gourd,4600.0,4600.0,Pointed Gourd,Lucknow,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318279,2026-10-12,Cucumber,Lucknow,INR per 100 KG,Cucumber,2400.0,2400.0,Cucumber,Lucknow,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318280,2026-10-12,Okra,Lucknow,INR per 100 KG,Okra,2250.0,2250.0,Okra,Lucknow,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318281,2026-10-12,Pumpkin,Lucknow,INR per 100 KG,Pumpkin,1700.0,1700.0,Pumpkin,Lucknow,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318282,2026-10-12,Bitter Gourd,Lucknow,INR per 100 KG,Bitter Gourd,2750.0,2750.0,Bitter Gourd,Lucknow,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318283,2026-10-12,Capsicum,Lucknow,INR per 100 KG,Capsicum,4750.0,4750.0,Capsicum,Lucknow,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318284,2026-10-12,Onion,Varanasi,INR per 100 KG,Onion,3800.0,3800.0,Onion,Varanasi,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318285,2026-10-12,Tomato,Varanasi,INR per 100 KG,Tomato,2400.0,2400.0,Tomato,Varanasi,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318286,2026-10-12,Potato,Varanasi,INR per 100 KG,Potato,780.0,780.0,Potato,Varanasi,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318287,2026-10-12,Garlic,Varanasi,INR per 100 KG,Garlic,11250.0,11250.0,Garlic,Varanasi,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318288,2026-10-12,Ginger,Varanasi,INR per 100 KG,Ginger,6750.0,6750.0,Ginger,Varanasi,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318289,2026-10-12,Green Chilli,Varanasi,INR per 100 KG,Green Chilli,3400.0,3400.0,Green Chilli,Varanasi,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318290,2026-10-12,Sponge Gourd,Varanasi,INR per 100 KG,Sponge Gourd,2750.0,2750.0,Sponge Gourd,Varanasi,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318291,2026-10-12,Radish,Varanasi,INR per 100 KG,Radish,1820.0,1820.0,Radish,Varanasi,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318292,2026-10-12,Brinjal,Varanasi,INR per 100 KG,Brinjal,2135.0,2135.0,Brinjal,Varanasi,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318293,2026-10-12,Bottle Gourd,Varanasi,INR per 100 KG,Bottle Gourd,1250.0,1250.0,Bottle Gourd,Varanasi,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318294,2026-10-12,Pointed Gourd,Varanasi,INR per 100 KG,Pointed Gourd,5670.0,5670.0,Pointed Gourd,Varanasi,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318295,2026-10-12,Cucumber,Varanasi,INR per 100 KG,Cucumber,2615.0,2615.0,Cucumber,Varanasi,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318296,2026-10-12,Okra,Varanasi,INR per 100 KG,Okra,2060.0,2060.0,Okra,Varanasi,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318297,2026-10-12,Pumpkin,Varanasi,INR per 100 KG,Pumpkin,1230.0,1230.0,Pumpkin,Varanasi,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318298,2026-10-12,Bitter Gourd,Varanasi,INR per 100 KG,Bitter Gourd,2700.0,2700.0,Bitter Gourd,Varanasi,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318299,2026-10-12,Capsicum,Varanasi,INR per 100 KG,Capsicum,4450.0,4450.0,Capsicum,Varanasi,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318300,2026-10-12,Onion,Sitapur,INR per 100 KG,Onion,3940.0,3940.0,Onion,Sitapur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318301,2026-10-12,Tomato,Sitapur,INR per 100 KG,Tomato,2450.0,2450.0,Tomato,Sitapur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318302,2026-10-12,Potato,Sitapur,INR per 100 KG,Potato,860.0,860.0,Potato,Sitapur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318303,2026-10-12,Garlic,Sitapur,INR per 100 KG,Garlic,10950.0,10950.0,Garlic,Sitapur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318304,2026-10-12,Ginger,Sitapur,INR per 100 KG,Ginger,8050.0,8050.0,Ginger,Sitapur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318305,2026-10-12,Green Chilli,Sitapur,INR per 100 KG,Green Chilli,3480.0,3480.0,Green Chilli,Sitapur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318306,2026-10-12,Brinjal,Sitapur,INR per 100 KG,Brinjal,1900.0,1900.0,Brinjal,Sitapur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318307,2026-10-12,Bottle Gourd,Sitapur,INR per 100 KG,Bottle Gourd,1600.0,1600.0,Bottle Gourd,Sitapur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318308,2026-10-12,Pumpkin,Sitapur,INR per 100 KG,Pumpkin,1620.0,1620.0,Pumpkin,Sitapur,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318309,2026-10-12,Onion,Hathras,INR per 100 KG,Onion,3700.0,3700.0,Onion,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318310,2026-10-12,Tomato,Hathras,INR per 100 KG,Tomato,2620.0,2620.0,Tomato,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318311,2026-10-12,Potato,Hathras,INR per 100 KG,Potato,860.0,860.0,Potato,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318312,2026-10-12,Garlic,Hathras,INR per 100 KG,Garlic,11040.0,11040.0,Garlic,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318313,2026-10-12,Ginger,Hathras,INR per 100 KG,Ginger,6400.0,6400.0,Ginger,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318314,2026-10-12,Green Chilli,Hathras,INR per 100 KG,Green Chilli,3300.0,3300.0,Green Chilli,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318315,2026-10-12,Sponge Gourd,Hathras,INR per 100 KG,Sponge Gourd,2530.0,2530.0,Sponge Gourd,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318316,2026-10-12,Cabbage,Hathras,INR per 100 KG,Cabbage,1820.0,1820.0,Cabbage,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318317,2026-10-12,Cauliflower,Hathras,INR per 100 KG,Cauliflower,3020.0,3020.0,Cauliflower,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318318,2026-10-12,Radish,Hathras,INR per 100 KG,Radish,1520.0,1520.0,Radish,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318319,2026-10-12,Brinjal,Hathras,INR per 100 KG,Brinjal,1520.0,1520.0,Brinjal,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318320,2026-10-12,Bottle Gourd,Hathras,INR per 100 KG,Bottle Gourd,1130.0,1130.0,Bottle Gourd,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318321,2026-10-12,Cucumber,Hathras,INR per 100 KG,Cucumber,2420.0,2420.0,Cucumber,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318322,2026-10-12,Okra,Hathras,INR per 100 KG,Okra,2030.0,2030.0,Okra,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318323,2026-10-12,Pumpkin,Hathras,INR per 100 KG,Pumpkin,1170.0,1170.0,Pumpkin,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318324,2026-10-12,Spinach,Hathras,INR per 100 KG,Spinach,1970.0,1970.0,Spinach,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318325,2026-10-12,Capsicum,Hathras,INR per 100 KG,Capsicum,4130.0,4130.0,Capsicum,Hathras,UP_KRISHI,2026-10-12,Research,Uttar Pradesh
+2318326,2026-10-12,Tomato,Madanapalle,INR per 100 KG,Super Top,2000.0,2000.0,Tomato,Madanapalle,YOUTUBE_MANDI,2026-10-12,Research,Andhra Pradesh
+2318327,2026-10-12,Tomato,Madanapalle,INR per 100 KG,Medium,2000.0,2000.0,Tomato,Madanapalle,YOUTUBE_MANDI,2026-10-12,Research,Andhra Pradesh
+2318328,2026-10-12,Tomato,Kolar,INR per 100 KG,Super Top,2200.0,2200.0,Tomato,Kolar,YOUTUBE_MANDI,2026-10-12,Research,Karnataka
+2318329,2026-10-12,Tomato,Kolar,INR per 100 KG,Medium,1320.0,1320.0,Tomato,Kolar,YOUTUBE_MANDI,2026-10-12,Research,Karnataka

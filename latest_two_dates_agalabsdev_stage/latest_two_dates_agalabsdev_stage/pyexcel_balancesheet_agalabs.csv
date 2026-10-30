@@ -1,0 +1,3 @@
+﻿id,MarketYear,CommodityName,AttributeName,Value,Unit,Source,CreatedBy,CreatedDate,Type
+30,2024,Maize,Ending Stock,2.30,Mln Tonne,Agalabs,Research,2026-01-31,Estimated
+29,2024,Maize,Total Demand,36.80,Mln Tonne,Agalabs,Research,2026-01-30,Estimated

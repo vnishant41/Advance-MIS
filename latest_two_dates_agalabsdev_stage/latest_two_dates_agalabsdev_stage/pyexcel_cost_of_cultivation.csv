@@ -1,0 +1,455 @@
+﻿RecordIndex,Year,Commodity,Season,State,Attribute,Unit,Value,CreatedBy,CreatedDate,Source
+16400,2022,COTTON,Kharif,Andhra Pradesh,Yield,Tonnes/Hectare,0.418,Research,2025-12-03,GOI
+16401,2022,GROUNDNUT,Kharif,Andhra Pradesh,Yield,Tonnes/Hectare,0.937,Research,2025-12-03,GOI
+16402,2022,JOWAR,Kharif,Andhra Pradesh,Yield,Tonnes/Hectare,0.437,Research,2025-12-03,GOI
+16403,2022,ONION,Kharif,Andhra Pradesh,Yield,Tonnes/Hectare,15.9653,Research,2025-12-03,GOI
+16404,2022,ONION,Rabi,Andhra Pradesh,Yield,Tonnes/Hectare,15.9653,Research,2025-12-03,GOI
+16405,2022,Rice,Kharif,Andhra Pradesh,Yield,Tonnes/Hectare,3.583,Research,2025-12-03,GOI
+16406,2022,SESAMUM,Kharif,Andhra Pradesh,Yield,Tonnes/Hectare,0.222,Research,2025-12-03,GOI
+16407,2022,Sugar,Kharif,Andhra Pradesh,Yield,Tonnes/Hectare,84.56,Research,2025-12-03,GOI
+16408,2022,SUNFLOWER,Rabi,Andhra Pradesh,Yield,Tonnes/Hectare,0.939,Research,2025-12-03,GOI
+16409,2022,COTTON,Kharif,Andhra Pradesh,Price,Rs/Tonne,69300.0,Research,2025-12-03,GOI
+16410,2022,GROUNDNUT,Kharif,Andhra Pradesh,Price,Rs/Tonne,53880.0,Research,2025-12-03,GOI
+16411,2022,JOWAR,Kharif,Andhra Pradesh,Price,Rs/Tonne,39200.0,Research,2025-12-03,GOI
+16412,2022,ONION,Kharif,Andhra Pradesh,Price,Rs/Tonne,10100.0,Research,2025-12-03,GOI
+16413,2022,ONION,Rabi,Andhra Pradesh,Price,Rs/Tonne,10100.0,Research,2025-12-03,GOI
+16414,2022,Rice,Kharif,Andhra Pradesh,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16415,2022,SESAMUM,Kharif,Andhra Pradesh,Price,Rs/Tonne,108000.0,Research,2025-12-03,GOI
+16416,2022,Sugar,Kharif,Andhra Pradesh,Price,Rs/Tonne,33000.0,Research,2025-12-03,GOI
+16417,2022,SUNFLOWER,Rabi,Andhra Pradesh,Price,Rs/Tonne,68000.0,Research,2025-12-03,GOI
+16418,2022,Rice,Kharif,Assam,Yield,Tonnes/Hectare,2.12,Research,2025-12-03,GOI
+16419,2022,POTATO,Rabi,Assam,Yield,Tonnes/Hectare,9.0,Research,2025-12-03,GOI
+16420,2022,Rapeseed,Rabi,Assam,Yield,Tonnes/Hectare,0.788,Research,2025-12-03,GOI
+16421,2022,Rice,Kharif,Assam,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16422,2022,POTATO,Rabi,Assam,Price,Rs/Tonne,14500.0,Research,2025-12-03,GOI
+16423,2022,Rapeseed,Rabi,Assam,Price,Rs/Tonne,69000.0,Research,2025-12-03,GOI
+16424,2022,Rice,Kharif,Bihar,Yield,Tonnes/Hectare,2.623,Research,2025-12-03,GOI
+16425,2022,POTATO,Rabi,Bihar,Yield,Tonnes/Hectare,27.0,Research,2025-12-03,GOI
+16426,2022,Rapeseed,Rabi,Bihar,Yield,Tonnes/Hectare,1.151,Research,2025-12-03,GOI
+16427,2022,SUNFLOWER,Rabi,Bihar,Yield,Tonnes/Hectare,1.493,Research,2025-12-03,GOI
+16428,2022,Rice,Kharif,Bihar,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16429,2022,POTATO,Rabi,Bihar,Price,Rs/Tonne,14500.0,Research,2025-12-03,GOI
+16430,2022,Rapeseed,Rabi,Bihar,Price,Rs/Tonne,69000.0,Research,2025-12-03,GOI
+16431,2022,SUNFLOWER,Rabi,Bihar,Price,Rs/Tonne,68000.0,Research,2025-12-03,GOI
+16432,2022,Rice,Kharif,Chhattisgarh,Yield,Tonnes/Hectare,2.187,Research,2025-12-03,GOI
+16433,2022,Rice,Kharif,Chhattisgarh,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16434,2022,BAJRA,Kharif,Gujarat,Yield,Tonnes/Hectare,1.844,Research,2025-12-03,GOI
+16435,2022,COTTON,Kharif,Gujarat,Yield,Tonnes/Hectare,0.499,Research,2025-12-03,GOI
+16436,2022,GROUNDNUT,Kharif,Gujarat,Yield,Tonnes/Hectare,2.664,Research,2025-12-03,GOI
+16437,2022,ONION,Kharif,Gujarat,Yield,Tonnes/Hectare,23.445,Research,2025-12-03,GOI
+16438,2022,ONION,Rabi,Gujarat,Yield,Tonnes/Hectare,23.445,Research,2025-12-03,GOI
+16439,2022,Rice,Kharif,Gujarat,Yield,Tonnes/Hectare,2.179,Research,2025-12-03,GOI
+16440,2022,POTATO,Rabi,Gujarat,Yield,Tonnes/Hectare,29.0,Research,2025-12-03,GOI
+16441,2022,SESAMUM,Kharif,Gujarat,Yield,Tonnes/Hectare,0.45,Research,2025-12-03,GOI
+16442,2022,Sugar,Kharif,Gujarat,Yield,Tonnes/Hectare,71.292,Research,2025-12-03,GOI
+16443,2022,Rapeseed,Rabi,Gujarat,Yield,Tonnes/Hectare,1.845,Research,2025-12-03,GOI
+16444,2022,BAJRA,Kharif,Gujarat,Price,Rs/Tonne,25400.0,Research,2025-12-03,GOI
+16445,2022,COTTON,Kharif,Gujarat,Price,Rs/Tonne,69300.0,Research,2025-12-03,GOI
+16446,2022,GROUNDNUT,Kharif,Gujarat,Price,Rs/Tonne,53880.0,Research,2025-12-03,GOI
+16447,2022,ONION,Kharif,Gujarat,Price,Rs/Tonne,10100.0,Research,2025-12-03,GOI
+16448,2022,ONION,Rabi,Gujarat,Price,Rs/Tonne,10100.0,Research,2025-12-03,GOI
+16449,2022,Rice,Kharif,Gujarat,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16450,2022,POTATO,Rabi,Gujarat,Price,Rs/Tonne,14500.0,Research,2025-12-03,GOI
+16451,2022,Rapeseed,Rabi,Gujarat,Price,Rs/Tonne,69000.0,Research,2025-12-03,GOI
+16452,2022,SESAMUM,Kharif,Gujarat,Price,Rs/Tonne,108000.0,Research,2025-12-03,GOI
+16453,2022,Sugar,Kharif,Gujarat,Price,Rs/Tonne,33000.0,Research,2025-12-03,GOI
+16454,2022,BAJRA,Kharif,Haryana,Yield,Tonnes/Hectare,2.182,Research,2025-12-03,GOI
+16455,2022,COTTON,Kharif,Haryana,Yield,Tonnes/Hectare,0.502,Research,2025-12-03,GOI
+16456,2022,Rice,Kharif,Haryana,Yield,Tonnes/Hectare,3.766,Research,2025-12-03,GOI
+16457,2022,Sugar,Kharif,Haryana,Yield,Tonnes/Hectare,81.563,Research,2025-12-03,GOI
+16458,2022,Rapeseed,Rabi,Haryana,Yield,Tonnes/Hectare,1.947,Research,2025-12-03,GOI
+16459,2022,BAJRA,Kharif,Haryana,Price,Rs/Tonne,25400.0,Research,2025-12-03,GOI
+16460,2022,COTTON,Kharif,Haryana,Price,Rs/Tonne,69300.0,Research,2025-12-03,GOI
+16461,2022,Rice,Kharif,Haryana,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16462,2022,Rapeseed,Rabi,Haryana,Price,Rs/Tonne,69000.0,Research,2025-12-03,GOI
+16463,2022,Sugar,Kharif,Haryana,Price,Rs/Tonne,33000.0,Research,2025-12-03,GOI
+16464,2022,Barley,Rabi,Himachal Pradesh,Yield,Tonnes/Hectare,1.68,Research,2025-12-03,GOI
+16465,2022,Rice,Kharif,Himachal Pradesh,Yield,Tonnes/Hectare,2.263,Research,2025-12-03,GOI
+16466,2022,POTATO,Kharif,Himachal Pradesh,Yield,Tonnes/Hectare,13.0,Research,2025-12-03,GOI
+16467,2022,SESAMUM,Kharif,Himachal Pradesh,Yield,Tonnes/Hectare,0.295,Research,2025-12-03,GOI
+16468,2022,Rapeseed,Rabi,Himachal Pradesh,Yield,Tonnes/Hectare,0.811,Research,2025-12-03,GOI
+16469,2022,Barley,Rabi,Himachal Pradesh,Price,Rs/Tonne,23300.0,Research,2025-12-03,GOI
+16470,2022,Rice,Kharif,Himachal Pradesh,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16471,2022,POTATO,Kharif,Himachal Pradesh,Price,Rs/Tonne,14500.0,Research,2025-12-03,GOI
+16472,2022,Rapeseed,Rabi,Himachal Pradesh,Price,Rs/Tonne,69000.0,Research,2025-12-03,GOI
+16473,2022,SESAMUM,Kharif,Himachal Pradesh,Price,Rs/Tonne,108000.0,Research,2025-12-03,GOI
+16474,2022,POTATO,Rabi,Jharkhand,Yield,Tonnes/Hectare,15.0,Research,2025-12-03,GOI
+16475,2022,Rapeseed,Rabi,Jharkhand,Yield,Tonnes/Hectare,0.801,Research,2025-12-03,GOI
+16476,2022,POTATO,Rabi,Jharkhand,Price,Rs/Tonne,14500.0,Research,2025-12-03,GOI
+16477,2022,Rapeseed,Rabi,Jharkhand,Price,Rs/Tonne,69000.0,Research,2025-12-03,GOI
+16478,2022,Rice,Kharif,Jharkhand ,Yield,Tonnes/Hectare,1.894,Research,2025-12-03,GOI
+16479,2022,Rice,Kharif,Jharkhand ,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16480,2022,COTTON,Kharif,Karnataka,Yield,Tonnes/Hectare,0.571,Research,2025-12-03,GOI
+16481,2022,GROUNDNUT,Kharif,Karnataka,Yield,Tonnes/Hectare,0.93,Research,2025-12-03,GOI
+16482,2022,JOWAR,Kharif,Karnataka,Yield,Tonnes/Hectare,1.982,Research,2025-12-03,GOI
+16483,2022,ONION,Kharif,Karnataka,Yield,Tonnes/Hectare,13.2055,Research,2025-12-03,GOI
+16484,2022,ONION,Rabi,Karnataka,Yield,Tonnes/Hectare,13.2055,Research,2025-12-03,GOI
+16485,2022,Rice,Kharif,Karnataka,Yield,Tonnes/Hectare,3.409,Research,2025-12-03,GOI
+16486,2022,RAGI,Kharif,Karnataka,Yield,Tonnes/Hectare,1.414,Research,2025-12-03,GOI
+16487,2022,Sugar,Kharif,Karnataka,Yield,Tonnes/Hectare,90.0,Research,2025-12-03,GOI
+16488,2022,SAFFLOWER,Rabi,Karnataka,Yield,Tonnes/Hectare,0.732,Research,2025-12-03,GOI
+16489,2022,SUNFLOWER,Rabi,Karnataka,Yield,Tonnes/Hectare,1.107,Research,2025-12-03,GOI
+16490,2022,COTTON,Kharif,Karnataka,Price,Rs/Tonne,69300.0,Research,2025-12-03,GOI
+16491,2022,GROUNDNUT,Kharif,Karnataka,Price,Rs/Tonne,53880.0,Research,2025-12-03,GOI
+16492,2022,JOWAR,Kharif,Karnataka,Price,Rs/Tonne,39200.0,Research,2025-12-03,GOI
+16493,2022,ONION,Kharif,Karnataka,Price,Rs/Tonne,10100.0,Research,2025-12-03,GOI
+16494,2022,ONION,Rabi,Karnataka,Price,Rs/Tonne,10100.0,Research,2025-12-03,GOI
+16495,2022,Rice,Kharif,Karnataka,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16496,2022,RAGI,Kharif,Karnataka,Price,Rs/Tonne,51000.0,Research,2025-12-03,GOI
+16497,2022,SAFFLOWER,Rabi,Karnataka,Price,Rs/Tonne,73000.0,Research,2025-12-03,GOI
+16498,2022,Sugar,Kharif,Karnataka,Price,Rs/Tonne,33000.0,Research,2025-12-03,GOI
+16499,2022,SUNFLOWER,Rabi,Karnataka,Price,Rs/Tonne,68000.0,Research,2025-12-03,GOI
+16500,2022,GROUNDNUT,Kharif,Kerala,Yield,Tonnes/Hectare,1.378,Research,2025-12-03,GOI
+16501,2022,SESAMUM,Kharif,Kerala,Yield,Tonnes/Hectare,0.85,Research,2025-12-03,GOI
+16502,2022,GROUNDNUT,Kharif,Kerala,Price,Rs/Tonne,53880.0,Research,2025-12-03,GOI
+16503,2022,SESAMUM,Kharif,Kerala,Price,Rs/Tonne,108000.0,Research,2025-12-03,GOI
+16504,2022,Rice,Kharif,Kerala ,Yield,Tonnes/Hectare,2.786,Research,2025-12-03,GOI
+16505,2022,Rice,Kharif,Kerala ,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16506,2022,COTTON,Kharif,Madhya Pradesh,Yield,Tonnes/Hectare,0.486,Research,2025-12-03,GOI
+16507,2022,JOWAR,Kharif,Madhya Pradesh,Yield,Tonnes/Hectare,2.015,Research,2025-12-03,GOI
+16508,2022,ONION,Kharif,Madhya Pradesh,Yield,Tonnes/Hectare,20.3562,Research,2025-12-03,GOI
+16509,2022,ONION,Rabi,Madhya Pradesh,Yield,Tonnes/Hectare,20.3562,Research,2025-12-03,GOI
+16510,2022,Rice,Kharif,Madhya Pradesh,Yield,Tonnes/Hectare,2.304,Research,2025-12-03,GOI
+16511,2022,SESAMUM,Kharif,Madhya Pradesh,Yield,Tonnes/Hectare,0.545,Research,2025-12-03,GOI
+16512,2022,Rapeseed,Rabi,Madhya Pradesh,Yield,Tonnes/Hectare,1.53,Research,2025-12-03,GOI
+16513,2022,COTTON,Kharif,Madhya Pradesh,Price,Rs/Tonne,69300.0,Research,2025-12-03,GOI
+16514,2022,JOWAR,Kharif,Madhya Pradesh,Price,Rs/Tonne,39200.0,Research,2025-12-03,GOI
+16515,2022,ONION,Kharif,Madhya Pradesh,Price,Rs/Tonne,10100.0,Research,2025-12-03,GOI
+16516,2022,ONION,Rabi,Madhya Pradesh,Price,Rs/Tonne,10100.0,Research,2025-12-03,GOI
+16517,2022,Rice,Kharif,Madhya Pradesh,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16518,2022,Rapeseed,Rabi,Madhya Pradesh,Price,Rs/Tonne,69000.0,Research,2025-12-03,GOI
+16519,2022,SESAMUM,Kharif,Madhya Pradesh,Price,Rs/Tonne,108000.0,Research,2025-12-03,GOI
+16520,2022,BAJRA,Kharif,Maharastra,Yield,Tonnes/Hectare,1.311,Research,2025-12-03,GOI
+16521,2022,COTTON,Kharif,Maharastra,Yield,Tonnes/Hectare,0.396,Research,2025-12-03,GOI
+16522,2022,GROUNDNUT,Kharif,Maharastra,Yield,Tonnes/Hectare,1.457,Research,2025-12-03,GOI
+16523,2022,JOWAR,Kharif,Maharastra,Yield,Tonnes/Hectare,1.175,Research,2025-12-03,GOI
+16524,2022,ONION,Kharif,Maharastra,Yield,Tonnes/Hectare,13.8607,Research,2025-12-03,GOI
+16525,2022,ONION,Rabi,Maharastra,Yield,Tonnes/Hectare,13.8607,Research,2025-12-03,GOI
+16526,2022,Rice,Kharif,Maharastra,Yield,Tonnes/Hectare,2.341,Research,2025-12-03,GOI
+16527,2022,Sugar,Kharif,Maharastra,Yield,Tonnes/Hectare,94.247,Research,2025-12-03,GOI
+16528,2022,BAJRA,Kharif,Maharastra,Price,Rs/Tonne,25400.0,Research,2025-12-03,GOI
+16529,2022,COTTON,Kharif,Maharastra,Price,Rs/Tonne,69300.0,Research,2025-12-03,GOI
+16530,2022,GROUNDNUT,Kharif,Maharastra,Price,Rs/Tonne,53880.0,Research,2025-12-03,GOI
+16531,2022,JOWAR,Kharif,Maharastra,Price,Rs/Tonne,39200.0,Research,2025-12-03,GOI
+16532,2022,ONION,Kharif,Maharastra,Price,Rs/Tonne,10100.0,Research,2025-12-03,GOI
+16533,2022,ONION,Rabi,Maharastra,Price,Rs/Tonne,10100.0,Research,2025-12-03,GOI
+16534,2022,Rice,Kharif,Maharastra,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16535,2022,Sugar,Kharif,Maharastra,Price,Rs/Tonne,33000.0,Research,2025-12-03,GOI
+16536,2022,COTTON,Kharif,Odisha,Yield,Tonnes/Hectare,0.596,Research,2025-12-03,GOI
+16537,2022,GROUNDNUT,Kharif,Odisha,Yield,Tonnes/Hectare,1.692,Research,2025-12-03,GOI
+16538,2022,NIGERSEED,Kharif,Odisha,Yield,Tonnes/Hectare,0.387,Research,2025-12-03,GOI
+16539,2022,Rice,Kharif,Odisha,Yield,Tonnes/Hectare,2.477,Research,2025-12-03,GOI
+16540,2022,RAGI,Kharif,Odisha,Yield,Tonnes/Hectare,0.856,Research,2025-12-03,GOI
+16541,2022,SESAMUM,Kharif,Odisha,Yield,Tonnes/Hectare,0.3,Research,2025-12-03,GOI
+16542,2022,Rapeseed,Rabi,Odisha,Yield,Tonnes/Hectare,0.292,Research,2025-12-03,GOI
+16543,2022,COTTON,Kharif,Odisha,Price,Rs/Tonne,69300.0,Research,2025-12-03,GOI
+16544,2022,GROUNDNUT,Kharif,Odisha,Price,Rs/Tonne,53880.0,Research,2025-12-03,GOI
+16545,2022,NIGERSEED,Kharif,Odisha,Price,Rs/Tonne,53000.0,Research,2025-12-03,GOI
+16546,2022,Rice,Kharif,Odisha,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16547,2022,RAGI,Kharif,Odisha,Price,Rs/Tonne,51000.0,Research,2025-12-03,GOI
+16548,2022,Rapeseed,Rabi,Odisha,Price,Rs/Tonne,69000.0,Research,2025-12-03,GOI
+16549,2022,SESAMUM,Kharif,Odisha,Price,Rs/Tonne,108000.0,Research,2025-12-03,GOI
+16550,2022,COTTON,Kharif,Punjab,Yield,Tonnes/Hectare,0.43,Research,2025-12-03,GOI
+16551,2022,Rice,Kharif,Punjab,Yield,Tonnes/Hectare,4.428,Research,2025-12-03,GOI
+16552,2022,Rapeseed,Rabi,Punjab,Yield,Tonnes/Hectare,1.777,Research,2025-12-03,GOI
+16553,2022,COTTON,Kharif,Punjab,Price,Rs/Tonne,69300.0,Research,2025-12-03,GOI
+16554,2022,Rice,Kharif,Punjab,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16555,2022,Rapeseed,Rabi,Punjab,Price,Rs/Tonne,69000.0,Research,2025-12-03,GOI
+16556,2022,BAJRA,Kharif,Rajasthan,Yield,Tonnes/Hectare,1.114,Research,2025-12-03,GOI
+16557,2022,Barley,Rabi,Rajasthan,Yield,Tonnes/Hectare,3.342,Research,2025-12-03,GOI
+16558,2022,COTTON,Kharif,Rajasthan,Yield,Tonnes/Hectare,0.484,Research,2025-12-03,GOI
+16559,2022,GROUNDNUT,Kharif,Rajasthan,Yield,Tonnes/Hectare,2.026,Research,2025-12-03,GOI
+16560,2022,JOWAR,Kharif,Rajasthan,Yield,Tonnes/Hectare,0.846,Research,2025-12-03,GOI
+16561,2022,ONION,Kharif,Rajasthan,Yield,Tonnes/Hectare,15.5443,Research,2025-12-03,GOI
+16562,2022,ONION,Rabi,Rajasthan,Yield,Tonnes/Hectare,15.5443,Research,2025-12-03,GOI
+16563,2022,SESAMUM,Kharif,Rajasthan,Yield,Tonnes/Hectare,0.378,Research,2025-12-03,GOI
+16564,2022,Rapeseed,Rabi,Rajasthan,Yield,Tonnes/Hectare,1.549,Research,2025-12-03,GOI
+16565,2022,BAJRA,Kharif,Rajasthan,Price,Rs/Tonne,25400.0,Research,2025-12-03,GOI
+16566,2022,Barley,Rabi,Rajasthan,Price,Rs/Tonne,23300.0,Research,2025-12-03,GOI
+16567,2022,COTTON,Kharif,Rajasthan,Price,Rs/Tonne,69300.0,Research,2025-12-03,GOI
+16568,2022,GROUNDNUT,Kharif,Rajasthan,Price,Rs/Tonne,53880.0,Research,2025-12-03,GOI
+16569,2022,JOWAR,Kharif,Rajasthan,Price,Rs/Tonne,39200.0,Research,2025-12-03,GOI
+16570,2022,ONION,Kharif,Rajasthan,Price,Rs/Tonne,10100.0,Research,2025-12-03,GOI
+16571,2022,ONION,Rabi,Rajasthan,Price,Rs/Tonne,10100.0,Research,2025-12-03,GOI
+16572,2022,Rapeseed,Rabi,Rajasthan,Price,Rs/Tonne,69000.0,Research,2025-12-03,GOI
+16573,2022,SESAMUM,Kharif,Rajasthan,Price,Rs/Tonne,108000.0,Research,2025-12-03,GOI
+16574,2022,COTTON,Kharif,Tamil Nadu,Yield,Tonnes/Hectare,0.346,Research,2025-12-03,GOI
+16575,2022,GROUNDNUT,Kharif,Tamil Nadu,Yield,Tonnes/Hectare,1.962,Research,2025-12-03,GOI
+16576,2022,JOWAR,Kharif,Tamil Nadu,Yield,Tonnes/Hectare,1.309,Research,2025-12-03,GOI
+16577,2022,ONION,Kharif,Tamil Nadu,Yield,Tonnes/Hectare,9.60665,Research,2025-12-03,GOI
+16578,2022,ONION,Rabi,Tamil Nadu,Yield,Tonnes/Hectare,9.60665,Research,2025-12-03,GOI
+16579,2022,Rice,Kharif,Tamil Nadu,Yield,Tonnes/Hectare,3.375,Research,2025-12-03,GOI
+16580,2022,Sugar,Kharif,Tamil Nadu,Yield,Tonnes/Hectare,101.435,Research,2025-12-03,GOI
+16581,2022,COTTON,Kharif,Tamil Nadu,Price,Rs/Tonne,69300.0,Research,2025-12-03,GOI
+16582,2022,GROUNDNUT,Kharif,Tamil Nadu,Price,Rs/Tonne,53880.0,Research,2025-12-03,GOI
+16583,2022,JOWAR,Kharif,Tamil Nadu,Price,Rs/Tonne,39200.0,Research,2025-12-03,GOI
+16584,2022,ONION,Kharif,Tamil Nadu,Price,Rs/Tonne,10100.0,Research,2025-12-03,GOI
+16585,2022,ONION,Rabi,Tamil Nadu,Price,Rs/Tonne,10100.0,Research,2025-12-03,GOI
+16586,2022,Rice,Kharif,Tamil Nadu,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16587,2022,Sugar,Kharif,Tamil Nadu,Price,Rs/Tonne,33000.0,Research,2025-12-03,GOI
+16588,2022,COTTON,Kharif,Telangana,Yield,Tonnes/Hectare,0.521,Research,2025-12-03,GOI
+16589,2022,GROUNDNUT,Kharif,Telangana,Yield,Tonnes/Hectare,2.137,Research,2025-12-03,GOI
+16590,2022,Rice,Kharif,Telangana,Yield,Tonnes/Hectare,3.639,Research,2025-12-03,GOI
+16591,2022,SESAMUM,Kharif,Telangana,Yield,Tonnes/Hectare,0.416,Research,2025-12-03,GOI
+16592,2022,COTTON,Kharif,Telangana,Price,Rs/Tonne,69300.0,Research,2025-12-03,GOI
+16593,2022,GROUNDNUT,Kharif,Telangana,Price,Rs/Tonne,53880.0,Research,2025-12-03,GOI
+16594,2022,Rice,Kharif,Telangana,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16595,2022,SESAMUM,Kharif,Telangana,Price,Rs/Tonne,108000.0,Research,2025-12-03,GOI
+16596,2022,BAJRA,Kharif,Uttar Pradesh,Yield,Tonnes/Hectare,2.033,Research,2025-12-03,GOI
+16597,2022,Barley,Rabi,Uttar Pradesh,Yield,Tonnes/Hectare,3.044,Research,2025-12-03,GOI
+16598,2022,GROUNDNUT,Kharif,Uttar Pradesh,Yield,Tonnes/Hectare,1.075,Research,2025-12-03,GOI
+16599,2022,Rice,Kharif,Uttar Pradesh,Yield,Tonnes/Hectare,2.802,Research,2025-12-03,GOI
+16600,2022,POTATO,Rabi,Uttar Pradesh,Yield,Tonnes/Hectare,29.0,Research,2025-12-03,GOI
+16601,2022,SESAMUM,Kharif,Uttar Pradesh,Yield,Tonnes/Hectare,0.291,Research,2025-12-03,GOI
+16602,2022,Sugar,Kharif,Uttar Pradesh,Yield,Tonnes/Hectare,82.3,Research,2025-12-03,GOI
+16603,2022,Rapeseed,Rabi,Uttar Pradesh,Yield,Tonnes/Hectare,1.481,Research,2025-12-03,GOI
+16604,2022,BAJRA,Kharif,Uttar Pradesh,Price,Rs/Tonne,25400.0,Research,2025-12-03,GOI
+16605,2022,Barley,Rabi,Uttar Pradesh,Price,Rs/Tonne,23300.0,Research,2025-12-03,GOI
+16606,2022,GROUNDNUT,Kharif,Uttar Pradesh,Price,Rs/Tonne,53880.0,Research,2025-12-03,GOI
+16607,2022,Rice,Kharif,Uttar Pradesh,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16608,2022,POTATO,Rabi,Uttar Pradesh,Price,Rs/Tonne,14500.0,Research,2025-12-03,GOI
+16609,2022,Rapeseed,Rabi,Uttar Pradesh,Price,Rs/Tonne,69000.0,Research,2025-12-03,GOI
+16610,2022,SESAMUM,Kharif,Uttar Pradesh,Price,Rs/Tonne,108000.0,Research,2025-12-03,GOI
+16611,2022,Sugar,Kharif,Uttar Pradesh,Price,Rs/Tonne,33000.0,Research,2025-12-03,GOI
+16612,2022,GROUNDNUT,Kharif,West Bengal,Yield,Tonnes/Hectare,1.56,Research,2025-12-03,GOI
+16613,2022,Rice,Kharif,West Bengal,Yield,Tonnes/Hectare,2.736,Research,2025-12-03,GOI
+16614,2022,POTATO,Rabi,West Bengal,Yield,Tonnes/Hectare,27.0,Research,2025-12-03,GOI
+16615,2022,SESAMUM,Kharif,West Bengal,Yield,Tonnes/Hectare,0.705,Research,2025-12-03,GOI
+16616,2022,Rapeseed,Rabi,West Bengal,Yield,Tonnes/Hectare,1.25,Research,2025-12-03,GOI
+16617,2022,GROUNDNUT,Kharif,West Bengal,Price,Rs/Tonne,53880.0,Research,2025-12-03,GOI
+16618,2022,Rice,Kharif,West Bengal,Price,Rs/Tonne,25800.0,Research,2025-12-03,GOI
+16619,2022,POTATO,Rabi,West Bengal,Price,Rs/Tonne,14500.0,Research,2025-12-03,GOI
+16620,2022,Rapeseed,Rabi,West Bengal,Price,Rs/Tonne,69000.0,Research,2025-12-03,GOI
+16621,2022,SESAMUM,Kharif,West Bengal,Price,Rs/Tonne,108000.0,Research,2025-12-03,GOI
+15650,2022,Bengal Gram,Rabi,Andhra Pradesh,Price,Rs/Tonne,57400.0,Tech,2025-09-12,Tech
+15651,2022,Bengal Gram,Rabi,Bihar,Price,Rs/Tonne,63450.0,Tech,2025-09-12,Tech
+15652,2022,Bengal Gram,Rabi,Chhattisgarh,Price,Rs/Tonne,63950.0,Tech,2025-09-12,Tech
+15653,2022,Bengal Gram,Rabi,Gujarat,Price,Rs/Tonne,59450.0,Tech,2025-09-12,Tech
+15654,2022,Bengal Gram,Rabi,Haryana,Price,Rs/Tonne,60950.0,Tech,2025-09-12,Tech
+15655,2022,Bengal Gram,Rabi,Jharkhand,Price,Rs/Tonne,64450.0,Tech,2025-09-12,Tech
+15656,2022,Bengal Gram,Rabi,Karnataka,Price,Rs/Tonne,63050.0,Tech,2025-09-12,Tech
+15657,2022,Bengal Gram,Rabi,Madhya Pradesh,Price,Rs/Tonne,58100.0,Tech,2025-09-12,Tech
+15658,2022,Bengal Gram,Rabi,Maharastra,Price,Rs/Tonne,58500.0,Tech,2025-09-12,Tech
+15659,2022,Bengal Gram,Rabi,Rajasthan,Price,Rs/Tonne,61200.0,Tech,2025-09-12,Tech
+15660,2022,Bengal Gram,Rabi,Telangana,Price,Rs/Tonne,57400.0,Tech,2025-09-12,Tech
+15661,2022,Bengal Gram,Rabi,Uttar Pradesh,Price,Rs/Tonne,65000.0,Tech,2025-09-12,Tech
+15662,2022,MAIZE,Kharif,Andhra Pradesh,Price,Rs/Tonne,21350.0,Tech,2025-09-12,Tech
+15663,2022,MAIZE,Kharif,Bihar,Price,Rs/Tonne,23450.0,Tech,2025-09-12,Tech
+15664,2022,MAIZE,Kharif,Gujarat,Price,Rs/Tonne,22550.0,Tech,2025-09-12,Tech
+15665,2022,MAIZE,Kharif,Himachal Pradesh,Price,Rs/Tonne,21500.0,Tech,2025-09-12,Tech
+15666,2022,MAIZE,Kharif,Jharkhand,Price,Rs/Tonne,23600.0,Tech,2025-09-12,Tech
+15667,2022,MAIZE,Kharif,Karnataka,Price,Rs/Tonne,23750.0,Tech,2025-09-12,Tech
+15668,2022,MAIZE,Kharif,Madhya Pradesh,Price,Rs/Tonne,22000.0,Tech,2025-09-12,Tech
+15669,2022,MAIZE,Kharif,Maharastra,Price,Rs/Tonne,23900.0,Tech,2025-09-12,Tech
+15670,2022,MAIZE,Kharif,Odisha,Price,Rs/Tonne,20000.0,Tech,2025-09-12,Tech
+15671,2022,MAIZE,Kharif,Punjab,Price,Rs/Tonne,22320.0,Tech,2025-09-12,Tech
+15672,2022,MAIZE,Kharif,Rajasthan,Price,Rs/Tonne,22100.0,Tech,2025-09-12,Tech
+15673,2022,MAIZE,Kharif,Tamil Nadu,Price,Rs/Tonne,25000.0,Tech,2025-09-12,Tech
+15674,2022,MAIZE,Kharif,Telangana,Price,Rs/Tonne,22800.0,Tech,2025-09-12,Tech
+15675,2022,MAIZE,Kharif,Uttar Pradesh,Price,Rs/Tonne,21350.0,Tech,2025-09-12,Tech
+15676,2022,MAIZE,Rabi,Andhra Pradesh,Price,Rs/Tonne,21350.0,Tech,2025-09-12,Tech
+15677,2022,MAIZE,Rabi,Bihar,Price,Rs/Tonne,23450.0,Tech,2025-09-12,Tech
+15678,2022,MAIZE,Rabi,Gujarat,Price,Rs/Tonne,22550.0,Tech,2025-09-12,Tech
+15679,2022,MAIZE,Rabi,Himachal Pradesh,Price,Rs/Tonne,21500.0,Tech,2025-09-12,Tech
+15680,2022,MAIZE,Rabi,Jharkhand,Price,Rs/Tonne,23600.0,Tech,2025-09-12,Tech
+15681,2022,MAIZE,Rabi,Karnataka,Price,Rs/Tonne,23750.0,Tech,2025-09-12,Tech
+15682,2022,MAIZE,Rabi,Madhya Pradesh,Price,Rs/Tonne,22000.0,Tech,2025-09-12,Tech
+15683,2022,MAIZE,Rabi,Maharastra,Price,Rs/Tonne,23900.0,Tech,2025-09-12,Tech
+15684,2022,MAIZE,Rabi,Odisha,Price,Rs/Tonne,20000.0,Tech,2025-09-12,Tech
+15685,2022,MAIZE,Rabi,Punjab,Price,Rs/Tonne,22320.0,Tech,2025-09-12,Tech
+15686,2022,MAIZE,Rabi,Rajasthan,Price,Rs/Tonne,22100.0,Tech,2025-09-12,Tech
+15687,2022,MAIZE,Rabi,Tamil Nadu,Price,Rs/Tonne,25000.0,Tech,2025-09-12,Tech
+15688,2022,MAIZE,Rabi,Telangana,Price,Rs/Tonne,22800.0,Tech,2025-09-12,Tech
+15689,2022,MAIZE,Rabi,Uttar Pradesh,Price,Rs/Tonne,21350.0,Tech,2025-09-12,Tech
+15690,2022,Masoor,Rabi,Bihar,Price,Rs/Tonne,67650.0,Tech,2025-09-12,Tech
+15691,2022,Masoor,Rabi,Madhya Pradesh,Price,Rs/Tonne,62150.0,Tech,2025-09-12,Tech
+15692,2022,Masoor,Rabi,Uttar Pradesh,Price,Rs/Tonne,68050.0,Tech,2025-09-12,Tech
+15693,2022,Masoor,Rabi,West Bengal,Price,Rs/Tonne,67900.0,Tech,2025-09-12,Tech
+15694,2022,Moong,Kharif,Andhra Pradesh,Price,Rs/Tonne,73950.0,Tech,2025-09-12,Tech
+15695,2022,Moong,Kharif,Gujarat,Price,Rs/Tonne,76000.0,Tech,2025-09-12,Tech
+15696,2022,Moong,Kharif,Karnataka,Price,Rs/Tonne,80050.0,Tech,2025-09-12,Tech
+15697,2022,Moong,Kharif,Maharastra,Price,Rs/Tonne,74950.0,Tech,2025-09-12,Tech
+15698,2022,Moong,Kharif,Odisha,Price,Rs/Tonne,73000.0,Tech,2025-09-12,Tech
+15699,2022,Moong,Kharif,Punjab,Price,Rs/Tonne,74900.0,Tech,2025-09-12,Tech
+15700,2022,Moong,Kharif,Rajasthan,Price,Rs/Tonne,76950.0,Tech,2025-09-12,Tech
+15701,2022,Moong,Kharif,Tamil Nadu,Price,Rs/Tonne,74950.0,Tech,2025-09-12,Tech
+15702,2022,Moong,Kharif,Telangana,Price,Rs/Tonne,73950.0,Tech,2025-09-12,Tech
+15703,2022,Moong,Kharif,Uttar Pradesh,Price,Rs/Tonne,75000.0,Tech,2025-09-12,Tech
+15704,2022,Moong,Kharif,West Bengal,Price,Rs/Tonne,73500.0,Tech,2025-09-12,Tech
+15705,2022,Moong,Rabi,Andhra Pradesh,Price,Rs/Tonne,73950.0,Tech,2025-09-12,Tech
+15706,2022,Moong,Rabi,Gujarat,Price,Rs/Tonne,76000.0,Tech,2025-09-12,Tech
+15707,2022,Moong,Rabi,Karnataka,Price,Rs/Tonne,80050.0,Tech,2025-09-12,Tech
+15708,2022,Moong,Rabi,Maharastra,Price,Rs/Tonne,74950.0,Tech,2025-09-12,Tech
+15709,2022,Moong,Rabi,Odisha,Price,Rs/Tonne,73000.0,Tech,2025-09-12,Tech
+15710,2022,Moong,Rabi,Punjab,Price,Rs/Tonne,74900.0,Tech,2025-09-12,Tech
+15711,2022,Moong,Rabi,Rajasthan,Price,Rs/Tonne,76950.0,Tech,2025-09-12,Tech
+15712,2022,Moong,Rabi,Tamil Nadu,Price,Rs/Tonne,74950.0,Tech,2025-09-12,Tech
+15713,2022,Moong,Rabi,Telangana,Price,Rs/Tonne,73950.0,Tech,2025-09-12,Tech
+15714,2022,Moong,Rabi,Uttar Pradesh,Price,Rs/Tonne,75000.0,Tech,2025-09-12,Tech
+15715,2022,Moong,Rabi,West Bengal,Price,Rs/Tonne,73500.0,Tech,2025-09-12,Tech
+15716,2022,Soybeans,Kharif,Gujarat,Price,Rs/Tonne,39800.0,Tech,2025-09-12,Tech
+15717,2022,Soybeans,Kharif,Himachal Pradesh,Price,Rs/Tonne,46000.0,Tech,2025-09-12,Tech
+15718,2022,Soybeans,Kharif,Karnataka,Price,Rs/Tonne,47000.0,Tech,2025-09-12,Tech
+15719,2022,Soybeans,Kharif,Madhya Pradesh,Price,Rs/Tonne,43500.0,Tech,2025-09-12,Tech
+15720,2022,Soybeans,Kharif,Maharastra,Price,Rs/Tonne,42600.0,Tech,2025-09-12,Tech
+15721,2022,Soybeans,Kharif,Rajasthan,Price,Rs/Tonne,43500.0,Tech,2025-09-12,Tech
+15722,2022,Soybeans,Kharif,Telangana,Price,Rs/Tonne,45500.0,Tech,2025-09-12,Tech
+15723,2022,Tur,Kharif,Andhra Pradesh,Price,Rs/Tonne,61050.0,Tech,2025-09-12,Tech
+15724,2022,Tur,Kharif,Gujarat,Price,Rs/Tonne,55000.0,Tech,2025-09-12,Tech
+15725,2022,Tur,Kharif,Karnataka,Price,Rs/Tonne,66900.0,Tech,2025-09-12,Tech
+15726,2022,Tur,Kharif,Madhya Pradesh,Price,Rs/Tonne,66000.0,Tech,2025-09-12,Tech
+15727,2022,Tur,Kharif,Maharastra,Price,Rs/Tonne,62900.0,Tech,2025-09-12,Tech
+15728,2022,Tur,Kharif,Odisha,Price,Rs/Tonne,75500.0,Tech,2025-09-12,Tech
+15729,2022,Tur,Kharif,Telangana,Price,Rs/Tonne,75500.0,Tech,2025-09-12,Tech
+15730,2022,Tur,Kharif,Uttar Pradesh,Price,Rs/Tonne,61950.0,Tech,2025-09-12,Tech
+15731,2022,Urad,Kharif,Andhra Pradesh,Price,Rs/Tonne,74900.0,Tech,2025-09-12,Tech
+15732,2022,Urad,Kharif,Gujarat,Price,Rs/Tonne,63100.0,Tech,2025-09-12,Tech
+15733,2022,Urad,Kharif,Himachal Pradesh,Price,Rs/Tonne,73000.0,Tech,2025-09-12,Tech
+15734,2022,Urad,Kharif,Karnataka,Price,Rs/Tonne,75050.0,Tech,2025-09-12,Tech
+15735,2022,Urad,Kharif,Madhya Pradesh,Price,Rs/Tonne,77950.0,Tech,2025-09-12,Tech
+15736,2022,Urad,Kharif,Maharastra,Price,Rs/Tonne,72850.0,Tech,2025-09-12,Tech
+15737,2022,Urad,Kharif,Odisha,Price,Rs/Tonne,75000.0,Tech,2025-09-12,Tech
+15738,2022,Urad,Kharif,Rajasthan,Price,Rs/Tonne,75000.0,Tech,2025-09-12,Tech
+15739,2022,Urad,Kharif,Tamil Nadu,Price,Rs/Tonne,74900.0,Tech,2025-09-12,Tech
+15740,2022,Urad,Kharif,Uttar Pradesh,Price,Rs/Tonne,77900.0,Tech,2025-09-12,Tech
+15741,2022,Urad,Kharif,West Bengal,Price,Rs/Tonne,76000.0,Tech,2025-09-12,Tech
+15742,2022,Urad,Rabi,Andhra Pradesh,Price,Rs/Tonne,74900.0,Tech,2025-09-12,Tech
+15743,2022,Urad,Rabi,Gujarat,Price,Rs/Tonne,63100.0,Tech,2025-09-12,Tech
+15744,2022,Urad,Rabi,Himachal Pradesh,Price,Rs/Tonne,73000.0,Tech,2025-09-12,Tech
+15745,2022,Urad,Rabi,Karnataka,Price,Rs/Tonne,75050.0,Tech,2025-09-12,Tech
+15746,2022,Urad,Rabi,Madhya Pradesh,Price,Rs/Tonne,77950.0,Tech,2025-09-12,Tech
+15747,2022,Urad,Rabi,Maharastra,Price,Rs/Tonne,72850.0,Tech,2025-09-12,Tech
+15748,2022,Urad,Rabi,Odisha,Price,Rs/Tonne,75000.0,Tech,2025-09-12,Tech
+15749,2022,Urad,Rabi,Rajasthan,Price,Rs/Tonne,75000.0,Tech,2025-09-12,Tech
+15750,2022,Urad,Rabi,Tamil Nadu,Price,Rs/Tonne,74900.0,Tech,2025-09-12,Tech
+15751,2022,Urad,Rabi,Uttar Pradesh,Price,Rs/Tonne,77900.0,Tech,2025-09-12,Tech
+15752,2022,Urad,Rabi,West Bengal,Price,Rs/Tonne,76000.0,Tech,2025-09-12,Tech
+15753,2022,WHEAT,Rabi,Bihar,Price,Rs/Tonne,31000.0,Tech,2025-09-12,Tech
+15754,2022,WHEAT,Rabi,Chhattisgarh,Price,Rs/Tonne,26000.0,Tech,2025-09-12,Tech
+15755,2022,WHEAT,Rabi,Gujarat,Price,Rs/Tonne,27600.0,Tech,2025-09-12,Tech
+15756,2022,WHEAT,Rabi,Haryana,Price,Rs/Tonne,27550.0,Tech,2025-09-12,Tech
+15757,2022,WHEAT,Rabi,Himachal Pradesh,Price,Rs/Tonne,29600.0,Tech,2025-09-12,Tech
+15758,2022,WHEAT,Rabi,Jharkhand ,Price,Rs/Tonne,31000.0,Tech,2025-09-12,Tech
+15759,2022,WHEAT,Rabi,Karnataka,Price,Rs/Tonne,31900.0,Tech,2025-09-12,Tech
+15760,2022,WHEAT,Rabi,Madhya Pradesh,Price,Rs/Tonne,27850.0,Tech,2025-09-12,Tech
+15761,2022,WHEAT,Rabi,Maharastra,Price,Rs/Tonne,26650.0,Tech,2025-09-12,Tech
+15762,2022,WHEAT,Rabi,Punjab,Price,Rs/Tonne,25600.0,Tech,2025-09-12,Tech
+15763,2022,WHEAT,Rabi,Rajasthan,Price,Rs/Tonne,26000.0,Tech,2025-09-12,Tech
+15764,2022,WHEAT,Rabi,Uttar Pradesh,Price,Rs/Tonne,26600.0,Tech,2025-09-12,Tech
+15765,2022,WHEAT,Rabi,West Bengal,Price,Rs/Tonne,28650.0,Tech,2025-09-12,Tech
+15766,2022,Bengal Gram,Rabi,Andhra Pradesh,Yield,Tonnes/Hectare,1.388,Tech,2025-09-12,Tech
+15767,2022,Bengal Gram,Rabi,Bihar,Yield,Tonnes/Hectare,1.076,Tech,2025-09-12,Tech
+15768,2022,Bengal Gram,Rabi,Chhattisgarh,Yield,Tonnes/Hectare,0.912,Tech,2025-09-12,Tech
+15769,2022,Bengal Gram,Rabi,Gujarat,Yield,Tonnes/Hectare,1.699,Tech,2025-09-12,Tech
+15770,2022,Bengal Gram,Rabi,Haryana,Yield,Tonnes/Hectare,0.911,Tech,2025-09-12,Tech
+15771,2022,Bengal Gram,Rabi,Jharkhand,Yield,Tonnes/Hectare,1.172,Tech,2025-09-12,Tech
+15772,2022,Bengal Gram,Rabi,Karnataka,Yield,Tonnes/Hectare,0.68,Tech,2025-09-12,Tech
+15773,2022,Bengal Gram,Rabi,Madhya Pradesh,Yield,Tonnes/Hectare,1.468,Tech,2025-09-12,Tech
+15774,2022,Bengal Gram,Rabi,Maharastra,Yield,Tonnes/Hectare,1.074,Tech,2025-09-12,Tech
+15775,2022,Bengal Gram,Rabi,Rajasthan,Yield,Tonnes/Hectare,0.934,Tech,2025-09-12,Tech
+15776,2022,Bengal Gram,Rabi,Telangana,Yield,Tonnes/Hectare,1.568,Tech,2025-09-12,Tech
+15777,2022,Bengal Gram,Rabi,Uttar Pradesh,Yield,Tonnes/Hectare,1.321,Tech,2025-09-12,Tech
+15778,2022,MAIZE,Kharif,Andhra Pradesh,Yield,Tonnes/Hectare,4.046,Tech,2025-09-12,Tech
+15779,2022,MAIZE,Kharif,Bihar,Yield,Tonnes/Hectare,2.458,Tech,2025-09-12,Tech
+15780,2022,MAIZE,Kharif,Gujarat,Yield,Tonnes/Hectare,1.906,Tech,2025-09-12,Tech
+15781,2022,MAIZE,Kharif,Himachal Pradesh,Yield,Tonnes/Hectare,2.654,Tech,2025-09-12,Tech
+15782,2022,MAIZE,Kharif,Jharkhand,Yield,Tonnes/Hectare,1.952,Tech,2025-09-12,Tech
+15783,2022,MAIZE,Kharif,Karnataka,Yield,Tonnes/Hectare,2.985,Tech,2025-09-12,Tech
+15784,2022,MAIZE,Kharif,Madhya Pradesh,Yield,Tonnes/Hectare,3.191,Tech,2025-09-12,Tech
+15785,2022,MAIZE,Kharif,Maharastra,Yield,Tonnes/Hectare,3.08,Tech,2025-09-12,Tech
+15786,2022,MAIZE,Kharif,Odisha,Yield,Tonnes/Hectare,2.998,Tech,2025-09-12,Tech
+15787,2022,MAIZE,Kharif,Punjab,Yield,Tonnes/Hectare,4.393,Tech,2025-09-12,Tech
+15788,2022,MAIZE,Kharif,Rajasthan,Yield,Tonnes/Hectare,2.224,Tech,2025-09-12,Tech
+15789,2022,MAIZE,Kharif,Tamil Nadu,Yield,Tonnes/Hectare,7.797,Tech,2025-09-12,Tech
+15790,2022,MAIZE,Kharif,Telangana,Yield,Tonnes/Hectare,4.554,Tech,2025-09-12,Tech
+15791,2022,MAIZE,Kharif,Uttar Pradesh,Yield,Tonnes/Hectare,2.143,Tech,2025-09-12,Tech
+15792,2022,MAIZE,Rabi,Andhra Pradesh,Yield,Tonnes/Hectare,8.859,Tech,2025-09-12,Tech
+15793,2022,MAIZE,Rabi,Bihar,Yield,Tonnes/Hectare,7.12,Tech,2025-09-12,Tech
+15794,2022,MAIZE,Rabi,Gujarat,Yield,Tonnes/Hectare,2.748,Tech,2025-09-12,Tech
+15795,2022,MAIZE,Rabi,Himachal Pradesh,Yield,Tonnes/Hectare,2.654,Tech,2025-09-12,Tech
+15796,2022,MAIZE,Rabi,Jharkhand,Yield,Tonnes/Hectare,1.622,Tech,2025-09-12,Tech
+15797,2022,MAIZE,Rabi,Karnataka,Yield,Tonnes/Hectare,3.49,Tech,2025-09-12,Tech
+15798,2022,MAIZE,Rabi,Madhya Pradesh,Yield,Tonnes/Hectare,3.191,Tech,2025-09-12,Tech
+15799,2022,MAIZE,Rabi,Maharastra,Yield,Tonnes/Hectare,2.669,Tech,2025-09-12,Tech
+15800,2022,MAIZE,Rabi,Odisha,Yield,Tonnes/Hectare,2.998,Tech,2025-09-12,Tech
+15801,2022,MAIZE,Rabi,Punjab,Yield,Tonnes/Hectare,4.393,Tech,2025-09-12,Tech
+15802,2022,MAIZE,Rabi,Rajasthan,Yield,Tonnes/Hectare,5.406,Tech,2025-09-12,Tech
+15803,2022,MAIZE,Rabi,Tamil Nadu,Yield,Tonnes/Hectare,6.141,Tech,2025-09-12,Tech
+15804,2022,MAIZE,Rabi,Telangana,Yield,Tonnes/Hectare,6.511,Tech,2025-09-12,Tech
+15805,2022,MAIZE,Rabi,Uttar Pradesh,Yield,Tonnes/Hectare,2.822,Tech,2025-09-12,Tech
+15806,2022,Masoor,Rabi,Bihar,Yield,Tonnes/Hectare,0.985,Tech,2025-09-12,Tech
+15807,2022,Masoor,Rabi,Madhya Pradesh,Yield,Tonnes/Hectare,0.971,Tech,2025-09-12,Tech
+15808,2022,Masoor,Rabi,Uttar Pradesh,Yield,Tonnes/Hectare,0.95,Tech,2025-09-12,Tech
+15809,2022,Masoor,Rabi,West Bengal,Yield,Tonnes/Hectare,0.96,Tech,2025-09-12,Tech
+15810,2022,Moong,Kharif,Andhra Pradesh,Yield,Tonnes/Hectare,0.541,Tech,2025-09-12,Tech
+15811,2022,Moong,Kharif,Gujarat,Yield,Tonnes/Hectare,0.586,Tech,2025-09-12,Tech
+15812,2022,Moong,Kharif,Karnataka,Yield,Tonnes/Hectare,0.385,Tech,2025-09-12,Tech
+15813,2022,Moong,Kharif,Maharastra,Yield,Tonnes/Hectare,0.589,Tech,2025-09-12,Tech
+15814,2022,Moong,Kharif,Odisha,Yield,Tonnes/Hectare,0.301,Tech,2025-09-12,Tech
+15815,2022,Moong,Kharif,Punjab,Yield,Tonnes/Hectare,0.78,Tech,2025-09-12,Tech
+15816,2022,Moong,Kharif,Rajasthan,Yield,Tonnes/Hectare,0.504,Tech,2025-09-12,Tech
+15817,2022,Moong,Kharif,Tamil Nadu,Yield,Tonnes/Hectare,0.793,Tech,2025-09-12,Tech
+15818,2022,Moong,Kharif,Telangana,Yield,Tonnes/Hectare,0.672,Tech,2025-09-12,Tech
+15819,2022,Moong,Kharif,Uttar Pradesh,Yield,Tonnes/Hectare,0.377,Tech,2025-09-12,Tech
+15820,2022,Moong,Kharif,West Bengal,Yield,Tonnes/Hectare,0.699,Tech,2025-09-12,Tech
+15821,2022,Moong,Rabi,Andhra Pradesh,Yield,Tonnes/Hectare,1.045,Tech,2025-09-12,Tech
+15822,2022,Moong,Rabi,Gujarat,Yield,Tonnes/Hectare,0.453,Tech,2025-09-12,Tech
+15823,2022,Moong,Rabi,Karnataka,Yield,Tonnes/Hectare,0.307,Tech,2025-09-12,Tech
+15824,2022,Moong,Rabi,Maharastra,Yield,Tonnes/Hectare,0.589,Tech,2025-09-12,Tech
+15825,2022,Moong,Rabi,Odisha,Yield,Tonnes/Hectare,0.301,Tech,2025-09-12,Tech
+15826,2022,Moong,Rabi,Punjab,Yield,Tonnes/Hectare,0.78,Tech,2025-09-12,Tech
+15827,2022,Moong,Rabi,Rajasthan,Yield,Tonnes/Hectare,0.504,Tech,2025-09-12,Tech
+15828,2022,Moong,Rabi,Tamil Nadu,Yield,Tonnes/Hectare,0.306,Tech,2025-09-12,Tech
+15829,2022,Moong,Rabi,Telangana,Yield,Tonnes/Hectare,0.985,Tech,2025-09-12,Tech
+15830,2022,Moong,Rabi,Uttar Pradesh,Yield,Tonnes/Hectare,0.377,Tech,2025-09-12,Tech
+15831,2022,Moong,Rabi,West Bengal,Yield,Tonnes/Hectare,0.771,Tech,2025-09-12,Tech
+15832,2022,Soybeans,Kharif,Gujarat,Yield,Tonnes/Hectare,0.791,Tech,2025-09-12,Tech
+15833,2022,Soybeans,Kharif,Himachal Pradesh,Yield,Tonnes/Hectare,1.6769,Tech,2025-09-12,Tech
+15834,2022,Soybeans,Kharif,Karnataka,Yield,Tonnes/Hectare,0.913,Tech,2025-09-12,Tech
+15835,2022,Soybeans,Kharif,Madhya Pradesh,Yield,Tonnes/Hectare,1.0621,Tech,2025-09-12,Tech
+15836,2022,Soybeans,Kharif,Maharastra,Yield,Tonnes/Hectare,1.03,Tech,2025-09-12,Tech
+15837,2022,Soybeans,Kharif,Rajasthan,Yield,Tonnes/Hectare,1.207,Tech,2025-09-12,Tech
+15838,2022,Soybeans,Kharif,Telangana,Yield,Tonnes/Hectare,1.624,Tech,2025-09-12,Tech
+15839,2022,Tur,Kharif,Andhra Pradesh,Yield,Tonnes/Hectare,0.271,Tech,2025-09-12,Tech
+15840,2022,Tur,Kharif,Gujarat,Yield,Tonnes/Hectare,1.161,Tech,2025-09-12,Tech
+15841,2022,Tur,Kharif,Karnataka,Yield,Tonnes/Hectare,0.666,Tech,2025-09-12,Tech
+15842,2022,Tur,Kharif,Madhya Pradesh,Yield,Tonnes/Hectare,0.844,Tech,2025-09-12,Tech
+15843,2022,Tur,Kharif,Maharastra,Yield,Tonnes/Hectare,1.042,Tech,2025-09-12,Tech
+15844,2022,Tur,Kharif,Odisha,Yield,Tonnes/Hectare,1.036,Tech,2025-09-12,Tech
+15845,2022,Tur,Kharif,Telangana,Yield,Tonnes/Hectare,0.769,Tech,2025-09-12,Tech
+15846,2022,Tur,Kharif,Uttar Pradesh,Yield,Tonnes/Hectare,1.223,Tech,2025-09-12,Tech
+15847,2022,Urad,Kharif,Andhra Pradesh,Yield,Tonnes/Hectare,0.944,Tech,2025-09-12,Tech
+15848,2022,Urad,Kharif,Gujarat,Yield,Tonnes/Hectare,0.611,Tech,2025-09-12,Tech
+15849,2022,Urad,Kharif,Himachal Pradesh,Yield,Tonnes/Hectare,0.719,Tech,2025-09-12,Tech
+15850,2022,Urad,Kharif,Karnataka,Yield,Tonnes/Hectare,0.463,Tech,2025-09-12,Tech
+15851,2022,Urad,Kharif,Madhya Pradesh,Yield,Tonnes/Hectare,0.62,Tech,2025-09-12,Tech
+15852,2022,Urad,Kharif,Maharastra,Yield,Tonnes/Hectare,0.63,Tech,2025-09-12,Tech
+15853,2022,Urad,Kharif,Odisha,Yield,Tonnes/Hectare,0.37,Tech,2025-09-12,Tech
+15854,2022,Urad,Kharif,Rajasthan,Yield,Tonnes/Hectare,0.42,Tech,2025-09-12,Tech
+15855,2022,Urad,Kharif,Tamil Nadu,Yield,Tonnes/Hectare,0.856,Tech,2025-09-12,Tech
+15856,2022,Urad,Kharif,Uttar Pradesh,Yield,Tonnes/Hectare,0.426,Tech,2025-09-12,Tech
+15857,2022,Urad,Kharif,West Bengal,Yield,Tonnes/Hectare,0.71,Tech,2025-09-12,Tech
+15858,2022,Urad,Rabi,Andhra Pradesh,Yield,Tonnes/Hectare,1.279,Tech,2025-09-12,Tech
+15859,2022,Urad,Rabi,Gujarat,Yield,Tonnes/Hectare,0.611,Tech,2025-09-12,Tech
+15860,2022,Urad,Rabi,Himachal Pradesh,Yield,Tonnes/Hectare,0.719,Tech,2025-09-12,Tech
+15861,2022,Urad,Rabi,Karnataka,Yield,Tonnes/Hectare,0.521,Tech,2025-09-12,Tech
+15862,2022,Urad,Rabi,Madhya Pradesh,Yield,Tonnes/Hectare,0.62,Tech,2025-09-12,Tech
+15863,2022,Urad,Rabi,Maharastra,Yield,Tonnes/Hectare,0.63,Tech,2025-09-12,Tech
+15864,2022,Urad,Rabi,Odisha,Yield,Tonnes/Hectare,0.37,Tech,2025-09-12,Tech
+15865,2022,Urad,Rabi,Rajasthan,Yield,Tonnes/Hectare,0.42,Tech,2025-09-12,Tech
+15866,2022,Urad,Rabi,Tamil Nadu,Yield,Tonnes/Hectare,0.655,Tech,2025-09-12,Tech
+15867,2022,Urad,Rabi,Uttar Pradesh,Yield,Tonnes/Hectare,0.426,Tech,2025-09-12,Tech
+15868,2022,Urad,Rabi,West Bengal,Yield,Tonnes/Hectare,0.868,Tech,2025-09-12,Tech
+15869,2022,WHEAT,Rabi,Bihar,Yield,Tonnes/Hectare,2958.0,Tech,2025-09-12,Tech
+15870,2022,WHEAT,Rabi,Chhattisgarh,Yield,Tonnes/Hectare,1427.0,Tech,2025-09-12,Tech
+15871,2022,WHEAT,Rabi,Gujarat,Yield,Tonnes/Hectare,3248.0,Tech,2025-09-12,Tech
+15872,2022,WHEAT,Rabi,Haryana,Yield,Tonnes/Hectare,4704.0,Tech,2025-09-12,Tech
+15873,2022,WHEAT,Rabi,Himachal Pradesh,Yield,Tonnes/Hectare,1853.0,Tech,2025-09-12,Tech
+15874,2022,WHEAT,Rabi,Jharkhand ,Yield,Tonnes/Hectare,2146.0,Tech,2025-09-12,Tech
+15875,2022,WHEAT,Rabi,Karnataka,Yield,Tonnes/Hectare,1373.0,Tech,2025-09-12,Tech
+15876,2022,WHEAT,Rabi,Madhya Pradesh,Yield,Tonnes/Hectare,3179.0,Tech,2025-09-12,Tech
+15877,2022,WHEAT,Rabi,Maharastra,Yield,Tonnes/Hectare,1948.0,Tech,2025-09-12,Tech
+15878,2022,WHEAT,Rabi,Punjab,Yield,Tonnes/Hectare,4748.0,Tech,2025-09-12,Tech
+15879,2022,WHEAT,Rabi,Rajasthan,Yield,Tonnes/Hectare,3807.0,Tech,2025-09-12,Tech
+15880,2022,WHEAT,Rabi,Uttar Pradesh,Yield,Tonnes/Hectare,3531.0,Tech,2025-09-12,Tech
+15881,2022,WHEAT,Rabi,West Bengal,Yield,Tonnes/Hectare,3088.0,Tech,2025-09-12,Tech

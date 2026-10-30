@@ -1,0 +1,113 @@
+﻿recordindex,State,Variety,CommodityName,Month,Date,Value,Source,CreatedAt,CreatedBy,Market,Unit
+52040,Delhi,,Egg,10,2026-10-13,550.00,SR Publication,2026-10-13 00:00:00,Research,Delhi,per 100 pc
+52041,Punjab,,Egg,10,2026-10-13,557.00,SR Publication,2026-10-13 00:00:00,Research,Jalandhar,per 100 pc
+52042,Gujarat,,Egg,10,2026-10-13,570.00,SR Publication,2026-10-13 00:00:00,Research,Ahmedabad,per 100 pc
+52043,Gujarat,,Egg,10,2026-10-13,575.00,SR Publication,2026-10-13 00:00:00,Research,Surat,per 100 pc
+52044,Maharashtra,,Egg,10,2026-10-13,600.00,SR Publication,2026-10-13 00:00:00,Research,Mumbai,per 100 pc
+52045,Haryana,,Egg,10,2026-10-13,540.00,SR Publication,2026-10-13 00:00:00,Research,Hisar,per 100 pc
+52046,Karnataka,,Egg,10,2026-10-13,600.00,SR Publication,2026-10-13 00:00:00,Research,Bangalore,per 100 pc
+52047,Tamil Nadu,,Egg,10,2026-10-13,550.00,SR Publication,2026-10-13 00:00:00,Research,Namakkal,per 100 pc
+52048,Tamil Nadu,,Egg,10,2026-10-13,615.00,SR Publication,2026-10-13 00:00:00,Research,Chennai,per 100 pc
+52049,Telangana,,Egg,10,2026-10-13,540.00,SR Publication,2026-10-13 00:00:00,Research,Hyderabad,per 100 pc
+52050,Andhra Pradesh,,Egg,10,2026-10-13,555.00,SR Publication,2026-10-13 00:00:00,Research,Godavari,per 100 pc
+52051,Punjab ,Null,Broiler,10,2026-10-13,92.00,SR Publication,2026-10-13 00:00:00,Research,Punjab ,live bird per kg
+52052,Chhattisgarh,Null,Broiler,10,2026-10-13,103.00,SR Publication,2026-10-13 00:00:00,Research,Raipur,live bird per kg
+52053,Maharashtra,Null,Broiler,10,2026-10-13,110.00,SR Publication,2026-10-13 00:00:00,Research,Pune,live bird per kg
+52054,Karnataka,Null,Broiler,10,2026-10-13,122.00,SR Publication,2026-10-13 00:00:00,Research,Bangalore,live bird per kg
+52055,Telangana,Null,Broiler,10,2026-10-13,132.00,SR Publication,2026-10-13 00:00:00,Research,Hyderabad,live bird per kg
+52056,Gujarat,Null,Broiler,10,2026-10-13,115.00,SR Publication,2026-10-13 00:00:00,Research,Gujarat,live bird per kg
+52057,West Bengal,Null,Broiler,10,2026-10-13,122.00,SR Publication,2026-10-13 00:00:00,Research,Kolkata,live bird per kg
+52058,Madhya Pradesh,Null,Broiler,10,2026-10-13,115.00,SR Publication,2026-10-13 00:00:00,Research,Bhopal,live bird per kg
+52059,Tamil Nadu,Null,Broiler,10,2026-10-13,121.00,SR Publication,2026-10-13 00:00:00,Research,Madras,live bird per kg
+52060,Uttar Pradesh,Null,Broiler,10,2026-10-13,98.00,SR Publication,2026-10-13 00:00:00,Research,Lucknow,live bird per kg
+52061,Maharashtra,Null,Broiler,10,2026-10-13,110.00,SR Publication,2026-10-13 00:00:00,Research,Nashik,live bird per kg
+52062,Bihar,Null,Broiler,10,2026-10-13,96.00,SR Publication,2026-10-13 00:00:00,Research,Bihar,live bird per kg
+52063,Delhi,Feed,Soybean (Kota Origin),10,2026-10-13,57000.00,SR Publication,2026-10-13 00:00:00,Research,Delhi,Tonnes
+52064,Delhi,Feed,Maize-Bihar,10,2026-10-13,28500.00,SR Publication,2026-10-13 00:00:00,Research,Delhi,Tonnes
+52065,Delhi,Feed,Bajra (Millet),10,2026-10-13,25000.00,SR Publication,2026-10-13 00:00:00,Research,Delhi,Tonnes
+52066,Delhi,GNE 45%,Ground Nut,10,2026-10-13,35500.00,SR Publication,2026-10-13 00:00:00,Research,Delhi,Tonnes
+52067,Delhi,GNE 50%,Ground Nut,10,2026-10-13,38000.00,SR Publication,2026-10-13 00:00:00,Research,Delhi,Tonnes
+52068,Delhi,Feed,Mustard,10,2026-10-13,30000.00,SR Publication,2026-10-13 00:00:00,Research,Delhi,Tonnes
+52069,Delhi,DCP,Dicalcium phosphate,10,2026-10-13,65000.00,SR Publication,2026-10-13 00:00:00,Research,Delhi,Tonne
+52070,Delhi,,MBM,10,2026-10-13,54000.00,SR Publication,2026-10-13 00:00:00,Research,Delhi,per tonne
+52071,Delhi,,DORB,10,2026-10-13,20000.00,SR Publication,2026-10-13 00:00:00,Research,Delhi,per tonne
+52072,Delhi,RB Oil,Rice Bran Oil,10,2026-10-13,136.00,SR Publication,2026-10-13 00:00:00,Research,Delhi,Per kg
+51961,Delhi,,Egg,10,2026-10-12,550.00,SR Publication,2026-10-12 00:00:00,Research,Delhi,per 100 pc
+51962,Punjab,,Egg,10,2026-10-12,557.00,SR Publication,2026-10-12 00:00:00,Research,Jalandhar,per 100 pc
+51963,Gujarat,,Egg,10,2026-10-12,570.00,SR Publication,2026-10-12 00:00:00,Research,Ahmedabad,per 100 pc
+51964,Gujarat,,Egg,10,2026-10-12,585.00,SR Publication,2026-10-12 00:00:00,Research,Surat,per 100 pc
+51965,Maharashtra,,Egg,10,2026-10-12,595.00,SR Publication,2026-10-12 00:00:00,Research,Mumbai,per 100 pc
+51966,Haryana,,Egg,10,2026-10-12,530.00,SR Publication,2026-10-12 00:00:00,Research,Hisar,per 100 pc
+51967,Karnataka,,Egg,10,2026-10-12,590.00,SR Publication,2026-10-12 00:00:00,Research,Bangalore,per 100 pc
+51968,Tamil Nadu,,Egg,10,2026-10-12,540.00,SR Publication,2026-10-12 00:00:00,Research,Namakkal,per 100 pc
+51969,Tamil Nadu,,Egg,10,2026-10-12,600.00,SR Publication,2026-10-12 00:00:00,Research,Chennai,per 100 pc
+51970,Telangana,,Egg,10,2026-10-12,530.00,SR Publication,2026-10-12 00:00:00,Research,Hyderabad,per 100 pc
+51971,Andhra Pradesh,,Egg,10,2026-10-12,545.00,SR Publication,2026-10-12 00:00:00,Research,Godavari,per 100 pc
+51972,Delhi,Mota,Broiler,10,2026-10-12,105.00,SR Publication,2026-10-12 00:00:00,Research,Delhi,live bird per kg
+51973,Delhi,Medium,Broiler,10,2026-10-12,108.00,SR Publication,2026-10-12 00:00:00,Research,Delhi,live bird per kg
+51974,Delhi,Tandori,Broiler,10,2026-10-12,110.00,SR Publication,2026-10-12 00:00:00,Research,Delhi,live bird per kg
+51975,Delhi,Vehicle,Broiler,10,2026-10-12,50.00,SR Publication,2026-10-12 00:00:00,Research,Delhi,live bird per kg
+51976,Punjab ,Null,Broiler,10,2026-10-12,92.00,SR Publication,2026-10-12 00:00:00,Research,Punjab ,live bird per kg
+51977,Chhattisgarh,Null,Broiler,10,2026-10-12,103.00,SR Publication,2026-10-12 00:00:00,Research,Raipur,live bird per kg
+51978,Maharashtra,Null,Broiler,10,2026-10-12,113.00,SR Publication,2026-10-12 00:00:00,Research,Pune,live bird per kg
+51979,Karnataka,Null,Broiler,10,2026-10-12,119.00,SR Publication,2026-10-12 00:00:00,Research,Bangalore,live bird per kg
+51980,Telangana,Null,Broiler,10,2026-10-12,132.00,SR Publication,2026-10-12 00:00:00,Research,Hyderabad,live bird per kg
+51981,Gujarat,Null,Broiler,10,2026-10-12,118.00,SR Publication,2026-10-12 00:00:00,Research,Gujarat,live bird per kg
+51982,West Bengal,Null,Broiler,10,2026-10-12,127.00,SR Publication,2026-10-12 00:00:00,Research,Kolkata,live bird per kg
+51983,Madhya Pradesh,Null,Broiler,10,2026-10-12,115.00,SR Publication,2026-10-12 00:00:00,Research,Bhopal,live bird per kg
+51984,Tamil Nadu,Null,Broiler,10,2026-10-12,116.00,SR Publication,2026-10-12 00:00:00,Research,Madras,live bird per kg
+51985,Uttar Pradesh,Null,Broiler,10,2026-10-12,103.00,SR Publication,2026-10-12 00:00:00,Research,Lucknow,live bird per kg
+51986,Maharashtra,Null,Broiler,10,2026-10-12,113.00,SR Publication,2026-10-12 00:00:00,Research,Nashik,live bird per kg
+51987,Bihar,Null,Broiler,10,2026-10-12,103.00,SR Publication,2026-10-12 00:00:00,Research,Bihar,live bird per kg
+51988,Assam,,Hatchery Egg,10,2026-10-12,40.25,SR Publication,2026-10-12 00:00:00,Research,Guwahati,per pc
+51989,West Bengal,,Hatchery Egg,10,2026-10-12,40.25,SR Publication,2026-10-12 00:00:00,Research,Silguri,per pc
+51990,West Bengal,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Howrah,per pc
+51991,West Bengal,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Kharghpur,per pc
+51992,Orissa,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Bhubaneswar,per pc
+51993,Orissa,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Cuttack,per pc
+51994,Jharkhand,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Bokaro,per pc
+51995,Jharkhand,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Dhanbad,per pc
+51996,Jharkhand,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Ranchi,per pc
+51997,Bihar,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Patna,per pc
+51998,Uttar Pradesh,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Gorakpur,per pc
+51999,Uttar Pradesh,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Varnasi,per pc
+52000,Uttar Pradesh,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Allahabad,per pc
+52001,Uttar Pradesh,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Lucknow,per pc
+52002,Gujarat,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Baroda,per pc
+52003,Gujarat,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Ahmedabad,per pc
+52004,Gujarat,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Valsad,per pc
+52005,Maharashtra,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Mumbai,per pc
+52006,Maharashtra,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Nagpur,per pc
+52007,Madhya Pradesh,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Bhopal,per pc
+52008,Madhya Pradesh,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Jabalpur,per pc
+52009,Chhattisgarh,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Raipur ,per pc
+52010,Kerala,,Hatchery Egg,10,2026-10-12,39.50,SR Publication,2026-10-12 00:00:00,Research,Kerala,per pc
+52011,Telangana,,Hatchery Egg,10,2026-10-12,38.75,SR Publication,2026-10-12 00:00:00,Research,Hyderabad,per pc
+52012,Punjab,Day Old ,Chicks,10,2026-10-12,45.00,SR Publication,2026-10-12 00:00:00,Research,Punjab,per chick
+52013,Haryana,Day Old ,Chicks,10,2026-10-12,45.00,SR Publication,2026-10-12 00:00:00,Research,Haryana,per chick
+52014,Himachal Pradesh,Day Old ,Chicks,10,2026-10-12,46.00,SR Publication,2026-10-12 00:00:00,Research,Himachal Pradesh,per chick
+52015,Rajasthan,Day Old ,Chicks,10,2026-10-12,46.00,SR Publication,2026-10-12 00:00:00,Research,Rajasthan,per chick
+52016,Jammu & Kashmir,Day Old ,Chicks,10,2026-10-12,46.00,SR Publication,2026-10-12 00:00:00,Research,Jammu & Kashmir,per chick
+52017,Uttarakhand,Day Old ,Chicks,10,2026-10-12,46.00,SR Publication,2026-10-12 00:00:00,Research,Dehradun,per chick
+52018,Uttar Pradesh,Day Old ,Chicks,10,2026-10-12,48.00,SR Publication,2026-10-12 00:00:00,Research,Uttar Pradesh,per chick
+52019,Bihar,Day Old ,Chicks,10,2026-10-12,48.00,SR Publication,2026-10-12 00:00:00,Research,Bihar,per chick
+52020,Jharkhand,Day Old ,Chicks,10,2026-10-12,48.00,SR Publication,2026-10-12 00:00:00,Research,Jharkhand,per chick
+52021,Punjab,Day Old ,Skylark-CHICKS ,10,2026-10-12,48.00,SR Publication,2026-10-12 00:00:00,Research,Punjab,per chick
+52022,Haryana,Day Old ,Skylark-CHICKS,10,2026-10-12,48.00,SR Publication,2026-10-12 00:00:00,Research,Haryana,per chick
+52023,Himachal Pradesh,Day Old ,Skylark-CHICKS,10,2026-10-12,48.00,SR Publication,2026-10-12 00:00:00,Research,Himachal Pradesh,per chick
+52024,Rajasthan,Day Old ,Skylark-CHICKS,10,2026-10-12,48.00,SR Publication,2026-10-12 00:00:00,Research,Rajasthan,per chick
+52025,Jammu & Kashmir,Day Old ,Skylark-CHICKS,10,2026-10-12,48.00,SR Publication,2026-10-12 00:00:00,Research,Jammu & Kashmir,per chick
+52026,Uttarakhand,Day Old ,Skylark-CHICKS,10,2026-10-12,48.00,SR Publication,2026-10-12 00:00:00,Research,Dehradun,per chick
+52027,Uttar Pradesh,Day Old ,Skylark-CHICKS,10,2026-10-12,48.00,SR Publication,2026-10-12 00:00:00,Research,Uttar Pradesh,per chick
+52028,Bihar,Day Old ,Skylark-CHICKS,10,2026-10-12,48.00,SR Publication,2026-10-12 00:00:00,Research,Bihar,per chick
+52029,Jharkhand,Day Old ,Skylark-CHICKS,10,2026-10-12,48.00,SR Publication,2026-10-12 00:00:00,Research,Jharkhand,per chick
+52030,Delhi,Feed,Soybean (Kota Origin),10,2026-10-12,56000.00,SR Publication,2026-10-12 00:00:00,Research,Delhi,Tonnes
+52031,Delhi,Feed,Maize-Bihar,10,2026-10-12,28000.00,SR Publication,2026-10-12 00:00:00,Research,Delhi,Tonnes
+52032,Delhi,Feed,Bajra (Millet),10,2026-10-12,25000.00,SR Publication,2026-10-12 00:00:00,Research,Delhi,Tonnes
+52033,Delhi,GNE 45%,Ground Nut,10,2026-10-12,35500.00,SR Publication,2026-10-12 00:00:00,Research,Delhi,Tonnes
+52034,Delhi,GNE 50%,Ground Nut,10,2026-10-12,38000.00,SR Publication,2026-10-12 00:00:00,Research,Delhi,Tonnes
+52035,Delhi,Feed,Mustard,10,2026-10-12,30000.00,SR Publication,2026-10-12 00:00:00,Research,Delhi,Tonnes
+52036,Delhi,DCP,Dicalcium phosphate,10,2026-10-12,65000.00,SR Publication,2026-10-12 00:00:00,Research,Delhi,Tonne
+52037,Delhi,,MBM,10,2026-10-12,54000.00,SR Publication,2026-10-12 00:00:00,Research,Delhi,per tonne
+52038,Delhi,,DORB,10,2026-10-12,21000.00,SR Publication,2026-10-12 00:00:00,Research,Delhi,per tonne
+52039,Delhi,RB Oil,Rice Bran Oil,10,2026-10-12,136.00,SR Publication,2026-10-12 00:00:00,Research,Delhi,Per kg

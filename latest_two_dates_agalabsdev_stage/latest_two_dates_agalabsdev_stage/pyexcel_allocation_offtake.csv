@@ -1,0 +1,105 @@
+﻿RecordIndex,CommodityName,Type,MarketYear,Attributes,Value,Unit,Source,CreatedBy,CreatedDate,Date
+793,Wheat,Allocation,2026,TPDS#*,20706.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+794,Wheat,Allocation,2026,ICDS*,690.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+795,Wheat,Allocation,2026,PM POSHAN*,192.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+796,Wheat,Allocation,2026,NFSA (Tide Over),742.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+797,Wheat,Allocation,2026,Hostels and Welfare institutions,63.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+798,Wheat,Allocation,2026,Scheme for adolescent Girls(SAG),13.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+799,Wheat,Allocation,2026,Annapurna,0.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+800,Wheat,Allocation,2026,natural Calamity/ Drought/etc,3.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+801,Wheat,Allocation,2026,festivals/Add. Allocation,60.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+802,Wheat,Allocation,2026,Defence Allocation /ITBP,4.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+803,Wheat,Allocation,2026,OMSS(D),5.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+804,Wheat,Allocation,2026,World Food Programme/ Export,0.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+805,Wheat,Allocation,2026,TOTAL,22477.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+806,Wheat,Offtake,2026,TPDS#*,8182.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+807,Wheat,Offtake,2026,ICDS*,244.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+808,Wheat,Offtake,2026,PM POSHAN*,94.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+809,Wheat,Offtake,2026,NFSA (Tide Over),270.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+810,Wheat,Offtake,2026,Hostels and Welfare institutions,44.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+811,Wheat,Offtake,2026,Scheme for adolescent Girls(SAG),4.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+812,Wheat,Offtake,2026,Annapurna,0.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+813,Wheat,Offtake,2026,natural Calamity/ Drought/etc,0.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+814,Wheat,Offtake,2026,festivals/Add. Allocation,0.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+815,Wheat,Offtake,2026,Defence Allocation /ITBP,0.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+816,Wheat,Offtake,2026,OMSS(D),5.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+817,Wheat,Offtake,2026,World Food Programme/ Export,0.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+818,Wheat,Offtake,2026,TOTAL,8844.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+819,Rice,Allocation,2026,TPDS#*,31980.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+820,Rice,Allocation,2026,ICDS*,589.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+821,Rice,Allocation,2026,PM POSHAN*,952.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+822,Rice,Allocation,2026,NFSA (Tide Over),1862.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+823,Rice,Allocation,2026,Hostels and Welfare institutions,272.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+824,Rice,Allocation,2026,Scheme for adolescent Girls(SAG),8.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+825,Rice,Allocation,2026,Annapurna,0.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+826,Rice,Allocation,2026,natural Calamity/ Drought/etc,5.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+827,Rice,Allocation,2026,festivals/Add. Allocation,91.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+828,Rice,Allocation,2026,Defence Allocation /ITBP,37.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+829,Rice,Allocation,2026,OMSS(D),3906.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+830,Rice,Allocation,2026,World Food Programme/ Export,0.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+831,Rice,Allocation,2026,TOTAL,39702.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+832,Rice,Offtake,2026,TPDS#*,12025.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+833,Rice,Offtake,2026,ICDS*,188.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+834,Rice,Offtake,2026,PM POSHAN*,456.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+835,Rice,Offtake,2026,NFSA (Tide Over),754.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+836,Rice,Offtake,2026,Hostels and Welfare institutions,117.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+837,Rice,Offtake,2026,Scheme for adolescent Girls(SAG),2.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+838,Rice,Offtake,2026,Annapurna,0.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+839,Rice,Offtake,2026,natural Calamity/ Drought/etc,0.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+840,Rice,Offtake,2026,festivals/Add. Allocation,0.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+841,Rice,Offtake,2026,Defence Allocation /ITBP,14.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+842,Rice,Offtake,2026,OMSS(D),3906.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+843,Rice,Offtake,2026,World Food Programme/ Export,0.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+844,Rice,Offtake,2026,TOTAL,17463.0,000 Tonnes,DFPD,Research,2026-08-01,2026-08-01
+423,Wheat,Allocation,2026,TPDS#*,20706.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+424,Wheat,Allocation,2026,ICDS*,454.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+425,Wheat,Allocation,2026,PM POSHAN*,192.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+426,Wheat,Allocation,2026,NFSA (Tide Over),742.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+427,Wheat,Allocation,2026,Hostels and Welfare institutions,63.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+428,Wheat,Allocation,2026,Scheme for adolescent Girls(SAG),9.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+429,Wheat,Allocation,2026,Annapurna,0.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+430,Wheat,Allocation,2026,natural Calamity/ Drought/etc,3.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+431,Wheat,Allocation,2026,festivals/Add. Allocation,60.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+432,Wheat,Allocation,2026,Defence Allocation /ITBP,3.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+433,Wheat,Allocation,2026,OMSS(D),1.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+434,Wheat,Allocation,2026,World Food Programme/ Export,0.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+435,Wheat,Allocation,2026,TOTAL,22232.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+436,Wheat,Offtake,2026,TPDS#*,6640.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+437,Wheat,Offtake,2026,ICDS*,180.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+438,Wheat,Offtake,2026,PM POSHAN*,58.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+439,Wheat,Offtake,2026,NFSA (Tide Over),212.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+440,Wheat,Offtake,2026,Hostels and Welfare institutions,16.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+441,Wheat,Offtake,2026,Scheme for adolescent Girls(SAG),3.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+442,Wheat,Offtake,2026,Annapurna,0.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+443,Wheat,Offtake,2026,natural Calamity/ Drought/etc,0.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+444,Wheat,Offtake,2026,festivals/Add. Allocation,0.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+445,Wheat,Offtake,2026,Defence Allocation /ITBP,0.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+446,Wheat,Offtake,2026,OMSS(D),1.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+447,Wheat,Offtake,2026,World Food Programme/ Export,0.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+448,Wheat,Offtake,2026,TOTAL,7112.0,000 Tonnes,DFPD,Research,2026-08-19,2026-07-01
+657,Rice,Allocation,2026,TPDS#*,31979.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+658,Rice,Allocation,2026,ICDS*,343.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+659,Rice,Allocation,2026,PM POSHAN*,952.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+660,Rice,Allocation,2026,NFSA (Tide Over),1862.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+661,Rice,Allocation,2026,Hostels and Welfare institutions,219.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+662,Rice,Allocation,2026,Scheme for adolescent Girls(SAG),5.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+663,Rice,Allocation,2026,Annapurna,0.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+664,Rice,Allocation,2026,natural Calamity/ Drought/etc,5.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+665,Rice,Allocation,2026,festivals/Add. Allocation,91.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+666,Rice,Allocation,2026,Defence Allocation /ITBP,27.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+667,Rice,Allocation,2026,OMSS(D),3506.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+668,Rice,Allocation,2026,World Food Programme/ Export,0.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+669,Rice,Allocation,2026,TOTAL,38989.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+670,Rice,Offtake,2026,TPDS#*,9908.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+671,Rice,Offtake,2026,ICDS*,149.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+672,Rice,Offtake,2026,PM POSHAN*,333.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+673,Rice,Offtake,2026,NFSA (Tide Over),683.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+674,Rice,Offtake,2026,Hostels and Welfare institutions,44.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+675,Rice,Offtake,2026,Scheme for adolescent Girls(SAG),2.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+676,Rice,Offtake,2026,Annapurna,0.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+677,Rice,Offtake,2026,natural Calamity/ Drought/etc,0.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+678,Rice,Offtake,2026,festivals/Add. Allocation,0.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+679,Rice,Offtake,2026,Defence Allocation /ITBP,7.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+680,Rice,Offtake,2026,OMSS(D),3506.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+681,Rice,Offtake,2026,World Food Programme/ Export,0.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01
+682,Rice,Offtake,2026,TOTAL,14631.0,000 Tonnes,DFPD,Research,2026-08-20,2026-07-01

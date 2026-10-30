@@ -1,0 +1,1056 @@
+{
+  "core": [
+    {
+      "rule": "/",
+      "endpoint": "index",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/favicon.ico",
+      "endpoint": "favicon",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/static/<path:filename>",
+      "endpoint": "static",
+      "methods": [
+        "GET"
+      ]
+    }
+  ],
+  "auth": [
+    {
+      "rule": "/api/auth/change-password",
+      "endpoint": "auth.change_password",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/auth/login",
+      "endpoint": "auth.login",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/auth/logout",
+      "endpoint": "auth.logout",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/auth/me",
+      "endpoint": "auth.me",
+      "methods": [
+        "GET"
+      ]
+    }
+  ],
+  "dashboard": [
+    {
+      "rule": "/api/dash/alerts",
+      "endpoint": "dashboard.get_alerts",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/dash/pending",
+      "endpoint": "dashboard.get_pending",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/dash/report-progress",
+      "endpoint": "dashboard.get_report_progress",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/dash/stats",
+      "endpoint": "dashboard.get_stats",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/dash/team",
+      "endpoint": "dashboard.get_team",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/dash/team/<email>/detail",
+      "endpoint": "dashboard.get_team_detail",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/dash/week-trend",
+      "endpoint": "dashboard.get_week_trend",
+      "methods": [
+        "GET"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "rule": "/api/tasks/add",
+      "endpoint": "tasks.add_task",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/tasks/add-adhoc",
+      "endpoint": "tasks.add_adhoc_task",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/tasks/history",
+      "endpoint": "tasks.get_task_history",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/tasks/missed",
+      "endpoint": "tasks.get_missed_entries",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/tasks/monthly",
+      "endpoint": "tasks.get_monthly_tasks",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/tasks/override",
+      "endpoint": "tasks.set_override",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/tasks/override/<int:ov_id>",
+      "endpoint": "tasks.clear_override",
+      "methods": [
+        "DELETE"
+      ]
+    },
+    {
+      "rule": "/api/tasks/remark",
+      "endpoint": "tasks.save_remark",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/tasks/snapshot",
+      "endpoint": "tasks.get_snapshot",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/tasks/submit",
+      "endpoint": "tasks.submit_tasks",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/tasks/submit-backdated",
+      "endpoint": "tasks.submit_backdated",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/tasks/today",
+      "endpoint": "tasks.get_today_tasks",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/tasks/update/<log_id>",
+      "endpoint": "tasks.update_task",
+      "methods": [
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/tasks/weekly",
+      "endpoint": "tasks.get_weekly_tasks",
+      "methods": [
+        "GET"
+      ]
+    }
+  ],
+  "du": [
+    {
+      "rule": "/api/du/commodities",
+      "endpoint": "du.get_commodities",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/du/factor-task",
+      "endpoint": "du.add_factor_task",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/du/factors/<commodity>/<type_name>",
+      "endpoint": "du.get_factors",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/du/submit",
+      "endpoint": "du.submit_du",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/du/types/<commodity>",
+      "endpoint": "du.get_types",
+      "methods": [
+        "GET"
+      ]
+    }
+  ],
+  "mis": [
+    {
+      "rule": "/api/mis/analysis/<int:upload_id>",
+      "endpoint": "mis.get_analysis",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/mis/analysis/all",
+      "endpoint": "mis.get_all_analyses",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/mis/components/<report_name>",
+      "endpoint": "mis.get_components",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/mis/reports",
+      "endpoint": "mis.get_reports",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/mis/semantic-feedback",
+      "endpoint": "mis.submit_semantic_feedback",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/mis/submit",
+      "endpoint": "mis.submit_mis",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/mis/templates",
+      "endpoint": "mis.get_templates",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/mis/templates",
+      "endpoint": "mis.save_template",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/mis/templates/<int:template_id>",
+      "endpoint": "mis.delete_template",
+      "methods": [
+        "DELETE"
+      ]
+    },
+    {
+      "rule": "/api/mis/templates/auto-detect",
+      "endpoint": "mis.auto_detect_template",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/mis/upload-pdf",
+      "endpoint": "mis.upload_pdf",
+      "methods": [
+        "POST"
+      ]
+    }
+  ],
+  "kanban": [
+    {
+      "rule": "/api/kanban/board",
+      "endpoint": "kanban.get_board",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/kanban/bulk-move",
+      "endpoint": "kanban.bulk_move",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/kanban/reorder",
+      "endpoint": "kanban.reorder_column",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/kanban/shell",
+      "endpoint": "kanban.get_shell",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/kanban/sprint",
+      "endpoint": "kanban.create_sprint",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/kanban/sprint/<sprint_id>/status",
+      "endpoint": "kanban.update_sprint_status",
+      "methods": [
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/kanban/task",
+      "endpoint": "kanban.create_task",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/kanban/task/<task_id>",
+      "endpoint": "kanban.update_task",
+      "methods": [
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/kanban/task/<task_id>",
+      "endpoint": "kanban.delete_task",
+      "methods": [
+        "DELETE"
+      ]
+    },
+    {
+      "rule": "/api/kanban/task/<task_id>/comment",
+      "endpoint": "kanban.add_comment",
+      "methods": [
+        "POST"
+      ]
+    }
+  ],
+  "chat": [
+    {
+      "rule": "/api/chat/channels",
+      "endpoint": "chat.get_channels",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/chat/dm/<other_email>",
+      "endpoint": "chat.open_dm",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/chat/file/<path:filename>",
+      "endpoint": "chat.download_file",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/chat/message/<int:msg_id>",
+      "endpoint": "chat.delete_message",
+      "methods": [
+        "DELETE"
+      ]
+    },
+    {
+      "rule": "/api/chat/messages/<channel>",
+      "endpoint": "chat.get_messages",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/chat/search",
+      "endpoint": "chat.search_messages",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/chat/send",
+      "endpoint": "chat.send_message",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/chat/upload",
+      "endpoint": "chat.upload_file",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/chat/users",
+      "endpoint": "chat.list_users_for_dm",
+      "methods": [
+        "GET"
+      ]
+    }
+  ],
+  "admin": [
+    {
+      "rule": "/api/admin/audit",
+      "endpoint": "admin.get_audit",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/admin/commodities",
+      "endpoint": "admin.get_admin_commodities",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/admin/commodities",
+      "endpoint": "admin.add_commodity",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/admin/commodities/<int:c_id>",
+      "endpoint": "admin.modify_commodity",
+      "methods": [
+        "DELETE",
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/admin/csv-import/<kind>",
+      "endpoint": "admin.csv_import",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/admin/csv-sample/<kind>",
+      "endpoint": "admin.csv_sample",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/admin/email-logs",
+      "endpoint": "admin.get_email_logs",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/admin/email-preview",
+      "endpoint": "admin.get_email_preview",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/admin/email-test",
+      "endpoint": "admin.send_test_email",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/admin/email-trigger-digest",
+      "endpoint": "admin.trigger_email_digest",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/admin/fetch-db-tables",
+      "endpoint": "admin.fetch_db_tables",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/admin/handovers",
+      "endpoint": "admin.list_handovers",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/admin/handovers",
+      "endpoint": "admin.add_handover",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/admin/handovers/<int:h_id>",
+      "endpoint": "admin.modify_handover",
+      "methods": [
+        "DELETE",
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/admin/modules",
+      "endpoint": "admin.get_modules",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/admin/modules",
+      "endpoint": "admin.save_modules",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/admin/report-groups",
+      "endpoint": "admin.get_report_groups",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/admin/report-groups",
+      "endpoint": "admin.add_report_group",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/admin/report-groups/<int:g_id>",
+      "endpoint": "admin.modify_report_group",
+      "methods": [
+        "DELETE",
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/admin/reports",
+      "endpoint": "admin.get_reports",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/admin/reports",
+      "endpoint": "admin.add_report",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/admin/reports/<int:r_id>",
+      "endpoint": "admin.modify_report",
+      "methods": [
+        "DELETE",
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/admin/roster",
+      "endpoint": "admin.get_roster",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/admin/roster",
+      "endpoint": "admin.add_roster",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/admin/roster/<int:r_id>",
+      "endpoint": "admin.modify_roster",
+      "methods": [
+        "DELETE",
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/admin/settings",
+      "endpoint": "admin.get_settings",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/admin/settings",
+      "endpoint": "admin.save_settings",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/admin/table-mappings",
+      "endpoint": "admin.get_table_mappings",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/admin/table-mappings",
+      "endpoint": "admin.add_table_mapping",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/admin/table-mappings/<int:id>",
+      "endpoint": "admin.update_table_mapping",
+      "methods": [
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/admin/table-mappings/<int:id>",
+      "endpoint": "admin.delete_table_mapping",
+      "methods": [
+        "DELETE"
+      ]
+    },
+    {
+      "rule": "/api/admin/table-schema/<path:table_name>",
+      "endpoint": "admin.get_table_schema",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/admin/tasks",
+      "endpoint": "admin.get_task_templates",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/admin/tasks",
+      "endpoint": "admin.add_task_template",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/admin/tasks/<int:t_id>",
+      "endpoint": "admin.modify_task_template",
+      "methods": [
+        "DELETE",
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/admin/user-duties/<email>",
+      "endpoint": "admin.get_user_duties",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/admin/users",
+      "endpoint": "admin.get_users",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/admin/users",
+      "endpoint": "admin.add_user",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/admin/users/<email>",
+      "endpoint": "admin.update_user",
+      "methods": [
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/admin/users/<email>",
+      "endpoint": "admin.remove_user",
+      "methods": [
+        "DELETE"
+      ]
+    }
+  ],
+  "analytics": [
+    {
+      "rule": "/api/analytics/commodity-comparison",
+      "endpoint": "analytics.commodity_comparison",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/analytics/export/csv",
+      "endpoint": "analytics.export_csv",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/analytics/kpi",
+      "endpoint": "analytics.kpi_breakdown",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/analytics/sla-breaches",
+      "endpoint": "analytics.sla_breaches",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/analytics/team-updates",
+      "endpoint": "analytics.get_team_updates",
+      "methods": [
+        "GET"
+      ]
+    }
+  ],
+  "roster": [
+    {
+      "rule": "/api/roster/apply-week",
+      "endpoint": "roster.apply_scrapper_week",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/roster/assign-backup",
+      "endpoint": "roster.assign_backup",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/roster/config",
+      "endpoint": "roster.get_config",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/roster/config",
+      "endpoint": "roster.save_config",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/roster/config/<int:config_id>",
+      "endpoint": "roster.delete_config",
+      "methods": [
+        "DELETE"
+      ]
+    },
+    {
+      "rule": "/api/roster/generate-random",
+      "endpoint": "roster.generate_random_roster",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/roster/logs",
+      "endpoint": "roster.get_roster_logs",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/roster/monthly-duties",
+      "endpoint": "roster.update_monthly_duties",
+      "methods": [
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/roster/monthly-schedule",
+      "endpoint": "roster.get_monthly_schedule",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/roster/rake-date",
+      "endpoint": "roster.update_rake_date",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/roster/rake-zones",
+      "endpoint": "roster.update_rake_zones",
+      "methods": [
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/roster/scrapper-matrix",
+      "endpoint": "roster.get_scrapper_matrix",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/roster/scrapper-matrix",
+      "endpoint": "roster.update_scrapper_matrix",
+      "methods": [
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/roster/status",
+      "endpoint": "roster.update_status",
+      "methods": [
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/roster/structure",
+      "endpoint": "roster.update_roster_structure",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/roster/today",
+      "endpoint": "roster.get_today",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/roster/week-detail",
+      "endpoint": "roster.get_week_detail",
+      "methods": [
+        "GET"
+      ]
+    }
+  ],
+  "notifications": [
+    {
+      "rule": "/api/notifications/",
+      "endpoint": "notifications.get_notifications",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/notifications/read-all",
+      "endpoint": "notifications.mark_all_read",
+      "methods": [
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/notifications/read/<int:notif_id>",
+      "endpoint": "notifications.mark_read",
+      "methods": [
+        "PUT"
+      ]
+    }
+  ],
+  "crishi": [
+    {
+      "rule": "/api/crishi/force-refresh",
+      "endpoint": "crishi.force_refresh",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/crishi/grid",
+      "endpoint": "crishi.get_grid",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/crishi/manager-review",
+      "endpoint": "crishi.manager_review",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/crishi/pull",
+      "endpoint": "crishi.pull_task",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/crishi/remark",
+      "endpoint": "crishi.update_remark",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/crishi/remark/history/<int:catalog_id>",
+      "endpoint": "crishi.get_remark_history",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/crishi/reports/all",
+      "endpoint": "crishi.get_all_reports",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/crishi/reports/gmail-status",
+      "endpoint": "crishi.get_gmail_status_route",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/crishi/reports/pdf",
+      "endpoint": "crishi.stream_report_pdf",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/crishi/reports/sync-gmail",
+      "endpoint": "crishi.sync_gmail_reports_route",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/crishi/roster/apply-week",
+      "endpoint": "crishi.crishi_apply_scrapper_week",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/crishi/roster/generate",
+      "endpoint": "crishi.generate_two_month_roster",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/crishi/roster/scrapper-matrix",
+      "endpoint": "crishi.crishi_get_scrapper_matrix",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/crishi/roster/weather-rotation",
+      "endpoint": "crishi.get_weather_rotation",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "rule": "/api/crishi/roster/weather-rotation",
+      "endpoint": "crishi.update_weather_rotation",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/crishi/skip",
+      "endpoint": "crishi.skip_task",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "rule": "/api/crishi/source",
+      "endpoint": "crishi.update_source",
+      "methods": [
+        "PUT"
+      ]
+    },
+    {
+      "rule": "/api/crishi/sync-report-db",
+      "endpoint": "crishi.sync_report_db",
+      "methods": [
+        "POST"
+      ]
+    }
+  ]
+}

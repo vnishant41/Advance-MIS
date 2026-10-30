@@ -23,7 +23,7 @@ def get_notifications():
 def mark_read(notif_id):
     user = get_current_user()
     if not user: return jsonify({'success': False}), 401
-    notif = Notification.query.get(notif_id)
+    notif = db.session.get(Notification, notif_id)
     if notif and notif.user_email == user.email:
         notif.read = True
         db.session.commit()

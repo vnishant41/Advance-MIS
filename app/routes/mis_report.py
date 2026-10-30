@@ -5,6 +5,7 @@ import os, time, random, json
 from datetime import datetime, date, timezone
 from flask import Blueprint, request, jsonify, current_app
 from flask_jwt_extended import jwt_required
+from werkzeug.utils import secure_filename
 from app import db
 from app.models import Report, ReportComponent, MasterLog, MISReportUpload, User, MISTemplate, SemanticFeedback
 from app.auth import get_current_user, role_at_least, log_audit
@@ -189,7 +190,8 @@ def upload_pdf():
 
     # Save file
     timestamp = int(time.time())
-    safe_name = f"{timestamp}_{file.filename.replace(' ', '_')}"
+    clean_name = secure_filename(file.filename) or 'unnamed_report.pdf'
+    safe_name = f"{timestamp}_{clean_name}"
     filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], safe_name)
     file.save(filepath)
     file_size = os.path.getsize(filepath)
@@ -316,7 +318,7 @@ def upload_pdf():
 @mis_bp.route('/analysis/<int:upload_id>', methods=['GET'])
 @jwt_required()
 def get_analysis(upload_id):
-    upload = MISReportUpload.query.get(upload_id)
+    upload = db.session.get(MISReportUpload, upload_id)
     if not upload:
         return jsonify({'success': False, 'message': 'Upload not found'}), 404
     return jsonify({'success': True, 'analysis': upload.to_dict()})
@@ -387,7 +389,7 @@ def delete_template(template_id):
     if not user or not role_at_least(user.role, 'Manager'):
         return jsonify({'success': False, 'message': 'Not authorized'}), 403
 
-    template = MISTemplate.query.get(template_id)
+    template = db.session.get(MISTemplate, template_id)
     if not template:
         return jsonify({'success': False, 'message': 'Template not found'}), 404
 
@@ -442,7 +444,8 @@ def auto_detect_template():
         return jsonify({'success': False, 'message': 'Only PDF files accepted'}), 400
 
     timestamp = int(time.time())
-    safe_name = f"auto_{timestamp}_{file.filename.replace(' ', '_')}"
+    clean_name = secure_filename(file.filename) or 'unnamed_report.pdf'
+    safe_name = f"auto_{timestamp}_{clean_name}"
     filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], safe_name)
     file.save(filepath)
 

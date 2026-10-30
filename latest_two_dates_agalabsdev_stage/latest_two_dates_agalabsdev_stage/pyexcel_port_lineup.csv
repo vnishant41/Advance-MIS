@@ -1,0 +1,33 @@
+﻿id,Commodity,Disport,Status,Vessel,ArrivedETA,BerthedDate,ETC,Unit,Value,SourceCommodityName,PackageType,ShipperReceiver,Charterer,LoadPort,LoadCountry,PdfDate,Tradeflow,DischargeCountry,CreatedDate
+12458,Sugar,KANDLA - TUNA,EXPECTED,ATMOSPHERE,2026-10-11,2026-10-11,2026-10-11,Tonnes,73850.00,RAW SUGAR,BULK,RENUKA SUGARS,WILMAR,SANTOS,BRAZIL,2026-10-05,IMPORT,INDIA,2026-10-08
+12457,Sugar,TBA,EXPECTED,HUDA,2026-10-08,2026-10-08,2026-10-08,Tonnes,23500.00,REFINED SUGAR,BGD,TBA,TBA,KANDLA,INDIA,2026-10-05,EXPORT,TBA,2026-10-08
+12456,Sugar,KANDLA - TUNA,ANCHORAGE,HOANH SON JUPITER,2026-10-04,2026-10-04,2026-10-04,Tonnes,73069.00,RAW SUGAR,BULK,SHRIDUTT,COFCO,SANTOS,BRAZIL,2026-10-05,IMPORT,INDIA,2026-10-08
+12455,Sugar,KANDLA - TUNA,ANCHORAGE,CL XIANGXI,2026-10-04,2026-10-04,2026-10-04,Tonnes,72352.00,RAW SUGAR,BULK,SHRIDUTT,COFCO,SANTOS,BRAZIL,2026-10-05,IMPORT,INDIA,2026-10-08
+12454,Sugar,PORT SUDAN,ANCHORAGE,AG VALLIANT,2026-10-01,2026-10-01,2026-10-01,Tonnes,23300.00,REFINED SUGAR,BGD,RENUKA SUGARS,WILMAR,KANDLA,INDIA,2026-10-05,EXPORT,SUDAN,2026-10-08
+12453,Sugar,DJIBOUTI,ANCHORAGE,NEW SOUL,2026-09-25,2026-09-25,2026-09-25,Tonnes,29200.00,REFINED SUGAR,BGD,RENUKA SUGARS,WILMAR,KANDLA,INDIA,2026-10-05,EXPORT,DJIBOUTI,2026-10-08
+12452,Sugar,PORT SUDAN,ANCHORAGE,NEPTUNE J,2026-09-17,2026-09-17,2026-09-17,Tonnes,23000.00,REFINED SUGAR,BGD,SHRIDUTT,TBA,KANDLA,INDIA,2026-10-05,EXPORT,SUDAN,2026-10-08
+12451,Sugar,BERBERA,ANCHORAGE,DSM LAILA,2026-09-09,2026-09-09,2026-09-09,Tonnes,15000.00,REFINED SUGAR,BGD,SHRIDUTT,TBA,KANDLA,INDIA,2026-10-05,EXPORT,SOMALIA,2026-10-08
+12450,Sugar,KANDLA - TUNA,BERTH,THE ETERNAL,2026-10-03,2026-10-05,2026-10-11,Tonnes,75707.00,RAW SUGAR,BULK,SHRIDUTT,COFCO,SANTOS,BRAZIL,2026-10-05,IMPORT,INDIA,2026-10-08
+12449,Sugar,BERBERA,BERTH,ABOUDI D,2026-09-05,2026-10-03,2026-10-06,Tonnes,4150.00,REFINED SUGAR,BGD,SHRIDUTT,TBA,KANDLA,INDIA,2026-10-05,EXPORT,SOMALIA,2026-10-08
+12443,Bengal Gram,Mundra,Sailed,Celestial Blue,2026-09-29,2026-09-29,2026-10-05,Tonnes,47762.73,Chickpeas,Bulk,Ldc India,Ldc,Port Kembla / Brisbane,Australia,2026-10-05,Import,India,2026-10-07
+12448,Masoor,Mundra,Expected,Zagori,2026-10-01,2026-10-01,2026-10-01,Tonnes,37016.82,Lentils,Bulk,Ldc India,Ldc,Melbourne,Australia,2026-09-25,Import,India,2026-10-07
+12447,Masoor,Kandla,Anchorage,Marsal,2026-09-01,2026-09-01,2026-09-01,Tonnes,5325.00,Lentils,Bgd,Algyas Foods,Algyas Food,Antwerp,Belgium,2026-09-25,Import,India,2026-10-07
+12446,Masoor,Mundra,Berth,Zagori,2026-10-01,2026-10-05,2026-10-09,Tonnes,3000.00,Lentils,Bulk,R S Triveni Foods,Ldc,Melbourne,Australia,2026-10-05,Import,India,2026-10-07
+12445,Masoor,Mundra,Berth,Zagori,2026-10-01,2026-10-05,2026-10-09,Tonnes,3701.82,Lentils,Bulk,Ldc India,Ldc,Melbourne,Australia,2026-10-05,Import,India,2026-10-07
+12444,Masoor,Kandla,Berth,Marsal,2026-09-01,2026-10-04,2026-10-07,Tonnes,5325.00,Lentils,Bgd,Algyas Foods,Algyas Food Antwerp,—,Belgium,2026-10-05,Import,India,2026-10-07
+12427,Masoor,Haldia,Sailed,Nordtigris,2026-09-06,2026-09-07,2026-09-18,Tonnes,21455.63,Lentils,Bulk,Ldc India,Ldc,Melbourne,Australia,2026-09-25,Import,India,2026-10-07
+12442,Masoor,Vizag,Sailed,Nordtigris,2026-08-22,2026-08-30,2026-09-05,Tonnes,10000.00,Lentils,Bulk,Ldc India,Ldc,Melbourne,Australia,2026-09-25,Import,India,2026-10-07
+12441,Bengal Gram,Tuticorin,Sailed,Darya Diya,2026-08-27,2026-08-28,2026-09-04,Tonnes,12476.00,Chickpeas,Bulk,Shadiram And Sons,Jki,Gladstone,Australia,2026-09-25,Import,India,2026-10-07
+12440,Masoor,Tuticorin,Sailed,Tai Herald,2026-09-06,2026-09-09,2026-09-13,Tonnes,24558.00,Lentils,Bulk,Agrocorp India Trade Services P,Agrocorp,Vancouver,Canada,2026-09-25,Import,India,2026-10-07
+12439,Bengal Gram,Mundra,Sailed,Carpe Diem,2026-09-05,2026-09-10,2026-09-12,Tonnes,5000.00,Chickpeas,Bulk,Sharp Agricom Ltd,Agrocorp,Gladstone,Australia,2026-09-25,Import,India,2026-10-07
+12438,Bengal Gram,Mundra,Sailed,Carpe Diem,2026-09-05,2026-09-10,2026-09-12,Tonnes,3500.00,Chickpeas,Bulk,Torq Commodities Pvt Ltd,Agrocorp,Gladstone,Australia,2026-09-25,Import,India,2026-10-07
+12437,Bengal Gram,Mundra,Sailed,Carpe Diem,2026-09-05,2026-09-10,2026-09-12,Tonnes,1500.00,Chickpeas,Bulk,Dg Trade Hss To National Coope,Agrocorp,Gladstone,Australia,2026-09-25,Import,India,2026-10-07
+12436,Bengal Gram,Mundra,Sailed,Carpe Diem,2026-09-05,2026-09-10,2026-09-12,Tonnes,2000.00,Chickpeas,Bulk,Ryme Trading Pvt Ltd,Agrocorp,Gladstone,Australia,2026-09-25,Import,India,2026-10-07
+12435,Bengal Gram,Mundra,Sailed,Carpe Diem,2026-09-05,2026-09-10,2026-09-12,Tonnes,3000.00,Chickpeas,Bulk,North Bridge Agro X Ventures Pv,Agrocorp,Gladstone,Australia,2026-09-25,Import,India,2026-10-07
+12434,Bengal Gram,Mundra,Sailed,Carpe Diem,2026-09-05,2026-09-10,2026-09-12,Tonnes,843.00,Chickpeas,Bulk,Agrocorp India Trade Services,Agrocorp,Gladstone,Australia,2026-09-25,Import,India,2026-10-07
+12433,Masoor,Haldia,Sailed,Asahi Bulker,2026-08-19,2026-08-28,2026-09-06,Tonnes,2824.00,Lentils,Bulk,Viterra India,Bunge,Port Lincoln,Australia,2026-09-25,Import,India,2026-10-07
+12432,Masoor,Haldia,Sailed,Asahi Bulker,2026-08-19,2026-08-28,2026-09-06,Tonnes,8000.00,Lentils,Bulk,Sr Impex,Bunge,Port Lincoln,Australia,2026-09-25,Import,India,2026-10-07
+12431,Masoor,Haldia,Sailed,Asahi Bulker,2026-08-19,2026-08-28,2026-09-06,Tonnes,2000.00,Lentils,Bulk,Rikabh Chand,Bunge,Port Lincoln,Australia,2026-09-25,Import,India,2026-10-07
+12430,Masoor,Haldia,Sailed,Asahi Bulker,2026-08-19,2026-08-28,2026-09-06,Tonnes,1000.00,Lentils,Bulk,New Tea Impex,Bunge,Port Lincoln,Australia,2026-09-25,Import,India,2026-10-07
+12429,Masoor,Haldia,Sailed,Asahi Bulker,2026-08-19,2026-08-28,2026-09-06,Tonnes,1000.00,Lentils,Bulk,Harvest Link Exports,Bunge,Port Lincoln,Australia,2026-09-25,Import,India,2026-10-07
+12428,Masoor,Haldia,Sailed,Asahi Bulker,2026-08-19,2026-08-28,2026-09-06,Tonnes,2000.00,Lentils,Bulk,Farmers Fortune,Bunge,Port Lincoln,Australia,2026-09-25,Import,India,2026-10-07

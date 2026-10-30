@@ -1,0 +1,23 @@
+﻿id,Commodity,Port,Unit,Value,Date,Source,CreatedBy,CreatedDate,Origin
+406,Pea,Kandla,Tonnes,53259.91,2026-10-05,Nishant,Research,2026-10-12 00:00:00,
+407,Pea,Hazira,Tonnes,51011.52,2026-10-05,Nishant,Research,2026-10-12 00:00:00,
+408,Pea,Total,Tonnes,168348.58,2026-10-05,Nishant,Research,2026-10-12 00:00:00,
+409,Masoor,Mundra,Tonnes,42204.76,2026-10-05,Nishant,Research,2026-10-12 00:00:00,
+410,Masoor,Kandla,Tonnes,59905.09,2026-10-05,Nishant,Research,2026-10-12 00:00:00,
+411,Masoor,Hazira,Tonnes,5361.87,2026-10-05,Nishant,Research,2026-10-12 00:00:00,
+412,Masoor,Total,Tonnes,107471.73,2026-10-05,Nishant,Research,2026-10-12 00:00:00,
+413,Bengal Gram,Mundra,Tonnes,106612.51,2026-10-05,Nishant,Research,2026-10-12 00:00:00,Australia
+414,Bengal Gram,Kandla,Tonnes,107731.85,2026-10-05,Nishant,Research,2026-10-12 00:00:00,Australia
+415,Bengal Gram,Total,Tonnes,214344.36,2026-10-05,Nishant,Research,2026-10-12 00:00:00,Australia
+405,Pea,Mundra,Tonnes,64077.16,2026-10-05,Nishant,Research,2026-10-12 00:00:00,
+426,Bengal Gram,Total,Tonnes,182855.30,2026-09-15,Nishant,Research,2026-10-12 00:00:00,Australia
+425,Bengal Gram,Kandla,Tonnes,112378.77,2026-09-15,Nishant,Research,2026-10-12 00:00:00,Australia
+424,Bengal Gram,Mundra,Tonnes,70476.53,2026-09-15,Nishant,Research,2026-10-12 00:00:00,Australia
+423,Masoor,Total,Tonnes,129423.08,2026-09-15,Nishant,Research,2026-10-12 00:00:00,
+422,Masoor,Hazira,Tonnes,6207.38,2026-09-15,Nishant,Research,2026-10-12 00:00:00,
+421,Masoor,Kandla,Tonnes,70736.27,2026-09-15,Nishant,Research,2026-10-12 00:00:00,
+420,Masoor,Mundra,Tonnes,52479.42,2026-09-15,Nishant,Research,2026-10-12 00:00:00,
+419,Pea,Total,Tonnes,198741.61,2026-09-15,Nishant,Research,2026-10-12 00:00:00,
+418,Pea,Hazira,Tonnes,58859.52,2026-09-15,Nishant,Research,2026-10-12 00:00:00,
+417,Pea,Kandla,Tonnes,66184.93,2026-09-15,Nishant,Research,2026-10-12 00:00:00,
+416,Pea,Mundra,Tonnes,73697.16,2026-09-15,Nishant,Research,2026-10-12 00:00:00,

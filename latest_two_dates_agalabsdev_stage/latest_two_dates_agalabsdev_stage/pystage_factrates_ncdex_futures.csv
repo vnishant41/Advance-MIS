@@ -1,0 +1,13 @@
+﻿RecordIndex,Date,Symbol,ExpiryDate,CommodityName,DeliveryCentre,DeliveryDistrict,Unit,Open,High,Low,Close,Volume,OpenInterest,LastTradeDate,CreatedDate,CreatedBy,Source,StateName
+659484,2026-10-13,Dhaniya,2026-10-19,Coriander,Gondal,Rajkot,Rs/Quintal,15514.0,15840.0,15240.0,15716.0,6675.0,8220,2026-10-13,2026-10-13,Research,Ncdex,Gujarat
+659485,2026-10-13,Dhaniya,2026-12-18,Coriander,Gondal,Rajkot,Rs/Quintal,16380.0,16648.0,16000.0,16532.0,11285.0,18640,2026-10-13,2026-10-13,Research,Ncdex,Gujarat
+659486,2026-10-13,Jeeraunjha,2026-10-19,Cumin,Unjha,Mehsana,Rs/Quintal,26140.0,26140.0,25380.0,25640.0,1662.0,1404,2026-10-13,2026-10-13,Research,Ncdex,Gujarat
+659487,2026-10-13,Jeeraunjha,2026-11-20,Cumin,Unjha,Mehsana,Rs/Quintal,26420.0,26550.0,25805.0,25985.0,5223.0,8910,2026-10-13,2026-10-13,Research,Ncdex,Gujarat
+659488,2026-10-13,Tmcfgrnzm,2026-10-16,Turmeric,Nizamabad,Nizamabad,Rs/Quintal,24526.0,24996.0,24410.0,24686.0,6920.0,29535,2026-10-13,2026-10-13,Research,Ncdex,Telangana
+659489,2026-10-13,Tmcfgrnzm,2026-12-18,Turmeric,Nizamabad,Nizamabad,Rs/Quintal,25300.0,25300.0,24030.0,24424.0,9545.0,15120,2026-10-13,2026-10-13,Research,Ncdex,Telangana
+659478,2026-10-12,Dhaniya,2026-10-19,Coriander,Gondal,Rajkot,Rs/Quintal,16100.0,16340.0,15500.0,15572.0,6295.0,10510,2026-10-12,2026-10-12,Research,Ncdex,Gujarat
+659479,2026-10-12,Dhaniya,2026-12-18,Coriander,Gondal,Rajkot,Rs/Quintal,16730.0,16886.0,16226.0,16310.0,10335.0,17085,2026-10-12,2026-10-12,Research,Ncdex,Gujarat
+659480,2026-10-12,Jeeraunjha,2026-10-19,Cumin,Unjha,Mehsana,Rs/Quintal,25760.0,26150.0,25330.0,25935.0,2487.0,2070,2026-10-12,2026-10-12,Research,Ncdex,Gujarat
+659481,2026-10-12,Jeeraunjha,2026-11-20,Cumin,Unjha,Mehsana,Rs/Quintal,25460.0,26560.0,25350.0,26310.0,6855.0,8715,2026-10-12,2026-10-12,Research,Ncdex,Gujarat
+659482,2026-10-12,Tmcfgrnzm,2026-10-16,Turmeric,Nizamabad,Nizamabad,Rs/Quintal,23474.0,23926.0,23374.0,23926.0,5780.0,31550,2026-10-12,2026-10-12,Research,Ncdex,Telangana
+659483,2026-10-12,Tmcfgrnzm,2026-12-18,Turmeric,Nizamabad,Nizamabad,Rs/Quintal,23770.0,24346.0,23640.0,24346.0,7325.0,14495,2026-10-12,2026-10-12,Research,Ncdex,Telangana

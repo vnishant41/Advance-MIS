@@ -1,0 +1,31 @@
+﻿RecordIndex,MarketYear,SourceCommodityCode,CommodityName,Country,AttributeName,Value,Unit,Source,CreatedBy,CreatedDate,MarketYearDate,Season
+2645908,2025,2222000,Soybeans,India,Direct Consumption,5.0,Lakh Tonnes,Research,tech,2026-05-08,2025-01-01,Kharif
+2645958,2025,813100,Soybean Meal,India,Production,80.49,Lakh Tonnes,Research,tech,2026-06-27,2025-01-01,Kharif
+2645948,2025,813100,Soybean Meal,India,Carry over from last year,0.68,Lakh Tonnes,Research,tech,2026-06-17,2025-01-01,Kharif
+2645968,2025,813100,Soybean Meal,India,Import,0.0,Lakh Tonnes,Research,tech,2026-07-07,2025-01-01,Kharif
+2645938,2025,2222000,Soybeans,India,New Crop Arrived in previous year,,Lakh Tonnes,Research,tech,2026-06-07,2025-01-01,Kharif
+2645858,2025,2222000,Soybeans,India,Carry over from last year,7.66,Lakh Tonnes,Research,tech,2026-03-19,2025-01-01,Kharif
+2645928,2025,2222000,Soybeans,India,Crushing,102.0,Lakh Tonnes,Research,tech,2026-05-28,2025-01-01,Kharif
+2645918,2025,2222000,Soybeans,India,Exports,0.0,Lakh Tonnes,Research,tech,2026-05-18,2025-01-01,Kharif
+2645978,2025,813100,Soybean Meal,India,Export SEA and Land,10.0,Lakh Tonnes,Research,tech,2026-07-17,2025-01-01,Kharif
+2645898,2025,2222000,Soybeans,India,Retained for Sowing,10.0,Lakh Tonnes,Research,tech,2026-04-28,2025-01-01,Kharif
+2645988,2025,813100,Soybean Meal,India,Domestic Consumption (Food),8.0,Lakh Tonnes,Research,tech,2026-07-27,2025-01-01,Kharif
+2645888,2025,2222000,Soybeans,India,New Crop Arrived in September,,Lakh Tonnes,Research,tech,2026-04-18,2025-01-01,Kharif
+2645878,2025,2222000,Soybeans,India,Import,6.0,Lakh Tonnes,Research,tech,2026-04-08,2025-01-01,Kharif
+2645998,2025,813100,Soybean Meal,India,Domestic Consumption (Feed),62.0,Lakh Tonnes,Research,tech,2026-08-06,2025-01-01,Kharif
+2645868,2025,2222000,Soybeans,India,Production,110.26,Lakh Tonnes,Research,tech,2026-03-29,2025-01-01,Kharif
+2645979,2024,813100,Soybean Meal,India,Export SEA and Land,20.23,Lakh Tonnes,Research,tech,2026-07-18,2024-01-01,Kharif
+2645929,2024,2222000,Soybeans,India,Crushing,113.5,Lakh Tonnes,Research,tech,2026-05-29,2024-01-01,Kharif
+2645969,2024,813100,Soybean Meal,India,Import,0.02,Lakh Tonnes,Research,tech,2026-07-08,2024-01-01,Kharif
+2645989,2024,813100,Soybean Meal,India,Domestic Consumption (Food),8.0,Lakh Tonnes,Research,tech,2026-07-28,2024-01-01,Kharif
+2645959,2024,813100,Soybean Meal,India,Production,89.56,Lakh Tonnes,Research,tech,2026-06-28,2024-01-01,Kharif
+2645999,2024,813100,Soybean Meal,India,Domestic Consumption (Feed),62.0,Lakh Tonnes,Research,tech,2026-08-07,2024-01-01,Kharif
+2645949,2024,813100,Soybean Meal,India,Carry over from last year,1.33,Lakh Tonnes,Research,tech,2026-06-18,2024-01-01,Kharif
+2645939,2024,2222000,Soybeans,India,New Crop Arrived in previous year,,Lakh Tonnes,Research,tech,2026-06-08,2024-01-01,Kharif
+2645919,2024,2222000,Soybeans,India,Exports,0.12,Lakh Tonnes,Research,tech,2026-05-19,2024-01-01,Kharif
+2645909,2024,2222000,Soybeans,India,Direct Consumption,5.0,Lakh Tonnes,Research,tech,2026-05-09,2024-01-01,Kharif
+2645899,2024,2222000,Soybeans,India,Retained for Sowing,11.5,Lakh Tonnes,Research,tech,2026-04-29,2024-01-01,Kharif
+2645889,2024,2222000,Soybeans,India,New Crop Arrived in September,,Lakh Tonnes,Research,tech,2026-04-19,2024-01-01,Kharif
+2645879,2024,2222000,Soybeans,India,Import,0.02,Lakh Tonnes,Research,tech,2026-04-09,2024-01-01,Kharif
+2645869,2024,2222000,Soybeans,India,Production,128.82,Lakh Tonnes,Research,tech,2026-03-30,2024-01-01,Kharif
+2645859,2024,2222000,Soybeans,India,Carry over from last year,8.94,Lakh Tonnes,Research,tech,2026-03-20,2024-01-01,Kharif

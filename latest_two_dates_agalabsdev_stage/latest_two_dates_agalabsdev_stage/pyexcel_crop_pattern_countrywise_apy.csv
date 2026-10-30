@@ -1,0 +1,3 @@
+﻿id,CommodityName,Country,Year,Area,Production,Yield,AreaUnit,ProductionUnit,YieldUnit,CreatedDate,Source,CreatedBy
+56650,Wheat(old),New Zealand,2025,46000.0,445000.0,9.67,Hectare,Tonnes,Tonnes/Hectare,2103-10-27,USDA,Research
+56649,Wheat(old),Egypt,2025,1430000.0,9300000.0,6.5,Hectare,Tonnes,Tonnes/Hectare,2103-10-26,USDA,Research

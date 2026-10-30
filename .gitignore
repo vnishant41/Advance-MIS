@@ -1,6 +1,49 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
-venv/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual Environments
 .venv/
-*.sock
+venv/
+ENV/
+env/
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+
+# Databases, Local Backups, and SQL dumps
 instance/
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+*.sql.gz
+*.bak
+
+# Temporary, Scratch, and Test folders
+scratch/
+temp/
+tmp/
+*.tmp
+*.temp
+*.log
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editor & OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

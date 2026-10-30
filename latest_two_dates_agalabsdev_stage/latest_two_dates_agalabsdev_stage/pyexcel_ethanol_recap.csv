@@ -1,0 +1,280 @@
+﻿id,State,Year,Attribute,Value,Unit,CreatedDate,Source,CreatedBy
+253,Andhra Pradesh,2024-2025,No.Of Distilleries,17,Nos,2026-02-23,Research,Research
+254,Andhra Pradesh,2024-2025,Quantity of Ethanol Supplied to OMS,29,Cr Litre,2026-02-23,Research,Research
+255,Andhra Pradesh,2024-2025,Annual Installed Capacity,48,Cr Litre,2026-02-23,Research,Research
+256,Andhra Pradesh,2023-2024 ,No.Of Distilleries,20,Nos,2026-02-23,Research,Research
+257,Andhra Pradesh,2023-2024 ,Annual Installed Capacity,49,Cr Litre,2026-02-23,Research,Research
+258,Andhra Pradesh,2023-2024 ,Quantity of Ethanol Supplied to OMS,30,Cr Litre,2026-02-23,Research,Research
+259,Andhra Pradesh,2022-2023 ,No.Of Distilleries,24,Nos,2026-02-23,Research,Research
+260,Andhra Pradesh,2022-2023 ,Quantity of Ethanol Supplied to OMS,22,Cr Litre,2026-02-23,Research,Research
+261,Andhra Pradesh,2022-2023 ,Annual Installed Capacity,50,Cr Litre,2026-02-23,Research,Research
+262,Andhra Pradesh,2021-2022,Annual Installed Capacity,43,Cr Litre,2026-02-23,Research,Research
+263,Andhra Pradesh,2021-2022,Quantity of Ethanol Supplied to OMS,17,Cr Litre,2026-02-23,Research,Research
+264,Andhra Pradesh,2021-2022,No.Of Distilleries,21,Nos,2026-02-23,Research,Research
+265,Arunachal Pradesh,2022-2023 ,Quantity of Ethanol Supplied to OMS,1,Cr Litre,2026-02-23,Research,Research
+266,Assam,2024-2025,No.Of Distilleries,5,Nos,2026-02-23,Research,Research
+267,Assam,2024-2025,Quantity of Ethanol Supplied to OMS,20,Cr Litre,2026-02-23,Research,Research
+268,Assam,2024-2025,Annual Installed Capacity,26,Cr Litre,2026-02-23,Research,Research
+269,Assam,2023-2024 ,No.Of Distilleries,5,Nos,2026-02-23,Research,Research
+270,Assam,2023-2024 ,Annual Installed Capacity,19,Cr Litre,2026-02-23,Research,Research
+271,Assam,2023-2024 ,Quantity of Ethanol Supplied to OMS,14,Cr Litre,2026-02-23,Research,Research
+272,Assam,2022-2023 ,No.Of Distilleries,2,Nos,2026-02-23,Research,Research
+273,Assam,2022-2023 ,Quantity of Ethanol Supplied to OMS,9,Cr Litre,2026-02-23,Research,Research
+274,Assam,2022-2023 ,Annual Installed Capacity,3,Cr Litre,2026-02-23,Research,Research
+275,Assam,2021-2022,Quantity of Ethanol Supplied to OMS,4,Cr Litre,2026-02-23,Research,Research
+276,Assam,2021-2022,Annual Installed Capacity,4,Cr Litre,2026-02-23,Research,Research
+277,Assam,2021-2022,No.Of Distilleries,2,Nos,2026-02-23,Research,Research
+278,Bihar,2024-2025,No.Of Distilleries,22,Nos,2026-02-23,Research,Research
+279,Bihar,2024-2025,Quantity of Ethanol Supplied to OMS,20,Cr Litre,2026-02-23,Research,Research
+280,Bihar,2024-2025,Annual Installed Capacity,88,Cr Litre,2026-02-23,Research,Research
+281,Bihar,2023-2024 ,No.Of Distilleries,22,Nos,2026-02-23,Research,Research
+282,Bihar,2023-2024 ,Quantity of Ethanol Supplied to OMS,20,Cr Litre,2026-02-23,Research,Research
+283,Bihar,2023-2024 ,Annual Installed Capacity,88,Cr Litre,2026-02-23,Research,Research
+284,Bihar,2022-2023 ,Annual Installed Capacity,80,Cr Litre,2026-02-23,Research,Research
+285,Bihar,2022-2023 ,No.Of Distilleries,18,Nos,2026-02-23,Research,Research
+286,Bihar,2022-2023 ,Quantity of Ethanol Supplied to OMS,16,Cr Litre,2026-02-23,Research,Research
+287,Bihar,2021-2022,Quantity of Ethanol Supplied to OMS,14,Cr Litre,2026-02-23,Research,Research
+288,Bihar,2021-2022,Annual Installed Capacity,32,Cr Litre,2026-02-23,Research,Research
+289,Bihar,2021-2022,No.Of Distilleries,11,Nos,2026-02-23,Research,Research
+290,Chandigarh,2022-2023 ,Quantity of Ethanol Supplied to OMS,2,Cr Litre,2026-02-23,Research,Research
+291,Chhattisgarh,2024-2025,No.Of Distilleries,9,Nos,2026-02-23,Research,Research
+292,Chhattisgarh,2024-2025,Annual Installed Capacity,34,Cr Litre,2026-02-23,Research,Research
+293,Chhattisgarh,2024-2025,Quantity of Ethanol Supplied to OMS,14,Cr Litre,2026-02-23,Research,Research
+294,Chhattisgarh,2023-2024 ,No.Of Distilleries,7,Nos,2026-02-23,Research,Research
+295,Chhattisgarh,2023-2024 ,Quantity of Ethanol Supplied to OMS,13,Cr Litre,2026-02-23,Research,Research
+296,Chhattisgarh,2023-2024 ,Annual Installed Capacity,26,Cr Litre,2026-02-23,Research,Research
+297,Chhattisgarh,2022-2023 ,Quantity of Ethanol Supplied to OMS,11,Cr Litre,2026-02-23,Research,Research
+298,Chhattisgarh,2022-2023 ,Annual Installed Capacity,5,Cr Litre,2026-02-23,Research,Research
+299,Chhattisgarh,2022-2023 ,No.Of Distilleries,3,Nos,2026-02-23,Research,Research
+300,Chhattisgarh,2021-2022,Annual Installed Capacity,5,Cr Litre,2026-02-23,Research,Research
+301,Chhattisgarh,2021-2022,Quantity of Ethanol Supplied to OMS,8,Cr Litre,2026-02-23,Research,Research
+302,Chhattisgarh,2021-2022,No.Of Distilleries,3,Nos,2026-02-23,Research,Research
+303,Dadra & Nagar Haveli and Daman & Diu,2023-2024 ,Quantity of Ethanol Supplied to OMS,1,Cr Litre,2026-02-23,Research,Research
+304,Dadra & Nagar Haveli and Daman & Diu,2022-2023 ,Quantity of Ethanol Supplied to OMS,1,Cr Litre,2026-02-23,Research,Research
+305,Delhi,2024-2025,Quantity of Ethanol Supplied to OMS,18,Cr Litre,2026-02-23,Research,Research
+306,Delhi,2023-2024 ,Quantity of Ethanol Supplied to OMS,20,Cr Litre,2026-02-23,Research,Research
+307,Delhi,2022-2023 ,Quantity of Ethanol Supplied to OMS,13,Cr Litre,2026-02-23,Research,Research
+308,Delhi,2021-2022,Quantity of Ethanol Supplied to OMS,12,Cr Litre,2026-02-23,Research,Research
+309,Goa,2024-2025,Quantity of Ethanol Supplied to OMS,3,Cr Litre,2026-02-23,Research,Research
+310,Goa,2023-2024 ,Quantity of Ethanol Supplied to OMS,4,Cr Litre,2026-02-23,Research,Research
+311,Goa,2022-2023 ,Quantity of Ethanol Supplied to OMS,3,Cr Litre,2026-02-23,Research,Research
+312,Goa,2021-2022,Quantity of Ethanol Supplied to OMS,2,Cr Litre,2026-02-23,Research,Research
+313,Gujarat,2024-2025,No.Of Distilleries,16,Nos,2026-02-23,Research,Research
+314,Gujarat,2024-2025,Quantity of Ethanol Supplied to OMS,31,Cr Litre,2026-02-23,Research,Research
+315,Gujarat,2024-2025,Annual Installed Capacity,40,Cr Litre,2026-02-23,Research,Research
+316,Gujarat,2023-2024 ,No.Of Distilleries,15,Nos,2026-02-23,Research,Research
+317,Gujarat,2023-2024 ,Quantity of Ethanol Supplied to OMS,32,Cr Litre,2026-02-23,Research,Research
+318,Gujarat,2023-2024 ,Annual Installed Capacity,28,Cr Litre,2026-02-23,Research,Research
+319,Gujarat,2022-2023 ,No.Of Distilleries,13,Nos,2026-02-23,Research,Research
+320,Gujarat,2022-2023 ,Annual Installed Capacity,19,Cr Litre,2026-02-23,Research,Research
+321,Gujarat,2022-2023 ,Quantity of Ethanol Supplied to OMS,29,Cr Litre,2026-02-23,Research,Research
+322,Gujarat,2021-2022,No.Of Distilleries,11,Nos,2026-02-23,Research,Research
+323,Gujarat,2021-2022,Annual Installed Capacity,12,Cr Litre,2026-02-23,Research,Research
+324,Gujarat,2021-2022,Quantity of Ethanol Supplied to OMS,22,Cr Litre,2026-02-23,Research,Research
+325,Haryana,2024-2025,Annual Installed Capacity,85,Cr Litre,2026-02-23,Research,Research
+326,Haryana,2024-2025,Quantity of Ethanol Supplied to OMS,29,Cr Litre,2026-02-23,Research,Research
+327,Haryana,2024-2025,No.Of Distilleries,23,Nos,2026-02-23,Research,Research
+328,Haryana,2023-2024 ,No.Of Distilleries,22,Nos,2026-02-23,Research,Research
+329,Haryana,2023-2024 ,Quantity of Ethanol Supplied to OMS,40,Cr Litre,2026-02-23,Research,Research
+330,Haryana,2023-2024 ,Annual Installed Capacity,78,Cr Litre,2026-02-23,Research,Research
+331,Haryana,2022-2023 ,Quantity of Ethanol Supplied to OMS,18,Cr Litre,2026-02-23,Research,Research
+332,Haryana,2022-2023 ,No.Of Distilleries,23,Nos,2026-02-23,Research,Research
+333,Haryana,2022-2023 ,Annual Installed Capacity,84,Cr Litre,2026-02-23,Research,Research
+334,Haryana,2021-2022,No.Of Distilleries,17,Nos,2026-02-23,Research,Research
+335,Haryana,2021-2022,Annual Installed Capacity,50,Cr Litre,2026-02-23,Research,Research
+336,Haryana,2021-2022,Quantity of Ethanol Supplied to OMS,22,Cr Litre,2026-02-23,Research,Research
+337,Himachal Pradesh,2024-2025,Quantity of Ethanol Supplied to OMS,4,Cr Litre,2026-02-23,Research,Research
+338,Himachal Pradesh,2024-2025,Annual Installed Capacity,16,Cr Litre,2026-02-23,Research,Research
+339,Himachal Pradesh,2024-2025,No.Of Distilleries,3,Nos,2026-02-23,Research,Research
+340,Himachal Pradesh,2023-2024 ,No.Of Distilleries,2,Nos,2026-02-23,Research,Research
+341,Himachal Pradesh,2023-2024 ,Annual Installed Capacity,9,Cr Litre,2026-02-23,Research,Research
+342,Himachal Pradesh,2023-2024 ,Quantity of Ethanol Supplied to OMS,5,Cr Litre,2026-02-23,Research,Research
+343,Himachal Pradesh,2022-2023 ,Annual Installed Capacity,9,Cr Litre,2026-02-23,Research,Research
+344,Himachal Pradesh,2022-2023 ,Quantity of Ethanol Supplied to OMS,4,Cr Litre,2026-02-23,Research,Research
+345,Himachal Pradesh,2022-2023 ,No.Of Distilleries,3,Nos,2026-02-23,Research,Research
+346,Himachal Pradesh,2021-2022,Quantity of Ethanol Supplied to OMS,3,Cr Litre,2026-02-23,Research,Research
+347,Himachal Pradesh,2021-2022,No.Of Distilleries,3,Nos,2026-02-23,Research,Research
+348,Himachal Pradesh,2021-2022,Annual Installed Capacity,3,Cr Litre,2026-02-23,Research,Research
+349,Jammu & Kashmir,2024-2025,Quantity of Ethanol Supplied to OMS,1,Cr Litre,2026-02-23,Research,Research
+350,Jammu & Kashmir,2023-2024 ,Quantity of Ethanol Supplied to OMS,2,Cr Litre,2026-02-23,Research,Research
+351,Jammu & Kashmir,2022-2023 ,Quantity of Ethanol Supplied to OMS,6,Cr Litre,2026-02-23,Research,Research
+352,Jammu & Kashmir,2021-2022,Quantity of Ethanol Supplied to OMS,1,Cr Litre,2026-02-23,Research,Research
+353,Jharkhand,2024-2025,Quantity of Ethanol Supplied to OMS,12,Cr Litre,2026-02-23,Research,Research
+354,Jharkhand,2024-2025,Annual Installed Capacity,32,Cr Litre,2026-02-23,Research,Research
+355,Jharkhand,2024-2025,No.Of Distilleries,5,Nos,2026-02-23,Research,Research
+356,Jharkhand,2023-2024 ,No.Of Distilleries,5,Nos,2026-02-23,Research,Research
+357,Jharkhand,2023-2024 ,Quantity of Ethanol Supplied to OMS,12,Cr Litre,2026-02-23,Research,Research
+358,Jharkhand,2023-2024 ,Annual Installed Capacity,32,Cr Litre,2026-02-23,Research,Research
+359,Jharkhand,2022-2023 ,No.Of Distilleries,2,Nos,2026-02-23,Research,Research
+360,Jharkhand,2022-2023 ,Quantity of Ethanol Supplied to OMS,10,Cr Litre,2026-02-23,Research,Research
+361,Jharkhand,2022-2023 ,Annual Installed Capacity,14,Cr Litre,2026-02-23,Research,Research
+362,Jharkhand,2021-2022,Annual Installed Capacity,12,Cr Litre,2026-02-23,Research,Research
+363,Jharkhand,2021-2022,Quantity of Ethanol Supplied to OMS,6,Cr Litre,2026-02-23,Research,Research
+364,Jharkhand,2021-2022,No.Of Distilleries,2,Nos,2026-02-23,Research,Research
+365,Karnataka,2024-2025,Quantity of Ethanol Supplied to OMS,47,Cr Litre,2026-02-23,Research,Research
+366,Karnataka,2024-2025,Annual Installed Capacity,270,Cr Litre,2026-02-23,Research,Research
+367,Karnataka,2024-2025,No.Of Distilleries,46,Nos,2026-02-23,Research,Research
+368,Karnataka,2023-2024 ,No.Of Distilleries,48,Nos,2026-02-23,Research,Research
+369,Karnataka,2023-2024 ,Annual Installed Capacity,256,Cr Litre,2026-02-23,Research,Research
+370,Karnataka,2023-2024 ,Quantity of Ethanol Supplied to OMS,53,Cr Litre,2026-02-23,Research,Research
+371,Karnataka,2022-2023 ,No.Of Distilleries,48,Nos,2026-02-23,Research,Research
+372,Karnataka,2022-2023 ,Annual Installed Capacity,219,Cr Litre,2026-02-23,Research,Research
+373,Karnataka,2022-2023 ,Quantity of Ethanol Supplied to OMS,38,Cr Litre,2026-02-23,Research,Research
+374,Karnataka,2021-2022,Annual Installed Capacity,134,Cr Litre,2026-02-23,Research,Research
+375,Karnataka,2021-2022,Quantity of Ethanol Supplied to OMS,33,Cr Litre,2026-02-23,Research,Research
+376,Karnataka,2021-2022,No.Of Distilleries,38,Nos,2026-02-23,Research,Research
+377,Kerala,2024-2025,Quantity of Ethanol Supplied to OMS,28,Cr Litre,2026-02-23,Research,Research
+378,Kerala,2023-2024 ,Quantity of Ethanol Supplied to OMS,31,Cr Litre,2026-02-23,Research,Research
+379,Kerala,2022-2023 ,Quantity of Ethanol Supplied to OMS,24,Cr Litre,2026-02-23,Research,Research
+380,Kerala,2021-2022,Quantity of Ethanol Supplied to OMS,19,Cr Litre,2026-02-23,Research,Research
+381,Ladakh,2023-2024 ,Quantity of Ethanol Supplied to OMS,0,Cr Litre,2026-02-23,Research,Research
+382,Madhya Pradesh,2024-2025,Quantity of Ethanol Supplied to OMS,28,Cr Litre,2026-02-23,Research,Research
+383,Madhya Pradesh,2024-2025,Annual Installed Capacity,102,Cr Litre,2026-02-23,Research,Research
+384,Madhya Pradesh,2024-2025,No.Of Distilleries,23,Nos,2026-02-23,Research,Research
+385,Madhya Pradesh,2023-2024 ,No.Of Distilleries,25,Nos,2026-02-23,Research,Research
+386,Madhya Pradesh,2023-2024 ,Annual Installed Capacity,104,Cr Litre,2026-02-23,Research,Research
+387,Madhya Pradesh,2023-2024 ,Quantity of Ethanol Supplied to OMS,29,Cr Litre,2026-02-23,Research,Research
+388,Madhya Pradesh,2022-2023 ,No.Of Distilleries,19,Nos,2026-02-23,Research,Research
+389,Madhya Pradesh,2022-2023 ,Annual Installed Capacity,53,Cr Litre,2026-02-23,Research,Research
+390,Madhya Pradesh,2022-2023 ,Quantity of Ethanol Supplied to OMS,25,Cr Litre,2026-02-23,Research,Research
+391,Madhya Pradesh,2021-2022,No.Of Distilleries,13,Nos,2026-02-23,Research,Research
+392,Madhya Pradesh,2021-2022,Annual Installed Capacity,27,Cr Litre,2026-02-23,Research,Research
+393,Madhya Pradesh,2021-2022,Quantity of Ethanol Supplied to OMS,17,Cr Litre,2026-02-23,Research,Research
+394,Maharashtra,2024-2025,Annual Installed Capacity,396,Cr Litre,2026-02-23,Research,Research
+395,Maharashtra,2024-2025,Quantity of Ethanol Supplied to OMS,69,Cr Litre,2026-02-23,Research,Research
+396,Maharashtra,2024-2025,No.Of Distilleries,168,Nos,2026-02-23,Research,Research
+397,Maharashtra,2023-2024 ,Quantity of Ethanol Supplied to OMS,72,Cr Litre,2026-02-23,Research,Research
+398,Maharashtra,2023-2024 ,No.Of Distilleries,163,Nos,2026-02-23,Research,Research
+399,Maharashtra,2023-2024 ,Annual Installed Capacity,393,Cr Litre,2026-02-23,Research,Research
+400,Maharashtra,2022-2023 ,Annual Installed Capacity,336,Cr Litre,2026-02-23,Research,Research
+401,Maharashtra,2022-2023 ,No.Of Distilleries,162,Nos,2026-02-23,Research,Research
+402,Maharashtra,2022-2023 ,Quantity of Ethanol Supplied to OMS,57,Cr Litre,2026-02-23,Research,Research
+403,Maharashtra,2021-2022,No.Of Distilleries,142,Nos,2026-02-23,Research,Research
+404,Maharashtra,2021-2022,Quantity of Ethanol Supplied to OMS,52,Cr Litre,2026-02-23,Research,Research
+405,Maharashtra,2021-2022,Annual Installed Capacity,261,Cr Litre,2026-02-23,Research,Research
+406,Manipur,2022-2023 ,Quantity of Ethanol Supplied to OMS,1,Cr Litre,2026-02-23,Research,Research
+407,Meghalaya,2022-2023 ,Quantity of Ethanol Supplied to OMS,2,Cr Litre,2026-02-23,Research,Research
+408,Mizoram,2022-2023 ,Quantity of Ethanol Supplied to OMS,1,Cr Litre,2026-02-23,Research,Research
+409,Nagaland,2022-2023 ,Quantity of Ethanol Supplied to OMS,1,Cr Litre,2026-02-23,Research,Research
+410,Odisha,2024-2025,Annual Installed Capacity,23,Cr Litre,2026-02-23,Research,Research
+411,Odisha,2024-2025,Quantity of Ethanol Supplied to OMS,19,Cr Litre,2026-02-23,Research,Research
+412,Odisha,2024-2025,No.Of Distilleries,6,Nos,2026-02-23,Research,Research
+413,Odisha,2023-2024 ,Annual Installed Capacity,20,Cr Litre,2026-02-23,Research,Research
+414,Odisha,2023-2024 ,Quantity of Ethanol Supplied to OMS,21,Cr Litre,2026-02-23,Research,Research
+415,Odisha,2023-2024 ,No.Of Distilleries,5,Nos,2026-02-23,Research,Research
+416,Odisha,2022-2023 ,No.Of Distilleries,3,Nos,2026-02-23,Research,Research
+417,Odisha,2022-2023 ,Quantity of Ethanol Supplied to OMS,14,Cr Litre,2026-02-23,Research,Research
+418,Odisha,2022-2023 ,Annual Installed Capacity,4,Cr Litre,2026-02-23,Research,Research
+419,Odisha,2021-2022,No.Of Distilleries,3,Nos,2026-02-23,Research,Research
+420,Odisha,2021-2022,Quantity of Ethanol Supplied to OMS,10,Cr Litre,2026-02-23,Research,Research
+421,Odisha,2021-2022,Annual Installed Capacity,5,Cr Litre,2026-02-23,Research,Research
+422,Pondicherry,2022-2023 ,Quantity of Ethanol Supplied to OMS,2,Cr Litre,2026-02-23,Research,Research
+423,Punjab,2024-2025,Annual Installed Capacity,130,Cr Litre,2026-02-23,Research,Research
+424,Punjab,2024-2025,Quantity of Ethanol Supplied to OMS,24,Cr Litre,2026-02-23,Research,Research
+425,Punjab,2024-2025,No.Of Distilleries,27,Nos,2026-02-23,Research,Research
+426,Punjab,2023-2024 ,Quantity of Ethanol Supplied to OMS,27,Cr Litre,2026-02-23,Research,Research
+427,Punjab,2023-2024 ,Annual Installed Capacity,130,Cr Litre,2026-02-23,Research,Research
+428,Punjab,2023-2024 ,No.Of Distilleries,27,Nos,2026-02-23,Research,Research
+429,Punjab,2022-2023 ,No.Of Distilleries,23,Nos,2026-02-23,Research,Research
+430,Punjab,2022-2023 ,Annual Installed Capacity,100,Cr Litre,2026-02-23,Research,Research
+431,Punjab,2022-2023 ,Quantity of Ethanol Supplied to OMS,16,Cr Litre,2026-02-23,Research,Research
+432,Punjab,2021-2022,No.Of Distilleries,16,Nos,2026-02-23,Research,Research
+433,Punjab,2021-2022,Quantity of Ethanol Supplied to OMS,17,Cr Litre,2026-02-23,Research,Research
+434,Punjab,2021-2022,Annual Installed Capacity,78,Cr Litre,2026-02-23,Research,Research
+435,Rajasthan,2024-2025,Annual Installed Capacity,25,Cr Litre,2026-02-23,Research,Research
+436,Rajasthan,2024-2025,Quantity of Ethanol Supplied to OMS,29,Cr Litre,2026-02-23,Research,Research
+437,Rajasthan,2024-2025,No.Of Distilleries,10,Nos,2026-02-23,Research,Research
+438,Rajasthan,2023-2024 ,Quantity of Ethanol Supplied to OMS,29,Cr Litre,2026-02-23,Research,Research
+439,Rajasthan,2023-2024 ,Annual Installed Capacity,21,Cr Litre,2026-02-23,Research,Research
+440,Rajasthan,2023-2024 ,No.Of Distilleries,10,Nos,2026-02-23,Research,Research
+441,Rajasthan,2022-2023 ,No.Of Distilleries,9,Nos,2026-02-23,Research,Research
+442,Rajasthan,2022-2023 ,Annual Installed Capacity,13,Cr Litre,2026-02-23,Research,Research
+443,Rajasthan,2022-2023 ,Quantity of Ethanol Supplied to OMS,25,Cr Litre,2026-02-23,Research,Research
+444,Rajasthan,2021-2022,No.Of Distilleries,8,Nos,2026-02-23,Research,Research
+445,Rajasthan,2021-2022,Annual Installed Capacity,10,Cr Litre,2026-02-23,Research,Research
+446,Rajasthan,2021-2022,Quantity of Ethanol Supplied to OMS,20,Cr Litre,2026-02-23,Research,Research
+447,Sikkim,2024-2025,Annual Installed Capacity,2,Cr Litre,2026-02-23,Research,Research
+448,Sikkim,2024-2025,No.Of Distilleries,1,Nos,2026-02-23,Research,Research
+449,Sikkim,2023-2024 ,Annual Installed Capacity,2,Cr Litre,2026-02-23,Research,Research
+450,Sikkim,2023-2024 ,No.Of Distilleries,1,Nos,2026-02-23,Research,Research
+451,Sikkim,2022-2023 ,No.Of Distilleries,1,Nos,2026-02-23,Research,Research
+452,Sikkim,2022-2023 ,Annual Installed Capacity,2,Cr Litre,2026-02-23,Research,Research
+453,Sikkim,2021-2022,No.Of Distilleries,1,Nos,2026-02-23,Research,Research
+454,Sikkim,2021-2022,Annual Installed Capacity,2,Cr Litre,2026-02-23,Research,Research
+455,Sikkim,2021-2022,Quantity of Ethanol Supplied to OMS,0,Cr Litre,2026-02-23,Research,Research
+456,Sikkim,2022-2023 ,Quantity of Ethanol Supplied to OMS,0,Cr Litre,2026-02-23,Research,Research
+457,Sikkim,2023-2024 ,Quantity of Ethanol Supplied to OMS,0,Cr Litre,2026-02-23,Research,Research
+458,Sikkim,2024-2025,Quantity of Ethanol Supplied to OMS,0,Cr Litre,2026-02-23,Research,Research
+459,Tamil Nadu,2024-2025,Annual Installed Capacity,32,Cr Litre,2026-02-23,Research,Research
+460,Tamil Nadu,2024-2025,Quantity of Ethanol Supplied to OMS,60,Cr Litre,2026-02-23,Research,Research
+461,Tamil Nadu,2024-2025,No.Of Distilleries,15,Nos,2026-02-23,Research,Research
+462,Tamil Nadu,2023-2024 ,No.Of Distilleries,13,Nos,2026-02-23,Research,Research
+463,Tamil Nadu,2023-2024 ,Quantity of Ethanol Supplied to OMS,65,Cr Litre,2026-02-23,Research,Research
+464,Tamil Nadu,2023-2024 ,Annual Installed Capacity,20,Cr Litre,2026-02-23,Research,Research
+465,Tamil Nadu,2022-2023 ,Quantity of Ethanol Supplied to OMS,45,Cr Litre,2026-02-23,Research,Research
+466,Tamil Nadu,2022-2023 ,No.Of Distilleries,12,Nos,2026-02-23,Research,Research
+467,Tamil Nadu,2022-2023 ,Annual Installed Capacity,18,Cr Litre,2026-02-23,Research,Research
+468,Tamil Nadu,2021-2022,No.Of Distilleries,12,Nos,2026-02-23,Research,Research
+469,Tamil Nadu,2021-2022,Quantity of Ethanol Supplied to OMS,34,Cr Litre,2026-02-23,Research,Research
+470,Tamil Nadu,2021-2022,Annual Installed Capacity,18,Cr Litre,2026-02-23,Research,Research
+471,Telangana,2024-2025,Quantity of Ethanol Supplied to OMS,30,Cr Litre,2026-02-23,Research,Research
+472,Telangana,2024-2025,Annual Installed Capacity,50,Cr Litre,2026-02-23,Research,Research
+473,Telangana,2024-2025,No.Of Distilleries,12,Nos,2026-02-23,Research,Research
+474,Telangana,2023-2024 ,No.Of Distilleries,13,Nos,2026-02-23,Research,Research
+475,Telangana,2023-2024 ,Quantity of Ethanol Supplied to OMS,31,Cr Litre,2026-02-23,Research,Research
+476,Telangana,2023-2024 ,Annual Installed Capacity,52,Cr Litre,2026-02-23,Research,Research
+477,Telangana,2022-2023 ,No.Of Distilleries,6,Nos,2026-02-23,Research,Research
+478,Telangana,2022-2023 ,Quantity of Ethanol Supplied to OMS,23,Cr Litre,2026-02-23,Research,Research
+479,Telangana,2022-2023 ,Annual Installed Capacity,19,Cr Litre,2026-02-23,Research,Research
+480,Telangana,2021-2022,No.Of Distilleries,5,Nos,2026-02-23,Research,Research
+481,Telangana,2021-2022,Quantity of Ethanol Supplied to OMS,18,Cr Litre,2026-02-23,Research,Research
+482,Telangana,2021-2022,Annual Installed Capacity,14,Cr Litre,2026-02-23,Research,Research
+483,Total,2021-2022,Annual Installed Capacity,947,Cr Litre,2026-02-23,Research,Research
+484,Total,2022-2023 ,Annual Installed Capacity,1351,Cr Litre,2026-02-23,Research,Research
+485,Total,2023-2024 ,Annual Installed Capacity,1683,Cr Litre,2026-02-23,Research,Research
+486,Total,2024-2025,Annual Installed Capacity,1822,Cr Litre,2026-02-23,Research,Research
+487,Total,2021-2022,No.Of Distilleries,373,Nos,2026-02-23,Research,Research
+488,Total,2022-2023 ,No.Of Distilleries,453,Nos,2026-02-23,Research,Research
+489,Total,2023-2024 ,No.Of Distilleries,489,Nos,2026-02-23,Research,Research
+490,Total,2024-2025,No.Of Distilleries,499,Nos,2026-02-23,Research,Research
+491,Total,2021-2022,Quantity of Ethanol Supplied to OMS,374,Cr Litre,2026-02-23,Research,Research
+492,Total,2022-2023 ,Quantity of Ethanol Supplied to OMS,447,Cr Litre,2026-02-23,Research,Research
+493,Total,2023-2024 ,Quantity of Ethanol Supplied to OMS,614,Cr Litre,2026-02-23,Research,Research
+494,Total,2024-2025,Quantity of Ethanol Supplied to OMS,587,Cr Litre,2026-02-23,Research,Research
+495,Tripura,2022-2023 ,Quantity of Ethanol Supplied to OMS,1,Cr Litre,2026-02-23,Research,Research
+496,Uttar Pradesh,2024-2025,Annual Installed Capacity,331,Cr Litre,2026-02-23,Research,Research
+497,Uttar Pradesh,2024-2025,Quantity of Ethanol Supplied to OMS,93,Cr Litre,2026-02-23,Research,Research
+498,Uttar Pradesh,2024-2025,No.Of Distilleries,78,Nos,2026-02-23,Research,Research
+499,Uttar Pradesh,2023-2024 ,No.Of Distilleries,75,Nos,2026-02-23,Research,Research
+500,Uttar Pradesh,2023-2024 ,Quantity of Ethanol Supplied to OMS,90,Cr Litre,2026-02-23,Research,Research
+501,Uttar Pradesh,2023-2024 ,Annual Installed Capacity,297,Cr Litre,2026-02-23,Research,Research
+502,Uttar Pradesh,2022-2023 ,Quantity of Ethanol Supplied to OMS,61,Cr Litre,2026-02-23,Research,Research
+503,Uttar Pradesh,2022-2023 ,Annual Installed Capacity,296,Cr Litre,2026-02-23,Research,Research
+504,Uttar Pradesh,2022-2023 ,No.Of Distilleries,75,Nos,2026-02-23,Research,Research
+505,Uttar Pradesh,2021-2022,No.Of Distilleries,59,Nos,2026-02-23,Research,Research
+506,Uttar Pradesh,2021-2022,Annual Installed Capacity,221,Cr Litre,2026-02-23,Research,Research
+507,Uttar Pradesh,2021-2022,Quantity of Ethanol Supplied to OMS,62,Cr Litre,2026-02-23,Research,Research
+508,Uttarakhand,2024-2025,Annual Installed Capacity,42,Cr Litre,2026-02-23,Research,Research
+509,Uttarakhand,2024-2025,Quantity of Ethanol Supplied to OMS,4,Cr Litre,2026-02-23,Research,Research
+510,Uttarakhand,2024-2025,No.Of Distilleries,6,Nos,2026-02-23,Research,Research
+511,Uttarakhand,2023-2024 ,No.Of Distilleries,4,Nos,2026-02-23,Research,Research
+512,Uttarakhand,2023-2024 ,Quantity of Ethanol Supplied to OMS,5,Cr Litre,2026-02-23,Research,Research
+513,Uttarakhand,2023-2024 ,Annual Installed Capacity,9,Cr Litre,2026-02-23,Research,Research
+514,Uttarakhand,2022-2023 ,Quantity of Ethanol Supplied to OMS,6,Cr Litre,2026-02-23,Research,Research
+515,Uttarakhand,2022-2023 ,Annual Installed Capacity,7,Cr Litre,2026-02-23,Research,Research
+516,Uttarakhand,2022-2023 ,No.Of Distilleries,3,Nos,2026-02-23,Research,Research
+517,Uttarakhand,2021-2022,No.Of Distilleries,3,Nos,2026-02-23,Research,Research
+518,Uttarakhand,2021-2022,Quantity of Ethanol Supplied to OMS,3,Cr Litre,2026-02-23,Research,Research
+519,Uttarakhand,2021-2022,Annual Installed Capacity,6,Cr Litre,2026-02-23,Research,Research
+520,West Bengal,2024-2025,Annual Installed Capacity,50,Cr Litre,2026-02-23,Research,Research
+521,West Bengal,2024-2025,Quantity of Ethanol Supplied to OMS,25,Cr Litre,2026-02-23,Research,Research
+522,West Bengal,2024-2025,No.Of Distilleries,7,Nos,2026-02-23,Research,Research
+523,West Bengal,2023-2024 ,No.Of Distilleries,7,Nos,2026-02-23,Research,Research
+524,West Bengal,2023-2024 ,Annual Installed Capacity,50,Cr Litre,2026-02-23,Research,Research
+525,West Bengal,2023-2024 ,Quantity of Ethanol Supplied to OMS,26,Cr Litre,2026-02-23,Research,Research
+526,West Bengal,2022-2023 ,Annual Installed Capacity,20,Cr Litre,2026-02-23,Research,Research
+527,West Bengal,2022-2023 ,Quantity of Ethanol Supplied to OMS,18,Cr Litre,2026-02-23,Research,Research
+528,West Bengal,2022-2023 ,No.Of Distilleries,4,Nos,2026-02-23,Research,Research
+529,West Bengal,2021-2022,No.Of Distilleries,3,Nos,2026-02-23,Research,Research
+530,West Bengal,2021-2022,Quantity of Ethanol Supplied to OMS,12,Cr Litre,2026-02-23,Research,Research
+531,West Bengal,2021-2022,Annual Installed Capacity,10,Cr Litre,2026-02-23,Research,Research

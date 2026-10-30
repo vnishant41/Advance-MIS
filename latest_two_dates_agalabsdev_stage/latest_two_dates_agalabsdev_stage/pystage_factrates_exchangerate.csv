@@ -1,0 +1,66 @@
+﻿RecordIndex,Date,BaseCountry,QuoteCountry,BaseCurrency,QuoteCurrency,Source,Value,CreatedDate,CreatedBy
+293035,2026-10-13,United States,Saudi Arabia,USD,SAR,IMF_Currency,3.75,2026-10-14,Technology
+293043,2026-10-13,United States,European Union,USD,EUR,IMF_Currency,1.1188,2026-10-14,Technology
+293042,2026-10-13,United States,Brunei,USD,BND,IMF_Currency,1.2806,2026-10-14,Technology
+293041,2026-10-13,United States,Uruguay,USD,UYU,IMF_Currency,40.2,2026-10-14,Technology
+293040,2026-10-13,United States,United Arab Emirates,USD,AED,IMF_Currency,3.6725,2026-10-14,Technology
+293039,2026-10-13,United States,Trinidad and Tobago,USD,TTD,IMF_Currency,6.7855,2026-10-14,Technology
+293038,2026-10-13,United States,Switzerland,USD,CHF,IMF_Currency,0.83267,2026-10-14,Technology
+293037,2026-10-13,United States,Sweden,USD,SEK,IMF_Currency,9.98373,2026-10-14,Technology
+293036,2026-10-13,United States,Singapore,USD,SGD,IMF_Currency,1.2806,2026-10-14,Technology
+293044,2026-10-13,United States,Jordan,USD,JOD,IMF_Currency,158.49,2026-10-14,Technology
+293034,2026-10-13,United States,Malaysia,USD,MYR,IMF_Currency,4.086,2026-10-14,Technology
+293033,2026-10-13,United States,Poland,USD,PLN,IMF_Currency,3.9177,2026-10-14,Technology
+293032,2026-10-13,United States,Philippines,USD,PHP,IMF_Currency,62.739,2026-10-14,Technology
+293031,2026-10-13,United States,Peru,USD,PEN,IMF_Currency,3.434,2026-10-14,Technology
+293030,2026-10-13,United States,Oman,USD,OMR,IMF_Currency,0.3845,2026-10-14,Technology
+293029,2026-10-13,United States,Norway,USD,NOK,IMF_Currency,9.5357,2026-10-14,Technology
+293028,2026-10-13,United States,New Zealand,USD,NZD,IMF_Currency,0.5582,2026-10-14,Technology
+293027,2026-10-13,United States,Mexico,USD,MXN,IMF_Currency,18.3528,2026-10-14,Technology
+293045,2026-10-13,United States,United Kingdom,USD,GBP,IMF_Currency,1.3241,2026-10-14,Technology
+293046,2026-10-13,United States,United States,USD,USD,IMF_Currency,1.0,2026-10-14,Technology
+293047,2026-10-13,United States,Algeria,USD,DZD,IMF_Currency,134.429,2026-10-14,Technology
+293048,2026-10-13,United States,Australia,USD,AUD,IMF_Currency,0.6961,2026-10-14,Technology
+293049,2026-10-13,United States,Botswana,USD,BWP,IMF_Currency,0.0746,2026-10-14,Technology
+293050,2026-10-13,United States,Brazil,USD,BRL,IMF_Currency,5.009,2026-10-14,Technology
+293051,2026-10-13,United States,China,USD,CNY,IMF_Currency,6.6945,2026-10-14,Technology
+293052,2026-10-13,United States,Canada,USD,CAD,IMF_Currency,1.4222,2026-10-14,Technology
+293053,2026-10-13,United States,Chile,USD,CLP,IMF_Currency,978.61,2026-10-14,Technology
+293054,2026-10-13,United States,Czech Republic,USD,CZK,IMF_Currency,21.788,2026-10-14,Technology
+293055,2026-10-13,United States,Denmark,USD,DKK,IMF_Currency,6.6815,2026-10-14,Technology
+293056,2026-10-13,United States,India,USD,INR,IMF_Currency,95.2477,2026-10-14,Technology
+293057,2026-10-13,United States,Israel,USD,ILS,IMF_Currency,3.074,2026-10-14,Technology
+293058,2026-10-13,United States,South Korea,USD,KRW,IMF_Currency,1335.8,2026-10-14,Technology
+293059,2026-10-13,United States,Kuwait,USD,KWD,IMF_Currency,0.3083,2026-10-14,Technology
+293026,2026-10-13,United States,Mauritius,USD,MUR,IMF_Currency,48.3454,2026-10-14,Technology
+293025,2026-10-13,United States,Qatar,USD,QAR,IMF_Currency,3.64,2026-10-14,Technology
+293009,2026-10-09,United States,Brunei,USD,BND,IMF_Currency,1.2795,2026-10-10,Technology
+292996,2026-10-09,United States,Mexico,USD,MXN,IMF_Currency,18.4163,2026-10-10,Technology
+293008,2026-10-09,United States,Uruguay,USD,UYU,IMF_Currency,40.184,2026-10-10,Technology
+293007,2026-10-09,United States,Trinidad and Tobago,USD,TTD,IMF_Currency,6.7745,2026-10-10,Technology
+293006,2026-10-09,United States,Thailand,USD,THB,IMF_Currency,33.558,2026-10-10,Technology
+293005,2026-10-09,United States,Switzerland,USD,CHF,IMF_Currency,0.831,2026-10-10,Technology
+293004,2026-10-09,United States,Sweden,USD,SEK,IMF_Currency,9.96564,2026-10-10,Technology
+293003,2026-10-09,United States,Singapore,USD,SGD,IMF_Currency,1.2795,2026-10-10,Technology
+293002,2026-10-09,United States,Malaysia,USD,MYR,IMF_Currency,4.0885,2026-10-10,Technology
+293001,2026-10-09,United States,Poland,USD,PLN,IMF_Currency,3.9022,2026-10-10,Technology
+293000,2026-10-09,United States,Philippines,USD,PHP,IMF_Currency,62.766,2026-10-10,Technology
+292999,2026-10-09,United States,Peru,USD,PEN,IMF_Currency,3.446,2026-10-10,Technology
+292998,2026-10-09,United States,Norway,USD,NOK,IMF_Currency,9.5623,2026-10-10,Technology
+292997,2026-10-09,United States,New Zealand,USD,NZD,IMF_Currency,0.56085,2026-10-10,Technology
+292995,2026-10-09,United States,Mauritius,USD,MUR,IMF_Currency,47.8455,2026-10-10,Technology
+293010,2026-10-09,United States,European Union,USD,EUR,IMF_Currency,1.1206,2026-10-10,Technology
+293011,2026-10-09,United States,Jordan,USD,JOD,IMF_Currency,158.1,2026-10-10,Technology
+293012,2026-10-09,United States,United Kingdom,USD,GBP,IMF_Currency,1.32245,2026-10-10,Technology
+293013,2026-10-09,United States,United States,USD,USD,IMF_Currency,1.0,2026-10-10,Technology
+293014,2026-10-09,United States,Algeria,USD,DZD,IMF_Currency,134.425,2026-10-10,Technology
+293015,2026-10-09,United States,Australia,USD,AUD,IMF_Currency,0.6979,2026-10-10,Technology
+293016,2026-10-09,United States,Botswana,USD,BWP,IMF_Currency,0.0746,2026-10-10,Technology
+293017,2026-10-09,United States,Brazil,USD,BRL,IMF_Currency,4.9886,2026-10-10,Technology
+293018,2026-10-09,United States,China,USD,CNY,IMF_Currency,6.6934,2026-10-10,Technology
+293019,2026-10-09,United States,Canada,USD,CAD,IMF_Currency,1.4271,2026-10-10,Technology
+293020,2026-10-09,United States,Chile,USD,CLP,IMF_Currency,981.61,2026-10-10,Technology
+293021,2026-10-09,United States,Czech Republic,USD,CZK,IMF_Currency,21.745,2026-10-10,Technology
+293022,2026-10-09,United States,Denmark,USD,DKK,IMF_Currency,6.6706,2026-10-10,Technology
+293023,2026-10-09,United States,India,USD,INR,IMF_Currency,96.6149,2026-10-10,Technology
+293024,2026-10-09,United States,Israel,USD,ILS,IMF_Currency,3.055,2026-10-10,Technology

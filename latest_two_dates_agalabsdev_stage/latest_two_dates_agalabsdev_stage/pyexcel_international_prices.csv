@@ -1,0 +1,41 @@
+﻿RecordIndex,Date,CommodityName,Value,Unit,Source,CreatedBy,CreatedDate,Origin,Market,Variety,Type,SourceCommodityName
+34002,2026-10-13,Bengal Gram,1000.0,USD/Tonne,Agalabs,Nishant,2026-10-13,Myanmar,Myanmar,Mosambi,FOB,Bengal Gram
+33993,2026-10-13,Urad,915.0,USD/Tonne,Agalabs,Nishant,2026-10-13,Myanmar,Myanmar,FAQ,FOB,Urad
+33994,2026-10-13,Urad,975.0,USD/Tonne,Agalabs,Nishant,2026-10-13,Myanmar,Myanmar,FAQ,CNF,Urad
+33995,2026-10-13,Urad,4060000.0,Kyat/Tonne,Agalabs,Nishant,2026-10-13,Myanmar,Myanmar,SQ,LOC,Urad
+33996,2026-10-13,Urad,995.0,USD/Tonne,Agalabs,Nishant,2026-10-13,Myanmar,Myanmar,SQ,FOB,Urad
+33997,2026-10-13,Urad,1055.0,USD/Tonne,Agalabs,Nishant,2026-10-13,Myanmar,Myanmar,SQ,CNF,Urad
+33998,2026-10-13,Tur,4010000.0,Kyat/Tonne,Agalabs,Nishant,2026-10-13,Myanmar,Myanmar,Lemon,LOC,Tur
+33999,2026-10-13,Tur,980.0,USD/Tonne,Agalabs,Nishant,2026-10-13,Myanmar,Myanmar,Lemon,FOB,Tur
+34000,2026-10-13,Tur,1040.0,USD/Tonne,Agalabs,Nishant,2026-10-13,Myanmar,Myanmar,Lemon,CNF,Tur
+34001,2026-10-13,Bengal Gram,3900000.0,Kyat/Tonne,Agalabs,Nishant,2026-10-13,Myanmar,Myanmar,Mosambi,LOC,Bengal Gram
+33992,2026-10-13,Urad,3717000.0,Kyat/Tonne,Agalabs,Nishant,2026-10-13,Myanmar,Myanmar,FAQ,LOC,Urad
+34003,2026-10-13,Bengal Gram,1050.0,USD/Tonne,Agalabs,Nishant,2026-10-13,Myanmar,Myanmar,Mosambi,CNF,Bengal Gram
+34004,2026-10-13,Pea,349.94,CAD/MT,pdqinfo,Nishant,2026-10-14,Canada,North Alberta,Yellow 2,Local Price,2 YELLOW PEAS
+34005,2026-10-13,Pea,351.57,CAD/MT,pdqinfo,Nishant,2026-10-14,Canada,South Alberta,Yellow 2,Local Price,2 YELLOW PEAS
+34006,2026-10-13,Pea,340.86,CAD/MT,pdqinfo,Nishant,2026-10-14,Canada,North West Saskatchewan,Yellow 2,Local Price,2 YELLOW PEAS
+34007,2026-10-13,Pea,335.23,CAD/MT,pdqinfo,Nishant,2026-10-14,Canada,South West Saskatchewan,Yellow 2,Local Price,2 YELLOW PEAS
+34008,2026-10-13,Pea,332.67,CAD/MT,pdqinfo,Nishant,2026-10-14,Canada,North East Saskatchewan,Yellow 2,Local Price,2 YELLOW PEAS
+34009,2026-10-13,Pea,324.9,CAD/MT,pdqinfo,Nishant,2026-10-14,Canada,South East Saskatchewan,Yellow 2,Local Price,2 YELLOW PEAS
+34010,2026-10-13,Pea,315.38,CAD/MT,pdqinfo,Nishant,2026-10-14,Canada,West Manitoba,Yellow 2,Local Price,2 YELLOW PEAS
+34011,2026-10-13,Pea,310.46,CAD/MT,pdqinfo,Nishant,2026-10-14,Canada,East Manitoba,Yellow 2,Local Price,2 YELLOW PEAS
+33982,2026-10-12,Bengal Gram,1000.0,USD/Tonne,Agalabs,Nishant,2026-10-12,Myanmar,Myanmar,Mosambi,FOB,Bengal Gram
+33973,2026-10-12,Urad,925.0,USD/Tonne,Agalabs,Nishant,2026-10-12,Myanmar,Myanmar,FAQ,FOB,Urad
+33974,2026-10-12,Urad,985.0,USD/Tonne,Agalabs,Nishant,2026-10-12,Myanmar,Myanmar,FAQ,CNF,Urad
+33975,2026-10-12,Urad,4150000.0,Kyat/Tonne,Agalabs,Nishant,2026-10-12,Myanmar,Myanmar,SQ,LOC,Urad
+33976,2026-10-12,Urad,1005.0,USD/Tonne,Agalabs,Nishant,2026-10-12,Myanmar,Myanmar,SQ,FOB,Urad
+33977,2026-10-12,Urad,1065.0,USD/Tonne,Agalabs,Nishant,2026-10-12,Myanmar,Myanmar,SQ,CNF,Urad
+33978,2026-10-12,Tur,4130000.0,Kyat/Tonne,Agalabs,Nishant,2026-10-12,Myanmar,Myanmar,Lemon,LOC,Tur
+33979,2026-10-12,Tur,995.0,USD/Tonne,Agalabs,Nishant,2026-10-12,Myanmar,Myanmar,Lemon,FOB,Tur
+33980,2026-10-12,Tur,1055.0,USD/Tonne,Agalabs,Nishant,2026-10-12,Myanmar,Myanmar,Lemon,CNF,Tur
+33981,2026-10-12,Bengal Gram,3900000.0,Kyat/Tonne,Agalabs,Nishant,2026-10-12,Myanmar,Myanmar,Mosambi,LOC,Bengal Gram
+33972,2026-10-12,Urad,3780000.0,Kyat/Tonne,Agalabs,Nishant,2026-10-12,Myanmar,Myanmar,FAQ,LOC,Urad
+33983,2026-10-12,Bengal Gram,1050.0,USD/Tonne,Agalabs,Nishant,2026-10-12,Myanmar,Myanmar,Mosambi,CNF,Bengal Gram
+33984,2026-10-12,Pea,349.94,CAD/MT,pdqinfo,Nishant,2026-10-13,Canada,North Alberta,Yellow 2,Local Price,2 YELLOW PEAS
+33985,2026-10-12,Pea,351.57,CAD/MT,pdqinfo,Nishant,2026-10-13,Canada,South Alberta,Yellow 2,Local Price,2 YELLOW PEAS
+33986,2026-10-12,Pea,340.86,CAD/MT,pdqinfo,Nishant,2026-10-13,Canada,North West Saskatchewan,Yellow 2,Local Price,2 YELLOW PEAS
+33987,2026-10-12,Pea,335.23,CAD/MT,pdqinfo,Nishant,2026-10-13,Canada,South West Saskatchewan,Yellow 2,Local Price,2 YELLOW PEAS
+33988,2026-10-12,Pea,332.67,CAD/MT,pdqinfo,Nishant,2026-10-13,Canada,North East Saskatchewan,Yellow 2,Local Price,2 YELLOW PEAS
+33989,2026-10-12,Pea,324.9,CAD/MT,pdqinfo,Nishant,2026-10-13,Canada,South East Saskatchewan,Yellow 2,Local Price,2 YELLOW PEAS
+33990,2026-10-12,Pea,315.38,CAD/MT,pdqinfo,Nishant,2026-10-13,Canada,West Manitoba,Yellow 2,Local Price,2 YELLOW PEAS
+33991,2026-10-12,Pea,310.46,CAD/MT,pdqinfo,Nishant,2026-10-13,Canada,East Manitoba,Yellow 2,Local Price,2 YELLOW PEAS

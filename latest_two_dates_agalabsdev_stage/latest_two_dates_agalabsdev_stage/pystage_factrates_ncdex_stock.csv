@@ -1,0 +1,39 @@
+﻿RecordIndex,Date,Symbol,SourceLocationName,CommodityName,DistrictName,Value,Unit,CreatedDate,CreatedBy,Source,StateName,Attribute
+1402767,2026-10-13,Cumin,Unjha,Cumin,Mehsana,814.0,Tonnes,2026-10-14,Pankaj,Ncdex,Gujarat,Pledged Valid Stock
+1402758,2026-10-13,Coriander,Gondal,Coriander,Rajkot,5561.0,Tonnes,2026-10-14,Pankaj,Ncdex,Gujarat,Unencumbered Valid Stock
+1402759,2026-10-13,Coriander,Kota,Coriander,Kota,358.0,Tonnes,2026-10-14,Pankaj,Ncdex,Rajasthan,Unencumbered Valid Stock
+1402760,2026-10-13,Cumin,Unjha,Cumin,Mehsana,2356.0,Tonnes,2026-10-14,Pankaj,Ncdex,Gujarat,Unencumbered Valid Stock
+1402761,2026-10-13,Turmeric-Erode ,Erode,Turmeric,Erode,25.0,Tonnes,2026-10-14,Pankaj,Ncdex,Tamil Nadu,Unencumbered Valid Stock
+1402762,2026-10-13,Turmeric-Erode salem,Erode,Turmeric,Erode,735.0,Tonnes,2026-10-14,Pankaj,Ncdex,Tamil Nadu,Unencumbered Valid Stock
+1402763,2026-10-13,Turmeric Nizamabad (Farmer Polished),Nizamabad,Turmeric,Nizamabad,3343.0,Tonnes,2026-10-14,Pankaj,Ncdex,Telangana,Unencumbered Valid Stock
+1402764,2026-10-13,Turmeric Rajapore,Sangli,Turmeric,Sangli,6557.0,Tonnes,2026-10-14,Pankaj,Ncdex,Maharashtra,Unencumbered Valid Stock
+1402765,2026-10-13,Turmeric Salem,Basmat,Turmeric,Hingoli,8590.0,Tonnes,2026-10-14,Pankaj,Ncdex,Maharashtra,Unencumbered Valid Stock
+1402766,2026-10-13,Coriander,Gondal,Coriander,Rajkot,1636.0,Tonnes,2026-10-14,Pankaj,Ncdex,Gujarat,Pledged Valid Stock
+1402768,2026-10-13,Turmeric Nizamabad (Farmer Polished),Nizamabad,Turmeric,Nizamabad,563.0,Tonnes,2026-10-14,Pankaj,Ncdex,Telangana,Pledged Valid Stock
+1402769,2026-10-13,Turmeric Rajapore,Sangli,Turmeric,Sangli,30.0,Tonnes,2026-10-14,Pankaj,Ncdex,Maharashtra,Pledged Valid Stock
+1402770,2026-10-13,Turmeric Salem,Basmat,Turmeric,Hingoli,1033.0,Tonnes,2026-10-14,Pankaj,Ncdex,Maharashtra,Pledged Valid Stock
+1402771,2026-10-13,Coriander,Gondal,Coriander,Rajkot,10.0,Tonnes,2026-10-14,Pankaj,Ncdex,Gujarat,Quantity In Process
+1402772,2026-10-13,Cumin,Unjha,Cumin,Mehsana,330.0,Tonnes,2026-10-14,Pankaj,Ncdex,Gujarat,Quantity In Process
+1402773,2026-10-13,Turmeric,Basmat,Turmeric,Hingoli,418.0,Tonnes,2026-10-14,Pankaj,Ncdex,Maharashtra,Quantity In Process
+1402774,2026-10-13,Turmeric,Nizamabad,Turmeric,Nizamabad,110.0,Tonnes,2026-10-14,Pankaj,Ncdex,Telangana,Quantity In Process
+1402775,2026-10-13,Turmeric,Sangli,Turmeric,Sangli,169.0,Tonnes,2026-10-14,Pankaj,Ncdex,Maharashtra,Quantity In Process
+1402757,2026-10-12,Turmeric-Erode ,Erode,Turmeric,Erode,408.0,Tonnes,2026-10-13,Pankaj,Ncdex,Tamil Nadu,Quantity In Process
+1402748,2026-10-12,Turmeric-Erode salem,Erode,Turmeric,Erode,208.0,Tonnes,2026-10-13,Pankaj,Ncdex,Tamil Nadu,Pledged Valid Stock
+1402739,2026-10-12,Coriander,Kota,Coriander,Kota,358.0,Tonnes,2026-10-13,Pankaj,Ncdex,Rajasthan,Unencumbered Valid Stock
+1402740,2026-10-12,Cumin,Unjha,Cumin,Mehsana,2269.0,Tonnes,2026-10-13,Pankaj,Ncdex,Gujarat,Unencumbered Valid Stock
+1402741,2026-10-12,Turmeric-Erode ,Erode,Turmeric,Erode,25.0,Tonnes,2026-10-13,Pankaj,Ncdex,Tamil Nadu,Unencumbered Valid Stock
+1402742,2026-10-12,Turmeric-Erode salem,Erode,Turmeric,Erode,527.0,Tonnes,2026-10-13,Pankaj,Ncdex,Tamil Nadu,Unencumbered Valid Stock
+1402743,2026-10-12,Turmeric Nizamabad (Farmer Polished),Nizamabad,Turmeric,Nizamabad,3029.0,Tonnes,2026-10-13,Pankaj,Ncdex,Telangana,Unencumbered Valid Stock
+1402744,2026-10-12,Turmeric Rajapore,Sangli,Turmeric,Sangli,6020.0,Tonnes,2026-10-13,Pankaj,Ncdex,Maharashtra,Unencumbered Valid Stock
+1402745,2026-10-12,Turmeric Salem,Basmat,Turmeric,Hingoli,8083.0,Tonnes,2026-10-13,Pankaj,Ncdex,Maharashtra,Unencumbered Valid Stock
+1402746,2026-10-12,Coriander,Gondal,Coriander,Rajkot,1744.0,Tonnes,2026-10-13,Pankaj,Ncdex,Gujarat,Pledged Valid Stock
+1402747,2026-10-12,Cumin,Unjha,Cumin,Mehsana,814.0,Tonnes,2026-10-13,Pankaj,Ncdex,Gujarat,Pledged Valid Stock
+1402738,2026-10-12,Coriander,Gondal,Coriander,Rajkot,5363.0,Tonnes,2026-10-13,Pankaj,Ncdex,Gujarat,Unencumbered Valid Stock
+1402749,2026-10-12,Turmeric Nizamabad (Farmer Polished),Nizamabad,Turmeric,Nizamabad,807.0,Tonnes,2026-10-13,Pankaj,Ncdex,Telangana,Pledged Valid Stock
+1402750,2026-10-12,Turmeric Rajapore,Sangli,Turmeric,Sangli,328.0,Tonnes,2026-10-13,Pankaj,Ncdex,Maharashtra,Pledged Valid Stock
+1402751,2026-10-12,Turmeric Salem,Basmat,Turmeric,Hingoli,1320.0,Tonnes,2026-10-13,Pankaj,Ncdex,Maharashtra,Pledged Valid Stock
+1402752,2026-10-12,Coriander,Gondal,Coriander,Rajkot,5363.0,Tonnes,2026-10-13,Pankaj,Ncdex,Gujarat,Quantity In Process
+1402753,2026-10-12,Coriander,Kota,Coriander,Kota,10.0,Tonnes,2026-10-13,Pankaj,Ncdex,Rajasthan,Quantity In Process
+1402754,2026-10-12,Turmeric,Basmat,Turmeric,Hingoli,255.0,Tonnes,2026-10-13,Pankaj,Ncdex,Maharashtra,Quantity In Process
+1402755,2026-10-12,Turmeric,Nizamabad,Turmeric,Nizamabad,637.0,Tonnes,2026-10-13,Pankaj,Ncdex,Telangana,Quantity In Process
+1402756,2026-10-12,Turmeric,Sangli,Turmeric,Sangli,185.0,Tonnes,2026-10-13,Pankaj,Ncdex,Maharashtra,Quantity In Process

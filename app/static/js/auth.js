@@ -14,14 +14,24 @@ export const auth = {
         this.appShell = document.getElementById('app-shell');
         this.errorMsg = document.getElementById('login-error');
         this.logoutBtn = document.getElementById('btn-logout');
+        if (this.loginForm) {
+            this.loginForm.addEventListener('submit', this.handleLogin.bind(this));
+        }
 
-        this.loginForm.addEventListener('submit', this.handleLogin.bind(this));
-        this.logoutBtn.addEventListener('click', this.logout.bind(this));
+        if (this.logoutBtn) {
+            this.logoutBtn.addEventListener('click', this.logout.bind(this));
+        }
+        const profileLogoutBtn = document.getElementById('btn-profile-logout');
+        if (profileLogoutBtn) {
+            profileLogoutBtn.addEventListener('click', this.logout.bind(this));
+        }
+
 
         window.addEventListener('auth:unauthorized', () => this.logout());
 
         this.checkAuth();
     },
+
 
     async checkAuth() {
         const token = api.getToken();
@@ -86,16 +96,21 @@ export const auth = {
         window.currentUser = user;
         window.enabledModules = modules;
 
-        document.getElementById('user-name').textContent = user.name;
-        document.getElementById('user-role').textContent = user.role;
-        document.getElementById('user-avatar').textContent = user.name.charAt(0).toUpperCase();
+        const nameEl = document.getElementById('user-name');
+        if (nameEl) nameEl.textContent = user.name || 'User';
+        const roleEl = document.getElementById('user-role');
+        if (roleEl) roleEl.textContent = user.role || 'Role';
+        const avatarEl = document.getElementById('user-avatar');
+        if (avatarEl) avatarEl.textContent = (user.name || 'U').charAt(0).toUpperCase();
 
         // Hide admin nav if not admin/manager
         const navAdmin = document.getElementById('nav-admin');
-        if (['SuperAdmin', 'Manager'].includes(user.role)) {
-            navAdmin.style.display = 'flex';
-        } else {
-            navAdmin.style.display = 'none';
+        if (navAdmin) {
+            if (['SuperAdmin', 'Manager'].includes(user.role)) {
+                navAdmin.style.display = 'inline-flex';
+            } else {
+                navAdmin.style.display = 'none';
+            }
         }
 
         this.applyModuleVisibility(modules);
@@ -147,7 +162,7 @@ export const auth = {
 
         // Trigger initial route
         if (!window.location.hash) {
-            window.location.hash = '#dashboard';
+            window.location.hash = '#crishi';
         } else {
             window.dispatchEvent(new Event('hashchange'));
         }

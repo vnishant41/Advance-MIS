@@ -47,7 +47,7 @@ export const api = {
             const data = await response.json();
 
             if (!response.ok) {
-                if (response.status === 401) {
+                if (response.status === 401 || response.status === 422) {
                     window.dispatchEvent(new Event('auth:unauthorized'));
                 }
                 if (response.status === 413) {

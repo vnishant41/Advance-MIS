@@ -1,0 +1,1593 @@
+﻿RecordIndex,DistrictName,ActualDaily,NormalDaily,DepreciationDaily,CategoryDaily,Date,ActualCumulative,NormalCumulative,DepreciationCumulative,CategoryCumulative,Unit
+1311670,Andaman & Nicobar Islands,7.2,11.8,-0.39,D,2026-10-14,75.3,163.6,-0.54,D,Millimeter
+1311671,Nicobar,2.9,9.0,-0.68,LD,2026-10-14,29.0,155.3,-0.81,LD,Millimeter
+1311672,North & Middle Andaman,2.0,10.7,-0.81,LD,2026-10-14,107.5,167.8,-0.36,D,Millimeter
+1311673,South Andaman,15.7,14.8,0.06,N,2026-10-14,68.9,164.2,-0.58,D,Millimeter
+1311674,Arunachal Pradesh,0.0,4.3,-0.99,LD,2026-10-14,41.0,107.5,-0.62,LD,Millimeter
+1311675,Anjaw,0.0,4.1,-1.0,NR,2026-10-14,36.9,102.1,-0.64,LD,Millimeter
+1311676,Changlang,0.0,4.0,-1.0,NR,2026-10-14,24.2,71.1,-0.66,LD,Millimeter
+1311677,East Kameng,0.0,4.0,-1.0,NR,2026-10-14,33.7,76.3,-0.56,D,Millimeter
+1311678,East Siang,0.0,3.2,-1.0,NR,2026-10-14,89.1,154.3,-0.42,D,Millimeter
+1311679,Kurung Kumey,0.0,1.5,-1.0,NR,2026-10-14,35.9,62.2,-0.42,D,Millimeter
+1311680,Lohit,0.0,6.5,-1.0,NR,2026-10-14,30.6,115.7,-0.74,LD,Millimeter
+1311681,Lower Subansiri,0.0,1.7,-1.0,NR,2026-10-14,30.8,36.7,-0.16,N,Millimeter
+1311682,Papumpara,0.0,4.1,-1.0,NR,2026-10-14,112.0,112.0,0.0,N,Millimeter
+1311683,Tawang,0.0,0.6,-1.0,NR,2026-10-14,16.7,55.0,-0.7,LD,Millimeter
+1311684,Tirap,0.0,4.5,-1.0,NR,2026-10-14,100.0,108.1,-0.07,N,Millimeter
+1311685,Upper Siang,0.0,10.2,-1.0,NR,2026-10-14,48.5,133.3,-0.64,LD,Millimeter
+1311686,Upper Subansiri,0.0,2.0,-1.0,NR,2026-10-14,26.2,62.4,-0.58,D,Millimeter
+1311687,West Kameng,0.1,4.9,-0.97,LD,2026-10-14,25.8,101.6,-0.75,LD,Millimeter
+1311688,West Siang,0.0,1.8,-1.0,NR,2026-10-14,21.1,116.7,-0.82,LD,Millimeter
+1311689,Assam & Meghalaya,0.0,4.6,-0.99,LD,2026-10-14,34.5,98.4,-0.65,LD,Millimeter
+1311690,Assam,0.0,3.8,-1.0,NR,2026-10-14,36.1,74.8,-0.52,D,Millimeter
+1311691,Bajali,0.0,2.0,-1.0,NR,2026-10-14,150.5,82.0,0.84,LE,Millimeter
+1311692,Baksa,0.0,3.3,-1.0,NR,2026-10-14,65.8,64.2,0.03,N,Millimeter
+1311693,Barpeta,0.0,2.0,-1.0,NR,2026-10-14,27.5,82.0,-0.66,LD,Millimeter
+1311694,Bongaigaon,0.0,0.7,-1.0,NR,2026-10-14,44.1,102.3,-0.57,D,Millimeter
+1311695,Cachar,0.0,5.3,-1.0,NR,2026-10-14,53.5,107.4,-0.5,D,Millimeter
+1311696,Charaideo,0.0,7.7,-1.0,NR,2026-10-14,43.5,63.4,-0.31,D,Millimeter
+1311697,Chirang,0.0,1.7,-1.0,NR,2026-10-14,92.0,96.4,-0.05,N,Millimeter
+1311698,Darrang,0.0,4.3,-1.0,NR,2026-10-14,7.4,63.9,-0.88,LD,Millimeter
+1311699,Dhemaji,0.0,5.3,-1.0,NR,2026-10-14,47.0,79.2,-0.41,D,Millimeter
+1311700,Dhubri,0.0,2.4,-1.0,NR,2026-10-14,61.3,91.5,-0.33,D,Millimeter
+1311701,Dibrugarh,0.0,4.5,-1.0,NR,2026-10-14,55.1,76.9,-0.28,D,Millimeter
+1311702,Dima Hasao,0.0,1.2,-1.0,NR,2026-10-14,8.7,79.0,-0.89,LD,Millimeter
+1311703,Goalpara,0.0,5.7,-1.0,NR,2026-10-14,14.3,119.5,-0.88,LD,Millimeter
+1311704,Golaghat,0.0,5.6,-1.0,NR,2026-10-14,22.3,62.7,-0.65,LD,Millimeter
+1311705,Hailakandi,0.0,6.4,-1.0,NR,2026-10-14,77.2,97.9,-0.21,D,Millimeter
+1311706,Hojai,0.0,1.9,-1.0,NR,2026-10-14,7.4,74.5,-0.9,LD,Millimeter
+1311707,Jorhat,0.0,3.9,-1.0,NR,2026-10-14,39.6,58.5,-0.32,D,Millimeter
+1311708,Kamrup Metropolitan,0.0,1.7,-1.0,NR,2026-10-14,24.3,68.1,-0.64,LD,Millimeter
+1311709,Kamrup Rural,0.0,5.1,-1.0,NR,2026-10-14,30.3,74.0,-0.59,D,Millimeter
+1311710,Karbi Anglong,0.0,2.9,-1.0,NR,2026-10-14,30.0,59.5,-0.5,D,Millimeter
+1311711,Kokrajhar,0.0,6.6,-1.0,NR,2026-10-14,14.9,107.0,-0.86,LD,Millimeter
+1311712,Lakhimpur,0.0,3.6,-1.0,NR,2026-10-14,45.5,79.8,-0.43,D,Millimeter
+1311713,Morigaon,0.0,5.9,-1.0,NR,2026-10-14,1.4,61.3,-0.98,LD,Millimeter
+1311714,Nagaon,0.0,4.1,-1.0,NR,2026-10-14,4.8,55.3,-0.91,LD,Millimeter
+1311715,Nalbari,0.0,3.2,-1.0,NR,2026-10-14,38.9,80.1,-0.51,D,Millimeter
+1311716,Sibsagar,0.0,3.6,-1.0,NR,2026-10-14,23.8,58.4,-0.59,D,Millimeter
+1311717,Sonitpur,0.0,1.6,-1.0,NR,2026-10-14,37.5,51.4,-0.27,D,Millimeter
+1311718,Sribhumi,0.0,11.9,-1.0,NR,2026-10-14,168.8,114.7,0.47,E,Millimeter
+1311719,Tamulpur,0.0,4.5,-1.0,NR,2026-10-14,64.6,55.1,0.17,N,Millimeter
+1311720,Tinsukia,0.0,5.4,-1.0,NR,2026-10-14,71.9,72.8,-0.01,N,Millimeter
+1311721,Udalguri,0.0,2.9,-1.0,NR,2026-10-14,22.4,62.7,-0.64,LD,Millimeter
+1311722,West Karbi Anglong,0.0,2.6,-1.0,NR,2026-10-14,0.0,54.8,-1.0,NR,Millimeter
+1311723,Meghalaya,0.0,6.9,-0.99,LD,2026-10-14,29.2,175.9,-0.83,LD,Millimeter
+1311724,East Garo Hills,0.0,2.3,-0.99,LD,2026-10-14,25.9,103.9,-0.75,LD,Millimeter
+1311725,East Jaintia Hills,0.0,14.8,-1.0,NR,2026-10-14,19.0,349.4,-0.95,LD,Millimeter
+1311726,East Khasi Hills,0.0,7.4,-1.0,NR,2026-10-14,19.0,205.2,-0.91,LD,Millimeter
+1311727,North Garo Hills,0.0,4.0,-0.99,LD,2026-10-14,11.6,124.4,-0.91,LD,Millimeter
+1311728,Ri Bhoi,0.0,6.0,-0.99,LD,2026-10-14,45.5,154.0,-0.7,LD,Millimeter
+1311729,South Garo Hills,0.0,4.0,-1.0,NR,2026-10-14,31.7,124.4,-0.75,LD,Millimeter
+1311730,South West Garo Hills,0.0,4.0,-1.0,NR,2026-10-14,10.0,124.4,-0.92,LD,Millimeter
+1311731,South West Khasi Hills,0.0,4.0,-0.99,LD,2026-10-14,24.1,124.4,-0.81,LD,Millimeter
+1311732,West Garo Hills,0.0,2.0,-0.98,LD,2026-10-14,18.0,121.9,-0.85,LD,Millimeter
+1311733,West Jaintia Hills,0.1,14.8,-0.99,LD,2026-10-14,90.8,349.4,-0.74,LD,Millimeter
+1311734,West Khasi Hills,0.1,8.8,-0.99,LD,2026-10-14,27.7,154.1,-0.82,LD,Millimeter
+1311735,Nmmt,2.3,4.8,-0.52,D,2026-10-14,61.4,91.6,-0.33,D,Millimeter
+1311736,Mizoram,7.8,6.8,0.14,N,2026-10-14,104.4,123.2,-0.15,N,Millimeter
+1311737,Aizawl,4.1,8.0,-0.49,D,2026-10-14,63.8,115.9,-0.45,D,Millimeter
+1311738,Champhai,0.0,7.3,-1.0,NR,2026-10-14,60.2,105.8,-0.43,D,Millimeter
+1311739,Kolasib,0.0,5.4,-1.0,NR,2026-10-14,91.0,132.5,-0.31,D,Millimeter
+1311740,Lawngtlai,15.0,5.7,1.63,LE,2026-10-14,227.7,129.7,0.76,LE,Millimeter
+1311741,Lunglei,10.0,7.4,0.36,E,2026-10-14,83.1,131.3,-0.37,D,Millimeter
+1311742,Mamit,0.0,7.0,-1.0,NR,2026-10-14,120.7,127.0,-0.05,N,Millimeter
+1311743,Saiha,5.9,0.0,1.554,,2026-10-14,155.4,142.6,0.09,N,Millimeter
+1311744,Serchhip,37.7,5.8,5.51,LE,2026-10-14,83.2,99.9,-0.17,N,Millimeter
+1311745,Manipur,0.0,3.7,-1.0,NR,2026-10-14,38.7,66.1,-0.41,D,Millimeter
+1311746,Bishnupur,0.0,2.6,-1.0,NR,2026-10-14,15.2,67.2,-0.77,LD,Millimeter
+1311747,Chandel,0.0,2.6,-1.0,NR,2026-10-14,31.9,67.2,-0.53,D,Millimeter
+1311748,Churachandpur,0.0,2.6,-1.0,NR,2026-10-14,16.0,67.2,-0.76,LD,Millimeter
+1311749,Imphal East,0.0,3.2,-1.0,NR,2026-10-14,61.7,58.5,0.05,N,Millimeter
+1311750,Imphal West,0.0,2.8,-1.0,NR,2026-10-14,56.1,100.2,-0.44,D,Millimeter
+1311751,Senapati,0.0,7.0,-1.0,NR,2026-10-14,59.2,69.0,-0.14,N,Millimeter
+1311752,Tamenglong,0.0,6.2,-1.0,NR,2026-10-14,71.4,188.1,-0.62,LD,Millimeter
+1311753,Thoubal,0.0,3.2,-1.0,NR,2026-10-14,35.6,58.5,-0.39,D,Millimeter
+1311754,Ukhrul,0.0,3.1,-1.0,NR,2026-10-14,49.3,53.2,-0.07,N,Millimeter
+1311755,Tripura,0.0,4.9,-1.0,NR,2026-10-14,31.3,98.9,-0.68,LD,Millimeter
+1311756,Dhalai,0.0,4.6,-1.0,NR,2026-10-14,17.4,93.9,-0.81,LD,Millimeter
+1311757,Gomati,0.0,4.7,-1.0,NR,2026-10-14,13.7,101.2,-0.86,LD,Millimeter
+1311758,Khowai,0.0,4.6,-1.0,NR,2026-10-14,16.8,99.0,-0.83,LD,Millimeter
+1311759,North Tripura,0.0,7.1,-1.0,NR,2026-10-14,53.6,98.6,-0.46,D,Millimeter
+1311760,Sipahijala,0.0,3.4,-1.0,NR,2026-10-14,33.3,98.3,-0.66,LD,Millimeter
+1311761,South Tripura,0.0,2.6,-1.0,NR,2026-10-14,27.1,103.2,-0.74,LD,Millimeter
+1311762,Unakoti,0.0,6.6,-1.0,NR,2026-10-14,84.1,101.1,-0.17,N,Millimeter
+1311763,West Tripura,0.0,6.3,-1.0,NR,2026-10-14,47.9,100.0,-0.52,D,Millimeter
+1311764,Nagaland,0.0,3.0,-1.0,NR,2026-10-14,51.1,66.8,-0.24,D,Millimeter
+1311765,Dimapur,0.0,2.2,-1.0,NR,2026-10-14,18.5,72.9,-0.75,LD,Millimeter
+1311766,Kiphire,0.0,3.2,-1.0,NR,2026-10-14,58.6,52.7,0.11,N,Millimeter
+1311767,Kohima,0.0,3.5,-1.0,NR,2026-10-14,65.8,75.4,-0.13,N,Millimeter
+1311768,Longleng,0.0,4.4,-1.0,NR,2026-10-14,5.4,65.3,-0.92,LD,Millimeter
+1311769,Mokokchung,0.0,2.6,-1.0,NR,2026-10-14,118.2,77.0,0.53,E,Millimeter
+1311770,Mon,0.0,0.9,-1.0,NR,2026-10-14,71.4,59.8,0.19,N,Millimeter
+1311771,Peren,0.0,1.7,-1.0,NR,2026-10-14,62.3,69.1,-0.1,N,Millimeter
+1311772,Phek,0.0,3.2,-1.0,NR,2026-10-14,49.2,62.7,-0.22,D,Millimeter
+1311773,Tuensang,0.0,4.4,-1.0,NR,2026-10-14,4.2,65.3,-0.94,LD,Millimeter
+1311774,Wokha,0.0,3.3,-1.0,NR,2026-10-14,40.3,78.4,-0.49,D,Millimeter
+1311775,Zunheboto,0.0,4.5,-1.0,NR,2026-10-14,91.2,54.9,0.66,LE,Millimeter
+1311776,Shwb & Sikkim,0.0,3.6,-1.0,NR,2026-10-14,41.9,103.8,-0.6,LD,Millimeter
+1311777,West Bengal,0.0,3.3,-0.99,LD,2026-10-14,22.1,83.7,-0.74,LD,Millimeter
+1311778,Alipurduar,0.0,5.4,-1.0,NR,2026-10-14,58.5,114.3,-0.49,D,Millimeter
+1311779,Cooch Behar,0.0,3.6,-1.0,NR,2026-10-14,34.9,121.8,-0.71,LD,Millimeter
+1311780,Darjeeling,0.0,6.0,-1.0,NR,2026-10-14,69.7,117.4,-0.41,D,Millimeter
+1311781,Jalpaiguri,0.0,4.9,-1.0,NR,2026-10-14,119.1,123.2,-0.03,N,Millimeter
+1311782,Kalimpong,0.0,4.4,-1.0,NR,2026-10-14,40.6,108.8,-0.63,LD,Millimeter
+1311783,Malda,0.0,3.6,-1.0,NR,2026-10-14,0.2,97.5,-0.99,LD,Millimeter
+1311784,North Dinajpur,0.0,1.9,-1.0,NR,2026-10-14,6.5,102.5,-0.94,LD,Millimeter
+1311785,South Dinajpur,0.0,2.2,-1.0,NR,2026-10-14,24.3,85.6,-0.72,LD,Millimeter
+1311786,Sikkim,0.0,3.5,-1.0,NR,2026-10-14,36.5,91.7,-0.6,LD,Millimeter
+1311787,Gangtok,0.0,4.9,-1.0,NR,2026-10-14,38.4,115.5,-0.67,LD,Millimeter
+1311788,Gyalshing,0.0,3.4,-1.0,NR,2026-10-14,104.4,89.1,0.17,N,Millimeter
+1311789,Mangan,0.0,3.5,-1.0,NR,2026-10-14,22.5,93.8,-0.76,LD,Millimeter
+1311790,Namchi,0.0,1.8,-1.0,NR,2026-10-14,51.1,54.9,-0.07,N,Millimeter
+1311791,Pakyong,0.0,2.5,-1.0,NR,2026-10-14,16.7,68.4,-0.76,LD,Millimeter
+1311792,Soreng,0.0,3.4,-1.0,NR,2026-10-14,30.5,89.1,-0.66,LD,Millimeter
+1311793,Gangetic West Bengal,0.0,3.2,-0.98,LD,2026-10-14,15.0,76.7,-0.8,LD,Millimeter
+1311794,Bankura,0.0,3.3,-1.0,NR,2026-10-14,12.0,67.6,-0.82,LD,Millimeter
+1311795,Birbhum,0.0,3.5,-1.0,NR,2026-10-14,13.4,70.0,-0.81,LD,Millimeter
+1311796,East Midnapore,0.8,2.4,-0.68,LD,2026-10-14,1.2,108.2,-0.99,LD,Millimeter
+1311797,Hooghly,0.0,3.7,-1.0,NR,2026-10-14,22.9,64.6,-0.64,LD,Millimeter
+1311798,Howrah,0.0,2.4,-1.0,NR,2026-10-14,36.7,71.5,-0.49,D,Millimeter
+1311799,Jhargram,0.0,2.5,-1.0,NR,2026-10-14,6.3,73.9,-0.92,LD,Millimeter
+1311800,Kolkata,0.0,6.3,-1.0,NR,2026-10-14,59.1,97.8,-0.4,D,Millimeter
+1311801,Murshidabad,0.0,2.5,-1.0,NR,2026-10-14,18.8,68.2,-0.72,LD,Millimeter
+1311802,Nadia,0.0,5.0,-1.0,NR,2026-10-14,7.1,69.5,-0.9,LD,Millimeter
+1311803,North 24 Parganas,0.0,2.1,-1.0,NR,2026-10-14,83.4,81.5,0.02,N,Millimeter
+1311804,Paschim Bardhaman,0.0,3.2,-1.0,NR,2026-10-14,7.9,66.4,-0.88,LD,Millimeter
+1311805,Purba Bardhaman,0.0,3.3,-1.0,NR,2026-10-14,0.0,61.7,-1.0,NR,Millimeter
+1311806,Purulia,0.0,4.6,-1.0,NR,2026-10-14,9.9,60.1,-0.84,LD,Millimeter
+1311807,South 24 Parganas,0.0,3.4,-1.0,NR,2026-10-14,12.2,104.2,-0.88,LD,Millimeter
+1311808,West Midnapore,0.0,2.5,-1.0,NR,2026-10-14,4.4,73.9,-0.94,LD,Millimeter
+1311809,Odisha,0.9,2.9,-0.69,LD,2026-10-14,7.8,68.0,-0.89,LD,Millimeter
+1311810,Angul,0.0,3.1,-1.0,NR,2026-10-14,0.7,57.0,-0.99,LD,Millimeter
+1311811,Balangir,0.0,1.3,-1.0,NR,2026-10-14,8.2,35.5,-0.77,LD,Millimeter
+1311812,Balasore,0.0,3.8,-1.0,NR,2026-10-14,20.3,112.1,-0.82,LD,Millimeter
+1311813,Bargarh,0.0,0.7,-1.0,NR,2026-10-14,0.0,33.2,-1.0,NR,Millimeter
+1311814,Bhadrak,0.0,4.0,-1.0,NR,2026-10-14,7.4,99.0,-0.93,LD,Millimeter
+1311815,Boudh,0.0,0.9,-1.0,NR,2026-10-14,6.4,43.2,-0.85,LD,Millimeter
+1311816,Cuttack,1.5,3.7,-0.59,D,2026-10-14,2.9,86.3,-0.97,LD,Millimeter
+1311817,Deogarh,0.0,1.8,-1.0,NR,2026-10-14,3.1,44.6,-0.93,LD,Millimeter
+1311818,Dhenkanal,0.0,2.2,-1.0,NR,2026-10-14,11.4,69.6,-0.84,LD,Millimeter
+1311819,Gajapati,0.2,7.7,-0.98,LD,2026-10-14,17.2,108.2,-0.84,LD,Millimeter
+1311820,Ganjam,1.0,6.6,-0.84,LD,2026-10-14,10.4,110.8,-0.91,LD,Millimeter
+1311821,Jagatsinghpur,0.8,6.3,-0.87,LD,2026-10-14,5.0,104.6,-0.95,LD,Millimeter
+1311822,Jajpur,0.0,2.9,-1.0,NR,2026-10-14,5.8,87.8,-0.93,LD,Millimeter
+1311823,Jharsuguda,0.0,2.2,-1.0,NR,2026-10-14,3.8,40.0,-0.91,LD,Millimeter
+1311824,Kalahandi,0.0,1.4,-1.0,NR,2026-10-14,3.2,50.7,-0.94,LD,Millimeter
+1311825,Kandhamal,0.0,3.7,-1.0,NR,2026-10-14,9.6,85.4,-0.89,LD,Millimeter
+1311826,Kendrapara,0.0,5.0,-1.0,NR,2026-10-14,2.7,110.0,-0.98,LD,Millimeter
+1311827,Keonjhargarh,0.4,3.6,-0.9,LD,2026-10-14,7.1,68.4,-0.9,LD,Millimeter
+1311828,Khurda,14.6,3.9,2.75,LE,2026-10-14,22.5,95.4,-0.76,LD,Millimeter
+1311829,Koraput,0.0,2.5,-1.0,NR,2026-10-14,10.5,76.7,-0.86,LD,Millimeter
+1311830,Malkangiri,0.0,1.9,-1.0,NR,2026-10-14,0.0,68.4,-1.0,NR,Millimeter
+1311831,Mayurbhanj,0.0,3.5,-1.0,NR,2026-10-14,17.6,73.5,-0.76,LD,Millimeter
+1311832,Nawapara,0.0,0.6,-1.0,NR,2026-10-14,1.0,39.1,-0.97,LD,Millimeter
+1311833,Nawarangpur,0.0,1.2,-1.0,NR,2026-10-14,1.7,56.6,-0.97,LD,Millimeter
+1311834,Nayagarh,9.1,3.9,1.34,LE,2026-10-14,21.5,96.6,-0.78,LD,Millimeter
+1311835,Puri,13.5,4.7,1.88,LE,2026-10-14,26.7,99.0,-0.73,LD,Millimeter
+1311836,Rayagada,0.0,2.8,-1.0,NR,2026-10-14,0.3,72.2,-0.99,LD,Millimeter
+1311837,Sambalpur,0.0,1.8,-1.0,NR,2026-10-14,3.0,38.9,-0.92,LD,Millimeter
+1311838,Sonepur,0.0,0.8,-1.0,NR,2026-10-14,3.8,30.8,-0.88,LD,Millimeter
+1311839,Sundargarh,0.0,2.0,-1.0,NR,2026-10-14,7.8,38.8,-0.8,LD,Millimeter
+1311840,Jharkhand,0.0,2.6,-1.0,NR,2026-10-14,20.8,49.8,-0.58,D,Millimeter
+1311841,Bokaro,0.0,5.4,-1.0,NR,2026-10-14,41.2,51.6,-0.2,D,Millimeter
+1311842,Chatra,0.0,2.4,-1.0,NR,2026-10-14,54.4,42.5,0.28,E,Millimeter
+1311843,Deoghar,0.0,3.7,-1.0,NR,2026-10-14,28.9,54.3,-0.47,D,Millimeter
+1311844,Dhanbad,0.0,4.3,-1.0,NR,2026-10-14,38.0,61.7,-0.38,D,Millimeter
+1311845,Dumka,0.0,3.3,-1.0,NR,2026-10-14,21.8,81.3,-0.73,LD,Millimeter
+1311846,East Singhbhum,0.0,4.8,-1.0,NR,2026-10-14,7.9,51.8,-0.85,LD,Millimeter
+1311847,Garhwa,0.0,2.1,-1.0,NR,2026-10-14,13.5,30.3,-0.55,D,Millimeter
+1311848,Giridih,0.0,2.9,-1.0,NR,2026-10-14,27.0,58.2,-0.54,D,Millimeter
+1311849,Godda,0.0,4.3,-1.0,NR,2026-10-14,10.8,65.5,-0.84,LD,Millimeter
+1311850,Gumla,0.0,2.0,-1.0,NR,2026-10-14,5.3,48.0,-0.89,LD,Millimeter
+1311851,Hazaribag,0.0,3.1,-1.0,NR,2026-10-14,37.3,58.2,-0.36,D,Millimeter
+1311852,Jamtara,0.0,2.3,-1.0,NR,2026-10-14,12.5,69.1,-0.82,LD,Millimeter
+1311853,Khunti,0.0,3.3,-1.0,NR,2026-10-14,2.4,52.2,-0.95,LD,Millimeter
+1311854,Koderma,0.0,4.1,-1.0,NR,2026-10-14,36.6,48.9,-0.25,D,Millimeter
+1311855,Latehar,0.0,2.0,-1.0,NR,2026-10-14,23.9,40.1,-0.4,D,Millimeter
+1311856,Lohardaga,0.0,2.2,-1.0,NR,2026-10-14,36.2,46.2,-0.22,D,Millimeter
+1311857,Pakur,0.0,3.5,-1.0,NR,2026-10-14,0.6,91.8,-0.99,LD,Millimeter
+1311858,Palamu,0.0,2.0,-1.0,NR,2026-10-14,17.6,28.7,-0.39,D,Millimeter
+1311859,Ramgarh,0.0,2.0,-1.0,NR,2026-10-14,15.1,49.2,-0.69,LD,Millimeter
+1311860,Ranchi,0.0,1.7,-1.0,NR,2026-10-14,9.9,40.9,-0.76,LD,Millimeter
+1311861,Sahibganj,3.8,0.0,0.0,,2026-10-14,0.0,84.2,-1.0,NR,Millimeter
+1311862,Seraikela-Kharsawan,0.0,1.4,-1.0,NR,2026-10-14,40.6,32.0,0.27,E,Millimeter
+1311863,Simdega,0.0,2.0,-1.0,NR,2026-10-14,18.1,47.6,-0.62,LD,Millimeter
+1311864,West Singhbhum,0.0,1.1,-1.0,NR,2026-10-14,15.3,42.5,-0.64,LD,Millimeter
+1311865,Araria,0.0,2.9,-1.0,NR,2026-10-14,17.8,50.2,-0.65,LD,Millimeter
+1311866,Arwal,0.0,2.8,-1.0,NR,2026-10-14,43.1,22.4,0.92,LE,Millimeter
+1311867,Aurangabad,0.0,2.0,-1.0,NR,2026-10-14,11.2,30.1,-0.63,LD,Millimeter
+1311868,Banka,0.0,3.1,-1.0,NR,2026-10-14,14.3,51.2,-0.72,LD,Millimeter
+1311869,Begusarai,0.0,3.5,-1.0,NR,2026-10-14,58.3,35.9,0.62,LE,Millimeter
+1311870,Bhabua,3.2,2.6,0.24,E,2026-10-14,6.7,25.2,-0.74,LD,Millimeter
+1311871,Bhagalpur,0.0,3.9,-1.0,NR,2026-10-14,4.9,62.1,-0.92,LD,Millimeter
+1311872,Bhojpur,0.0,3.0,-1.0,NR,2026-10-14,29.8,37.5,-0.21,D,Millimeter
+1311873,Buxar,0.0,3.6,-1.0,NR,2026-10-14,12.9,30.5,-0.58,D,Millimeter
+1311874,Darbhanga,0.0,2.8,-1.0,NR,2026-10-14,55.9,41.6,0.34,E,Millimeter
+1311875,East Champaran,0.0,2.5,-1.0,NR,2026-10-14,28.3,45.7,-0.38,D,Millimeter
+1311876,Gaya,0.0,2.6,-1.0,NR,2026-10-14,8.6,32.5,-0.73,LD,Millimeter
+1311877,Gopalganj,0.0,1.5,-1.0,NR,2026-10-14,9.6,29.6,-0.68,LD,Millimeter
+1311878,Jahanabad,0.0,2.5,-1.0,NR,2026-10-14,46.9,22.5,1.08,LE,Millimeter
+1311879,Jamui,0.0,3.7,-1.0,NR,2026-10-14,6.1,44.5,-0.86,LD,Millimeter
+1311880,Katihar,0.0,3.2,-1.0,NR,2026-10-14,2.6,64.5,-0.96,LD,Millimeter
+1311881,Khagaria,0.0,3.7,-1.0,NR,2026-10-14,16.7,48.5,-0.66,LD,Millimeter
+1311882,Kishanganj,0.0,2.3,-1.0,NR,2026-10-14,64.3,63.9,0.01,N,Millimeter
+1311883,Lakhisarai,0.0,6.1,-1.0,NR,2026-10-14,29.0,38.3,-0.24,D,Millimeter
+1311884,Madhepura,0.0,2.2,-1.0,NR,2026-10-14,16.5,50.2,-0.67,LD,Millimeter
+1311885,Madhubani,0.0,2.7,-1.0,NR,2026-10-14,55.1,39.3,0.4,E,Millimeter
+1311886,Munger,0.0,3.3,-1.0,NR,2026-10-14,24.6,46.2,-0.47,D,Millimeter
+1311887,Muzaffarpur,0.0,3.7,-1.0,NR,2026-10-14,33.3,38.3,-0.13,N,Millimeter
+1311888,Nalanda,0.0,2.5,-1.0,NR,2026-10-14,22.3,29.6,-0.24,D,Millimeter
+1311889,Nawada,0.0,3.2,-1.0,NR,2026-10-14,8.6,42.4,-0.8,LD,Millimeter
+1311890,Patna,0.0,2.6,-1.0,NR,2026-10-14,33.7,37.3,-0.1,N,Millimeter
+1311891,Purnea,0.0,3.3,-1.0,NR,2026-10-14,7.2,68.5,-0.89,LD,Millimeter
+1311892,Rohtas,0.0,1.9,-1.0,NR,2026-10-14,10.6,25.4,-0.58,D,Millimeter
+1311893,Saharsa,0.0,2.4,-1.0,NR,2026-10-14,24.5,46.8,-0.48,D,Millimeter
+1311894,Samastipur,0.0,4.2,-1.0,NR,2026-10-14,97.5,44.7,1.18,LE,Millimeter
+1311895,Saran,0.0,2.9,-1.0,NR,2026-10-14,19.7,39.7,-0.5,D,Millimeter
+1311896,Sheikhpura,0.0,4.4,-1.0,NR,2026-10-14,29.3,39.1,-0.25,D,Millimeter
+1311897,Sheohar,0.0,1.3,-1.0,NR,2026-10-14,22.8,30.5,-0.25,D,Millimeter
+1311898,Sitamarhi,0.0,2.9,-1.0,NR,2026-10-14,53.0,39.3,0.35,E,Millimeter
+1311899,Siwan,0.0,3.1,-1.0,NR,2026-10-14,15.1,34.9,-0.57,D,Millimeter
+1311900,Supaul,0.0,2.3,-1.0,NR,2026-10-14,7.9,44.6,-0.82,LD,Millimeter
+1311901,Vaishali,0.0,2.4,-1.0,NR,2026-10-14,40.5,38.5,0.05,N,Millimeter
+1311902,West Champaran,0.0,3.0,-1.0,NR,2026-10-14,21.8,39.3,-0.44,D,Millimeter
+1311903,West Uttar Pradesh,0.0,0.6,-1.0,NR,2026-10-14,12.2,15.7,-0.23,D,Millimeter
+1311904,Agra,0.0,0.3,-1.0,NR,2026-10-14,0.0,12.2,-1.0,NR,Millimeter
+1311905,Aligarh,0.0,0.2,-1.0,NR,2026-10-14,4.2,14.9,-0.72,LD,Millimeter
+1311906,Amroha,0.0,0.8,-1.0,NR,2026-10-14,26.3,14.5,0.82,LE,Millimeter
+1311907,Auraiya,0.0,0.1,-1.0,NR,2026-10-14,0.0,16.5,-1.0,NR,Millimeter
+1311908,Badaun,0.0,1.2,-1.0,NR,2026-10-14,2.8,14.6,-0.81,LD,Millimeter
+1311909,Baghpat,0.0,0.0,-1.0,NR,2026-10-14,15.3,7.0,1.17,LE,Millimeter
+1311910,Bareilly,0.0,2.2,-1.0,NR,2026-10-14,29.7,16.2,0.83,LE,Millimeter
+1311911,Bijnor,0.0,0.8,-1.0,NR,2026-10-14,20.1,12.6,0.59,E,Millimeter
+1311912,Bulandshahar,0.0,0.1,-1.0,NR,2026-10-14,10.2,9.8,0.04,N,Millimeter
+1311913,Etah,0.0,0.4,-1.0,NR,2026-10-14,3.7,12.3,-0.7,LD,Millimeter
+1311914,Etawah,0.0,0.5,-1.0,NR,2026-10-14,0.0,13.7,-1.0,NR,Millimeter
+1311915,Firozabad,0.0,0.6,-1.0,NR,2026-10-14,12.7,21.7,-0.42,D,Millimeter
+1311916,Gautam Buddha Nagar,0.0,0.0,-1.0,NR,2026-10-14,19.2,3.9,3.86,LE,Millimeter
+1311917,Ghaziabad,0.0,0.0,-1.0,NR,2026-10-14,16.8,4.0,3.15,LE,Millimeter
+1311918,Hamirpur,0.0,0.4,-1.0,NR,2026-10-14,1.8,24.2,-0.93,LD,Millimeter
+1311919,Hapur,0.0,0.0,-1.0,NR,2026-10-14,6.5,4.8,0.34,E,Millimeter
+1311920,Hathras,0.0,0.0,-1.0,NR,2026-10-14,3.3,12.8,-0.74,LD,Millimeter
+1311921,Jalaun,0.0,0.3,-1.0,NR,2026-10-14,0.0,24.9,-1.0,NR,Millimeter
+1311922,Jhansi,0.0,0.2,-1.0,NR,2026-10-14,0.0,23.1,-1.0,NR,Millimeter
+1311923,Kasganj,0.0,0.3,-1.0,NR,2026-10-14,9.0,14.6,-0.38,D,Millimeter
+1311924,Lalitpur,0.0,0.0,-1.0,NR,2026-10-14,0.0,14.9,-1.0,NR,Millimeter
+1311925,Mahoba,0.0,0.1,-1.0,NR,2026-10-14,0.0,17.7,-1.0,NR,Millimeter
+1311926,Mainpuri,0.0,0.8,-1.0,NR,2026-10-14,1.7,18.5,-0.91,LD,Millimeter
+1311927,Mathura,0.0,0.0,-1.0,NR,2026-10-14,6.5,9.4,-0.31,D,Millimeter
+1311928,Meerut,0.0,0.1,-1.0,NR,2026-10-14,14.2,7.8,0.82,LE,Millimeter
+1311929,Moradabad,0.0,2.7,-1.0,NR,2026-10-14,15.2,18.7,-0.19,N,Millimeter
+1311930,Muzaffarnagar,0.0,0.2,-1.0,NR,2026-10-14,26.1,8.3,2.13,LE,Millimeter
+1311931,Pilibhit,0.0,0.7,-1.0,NR,2026-10-14,15.8,24.4,-0.35,D,Millimeter
+1311932,Rampur,0.0,3.6,-1.0,NR,2026-10-14,26.3,21.8,0.21,E,Millimeter
+1311933,Saharanpur,0.0,0.7,-1.0,NR,2026-10-14,47.5,13.9,2.42,LE,Millimeter
+1311934,Sambhal,0.0,0.5,-1.0,NR,2026-10-14,15.2,20.1,-0.25,D,Millimeter
+1311935,Shahjahanpur,0.0,1.0,-1.0,NR,2026-10-14,42.1,22.1,0.9,LE,Millimeter
+1311936,Shamli,0.0,0.0,-1.0,NR,2026-10-14,1.7,6.1,-0.73,LD,Millimeter
+1311937,East Uttar Pradesh,0.0,1.6,-1.0,NR,2026-10-14,14.4,25.6,-0.44,D,Millimeter
+1311938,Ambedkar Nagar,0.0,1.4,-1.0,NR,2026-10-14,40.4,17.8,1.27,LE,Millimeter
+1311939,Amethi,0.0,0.8,-1.0,NR,2026-10-14,2.5,20.2,-0.88,LD,Millimeter
+1311940,Ayodhya,0.0,1.5,-1.0,NR,2026-10-14,40.9,27.2,0.5,E,Millimeter
+1311941,Azamgarh,0.0,1.8,-1.0,NR,2026-10-14,23.0,25.4,-0.09,N,Millimeter
+1311942,Bahraich,0.0,1.0,-1.0,NR,2026-10-14,26.0,31.0,-0.16,N,Millimeter
+1311943,Ballia,0.0,1.9,-1.0,NR,2026-10-14,7.0,25.6,-0.73,LD,Millimeter
+1311944,Balrampur,0.0,0.6,-1.0,NR,2026-10-14,43.6,25.1,0.74,LE,Millimeter
+1311945,Banda,0.0,1.2,-1.0,NR,2026-10-14,2.3,22.2,-0.9,LD,Millimeter
+1311946,Barabanki,0.0,2.2,-1.0,NR,2026-10-14,9.4,28.4,-0.67,LD,Millimeter
+1311947,Basti,0.0,1.6,-1.0,NR,2026-10-14,30.3,22.2,0.36,E,Millimeter
+1311948,Bhadohi,0.0,4.7,-1.0,NR,2026-10-14,4.0,27.4,-0.85,LD,Millimeter
+1311949,Chandauli,0.0,1.8,-1.0,NR,2026-10-14,1.0,15.0,-0.93,LD,Millimeter
+1311950,Chitrakoot,0.0,2.4,-1.0,NR,2026-10-14,0.3,30.2,-0.99,LD,Millimeter
+1311951,Deoria,0.0,3.7,-1.0,NR,2026-10-14,7.0,29.4,-0.76,LD,Millimeter
+1311952,Farrukhabad,0.0,1.3,-1.0,NR,2026-10-14,10.0,20.9,-0.52,D,Millimeter
+1311953,Fatehpur,0.0,1.0,-1.0,NR,2026-10-14,4.3,21.0,-0.79,LD,Millimeter
+1311954,Ghazipur,0.0,1.0,-1.0,NR,2026-10-14,0.7,23.5,-0.97,LD,Millimeter
+1311955,Gonda,0.0,1.0,-1.0,NR,2026-10-14,23.5,36.0,-0.35,D,Millimeter
+1311956,Gorakhpur,0.0,2.0,-1.0,NR,2026-10-14,16.1,40.7,-0.6,LD,Millimeter
+1311957,Hardoi,0.0,0.3,-1.0,NR,2026-10-14,11.4,22.2,-0.49,D,Millimeter
+1311958,Jaunpur,0.0,1.8,-1.0,NR,2026-10-14,17.9,22.8,-0.21,D,Millimeter
+1311959,Kannauj,0.0,0.4,-1.0,NR,2026-10-14,2.9,26.5,-0.89,LD,Millimeter
+1311960,Kanpur City,0.0,1.2,-1.0,NR,2026-10-14,10.6,25.0,-0.58,D,Millimeter
+1311961,Kanpur Dehat,0.0,0.0,-1.0,NR,2026-10-14,0.0,20.2,-1.0,NR,Millimeter
+1311962,Kaushambi,0.0,1.4,-1.0,NR,2026-10-14,1.2,17.5,-0.93,LD,Millimeter
+1311963,Kheri,0.0,0.8,-1.0,NR,2026-10-14,62.9,31.5,1.0,LE,Millimeter
+1311964,Kushi Nagar,0.0,3.3,-1.0,NR,2026-10-14,7.0,24.7,-0.72,LD,Millimeter
+1311965,Lucknow,0.0,0.6,-1.0,NR,2026-10-14,0.6,22.4,-0.97,LD,Millimeter
+1311966,Maharajganj,0.0,2.1,-1.0,NR,2026-10-14,14.0,35.4,-0.6,LD,Millimeter
+1311967,Mau,0.0,1.6,-1.0,NR,2026-10-14,2.5,27.4,-0.91,LD,Millimeter
+1311968,Mirzapur,0.0,2.6,-1.0,NR,2026-10-14,0.0,23.9,-1.0,NR,Millimeter
+1311969,Pratapgarh,0.0,3.4,-1.0,NR,2026-10-14,24.0,25.3,-0.05,N,Millimeter
+1311970,Prayagraj,0.0,3.4,-1.0,NR,2026-10-14,1.3,24.1,-0.95,LD,Millimeter
+1311971,Rae Bareilly,0.0,0.6,-1.0,NR,2026-10-14,0.0,23.6,-1.0,NR,Millimeter
+1311972,Sant Kabir Nagar,0.0,1.6,-1.0,NR,2026-10-14,13.2,17.3,-0.24,D,Millimeter
+1311973,Shrawasti,0.0,1.0,-1.0,NR,2026-10-14,60.4,33.5,0.8,LE,Millimeter
+1311974,Siddharth Nagar,0.0,1.6,-1.0,NR,2026-10-14,13.5,23.6,-0.43,D,Millimeter
+1311975,Sitapur,0.0,0.7,-1.0,NR,2026-10-14,8.0,26.2,-0.7,LD,Millimeter
+1311976,Sonbhadra,0.0,1.9,-1.0,NR,2026-10-14,4.9,23.9,-0.79,LD,Millimeter
+1311977,Sultanpur,0.0,1.0,-1.0,NR,2026-10-14,11.4,26.1,-0.56,D,Millimeter
+1311978,Unnao,0.0,1.2,-1.0,NR,2026-10-14,4.8,25.3,-0.81,LD,Millimeter
+1311979,Varanasi,0.0,1.3,-1.0,NR,2026-10-14,23.9,22.0,0.08,N,Millimeter
+1311980,Uttarakhand,0.0,2.2,-1.0,NR,2026-10-14,30.3,21.3,0.42,E,Millimeter
+1311981,Almora,0.0,2.0,-1.0,NR,2026-10-14,19.9,13.6,0.46,E,Millimeter
+1311982,Bageshwar,0.0,2.0,-1.0,NR,2026-10-14,37.8,13.6,1.78,LE,Millimeter
+1311983,Chamoli,0.0,1.0,-1.0,NR,2026-10-14,34.5,10.8,2.2,LE,Millimeter
+1311984,Champawat,0.0,5.9,-1.0,NR,2026-10-14,23.3,31.4,-0.26,D,Millimeter
+1311985,Dehradun,0.0,0.4,-1.0,NR,2026-10-14,28.7,23.4,0.23,E,Millimeter
+1311986,Garhwal Pauri,0.0,0.1,-1.0,NR,2026-10-14,10.5,12.8,-0.18,N,Millimeter
+1311987,Garhwal Tehri,0.0,0.8,-1.0,NR,2026-10-14,16.5,13.7,0.21,E,Millimeter
+1311988,Hardwar,0.0,0.8,-1.0,NR,2026-10-14,31.4,12.7,1.47,LE,Millimeter
+1311989,Nainital,0.0,4.3,-1.0,NR,2026-10-14,43.7,26.9,0.62,LE,Millimeter
+1311990,Pithoragarh,0.0,4.0,-1.0,NR,2026-10-14,52.7,35.8,0.47,E,Millimeter
+1311991,Rudraprayag,0.0,1.1,-1.0,NR,2026-10-14,34.1,14.4,1.37,LE,Millimeter
+1311992,Udham Singh Nagar,0.0,5.9,-1.0,NR,2026-10-14,21.0,26.0,-0.19,N,Millimeter
+1311993,Uttarkashi,0.0,1.9,-1.0,NR,2026-10-14,24.8,29.1,-0.15,N,Millimeter
+1311994,Delhi And Haryana And Chandigarh,0.0,0.2,-1.0,NR,2026-10-14,9.1,6.1,0.5,E,Millimeter
+1311995,Ambala,0.0,0.1,-1.0,NR,2026-10-14,32.5,10.5,2.1,LE,Millimeter
+1311996,Bhiwani,0.0,0.1,-1.0,NR,2026-10-14,0.0,4.3,-1.0,NR,Millimeter
+1311997,Charkhi Dadri,0.0,0.3,-1.0,NR,2026-10-14,0.0,6.7,-1.0,NR,Millimeter
+1311998,Faridabad,0.0,0.5,-1.0,NR,2026-10-14,9.5,11.1,-0.15,N,Millimeter
+1311999,Fatehabad,0.0,0.5,-1.0,NR,2026-10-14,1.2,3.9,-0.7,LD,Millimeter
+1312000,Gurgaon,0.0,0.1,-1.0,NR,2026-10-14,10.1,6.6,0.53,E,Millimeter
+1312001,Hisar,0.0,0.2,-1.0,NR,2026-10-14,0.1,4.2,-0.97,LD,Millimeter
+1312002,Jhajjar,0.0,0.0,-1.0,NR,2026-10-14,1.9,3.2,-0.41,D,Millimeter
+1312003,Jind,0.0,0.0,-1.0,NR,2026-10-14,1.8,4.9,-0.63,LD,Millimeter
+1312004,Kaithal,0.0,0.4,-1.0,NR,2026-10-14,20.1,4.3,3.64,LE,Millimeter
+1312005,Karnal,0.0,1.1,-1.0,NR,2026-10-14,12.3,7.0,0.76,LE,Millimeter
+1312006,Kurukshetra,0.0,0.4,-1.0,NR,2026-10-14,37.1,6.3,4.86,LE,Millimeter
+1312007,Mahendragarh,0.0,0.1,-1.0,NR,2026-10-14,0.4,6.0,-0.93,LD,Millimeter
+1312008,Nuh,0.0,0.0,-1.0,NR,2026-10-14,1.9,8.2,-0.77,LD,Millimeter
+1312009,Palwal,0.0,0.1,-1.0,NR,2026-10-14,8.9,6.5,0.36,E,Millimeter
+1312010,Panchkula,0.0,0.2,-1.0,NR,2026-10-14,19.8,8.1,1.45,LE,Millimeter
+1312011,Panipat,0.0,0.6,-1.0,NR,2026-10-14,3.8,4.9,-0.22,D,Millimeter
+1312012,Rewari,0.0,0.0,-1.0,NR,2026-10-14,0.3,6.3,-0.96,LD,Millimeter
+1312013,Rohtak,0.0,0.1,-1.0,NR,2026-10-14,5.7,5.7,0.0,N,Millimeter
+1312014,Sirsa,0.0,0.1,-1.0,NR,2026-10-14,4.9,3.2,0.51,E,Millimeter
+1312015,Sonepat,0.0,0.0,-1.0,NR,2026-10-14,31.7,7.8,3.04,LE,Millimeter
+1312016,Yamuna Nagar,0.0,0.7,-1.0,NR,2026-10-14,14.5,10.4,0.39,E,Millimeter
+1312017,Delhi (Ut),0.0,0.1,-1.0,NR,2026-10-14,24.2,9.4,1.57,LE,Millimeter
+1312018,Central Delhi,0.0,0.2,-1.0,NR,2026-10-14,51.2,11.6,3.41,LE,Millimeter
+1312019,East Delhi,0.0,0.2,-1.0,NR,2026-10-14,47.0,11.6,3.04,LE,Millimeter
+1312020,New Delhi,0.0,0.1,-1.0,NR,2026-10-14,28.2,11.6,1.43,LE,Millimeter
+1312021,North East Delhi,0.0,0.2,-1.0,NR,2026-10-14,37.2,11.6,2.2,LE,Millimeter
+1312022,North West Delhi,0.0,0.0,-1.0,NR,2026-10-14,0.0,3.6,-1.0,NR,Millimeter
+1312023,South Delhi,0.0,0.2,-1.0,NR,2026-10-14,16.9,11.6,0.45,E,Millimeter
+1312024,South East Delhi,0.0,0.2,-1.0,NR,2026-10-14,40.5,11.6,2.49,LE,Millimeter
+1312025,South West Delhi,0.0,0.0,-1.0,NR,2026-10-14,10.0,12.8,-0.22,D,Millimeter
+1312026,West Delhi,0.0,0.2,-1.0,NR,2026-10-14,39.5,9.7,3.07,LE,Millimeter
+1312027,Chandigarh (Ut),0.0,0.2,-1.0,NR,2026-10-14,20.1,11.5,0.75,LE,Millimeter
+1312028,Chandigarh,0.0,0.2,-1.0,NR,2026-10-14,20.1,11.5,0.74,LE,Millimeter
+1312029,Amritsar,0.0,0.4,-1.0,NR,2026-10-14,9.5,7.1,0.34,E,Millimeter
+1312030,Barnala,0.0,0.2,-1.0,NR,2026-10-14,10.7,2.6,3.04,LE,Millimeter
+1312031,Bhatinda,0.0,0.0,-1.0,NR,2026-10-14,10.0,4.8,1.07,LE,Millimeter
+1312032,Faridkot,0.0,0.0,-1.0,NR,2026-10-14,12.0,3.2,2.67,LE,Millimeter
+1312033,Fatehgarh Sahib,0.0,0.3,-1.0,NR,2026-10-14,24.8,3.1,6.91,LE,Millimeter
+1312034,Fazilka,0.0,0.0,-1.0,NR,2026-10-14,28.0,2.5,9.85,LE,Millimeter
+1312035,Ferozepur,0.0,0.0,-1.0,NR,2026-10-14,4.7,2.7,0.72,LE,Millimeter
+1312036,Gurdaspur,0.0,0.2,-1.0,NR,2026-10-14,30.0,10.3,1.91,LE,Millimeter
+1312037,Hoshiarpur,0.0,0.1,-1.0,NR,2026-10-14,33.4,6.9,3.83,LE,Millimeter
+1312038,Jalandhar,0.0,0.1,-1.0,NR,2026-10-14,15.5,3.6,3.27,LE,Millimeter
+1312039,Kapurthala,0.0,0.2,-1.0,NR,2026-10-14,8.6,4.2,1.03,LE,Millimeter
+1312040,Ludhiana,0.0,0.0,-1.0,NR,2026-10-14,15.4,3.5,3.36,LE,Millimeter
+1312041,Mansa,0.0,0.0,-1.0,NR,2026-10-14,0.0,3.0,-1.0,NR,Millimeter
+1312042,Moga,0.0,0.1,-1.0,NR,2026-10-14,1.2,2.4,-0.52,D,Millimeter
+1312043,Muktsar,0.0,0.0,-1.0,NR,2026-10-14,8.4,2.1,2.84,LE,Millimeter
+1312044,Pathankot,0.0,0.2,-1.0,NR,2026-10-14,35.9,9.4,2.82,LE,Millimeter
+1312045,Patiala,0.0,0.1,-1.0,NR,2026-10-14,29.5,6.3,3.67,LE,Millimeter
+1312046,Rupnagar,0.0,0.0,-1.0,NR,2026-10-14,18.8,11.0,0.7,LE,Millimeter
+1312047,Sangrur,0.0,0.1,-1.0,NR,2026-10-14,28.2,4.6,5.11,LE,Millimeter
+1312048,Sas Nagar (Mohali),0.0,0.7,-1.0,NR,2026-10-14,10.8,7.1,0.51,E,Millimeter
+1312049,Sbs Nagar,0.0,0.0,-1.0,NR,2026-10-14,18.8,6.0,2.11,LE,Millimeter
+1312050,Tarn Taran,0.0,0.0,-1.0,NR,2026-10-14,1.9,4.5,-0.59,D,Millimeter
+1312051,Himachal Pradesh,0.0,0.8,-0.99,LD,2026-10-14,16.6,13.7,0.21,E,Millimeter
+1312052,Bilaspur,0.0,0.2,-1.0,NR,2026-10-14,16.6,6.3,1.63,LE,Millimeter
+1312053,Chamba,0.0,1.2,-1.0,NR,2026-10-14,15.1,14.2,0.06,N,Millimeter
+1312054,Hamirpur,0.0,0.0,-1.0,NR,2026-10-14,21.4,14.1,0.52,E,Millimeter
+1312055,Kangra,0.0,0.3,-1.0,NR,2026-10-14,43.5,19.6,1.22,LE,Millimeter
+1312056,Kinnaur,0.0,0.5,-1.0,NR,2026-10-14,6.9,11.5,-0.4,D,Millimeter
+1312057,Kullu,0.0,0.7,-1.0,NR,2026-10-14,15.7,11.3,0.39,E,Millimeter
+1312058,Lahaul & Spiti,0.0,1.2,-1.0,NR,2026-10-14,7.1,14.5,-0.51,D,Millimeter
+1312059,Mandi,0.0,0.3,-1.0,NR,2026-10-14,15.5,10.9,0.42,E,Millimeter
+1312060,Shimla,0.1,1.0,-0.92,LD,2026-10-14,22.4,12.6,0.78,LE,Millimeter
+1312061,Sirmaur,0.0,0.5,-1.0,NR,2026-10-14,12.3,16.7,-0.26,D,Millimeter
+1312062,Solan,0.0,0.6,-1.0,NR,2026-10-14,30.2,11.7,1.58,LE,Millimeter
+1312063,Una,0.0,0.2,-1.0,NR,2026-10-14,21.3,12.5,0.71,LE,Millimeter
+1312064,Jammu & Kashmir And Ladakh,5.2,0.9,4.83,LE,2026-10-14,21.7,14.2,0.53,E,Millimeter
+1312065,Jammu & Kashmir (Ut),5.2,0.9,4.83,LE,2026-10-14,21.7,14.2,0.53,E,Millimeter
+1312066,Anantnag,3.0,0.5,4.94,LE,2026-10-14,6.3,10.7,-0.41,D,Millimeter
+1312067,Badgam,9.0,0.0,896.5,LE,2026-10-14,9.5,6.0,0.57,E,Millimeter
+1312068,Bandipora,14.4,1.1,12.07,LE,2026-10-14,17.8,8.7,1.03,LE,Millimeter
+1312069,Baramula,18.8,0.6,30.33,LE,2026-10-14,21.7,15.8,0.37,E,Millimeter
+1312070,Doda,0.0,1.0,-1.0,NR,2026-10-14,3.9,15.5,-0.75,LD,Millimeter
+1312071,Ganderbal,23.6,0.8,28.46,LE,2026-10-14,27.9,16.6,0.68,LE,Millimeter
+1312072,Jammu,0.0,1.0,-1.0,NR,2026-10-14,98.7,19.8,3.98,LE,Millimeter
+1312073,Kathua,0.0,1.4,-1.0,NR,2026-10-14,48.6,13.8,2.52,LE,Millimeter
+1312074,Kistwar,0.0,1.0,-1.0,NR,2026-10-14,3.0,15.5,-0.81,LD,Millimeter
+1312075,Kulgam,1.8,1.9,-0.05,N,2026-10-14,2.0,16.6,-0.88,LD,Millimeter
+1312076,Kupwara,28.9,0.9,31.16,LE,2026-10-14,35.2,11.9,1.96,LE,Millimeter
+1312077,Poonch,3.3,0.0,324.0,LE,2026-10-14,20.3,11.8,0.71,LE,Millimeter
+1312078,Pulwama,7.2,0.1,71.25,LE,2026-10-14,9.2,5.9,0.56,E,Millimeter
+1312079,Rajouri,0.3,0.2,0.25,E,2026-10-14,16.8,2.6,5.3,LE,Millimeter
+1312080,Ramban,1.1,1.4,-0.21,D,2026-10-14,8.4,15.4,-0.46,D,Millimeter
+1312081,Reasi,0.2,1.9,-0.91,LD,2026-10-14,45.2,22.6,1.0,LE,Millimeter
+1312082,Samba,0.0,0.2,-1.0,NR,2026-10-14,69.0,3.6,17.75,LE,Millimeter
+1312083,Shopian,0.7,0.0,65.67,LE,2026-10-14,0.8,5.3,-0.84,LD,Millimeter
+1312084,Srinagar,9.4,0.5,17.76,LE,2026-10-14,11.5,8.1,0.42,E,Millimeter
+1312085,Udhampur,0.0,2.2,-1.0,NR,2026-10-14,28.3,29.1,-0.03,N,Millimeter
+1312086,Ladakh (Ut),0.0,0.0,-1.0,NR,2026-10-14,0.6,0.9,-0.35,D,Millimeter
+1312087,Kargil,0.0,0.0,0.0,,2026-10-14,0.0,0.3,-1.0,NR,Millimeter
+1312088,Ladakh (Leh),0.0,0.0,-1.0,NR,2026-10-14,0.8,1.1,-0.34,D,Millimeter
+1312089,Rajasthan,0.0,0.1,-1.0,NR,2026-10-14,0.8,7.4,-0.89,LD,Millimeter
+1312090,East Rajasthan,0.0,0.2,-1.0,NR,2026-10-14,0.1,11.4,-0.99,LD,Millimeter
+1312091,Ajmer,0.0,0.1,-1.0,NR,2026-10-14,0.0,5.7,-1.0,NR,Millimeter
+1312092,Alwar,0.0,0.1,-1.0,NR,2026-10-14,0.1,11.4,-0.99,LD,Millimeter
+1312093,Banswara,0.0,0.3,-1.0,NR,2026-10-14,0.0,18.5,-1.0,NR,Millimeter
+1312094,Baran,0.0,0.6,-1.0,NR,2026-10-14,0.0,17.5,-1.0,NR,Millimeter
+1312095,Bharatpur,0.0,0.1,-1.0,NR,2026-10-14,0.0,12.1,-1.0,NR,Millimeter
+1312096,Bhilwara,0.0,0.0,-1.0,NR,2026-10-14,0.0,7.1,-1.0,NR,Millimeter
+1312097,Bundi,0.0,0.8,-1.0,NR,2026-10-14,0.0,9.0,-1.0,NR,Millimeter
+1312098,Chittorgarh,0.0,0.2,-1.0,NR,2026-10-14,0.0,10.4,-1.0,NR,Millimeter
+1312099,Dausa,0.0,0.2,-1.0,NR,2026-10-14,0.0,11.6,-1.0,NR,Millimeter
+1312100,Dholpur,0.0,0.5,-1.0,NR,2026-10-14,0.0,16.2,-1.0,NR,Millimeter
+1312101,Dungarpur,0.0,0.0,-1.0,NR,2026-10-14,0.0,14.3,-1.0,NR,Millimeter
+1312102,Jaipur,0.0,0.1,-1.0,NR,2026-10-14,0.7,10.4,-0.93,LD,Millimeter
+1312103,Jhalawar,0.0,0.1,-1.0,NR,2026-10-14,0.0,18.5,-1.0,NR,Millimeter
+1312104,Jhunjhunu,0.0,0.4,-1.0,NR,2026-10-14,0.0,6.9,-1.0,NR,Millimeter
+1312105,Karauli,0.0,0.4,-1.0,NR,2026-10-14,0.0,11.9,-1.0,NR,Millimeter
+1312106,Kota,0.0,0.2,-1.0,NR,2026-10-14,0.0,17.6,-1.0,NR,Millimeter
+1312107,Pratapgarh,0.0,0.5,-1.0,NR,2026-10-14,0.0,19.3,-1.0,NR,Millimeter
+1312108,Rajsamand,0.0,0.1,-1.0,NR,2026-10-14,2.3,8.3,-0.72,LD,Millimeter
+1312109,Sawai Madhopur,0.0,0.2,-1.0,NR,2026-10-14,0.0,16.4,-1.0,NR,Millimeter
+1312110,Sikar,0.0,0.1,-1.0,NR,2026-10-14,0.0,7.2,-1.0,NR,Millimeter
+1312111,Sirohi,0.0,0.3,-1.0,NR,2026-10-14,0.0,12.1,-1.0,NR,Millimeter
+1312112,Tonk,0.0,0.1,-1.0,NR,2026-10-14,0.0,8.4,-1.0,NR,Millimeter
+1312113,Udaipur,0.0,0.1,-1.0,NR,2026-10-14,0.0,10.3,-1.0,NR,Millimeter
+1312114,West Rajasthan,0.0,0.1,-1.0,NR,2026-10-14,1.3,4.2,-0.68,LD,Millimeter
+1312115,Barmer,0.0,0.1,-1.0,NR,2026-10-14,0.0,5.6,-1.0,NR,Millimeter
+1312116,Bikaner,0.0,0.2,-1.0,NR,2026-10-14,5.8,4.5,0.29,E,Millimeter
+1312117,Churu,0.0,0.0,-1.0,NR,2026-10-14,0.0,5.1,-1.0,NR,Millimeter
+1312118,Hanumangarh,0.0,0.0,-1.0,NR,2026-10-14,1.7,2.9,-0.42,D,Millimeter
+1312119,Jaisalmer,0.0,0.0,-1.0,NR,2026-10-14,0.0,2.1,-1.0,NR,Millimeter
+1312120,Jalore,0.0,0.2,-1.0,NR,2026-10-14,0.0,6.5,-1.0,NR,Millimeter
+1312121,Jodhpur,0.0,0.1,-1.0,NR,2026-10-14,0.0,2.9,-1.0,NR,Millimeter
+1312122,Nagaur,0.0,0.0,-1.0,NR,2026-10-14,0.0,5.3,-1.0,NR,Millimeter
+1312123,Pali,0.0,0.0,-1.0,NR,2026-10-14,0.0,6.7,-1.0,NR,Millimeter
+1312124,Sri Ganganagar,0.0,0.0,-1.0,NR,2026-10-14,7.9,2.7,1.85,LE,Millimeter
+1312125,Madhya Pradesh,0.0,0.9,-1.0,NR,2026-10-14,0.5,24.2,-0.98,LD,Millimeter
+1312126,West Madhya Pradesh,0.0,0.6,-1.0,NR,2026-10-14,0.2,22.4,-0.99,LD,Millimeter
+1312127,Agar-Malwa,0.0,0.2,-1.0,NR,2026-10-14,0.0,19.6,-1.0,NR,Millimeter
+1312128,Alirajpur,0.0,0.5,-1.0,NR,2026-10-14,0.0,20.0,-1.0,NR,Millimeter
+1312129,Ashoknagar,0.0,0.4,-1.0,NR,2026-10-14,0.0,18.4,-1.0,NR,Millimeter
+1312130,Barwani,0.0,0.6,-1.0,NR,2026-10-14,0.0,19.8,-1.0,NR,Millimeter
+1312131,Betul,0.0,1.7,-1.0,NR,2026-10-14,0.2,30.5,-0.99,LD,Millimeter
+1312132,Bhind,0.0,0.4,-1.0,NR,2026-10-14,0.0,22.6,-1.0,NR,Millimeter
+1312133,Bhopal,0.0,0.7,-1.0,NR,2026-10-14,0.0,26.2,-1.0,NR,Millimeter
+1312134,Burhanpur,0.0,1.1,-1.0,NR,2026-10-14,0.0,31.6,-1.0,NR,Millimeter
+1312135,Datia,0.0,0.5,-1.0,NR,2026-10-14,0.0,24.3,-1.0,NR,Millimeter
+1312136,Dewas,0.0,0.2,-1.0,NR,2026-10-14,0.0,19.0,-1.0,NR,Millimeter
+1312137,Dhar,0.0,0.4,-1.0,NR,2026-10-14,0.1,26.4,-0.99,LD,Millimeter
+1312138,Guna,0.0,0.1,-1.0,NR,2026-10-14,0.0,21.3,-1.0,NR,Millimeter
+1312139,Gwalior,0.0,0.8,-1.0,NR,2026-10-14,1.0,25.3,-0.96,LD,Millimeter
+1312140,Harda,0.0,0.1,-1.0,NR,2026-10-14,0.0,28.5,-1.0,NR,Millimeter
+1312141,Indore,0.0,0.5,-1.0,NR,2026-10-14,0.0,25.6,-1.0,NR,Millimeter
+1312142,Jhabua,0.0,0.5,-1.0,NR,2026-10-14,0.0,25.3,-1.0,NR,Millimeter
+1312143,Khandwa,0.0,1.2,-1.0,NR,2026-10-14,0.0,26.5,-1.0,NR,Millimeter
+1312144,Khargone,0.0,0.2,-1.0,NR,2026-10-14,0.0,23.7,-1.0,NR,Millimeter
+1312145,Mandsaur,0.0,0.3,-1.0,NR,2026-10-14,0.0,20.1,-1.0,NR,Millimeter
+1312146,Morena,0.0,0.9,-1.0,NR,2026-10-14,0.0,19.6,-1.0,NR,Millimeter
+1312147,Narmadapuram,0.0,0.4,-1.0,NR,2026-10-14,0.0,19.8,-1.0,NR,Millimeter
+1312148,Neemuch,0.0,0.1,-1.0,NR,2026-10-14,0.0,15.1,-1.0,NR,Millimeter
+1312149,Raisen,0.0,0.2,-1.0,NR,2026-10-14,0.9,23.8,-0.96,LD,Millimeter
+1312150,Rajgarh,0.0,0.6,-1.0,NR,2026-10-14,0.0,20.1,-1.0,NR,Millimeter
+1312151,Ratlam,0.0,0.9,-1.0,NR,2026-10-14,0.0,28.5,-1.0,NR,Millimeter
+1312152,Sehore,0.0,0.6,-1.0,NR,2026-10-14,0.0,20.6,-1.0,NR,Millimeter
+1312153,Shajapur,0.0,0.3,-1.0,NR,2026-10-14,0.0,17.7,-1.0,NR,Millimeter
+1312154,Sheopur,0.0,0.8,-1.0,NR,2026-10-14,2.8,15.5,-0.82,LD,Millimeter
+1312155,Shivpuri,0.0,0.2,-1.0,NR,2026-10-14,0.0,22.0,-1.0,NR,Millimeter
+1312156,Ujjain,0.0,0.5,-1.0,NR,2026-10-14,0.0,20.3,-1.0,NR,Millimeter
+1312157,Vidisha,0.0,0.5,-1.0,NR,2026-10-14,0.1,17.3,-0.99,LD,Millimeter
+1312158,East Madhya Pradesh,0.0,1.5,-1.0,NR,2026-10-14,0.9,26.6,-0.97,LD,Millimeter
+1312159,Anuppur,0.0,5.0,-1.0,NR,2026-10-14,6.3,33.6,-0.81,LD,Millimeter
+1312160,Balaghat,0.0,1.9,-1.0,NR,2026-10-14,0.4,32.4,-0.99,LD,Millimeter
+1312161,Chhatarpur,0.0,0.3,-1.0,NR,2026-10-14,0.0,27.2,-1.0,NR,Millimeter
+1312162,Chhindwara,0.0,1.6,-1.0,NR,2026-10-14,0.9,33.5,-0.97,LD,Millimeter
+1312163,Damoh,0.0,1.2,-1.0,NR,2026-10-14,0.0,21.1,-1.0,NR,Millimeter
+1312164,Dindori,0.0,4.6,-1.0,NR,2026-10-14,0.3,23.7,-0.99,LD,Millimeter
+1312165,Jabalpur,0.0,0.8,-1.0,NR,2026-10-14,0.0,20.6,-1.0,NR,Millimeter
+1312166,Katni,0.0,0.8,-1.0,NR,2026-10-14,0.2,24.2,-0.99,LD,Millimeter
+1312167,Mandla,0.0,1.5,-1.0,NR,2026-10-14,0.0,26.0,-1.0,NR,Millimeter
+1312168,Narsinghpur,0.0,0.3,-1.0,NR,2026-10-14,2.6,18.2,-0.86,LD,Millimeter
+1312169,Niwari,0.0,0.0,-1.0,NR,2026-10-14,0.0,23.6,-1.0,NR,Millimeter
+1312170,Panna,0.0,0.9,-1.0,NR,2026-10-14,0.0,25.3,-1.0,NR,Millimeter
+1312171,Rewa,0.0,2.5,-1.0,NR,2026-10-14,0.3,29.6,-0.99,LD,Millimeter
+1312172,Sagar,0.0,0.5,-1.0,NR,2026-10-14,0.2,18.9,-0.99,LD,Millimeter
+1312173,Satna,0.0,0.7,-1.0,NR,2026-10-14,0.1,24.1,-0.99,LD,Millimeter
+1312174,Seoni,0.0,1.1,-1.0,NR,2026-10-14,2.3,30.1,-0.93,LD,Millimeter
+1312175,Shahdol,0.0,3.1,-1.0,NR,2026-10-14,0.0,25.4,-1.0,NR,Millimeter
+1312176,Sidhi,0.0,0.9,-1.0,NR,2026-10-14,2.0,28.4,-0.93,LD,Millimeter
+1312177,Singrauli,0.0,1.6,-1.0,NR,2026-10-14,6.3,33.5,-0.81,LD,Millimeter
+1312178,Tikamgarh,0.0,0.0,-1.0,NR,2026-10-14,0.0,18.6,-1.0,NR,Millimeter
+1312179,Umaria,0.0,0.2,-1.0,NR,2026-10-14,0.0,32.9,-1.0,NR,Millimeter
+1312180,Maihar,0.0,3.4,-1.0,NR,2026-10-14,0.0,35.1,-1.0,NR,Millimeter
+1312181,Mauganj,0.0,6.0,-1.0,NR,2026-10-14,0.0,28.5,-1.0,NR,Millimeter
+1312182,Pandhurna,0.0,0.5,-1.0,NR,2026-10-14,0.0,27.9,-1.0,NR,Millimeter
+1312183,Gujarat,0.0,0.4,-1.0,NR,2026-10-14,0.3,12.9,-0.98,LD,Millimeter
+1312184,Gujarat Region,0.0,0.5,-1.0,NR,2026-10-14,0.0,16.3,-1.0,NR,Millimeter
+1312185,Gujarat,0.0,0.4,-1.0,NR,2026-10-14,0.3,12.9,-0.98,LD,Millimeter
+1312186,Ahmedabad,0.0,0.2,-1.0,NR,2026-10-14,0.0,12.2,-1.0,NR,Millimeter
+1312187,Anand,0.0,0.7,-1.0,NR,2026-10-14,0.0,10.8,-1.0,NR,Millimeter
+1312188,Aravalli,0.0,0.5,-1.0,NR,2026-10-14,0.0,12.8,-1.0,NR,Millimeter
+1312189,Banaskantha,0.0,0.4,-1.0,NR,2026-10-14,0.0,11.5,-1.0,NR,Millimeter
+1312190,Bharuch,0.0,0.4,-1.0,NR,2026-10-14,0.0,13.2,-1.0,NR,Millimeter
+1312191,Chhota Udepur,0.0,0.4,-1.0,NR,2026-10-14,0.0,19.9,-1.0,NR,Millimeter
+1312192,Dahod,0.0,0.1,-1.0,NR,2026-10-14,0.0,17.2,-1.0,NR,Millimeter
+1312193,Dangs,0.0,4.6,-1.0,NR,2026-10-14,0.0,60.1,-1.0,NR,Millimeter
+1312194,Gandhinagar,0.0,0.8,-1.0,NR,2026-10-14,0.0,12.6,-1.0,NR,Millimeter
+1312195,Kheda,0.0,0.5,-1.0,NR,2026-10-14,0.0,11.0,-1.0,NR,Millimeter
+1312196,Mahisagar,0.0,1.0,-1.0,NR,2026-10-14,0.0,13.9,-1.0,NR,Millimeter
+1312197,Mehsana,0.0,0.7,-1.0,NR,2026-10-14,0.0,14.1,-1.0,NR,Millimeter
+1312198,Narmada,0.0,0.7,-1.0,NR,2026-10-14,0.0,19.7,-1.0,NR,Millimeter
+1312199,Navsari,0.0,0.3,-1.0,NR,2026-10-14,0.0,23.6,-1.0,NR,Millimeter
+1312200,Panchmahal,0.0,0.1,-1.0,NR,2026-10-14,0.0,12.3,-1.0,NR,Millimeter
+1312201,Patan,0.0,0.2,-1.0,NR,2026-10-14,0.0,8.8,-1.0,NR,Millimeter
+1312202,Sabarkantha,0.0,0.4,-1.0,NR,2026-10-14,0.0,15.8,-1.0,NR,Millimeter
+1312203,Surat,0.0,0.2,-1.0,NR,2026-10-14,0.0,23.4,-1.0,NR,Millimeter
+1312204,Tapi,0.0,0.3,-1.0,NR,2026-10-14,0.0,20.1,-1.0,NR,Millimeter
+1312205,Vadodara,0.0,0.3,-1.0,NR,2026-10-14,0.0,16.2,-1.0,NR,Millimeter
+1312206,Valsad,0.0,0.6,-1.0,NR,2026-10-14,0.0,34.3,-1.0,NR,Millimeter
+1312207,Dadra & Nagar Haveli And Daman & Diu (Ut),0.0,0.5,-1.0,NR,2026-10-14,0.0,29.7,-1.0,NR,Millimeter
+1312208,Dadara & Nagar Haveli,0.0,0.3,-1.0,NR,2026-10-14,0.0,30.9,-1.0,NR,Millimeter
+1312209,Daman,0.0,0.3,-1.0,NR,2026-10-14,0.0,30.9,-1.0,NR,Millimeter
+1312210,Saurashtra & Kutch,0.0,0.4,-1.0,NR,2026-10-14,0.6,10.2,-0.94,LD,Millimeter
+1312211,Gujarat,0.0,0.4,-1.0,NR,2026-10-14,0.3,12.9,-0.98,LD,Millimeter
+1312212,Amreli,0.0,0.0,-1.0,NR,2026-10-14,0.2,16.8,-0.99,LD,Millimeter
+1312213,Bhavnagar,0.0,0.3,-1.0,NR,2026-10-14,0.0,15.2,-1.0,NR,Millimeter
+1312214,Botad,0.0,0.2,-1.0,NR,2026-10-14,0.0,16.8,-1.0,NR,Millimeter
+1312215,Devbhoomi Dwarka,0.0,0.3,-1.0,NR,2026-10-14,0.0,8.3,-1.0,NR,Millimeter
+1312216,Gir Somnath,0.0,0.4,-1.0,NR,2026-10-14,5.8,13.2,-0.56,D,Millimeter
+1312217,Jamnagar,0.0,0.2,-1.0,NR,2026-10-14,3.2,10.7,-0.7,LD,Millimeter
+1312218,Junagadh,0.0,0.9,-1.0,NR,2026-10-14,3.4,18.2,-0.81,LD,Millimeter
+1312219,Kutch,0.0,0.5,-1.0,NR,2026-10-14,0.0,6.1,-1.0,NR,Millimeter
+1312220,Morbi,0.0,0.3,-1.0,NR,2026-10-14,0.0,7.8,-1.0,NR,Millimeter
+1312221,Porbandar,0.0,0.3,-1.0,NR,2026-10-14,0.0,11.9,-1.0,NR,Millimeter
+1312222,Rajkot,0.0,0.1,-1.0,NR,2026-10-14,0.0,13.3,-1.0,NR,Millimeter
+1312223,Surendranagar,0.0,0.2,-1.0,NR,2026-10-14,0.0,10.2,-1.0,NR,Millimeter
+1312224,Dadra & Nagar Haveli And Daman & Diu (Ut),0.0,0.5,-1.0,NR,2026-10-14,0.0,29.7,-1.0,NR,Millimeter
+1312225,Diu,0.0,1.9,-1.0,NR,2026-10-14,0.0,11.9,-1.0,NR,Millimeter
+1312226,Konkan & Goa,0.0,2.7,-1.0,NR,2026-10-14,3.4,80.4,-0.96,LD,Millimeter
+1312227,Maharashtra,0.0,2.0,-1.0,NR,2026-10-14,1.0,48.1,-0.98,LD,Millimeter
+1312228,Mumbai City,0.0,0.9,-1.0,NR,2026-10-14,0.0,55.8,-1.0,NR,Millimeter
+1312229,Mumbai Suburban,0.0,2.7,-1.0,NR,2026-10-14,4.4,64.2,-0.93,LD,Millimeter
+1312230,Palghar,0.0,1.3,-1.0,NR,2026-10-14,2.3,46.0,-0.95,LD,Millimeter
+1312231,Raigad,0.0,2.8,-1.0,NR,2026-10-14,3.9,83.5,-0.95,LD,Millimeter
+1312232,Ratnagiri,0.0,2.7,-1.0,NR,2026-10-14,0.4,94.0,-0.99,LD,Millimeter
+1312233,Sindhudurg,0.0,3.4,-1.0,NR,2026-10-14,3.5,100.0,-0.97,LD,Millimeter
+1312234,Thane,0.0,1.5,-1.0,NR,2026-10-14,11.0,55.2,-0.8,LD,Millimeter
+1312235,Goa,0.0,4.0,-1.0,NR,2026-10-14,1.6,97.2,-0.98,LD,Millimeter
+1312236,North Goa,0.0,3.6,-1.0,NR,2026-10-14,1.9,99.7,-0.98,LD,Millimeter
+1312237,South Goa,0.0,4.3,-1.0,NR,2026-10-14,1.3,95.0,-0.99,LD,Millimeter
+1312238,Madhya Maharashtra,0.0,2.3,-1.0,NR,2026-10-14,1.5,50.2,-0.97,LD,Millimeter
+1312239,Ahmednagar,0.0,2.1,-1.0,NR,2026-10-14,0.5,47.7,-0.99,LD,Millimeter
+1312240,Dhule,0.0,0.9,-1.0,NR,2026-10-14,0.0,25.8,-1.0,NR,Millimeter
+1312241,Jalgaon,0.0,1.0,-1.0,NR,2026-10-14,0.0,28.8,-1.0,NR,Millimeter
+1312242,Kolhapur,0.0,3.3,-1.0,NR,2026-10-14,8.7,74.6,-0.88,LD,Millimeter
+1312243,Nandurbar,0.0,0.4,-1.0,NR,2026-10-14,0.0,24.0,-1.0,NR,Millimeter
+1312244,Nashik,0.0,2.3,-1.0,NR,2026-10-14,1.4,42.8,-0.97,LD,Millimeter
+1312245,Pune,0.0,2.8,-1.0,NR,2026-10-14,1.5,54.5,-0.97,LD,Millimeter
+1312246,Sangli,0.0,3.1,-1.0,NR,2026-10-14,3.9,70.3,-0.94,LD,Millimeter
+1312247,Satara,0.0,2.2,-1.0,NR,2026-10-14,1.4,61.9,-0.98,LD,Millimeter
+1312248,Sholapur,0.0,3.5,-1.0,NR,2026-10-14,0.0,63.3,-1.0,NR,Millimeter
+1312249,Marathwada,0.0,2.2,-1.0,NR,2026-10-14,0.0,46.2,-1.0,NR,Millimeter
+1312250,Beed,0.0,2.3,-1.0,NR,2026-10-14,0.0,46.4,-1.0,NR,Millimeter
+1312251,Chhatrapati Sambhajinagar,0.0,1.9,-1.0,NR,2026-10-14,0.0,36.5,-1.0,NR,Millimeter
+1312252,Dharashiv,0.0,3.8,-1.0,NR,2026-10-14,0.0,56.2,-1.0,NR,Millimeter
+1312253,Hingoli,0.0,1.1,-1.0,NR,2026-10-14,0.0,41.5,-1.0,NR,Millimeter
+1312254,Jalna,0.0,1.2,-1.0,NR,2026-10-14,0.0,40.2,-1.0,NR,Millimeter
+1312255,Latur,0.0,3.4,-1.0,NR,2026-10-14,0.0,56.9,-1.0,NR,Millimeter
+1312256,Nanded,0.0,2.0,-1.0,NR,2026-10-14,0.0,46.4,-1.0,NR,Millimeter
+1312257,Parbhani,0.0,1.9,-1.0,NR,2026-10-14,0.0,48.0,-1.0,NR,Millimeter
+1312258,Vidarbha,0.0,1.1,-1.0,NR,2026-10-14,0.2,37.3,-0.99,LD,Millimeter
+1312259,Akola,0.0,1.3,-1.0,NR,2026-10-14,0.1,37.9,-0.99,LD,Millimeter
+1312260,Amraoti,0.0,1.7,-1.0,NR,2026-10-14,0.7,34.8,-0.98,LD,Millimeter
+1312261,Bhandara,0.0,1.0,-1.0,NR,2026-10-14,0.1,31.7,-0.99,LD,Millimeter
+1312262,Buldhana,0.0,1.1,-1.0,NR,2026-10-14,0.0,39.8,-0.99,LD,Millimeter
+1312263,Chandrapur,0.0,0.8,-1.0,NR,2026-10-14,0.0,39.2,-0.99,LD,Millimeter
+1312264,Gadchiroli,0.0,1.0,-1.0,NR,2026-10-14,0.0,42.0,-0.99,LD,Millimeter
+1312265,Gondia,0.0,1.0,-1.0,NR,2026-10-14,0.2,29.0,-0.99,LD,Millimeter
+1312266,Nagpur,0.0,0.9,-1.0,NR,2026-10-14,0.1,31.2,-0.99,LD,Millimeter
+1312267,Wardha,0.0,0.9,-1.0,NR,2026-10-14,0.3,34.0,-0.99,LD,Millimeter
+1312268,Washim,0.0,2.2,-1.0,NR,2026-10-14,0.2,45.0,-0.99,LD,Millimeter
+1312269,Yeotmal,0.0,1.1,-1.0,NR,2026-10-14,0.1,39.0,-0.99,LD,Millimeter
+1312270,Chhattisgarh,0.1,2.0,-0.97,LD,2026-10-14,2.4,40.1,-0.94,LD,Millimeter
+1312271,Balod,0.0,1.1,-1.0,NR,2026-10-14,0.4,32.3,-0.99,LD,Millimeter
+1312272,Baloda Bazar,0.0,2.1,-1.0,NR,2026-10-14,0.1,26.8,-0.99,LD,Millimeter
+1312273,Balrampur,0.0,1.5,-1.0,NR,2026-10-14,15.9,37.6,-0.58,D,Millimeter
+1312274,Bastar,0.0,2.2,-1.0,NR,2026-10-14,1.2,54.4,-0.98,LD,Millimeter
+1312275,Bemetara,0.0,2.4,-1.0,NR,2026-10-14,0.3,31.5,-0.99,LD,Millimeter
+1312276,Bijapur,0.0,2.5,-1.0,NR,2026-10-14,1.8,62.3,-0.97,LD,Millimeter
+1312277,Bilaspur,0.0,2.0,-1.0,NR,2026-10-14,4.8,31.6,-0.85,LD,Millimeter
+1312278,Dantewada,0.0,1.6,-1.0,NR,2026-10-14,0.0,67.1,-1.0,NR,Millimeter
+1312279,Dhamtari,0.0,1.6,-1.0,NR,2026-10-14,0.0,36.7,-1.0,NR,Millimeter
+1312280,Durg,0.0,0.8,-1.0,NR,2026-10-14,4.4,31.2,-0.86,LD,Millimeter
+1312281,Gariaband,0.0,1.3,-1.0,NR,2026-10-14,2.2,41.6,-0.95,LD,Millimeter
+1312282,Gaurela Pendra Marwahi,0.0,5.1,-1.0,NR,2026-10-14,0.4,53.0,-0.99,LD,Millimeter
+1312283,Janjgir,0.0,1.2,-1.0,NR,2026-10-14,1.4,31.1,-0.96,LD,Millimeter
+1312284,Jashpur,0.0,1.6,-1.0,NR,2026-10-14,3.6,41.0,-0.91,LD,Millimeter
+1312285,Kabirdham,0.0,3.4,-1.0,NR,2026-10-14,7.6,39.7,-0.81,LD,Millimeter
+1312286,Kanker,0.0,1.6,-1.0,NR,2026-10-14,0.1,41.2,-0.99,LD,Millimeter
+1312287,Khairagarh Chh Gandai,0.0,0.1,-1.0,NR,2026-10-14,1.2,28.6,-0.96,LD,Millimeter
+1312288,Kondagaon,0.0,1.2,-1.0,NR,2026-10-14,2.0,49.7,-0.96,LD,Millimeter
+1312289,Korba,0.0,4.2,-1.0,NR,2026-10-14,1.5,36.7,-0.96,LD,Millimeter
+1312290,Koriya,0.0,3.8,-1.0,NR,2026-10-14,0.0,28.0,-1.0,NR,Millimeter
+1312291,Mahasamund,0.0,1.6,-1.0,NR,2026-10-14,0.0,29.9,-1.0,NR,Millimeter
+1312292,Manendragarh Bharatpur,0.0,3.8,-1.0,NR,2026-10-14,0.0,28.1,-1.0,NR,Millimeter
+1312293,Mohala Manpur Chowki,0.0,1.9,-1.0,NR,2026-10-14,0.0,31.4,-1.0,NR,Millimeter
+1312294,Mungeli,0.0,2.5,-1.0,NR,2026-10-14,13.2,26.0,-0.49,D,Millimeter
+1312295,Narayanpur,0.0,1.0,-1.0,NR,2026-10-14,0.0,48.6,-1.0,NR,Millimeter
+1312296,Raigarh,0.0,1.1,-1.0,NR,2026-10-14,3.9,29.7,-0.87,LD,Millimeter
+1312297,Raipur,0.0,2.6,-1.0,NR,2026-10-14,4.1,29.9,-0.86,LD,Millimeter
+1312298,Rajnandgaon,2.6,0.6,3.33,LE,2026-10-14,2.6,36.3,-0.93,LD,Millimeter
+1312299,Sakti,0.0,0.6,-1.0,NR,2026-10-14,0.8,24.0,-0.97,LD,Millimeter
+1312300,Sarangarh Bilaigarh,0.0,0.7,-1.0,NR,2026-10-14,0.0,30.1,-1.0,NR,Millimeter
+1312301,Sukma,0.0,0.9,-1.0,NR,2026-10-14,0.7,57.9,-0.99,LD,Millimeter
+1312302,Surajpur,0.0,3.7,-1.0,NR,2026-10-14,0.2,41.1,-0.99,LD,Millimeter
+1312303,Surguja,0.0,2.9,-1.0,NR,2026-10-14,2.4,44.3,-0.95,LD,Millimeter
+1312304,Andhra Pradesh,0.1,4.1,-0.98,LD,2026-10-14,10.2,77.9,-0.87,LD,Millimeter
+1312305,Coastal Andhra Pradesh & Yanam,0.0,4.6,-0.99,LD,2026-10-14,8.2,86.4,-0.91,LD,Millimeter
+1312306,Andhra Pradesh,0.1,4.1,-0.98,LD,2026-10-14,10.2,77.9,-0.87,LD,Millimeter
+1312307,Anakapalli,0.0,5.2,-1.0,NR,2026-10-14,32.7,118.0,-0.72,LD,Millimeter
+1312308,Bapatla,0.0,2.7,-1.0,NR,2026-10-14,11.4,77.5,-0.85,LD,Millimeter
+1312309,Dr B R Ambedkar Konaseema,0.0,4.8,-1.0,NR,2026-10-14,19.0,126.1,-0.85,LD,Millimeter
+1312310,East Godavari,0.0,3.8,-1.0,NR,2026-10-14,2.5,105.5,-0.98,LD,Millimeter
+1312311,Eluru,0.0,3.6,-1.0,NR,2026-10-14,10.4,76.1,-0.86,LD,Millimeter
+1312312,Guntur,0.0,2.5,-1.0,NR,2026-10-14,5.9,62.5,-0.9,LD,Millimeter
+1312313,Kakinada,0.0,6.1,-1.0,NR,2026-10-14,22.5,98.0,-0.77,LD,Millimeter
+1312314,Krishna,0.0,5.0,-1.0,NR,2026-10-14,1.4,81.4,-0.98,LD,Millimeter
+1312315,Ntr District,0.0,3.9,-1.0,NR,2026-10-14,7.4,81.6,-0.91,LD,Millimeter
+1312316,Palnadu,0.0,3.2,-1.0,NR,2026-10-14,2.9,62.2,-0.95,LD,Millimeter
+1312317,Parvathipuram Manyam,0.0,4.5,-1.0,NR,2026-10-14,4.9,84.7,-0.94,LD,Millimeter
+1312318,Prakasam,0.0,5.6,-1.0,NR,2026-10-14,8.5,72.0,-0.88,LD,Millimeter
+1312319,Spsr Nellore,0.0,4.6,-1.0,NR,2026-10-14,6.2,70.5,-0.91,LD,Millimeter
+1312320,Sri Alluri Sitharamaraju District,0.0,5.4,-1.0,NR,2026-10-14,3.0,91.2,-0.97,LD,Millimeter
+1312321,Srikakulam,0.7,5.4,-0.87,LD,2026-10-14,7.8,115.9,-0.93,LD,Millimeter
+1312322,Vishakhapatnam,0.1,5.8,-0.98,LD,2026-10-14,3.5,114.2,-0.97,LD,Millimeter
+1312323,Vizianagaram,0.0,4.3,-1.0,NR,2026-10-14,1.0,100.5,-0.99,LD,Millimeter
+1312324,West Godavari,0.0,3.8,-1.0,NR,2026-10-14,19.7,101.3,-0.81,LD,Millimeter
+1312325,Puducherry (Ut),12.7,4.2,2.02,LE,2026-10-14,21.9,77.9,-0.72,LD,Millimeter
+1312326,Yanam,0.0,5.4,-1.0,NR,2026-10-14,6.6,126.3,-0.95,LD,Millimeter
+1312327,Rayalaseema,0.1,3.5,-0.97,LD,2026-10-14,12.8,66.0,-0.81,LD,Millimeter
+1312328,Anantapuramu,0.0,3.0,-1.0,NR,2026-10-14,4.4,58.5,-0.92,LD,Millimeter
+1312329,Annamayya District,0.0,2.5,-1.0,NR,2026-10-14,43.2,63.6,-0.32,D,Millimeter
+1312330,Chittoor,0.0,4.4,-1.0,NR,2026-10-14,34.0,80.9,-0.58,D,Millimeter
+1312331,Kurnool,0.0,4.4,-1.0,NR,2026-10-14,0.0,68.7,-1.0,NR,Millimeter
+1312332,Nandyal,0.0,2.7,-1.0,NR,2026-10-14,0.7,66.6,-0.99,LD,Millimeter
+1312333,Sri Sathyasai District,0.0,3.9,-1.0,NR,2026-10-14,21.1,67.2,-0.69,LD,Millimeter
+1312334,Tirupati,0.8,5.1,-0.85,LD,2026-10-14,8.2,70.8,-0.88,LD,Millimeter
+1312335,Ysr District,0.0,3.1,-1.0,NR,2026-10-14,4.8,62.8,-0.92,LD,Millimeter
+1312336,Telangana,0.1,3.6,-0.97,LD,2026-10-14,1.8,55.3,-0.97,LD,Millimeter
+1312337,Adilabad,0.0,1.3,-0.98,LD,2026-10-14,0.6,43.1,-0.99,LD,Millimeter
+1312338,B. Kothagudem,0.0,3.2,-1.0,NR,2026-10-14,2.0,60.2,-0.97,LD,Millimeter
+1312339,Hanumakonda,0.0,4.7,-1.0,NR,2026-10-14,0.0,45.1,-0.99,LD,Millimeter
+1312340,Hyderabad,0.1,7.2,-0.99,LD,2026-10-14,0.4,66.9,-0.99,LD,Millimeter
+1312341,J. Bhupalpally,0.0,2.6,-1.0,NR,2026-10-14,0.1,46.6,-0.99,LD,Millimeter
+1312342,Jagtial,0.0,2.4,-1.0,NR,2026-10-14,0.0,47.4,-0.99,LD,Millimeter
+1312343,Jangaon,0.0,5.7,-1.0,NR,2026-10-14,0.3,55.7,-0.99,LD,Millimeter
+1312344,Jogulamba Gadwal,0.0,5.0,-1.0,NR,2026-10-14,0.0,61.2,-1.0,NR,Millimeter
+1312345,Kamareddy,0.0,4.0,-1.0,NR,2026-10-14,0.2,51.2,-0.99,LD,Millimeter
+1312346,Karimnagar,0.0,2.4,-1.0,NR,2026-10-14,0.0,48.4,-0.99,LD,Millimeter
+1312347,Khammam,0.0,4.4,-0.99,LD,2026-10-14,2.1,73.3,-0.97,LD,Millimeter
+1312348,Kumaram Bheem,0.0,0.6,-1.0,NR,2026-10-14,0.1,47.3,-0.99,LD,Millimeter
+1312349,M. Malkajgiri,0.0,10.2,-1.0,NR,2026-10-14,0.6,60.8,-0.99,LD,Millimeter
+1312350,Mahabubabad,0.0,4.8,-1.0,NR,2026-10-14,0.5,60.9,-0.99,LD,Millimeter
+1312351,Mahabubnagar,0.0,2.9,-1.0,NR,2026-10-14,0.0,61.0,-0.99,LD,Millimeter
+1312352,Mancherial,0.3,1.0,-0.69,LD,2026-10-14,4.3,49.0,-0.91,LD,Millimeter
+1312353,Medak,0.0,4.9,-1.0,NR,2026-10-14,0.1,52.4,-0.99,LD,Millimeter
+1312354,Mulugu,0.0,2.7,-0.98,LD,2026-10-14,3.8,53.3,-0.93,LD,Millimeter
+1312355,Nagarkurnool,0.0,3.1,-1.0,NR,2026-10-14,0.2,61.1,-0.99,LD,Millimeter
+1312356,Nalgonda,0.0,4.4,-1.0,NR,2026-10-14,1.1,61.7,-0.98,LD,Millimeter
+1312357,Narayanpet,0.0,2.9,-1.0,NR,2026-10-14,0.1,50.1,-0.99,LD,Millimeter
+1312358,Nirmal,0.0,1.0,-1.0,NR,2026-10-14,1.0,43.5,-0.98,LD,Millimeter
+1312359,Nizamabad,0.0,2.5,-1.0,NR,2026-10-14,0.0,45.1,-1.0,NR,Millimeter
+1312360,Peddapalle,0.0,2.3,-1.0,NR,2026-10-14,0.6,48.6,-0.99,LD,Millimeter
+1312361,Rajanna Sircilla,5.9,4.2,0.4,E,2026-10-14,59.3,47.8,0.24,E,Millimeter
+1312362,Rangareddy,0.1,6.9,-0.99,LD,2026-10-14,1.3,62.6,-0.98,LD,Millimeter
+1312363,Sangareddy,0.0,4.3,-1.0,NR,2026-10-14,0.5,54.2,-0.99,LD,Millimeter
+1312364,Siddipet,0.0,4.0,-1.0,NR,2026-10-14,0.2,47.9,-0.99,LD,Millimeter
+1312365,Suryapet,0.0,4.8,-1.0,NR,2026-10-14,0.1,66.7,-0.99,LD,Millimeter
+1312366,Vikarabad,0.0,5.4,-1.0,NR,2026-10-14,0.1,60.7,-0.99,LD,Millimeter
+1312367,Wanaparthy,0.0,1.7,-1.0,NR,2026-10-14,0.0,64.4,-0.99,LD,Millimeter
+1312368,Warangal,0.0,4.9,-1.0,NR,2026-10-14,0.4,44.9,-0.99,LD,Millimeter
+1312369,Y. Bhuvanagiri,0.0,5.0,-1.0,NR,2026-10-14,0.0,64.3,-1.0,NR,Millimeter
+1312370,Tamilnadu & Puducherry & Karaikal,1.1,5.3,-0.8,LD,2026-10-14,32.6,62.6,-0.48,D,Millimeter
+1312371,Tamilnadu,1.0,5.2,-0.8,LD,2026-10-14,32.6,62.5,-0.48,D,Millimeter
+1312372,Ariyalur,0.5,4.0,-0.88,LD,2026-10-14,11.3,61.3,-0.82,LD,Millimeter
+1312373,Chengalpattu,0.1,5.7,-0.98,LD,2026-10-14,2.7,68.5,-0.96,LD,Millimeter
+1312374,Chennai,1.2,4.1,-0.7,LD,2026-10-14,1.7,72.9,-0.98,LD,Millimeter
+1312375,Coimbatore,0.0,7.2,-1.0,NR,2026-10-14,79.2,63.4,0.25,E,Millimeter
+1312376,Cuddalore,2.9,6.3,-0.55,D,2026-10-14,17.2,66.3,-0.74,LD,Millimeter
+1312377,Dharmapuri,0.0,3.8,-1.0,NR,2026-10-14,30.2,81.0,-0.63,LD,Millimeter
+1312378,Dindigul,0.0,6.4,-1.0,NR,2026-10-14,30.5,73.1,-0.58,D,Millimeter
+1312379,Erode,0.0,5.7,-1.0,NR,2026-10-14,17.1,61.4,-0.72,LD,Millimeter
+1312380,Kallakurichi,0.0,3.9,-1.0,NR,2026-10-14,27.5,64.2,-0.57,D,Millimeter
+1312381,Kancheepuram,3.4,4.4,-0.22,D,2026-10-14,11.4,70.0,-0.84,LD,Millimeter
+1312382,Kanyakumari,3.2,7.4,-0.57,D,2026-10-14,94.8,96.9,-0.02,N,Millimeter
+1312383,Karur,0.0,3.7,-1.0,NR,2026-10-14,25.3,51.2,-0.51,D,Millimeter
+1312384,Krishnagiri,0.0,4.3,-1.0,NR,2026-10-14,39.5,81.7,-0.52,D,Millimeter
+1312385,Madurai,0.0,5.9,-1.0,NR,2026-10-14,33.2,65.3,-0.49,D,Millimeter
+1312386,Mayiladuthurai,7.0,5.7,0.23,E,2026-10-14,14.9,62.2,-0.76,LD,Millimeter
+1312387,Nagapattinam,20.5,4.5,3.56,LE,2026-10-14,44.3,52.4,-0.15,N,Millimeter
+1312388,Namakkal,0.0,3.4,-1.0,NR,2026-10-14,30.4,59.3,-0.49,D,Millimeter
+1312389,Nilgiris,0.0,8.4,-1.0,NR,2026-10-14,116.2,86.8,0.34,E,Millimeter
+1312390,Perambalur,0.0,4.0,-1.0,NR,2026-10-14,32.7,60.0,-0.45,D,Millimeter
+1312391,Pudukkottai,0.0,3.2,-0.98,LD,2026-10-14,18.6,49.7,-0.63,LD,Millimeter
+1312392,Ramanathapuram,4.2,6.1,-0.32,D,2026-10-14,33.7,49.3,-0.32,D,Millimeter
+1312393,Ranipet,0.0,3.5,-1.0,NR,2026-10-14,2.3,61.3,-0.96,LD,Millimeter
+1312394,Salem,0.0,4.7,-1.0,NR,2026-10-14,13.6,75.0,-0.82,LD,Millimeter
+1312395,Sivaganga,0.0,7.7,-1.0,NR,2026-10-14,24.8,67.7,-0.63,LD,Millimeter
+1312396,Tenkasi,0.4,6.5,-0.94,LD,2026-10-14,66.0,46.7,0.41,E,Millimeter
+1312397,Thanjavur,0.1,4.6,-0.97,LD,2026-10-14,10.7,56.1,-0.81,LD,Millimeter
+1312398,Theni,0.0,6.6,-1.0,NR,2026-10-14,49.9,61.5,-0.19,N,Millimeter
+1312399,Thiruchirapalli,0.0,3.1,-1.0,NR,2026-10-14,17.3,58.7,-0.7,LD,Millimeter
+1312400,Thiruvallur,4.8,4.9,-0.02,N,2026-10-14,10.3,65.6,-0.84,LD,Millimeter
+1312401,Thoothukudi,4.7,4.7,0.0,N,2026-10-14,40.9,33.6,0.22,E,Millimeter
+1312402,Tirunelveli,0.3,5.5,-0.94,LD,2026-10-14,96.5,34.5,1.8,LE,Millimeter
+1312403,Tirupattur,0.0,4.1,-1.0,NR,2026-10-14,25.1,64.2,-0.61,LD,Millimeter
+1312404,Tiruppur,0.0,6.4,-1.0,NR,2026-10-14,29.3,54.8,-0.47,D,Millimeter
+1312405,Tiruvannamalai,0.0,5.2,-1.0,NR,2026-10-14,23.5,74.9,-0.69,LD,Millimeter
+1312406,Tiruvarur,1.4,5.6,-0.76,LD,2026-10-14,20.2,55.2,-0.63,LD,Millimeter
+1312407,Vellore,0.0,4.4,-1.0,NR,2026-10-14,17.4,65.2,-0.73,LD,Millimeter
+1312408,Villupuram,0.5,4.2,-0.87,LD,2026-10-14,15.5,61.6,-0.75,LD,Millimeter
+1312409,Virudhunagar,2.8,5.5,-0.49,D,2026-10-14,47.5,54.6,-0.13,N,Millimeter
+1312410,Puducherry (Ut),12.7,4.2,2.02,LE,2026-10-14,21.9,77.9,-0.72,LD,Millimeter
+1312411,Karaikal,23.9,3.3,6.24,LE,2026-10-14,50.4,59.4,-0.15,N,Millimeter
+1312412,Puducherry,7.9,4.3,0.83,LE,2026-10-14,7.9,81.5,-0.9,LD,Millimeter
+1312413,Karnataka,0.0,4.7,-1.0,NR,2026-10-14,16.7,74.7,-0.78,LD,Millimeter
+1312414,Northern Interior Karnataka,0.0,4.0,-1.0,NR,2026-10-14,3.9,65.7,-0.94,LD,Millimeter
+1312415,Bagalkote,0.0,4.1,-1.0,NR,2026-10-14,0.0,68.2,-1.0,NR,Millimeter
+1312416,Belagavi,0.0,3.7,-1.0,NR,2026-10-14,4.2,64.3,-0.93,LD,Millimeter
+1312417,Bidar,0.0,3.4,-1.0,NR,2026-10-14,0.0,60.2,-1.0,NR,Millimeter
+1312418,Dharwad,0.0,3.9,-1.0,NR,2026-10-14,20.0,61.4,-0.67,LD,Millimeter
+1312419,Gadag,0.0,4.1,-1.0,NR,2026-10-14,7.8,64.2,-0.88,LD,Millimeter
+1312420,Haveri,0.0,4.5,-1.0,NR,2026-10-14,17.0,62.1,-0.73,LD,Millimeter
+1312421,Kalaburagi,0.0,3.0,-1.0,NR,2026-10-14,0.0,65.1,-1.0,NR,Millimeter
+1312422,Koppal,0.0,5.9,-1.0,NR,2026-10-14,5.9,68.5,-0.91,LD,Millimeter
+1312423,Raichur,0.0,4.2,-1.0,NR,2026-10-14,0.0,71.0,-1.0,NR,Millimeter
+1312424,Vijayapura,0.0,4.4,-1.0,NR,2026-10-14,0.3,69.5,-0.99,LD,Millimeter
+1312425,Yadgir,0.0,2.8,-1.0,NR,2026-10-14,0.0,63.1,-1.0,NR,Millimeter
+1312426,Southern Interior Karnataka,0.0,4.8,-1.0,NR,2026-10-14,23.1,74.8,-0.69,LD,Millimeter
+1312427,Ballari,0.0,5.2,-1.0,NR,2026-10-14,3.7,65.6,-0.94,LD,Millimeter
+1312428,Bengaluru Rural,0.0,4.1,-1.0,NR,2026-10-14,43.1,84.2,-0.49,D,Millimeter
+1312429,Bengaluru Urban,0.0,3.1,-1.0,NR,2026-10-14,45.0,78.0,-0.42,D,Millimeter
+1312430,Chamarajanagar,0.0,4.6,-1.0,NR,2026-10-14,47.2,78.4,-0.4,D,Millimeter
+1312431,Chikaballapura,0.0,4.5,-1.0,NR,2026-10-14,29.0,78.2,-0.63,LD,Millimeter
+1312432,Chikkamagaluru,0.0,5.0,-1.0,NR,2026-10-14,43.7,81.0,-0.46,D,Millimeter
+1312433,Chitradurga,0.0,4.1,-1.0,NR,2026-10-14,11.8,63.7,-0.82,LD,Millimeter
+1312434,Davangere,0.0,5.1,-1.0,NR,2026-10-14,7.4,65.5,-0.89,LD,Millimeter
+1312435,Hassan,0.0,4.7,-1.0,NR,2026-10-14,41.0,72.0,-0.43,D,Millimeter
+1312436,Kodagu,0.0,9.9,-1.0,NR,2026-10-14,53.6,106.5,-0.5,D,Millimeter
+1312437,Kolar,0.0,4.2,-1.0,NR,2026-10-14,11.9,78.6,-0.85,LD,Millimeter
+1312438,Mandya,0.0,5.4,-1.0,NR,2026-10-14,11.2,77.6,-0.86,LD,Millimeter
+1312439,Mysuru,0.0,6.1,-1.0,NR,2026-10-14,22.9,63.9,-0.64,LD,Millimeter
+1312440,Ramanagara,0.0,4.2,-1.0,NR,2026-10-14,13.9,85.7,-0.84,LD,Millimeter
+1312441,Shivamogga,0.0,4.6,-1.0,NR,2026-10-14,10.5,74.4,-0.86,LD,Millimeter
+1312442,Tumakuru,0.0,4.1,-1.0,NR,2026-10-14,13.8,77.0,-0.82,LD,Millimeter
+1312443,Vijayanagara,0.0,4.0,-1.0,NR,2026-10-14,16.3,62.9,-0.74,LD,Millimeter
+1312444,Coastal Karnataka,0.0,6.7,-1.0,NR,2026-10-14,38.7,112.3,-0.66,LD,Millimeter
+1312445,Dakshina Kannada,0.0,10.9,-1.0,NR,2026-10-14,104.3,146.9,-0.29,D,Millimeter
+1312446,Udupi,0.0,8.4,-1.0,NR,2026-10-14,39.5,129.2,-0.69,LD,Millimeter
+1312447,Uttara Kannada,0.0,4.1,-1.0,NR,2026-10-14,7.5,90.1,-0.92,LD,Millimeter
+1312448,Kerala & Mahe,0.6,13.2,-0.96,LD,2026-10-14,89.8,145.0,-0.38,D,Millimeter
+1312449,Alapuzha,0.0,11.4,-1.0,NR,2026-10-14,101.5,149.1,-0.32,D,Millimeter
+1312450,Ernakulam,0.0,14.6,-1.0,NR,2026-10-14,104.8,166.7,-0.37,D,Millimeter
+1312451,Idukki,0.0,16.6,-1.0,NR,2026-10-14,95.3,186.1,-0.49,D,Millimeter
+1312452,Kannur,0.0,14.7,-1.0,NR,2026-10-14,40.7,134.3,-0.7,LD,Millimeter
+1312453,Kasargod,0.0,9.5,-1.0,NR,2026-10-14,50.6,126.7,-0.6,LD,Millimeter
+1312454,Kollam,8.4,13.8,-0.39,D,2026-10-14,117.6,158.7,-0.26,D,Millimeter
+1312455,Kottayam,0.0,16.2,-1.0,NR,2026-10-14,116.9,151.1,-0.23,D,Millimeter
+1312456,Kozhikode,0.0,10.3,-1.0,NR,2026-10-14,53.2,146.6,-0.64,LD,Millimeter
+1312457,Malappuram,0.0,12.6,-1.0,NR,2026-10-14,45.0,142.8,-0.68,LD,Millimeter
+1312458,Palakkad,0.0,10.6,-1.0,NR,2026-10-14,76.1,102.5,-0.26,D,Millimeter
+1312459,Pathanamthitta,0.0,17.2,-1.0,NR,2026-10-14,188.2,164.0,0.15,N,Millimeter
+1312460,Thiruvananthapuram,0.0,9.4,-1.0,NR,2026-10-14,118.9,120.1,-0.01,N,Millimeter
+1312461,Thrissur,0.0,15.1,-1.0,NR,2026-10-14,98.8,164.8,-0.4,D,Millimeter
+1312462,Wynad,0.0,8.6,-1.0,NR,2026-10-14,72.4,99.9,-0.28,D,Millimeter
+1312463,Puducherry (Ut),12.7,4.2,2.02,LE,2026-10-14,21.9,77.9,-0.72,LD,Millimeter
+1312464,Lakshadweep,0.0,4.2,-1.0,NR,2026-10-14,41.0,64.0,-0.36,D,Millimeter
+1312465,Lakshadweep,0.0,4.2,-1.0,NR,2026-10-14,41.0,64.0,-0.36,D,Millimeter
+1310874,Andaman & Nicobar Islands,8.8,9.4,-0.06,N,2026-10-13,68.1,151.8,-0.55,D,Millimeter
+1310875,Nicobar,1.0,11.1,-0.91,LD,2026-10-13,26.1,146.3,-0.82,LD,Millimeter
+1310876,North & Middle Andaman,17.1,8.4,1.04,LE,2026-10-13,105.5,157.1,-0.33,D,Millimeter
+1310877,South Andaman,4.6,9.4,-0.51,D,2026-10-13,53.2,149.4,-0.64,LD,Millimeter
+1310878,Arunachal Pradesh,0.0,4.6,-0.99,LD,2026-10-13,41.0,103.2,-0.6,LD,Millimeter
+1310879,Anjaw,0.0,4.4,-1.0,NR,2026-10-13,36.9,98.0,-0.62,LD,Millimeter
+1310880,Changlang,0.0,2.1,-1.0,NR,2026-10-13,24.2,67.1,-0.64,LD,Millimeter
+1310881,East Kameng,0.0,3.1,-1.0,NR,2026-10-13,33.7,72.3,-0.53,D,Millimeter
+1310882,East Siang,0.0,3.3,-1.0,NR,2026-10-13,89.1,151.1,-0.41,D,Millimeter
+1310883,Kurung Kumey,0.0,6.3,-1.0,NR,2026-10-13,35.9,60.7,-0.41,D,Millimeter
+1310884,Lohit,0.0,3.9,-1.0,NR,2026-10-13,30.6,109.2,-0.72,LD,Millimeter
+1310885,Lower Subansiri,0.0,0.7,-1.0,NR,2026-10-13,30.8,35.0,-0.12,N,Millimeter
+1310886,Papumpara,0.0,6.8,-1.0,NR,2026-10-13,112.0,107.9,0.04,N,Millimeter
+1310887,Tawang,0.0,1.1,-1.0,NR,2026-10-13,16.7,54.4,-0.69,LD,Millimeter
+1310888,Tirap,0.0,4.0,-1.0,NR,2026-10-13,100.0,103.6,-0.03,N,Millimeter
+1310889,Upper Siang,0.0,6.1,-1.0,NR,2026-10-13,48.5,123.1,-0.61,LD,Millimeter
+1310890,Upper Subansiri,0.0,3.3,-1.0,NR,2026-10-13,26.2,60.4,-0.57,D,Millimeter
+1310891,West Kameng,0.2,3.8,-0.95,LD,2026-10-13,25.7,96.7,-0.73,LD,Millimeter
+1310892,West Siang,0.0,4.2,-1.0,NR,2026-10-13,21.1,114.9,-0.82,LD,Millimeter
+1310893,Assam & Meghalaya,0.0,4.5,-0.99,LD,2026-10-13,34.5,93.8,-0.63,LD,Millimeter
+1310894,Assam,0.0,3.6,-0.99,LD,2026-10-13,36.1,71.0,-0.49,D,Millimeter
+1310895,Bajali,0.0,2.6,-1.0,NR,2026-10-13,150.5,80.0,0.88,LE,Millimeter
+1310896,Baksa,0.0,2.5,-1.0,NR,2026-10-13,65.8,60.9,0.08,N,Millimeter
+1310897,Barpeta,0.0,2.6,-1.0,NR,2026-10-13,27.5,80.0,-0.66,LD,Millimeter
+1310898,Bongaigaon,0.0,2.9,-1.0,NR,2026-10-13,44.1,101.6,-0.57,D,Millimeter
+1310899,Cachar,0.1,4.5,-0.98,LD,2026-10-13,53.5,102.1,-0.48,D,Millimeter
+1310900,Charaideo,0.0,5.5,-1.0,NR,2026-10-13,43.5,55.7,-0.22,D,Millimeter
+1310901,Chirang,0.0,5.9,-1.0,NR,2026-10-13,92.0,94.7,-0.03,N,Millimeter
+1310902,Darrang,0.0,5.0,-1.0,NR,2026-10-13,7.4,59.6,-0.88,LD,Millimeter
+1310903,Dhemaji,0.0,4.3,-1.0,NR,2026-10-13,47.0,73.9,-0.36,D,Millimeter
+1310904,Dhubri,0.0,5.4,-1.0,NR,2026-10-13,61.3,89.1,-0.31,D,Millimeter
+1310905,Dibrugarh,0.0,3.2,-1.0,NR,2026-10-13,55.1,72.4,-0.24,D,Millimeter
+1310906,Dima Hasao,0.0,2.1,-1.0,NR,2026-10-13,8.7,77.8,-0.89,LD,Millimeter
+1310907,Goalpara,0.0,5.8,-1.0,NR,2026-10-13,14.3,113.8,-0.87,LD,Millimeter
+1310908,Golaghat,0.0,4.1,-1.0,NR,2026-10-13,22.3,57.1,-0.61,LD,Millimeter
+1310909,Hailakandi,0.0,4.2,-1.0,NR,2026-10-13,77.2,91.5,-0.16,N,Millimeter
+1310910,Hojai,0.0,0.8,-1.0,NR,2026-10-13,7.4,72.6,-0.9,LD,Millimeter
+1310911,Jorhat,0.0,2.7,-1.0,NR,2026-10-13,39.6,54.6,-0.27,D,Millimeter
+1310912,Kamrup Metropolitan,0.0,1.0,-1.0,NR,2026-10-13,24.3,66.4,-0.63,LD,Millimeter
+1310913,Kamrup Rural,0.0,1.8,-1.0,NR,2026-10-13,30.3,68.9,-0.56,D,Millimeter
+1310914,Karbi Anglong,0.0,2.4,-1.0,NR,2026-10-13,30.0,56.6,-0.47,D,Millimeter
+1310915,Kokrajhar,0.0,5.4,-1.0,NR,2026-10-13,14.9,100.4,-0.85,LD,Millimeter
+1310916,Lakhimpur,0.0,2.6,-1.0,NR,2026-10-13,45.5,76.2,-0.4,D,Millimeter
+1310917,Morigaon,0.0,3.7,-1.0,NR,2026-10-13,1.4,55.4,-0.97,LD,Millimeter
+1310918,Nagaon,0.2,2.4,-0.93,LD,2026-10-13,4.8,51.2,-0.91,LD,Millimeter
+1310919,Nalbari,0.0,4.6,-1.0,NR,2026-10-13,38.9,76.9,-0.49,D,Millimeter
+1310920,Sibsagar,0.0,4.0,-1.0,NR,2026-10-13,23.8,54.8,-0.57,D,Millimeter
+1310921,Sonitpur,0.0,3.4,-1.0,NR,2026-10-13,37.5,49.8,-0.25,D,Millimeter
+1310922,Sribhumi,0.0,7.0,-1.0,NR,2026-10-13,168.8,102.8,0.64,LE,Millimeter
+1310923,Tamulpur,0.0,3.1,-1.0,NR,2026-10-13,64.6,50.6,0.28,E,Millimeter
+1310924,Tinsukia,0.0,3.8,-1.0,NR,2026-10-13,71.9,67.4,0.07,N,Millimeter
+1310925,Udalguri,0.0,3.7,-1.0,NR,2026-10-13,22.4,59.8,-0.63,LD,Millimeter
+1310926,West Karbi Anglong,0.0,0.9,-1.0,NR,2026-10-13,0.0,52.2,-1.0,NR,Millimeter
+1310927,Meghalaya,0.1,7.8,-0.98,LD,2026-10-13,29.2,169.0,-0.83,LD,Millimeter
+1310928,East Garo Hills,0.0,2.4,-0.98,LD,2026-10-13,25.9,101.6,-0.75,LD,Millimeter
+1310929,East Jaintia Hills,0.0,25.1,-1.0,NR,2026-10-13,19.0,334.6,-0.94,LD,Millimeter
+1310930,East Khasi Hills,0.0,5.2,-0.99,LD,2026-10-13,19.0,197.8,-0.9,LD,Millimeter
+1310931,North Garo Hills,0.1,2.1,-0.96,LD,2026-10-13,11.5,120.4,-0.9,LD,Millimeter
+1310932,Ri Bhoi,0.0,4.0,-0.99,LD,2026-10-13,45.4,148.0,-0.69,LD,Millimeter
+1310933,South Garo Hills,0.2,2.1,-0.9,LD,2026-10-13,31.7,120.4,-0.74,LD,Millimeter
+1310934,South West Garo Hills,0.0,2.1,-1.0,NR,2026-10-13,10.0,120.4,-0.92,LD,Millimeter
+1310935,South West Khasi Hills,0.0,2.1,-1.0,NR,2026-10-13,24.0,120.4,-0.8,LD,Millimeter
+1310936,West Garo Hills,0.0,2.7,-0.98,LD,2026-10-13,17.9,119.9,-0.85,LD,Millimeter
+1310937,West Jaintia Hills,0.1,25.1,-0.99,LD,2026-10-13,90.7,334.6,-0.73,LD,Millimeter
+1310938,West Khasi Hills,0.5,9.2,-0.95,LD,2026-10-13,27.6,145.3,-0.81,LD,Millimeter
+1310939,Nmmt,0.0,3.7,-1.0,NR,2026-10-13,59.1,86.8,-0.32,D,Millimeter
+1310940,Mizoram,0.0,5.1,-1.0,NR,2026-10-13,97.1,116.4,-0.17,N,Millimeter
+1310941,Aizawl,0.0,5.8,-1.0,NR,2026-10-13,59.7,107.9,-0.45,D,Millimeter
+1310942,Champhai,0.0,5.6,-1.0,NR,2026-10-13,60.2,98.5,-0.39,D,Millimeter
+1310943,Kolasib,0.0,5.0,-1.0,NR,2026-10-13,91.0,127.1,-0.28,D,Millimeter
+1310944,Lawngtlai,0.0,4.7,-1.0,NR,2026-10-13,212.7,124.0,0.72,LE,Millimeter
+1310945,Lunglei,0.0,5.7,-1.0,NR,2026-10-13,73.0,123.9,-0.41,D,Millimeter
+1310946,Mamit,0.0,2.0,-1.0,NR,2026-10-13,120.7,120.0,0.01,N,Millimeter
+1310947,Saiha,0.0,6.1,-1.0,NR,2026-10-13,155.4,136.7,0.14,N,Millimeter
+1310948,Serchhip,0.0,6.2,-1.0,NR,2026-10-13,45.4,94.1,-0.52,D,Millimeter
+1310949,Manipur,0.0,4.1,-1.0,NR,2026-10-13,38.7,62.4,-0.38,D,Millimeter
+1310950,Bishnupur,0.0,6.1,-1.0,NR,2026-10-13,15.2,64.6,-0.76,LD,Millimeter
+1310951,Chandel,0.0,6.1,-1.0,NR,2026-10-13,31.9,64.6,-0.51,D,Millimeter
+1310952,Churachandpur,0.0,6.1,-1.0,NR,2026-10-13,16.0,64.6,-0.75,LD,Millimeter
+1310953,Imphal East,0.0,1.6,-1.0,NR,2026-10-13,61.7,55.3,0.12,N,Millimeter
+1310954,Imphal West,0.0,7.6,-1.0,NR,2026-10-13,56.1,97.4,-0.42,D,Millimeter
+1310955,Senapati,0.0,0.2,-1.0,NR,2026-10-13,59.2,62.0,-0.05,N,Millimeter
+1310956,Tamenglong,0.0,23.5,-1.0,NR,2026-10-13,71.4,181.9,-0.61,LD,Millimeter
+1310957,Thoubal,0.0,1.6,-1.0,NR,2026-10-13,35.6,55.3,-0.36,D,Millimeter
+1310958,Ukhrul,0.0,2.8,-1.0,NR,2026-10-13,49.3,50.1,-0.02,N,Millimeter
+1310959,Tripura,0.0,2.8,-1.0,NR,2026-10-13,31.3,94.0,-0.67,LD,Millimeter
+1310960,Dhalai,0.0,2.0,-1.0,NR,2026-10-13,17.4,89.3,-0.8,LD,Millimeter
+1310961,Gomati,0.0,4.2,-1.0,NR,2026-10-13,13.7,96.5,-0.86,LD,Millimeter
+1310962,Khowai,0.0,2.2,-1.0,NR,2026-10-13,16.8,94.4,-0.82,LD,Millimeter
+1310963,North Tripura,0.0,2.9,-1.0,NR,2026-10-13,53.6,91.5,-0.41,D,Millimeter
+1310964,Sipahijala,0.0,2.1,-1.0,NR,2026-10-13,33.3,94.9,-0.65,LD,Millimeter
+1310965,South Tripura,0.0,3.5,-1.0,NR,2026-10-13,27.1,100.6,-0.73,LD,Millimeter
+1310966,Unakoti,0.0,4.5,-1.0,NR,2026-10-13,84.1,94.5,-0.11,N,Millimeter
+1310967,West Tripura,0.0,2.2,-1.0,NR,2026-10-13,47.9,93.7,-0.49,D,Millimeter
+1310968,Nagaland,0.0,2.2,-1.0,NR,2026-10-13,51.1,63.8,-0.2,D,Millimeter
+1310969,Dimapur,0.0,0.2,-1.0,NR,2026-10-13,18.5,70.7,-0.74,LD,Millimeter
+1310970,Kiphire,0.0,2.5,-1.0,NR,2026-10-13,58.6,49.5,0.18,N,Millimeter
+1310971,Kohima,0.0,3.0,-1.0,NR,2026-10-13,65.8,71.9,-0.09,N,Millimeter
+1310972,Longleng,0.0,2.8,-1.0,NR,2026-10-13,5.4,60.9,-0.91,LD,Millimeter
+1310973,Mokokchung,0.0,4.7,-1.0,NR,2026-10-13,118.2,74.4,0.59,E,Millimeter
+1310974,Mon,0.0,2.1,-1.0,NR,2026-10-13,71.4,58.9,0.21,E,Millimeter
+1310975,Peren,0.0,1.1,-1.0,NR,2026-10-13,62.3,67.4,-0.08,N,Millimeter
+1310976,Phek,0.0,1.3,-1.0,NR,2026-10-13,49.2,59.5,-0.17,N,Millimeter
+1310977,Tuensang,0.0,2.8,-1.0,NR,2026-10-13,4.2,60.9,-0.93,LD,Millimeter
+1310978,Wokha,0.0,3.1,-1.0,NR,2026-10-13,40.3,75.1,-0.46,D,Millimeter
+1310979,Zunheboto,0.0,0.8,-1.0,NR,2026-10-13,91.2,50.4,0.81,LE,Millimeter
+1310980,Shwb & Sikkim,0.0,4.5,-1.0,NR,2026-10-13,41.9,100.2,-0.58,D,Millimeter
+1310981,West Bengal,0.0,3.3,-1.0,NR,2026-10-13,22.1,80.4,-0.73,LD,Millimeter
+1310982,Alipurduar,0.0,2.0,-1.0,NR,2026-10-13,58.5,108.9,-0.46,D,Millimeter
+1310983,Cooch Behar,0.0,4.6,-1.0,NR,2026-10-13,34.9,118.2,-0.7,LD,Millimeter
+1310984,Darjeeling,0.0,5.3,-1.0,NR,2026-10-13,69.7,111.4,-0.37,D,Millimeter
+1310985,Jalpaiguri,0.0,5.0,-1.0,NR,2026-10-13,119.1,118.3,0.01,N,Millimeter
+1310986,Kalimpong,0.0,10.0,-1.0,NR,2026-10-13,40.6,104.4,-0.61,LD,Millimeter
+1310987,Malda,0.0,3.2,-1.0,NR,2026-10-13,0.2,93.9,-0.99,LD,Millimeter
+1310988,North Dinajpur,0.0,2.9,-1.0,NR,2026-10-13,6.5,100.6,-0.94,LD,Millimeter
+1310989,South Dinajpur,0.0,2.1,-1.0,NR,2026-10-13,24.3,83.4,-0.71,LD,Millimeter
+1310990,Sikkim,0.0,5.4,-1.0,NR,2026-10-13,36.5,88.2,-0.59,D,Millimeter
+1310991,Gangtok,0.0,6.1,-1.0,NR,2026-10-13,38.3,110.6,-0.65,LD,Millimeter
+1310992,Gyalshing,0.0,6.9,-1.0,NR,2026-10-13,104.4,85.7,0.22,E,Millimeter
+1310993,Mangan,0.0,4.7,-1.0,NR,2026-10-13,22.5,90.3,-0.75,LD,Millimeter
+1310994,Namchi,0.0,2.1,-1.0,NR,2026-10-13,51.1,53.1,-0.04,N,Millimeter
+1310995,Pakyong,0.0,11.8,-1.0,NR,2026-10-13,16.7,65.9,-0.75,LD,Millimeter
+1310996,Soreng,0.0,6.9,-1.0,NR,2026-10-13,30.5,85.7,-0.64,LD,Millimeter
+1310997,Gangetic West Bengal,0.0,3.1,-1.0,NR,2026-10-13,14.9,73.5,-0.8,LD,Millimeter
+1310998,Bankura,0.0,3.4,-1.0,NR,2026-10-13,12.0,64.3,-0.81,LD,Millimeter
+1310999,Birbhum,0.0,2.0,-1.0,NR,2026-10-13,13.4,66.5,-0.8,LD,Millimeter
+1311000,East Midnapore,0.0,5.0,-1.0,NR,2026-10-13,0.5,105.8,-0.99,LD,Millimeter
+1311001,Hooghly,0.0,2.3,-1.0,NR,2026-10-13,22.9,60.9,-0.62,LD,Millimeter
+1311002,Howrah,0.0,2.4,-1.0,NR,2026-10-13,36.7,69.1,-0.47,D,Millimeter
+1311003,Jhargram,0.0,3.5,-1.0,NR,2026-10-13,6.3,71.4,-0.91,LD,Millimeter
+1311004,Kolkata,0.0,3.3,-1.0,NR,2026-10-13,59.1,91.5,-0.35,D,Millimeter
+1311005,Murshidabad,0.0,2.4,-1.0,NR,2026-10-13,18.8,65.7,-0.71,LD,Millimeter
+1311006,Nadia,0.0,2.7,-1.0,NR,2026-10-13,7.1,64.5,-0.89,LD,Millimeter
+1311007,North 24 Parganas,0.0,3.2,-1.0,NR,2026-10-13,83.4,79.4,0.05,N,Millimeter
+1311008,Paschim Bardhaman,0.0,2.0,-1.0,NR,2026-10-13,7.9,63.2,-0.87,LD,Millimeter
+1311009,Purba Bardhaman,0.0,2.6,-1.0,NR,2026-10-13,0.0,58.4,-1.0,NR,Millimeter
+1311010,Purulia,0.0,3.2,-1.0,NR,2026-10-13,9.9,55.5,-0.82,LD,Millimeter
+1311011,South 24 Parganas,0.0,3.2,-1.0,NR,2026-10-13,12.2,100.8,-0.88,LD,Millimeter
+1311012,West Midnapore,0.0,3.5,-1.0,NR,2026-10-13,4.4,71.4,-0.94,LD,Millimeter
+1311013,Odisha,0.3,6.2,-0.96,LD,2026-10-13,6.9,65.1,-0.89,LD,Millimeter
+1311014,Angul,0.0,5.7,-1.0,NR,2026-10-13,0.7,53.9,-0.99,LD,Millimeter
+1311015,Balangir,0.0,1.8,-1.0,NR,2026-10-13,8.2,34.2,-0.76,LD,Millimeter
+1311016,Balasore,0.0,7.6,-1.0,NR,2026-10-13,20.3,108.3,-0.81,LD,Millimeter
+1311017,Bargarh,0.0,2.3,-1.0,NR,2026-10-13,0.0,32.5,-1.0,NR,Millimeter
+1311018,Bhadrak,0.0,5.4,-1.0,NR,2026-10-13,7.4,95.0,-0.92,LD,Millimeter
+1311019,Boudh,0.0,6.1,-1.0,NR,2026-10-13,6.4,42.3,-0.85,LD,Millimeter
+1311020,Cuttack,0.0,6.3,-1.0,NR,2026-10-13,1.4,82.6,-0.98,LD,Millimeter
+1311021,Deogarh,0.0,3.4,-1.0,NR,2026-10-13,3.1,42.8,-0.93,LD,Millimeter
+1311022,Dhenkanal,0.0,5.6,-1.0,NR,2026-10-13,11.4,67.4,-0.83,LD,Millimeter
+1311023,Gajapati,5.9,16.6,-0.65,LD,2026-10-13,17.1,100.5,-0.83,LD,Millimeter
+1311024,Ganjam,0.1,12.3,-0.99,LD,2026-10-13,9.4,104.2,-0.91,LD,Millimeter
+1311025,Jagatsinghpur,0.0,8.2,-1.0,NR,2026-10-13,4.2,98.3,-0.96,LD,Millimeter
+1311026,Jajpur,0.0,7.0,-1.0,NR,2026-10-13,5.8,84.9,-0.93,LD,Millimeter
+1311027,Jharsuguda,0.0,2.5,-1.0,NR,2026-10-13,3.8,37.8,-0.9,LD,Millimeter
+1311028,Kalahandi,0.0,3.3,-1.0,NR,2026-10-13,3.2,49.3,-0.94,LD,Millimeter
+1311029,Kandhamal,2.7,11.2,-0.76,LD,2026-10-13,9.6,81.7,-0.88,LD,Millimeter
+1311030,Kendrapara,0.0,6.2,-1.0,NR,2026-10-13,2.7,105.0,-0.97,LD,Millimeter
+1311031,Keonjhargarh,0.5,7.3,-0.93,LD,2026-10-13,6.8,64.8,-0.9,LD,Millimeter
+1311032,Khurda,0.7,7.9,-0.91,LD,2026-10-13,7.8,91.5,-0.91,LD,Millimeter
+1311033,Koraput,0.0,8.6,-1.0,NR,2026-10-13,10.5,74.2,-0.86,LD,Millimeter
+1311034,Malkangiri,0.0,6.8,-1.0,NR,2026-10-13,0.0,66.5,-1.0,NR,Millimeter
+1311035,Mayurbhanj,0.0,8.1,-1.0,NR,2026-10-13,17.6,70.0,-0.75,LD,Millimeter
+1311036,Nawapara,0.0,1.1,-1.0,NR,2026-10-13,1.0,38.5,-0.97,LD,Millimeter
+1311037,Nawarangpur,0.0,2.9,-1.0,NR,2026-10-13,1.7,55.4,-0.97,LD,Millimeter
+1311038,Nayagarh,0.0,11.8,-1.0,NR,2026-10-13,12.4,92.7,-0.87,LD,Millimeter
+1311039,Puri,0.0,5.7,-1.0,NR,2026-10-13,13.2,94.3,-0.86,LD,Millimeter
+1311040,Rayagada,0.0,6.7,-1.0,NR,2026-10-13,0.3,69.4,-0.99,LD,Millimeter
+1311041,Sambalpur,0.0,3.4,-1.0,NR,2026-10-13,3.0,37.1,-0.92,LD,Millimeter
+1311042,Sonepur,0.0,2.5,-1.0,NR,2026-10-13,3.8,30.0,-0.87,LD,Millimeter
+1311043,Sundargarh,0.0,2.1,-1.0,NR,2026-10-13,7.8,36.8,-0.79,LD,Millimeter
+1311044,Jharkhand,0.0,3.2,-1.0,NR,2026-10-13,20.8,47.2,-0.56,D,Millimeter
+1311045,Bokaro,0.0,2.8,-1.0,NR,2026-10-13,41.2,46.2,-0.11,N,Millimeter
+1311046,Chatra,0.0,3.8,-1.0,NR,2026-10-13,54.4,40.1,0.36,E,Millimeter
+1311047,Deoghar,0.0,1.9,-1.0,NR,2026-10-13,28.9,50.6,-0.43,D,Millimeter
+1311048,Dhanbad,0.0,2.6,-1.0,NR,2026-10-13,38.0,57.4,-0.34,D,Millimeter
+1311049,Dumka,0.0,3.0,-1.0,NR,2026-10-13,21.8,78.0,-0.72,LD,Millimeter
+1311050,East Singhbhum,0.0,6.9,-1.0,NR,2026-10-13,7.9,47.0,-0.83,LD,Millimeter
+1311051,Garhwa,0.0,1.9,-1.0,NR,2026-10-13,13.5,28.2,-0.52,D,Millimeter
+1311052,Giridih,0.0,2.6,-1.0,NR,2026-10-13,27.0,55.3,-0.51,D,Millimeter
+1311053,Godda,0.0,1.6,-1.0,NR,2026-10-13,10.8,61.2,-0.82,LD,Millimeter
+1311054,Gumla,0.0,4.5,-1.0,NR,2026-10-13,5.3,46.0,-0.89,LD,Millimeter
+1311055,Hazaribag,0.0,3.7,-1.0,NR,2026-10-13,37.3,55.1,-0.32,D,Millimeter
+1311056,Jamtara,0.0,1.8,-1.0,NR,2026-10-13,12.5,66.8,-0.81,LD,Millimeter
+1311057,Khunti,0.0,2.6,-1.0,NR,2026-10-13,2.4,48.9,-0.95,LD,Millimeter
+1311058,Koderma,0.0,2.9,-1.0,NR,2026-10-13,36.6,44.8,-0.18,N,Millimeter
+1311059,Latehar,0.0,2.7,-1.0,NR,2026-10-13,23.9,38.1,-0.37,D,Millimeter
+1311060,Lohardaga,0.0,3.8,-1.0,NR,2026-10-13,36.2,44.0,-0.18,N,Millimeter
+1311061,Pakur,0.0,3.8,-1.0,NR,2026-10-13,0.6,88.3,-0.99,LD,Millimeter
+1311062,Palamu,0.0,0.8,-1.0,NR,2026-10-13,17.6,26.7,-0.34,D,Millimeter
+1311063,Ramgarh,0.0,4.0,-1.0,NR,2026-10-13,15.1,47.2,-0.68,LD,Millimeter
+1311064,Ranchi,0.0,3.4,-1.0,NR,2026-10-13,9.9,39.2,-0.75,LD,Millimeter
+1311065,Sahibganj,3.0,0.0,0.0,,2026-10-13,0.0,80.4,-1.0,NR,Millimeter
+1311066,Seraikela-Kharsawan,0.0,2.3,-1.0,NR,2026-10-13,40.6,30.6,0.33,E,Millimeter
+1311067,Simdega,0.0,2.5,-1.0,NR,2026-10-13,18.1,45.6,-0.6,LD,Millimeter
+1311068,West Singhbhum,0.0,4.3,-1.0,NR,2026-10-13,15.3,41.4,-0.63,LD,Millimeter
+1311069,Araria,0.0,1.7,-1.0,NR,2026-10-13,17.8,47.3,-0.62,LD,Millimeter
+1311070,Arwal,0.0,1.0,-1.0,NR,2026-10-13,43.1,19.6,1.2,LE,Millimeter
+1311071,Aurangabad,0.0,0.9,-1.0,NR,2026-10-13,11.2,28.1,-0.6,LD,Millimeter
+1311072,Banka,0.0,1.8,-1.0,NR,2026-10-13,14.3,48.1,-0.7,LD,Millimeter
+1311073,Begusarai,0.0,1.9,-1.0,NR,2026-10-13,58.3,32.4,0.8,LE,Millimeter
+1311074,Bhabua,0.0,0.6,-1.0,NR,2026-10-13,3.4,22.6,-0.85,LD,Millimeter
+1311075,Bhagalpur,0.0,3.6,-1.0,NR,2026-10-13,4.9,58.2,-0.92,LD,Millimeter
+1311076,Bhojpur,0.0,1.2,-1.0,NR,2026-10-13,29.8,34.5,-0.14,N,Millimeter
+1311077,Buxar,0.0,0.6,-1.0,NR,2026-10-13,12.9,26.9,-0.52,D,Millimeter
+1311078,Darbhanga,0.0,2.0,-1.0,NR,2026-10-13,55.9,38.8,0.44,E,Millimeter
+1311079,East Champaran,0.0,2.7,-1.0,NR,2026-10-13,28.3,43.2,-0.35,D,Millimeter
+1311080,Gaya,0.0,1.0,-1.0,NR,2026-10-13,8.6,29.9,-0.71,LD,Millimeter
+1311081,Gopalganj,0.0,1.2,-1.0,NR,2026-10-13,9.6,28.1,-0.66,LD,Millimeter
+1311082,Jahanabad,0.0,0.9,-1.0,NR,2026-10-13,46.9,20.0,1.34,LE,Millimeter
+1311083,Jamui,0.0,2.2,-1.0,NR,2026-10-13,6.1,40.8,-0.85,LD,Millimeter
+1311084,Katihar,0.0,1.0,-1.0,NR,2026-10-13,2.6,61.3,-0.96,LD,Millimeter
+1311085,Khagaria,0.0,1.7,-1.0,NR,2026-10-13,16.7,44.8,-0.63,LD,Millimeter
+1311086,Kishanganj,0.0,1.9,-1.0,NR,2026-10-13,64.3,61.6,0.04,N,Millimeter
+1311087,Lakhisarai,0.0,0.8,-1.0,NR,2026-10-13,29.0,32.2,-0.1,N,Millimeter
+1311088,Madhepura,0.0,2.1,-1.0,NR,2026-10-13,16.5,48.0,-0.66,LD,Millimeter
+1311089,Madhubani,0.0,2.0,-1.0,NR,2026-10-13,55.1,36.6,0.51,E,Millimeter
+1311090,Munger,0.0,1.6,-1.0,NR,2026-10-13,24.6,42.9,-0.43,D,Millimeter
+1311091,Muzaffarpur,0.0,1.2,-1.0,NR,2026-10-13,33.3,34.6,-0.04,N,Millimeter
+1311092,Nalanda,0.0,1.3,-1.0,NR,2026-10-13,22.3,27.1,-0.18,N,Millimeter
+1311093,Nawada,0.0,1.5,-1.0,NR,2026-10-13,8.6,39.2,-0.78,LD,Millimeter
+1311094,Patna,0.0,1.0,-1.0,NR,2026-10-13,33.7,34.7,-0.03,N,Millimeter
+1311095,Purnea,0.0,1.9,-1.0,NR,2026-10-13,7.2,65.2,-0.89,LD,Millimeter
+1311096,Rohtas,0.0,0.4,-1.0,NR,2026-10-13,10.6,23.5,-0.55,D,Millimeter
+1311097,Saharsa,0.0,1.8,-1.0,NR,2026-10-13,24.5,44.4,-0.45,D,Millimeter
+1311098,Samastipur,0.0,1.0,-1.0,NR,2026-10-13,97.5,40.5,1.41,LE,Millimeter
+1311099,Saran,0.0,0.8,-1.0,NR,2026-10-13,19.7,36.8,-0.46,D,Millimeter
+1311100,Sheikhpura,0.0,1.8,-1.0,NR,2026-10-13,29.3,34.7,-0.16,N,Millimeter
+1311101,Sheohar,0.0,1.1,-1.0,NR,2026-10-13,22.8,29.2,-0.22,D,Millimeter
+1311102,Sitamarhi,0.0,0.9,-1.0,NR,2026-10-13,53.0,36.4,0.46,E,Millimeter
+1311103,Siwan,0.0,0.7,-1.0,NR,2026-10-13,15.1,31.8,-0.53,D,Millimeter
+1311104,Supaul,0.0,2.0,-1.0,NR,2026-10-13,7.9,42.3,-0.81,LD,Millimeter
+1311105,Vaishali,0.0,1.6,-1.0,NR,2026-10-13,40.5,36.1,0.12,N,Millimeter
+1311106,West Champaran,0.0,2.0,-1.0,NR,2026-10-13,21.8,36.3,-0.4,D,Millimeter
+1311107,West Uttar Pradesh,0.1,0.9,-0.84,LD,2026-10-13,12.2,15.1,-0.19,N,Millimeter
+1311108,Agra,0.0,0.3,-1.0,NR,2026-10-13,0.0,11.9,-1.0,NR,Millimeter
+1311109,Aligarh,0.6,0.4,0.38,E,2026-10-13,4.2,14.7,-0.71,LD,Millimeter
+1311110,Amroha,0.0,0.1,-1.0,NR,2026-10-13,26.3,13.7,0.92,LE,Millimeter
+1311111,Auraiya,0.0,3.8,-1.0,NR,2026-10-13,0.0,16.4,-1.0,NR,Millimeter
+1311112,Badaun,0.0,1.1,-1.0,NR,2026-10-13,2.8,13.4,-0.79,LD,Millimeter
+1311113,Baghpat,0.0,0.0,-1.0,NR,2026-10-13,15.3,7.0,1.18,LE,Millimeter
+1311114,Bareilly,0.0,1.3,-1.0,NR,2026-10-13,29.7,14.0,1.12,LE,Millimeter
+1311115,Bijnor,0.0,1.2,-1.0,NR,2026-10-13,20.1,11.8,0.7,LE,Millimeter
+1311116,Bulandshahar,0.0,0.0,-1.0,NR,2026-10-13,10.2,9.7,0.05,N,Millimeter
+1311117,Etah,0.0,0.5,-1.0,NR,2026-10-13,3.7,11.9,-0.69,LD,Millimeter
+1311118,Etawah,0.0,1.0,-1.0,NR,2026-10-13,0.0,13.2,-1.0,NR,Millimeter
+1311119,Firozabad,0.0,0.7,-1.0,NR,2026-10-13,12.7,21.1,-0.4,D,Millimeter
+1311120,Gautam Buddha Nagar,0.0,0.0,-1.0,NR,2026-10-13,19.2,3.9,3.87,LE,Millimeter
+1311121,Ghaziabad,0.0,0.0,-1.0,NR,2026-10-13,16.8,4.0,3.16,LE,Millimeter
+1311122,Hamirpur,0.0,1.5,-1.0,NR,2026-10-13,1.8,23.8,-0.92,LD,Millimeter
+1311123,Hapur,0.0,0.0,-1.0,NR,2026-10-13,6.5,4.8,0.35,E,Millimeter
+1311124,Hathras,2.3,0.3,6.78,LE,2026-10-13,3.3,12.8,-0.74,LD,Millimeter
+1311125,Jalaun,0.0,0.6,-1.0,NR,2026-10-13,0.0,24.6,-1.0,NR,Millimeter
+1311126,Jhansi,0.0,0.8,-1.0,NR,2026-10-13,0.0,22.9,-1.0,NR,Millimeter
+1311127,Kasganj,0.0,0.5,-1.0,NR,2026-10-13,9.0,14.3,-0.37,D,Millimeter
+1311128,Lalitpur,0.0,0.6,-1.0,NR,2026-10-13,0.0,14.9,-1.0,NR,Millimeter
+1311129,Mahoba,0.0,0.4,-1.0,NR,2026-10-13,0.0,17.6,-1.0,NR,Millimeter
+1311130,Mainpuri,0.0,1.0,-1.0,NR,2026-10-13,1.7,17.7,-0.91,LD,Millimeter
+1311131,Mathura,2.3,0.1,21.8,LE,2026-10-13,6.5,9.4,-0.31,D,Millimeter
+1311132,Meerut,0.0,0.1,-1.0,NR,2026-10-13,14.2,7.7,0.84,LE,Millimeter
+1311133,Moradabad,0.0,1.5,-1.0,NR,2026-10-13,15.2,16.0,-0.05,N,Millimeter
+1311134,Muzaffarnagar,0.0,0.2,-1.0,NR,2026-10-13,26.1,8.1,2.21,LE,Millimeter
+1311135,Pilibhit,0.0,1.8,-1.0,NR,2026-10-13,15.8,23.7,-0.34,D,Millimeter
+1311136,Rampur,0.0,2.4,-1.0,NR,2026-10-13,26.3,18.2,0.45,E,Millimeter
+1311137,Saharanpur,0.0,1.0,-1.0,NR,2026-10-13,47.5,13.2,2.6,LE,Millimeter
+1311138,Sambhal,0.0,0.2,-1.0,NR,2026-10-13,15.2,19.6,-0.23,D,Millimeter
+1311139,Shahjahanpur,0.0,2.0,-1.0,NR,2026-10-13,42.1,21.1,1.0,LE,Millimeter
+1311140,Shamli,0.0,0.6,-1.0,NR,2026-10-13,1.7,6.1,-0.73,LD,Millimeter
+1311141,East Uttar Pradesh,0.0,1.3,-1.0,NR,2026-10-13,14.4,24.0,-0.4,D,Millimeter
+1311142,Ambedkar Nagar,0.0,0.4,-1.0,NR,2026-10-13,40.4,16.4,1.46,LE,Millimeter
+1311143,Amethi,0.0,0.7,-1.0,NR,2026-10-13,2.5,19.4,-0.87,LD,Millimeter
+1311144,Ayodhya,0.0,0.7,-1.0,NR,2026-10-13,40.9,25.7,0.59,E,Millimeter
+1311145,Azamgarh,0.0,0.6,-1.0,NR,2026-10-13,23.0,23.6,-0.03,N,Millimeter
+1311146,Bahraich,0.0,2.1,-1.0,NR,2026-10-13,26.0,30.0,-0.13,N,Millimeter
+1311147,Ballia,0.0,0.6,-1.0,NR,2026-10-13,7.0,23.7,-0.7,LD,Millimeter
+1311148,Balrampur,0.0,2.8,-1.0,NR,2026-10-13,43.6,24.5,0.78,LE,Millimeter
+1311149,Banda,0.0,0.6,-1.0,NR,2026-10-13,2.3,21.0,-0.89,LD,Millimeter
+1311150,Barabanki,0.0,0.8,-1.0,NR,2026-10-13,9.4,26.2,-0.64,LD,Millimeter
+1311151,Basti,0.0,0.4,-1.0,NR,2026-10-13,30.3,20.6,0.47,E,Millimeter
+1311152,Bhadohi,0.0,1.8,-1.0,NR,2026-10-13,4.0,22.7,-0.82,LD,Millimeter
+1311153,Chandauli,0.0,1.3,-1.0,NR,2026-10-13,1.0,13.2,-0.92,LD,Millimeter
+1311154,Chitrakoot,0.0,0.8,-1.0,NR,2026-10-13,0.3,27.8,-0.99,LD,Millimeter
+1311155,Deoria,0.0,1.8,-1.0,NR,2026-10-13,7.0,25.7,-0.73,LD,Millimeter
+1311156,Farrukhabad,0.0,1.2,-1.0,NR,2026-10-13,10.0,19.6,-0.49,D,Millimeter
+1311157,Fatehpur,0.0,2.9,-1.0,NR,2026-10-13,4.3,20.0,-0.78,LD,Millimeter
+1311158,Ghazipur,0.0,0.3,-1.0,NR,2026-10-13,0.7,22.5,-0.97,LD,Millimeter
+1311159,Gonda,0.0,0.9,-1.0,NR,2026-10-13,23.5,35.0,-0.33,D,Millimeter
+1311160,Gorakhpur,0.0,1.8,-1.0,NR,2026-10-13,16.1,38.7,-0.58,D,Millimeter
+1311161,Hardoi,0.0,4.5,-1.0,NR,2026-10-13,11.4,21.9,-0.48,D,Millimeter
+1311162,Jaunpur,0.0,0.3,-1.0,NR,2026-10-13,17.9,21.0,-0.15,N,Millimeter
+1311163,Kannauj,0.0,3.5,-1.0,NR,2026-10-13,2.9,26.1,-0.89,LD,Millimeter
+1311164,Kanpur City,0.0,1.5,-1.0,NR,2026-10-13,10.6,23.8,-0.55,D,Millimeter
+1311165,Kanpur Dehat,0.0,0.9,-1.0,NR,2026-10-13,0.0,20.2,-1.0,NR,Millimeter
+1311166,Kaushambi,0.0,0.1,-1.0,NR,2026-10-13,1.2,16.1,-0.93,LD,Millimeter
+1311167,Kheri,0.0,1.9,-1.0,NR,2026-10-13,62.9,30.7,1.05,LE,Millimeter
+1311168,Kushi Nagar,0.0,1.3,-1.0,NR,2026-10-13,7.0,21.4,-0.67,LD,Millimeter
+1311169,Lucknow,0.0,1.9,-1.0,NR,2026-10-13,0.6,21.8,-0.97,LD,Millimeter
+1311170,Maharajganj,0.0,2.8,-1.0,NR,2026-10-13,14.0,33.3,-0.58,D,Millimeter
+1311171,Mau,0.0,0.5,-1.0,NR,2026-10-13,2.5,25.8,-0.9,LD,Millimeter
+1311172,Mirzapur,0.0,0.6,-1.0,NR,2026-10-13,0.0,21.3,-1.0,NR,Millimeter
+1311173,Pratapgarh,0.0,0.1,-1.0,NR,2026-10-13,24.0,21.9,0.1,N,Millimeter
+1311174,Prayagraj,0.0,0.3,-1.0,NR,2026-10-13,1.3,20.7,-0.94,LD,Millimeter
+1311175,Rae Bareilly,0.0,2.1,-1.0,NR,2026-10-13,0.0,23.0,-1.0,NR,Millimeter
+1311176,Sant Kabir Nagar,0.0,0.7,-1.0,NR,2026-10-13,13.2,15.7,-0.16,N,Millimeter
+1311177,Shrawasti,0.0,3.2,-1.0,NR,2026-10-13,60.4,32.5,0.86,LE,Millimeter
+1311178,Siddharth Nagar,0.0,0.9,-1.0,NR,2026-10-13,13.5,22.0,-0.38,D,Millimeter
+1311179,Sitapur,0.0,1.3,-1.0,NR,2026-10-13,8.0,25.5,-0.69,LD,Millimeter
+1311180,Sonbhadra,0.0,0.6,-1.0,NR,2026-10-13,4.9,22.0,-0.78,LD,Millimeter
+1311181,Sultanpur,0.0,0.1,-1.0,NR,2026-10-13,11.4,25.1,-0.54,D,Millimeter
+1311182,Unnao,0.0,2.7,-1.0,NR,2026-10-13,4.8,24.1,-0.8,LD,Millimeter
+1311183,Varanasi,0.0,0.6,-1.0,NR,2026-10-13,23.9,20.7,0.15,N,Millimeter
+1311184,Uttarakhand,0.0,1.4,-1.0,NR,2026-10-13,30.3,19.1,0.59,E,Millimeter
+1311185,Almora,0.0,0.6,-1.0,NR,2026-10-13,19.9,11.6,0.71,LE,Millimeter
+1311186,Bageshwar,0.0,0.6,-1.0,NR,2026-10-13,37.8,11.6,2.26,LE,Millimeter
+1311187,Chamoli,0.0,0.7,-1.0,NR,2026-10-13,34.5,9.8,2.52,LE,Millimeter
+1311188,Champawat,0.0,2.8,-1.0,NR,2026-10-13,23.3,25.5,-0.09,N,Millimeter
+1311189,Dehradun,0.0,0.7,-1.0,NR,2026-10-13,28.7,23.0,0.25,E,Millimeter
+1311190,Garhwal Pauri,0.0,0.5,-1.0,NR,2026-10-13,10.5,12.7,-0.18,N,Millimeter
+1311191,Garhwal Tehri,0.0,1.2,-1.0,NR,2026-10-13,16.5,12.9,0.28,E,Millimeter
+1311192,Hardwar,0.0,1.3,-1.0,NR,2026-10-13,31.4,11.9,1.64,LE,Millimeter
+1311193,Nainital,0.0,2.4,-1.0,NR,2026-10-13,43.7,22.6,0.93,LE,Millimeter
+1311194,Pithoragarh,0.0,3.2,-1.0,NR,2026-10-13,52.7,31.8,0.66,LE,Millimeter
+1311195,Rudraprayag,0.0,0.1,-1.0,NR,2026-10-13,34.1,13.3,1.57,LE,Millimeter
+1311196,Udham Singh Nagar,0.0,2.8,-1.0,NR,2026-10-13,21.0,20.1,0.04,N,Millimeter
+1311197,Uttarkashi,0.0,0.7,-1.0,NR,2026-10-13,24.8,27.2,-0.09,N,Millimeter
+1311198,Delhi And Haryana And Chandigarh,0.0,0.3,-0.98,LD,2026-10-13,9.1,5.9,0.55,E,Millimeter
+1311199,Ambala,0.0,0.2,-1.0,NR,2026-10-13,32.5,10.4,2.13,LE,Millimeter
+1311200,Bhiwani,0.0,0.0,-1.0,NR,2026-10-13,0.0,4.2,-1.0,NR,Millimeter
+1311201,Charkhi Dadri,0.0,1.7,-1.0,NR,2026-10-13,0.0,6.4,-1.0,NR,Millimeter
+1311202,Faridabad,0.0,0.1,-1.0,NR,2026-10-13,9.5,10.6,-0.11,N,Millimeter
+1311203,Fatehabad,0.0,0.0,-1.0,NR,2026-10-13,1.2,3.4,-0.66,LD,Millimeter
+1311204,Gurgaon,0.0,0.1,-1.0,NR,2026-10-13,10.1,6.5,0.55,E,Millimeter
+1311205,Hisar,0.0,0.0,-1.0,NR,2026-10-13,0.1,4.0,-0.96,LD,Millimeter
+1311206,Jhajjar,0.0,0.2,-1.0,NR,2026-10-13,1.9,3.2,-0.41,D,Millimeter
+1311207,Jind,0.0,0.5,-1.0,NR,2026-10-13,1.8,4.9,-0.63,LD,Millimeter
+1311208,Kaithal,0.0,0.4,-1.0,NR,2026-10-13,20.1,3.9,4.12,LE,Millimeter
+1311209,Karnal,0.0,0.2,-1.0,NR,2026-10-13,12.3,5.9,1.09,LE,Millimeter
+1311210,Kurukshetra,0.0,0.6,-1.0,NR,2026-10-13,37.1,5.9,5.25,LE,Millimeter
+1311211,Mahendragarh,0.0,0.4,-1.0,NR,2026-10-13,0.4,5.9,-0.93,LD,Millimeter
+1311212,Nuh,0.0,0.3,-1.0,NR,2026-10-13,1.9,8.2,-0.77,LD,Millimeter
+1311213,Palwal,0.0,0.4,-1.0,NR,2026-10-13,8.9,6.4,0.38,E,Millimeter
+1311214,Panchkula,0.0,0.7,-1.0,NR,2026-10-13,19.8,7.9,1.51,LE,Millimeter
+1311215,Panipat,0.0,0.3,-1.0,NR,2026-10-13,3.8,4.3,-0.11,N,Millimeter
+1311216,Rewari,0.0,0.0,-1.0,NR,2026-10-13,0.3,6.3,-0.96,LD,Millimeter
+1311217,Rohtak,0.0,0.2,-1.0,NR,2026-10-13,5.7,5.6,0.02,N,Millimeter
+1311218,Sirsa,0.0,0.0,-1.0,NR,2026-10-13,4.9,3.1,0.56,E,Millimeter
+1311219,Sonepat,0.0,0.5,-1.0,NR,2026-10-13,31.7,7.8,3.05,LE,Millimeter
+1311220,Yamuna Nagar,0.0,0.3,-1.0,NR,2026-10-13,14.5,9.7,0.49,E,Millimeter
+1311221,Delhi (Ut),0.3,0.1,1.77,LE,2026-10-13,24.2,9.3,1.6,LE,Millimeter
+1311222,Central Delhi,1.6,0.0,159.0,LE,2026-10-13,51.2,11.4,3.48,LE,Millimeter
+1311223,East Delhi,0.0,0.0,-1.0,NR,2026-10-13,47.0,11.4,3.12,LE,Millimeter
+1311224,New Delhi,0.0,0.2,-1.0,NR,2026-10-13,28.2,11.5,1.46,LE,Millimeter
+1311225,North East Delhi,0.0,0.0,0.372,,2026-10-13,37.2,11.4,2.26,LE,Millimeter
+1311226,North West Delhi,0.0,0.0,-1.0,NR,2026-10-13,0.0,3.6,-1.0,NR,Millimeter
+1311227,South Delhi,0.0,0.0,-1.0,NR,2026-10-13,16.9,11.4,0.48,E,Millimeter
+1311228,South East Delhi,0.0,0.0,-1.0,NR,2026-10-13,40.5,11.4,2.55,LE,Millimeter
+1311229,South West Delhi,0.5,0.0,49.0,LE,2026-10-13,10.0,12.8,-0.22,D,Millimeter
+1311230,West Delhi,0.0,0.2,-1.0,NR,2026-10-13,39.5,9.5,3.16,LE,Millimeter
+1311231,Chandigarh (Ut),0.0,0.0,-1.0,NR,2026-10-13,20.1,11.3,0.78,LE,Millimeter
+1311232,Chandigarh,0.0,0.0,-1.0,NR,2026-10-13,20.1,11.3,0.77,LE,Millimeter
+1311233,Amritsar,0.0,0.2,-1.0,NR,2026-10-13,9.5,6.7,0.42,E,Millimeter
+1311234,Barnala,0.0,0.0,-1.0,NR,2026-10-13,10.7,2.4,3.37,LE,Millimeter
+1311235,Bhatinda,0.0,0.0,-1.0,NR,2026-10-13,10.0,4.8,1.07,LE,Millimeter
+1311236,Faridkot,0.0,0.0,-1.0,NR,2026-10-13,12.0,3.2,2.68,LE,Millimeter
+1311237,Fatehgarh Sahib,0.0,0.1,-1.0,NR,2026-10-13,24.8,2.8,7.75,LE,Millimeter
+1311238,Fazilka,0.0,0.0,-1.0,NR,2026-10-13,28.0,2.5,9.89,LE,Millimeter
+1311239,Ferozepur,0.0,0.0,-1.0,NR,2026-10-13,4.7,2.7,0.72,LE,Millimeter
+1311240,Gurdaspur,0.0,0.1,-1.0,NR,2026-10-13,30.0,10.1,1.97,LE,Millimeter
+1311241,Hoshiarpur,0.0,0.3,-1.0,NR,2026-10-13,33.4,6.8,3.9,LE,Millimeter
+1311242,Jalandhar,0.0,0.0,-1.0,NR,2026-10-13,15.5,3.5,3.39,LE,Millimeter
+1311243,Kapurthala,0.0,0.2,-1.0,NR,2026-10-13,8.6,4.0,1.13,LE,Millimeter
+1311244,Ludhiana,0.0,0.1,-1.0,NR,2026-10-13,15.4,3.5,3.38,LE,Millimeter
+1311245,Mansa,0.0,0.2,-1.0,NR,2026-10-13,0.0,3.0,-1.0,NR,Millimeter
+1311246,Moga,0.0,0.0,-1.0,NR,2026-10-13,1.2,2.3,-0.5,D,Millimeter
+1311247,Muktsar,0.0,0.0,-1.0,NR,2026-10-13,8.4,2.1,2.86,LE,Millimeter
+1311248,Pathankot,0.0,0.1,-1.0,NR,2026-10-13,35.9,9.2,2.9,LE,Millimeter
+1311249,Patiala,0.0,0.0,-1.0,NR,2026-10-13,29.5,6.2,3.75,LE,Millimeter
+1311250,Rupnagar,0.0,0.5,-1.0,NR,2026-10-13,18.8,11.0,0.7,LE,Millimeter
+1311251,Sangrur,0.0,0.0,-1.0,NR,2026-10-13,28.2,4.5,5.24,LE,Millimeter
+1311252,Sas Nagar (Mohali),0.0,0.3,-1.0,NR,2026-10-13,10.8,6.4,0.67,LE,Millimeter
+1311253,Sbs Nagar,0.0,0.1,-1.0,NR,2026-10-13,18.8,6.0,2.11,LE,Millimeter
+1311254,Tarn Taran,0.0,0.4,-1.0,NR,2026-10-13,1.9,4.5,-0.59,D,Millimeter
+1311255,Himachal Pradesh,0.3,0.6,-0.54,D,2026-10-13,16.6,12.9,0.28,E,Millimeter
+1311256,Bilaspur,0.0,0.5,-1.0,NR,2026-10-13,16.6,6.1,1.72,LE,Millimeter
+1311257,Chamba,0.0,0.4,-1.0,NR,2026-10-13,15.1,13.0,0.16,N,Millimeter
+1311258,Hamirpur,0.0,0.2,-1.0,NR,2026-10-13,21.4,14.1,0.52,E,Millimeter
+1311259,Kangra,0.0,0.3,-1.0,NR,2026-10-13,43.5,19.3,1.26,LE,Millimeter
+1311260,Kinnaur,2.2,2.9,-0.25,D,2026-10-13,6.9,11.0,-0.37,D,Millimeter
+1311261,Kullu,0.0,0.4,-1.0,NR,2026-10-13,15.7,10.6,0.48,E,Millimeter
+1311262,Lahaul & Spiti,0.0,0.1,-1.0,NR,2026-10-13,7.1,13.3,-0.47,D,Millimeter
+1311263,Mandi,0.0,0.3,-1.0,NR,2026-10-13,15.5,10.6,0.46,E,Millimeter
+1311264,Shimla,0.3,0.5,-0.4,D,2026-10-13,22.3,11.6,0.92,LE,Millimeter
+1311265,Sirmaur,0.0,0.6,-1.0,NR,2026-10-13,12.3,16.2,-0.24,D,Millimeter
+1311266,Solan,0.0,0.9,-1.0,NR,2026-10-13,30.2,11.1,1.72,LE,Millimeter
+1311267,Una,0.0,0.3,-1.0,NR,2026-10-13,21.3,12.3,0.73,LE,Millimeter
+1311268,Jammu & Kashmir And Ladakh,0.1,1.1,-0.95,LD,2026-10-13,16.4,13.3,0.24,E,Millimeter
+1311269,Jammu & Kashmir (Ut),0.1,1.1,-0.95,LD,2026-10-13,16.4,13.3,0.24,E,Millimeter
+1311270,Anantnag,0.1,0.8,-0.85,LD,2026-10-13,3.3,10.2,-0.68,LD,Millimeter
+1311271,Badgam,0.0,0.5,-1.0,NR,2026-10-13,0.5,6.0,-0.92,LD,Millimeter
+1311272,Bandipora,0.0,0.6,-1.0,NR,2026-10-13,3.4,7.6,-0.56,D,Millimeter
+1311273,Baramula,0.4,0.9,-0.51,D,2026-10-13,2.9,15.2,-0.81,LD,Millimeter
+1311274,Doda,0.0,1.5,-1.0,NR,2026-10-13,3.9,14.5,-0.73,LD,Millimeter
+1311275,Ganderbal,0.3,2.4,-0.86,LD,2026-10-13,4.3,15.8,-0.73,LD,Millimeter
+1311276,Jammu,0.0,0.6,-1.0,NR,2026-10-13,98.7,18.8,4.25,LE,Millimeter
+1311277,Kathua,0.0,2.2,-1.0,NR,2026-10-13,48.6,12.4,2.92,LE,Millimeter
+1311278,Kistwar,0.0,1.5,-1.0,NR,2026-10-13,3.0,14.5,-0.79,LD,Millimeter
+1311279,Kulgam,0.0,1.7,-1.0,NR,2026-10-13,0.2,14.7,-0.99,LD,Millimeter
+1311280,Kupwara,0.0,0.6,-1.0,NR,2026-10-13,6.3,11.0,-0.43,D,Millimeter
+1311281,Poonch,0.0,1.8,-1.0,NR,2026-10-13,17.0,11.8,0.44,E,Millimeter
+1311282,Pulwama,0.0,0.0,-1.0,NR,2026-10-13,2.0,5.8,-0.66,LD,Millimeter
+1311283,Rajouri,0.0,0.1,-1.0,NR,2026-10-13,16.5,2.4,5.71,LE,Millimeter
+1311284,Ramban,0.0,1.4,-1.0,NR,2026-10-13,7.3,14.0,-0.48,D,Millimeter
+1311285,Reasi,0.0,0.6,-1.0,NR,2026-10-13,45.0,20.7,1.17,LE,Millimeter
+1311286,Samba,0.0,0.0,-1.0,NR,2026-10-13,69.0,3.4,18.83,LE,Millimeter
+1311287,Shopian,0.0,0.5,-1.0,NR,2026-10-13,0.2,5.3,-0.97,LD,Millimeter
+1311288,Srinagar,0.0,0.3,-1.0,NR,2026-10-13,2.1,7.6,-0.72,LD,Millimeter
+1311289,Udhampur,0.0,1.0,-1.0,NR,2026-10-13,28.3,26.9,0.05,N,Millimeter
+1311290,Ladakh (Ut),0.0,0.0,-1.0,NR,2026-10-13,0.6,0.9,-0.35,D,Millimeter
+1311291,Kargil,0.0,0.0,-1.0,NR,2026-10-13,0.0,0.3,-1.0,NR,Millimeter
+1311292,Ladakh (Leh),0.0,0.0,-1.0,NR,2026-10-13,0.8,1.1,-0.34,D,Millimeter
+1311293,Rajasthan,0.0,0.3,-0.9,LD,2026-10-13,0.8,7.3,-0.89,LD,Millimeter
+1311294,East Rajasthan,0.1,0.4,-0.83,LD,2026-10-13,0.1,11.2,-0.99,LD,Millimeter
+1311295,Ajmer,0.0,0.1,-1.0,NR,2026-10-13,0.0,5.6,-1.0,NR,Millimeter
+1311296,Alwar,0.1,0.6,-0.81,LD,2026-10-13,0.1,11.3,-0.99,LD,Millimeter
+1311297,Banswara,0.0,0.4,-1.0,NR,2026-10-13,0.0,18.2,-1.0,NR,Millimeter
+1311298,Baran,0.0,0.7,-1.0,NR,2026-10-13,0.0,16.9,-1.0,NR,Millimeter
+1311299,Bharatpur,0.0,0.4,-1.0,NR,2026-10-13,0.0,12.0,-1.0,NR,Millimeter
+1311300,Bhilwara,0.0,0.5,-1.0,NR,2026-10-13,0.0,7.1,-1.0,NR,Millimeter
+1311301,Bundi,0.0,0.3,-1.0,NR,2026-10-13,0.0,8.2,-1.0,NR,Millimeter
+1311302,Chittorgarh,0.0,0.1,-1.0,NR,2026-10-13,0.0,10.2,-1.0,NR,Millimeter
+1311303,Dausa,0.0,0.7,-1.0,NR,2026-10-13,0.0,11.4,-1.0,NR,Millimeter
+1311304,Dholpur,0.0,0.9,-1.0,NR,2026-10-13,0.0,15.7,-1.0,NR,Millimeter
+1311305,Dungarpur,0.0,0.2,-1.0,NR,2026-10-13,0.0,14.3,-1.0,NR,Millimeter
+1311306,Jaipur,0.7,0.7,-0.02,N,2026-10-13,0.7,10.3,-0.93,LD,Millimeter
+1311307,Jhalawar,0.0,0.7,-1.0,NR,2026-10-13,0.0,18.4,-1.0,NR,Millimeter
+1311308,Jhunjhunu,0.0,0.4,-1.0,NR,2026-10-13,0.0,6.5,-1.0,NR,Millimeter
+1311309,Karauli,0.0,0.2,-1.0,NR,2026-10-13,0.0,11.5,-1.0,NR,Millimeter
+1311310,Kota,0.0,0.7,-1.0,NR,2026-10-13,0.0,17.4,-1.0,NR,Millimeter
+1311311,Pratapgarh,0.0,0.1,-1.0,NR,2026-10-13,0.0,18.8,-1.0,NR,Millimeter
+1311312,Rajsamand,0.0,0.1,-1.0,NR,2026-10-13,2.3,8.2,-0.72,LD,Millimeter
+1311313,Sawai Madhopur,0.0,0.2,-1.0,NR,2026-10-13,0.0,16.2,-1.0,NR,Millimeter
+1311314,Sikar,0.0,0.5,-1.0,NR,2026-10-13,0.0,7.1,-1.0,NR,Millimeter
+1311315,Sirohi,0.0,0.4,-1.0,NR,2026-10-13,0.0,11.8,-1.0,NR,Millimeter
+1311316,Tonk,0.0,0.3,-1.0,NR,2026-10-13,0.0,8.3,-1.0,NR,Millimeter
+1311317,Udaipur,0.0,0.2,-1.0,NR,2026-10-13,0.0,10.2,-1.0,NR,Millimeter
+1311318,West Rajasthan,0.0,0.1,-1.0,NR,2026-10-13,1.3,4.1,-0.67,LD,Millimeter
+1311319,Barmer,0.0,0.5,-1.0,NR,2026-10-13,0.0,5.5,-1.0,NR,Millimeter
+1311320,Bikaner,0.0,0.0,-1.0,NR,2026-10-13,5.8,4.3,0.35,E,Millimeter
+1311321,Churu,0.0,0.0,-1.0,NR,2026-10-13,0.0,5.1,-1.0,NR,Millimeter
+1311322,Hanumangarh,0.0,0.0,-1.0,NR,2026-10-13,1.7,2.9,-0.42,D,Millimeter
+1311323,Jaisalmer,0.0,0.0,-1.0,NR,2026-10-13,0.0,2.1,-1.0,NR,Millimeter
+1311324,Jalore,0.0,0.3,-1.0,NR,2026-10-13,0.0,6.3,-1.0,NR,Millimeter
+1311325,Jodhpur,0.0,0.1,-1.0,NR,2026-10-13,0.0,2.8,-1.0,NR,Millimeter
+1311326,Nagaur,0.0,0.1,-1.0,NR,2026-10-13,0.0,5.3,-1.0,NR,Millimeter
+1311327,Pali,0.0,0.2,-1.0,NR,2026-10-13,0.0,6.7,-1.0,NR,Millimeter
+1311328,Sri Ganganagar,0.0,0.1,-1.0,NR,2026-10-13,7.9,2.7,1.86,LE,Millimeter
+1311329,Madhya Pradesh,0.0,0.9,-1.0,NR,2026-10-13,0.5,23.3,-0.98,LD,Millimeter
+1311330,West Madhya Pradesh,0.0,0.9,-1.0,NR,2026-10-13,0.2,21.8,-0.99,LD,Millimeter
+1311331,Agar-Malwa,0.0,0.3,-1.0,NR,2026-10-13,0.0,19.4,-1.0,NR,Millimeter
+1311332,Alirajpur,0.0,0.6,-1.0,NR,2026-10-13,0.0,19.5,-1.0,NR,Millimeter
+1311333,Ashoknagar,0.0,0.8,-1.0,NR,2026-10-13,0.0,18.0,-1.0,NR,Millimeter
+1311334,Barwani,0.0,0.9,-1.0,NR,2026-10-13,0.0,19.2,-1.0,NR,Millimeter
+1311335,Betul,0.0,1.7,-1.0,NR,2026-10-13,0.2,28.8,-0.99,LD,Millimeter
+1311336,Bhind,0.0,1.8,-1.0,NR,2026-10-13,0.0,22.2,-1.0,NR,Millimeter
+1311337,Bhopal,0.0,1.9,-1.0,NR,2026-10-13,0.0,25.5,-1.0,NR,Millimeter
+1311338,Burhanpur,0.0,2.1,-1.0,NR,2026-10-13,0.0,30.5,-1.0,NR,Millimeter
+1311339,Datia,0.0,1.3,-1.0,NR,2026-10-13,0.0,23.8,-1.0,NR,Millimeter
+1311340,Dewas,0.0,0.7,-1.0,NR,2026-10-13,0.0,18.8,-1.0,NR,Millimeter
+1311341,Dhar,0.0,0.9,-1.0,NR,2026-10-13,0.1,26.0,-0.99,LD,Millimeter
+1311342,Guna,0.0,1.1,-1.0,NR,2026-10-13,0.0,21.2,-1.0,NR,Millimeter
+1311343,Gwalior,0.0,1.6,-1.0,NR,2026-10-13,1.0,24.5,-0.96,LD,Millimeter
+1311344,Harda,0.0,1.0,-1.0,NR,2026-10-13,0.0,28.4,-1.0,NR,Millimeter
+1311345,Indore,0.0,1.0,-1.0,NR,2026-10-13,0.0,25.1,-1.0,NR,Millimeter
+1311346,Jhabua,0.0,0.4,-1.0,NR,2026-10-13,0.0,24.8,-1.0,NR,Millimeter
+1311347,Khandwa,0.0,2.2,-1.0,NR,2026-10-13,0.0,25.3,-1.0,NR,Millimeter
+1311348,Khargone,0.0,0.3,-1.0,NR,2026-10-13,0.0,23.5,-1.0,NR,Millimeter
+1311349,Mandsaur,0.0,0.4,-1.0,NR,2026-10-13,0.0,19.8,-1.0,NR,Millimeter
+1311350,Morena,0.0,0.6,-1.0,NR,2026-10-13,0.0,18.7,-1.0,NR,Millimeter
+1311351,Narmadapuram,0.0,1.0,-1.0,NR,2026-10-13,0.0,19.4,-1.0,NR,Millimeter
+1311352,Neemuch,0.0,0.2,-1.0,NR,2026-10-13,0.0,15.0,-1.0,NR,Millimeter
+1311353,Raisen,0.0,1.2,-1.0,NR,2026-10-13,0.9,23.6,-0.96,LD,Millimeter
+1311354,Rajgarh,0.0,0.5,-1.0,NR,2026-10-13,0.0,19.5,-1.0,NR,Millimeter
+1311355,Ratlam,0.0,0.9,-1.0,NR,2026-10-13,0.0,27.6,-1.0,NR,Millimeter
+1311356,Sehore,0.0,1.5,-1.0,NR,2026-10-13,0.0,20.0,-1.0,NR,Millimeter
+1311357,Shajapur,0.0,0.4,-1.0,NR,2026-10-13,0.0,17.4,-1.0,NR,Millimeter
+1311358,Sheopur,0.0,1.6,-1.0,NR,2026-10-13,2.8,14.7,-0.81,LD,Millimeter
+1311359,Shivpuri,0.0,0.8,-1.0,NR,2026-10-13,0.0,21.8,-1.0,NR,Millimeter
+1311360,Ujjain,0.0,0.3,-1.0,NR,2026-10-13,0.0,19.8,-1.0,NR,Millimeter
+1311361,Vidisha,0.0,0.3,-1.0,NR,2026-10-13,0.1,16.8,-0.99,LD,Millimeter
+1311362,East Madhya Pradesh,0.0,0.7,-1.0,NR,2026-10-13,0.9,25.1,-0.96,LD,Millimeter
+1311363,Anuppur,0.0,1.0,-1.0,NR,2026-10-13,6.3,28.6,-0.78,LD,Millimeter
+1311364,Balaghat,0.0,1.2,-1.0,NR,2026-10-13,0.4,30.5,-0.99,LD,Millimeter
+1311365,Chhatarpur,0.0,0.1,-1.0,NR,2026-10-13,0.0,26.9,-1.0,NR,Millimeter
+1311366,Chhindwara,0.0,1.5,-1.0,NR,2026-10-13,0.9,31.9,-0.97,LD,Millimeter
+1311367,Damoh,0.0,0.4,-1.0,NR,2026-10-13,0.0,19.9,-1.0,NR,Millimeter
+1311368,Dindori,0.0,0.7,-1.0,NR,2026-10-13,0.3,19.1,-0.99,LD,Millimeter
+1311369,Jabalpur,0.0,0.5,-1.0,NR,2026-10-13,0.0,19.8,-1.0,NR,Millimeter
+1311370,Katni,0.0,1.1,-1.0,NR,2026-10-13,0.2,23.4,-0.99,LD,Millimeter
+1311371,Mandla,0.0,0.3,-1.0,NR,2026-10-13,0.0,24.5,-1.0,NR,Millimeter
+1311372,Narsinghpur,0.0,0.7,-1.0,NR,2026-10-13,2.6,17.9,-0.85,LD,Millimeter
+1311373,Niwari,0.0,0.0,-1.0,NR,2026-10-13,0.0,23.6,-1.0,NR,Millimeter
+1311374,Panna,0.0,0.8,-1.0,NR,2026-10-13,0.0,24.4,-1.0,NR,Millimeter
+1311375,Rewa,0.0,0.0,-1.0,NR,2026-10-13,0.3,27.1,-0.99,LD,Millimeter
+1311376,Sagar,0.0,0.9,-1.0,NR,2026-10-13,0.2,18.4,-0.99,LD,Millimeter
+1311377,Satna,0.0,0.2,-1.0,NR,2026-10-13,0.1,23.4,-0.99,LD,Millimeter
+1311378,Seoni,0.0,0.7,-1.0,NR,2026-10-13,2.3,29.0,-0.92,LD,Millimeter
+1311379,Shahdol,0.0,0.4,-1.0,NR,2026-10-13,0.0,22.3,-1.0,NR,Millimeter
+1311380,Sidhi,0.0,1.1,-1.0,NR,2026-10-13,2.0,27.5,-0.93,LD,Millimeter
+1311381,Singrauli,0.0,1.5,-1.0,NR,2026-10-13,6.3,31.9,-0.8,LD,Millimeter
+1311382,Tikamgarh,0.0,0.9,-1.0,NR,2026-10-13,0.0,18.6,-1.0,NR,Millimeter
+1311383,Umaria,0.0,0.3,-1.0,NR,2026-10-13,0.0,32.7,-1.0,NR,Millimeter
+1311384,Maihar,0.0,0.1,-1.0,NR,2026-10-13,0.0,31.7,-1.0,NR,Millimeter
+1311385,Mauganj,0.0,0.2,-1.0,NR,2026-10-13,0.0,22.5,-1.0,NR,Millimeter
+1311386,Pandhurna,0.0,0.6,-1.0,NR,2026-10-13,0.0,27.4,-1.0,NR,Millimeter
+1311387,Gujarat,0.0,0.5,-1.0,NR,2026-10-13,0.3,12.5,-0.97,LD,Millimeter
+1311388,Gujarat Region,0.0,0.4,-1.0,NR,2026-10-13,0.0,15.8,-1.0,NR,Millimeter
+1311389,Gujarat,0.0,0.5,-1.0,NR,2026-10-13,0.3,12.5,-0.97,LD,Millimeter
+1311390,Ahmedabad,0.0,0.1,-1.0,NR,2026-10-13,0.0,12.0,-1.0,NR,Millimeter
+1311391,Anand,0.0,0.1,-1.0,NR,2026-10-13,0.0,10.1,-1.0,NR,Millimeter
+1311392,Aravalli,0.0,0.1,-1.0,NR,2026-10-13,0.0,12.3,-1.0,NR,Millimeter
+1311393,Banaskantha,0.0,0.4,-1.0,NR,2026-10-13,0.0,11.1,-1.0,NR,Millimeter
+1311394,Bharuch,0.0,0.1,-1.0,NR,2026-10-13,0.0,12.8,-1.0,NR,Millimeter
+1311395,Chhota Udepur,0.0,0.8,-1.0,NR,2026-10-13,0.0,19.5,-1.0,NR,Millimeter
+1311396,Dahod,0.0,0.4,-1.0,NR,2026-10-13,0.0,17.1,-1.0,NR,Millimeter
+1311397,Dangs,0.0,3.5,-1.0,NR,2026-10-13,0.0,55.5,-1.0,NR,Millimeter
+1311398,Gandhinagar,0.0,0.6,-1.0,NR,2026-10-13,0.0,11.8,-1.0,NR,Millimeter
+1311399,Kheda,0.0,0.2,-1.0,NR,2026-10-13,0.0,10.5,-1.0,NR,Millimeter
+1311400,Mahisagar,0.0,0.1,-1.0,NR,2026-10-13,0.0,12.9,-1.0,NR,Millimeter
+1311401,Mehsana,0.0,0.9,-1.0,NR,2026-10-13,0.0,13.4,-1.0,NR,Millimeter
+1311402,Narmada,0.0,0.4,-1.0,NR,2026-10-13,0.0,19.0,-1.0,NR,Millimeter
+1311403,Navsari,0.0,1.0,-1.0,NR,2026-10-13,0.0,23.3,-1.0,NR,Millimeter
+1311404,Panchmahal,0.0,0.1,-1.0,NR,2026-10-13,0.0,12.2,-1.0,NR,Millimeter
+1311405,Patan,0.0,0.0,-1.0,NR,2026-10-13,0.0,8.6,-1.0,NR,Millimeter
+1311406,Sabarkantha,0.0,0.2,-1.0,NR,2026-10-13,0.0,15.4,-1.0,NR,Millimeter
+1311407,Surat,0.0,0.2,-1.0,NR,2026-10-13,0.0,23.2,-1.0,NR,Millimeter
+1311408,Tapi,0.0,0.2,-1.0,NR,2026-10-13,0.0,19.8,-1.0,NR,Millimeter
+1311409,Vadodara,0.0,0.4,-1.0,NR,2026-10-13,0.0,15.9,-1.0,NR,Millimeter
+1311410,Valsad,0.0,1.1,-1.0,NR,2026-10-13,0.0,33.7,-1.0,NR,Millimeter
+1311411,Dadra & Nagar Haveli And Daman & Diu (Ut),0.0,1.5,-1.0,NR,2026-10-13,0.0,29.2,-1.0,NR,Millimeter
+1311412,Dadara & Nagar Haveli,0.0,1.5,-1.0,NR,2026-10-13,0.0,30.6,-1.0,NR,Millimeter
+1311413,Daman,0.0,1.5,-1.0,NR,2026-10-13,0.0,30.6,-1.0,NR,Millimeter
+1311414,Saurashtra & Kutch,0.0,0.5,-1.0,NR,2026-10-13,0.6,9.8,-0.94,LD,Millimeter
+1311415,Gujarat,0.0,0.5,-1.0,NR,2026-10-13,0.3,12.5,-0.97,LD,Millimeter
+1311416,Amreli,0.0,1.2,-1.0,NR,2026-10-13,0.2,16.8,-0.99,LD,Millimeter
+1311417,Bhavnagar,0.0,0.4,-1.0,NR,2026-10-13,0.0,14.9,-1.0,NR,Millimeter
+1311418,Botad,0.0,0.6,-1.0,NR,2026-10-13,0.0,16.6,-1.0,NR,Millimeter
+1311419,Devbhoomi Dwarka,0.0,0.3,-1.0,NR,2026-10-13,0.0,8.0,-1.0,NR,Millimeter
+1311420,Gir Somnath,0.0,0.9,-1.0,NR,2026-10-13,5.8,12.8,-0.54,D,Millimeter
+1311421,Jamnagar,0.0,0.2,-1.0,NR,2026-10-13,3.2,10.5,-0.7,LD,Millimeter
+1311422,Junagadh,0.0,1.1,-1.0,NR,2026-10-13,3.4,17.3,-0.8,LD,Millimeter
+1311423,Kutch,0.0,0.4,-1.0,NR,2026-10-13,0.0,5.6,-1.0,NR,Millimeter
+1311424,Morbi,0.0,0.3,-1.0,NR,2026-10-13,0.0,7.5,-1.0,NR,Millimeter
+1311425,Porbandar,0.0,0.6,-1.0,NR,2026-10-13,0.0,11.6,-1.0,NR,Millimeter
+1311426,Rajkot,0.0,0.6,-1.0,NR,2026-10-13,0.0,13.2,-1.0,NR,Millimeter
+1311427,Surendranagar,0.0,0.3,-1.0,NR,2026-10-13,0.0,10.0,-1.0,NR,Millimeter
+1311428,Dadra & Nagar Haveli And Daman & Diu (Ut),0.0,1.5,-1.0,NR,2026-10-13,0.0,29.2,-1.0,NR,Millimeter
+1311429,Diu,0.0,1.3,-1.0,NR,2026-10-13,0.0,10.0,-1.0,NR,Millimeter
+1311430,Konkan & Goa,0.0,2.2,-1.0,NR,2026-10-13,3.4,77.7,-0.96,LD,Millimeter
+1311431,Maharashtra,0.0,1.7,-0.99,LD,2026-10-13,1.0,46.1,-0.98,LD,Millimeter
+1311432,Mumbai City,0.0,1.5,-1.0,NR,2026-10-13,0.0,54.9,-1.0,NR,Millimeter
+1311433,Mumbai Suburban,0.0,1.8,-1.0,NR,2026-10-13,4.4,61.5,-0.93,LD,Millimeter
+1311434,Palghar,0.0,0.5,-1.0,NR,2026-10-13,2.3,44.7,-0.95,LD,Millimeter
+1311435,Raigad,0.0,2.7,-1.0,NR,2026-10-13,3.9,80.7,-0.95,LD,Millimeter
+1311436,Ratnagiri,0.0,2.0,-1.0,NR,2026-10-13,0.4,91.3,-0.99,LD,Millimeter
+1311437,Sindhudurg,0.0,3.3,-1.0,NR,2026-10-13,3.5,96.6,-0.96,LD,Millimeter
+1311438,Thane,0.0,1.2,-1.0,NR,2026-10-13,11.0,53.7,-0.8,LD,Millimeter
+1311439,Goa,0.0,4.3,-1.0,NR,2026-10-13,1.6,93.2,-0.98,LD,Millimeter
+1311440,North Goa,0.0,4.8,-1.0,NR,2026-10-13,1.9,96.1,-0.98,LD,Millimeter
+1311441,South Goa,0.0,3.9,-1.0,NR,2026-10-13,1.3,90.7,-0.99,LD,Millimeter
+1311442,Madhya Maharashtra,0.0,1.8,-1.0,NR,2026-10-13,1.5,47.9,-0.97,LD,Millimeter
+1311443,Ahmednagar,0.0,2.9,-1.0,NR,2026-10-13,0.5,45.6,-0.99,LD,Millimeter
+1311444,Dhule,0.0,0.9,-1.0,NR,2026-10-13,0.0,24.9,-1.0,NR,Millimeter
+1311445,Jalgaon,0.0,0.6,-1.0,NR,2026-10-13,0.0,27.8,-1.0,NR,Millimeter
+1311446,Kolhapur,0.0,2.7,-1.0,NR,2026-10-13,8.7,71.3,-0.88,LD,Millimeter
+1311447,Nandurbar,0.0,0.5,-1.0,NR,2026-10-13,0.0,23.6,-1.0,NR,Millimeter
+1311448,Nashik,0.0,1.3,-1.0,NR,2026-10-13,1.4,40.5,-0.97,LD,Millimeter
+1311449,Pune,0.0,1.4,-1.0,NR,2026-10-13,1.5,51.7,-0.97,LD,Millimeter
+1311450,Sangli,0.0,2.6,-1.0,NR,2026-10-13,3.9,67.2,-0.94,LD,Millimeter
+1311451,Satara,0.0,2.2,-1.0,NR,2026-10-13,1.4,59.7,-0.98,LD,Millimeter
+1311452,Sholapur,0.0,2.6,-1.0,NR,2026-10-13,0.0,59.8,-1.0,NR,Millimeter
+1311453,Marathwada,0.0,2.3,-1.0,NR,2026-10-13,0.0,44.0,-1.0,NR,Millimeter
+1311454,Beed,0.0,3.1,-1.0,NR,2026-10-13,0.0,44.1,-1.0,NR,Millimeter
+1311455,Chhatrapati Sambhajinagar,0.0,1.9,-1.0,NR,2026-10-13,0.0,34.6,-1.0,NR,Millimeter
+1311456,Dharashiv,0.0,3.7,-1.0,NR,2026-10-13,0.0,52.4,-1.0,NR,Millimeter
+1311457,Hingoli,0.0,0.9,-1.0,NR,2026-10-13,0.0,40.4,-1.0,NR,Millimeter
+1311458,Jalna,0.0,1.9,-1.0,NR,2026-10-13,0.0,39.0,-1.0,NR,Millimeter
+1311459,Latur,0.0,2.5,-1.0,NR,2026-10-13,0.0,53.5,-1.0,NR,Millimeter
+1311460,Nanded,0.0,1.7,-1.0,NR,2026-10-13,0.0,44.4,-1.0,NR,Millimeter
+1311461,Parbhani,0.0,2.2,-1.0,NR,2026-10-13,0.0,46.1,-1.0,NR,Millimeter
+1311462,Vidarbha,0.0,1.2,-0.99,LD,2026-10-13,0.2,36.2,-0.99,LD,Millimeter
+1311463,Akola,0.0,2.4,-1.0,NR,2026-10-13,0.1,36.6,-0.99,LD,Millimeter
+1311464,Amraoti,0.0,1.7,-1.0,NR,2026-10-13,0.7,33.1,-0.98,LD,Millimeter
+1311465,Bhandara,0.0,1.4,-1.0,NR,2026-10-13,0.1,30.7,-0.99,LD,Millimeter
+1311466,Buldhana,0.0,1.4,-1.0,NR,2026-10-13,0.0,38.7,-0.99,LD,Millimeter
+1311467,Chandrapur,0.0,0.6,-1.0,NR,2026-10-13,0.0,38.4,-0.99,LD,Millimeter
+1311468,Gadchiroli,0.0,1.0,-1.0,NR,2026-10-13,0.0,41.0,-0.99,LD,Millimeter
+1311469,Gondia,0.0,0.5,-0.91,LD,2026-10-13,0.2,28.0,-0.99,LD,Millimeter
+1311470,Nagpur,0.0,0.7,-1.0,NR,2026-10-13,0.1,30.3,-0.99,LD,Millimeter
+1311471,Wardha,0.0,0.5,-1.0,NR,2026-10-13,0.3,33.1,-0.99,LD,Millimeter
+1311472,Washim,0.0,2.5,-1.0,NR,2026-10-13,0.2,42.8,-0.99,LD,Millimeter
+1311473,Yeotmal,0.0,1.1,-1.0,NR,2026-10-13,0.1,37.9,-0.99,LD,Millimeter
+1311474,Chhattisgarh,0.0,1.5,-0.99,LD,2026-10-13,2.4,38.1,-0.94,LD,Millimeter
+1311475,Balod,0.0,1.8,-1.0,NR,2026-10-13,0.4,31.2,-0.99,LD,Millimeter
+1311476,Baloda Bazar,0.0,1.2,-1.0,NR,2026-10-13,0.1,24.7,-0.99,LD,Millimeter
+1311477,Balrampur,0.0,2.6,-1.0,NR,2026-10-13,15.9,36.1,-0.56,D,Millimeter
+1311478,Bastar,0.0,3.2,-1.0,NR,2026-10-13,1.2,52.2,-0.98,LD,Millimeter
+1311479,Bemetara,0.0,0.6,-1.0,NR,2026-10-13,0.3,29.1,-0.99,LD,Millimeter
+1311480,Bijapur,0.0,2.1,-1.0,NR,2026-10-13,1.8,59.8,-0.97,LD,Millimeter
+1311481,Bilaspur,0.0,0.2,-1.0,NR,2026-10-13,4.8,29.6,-0.84,LD,Millimeter
+1311482,Dantewada,0.0,1.4,-1.0,NR,2026-10-13,0.0,65.5,-1.0,NR,Millimeter
+1311483,Dhamtari,0.0,1.2,-1.0,NR,2026-10-13,0.0,35.1,-1.0,NR,Millimeter
+1311484,Durg,0.0,0.2,-1.0,NR,2026-10-13,4.4,30.4,-0.86,LD,Millimeter
+1311485,Gariaband,0.3,0.8,-0.67,LD,2026-10-13,2.2,40.3,-0.94,LD,Millimeter
+1311486,Gaurela Pendra Marwahi,0.0,1.1,-1.0,NR,2026-10-13,0.4,47.9,-0.99,LD,Millimeter
+1311487,Janjgir,0.0,0.5,-1.0,NR,2026-10-13,1.4,29.9,-0.95,LD,Millimeter
+1311488,Jashpur,0.0,0.8,-1.0,NR,2026-10-13,3.6,39.4,-0.91,LD,Millimeter
+1311489,Kabirdham,0.0,1.1,-1.0,NR,2026-10-13,7.6,36.3,-0.79,LD,Millimeter
+1311490,Kanker,0.0,2.1,-1.0,NR,2026-10-13,0.1,39.6,-0.99,LD,Millimeter
+1311491,Khairagarh Chh Gandai,0.0,0.6,-1.0,NR,2026-10-13,1.2,28.5,-0.96,LD,Millimeter
+1311492,Kondagaon,0.0,2.8,-1.0,NR,2026-10-13,2.0,48.5,-0.96,LD,Millimeter
+1311493,Korba,0.0,0.5,-1.0,NR,2026-10-13,1.5,32.5,-0.95,LD,Millimeter
+1311494,Koriya,0.0,0.9,-1.0,NR,2026-10-13,0.0,24.2,-1.0,NR,Millimeter
+1311495,Mahasamund,0.0,1.0,-1.0,NR,2026-10-13,0.0,28.3,-1.0,NR,Millimeter
+1311496,Manendragarh Bharatpur,0.0,0.9,-1.0,NR,2026-10-13,0.0,24.3,-1.0,NR,Millimeter
+1311497,Mohala Manpur Chowki,0.0,1.5,-1.0,NR,2026-10-13,0.0,29.5,-1.0,NR,Millimeter
+1311498,Mungeli,0.0,0.5,-1.0,NR,2026-10-13,13.2,23.5,-0.44,D,Millimeter
+1311499,Narayanpur,0.0,4.7,-1.0,NR,2026-10-13,0.0,47.6,-1.0,NR,Millimeter
+1311500,Raigarh,0.0,0.8,-1.0,NR,2026-10-13,3.9,28.6,-0.86,LD,Millimeter
+1311501,Raipur,0.0,0.5,-1.0,NR,2026-10-13,4.1,27.3,-0.85,LD,Millimeter
+1311502,Rajnandgaon,0.0,1.4,-1.0,NR,2026-10-13,0.0,35.7,-1.0,NR,Millimeter
+1311503,Sakti,0.0,1.1,-1.0,NR,2026-10-13,0.8,23.4,-0.97,LD,Millimeter
+1311504,Sarangarh Bilaigarh,0.0,1.8,-1.0,NR,2026-10-13,0.0,29.4,-1.0,NR,Millimeter
+1311505,Sukma,0.0,4.4,-1.0,NR,2026-10-13,0.7,57.0,-0.99,LD,Millimeter
+1311506,Surajpur,0.0,1.3,-1.0,NR,2026-10-13,0.2,37.4,-0.99,LD,Millimeter
+1311507,Surguja,0.0,1.1,-1.0,NR,2026-10-13,2.4,41.4,-0.94,LD,Millimeter
+1311508,Andhra Pradesh,0.1,4.1,-0.98,LD,2026-10-13,10.1,73.8,-0.86,LD,Millimeter
+1311509,Coastal Andhra Pradesh & Yanam,0.0,5.1,-0.99,LD,2026-10-13,8.2,81.8,-0.9,LD,Millimeter
+1311510,Andhra Pradesh,0.1,4.1,-0.98,LD,2026-10-13,10.1,73.8,-0.86,LD,Millimeter
+1311511,Anakapalli,0.3,10.0,-0.97,LD,2026-10-13,32.7,112.8,-0.71,LD,Millimeter
+1311512,Bapatla,0.0,2.0,-1.0,NR,2026-10-13,11.4,74.8,-0.85,LD,Millimeter
+1311513,Dr B R Ambedkar Konaseema,0.0,6.2,-1.0,NR,2026-10-13,19.0,121.3,-0.84,LD,Millimeter
+1311514,East Godavari,0.0,4.2,-1.0,NR,2026-10-13,2.5,101.7,-0.98,LD,Millimeter
+1311515,Eluru,0.0,6.4,-1.0,NR,2026-10-13,10.4,72.5,-0.86,LD,Millimeter
+1311516,Guntur,0.0,1.3,-1.0,NR,2026-10-13,5.9,60.0,-0.9,LD,Millimeter
+1311517,Kakinada,0.0,4.8,-1.0,NR,2026-10-13,22.5,91.9,-0.76,LD,Millimeter
+1311518,Krishna,0.0,2.5,-1.0,NR,2026-10-13,1.4,76.4,-0.98,LD,Millimeter
+1311519,Ntr District,0.0,4.2,-1.0,NR,2026-10-13,7.4,77.7,-0.9,LD,Millimeter
+1311520,Palnadu,0.0,1.5,-1.0,NR,2026-10-13,2.9,59.0,-0.95,LD,Millimeter
+1311521,Parvathipuram Manyam,0.0,6.9,-1.0,NR,2026-10-13,4.9,80.2,-0.94,LD,Millimeter
+1311522,Prakasam,0.0,2.6,-1.0,NR,2026-10-13,8.5,66.4,-0.87,LD,Millimeter
+1311523,Spsr Nellore,0.0,3.0,-1.0,NR,2026-10-13,6.2,65.9,-0.91,LD,Millimeter
+1311524,Sri Alluri Sitharamaraju District,0.0,7.7,-1.0,NR,2026-10-13,3.0,85.8,-0.97,LD,Millimeter
+1311525,Srikakulam,0.0,8.7,-1.0,NR,2026-10-13,7.1,110.5,-0.94,LD,Millimeter
+1311526,Vishakhapatnam,0.0,9.7,-1.0,NR,2026-10-13,3.4,108.4,-0.97,LD,Millimeter
+1311527,Vizianagaram,0.0,10.5,-1.0,NR,2026-10-13,1.0,96.2,-0.99,LD,Millimeter
+1311528,West Godavari,0.0,4.8,-1.0,NR,2026-10-13,19.7,97.5,-0.8,LD,Millimeter
+1311529,Puducherry (Ut),0.0,4.9,-1.0,NR,2026-10-13,9.2,73.7,-0.87,LD,Millimeter
+1311530,Yanam,0.0,4.6,-1.0,NR,2026-10-13,6.6,120.9,-0.95,LD,Millimeter
+1311531,Rayalaseema,0.2,2.8,-0.94,LD,2026-10-13,12.7,62.5,-0.8,LD,Millimeter
+1311532,Anantapuramu,0.0,2.1,-1.0,NR,2026-10-13,4.4,55.5,-0.92,LD,Millimeter
+1311533,Annamayya District,0.0,2.6,-1.0,NR,2026-10-13,43.2,61.1,-0.29,D,Millimeter
+1311534,Chittoor,0.0,3.3,-1.0,NR,2026-10-13,34.0,76.5,-0.56,D,Millimeter
+1311535,Kurnool,0.0,3.2,-1.0,NR,2026-10-13,0.0,64.3,-1.0,NR,Millimeter
+1311536,Nandyal,0.0,2.8,-1.0,NR,2026-10-13,0.7,63.9,-0.99,LD,Millimeter
+1311537,Sri Sathyasai District,0.4,3.4,-0.88,LD,2026-10-13,21.1,63.3,-0.67,LD,Millimeter
+1311538,Tirupati,0.0,5.2,-1.0,NR,2026-10-13,7.4,65.7,-0.89,LD,Millimeter
+1311539,Ysr District,0.8,2.0,-0.61,LD,2026-10-13,4.8,59.7,-0.92,LD,Millimeter
+1311540,Telangana,0.1,2.2,-0.97,LD,2026-10-13,1.7,51.7,-0.97,LD,Millimeter
+1311541,Adilabad,0.0,1.3,-1.0,NR,2026-10-13,0.6,41.8,-0.99,LD,Millimeter
+1311542,B. Kothagudem,0.0,3.2,-1.0,NR,2026-10-13,2.0,57.0,-0.97,LD,Millimeter
+1311543,Hanumakonda,0.0,2.6,-1.0,NR,2026-10-13,0.0,40.4,-0.99,LD,Millimeter
+1311544,Hyderabad,0.0,2.6,-0.99,LD,2026-10-13,0.3,59.7,-0.99,LD,Millimeter
+1311545,J. Bhupalpally,0.0,1.1,-1.0,NR,2026-10-13,0.1,44.0,-0.99,LD,Millimeter
+1311546,Jagtial,0.0,2.2,-1.0,NR,2026-10-13,0.0,45.0,-0.99,LD,Millimeter
+1311547,Jangaon,0.0,2.8,-0.99,LD,2026-10-13,0.3,50.0,-0.99,LD,Millimeter
+1311548,Jogulamba Gadwal,0.0,2.3,-1.0,NR,2026-10-13,0.0,56.2,-1.0,NR,Millimeter
+1311549,Kamareddy,0.0,1.2,-0.98,LD,2026-10-13,0.2,47.2,-0.99,LD,Millimeter
+1311550,Karimnagar,0.0,0.7,-1.0,NR,2026-10-13,0.0,46.0,-0.99,LD,Millimeter
+1311551,Khammam,0.0,5.0,-1.0,NR,2026-10-13,2.0,68.9,-0.97,LD,Millimeter
+1311552,Kumaram Bheem,0.0,1.3,-1.0,NR,2026-10-13,0.1,46.7,-0.99,LD,Millimeter
+1311553,M. Malkajgiri,0.0,2.1,-1.0,NR,2026-10-13,0.6,50.6,-0.99,LD,Millimeter
+1311554,Mahabubabad,0.0,5.0,-1.0,NR,2026-10-13,0.5,56.1,-0.99,LD,Millimeter
+1311555,Mahabubnagar,0.0,2.6,-1.0,NR,2026-10-13,0.0,58.1,-0.99,LD,Millimeter
+1311556,Mancherial,0.5,1.2,-0.6,LD,2026-10-13,4.0,48.0,-0.92,LD,Millimeter
+1311557,Medak,0.0,1.8,-0.99,LD,2026-10-13,0.1,47.5,-0.99,LD,Millimeter
+1311558,Mulugu,0.1,2.0,-0.97,LD,2026-10-13,3.8,50.6,-0.93,LD,Millimeter
+1311559,Nagarkurnool,0.0,2.9,-1.0,NR,2026-10-13,0.2,58.0,-0.99,LD,Millimeter
+1311560,Nalgonda,0.0,1.6,-1.0,NR,2026-10-13,1.1,57.3,-0.98,LD,Millimeter
+1311561,Narayanpet,0.0,3.2,-1.0,NR,2026-10-13,0.1,47.2,-0.99,LD,Millimeter
+1311562,Nirmal,0.1,1.1,-0.93,LD,2026-10-13,1.0,42.5,-0.98,LD,Millimeter
+1311563,Nizamabad,0.0,2.0,-1.0,NR,2026-10-13,0.0,42.6,-1.0,NR,Millimeter
+1311564,Peddapalle,0.0,0.9,-0.98,LD,2026-10-13,0.6,46.3,-0.99,LD,Millimeter
+1311565,Rajanna Sircilla,2.5,1.0,1.53,LE,2026-10-13,53.5,43.6,0.23,E,Millimeter
+1311566,Rangareddy,0.0,2.6,-0.99,LD,2026-10-13,1.3,55.7,-0.98,LD,Millimeter
+1311567,Sangareddy,0.0,1.3,-0.99,LD,2026-10-13,0.5,49.9,-0.99,LD,Millimeter
+1311568,Siddipet,0.0,1.0,-1.0,NR,2026-10-13,0.2,43.9,-0.99,LD,Millimeter
+1311569,Suryapet,0.0,4.0,-0.99,LD,2026-10-13,0.1,61.9,-0.99,LD,Millimeter
+1311570,Vikarabad,0.0,2.4,-1.0,NR,2026-10-13,0.1,55.3,-0.99,LD,Millimeter
+1311571,Wanaparthy,0.0,1.7,-1.0,NR,2026-10-13,0.0,62.7,-0.99,LD,Millimeter
+1311572,Warangal,0.0,2.3,-1.0,NR,2026-10-13,0.4,40.0,-0.99,LD,Millimeter
+1311573,Y. Bhuvanagiri,0.0,2.7,-1.0,NR,2026-10-13,0.0,59.3,-1.0,NR,Millimeter
+1311574,Tamilnadu & Puducherry & Karaikal,2.0,4.9,-0.59,D,2026-10-13,31.5,57.3,-0.45,D,Millimeter
+1311575,Tamilnadu,2.0,4.9,-0.59,D,2026-10-13,31.6,57.3,-0.45,D,Millimeter
+1311576,Ariyalur,0.0,3.3,-1.0,NR,2026-10-13,10.8,57.3,-0.81,LD,Millimeter
+1311577,Chengalpattu,0.0,5.9,-1.0,NR,2026-10-13,2.6,62.8,-0.96,LD,Millimeter
+1311578,Chennai,0.0,5.1,-0.99,LD,2026-10-13,0.4,68.8,-0.99,LD,Millimeter
+1311579,Coimbatore,0.0,6.7,-1.0,NR,2026-10-13,79.2,56.2,0.41,E,Millimeter
+1311580,Cuddalore,0.0,4.5,-1.0,NR,2026-10-13,14.4,60.0,-0.76,LD,Millimeter
+1311581,Dharmapuri,0.0,4.9,-1.0,NR,2026-10-13,30.2,77.2,-0.61,LD,Millimeter
+1311582,Dindigul,0.0,6.8,-1.0,NR,2026-10-13,30.5,66.7,-0.54,D,Millimeter
+1311583,Erode,0.0,5.8,-1.0,NR,2026-10-13,17.1,55.7,-0.69,LD,Millimeter
+1311584,Kallakurichi,0.2,3.1,-0.93,LD,2026-10-13,27.5,60.3,-0.54,D,Millimeter
+1311585,Kancheepuram,0.0,5.0,-1.0,NR,2026-10-13,7.9,65.6,-0.88,LD,Millimeter
+1311586,Kanyakumari,14.7,7.3,1.02,LE,2026-10-13,91.6,89.5,0.02,N,Millimeter
+1311587,Karur,0.0,4.2,-1.0,NR,2026-10-13,25.3,47.5,-0.47,D,Millimeter
+1311588,Krishnagiri,0.0,6.2,-1.0,NR,2026-10-13,39.5,77.4,-0.49,D,Millimeter
+1311589,Madurai,0.3,4.7,-0.93,LD,2026-10-13,33.2,59.4,-0.44,D,Millimeter
+1311590,Mayiladuthurai,0.0,4.5,-1.0,NR,2026-10-13,7.9,56.5,-0.86,LD,Millimeter
+1311591,Nagapattinam,14.4,4.7,2.06,LE,2026-10-13,23.8,47.9,-0.5,D,Millimeter
+1311592,Namakkal,0.0,4.5,-1.0,NR,2026-10-13,30.4,55.9,-0.46,D,Millimeter
+1311593,Nilgiris,0.0,7.3,-1.0,NR,2026-10-13,116.2,78.4,0.48,E,Millimeter
+1311594,Perambalur,0.0,3.5,-1.0,NR,2026-10-13,32.7,56.0,-0.42,D,Millimeter
+1311595,Pudukkottai,0.0,3.9,-1.0,NR,2026-10-13,18.6,46.5,-0.6,LD,Millimeter
+1311596,Ramanathapuram,3.4,6.0,-0.43,D,2026-10-13,29.5,43.2,-0.32,D,Millimeter
+1311597,Ranipet,0.0,5.2,-1.0,NR,2026-10-13,2.3,57.8,-0.96,LD,Millimeter
+1311598,Salem,0.3,5.9,-0.95,LD,2026-10-13,13.6,70.3,-0.81,LD,Millimeter
+1311599,Sivaganga,0.3,5.7,-0.94,LD,2026-10-13,24.8,60.0,-0.59,D,Millimeter
+1311600,Tenkasi,12.7,5.6,1.26,LE,2026-10-13,65.7,40.2,0.63,LE,Millimeter
+1311601,Thanjavur,0.2,3.1,-0.94,LD,2026-10-13,10.5,51.5,-0.8,LD,Millimeter
+1311602,Theni,0.0,6.1,-1.0,NR,2026-10-13,49.9,54.9,-0.09,N,Millimeter
+1311603,Thiruchirapalli,0.6,3.2,-0.8,LD,2026-10-13,17.3,55.6,-0.69,LD,Millimeter
+1311604,Thiruvallur,0.0,4.1,-1.0,NR,2026-10-13,5.5,60.7,-0.91,LD,Millimeter
+1311605,Thoothukudi,5.6,3.7,0.51,E,2026-10-13,36.2,28.9,0.25,E,Millimeter
+1311606,Tirunelveli,31.4,3.8,7.26,LE,2026-10-13,96.1,29.0,2.32,LE,Millimeter
+1311607,Tirupattur,0.0,3.0,-1.0,NR,2026-10-13,25.1,60.1,-0.58,D,Millimeter
+1311608,Tiruppur,0.0,5.4,-1.0,NR,2026-10-13,29.3,48.4,-0.39,D,Millimeter
+1311609,Tiruvannamalai,0.0,4.2,-1.0,NR,2026-10-13,23.5,69.7,-0.66,LD,Millimeter
+1311610,Tiruvarur,0.7,3.5,-0.8,LD,2026-10-13,18.8,49.6,-0.62,LD,Millimeter
+1311611,Vellore,0.0,3.6,-1.0,NR,2026-10-13,17.4,60.8,-0.71,LD,Millimeter
+1311612,Villupuram,0.0,3.1,-1.0,NR,2026-10-13,14.9,57.4,-0.74,LD,Millimeter
+1311613,Virudhunagar,1.6,6.9,-0.77,LD,2026-10-13,44.7,49.1,-0.09,N,Millimeter
+1311614,Puducherry (Ut),0.0,4.9,-1.0,NR,2026-10-13,9.2,73.7,-0.87,LD,Millimeter
+1311615,Karaikal,0.0,6.7,-1.0,NR,2026-10-13,26.5,56.1,-0.53,D,Millimeter
+1311616,Puducherry,0.0,3.7,-1.0,NR,2026-10-13,0.0,77.2,-1.0,NR,Millimeter
+1311617,Karnataka,0.0,4.5,-1.0,NR,2026-10-13,16.7,70.0,-0.76,LD,Millimeter
+1311618,Northern Interior Karnataka,0.0,3.7,-1.0,NR,2026-10-13,3.9,61.7,-0.94,LD,Millimeter
+1311619,Bagalkote,0.0,3.6,-1.0,NR,2026-10-13,0.0,64.1,-1.0,NR,Millimeter
+1311620,Belagavi,0.0,3.5,-1.0,NR,2026-10-13,4.2,60.6,-0.93,LD,Millimeter
+1311621,Bidar,0.0,2.4,-1.0,NR,2026-10-13,0.0,56.8,-1.0,NR,Millimeter
+1311622,Dharwad,0.0,4.3,-1.0,NR,2026-10-13,20.0,57.5,-0.65,LD,Millimeter
+1311623,Gadag,0.0,2.6,-1.0,NR,2026-10-13,7.8,60.1,-0.87,LD,Millimeter
+1311624,Haveri,0.0,3.2,-1.0,NR,2026-10-13,17.0,57.6,-0.71,LD,Millimeter
+1311625,Kalaburagi,0.0,3.2,-1.0,NR,2026-10-13,0.0,62.1,-1.0,NR,Millimeter
+1311626,Koppal,0.0,3.2,-1.0,NR,2026-10-13,5.9,62.6,-0.91,LD,Millimeter
+1311627,Raichur,0.0,4.6,-1.0,NR,2026-10-13,0.0,66.8,-1.0,NR,Millimeter
+1311628,Vijayapura,0.0,4.8,-1.0,NR,2026-10-13,0.3,65.1,-0.99,LD,Millimeter
+1311629,Yadgir,0.0,4.3,-1.0,NR,2026-10-13,0.0,60.3,-1.0,NR,Millimeter
+1311630,Southern Interior Karnataka,0.0,4.7,-1.0,NR,2026-10-13,23.1,70.0,-0.67,LD,Millimeter
+1311631,Ballari,0.0,4.9,-1.0,NR,2026-10-13,3.7,60.4,-0.94,LD,Millimeter
+1311632,Bengaluru Rural,0.0,4.7,-1.0,NR,2026-10-13,43.1,80.1,-0.46,D,Millimeter
+1311633,Bengaluru Urban,0.0,3.6,-1.0,NR,2026-10-13,45.0,74.9,-0.4,D,Millimeter
+1311634,Chamarajanagar,0.0,3.9,-1.0,NR,2026-10-13,47.2,73.8,-0.36,D,Millimeter
+1311635,Chikaballapura,0.0,3.5,-1.0,NR,2026-10-13,29.0,73.7,-0.61,LD,Millimeter
+1311636,Chikkamagaluru,0.0,5.6,-1.0,NR,2026-10-13,43.7,76.0,-0.42,D,Millimeter
+1311637,Chitradurga,0.0,3.3,-1.0,NR,2026-10-13,11.8,59.6,-0.8,LD,Millimeter
+1311638,Davangere,0.0,2.7,-1.0,NR,2026-10-13,7.4,60.4,-0.88,LD,Millimeter
+1311639,Hassan,0.0,6.1,-1.0,NR,2026-10-13,41.0,67.3,-0.39,D,Millimeter
+1311640,Kodagu,0.0,9.3,-1.0,NR,2026-10-13,53.6,96.6,-0.45,D,Millimeter
+1311641,Kolar,0.0,4.1,-1.0,NR,2026-10-13,11.9,74.4,-0.84,LD,Millimeter
+1311642,Mandya,0.0,6.6,-1.0,NR,2026-10-13,11.2,72.2,-0.84,LD,Millimeter
+1311643,Mysuru,0.0,4.5,-1.0,NR,2026-10-13,22.9,57.8,-0.6,LD,Millimeter
+1311644,Ramanagara,0.0,5.3,-1.0,NR,2026-10-13,13.9,81.5,-0.83,LD,Millimeter
+1311645,Shivamogga,0.0,4.4,-1.0,NR,2026-10-13,10.5,69.8,-0.85,LD,Millimeter
+1311646,Tumakuru,0.0,4.5,-1.0,NR,2026-10-13,13.8,72.9,-0.81,LD,Millimeter
+1311647,Vijayanagara,0.0,4.2,-1.0,NR,2026-10-13,16.3,58.9,-0.72,LD,Millimeter
+1311648,Coastal Karnataka,0.0,7.1,-1.0,NR,2026-10-13,38.7,105.6,-0.63,LD,Millimeter
+1311649,Dakshina Kannada,0.0,11.0,-1.0,NR,2026-10-13,104.3,136.0,-0.23,D,Millimeter
+1311650,Udupi,0.0,8.9,-1.0,NR,2026-10-13,39.5,120.8,-0.67,LD,Millimeter
+1311651,Uttara Kannada,0.0,4.6,-1.0,NR,2026-10-13,7.5,86.0,-0.91,LD,Millimeter
+1311652,Kerala & Mahe,1.9,10.6,-0.82,LD,2026-10-13,89.3,131.8,-0.32,D,Millimeter
+1311653,Alapuzha,0.0,9.5,-1.0,NR,2026-10-13,101.5,137.7,-0.26,D,Millimeter
+1311654,Ernakulam,0.0,11.7,-1.0,NR,2026-10-13,104.8,152.1,-0.31,D,Millimeter
+1311655,Idukki,0.0,12.7,-1.0,NR,2026-10-13,95.3,169.5,-0.44,D,Millimeter
+1311656,Kannur,0.0,10.2,-1.0,NR,2026-10-13,40.7,119.6,-0.66,LD,Millimeter
+1311657,Kasargod,0.0,11.4,-1.0,NR,2026-10-13,50.6,117.2,-0.57,D,Millimeter
+1311658,Kollam,13.3,11.7,0.14,N,2026-10-13,109.2,144.9,-0.25,D,Millimeter
+1311659,Kottayam,0.2,9.8,-0.98,LD,2026-10-13,116.9,134.9,-0.13,N,Millimeter
+1311660,Kozhikode,0.0,8.7,-1.0,NR,2026-10-13,53.2,136.3,-0.61,LD,Millimeter
+1311661,Malappuram,0.0,11.1,-1.0,NR,2026-10-13,45.0,130.2,-0.65,LD,Millimeter
+1311662,Palakkad,0.6,8.8,-0.94,LD,2026-10-13,76.1,91.9,-0.17,N,Millimeter
+1311663,Pathanamthitta,0.1,14.4,-0.99,LD,2026-10-13,188.2,146.8,0.28,E,Millimeter
+1311664,Thiruvananthapuram,16.6,8.9,0.87,LE,2026-10-13,118.9,110.7,0.07,N,Millimeter
+1311665,Thrissur,0.3,10.2,-0.97,LD,2026-10-13,98.8,149.7,-0.34,D,Millimeter
+1311666,Wynad,0.0,7.5,-1.0,NR,2026-10-13,72.4,91.3,-0.21,D,Millimeter
+1311667,Puducherry (Ut),0.0,4.9,-1.0,NR,2026-10-13,9.2,73.7,-0.87,LD,Millimeter
+1311668,Lakshadweep,0.0,4.2,-1.0,NR,2026-10-13,41.0,59.8,-0.31,D,Millimeter
+1311669,Lakshadweep,0.0,4.2,-1.0,NR,2026-10-13,41.0,59.8,-0.31,D,Millimeter

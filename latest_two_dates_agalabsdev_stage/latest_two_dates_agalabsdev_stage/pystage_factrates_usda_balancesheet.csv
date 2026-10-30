@@ -1,0 +1,23 @@
+﻿MarketYear,SourceCommodityCode,CommodityName,SourceCommodityName,Country,AttributeName,Value,Unit,Source,CreatedBy,CreatedDate,MarketYearDate,RecordIndex,Month,PreviousValue,Season
+2027,Tur,Tur,Tur,India,Area Harvested,4141.0,(1000 HA),Agalabs,Research,2026-08-11,2027-12-01,2894458,,,Kharif
+2027,Tur,Tur,Tur,India,Yield,782.0,(KG/HA),Agalabs,Research,2026-08-11,2027-12-01,2894468,,,Kharif
+2027,Tur,Tur,Tur,India,Total Supply,5335.0,(1000 MT),Agalabs,Research,2026-08-11,2027-12-01,2894467,,,Kharif
+2027,Tur,Tur,Tur,India,Total Demand,4683.0,(1000 MT),Agalabs,Research,2026-08-11,2027-12-01,2894466,,,Kharif
+2027,Tur,Tur,Tur,India,Stocks-to-Use,14.0,(PERCENT),Agalabs,Research,2026-08-11,2027-12-01,2894465,,,Kharif
+2027,Tur,Tur,Tur,India,Production,3216.0,(1000 MT),Agalabs,Research,2026-08-11,2027-12-01,2894464,,,Kharif
+2027,Tur,Tur,Tur,India,Imports,1444.0,(1000 MT),Agalabs,Research,2026-08-11,2027-12-01,2894463,,,Kharif
+2027,Tur,Tur,Tur,India,Exports,6.0,(1000 MT),Agalabs,Research,2026-08-11,2027-12-01,2894462,,,Kharif
+2027,Tur,Tur,Tur,India,Ending Stocks,653.0,(1000 MT),Agalabs,Research,2026-08-11,2027-12-01,2894461,,,Kharif
+2027,Tur,Tur,Tur,India,Domestic Consumption,4677.0,(1000 MT),Agalabs,Research,2026-08-11,2027-12-01,2894460,,,Kharif
+2027,Tur,Tur,Tur,India,Beginning Stocks,675.0,(1000 MT),Agalabs,Research,2026-08-11,2027-12-01,2894459,,,Kharif
+2027,Bengal Gra,Bengal Gram,Bengal Gram,India,Area Harvested,9660.0,(1000 HA),Agalabs,Research,2026-08-11,2027-04-01,2894447,,,Rabi
+2027,Bengal Gra,Bengal Gram,Bengal Gram,India,Yield,1295.0,(KG/HA),Agalabs,Research,2026-08-11,2027-04-01,2894457,,,Rabi
+2027,Bengal Gra,Bengal Gram,Bengal Gram,India,Total Supply,15410.0,(1000 MT),Agalabs,Research,2026-08-11,2027-04-01,2894456,,,Rabi
+2027,Bengal Gra,Bengal Gram,Bengal Gram,India,Total Demand,12784.0,(1000 MT),Agalabs,Research,2026-08-11,2027-04-01,2894455,,,Rabi
+2027,Bengal Gra,Bengal Gram,Bengal Gram,India,Stocks-to-Use,21.0,(PERCENT),Agalabs,Research,2026-08-11,2027-04-01,2894454,,,Rabi
+2027,Bengal Gra,Bengal Gram,Bengal Gram,India,Production,12514.0,(1000 MT),Agalabs,Research,2026-08-11,2027-04-01,2894453,,,Rabi
+2027,Bengal Gra,Bengal Gram,Bengal Gram,India,Imports,1034.0,(1000 MT),Agalabs,Research,2026-08-11,2027-04-01,2894452,,,Rabi
+2027,Bengal Gra,Bengal Gram,Bengal Gram,India,Exports,76.0,(1000 MT),Agalabs,Research,2026-08-11,2027-04-01,2894451,,,Rabi
+2027,Bengal Gra,Bengal Gram,Bengal Gram,India,Ending Stocks,2626.0,(1000 MT),Agalabs,Research,2026-08-11,2027-04-01,2894450,,,Rabi
+2027,Bengal Gra,Bengal Gram,Bengal Gram,India,Domestic Consumption,12708.0,(1000 MT),Agalabs,Research,2026-08-11,2027-04-01,2894449,,,Rabi
+2027,Bengal Gra,Bengal Gram,Bengal Gram,India,Beginning Stocks,1862.0,(1000 MT),Agalabs,Research,2026-08-11,2027-04-01,2894448,,,Rabi

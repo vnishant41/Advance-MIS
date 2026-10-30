@@ -1,0 +1,5 @@
+﻿id,CommodityName,crop,crop_type,maximum_wt_of_lot,submitted_sample,working_sample_for_purity,analysis_charges,created_at
+70,Cumin (Jeera),Vegetable Crops,Miscellaneous Crops,10000.00,60.00,6.00,350.00,2026-07-07 05:31:40
+71,Tobacco (Tambakoo),Vegetable Crops,Miscellaneous Crops,10000.00,25.00,0.50,350.00,2026-07-07 05:31:40
+68,Dhaincha,Vegetable Crops,Green Manure,20000.00,900.00,90.00,350.00,2026-07-07 05:31:23
+69,Sunhemp (Sanai),Vegetable Crops,Green Manure,10000.00,700.00,70.00,350.00,2026-07-07 05:31:23

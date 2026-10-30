@@ -1,0 +1,1651 @@
+﻿id,commodity,year,attribute,unit,value,createdBy,CreatedDate,Source
+1,Wheat,2010,Production,"Tonnes, Thousands",808.0360,Tech,2025-12-10,OECD
+2,Wheat,2011,Production,"Tonnes, Thousands",868.7400,Tech,2025-12-10,OECD
+3,Wheat,2012,Production,"Tonnes, Thousands",948.8000,Tech,2025-12-10,OECD
+4,Wheat,2013,Production,"Tonnes, Thousands",935.1000,Tech,2025-12-10,OECD
+5,Wheat,2014,Production,"Tonnes, Thousands",958.5000,Tech,2025-12-10,OECD
+6,Wheat,2015,Production,"Tonnes, Thousands",865.3000,Tech,2025-12-10,OECD
+7,Wheat,2016,Production,"Tonnes, Thousands",922.9000,Tech,2025-12-10,OECD
+8,Wheat,2017,Production,"Tonnes, Thousands",985.1000,Tech,2025-12-10,OECD
+9,Wheat,2018,Production,"Tonnes, Thousands",998.7000,Tech,2025-12-10,OECD
+10,Wheat,2019,Production,"Tonnes, Thousands",1036.0000,Tech,2025-12-10,OECD
+11,Wheat,2020,Production,"Tonnes, Thousands",1078.6100,Tech,2025-12-10,OECD
+12,Wheat,2021,Production,"Tonnes, Thousands",1095.8700,Tech,2025-12-10,OECD
+13,Wheat,2022,Production,"Tonnes, Thousands",1077.4200,Tech,2025-12-10,OECD
+14,Wheat,2023,Production,"Tonnes, Thousands",1105.5400,Tech,2025-12-10,OECD
+15,Wheat,2024,Production,"Tonnes, Thousands",1132.9200,Tech,2025-12-10,OECD
+16,Wheat,2025,Production,"Tonnes, Thousands",1142.3067,Tech,2025-12-10,OECD
+17,Wheat,2026,Production,"Tonnes, Thousands",1160.9856,Tech,2025-12-10,OECD
+18,Wheat,2027,Production,"Tonnes, Thousands",1183.4121,Tech,2025-12-10,OECD
+19,Wheat,2028,Production,"Tonnes, Thousands",1205.8593,Tech,2025-12-10,OECD
+20,Wheat,2029,Production,"Tonnes, Thousands",1226.5080,Tech,2025-12-10,OECD
+21,Wheat,2030,Production,"Tonnes, Thousands",1246.4131,Tech,2025-12-10,OECD
+22,Wheat,2031,Production,"Tonnes, Thousands",1266.3308,Tech,2025-12-10,OECD
+23,Wheat,2032,Production,"Tonnes, Thousands",1285.7228,Tech,2025-12-10,OECD
+24,Wheat,2033,Production,"Tonnes, Thousands",1304.6697,Tech,2025-12-10,OECD
+25,Wheat,2034,Production,"Tonnes, Thousands",1323.3227,Tech,2025-12-10,OECD
+26,Wheat,2010,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+27,Wheat,2011,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+28,Wheat,2012,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+29,Wheat,2013,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+30,Wheat,2014,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+31,Wheat,2015,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+32,Wheat,2016,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+33,Wheat,2017,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+34,Wheat,2018,Ethanol production from commodity,"Litres, Millions",0.2806,Tech,2025-12-10,OECD
+35,Wheat,2019,Ethanol production from commodity,"Litres, Millions",0.5400,Tech,2025-12-10,OECD
+36,Wheat,2020,Ethanol production from commodity,"Litres, Millions",0.8798,Tech,2025-12-10,OECD
+37,Wheat,2021,Ethanol production from commodity,"Litres, Millions",1.3936,Tech,2025-12-10,OECD
+38,Wheat,2022,Ethanol production from commodity,"Litres, Millions",1.7011,Tech,2025-12-10,OECD
+39,Wheat,2023,Ethanol production from commodity,"Litres, Millions",2.3605,Tech,2025-12-10,OECD
+40,Wheat,2024,Ethanol production from commodity,"Litres, Millions",2.9399,Tech,2025-12-10,OECD
+41,Wheat,2025,Ethanol production from commodity,"Litres, Millions",3.5737,Tech,2025-12-10,OECD
+42,Wheat,2026,Ethanol production from commodity,"Litres, Millions",3.9008,Tech,2025-12-10,OECD
+43,Wheat,2027,Ethanol production from commodity,"Litres, Millions",3.8129,Tech,2025-12-10,OECD
+44,Wheat,2028,Ethanol production from commodity,"Litres, Millions",3.7764,Tech,2025-12-10,OECD
+45,Wheat,2029,Ethanol production from commodity,"Litres, Millions",3.7674,Tech,2025-12-10,OECD
+46,Wheat,2030,Ethanol production from commodity,"Litres, Millions",3.7852,Tech,2025-12-10,OECD
+47,Wheat,2031,Ethanol production from commodity,"Litres, Millions",3.8229,Tech,2025-12-10,OECD
+48,Wheat,2032,Ethanol production from commodity,"Litres, Millions",3.8753,Tech,2025-12-10,OECD
+49,Wheat,2033,Ethanol production from commodity,"Litres, Millions",3.9390,Tech,2025-12-10,OECD
+50,Wheat,2034,Ethanol production from commodity,"Litres, Millions",4.0117,Tech,2025-12-10,OECD
+51,Wheat,2010,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+52,Wheat,2011,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+53,Wheat,2012,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+54,Wheat,2013,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+55,Wheat,2014,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+56,Wheat,2015,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+57,Wheat,2016,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+58,Wheat,2017,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+59,Wheat,2018,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+60,Wheat,2019,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+61,Wheat,2020,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+62,Wheat,2021,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+63,Wheat,2022,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+64,Wheat,2023,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+65,Wheat,2024,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+66,Wheat,2025,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+67,Wheat,2026,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+68,Wheat,2027,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+69,Wheat,2028,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+70,Wheat,2029,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+71,Wheat,2030,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+72,Wheat,2031,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+73,Wheat,2032,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+74,Wheat,2033,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+75,Wheat,2034,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+76,Wheat,2010,Imports,"Tonnes, Thousands",1.8528,Tech,2025-12-10,OECD
+77,Wheat,2011,Imports,"Tonnes, Thousands",0.0173,Tech,2025-12-10,OECD
+78,Wheat,2012,Imports,"Tonnes, Thousands",0.0608,Tech,2025-12-10,OECD
+79,Wheat,2013,Imports,"Tonnes, Thousands",0.1416,Tech,2025-12-10,OECD
+80,Wheat,2014,Imports,"Tonnes, Thousands",0.3216,Tech,2025-12-10,OECD
+81,Wheat,2015,Imports,"Tonnes, Thousands",5.2143,Tech,2025-12-10,OECD
+82,Wheat,2016,Imports,"Tonnes, Thousands",57.5183,Tech,2025-12-10,OECD
+83,Wheat,2017,Imports,"Tonnes, Thousands",16.5311,Tech,2025-12-10,OECD
+84,Wheat,2018,Imports,"Tonnes, Thousands",0.0274,Tech,2025-12-10,OECD
+85,Wheat,2019,Imports,"Tonnes, Thousands",0.0188,Tech,2025-12-10,OECD
+86,Wheat,2020,Imports,"Tonnes, Thousands",0.0200,Tech,2025-12-10,OECD
+87,Wheat,2021,Imports,"Tonnes, Thousands",0.0500,Tech,2025-12-10,OECD
+88,Wheat,2022,Imports,"Tonnes, Thousands",0.0400,Tech,2025-12-10,OECD
+89,Wheat,2023,Imports,"Tonnes, Thousands",1.0600,Tech,2025-12-10,OECD
+90,Wheat,2024,Imports,"Tonnes, Thousands",1.1600,Tech,2025-12-10,OECD
+91,Wheat,2025,Imports,"Tonnes, Thousands",1.1431,Tech,2025-12-10,OECD
+92,Wheat,2026,Imports,"Tonnes, Thousands",1.1804,Tech,2025-12-10,OECD
+93,Wheat,2027,Imports,"Tonnes, Thousands",1.1898,Tech,2025-12-10,OECD
+94,Wheat,2028,Imports,"Tonnes, Thousands",1.1117,Tech,2025-12-10,OECD
+95,Wheat,2029,Imports,"Tonnes, Thousands",1.0544,Tech,2025-12-10,OECD
+96,Wheat,2030,Imports,"Tonnes, Thousands",1.0032,Tech,2025-12-10,OECD
+97,Wheat,2031,Imports,"Tonnes, Thousands",0.9444,Tech,2025-12-10,OECD
+98,Wheat,2032,Imports,"Tonnes, Thousands",0.8837,Tech,2025-12-10,OECD
+99,Wheat,2033,Imports,"Tonnes, Thousands",0.8261,Tech,2025-12-10,OECD
+100,Wheat,2034,Imports,"Tonnes, Thousands",0.7745,Tech,2025-12-10,OECD
+101,Wheat,2010,Consumption,"Tonnes, Thousands",800.2793,Tech,2025-12-10,OECD
+102,Wheat,2011,Consumption,"Tonnes, Thousands",820.0435,Tech,2025-12-10,OECD
+103,Wheat,2012,Consumption,"Tonnes, Thousands",845.8508,Tech,2025-12-10,OECD
+104,Wheat,2013,Consumption,"Tonnes, Thousands",909.9706,Tech,2025-12-10,OECD
+105,Wheat,2014,Consumption,"Tonnes, Thousands",905.0001,Tech,2025-12-10,OECD
+106,Wheat,2015,Consumption,"Tonnes, Thousands",889.2968,Tech,2025-12-10,OECD
+107,Wheat,2016,Consumption,"Tonnes, Thousands",1040.5556,Tech,2025-12-10,OECD
+108,Wheat,2017,Consumption,"Tonnes, Thousands",951.0790,Tech,2025-12-10,OECD
+109,Wheat,2018,Consumption,"Tonnes, Thousands",978.9315,Tech,2025-12-10,OECD
+110,Wheat,2019,Consumption,"Tonnes, Thousands",976.0994,Tech,2025-12-10,OECD
+111,Wheat,2020,Consumption,"Tonnes, Thousands",1023.3237,Tech,2025-12-10,OECD
+112,Wheat,2021,Consumption,"Tonnes, Thousands",1055.8110,Tech,2025-12-10,OECD
+113,Wheat,2022,Consumption,"Tonnes, Thousands",1079.2219,Tech,2025-12-10,OECD
+114,Wheat,2023,Consumption,"Tonnes, Thousands",1126.8651,Tech,2025-12-10,OECD
+115,Wheat,2024,Consumption,"Tonnes, Thousands",1123.1899,Tech,2025-12-10,OECD
+116,Wheat,2025,Consumption,"Tonnes, Thousands",1144.0609,Tech,2025-12-10,OECD
+117,Wheat,2026,Consumption,"Tonnes, Thousands",1166.1488,Tech,2025-12-10,OECD
+118,Wheat,2027,Consumption,"Tonnes, Thousands",1187.9188,Tech,2025-12-10,OECD
+119,Wheat,2028,Consumption,"Tonnes, Thousands",1208.1852,Tech,2025-12-10,OECD
+120,Wheat,2029,Consumption,"Tonnes, Thousands",1228.5708,Tech,2025-12-10,OECD
+121,Wheat,2030,Consumption,"Tonnes, Thousands",1248.8191,Tech,2025-12-10,OECD
+122,Wheat,2031,Consumption,"Tonnes, Thousands",1268.7195,Tech,2025-12-10,OECD
+123,Wheat,2032,Consumption,"Tonnes, Thousands",1287.9339,Tech,2025-12-10,OECD
+124,Wheat,2033,Consumption,"Tonnes, Thousands",1307.0085,Tech,2025-12-10,OECD
+125,Wheat,2034,Consumption,"Tonnes, Thousands",1325.4953,Tech,2025-12-10,OECD
+126,Wheat,2010,Exports,"Tonnes, Thousands",0.6095,Tech,2025-12-10,OECD
+127,Wheat,2011,Exports,"Tonnes, Thousands",8.7138,Tech,2025-12-10,OECD
+128,Wheat,2012,Exports,"Tonnes, Thousands",68.0100,Tech,2025-12-10,OECD
+129,Wheat,2013,Exports,"Tonnes, Thousands",60.2710,Tech,2025-12-10,OECD
+130,Wheat,2014,Exports,"Tonnes, Thousands",33.8215,Tech,2025-12-10,OECD
+131,Wheat,2015,Exports,"Tonnes, Thousands",11.2175,Tech,2025-12-10,OECD
+132,Wheat,2016,Exports,"Tonnes, Thousands",4.8627,Tech,2025-12-10,OECD
+133,Wheat,2017,Exports,"Tonnes, Thousands",5.5521,Tech,2025-12-10,OECD
+134,Wheat,2018,Exports,"Tonnes, Thousands",4.7959,Tech,2025-12-10,OECD
+135,Wheat,2019,Exports,"Tonnes, Thousands",4.9194,Tech,2025-12-10,OECD
+136,Wheat,2020,Exports,"Tonnes, Thousands",25.3063,Tech,2025-12-10,OECD
+137,Wheat,2021,Exports,"Tonnes, Thousands",80.1090,Tech,2025-12-10,OECD
+138,Wheat,2022,Exports,"Tonnes, Thousands",53.2381,Tech,2025-12-10,OECD
+139,Wheat,2023,Exports,"Tonnes, Thousands",2.7349,Tech,2025-12-10,OECD
+140,Wheat,2024,Exports,"Tonnes, Thousands",2.8901,Tech,2025-12-10,OECD
+141,Wheat,2025,Exports,"Tonnes, Thousands",3.0312,Tech,2025-12-10,OECD
+142,Wheat,2026,Exports,"Tonnes, Thousands",2.6848,Tech,2025-12-10,OECD
+143,Wheat,2027,Exports,"Tonnes, Thousands",2.4362,Tech,2025-12-10,OECD
+144,Wheat,2028,Exports,"Tonnes, Thousands",2.1138,Tech,2025-12-10,OECD
+145,Wheat,2029,Exports,"Tonnes, Thousands",1.7504,Tech,2025-12-10,OECD
+146,Wheat,2030,Exports,"Tonnes, Thousands",1.3610,Tech,2025-12-10,OECD
+147,Wheat,2031,Exports,"Tonnes, Thousands",0.9768,Tech,2025-12-10,OECD
+148,Wheat,2032,Exports,"Tonnes, Thousands",0.6386,Tech,2025-12-10,OECD
+149,Wheat,2033,Exports,"Tonnes, Thousands",0.4055,Tech,2025-12-10,OECD
+150,Wheat,2034,Exports,"Tonnes, Thousands",0.3260,Tech,2025-12-10,OECD
+151,Wheat,2010,Ending stocks,"Tonnes, Thousands",170.0000,Tech,2025-12-10,OECD
+152,Wheat,2011,Ending stocks,"Tonnes, Thousands",210.0000,Tech,2025-12-10,OECD
+153,Wheat,2012,Ending stocks,"Tonnes, Thousands",245.0000,Tech,2025-12-10,OECD
+154,Wheat,2013,Ending stocks,"Tonnes, Thousands",210.0000,Tech,2025-12-10,OECD
+155,Wheat,2014,Ending stocks,"Tonnes, Thousands",230.0000,Tech,2025-12-10,OECD
+156,Wheat,2015,Ending stocks,"Tonnes, Thousands",200.0000,Tech,2025-12-10,OECD
+157,Wheat,2016,Ending stocks,"Tonnes, Thousands",135.0000,Tech,2025-12-10,OECD
+158,Wheat,2017,Ending stocks,"Tonnes, Thousands",180.0000,Tech,2025-12-10,OECD
+159,Wheat,2018,Ending stocks,"Tonnes, Thousands",195.0000,Tech,2025-12-10,OECD
+160,Wheat,2019,Ending stocks,"Tonnes, Thousands",250.0000,Tech,2025-12-10,OECD
+161,Wheat,2020,Ending stocks,"Tonnes, Thousands",280.0000,Tech,2025-12-10,OECD
+162,Wheat,2021,Ending stocks,"Tonnes, Thousands",240.0000,Tech,2025-12-10,OECD
+163,Wheat,2022,Ending stocks,"Tonnes, Thousands",185.0000,Tech,2025-12-10,OECD
+164,Wheat,2023,Ending stocks,"Tonnes, Thousands",162.0000,Tech,2025-12-10,OECD
+165,Wheat,2024,Ending stocks,"Tonnes, Thousands",170.0000,Tech,2025-12-10,OECD
+166,Wheat,2025,Ending stocks,"Tonnes, Thousands",166.3576,Tech,2025-12-10,OECD
+167,Wheat,2026,Ending stocks,"Tonnes, Thousands",159.6901,Tech,2025-12-10,OECD
+168,Wheat,2027,Ending stocks,"Tonnes, Thousands",153.9369,Tech,2025-12-10,OECD
+169,Wheat,2028,Ending stocks,"Tonnes, Thousands",150.6088,Tech,2025-12-10,OECD
+170,Wheat,2029,Ending stocks,"Tonnes, Thousands",147.8499,Tech,2025-12-10,OECD
+171,Wheat,2030,Ending stocks,"Tonnes, Thousands",145.0861,Tech,2025-12-10,OECD
+172,Wheat,2031,Ending stocks,"Tonnes, Thousands",142.6650,Tech,2025-12-10,OECD
+173,Wheat,2032,Ending stocks,"Tonnes, Thousands",140.6989,Tech,2025-12-10,OECD
+174,Wheat,2033,Ending stocks,"Tonnes, Thousands",138.7807,Tech,2025-12-10,OECD
+175,Wheat,2034,Ending stocks,"Tonnes, Thousands",137.0566,Tech,2025-12-10,OECD
+176,Wheat,2010,Area harvested,"Hectares, Thousands",284.5740,Tech,2025-12-10,OECD
+177,Wheat,2011,Area harvested,"Hectares, Thousands",290.6860,Tech,2025-12-10,OECD
+178,Wheat,2012,Area harvested,"Hectares, Thousands",298.6000,Tech,2025-12-10,OECD
+179,Wheat,2013,Area harvested,"Hectares, Thousands",299.9534,Tech,2025-12-10,OECD
+180,Wheat,2014,Area harvested,"Hectares, Thousands",304.7318,Tech,2025-12-10,OECD
+181,Wheat,2015,Area harvested,"Hectares, Thousands",314.6560,Tech,2025-12-10,OECD
+182,Wheat,2016,Area harvested,"Hectares, Thousands",304.1780,Tech,2025-12-10,OECD
+183,Wheat,2017,Area harvested,"Hectares, Thousands",307.8518,Tech,2025-12-10,OECD
+184,Wheat,2018,Area harvested,"Hectares, Thousands",296.5059,Tech,2025-12-10,OECD
+185,Wheat,2019,Area harvested,"Hectares, Thousands",293.1870,Tech,2025-12-10,OECD
+186,Wheat,2020,Area harvested,"Hectares, Thousands",313.5701,Tech,2025-12-10,OECD
+187,Wheat,2021,Area harvested,"Hectares, Thousands",311.2515,Tech,2025-12-10,OECD
+188,Wheat,2022,Area harvested,"Hectares, Thousands",304.5850,Tech,2025-12-10,OECD
+189,Wheat,2023,Area harvested,"Hectares, Thousands",314.0070,Tech,2025-12-10,OECD
+190,Wheat,2024,Area harvested,"Hectares, Thousands",317.8099,Tech,2025-12-10,OECD
+191,Wheat,2025,Area harvested,"Hectares, Thousands",317.3969,Tech,2025-12-10,OECD
+192,Wheat,2026,Area harvested,"Hectares, Thousands",318.4433,Tech,2025-12-10,OECD
+193,Wheat,2027,Area harvested,"Hectares, Thousands",319.6690,Tech,2025-12-10,OECD
+194,Wheat,2028,Area harvested,"Hectares, Thousands",320.9763,Tech,2025-12-10,OECD
+195,Wheat,2029,Area harvested,"Hectares, Thousands",322.1870,Tech,2025-12-10,OECD
+196,Wheat,2030,Area harvested,"Hectares, Thousands",323.3129,Tech,2025-12-10,OECD
+197,Wheat,2031,Area harvested,"Hectares, Thousands",324.4601,Tech,2025-12-10,OECD
+198,Wheat,2032,Area harvested,"Hectares, Thousands",325.5702,Tech,2025-12-10,OECD
+199,Wheat,2033,Area harvested,"Hectares, Thousands",326.6566,Tech,2025-12-10,OECD
+200,Wheat,2034,Area harvested,"Hectares, Thousands",327.7135,Tech,2025-12-10,OECD
+201,Wheat,2010,Feed,"Tonnes, Thousands",25.0000,Tech,2025-12-10,OECD
+202,Wheat,2011,Feed,"Tonnes, Thousands",25.0000,Tech,2025-12-10,OECD
+203,Wheat,2012,Feed,"Tonnes, Thousands",30.0000,Tech,2025-12-10,OECD
+204,Wheat,2013,Feed,"Tonnes, Thousands",45.0000,Tech,2025-12-10,OECD
+205,Wheat,2014,Feed,"Tonnes, Thousands",50.0000,Tech,2025-12-10,OECD
+206,Wheat,2015,Feed,"Tonnes, Thousands",50.0000,Tech,2025-12-10,OECD
+207,Wheat,2016,Feed,"Tonnes, Thousands",50.0000,Tech,2025-12-10,OECD
+208,Wheat,2017,Feed,"Tonnes, Thousands",50.0000,Tech,2025-12-10,OECD
+209,Wheat,2018,Feed,"Tonnes, Thousands",49.9619,Tech,2025-12-10,OECD
+210,Wheat,2019,Feed,"Tonnes, Thousands",59.9120,Tech,2025-12-10,OECD
+211,Wheat,2020,Feed,"Tonnes, Thousands",69.8441,Tech,2025-12-10,OECD
+212,Wheat,2021,Feed,"Tonnes, Thousands",69.7726,Tech,2025-12-10,OECD
+213,Wheat,2022,Feed,"Tonnes, Thousands",71.7145,Tech,2025-12-10,OECD
+214,Wheat,2023,Feed,"Tonnes, Thousands",75.5821,Tech,2025-12-10,OECD
+215,Wheat,2024,Feed,"Tonnes, Thousands",71.5068,Tech,2025-12-10,OECD
+216,Wheat,2025,Feed,"Tonnes, Thousands",75.1176,Tech,2025-12-10,OECD
+217,Wheat,2026,Feed,"Tonnes, Thousands",77.0895,Tech,2025-12-10,OECD
+218,Wheat,2027,Feed,"Tonnes, Thousands",79.0961,Tech,2025-12-10,OECD
+219,Wheat,2028,Feed,"Tonnes, Thousands",81.6072,Tech,2025-12-10,OECD
+220,Wheat,2029,Feed,"Tonnes, Thousands",83.9970,Tech,2025-12-10,OECD
+221,Wheat,2030,Feed,"Tonnes, Thousands",86.0653,Tech,2025-12-10,OECD
+222,Wheat,2031,Feed,"Tonnes, Thousands",88.5622,Tech,2025-12-10,OECD
+223,Wheat,2032,Feed,"Tonnes, Thousands",90.8754,Tech,2025-12-10,OECD
+224,Wheat,2033,Feed,"Tonnes, Thousands",93.3118,Tech,2025-12-10,OECD
+225,Wheat,2034,Feed,"Tonnes, Thousands",95.7858,Tech,2025-12-10,OECD
+226,Wheat,2010,Food availability,"Tonnes, Thousands",721.0000,Tech,2025-12-10,OECD
+227,Wheat,2011,Food availability,"Tonnes, Thousands",730.0000,Tech,2025-12-10,OECD
+228,Wheat,2012,Food availability,"Tonnes, Thousands",745.0000,Tech,2025-12-10,OECD
+229,Wheat,2013,Food availability,"Tonnes, Thousands",756.0000,Tech,2025-12-10,OECD
+230,Wheat,2014,Food availability,"Tonnes, Thousands",769.0000,Tech,2025-12-10,OECD
+231,Wheat,2015,Food availability,"Tonnes, Thousands",782.0000,Tech,2025-12-10,OECD
+232,Wheat,2016,Food availability,"Tonnes, Thousands",792.0000,Tech,2025-12-10,OECD
+233,Wheat,2017,Food availability,"Tonnes, Thousands",801.0000,Tech,2025-12-10,OECD
+234,Wheat,2018,Food availability,"Tonnes, Thousands",810.3821,Tech,2025-12-10,OECD
+235,Wheat,2019,Food availability,"Tonnes, Thousands",822.7921,Tech,2025-12-10,OECD
+236,Wheat,2020,Food availability,"Tonnes, Thousands",834.1375,Tech,2025-12-10,OECD
+237,Wheat,2021,Food availability,"Tonnes, Thousands",848.2361,Tech,2025-12-10,OECD
+238,Wheat,2022,Food availability,"Tonnes, Thousands",858.5823,Tech,2025-12-10,OECD
+239,Wheat,2023,Food availability,"Tonnes, Thousands",888.0892,Tech,2025-12-10,OECD
+240,Wheat,2024,Food availability,"Tonnes, Thousands",900.7866,Tech,2025-12-10,OECD
+241,Wheat,2025,Food availability,"Tonnes, Thousands",914.4593,Tech,2025-12-10,OECD
+242,Wheat,2026,Food availability,"Tonnes, Thousands",932.0559,Tech,2025-12-10,OECD
+243,Wheat,2027,Food availability,"Tonnes, Thousands",950.3058,Tech,2025-12-10,OECD
+244,Wheat,2028,Food availability,"Tonnes, Thousands",966.3157,Tech,2025-12-10,OECD
+245,Wheat,2029,Food availability,"Tonnes, Thousands",982.4214,Tech,2025-12-10,OECD
+246,Wheat,2030,Food availability,"Tonnes, Thousands",998.6607,Tech,2025-12-10,OECD
+247,Wheat,2031,Food availability,"Tonnes, Thousands",1014.0707,Tech,2025-12-10,OECD
+248,Wheat,2032,Food availability,"Tonnes, Thousands",1028.9599,Tech,2025-12-10,OECD
+249,Wheat,2033,Food availability,"Tonnes, Thousands",1043.5552,Tech,2025-12-10,OECD
+250,Wheat,2034,Food availability,"Tonnes, Thousands",1057.5278,Tech,2025-12-10,OECD
+251,Wheat,2010,Food,"Tonnes, Thousands",703.1298,Tech,2025-12-10,OECD
+252,Wheat,2011,Food,"Tonnes, Thousands",711.8571,Tech,2025-12-10,OECD
+253,Wheat,2012,Food,"Tonnes, Thousands",726.3929,Tech,2025-12-10,OECD
+254,Wheat,2013,Food,"Tonnes, Thousands",736.7053,Tech,2025-12-10,OECD
+255,Wheat,2014,Food,"Tonnes, Thousands",748.8946,Tech,2025-12-10,OECD
+256,Wheat,2015,Food,"Tonnes, Thousands",761.7003,Tech,2025-12-10,OECD
+257,Wheat,2016,Food,"Tonnes, Thousands",770.9963,Tech,2025-12-10,OECD
+258,Wheat,2017,Food,"Tonnes, Thousands",779.4693,Tech,2025-12-10,OECD
+259,Wheat,2018,Food,"Tonnes, Thousands",783.8951,Tech,2025-12-10,OECD
+260,Wheat,2019,Food,"Tonnes, Thousands",796.1978,Tech,2025-12-10,OECD
+261,Wheat,2020,Food,"Tonnes, Thousands",807.0316,Tech,2025-12-10,OECD
+262,Wheat,2021,Food,"Tonnes, Thousands",820.9708,Tech,2025-12-10,OECD
+263,Wheat,2022,Food,"Tonnes, Thousands",830.9062,Tech,2025-12-10,OECD
+264,Wheat,2023,Food,"Tonnes, Thousands",859.3461,Tech,2025-12-10,OECD
+265,Wheat,2024,Food,"Tonnes, Thousands",871.4549,Tech,2025-12-10,OECD
+266,Wheat,2025,Food,"Tonnes, Thousands",884.6811,Tech,2025-12-10,OECD
+267,Wheat,2026,Food,"Tonnes, Thousands",901.7043,Tech,2025-12-10,OECD
+268,Wheat,2027,Food,"Tonnes, Thousands",919.3597,Tech,2025-12-10,OECD
+269,Wheat,2028,Food,"Tonnes, Thousands",934.8479,Tech,2025-12-10,OECD
+270,Wheat,2029,Food,"Tonnes, Thousands",950.4288,Tech,2025-12-10,OECD
+271,Wheat,2030,Food,"Tonnes, Thousands",966.1390,Tech,2025-12-10,OECD
+272,Wheat,2031,Food,"Tonnes, Thousands",981.0471,Tech,2025-12-10,OECD
+273,Wheat,2032,Food,"Tonnes, Thousands",995.4511,Tech,2025-12-10,OECD
+274,Wheat,2033,Food,"Tonnes, Thousands",1009.5710,Tech,2025-12-10,OECD
+275,Wheat,2034,Food,"Tonnes, Thousands",1023.0885,Tech,2025-12-10,OECD
+276,Wheat,2010,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+277,Wheat,2011,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+278,Wheat,2012,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+279,Wheat,2013,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+280,Wheat,2014,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+281,Wheat,2015,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+282,Wheat,2016,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+283,Wheat,2017,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+284,Wheat,2018,Biofuel use,"Tonnes, Thousands",0.7495,Tech,2025-12-10,OECD
+285,Wheat,2019,Biofuel use,"Tonnes, Thousands",1.4381,Tech,2025-12-10,OECD
+286,Wheat,2020,Biofuel use,"Tonnes, Thousands",2.3362,Tech,2025-12-10,OECD
+287,Wheat,2021,Biofuel use,"Tonnes, Thousands",3.6893,Tech,2025-12-10,OECD
+288,Wheat,2022,Biofuel use,"Tonnes, Thousands",4.4900,Tech,2025-12-10,OECD
+289,Wheat,2023,Biofuel use,"Tonnes, Thousands",6.2119,Tech,2025-12-10,OECD
+290,Wheat,2024,Biofuel use,"Tonnes, Thousands",7.7142,Tech,2025-12-10,OECD
+291,Wheat,2025,Biofuel use,"Tonnes, Thousands",9.3773,Tech,2025-12-10,OECD
+292,Wheat,2026,Biofuel use,"Tonnes, Thousands",10.2356,Tech,2025-12-10,OECD
+293,Wheat,2027,Biofuel use,"Tonnes, Thousands",10.0047,Tech,2025-12-10,OECD
+294,Wheat,2028,Biofuel use,"Tonnes, Thousands",9.9090,Tech,2025-12-10,OECD
+295,Wheat,2029,Biofuel use,"Tonnes, Thousands",9.8856,Tech,2025-12-10,OECD
+296,Wheat,2030,Biofuel use,"Tonnes, Thousands",9.9321,Tech,2025-12-10,OECD
+297,Wheat,2031,Biofuel use,"Tonnes, Thousands",10.0310,Tech,2025-12-10,OECD
+298,Wheat,2032,Biofuel use,"Tonnes, Thousands",10.1686,Tech,2025-12-10,OECD
+299,Wheat,2033,Biofuel use,"Tonnes, Thousands",10.3357,Tech,2025-12-10,OECD
+300,Wheat,2034,Biofuel use,"Tonnes, Thousands",10.5264,Tech,2025-12-10,OECD
+301,Wheat,2010,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+302,Wheat,2011,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+303,Wheat,2012,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+304,Wheat,2013,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+305,Wheat,2014,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+306,Wheat,2015,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+307,Wheat,2016,Other use,"Tonnes, Thousands",72.3466,Tech,2025-12-10,OECD
+308,Wheat,2017,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+309,Wheat,2018,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+310,Wheat,2019,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+311,Wheat,2020,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+312,Wheat,2021,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+313,Wheat,2022,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+314,Wheat,2023,Other use,"Tonnes, Thousands",8.0123,Tech,2025-12-10,OECD
+315,Wheat,2024,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+316,Wheat,2025,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+317,Wheat,2026,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+318,Wheat,2027,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+319,Wheat,2028,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+320,Wheat,2029,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+321,Wheat,2030,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+322,Wheat,2031,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+323,Wheat,2032,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+324,Wheat,2033,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+325,Wheat,2034,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+326,Wheat,2010,Yield,Tonnes per hectare,0.0284,Tech,2025-12-10,OECD
+327,Wheat,2011,Yield,Tonnes per hectare,0.0299,Tech,2025-12-10,OECD
+328,Wheat,2012,Yield,Tonnes per hectare,0.0318,Tech,2025-12-10,OECD
+329,Wheat,2013,Yield,Tonnes per hectare,0.0312,Tech,2025-12-10,OECD
+330,Wheat,2014,Yield,Tonnes per hectare,0.0315,Tech,2025-12-10,OECD
+331,Wheat,2015,Yield,Tonnes per hectare,0.0275,Tech,2025-12-10,OECD
+332,Wheat,2016,Yield,Tonnes per hectare,0.0303,Tech,2025-12-10,OECD
+333,Wheat,2017,Yield,Tonnes per hectare,0.0320,Tech,2025-12-10,OECD
+334,Wheat,2018,Yield,Tonnes per hectare,0.0337,Tech,2025-12-10,OECD
+335,Wheat,2019,Yield,Tonnes per hectare,0.0353,Tech,2025-12-10,OECD
+336,Wheat,2020,Yield,Tonnes per hectare,0.0344,Tech,2025-12-10,OECD
+337,Wheat,2021,Yield,Tonnes per hectare,0.0352,Tech,2025-12-10,OECD
+338,Wheat,2022,Yield,Tonnes per hectare,0.0354,Tech,2025-12-10,OECD
+339,Wheat,2023,Yield,Tonnes per hectare,0.0352,Tech,2025-12-10,OECD
+340,Wheat,2024,Yield,Tonnes per hectare,0.0356,Tech,2025-12-10,OECD
+341,Wheat,2025,Yield,Tonnes per hectare,0.0360,Tech,2025-12-10,OECD
+342,Wheat,2026,Yield,Tonnes per hectare,0.0365,Tech,2025-12-10,OECD
+343,Wheat,2027,Yield,Tonnes per hectare,0.0370,Tech,2025-12-10,OECD
+344,Wheat,2028,Yield,Tonnes per hectare,0.0376,Tech,2025-12-10,OECD
+345,Wheat,2029,Yield,Tonnes per hectare,0.0381,Tech,2025-12-10,OECD
+346,Wheat,2030,Yield,Tonnes per hectare,0.0386,Tech,2025-12-10,OECD
+347,Wheat,2031,Yield,Tonnes per hectare,0.0390,Tech,2025-12-10,OECD
+348,Wheat,2032,Yield,Tonnes per hectare,0.0395,Tech,2025-12-10,OECD
+349,Wheat,2033,Yield,Tonnes per hectare,0.0399,Tech,2025-12-10,OECD
+350,Wheat,2034,Yield,Tonnes per hectare,0.0404,Tech,2025-12-10,OECD
+351,Wheat,2010,Producer price,National currency per tonne,137.5341,Tech,2025-12-10,OECD
+352,Wheat,2011,Producer price,National currency per tonne,144.1718,Tech,2025-12-10,OECD
+353,Wheat,2012,Producer price,National currency per tonne,168.5970,Tech,2025-12-10,OECD
+354,Wheat,2013,Producer price,National currency per tonne,176.8332,Tech,2025-12-10,OECD
+355,Wheat,2014,Producer price,National currency per tonne,158.5669,Tech,2025-12-10,OECD
+356,Wheat,2015,Producer price,National currency per tonne,139.4481,Tech,2025-12-10,OECD
+357,Wheat,2016,Producer price,National currency per tonne,138.5943,Tech,2025-12-10,OECD
+358,Wheat,2017,Producer price,National currency per tonne,149.3555,Tech,2025-12-10,OECD
+359,Wheat,2018,Producer price,National currency per tonne,162.4725,Tech,2025-12-10,OECD
+360,Wheat,2019,Producer price,National currency per tonne,155.8315,Tech,2025-12-10,OECD
+361,Wheat,2020,Producer price,National currency per tonne,189.2031,Tech,2025-12-10,OECD
+362,Wheat,2021,Producer price,National currency per tonne,258.5691,Tech,2025-12-10,OECD
+363,Wheat,2022,Producer price,National currency per tonne,300.2934,Tech,2025-12-10,OECD
+364,Wheat,2023,Producer price,National currency per tonne,246.8839,Tech,2025-12-10,OECD
+365,Wheat,2024,Producer price,National currency per tonne,215.4350,Tech,2025-12-10,OECD
+366,Wheat,2025,Producer price,National currency per tonne,213.6416,Tech,2025-12-10,OECD
+367,Wheat,2026,Producer price,National currency per tonne,228.3353,Tech,2025-12-10,OECD
+368,Wheat,2027,Producer price,National currency per tonne,245.9774,Tech,2025-12-10,OECD
+369,Wheat,2028,Producer price,National currency per tonne,261.3815,Tech,2025-12-10,OECD
+370,Wheat,2029,Producer price,National currency per tonne,276.0505,Tech,2025-12-10,OECD
+371,Wheat,2030,Producer price,National currency per tonne,291.4404,Tech,2025-12-10,OECD
+372,Wheat,2031,Producer price,National currency per tonne,306.9220,Tech,2025-12-10,OECD
+373,Wheat,2032,Producer price,National currency per tonne,322.0494,Tech,2025-12-10,OECD
+374,Wheat,2033,Producer price,National currency per tonne,337.5839,Tech,2025-12-10,OECD
+375,Wheat,2034,Producer price,National currency per tonne,353.3138,Tech,2025-12-10,OECD
+376,Wheat,2010,Human consumption,Kilogrammes per person,0.5655,Tech,2025-12-10,OECD
+377,Wheat,2011,Human consumption,Kilogrammes per person,0.5644,Tech,2025-12-10,OECD
+378,Wheat,2012,Human consumption,Kilogrammes per person,0.5681,Tech,2025-12-10,OECD
+379,Wheat,2013,Human consumption,Kilogrammes per person,0.5685,Tech,2025-12-10,OECD
+380,Wheat,2014,Human consumption,Kilogrammes per person,0.5707,Tech,2025-12-10,OECD
+381,Wheat,2015,Human consumption,Kilogrammes per person,0.5736,Tech,2025-12-10,OECD
+382,Wheat,2016,Human consumption,Kilogrammes per person,0.5737,Tech,2025-12-10,OECD
+383,Wheat,2017,Human consumption,Kilogrammes per person,0.5733,Tech,2025-12-10,OECD
+384,Wheat,2018,Human consumption,Kilogrammes per person,0.5702,Tech,2025-12-10,OECD
+385,Wheat,2019,Human consumption,Kilogrammes per person,0.5732,Tech,2025-12-10,OECD
+386,Wheat,2020,Human consumption,Kilogrammes per person,0.5754,Tech,2025-12-10,OECD
+387,Wheat,2021,Human consumption,Kilogrammes per person,0.5805,Tech,2025-12-10,OECD
+388,Wheat,2022,Human consumption,Kilogrammes per person,0.5829,Tech,2025-12-10,OECD
+389,Wheat,2023,Human consumption,Kilogrammes per person,0.5976,Tech,2025-12-10,OECD
+390,Wheat,2024,Human consumption,Kilogrammes per person,0.6006,Tech,2025-12-10,OECD
+391,Wheat,2025,Human consumption,Kilogrammes per person,0.6043,Tech,2025-12-10,OECD
+392,Wheat,2026,Human consumption,Kilogrammes per person,0.6107,Tech,2025-12-10,OECD
+393,Wheat,2027,Human consumption,Kilogrammes per person,0.6174,Tech,2025-12-10,OECD
+394,Wheat,2028,Human consumption,Kilogrammes per person,0.6226,Tech,2025-12-10,OECD
+395,Wheat,2029,Human consumption,Kilogrammes per person,0.6280,Tech,2025-12-10,OECD
+396,Wheat,2030,Human consumption,Kilogrammes per person,0.6335,Tech,2025-12-10,OECD
+397,Wheat,2031,Human consumption,Kilogrammes per person,0.6385,Tech,2025-12-10,OECD
+398,Wheat,2032,Human consumption,Kilogrammes per person,0.6432,Tech,2025-12-10,OECD
+399,Wheat,2033,Human consumption,Kilogrammes per person,0.6479,Tech,2025-12-10,OECD
+400,Wheat,2034,Human consumption,Kilogrammes per person,0.6522,Tech,2025-12-10,OECD
+401,Wheat,2010,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2176,Tech,2025-12-10,OECD
+402,Wheat,2011,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2284,Tech,2025-12-10,OECD
+403,Wheat,2012,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2334,Tech,2025-12-10,OECD
+404,Wheat,2013,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2263,Tech,2025-12-10,OECD
+405,Wheat,2014,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2355,Tech,2025-12-10,OECD
+406,Wheat,2015,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2445,Tech,2025-12-10,OECD
+407,Wheat,2016,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2317,Tech,2025-12-10,OECD
+408,Wheat,2017,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2333,Tech,2025-12-10,OECD
+409,Wheat,2018,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2331,Tech,2025-12-10,OECD
+410,Wheat,2019,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2498,Tech,2025-12-10,OECD
+411,Wheat,2020,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2785,Tech,2025-12-10,OECD
+412,Wheat,2021,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2666,Tech,2025-12-10,OECD
+413,Wheat,2022,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2755,Tech,2025-12-10,OECD
+414,Wheat,2023,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2789,Tech,2025-12-10,OECD
+415,Wheat,2024,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2797,Tech,2025-12-10,OECD
+416,Wheat,2025,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2940,Tech,2025-12-10,OECD
+417,Wheat,2026,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.2995,Tech,2025-12-10,OECD
+418,Wheat,2027,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.3056,Tech,2025-12-10,OECD
+419,Wheat,2028,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.3115,Tech,2025-12-10,OECD
+420,Wheat,2029,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.3170,Tech,2025-12-10,OECD
+421,Wheat,2030,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.3224,Tech,2025-12-10,OECD
+422,Wheat,2031,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.3278,Tech,2025-12-10,OECD
+423,Wheat,2032,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.3331,Tech,2025-12-10,OECD
+424,Wheat,2033,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.3383,Tech,2025-12-10,OECD
+425,Wheat,2034,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.3434,Tech,2025-12-10,OECD
+426,Wheat,2010,Total calorie availability,Kilocalories per person per day,4.8270,Tech,2025-12-10,OECD
+427,Wheat,2011,Total calorie availability,Kilocalories per person per day,4.7874,Tech,2025-12-10,OECD
+428,Wheat,2012,Total calorie availability,Kilocalories per person per day,4.8641,Tech,2025-12-10,OECD
+429,Wheat,2013,Total calorie availability,Kilocalories per person per day,4.9773,Tech,2025-12-10,OECD
+430,Wheat,2014,Total calorie availability,Kilocalories per person per day,5.0641,Tech,2025-12-10,OECD
+431,Wheat,2015,Total calorie availability,Kilocalories per person per day,5.0406,Tech,2025-12-10,OECD
+432,Wheat,2016,Total calorie availability,Kilocalories per person per day,5.1132,Tech,2025-12-10,OECD
+433,Wheat,2017,Total calorie availability,Kilocalories per person per day,5.2152,Tech,2025-12-10,OECD
+434,Wheat,2018,Total calorie availability,Kilocalories per person per day,5.2442,Tech,2025-12-10,OECD
+435,Wheat,2019,Total calorie availability,Kilocalories per person per day,5.1063,Tech,2025-12-10,OECD
+436,Wheat,2020,Total calorie availability,Kilocalories per person per day,5.0513,Tech,2025-12-10,OECD
+437,Wheat,2021,Total calorie availability,Kilocalories per person per day,5.0850,Tech,2025-12-10,OECD
+438,Wheat,2022,Total calorie availability,Kilocalories per person per day,5.2589,Tech,2025-12-10,OECD
+439,Wheat,2023,Total calorie availability,Kilocalories per person per day,5.3064,Tech,2025-12-10,OECD
+440,Wheat,2024,Total calorie availability,Kilocalories per person per day,5.3697,Tech,2025-12-10,OECD
+441,Wheat,2025,Total calorie availability,Kilocalories per person per day,5.4334,Tech,2025-12-10,OECD
+442,Wheat,2026,Total calorie availability,Kilocalories per person per day,5.4862,Tech,2025-12-10,OECD
+443,Wheat,2027,Total calorie availability,Kilocalories per person per day,5.5316,Tech,2025-12-10,OECD
+444,Wheat,2028,Total calorie availability,Kilocalories per person per day,5.5847,Tech,2025-12-10,OECD
+445,Wheat,2029,Total calorie availability,Kilocalories per person per day,5.6388,Tech,2025-12-10,OECD
+446,Wheat,2030,Total calorie availability,Kilocalories per person per day,5.6895,Tech,2025-12-10,OECD
+447,Wheat,2031,Total calorie availability,Kilocalories per person per day,5.7380,Tech,2025-12-10,OECD
+448,Wheat,2032,Total calorie availability,Kilocalories per person per day,5.7851,Tech,2025-12-10,OECD
+449,Wheat,2033,Total calorie availability,Kilocalories per person per day,5.8300,Tech,2025-12-10,OECD
+450,Wheat,2034,Total calorie availability,Kilocalories per person per day,5.8726,Tech,2025-12-10,OECD
+451,Wheat,2010,Food protein availability,Grammes per person per day,0.1532,Tech,2025-12-10,OECD
+452,Wheat,2011,Food protein availability,Grammes per person per day,0.1520,Tech,2025-12-10,OECD
+453,Wheat,2012,Food protein availability,Grammes per person per day,0.1545,Tech,2025-12-10,OECD
+454,Wheat,2013,Food protein availability,Grammes per person per day,0.1582,Tech,2025-12-10,OECD
+455,Wheat,2014,Food protein availability,Grammes per person per day,0.1609,Tech,2025-12-10,OECD
+456,Wheat,2015,Food protein availability,Grammes per person per day,0.1602,Tech,2025-12-10,OECD
+457,Wheat,2016,Food protein availability,Grammes per person per day,0.1625,Tech,2025-12-10,OECD
+458,Wheat,2017,Food protein availability,Grammes per person per day,0.1658,Tech,2025-12-10,OECD
+459,Wheat,2018,Food protein availability,Grammes per person per day,0.1666,Tech,2025-12-10,OECD
+460,Wheat,2019,Food protein availability,Grammes per person per day,0.1622,Tech,2025-12-10,OECD
+461,Wheat,2020,Food protein availability,Grammes per person per day,0.1605,Tech,2025-12-10,OECD
+462,Wheat,2021,Food protein availability,Grammes per person per day,0.1615,Tech,2025-12-10,OECD
+463,Wheat,2022,Food protein availability,Grammes per person per day,0.1669,Tech,2025-12-10,OECD
+464,Wheat,2023,Food protein availability,Grammes per person per day,0.1685,Tech,2025-12-10,OECD
+465,Wheat,2024,Food protein availability,Grammes per person per day,0.1705,Tech,2025-12-10,OECD
+466,Wheat,2025,Food protein availability,Grammes per person per day,0.1725,Tech,2025-12-10,OECD
+467,Wheat,2026,Food protein availability,Grammes per person per day,0.1742,Tech,2025-12-10,OECD
+468,Wheat,2027,Food protein availability,Grammes per person per day,0.1756,Tech,2025-12-10,OECD
+469,Wheat,2028,Food protein availability,Grammes per person per day,0.1773,Tech,2025-12-10,OECD
+470,Wheat,2029,Food protein availability,Grammes per person per day,0.1790,Tech,2025-12-10,OECD
+471,Wheat,2030,Food protein availability,Grammes per person per day,0.1806,Tech,2025-12-10,OECD
+472,Wheat,2031,Food protein availability,Grammes per person per day,0.1822,Tech,2025-12-10,OECD
+473,Wheat,2032,Food protein availability,Grammes per person per day,0.1836,Tech,2025-12-10,OECD
+474,Wheat,2033,Food protein availability,Grammes per person per day,0.1851,Tech,2025-12-10,OECD
+475,Wheat,2034,Food protein availability,Grammes per person per day,0.1864,Tech,2025-12-10,OECD
+476,Wheat,2010,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+477,Wheat,2011,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+478,Wheat,2012,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+479,Wheat,2013,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+480,Wheat,2014,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+481,Wheat,2015,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+482,Wheat,2016,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+483,Wheat,2017,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+484,Wheat,2018,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+485,Wheat,2019,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+486,Wheat,2020,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+487,Wheat,2021,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+488,Wheat,2022,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+489,Wheat,2023,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+490,Wheat,2024,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+491,Wheat,2025,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+492,Wheat,2026,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+493,Wheat,2027,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+494,Wheat,2028,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+495,Wheat,2029,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+496,Wheat,2030,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+497,Wheat,2031,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+498,Wheat,2032,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+499,Wheat,2033,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+500,Wheat,2034,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+501,Maize,2010,Production,"Tonnes, Thousands",217.2580,Tech,2025-12-10,OECD
+502,Maize,2011,Production,"Tonnes, Thousands",217.6000,Tech,2025-12-10,OECD
+503,Maize,2012,Production,"Tonnes, Thousands",222.6000,Tech,2025-12-10,OECD
+504,Maize,2013,Production,"Tonnes, Thousands",242.5951,Tech,2025-12-10,OECD
+505,Maize,2014,Production,"Tonnes, Thousands",241.7000,Tech,2025-12-10,OECD
+506,Maize,2015,Production,"Tonnes, Thousands",225.7000,Tech,2025-12-10,OECD
+507,Maize,2016,Production,"Tonnes, Thousands",259.0000,Tech,2025-12-10,OECD
+508,Maize,2017,Production,"Tonnes, Thousands",287.5300,Tech,2025-12-10,OECD
+509,Maize,2018,Production,"Tonnes, Thousands",277.1500,Tech,2025-12-10,OECD
+510,Maize,2019,Production,"Tonnes, Thousands",287.7000,Tech,2025-12-10,OECD
+511,Maize,2020,Production,"Tonnes, Thousands",316.4700,Tech,2025-12-10,OECD
+512,Maize,2021,Production,"Tonnes, Thousands",337.3000,Tech,2025-12-10,OECD
+513,Maize,2022,Production,"Tonnes, Thousands",380.8500,Tech,2025-12-10,OECD
+514,Maize,2023,Production,"Tonnes, Thousands",376.6500,Tech,2025-12-10,OECD
+515,Maize,2024,Production,"Tonnes, Thousands",380.0000,Tech,2025-12-10,OECD
+516,Maize,2025,Production,"Tonnes, Thousands",387.6118,Tech,2025-12-10,OECD
+517,Maize,2026,Production,"Tonnes, Thousands",396.6868,Tech,2025-12-10,OECD
+518,Maize,2027,Production,"Tonnes, Thousands",404.3127,Tech,2025-12-10,OECD
+519,Maize,2028,Production,"Tonnes, Thousands",412.5602,Tech,2025-12-10,OECD
+520,Maize,2029,Production,"Tonnes, Thousands",421.1879,Tech,2025-12-10,OECD
+521,Maize,2030,Production,"Tonnes, Thousands",429.7681,Tech,2025-12-10,OECD
+522,Maize,2031,Production,"Tonnes, Thousands",438.6105,Tech,2025-12-10,OECD
+523,Maize,2032,Production,"Tonnes, Thousands",447.8511,Tech,2025-12-10,OECD
+524,Maize,2033,Production,"Tonnes, Thousands",457.0644,Tech,2025-12-10,OECD
+525,Maize,2034,Production,"Tonnes, Thousands",466.5332,Tech,2025-12-10,OECD
+526,Maize,2010,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+527,Maize,2011,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+528,Maize,2012,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+529,Maize,2013,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+530,Maize,2014,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+531,Maize,2015,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+532,Maize,2016,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+533,Maize,2017,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+534,Maize,2018,Ethanol production from commodity,"Litres, Millions",0.3095,Tech,2025-12-10,OECD
+535,Maize,2019,Ethanol production from commodity,"Litres, Millions",0.5956,Tech,2025-12-10,OECD
+536,Maize,2020,Ethanol production from commodity,"Litres, Millions",0.9705,Tech,2025-12-10,OECD
+537,Maize,2021,Ethanol production from commodity,"Litres, Millions",1.5372,Tech,2025-12-10,OECD
+538,Maize,2022,Ethanol production from commodity,"Litres, Millions",1.8764,Tech,2025-12-10,OECD
+539,Maize,2023,Ethanol production from commodity,"Litres, Millions",2.7624,Tech,2025-12-10,OECD
+540,Maize,2024,Ethanol production from commodity,"Litres, Millions",8.3387,Tech,2025-12-10,OECD
+541,Maize,2025,Ethanol production from commodity,"Litres, Millions",10.0616,Tech,2025-12-10,OECD
+542,Maize,2026,Ethanol production from commodity,"Litres, Millions",10.9013,Tech,2025-12-10,OECD
+543,Maize,2027,Ethanol production from commodity,"Litres, Millions",10.5761,Tech,2025-12-10,OECD
+544,Maize,2028,Ethanol production from commodity,"Litres, Millions",10.3970,Tech,2025-12-10,OECD
+545,Maize,2029,Ethanol production from commodity,"Litres, Millions",10.2954,Tech,2025-12-10,OECD
+546,Maize,2030,Ethanol production from commodity,"Litres, Millions",10.2673,Tech,2025-12-10,OECD
+547,Maize,2031,Ethanol production from commodity,"Litres, Millions",10.2927,Tech,2025-12-10,OECD
+548,Maize,2032,Ethanol production from commodity,"Litres, Millions",10.3566,Tech,2025-12-10,OECD
+549,Maize,2033,Ethanol production from commodity,"Litres, Millions",10.4488,Tech,2025-12-10,OECD
+550,Maize,2034,Ethanol production from commodity,"Litres, Millions",10.5627,Tech,2025-12-10,OECD
+551,Maize,2010,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+552,Maize,2011,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+553,Maize,2012,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+554,Maize,2013,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+555,Maize,2014,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+556,Maize,2015,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+557,Maize,2016,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+558,Maize,2017,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+559,Maize,2018,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+560,Maize,2019,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+561,Maize,2020,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+562,Maize,2021,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+563,Maize,2022,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+564,Maize,2023,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+565,Maize,2024,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+566,Maize,2025,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+567,Maize,2026,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+568,Maize,2027,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+569,Maize,2028,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+570,Maize,2029,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+571,Maize,2030,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+572,Maize,2031,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+573,Maize,2032,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+574,Maize,2033,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+575,Maize,2034,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+576,Maize,2010,Imports,"Tonnes, Thousands",0.1631,Tech,2025-12-10,OECD
+577,Maize,2011,Imports,"Tonnes, Thousands",0.0388,Tech,2025-12-10,OECD
+578,Maize,2012,Imports,"Tonnes, Thousands",0.1000,Tech,2025-12-10,OECD
+579,Maize,2013,Imports,"Tonnes, Thousands",0.1000,Tech,2025-12-10,OECD
+580,Maize,2014,Imports,"Tonnes, Thousands",0.0400,Tech,2025-12-10,OECD
+581,Maize,2015,Imports,"Tonnes, Thousands",1.8680,Tech,2025-12-10,OECD
+582,Maize,2016,Imports,"Tonnes, Thousands",0.7747,Tech,2025-12-10,OECD
+583,Maize,2017,Imports,"Tonnes, Thousands",0.3069,Tech,2025-12-10,OECD
+584,Maize,2018,Imports,"Tonnes, Thousands",0.8602,Tech,2025-12-10,OECD
+585,Maize,2019,Imports,"Tonnes, Thousands",4.5851,Tech,2025-12-10,OECD
+586,Maize,2020,Imports,"Tonnes, Thousands",0.2300,Tech,2025-12-10,OECD
+587,Maize,2021,Imports,"Tonnes, Thousands",0.2100,Tech,2025-12-10,OECD
+588,Maize,2022,Imports,"Tonnes, Thousands",0.1673,Tech,2025-12-10,OECD
+589,Maize,2023,Imports,"Tonnes, Thousands",5.3900,Tech,2025-12-10,OECD
+590,Maize,2024,Imports,"Tonnes, Thousands",1.9000,Tech,2025-12-10,OECD
+591,Maize,2025,Imports,"Tonnes, Thousands",2.0173,Tech,2025-12-10,OECD
+592,Maize,2026,Imports,"Tonnes, Thousands",2.0651,Tech,2025-12-10,OECD
+593,Maize,2027,Imports,"Tonnes, Thousands",2.0300,Tech,2025-12-10,OECD
+594,Maize,2028,Imports,"Tonnes, Thousands",1.9721,Tech,2025-12-10,OECD
+595,Maize,2029,Imports,"Tonnes, Thousands",1.8985,Tech,2025-12-10,OECD
+596,Maize,2030,Imports,"Tonnes, Thousands",1.8298,Tech,2025-12-10,OECD
+597,Maize,2031,Imports,"Tonnes, Thousands",1.8048,Tech,2025-12-10,OECD
+598,Maize,2032,Imports,"Tonnes, Thousands",1.7510,Tech,2025-12-10,OECD
+599,Maize,2033,Imports,"Tonnes, Thousands",1.7030,Tech,2025-12-10,OECD
+600,Maize,2034,Imports,"Tonnes, Thousands",1.6725,Tech,2025-12-10,OECD
+601,Maize,2010,Consumption,"Tonnes, Thousands",169.9740,Tech,2025-12-10,OECD
+602,Maize,2011,Consumption,"Tonnes, Thousands",177.0169,Tech,2025-12-10,OECD
+603,Maize,2012,Consumption,"Tonnes, Thousands",172.0187,Tech,2025-12-10,OECD
+604,Maize,2013,Consumption,"Tonnes, Thousands",198.0138,Tech,2025-12-10,OECD
+605,Maize,2014,Consumption,"Tonnes, Thousands",227.0042,Tech,2025-12-10,OECD
+606,Maize,2015,Consumption,"Tonnes, Thousands",228.0022,Tech,2025-12-10,OECD
+607,Maize,2016,Consumption,"Tonnes, Thousands",255.0018,Tech,2025-12-10,OECD
+608,Maize,2017,Consumption,"Tonnes, Thousands",275.0020,Tech,2025-12-10,OECD
+609,Maize,2018,Consumption,"Tonnes, Thousands",272.0304,Tech,2025-12-10,OECD
+610,Maize,2019,Consumption,"Tonnes, Thousands",291.0191,Tech,2025-12-10,OECD
+611,Maize,2020,Consumption,"Tonnes, Thousands",294.2190,Tech,2025-12-10,OECD
+612,Maize,2021,Consumption,"Tonnes, Thousands",298.4157,Tech,2025-12-10,OECD
+613,Maize,2022,Consumption,"Tonnes, Thousands",344.4173,Tech,2025-12-10,OECD
+614,Maize,2023,Consumption,"Tonnes, Thousands",365.1559,Tech,2025-12-10,OECD
+615,Maize,2024,Consumption,"Tonnes, Thousands",363.3185,Tech,2025-12-10,OECD
+616,Maize,2025,Consumption,"Tonnes, Thousands",374.7137,Tech,2025-12-10,OECD
+617,Maize,2026,Consumption,"Tonnes, Thousands",385.9686,Tech,2025-12-10,OECD
+618,Maize,2027,Consumption,"Tonnes, Thousands",395.0404,Tech,2025-12-10,OECD
+619,Maize,2028,Consumption,"Tonnes, Thousands",404.9101,Tech,2025-12-10,OECD
+620,Maize,2029,Consumption,"Tonnes, Thousands",414.8304,Tech,2025-12-10,OECD
+621,Maize,2030,Consumption,"Tonnes, Thousands",424.3969,Tech,2025-12-10,OECD
+622,Maize,2031,Consumption,"Tonnes, Thousands",434.5842,Tech,2025-12-10,OECD
+623,Maize,2032,Consumption,"Tonnes, Thousands",444.5728,Tech,2025-12-10,OECD
+624,Maize,2033,Consumption,"Tonnes, Thousands",454.5883,Tech,2025-12-10,OECD
+625,Maize,2034,Consumption,"Tonnes, Thousands",464.6535,Tech,2025-12-10,OECD
+626,Maize,2010,Exports,"Tonnes, Thousands",33.7518,Tech,2025-12-10,OECD
+627,Maize,2011,Exports,"Tonnes, Thousands",44.9233,Tech,2025-12-10,OECD
+628,Maize,2012,Exports,"Tonnes, Thousands",49.8053,Tech,2025-12-10,OECD
+629,Maize,2013,Exports,"Tonnes, Thousands",38.9182,Tech,2025-12-10,OECD
+630,Maize,2014,Exports,"Tonnes, Thousands",12.0085,Tech,2025-12-10,OECD
+631,Maize,2015,Exports,"Tonnes, Thousands",6.3090,Tech,2025-12-10,OECD
+632,Maize,2016,Exports,"Tonnes, Thousands",5.6617,Tech,2025-12-10,OECD
+633,Maize,2017,Exports,"Tonnes, Thousands",7.0642,Tech,2025-12-10,OECD
+634,Maize,2018,Exports,"Tonnes, Thousands",10.2843,Tech,2025-12-10,OECD
+635,Maize,2019,Exports,"Tonnes, Thousands",3.6852,Tech,2025-12-10,OECD
+636,Maize,2020,Exports,"Tonnes, Thousands",29.0436,Tech,2025-12-10,OECD
+637,Maize,2021,Exports,"Tonnes, Thousands",36.4839,Tech,2025-12-10,OECD
+638,Maize,2022,Exports,"Tonnes, Thousands",34.1197,Tech,2025-12-10,OECD
+639,Maize,2023,Exports,"Tonnes, Thousands",8.5741,Tech,2025-12-10,OECD
+640,Maize,2024,Exports,"Tonnes, Thousands",24.3415,Tech,2025-12-10,OECD
+641,Maize,2025,Exports,"Tonnes, Thousands",15.6927,Tech,2025-12-10,OECD
+642,Maize,2026,Exports,"Tonnes, Thousands",13.2207,Tech,2025-12-10,OECD
+643,Maize,2027,Exports,"Tonnes, Thousands",10.9939,Tech,2025-12-10,OECD
+644,Maize,2028,Exports,"Tonnes, Thousands",9.0454,Tech,2025-12-10,OECD
+645,Maize,2029,Exports,"Tonnes, Thousands",7.6974,Tech,2025-12-10,OECD
+646,Maize,2030,Exports,"Tonnes, Thousands",6.6080,Tech,2025-12-10,OECD
+647,Maize,2031,Exports,"Tonnes, Thousands",5.3322,Tech,2025-12-10,OECD
+648,Maize,2032,Exports,"Tonnes, Thousands",4.4596,Tech,2025-12-10,OECD
+649,Maize,2033,Exports,"Tonnes, Thousands",3.6663,Tech,2025-12-10,OECD
+650,Maize,2034,Exports,"Tonnes, Thousands",3.0100,Tech,2025-12-10,OECD
+651,Maize,2010,Ending stocks,"Tonnes, Thousands",23.0682,Tech,2025-12-10,OECD
+652,Maize,2011,Ending stocks,"Tonnes, Thousands",18.7668,Tech,2025-12-10,OECD
+653,Maize,2012,Ending stocks,"Tonnes, Thousands",19.6428,Tech,2025-12-10,OECD
+654,Maize,2013,Ending stocks,"Tonnes, Thousands",25.4059,Tech,2025-12-10,OECD
+655,Maize,2014,Ending stocks,"Tonnes, Thousands",28.1332,Tech,2025-12-10,OECD
+656,Maize,2015,Ending stocks,"Tonnes, Thousands",21.3900,Tech,2025-12-10,OECD
+657,Maize,2016,Ending stocks,"Tonnes, Thousands",20.5012,Tech,2025-12-10,OECD
+658,Maize,2017,Ending stocks,"Tonnes, Thousands",26.2719,Tech,2025-12-10,OECD
+659,Maize,2018,Ending stocks,"Tonnes, Thousands",21.9674,Tech,2025-12-10,OECD
+660,Maize,2019,Ending stocks,"Tonnes, Thousands",19.5482,Tech,2025-12-10,OECD
+661,Maize,2020,Ending stocks,"Tonnes, Thousands",12.9856,Tech,2025-12-10,OECD
+662,Maize,2021,Ending stocks,"Tonnes, Thousands",15.5960,Tech,2025-12-10,OECD
+663,Maize,2022,Ending stocks,"Tonnes, Thousands",18.0763,Tech,2025-12-10,OECD
+664,Maize,2023,Ending stocks,"Tonnes, Thousands",26.3863,Tech,2025-12-10,OECD
+665,Maize,2024,Ending stocks,"Tonnes, Thousands",20.6263,Tech,2025-12-10,OECD
+666,Maize,2025,Ending stocks,"Tonnes, Thousands",19.8491,Tech,2025-12-10,OECD
+667,Maize,2026,Ending stocks,"Tonnes, Thousands",19.4116,Tech,2025-12-10,OECD
+668,Maize,2027,Ending stocks,"Tonnes, Thousands",19.7200,Tech,2025-12-10,OECD
+669,Maize,2028,Ending stocks,"Tonnes, Thousands",20.2967,Tech,2025-12-10,OECD
+670,Maize,2029,Ending stocks,"Tonnes, Thousands",20.8552,Tech,2025-12-10,OECD
+671,Maize,2030,Ending stocks,"Tonnes, Thousands",21.4482,Tech,2025-12-10,OECD
+672,Maize,2031,Ending stocks,"Tonnes, Thousands",21.9470,Tech,2025-12-10,OECD
+673,Maize,2032,Ending stocks,"Tonnes, Thousands",22.5167,Tech,2025-12-10,OECD
+674,Maize,2033,Ending stocks,"Tonnes, Thousands",23.0296,Tech,2025-12-10,OECD
+675,Maize,2034,Ending stocks,"Tonnes, Thousands",23.5717,Tech,2025-12-10,OECD
+676,Maize,2010,Area harvested,"Hectares, Thousands",85.5320,Tech,2025-12-10,OECD
+677,Maize,2011,Area harvested,"Hectares, Thousands",87.8000,Tech,2025-12-10,OECD
+678,Maize,2012,Area harvested,"Hectares, Thousands",87.1000,Tech,2025-12-10,OECD
+679,Maize,2013,Area harvested,"Hectares, Thousands",94.3000,Tech,2025-12-10,OECD
+680,Maize,2014,Area harvested,"Hectares, Thousands",92.5800,Tech,2025-12-10,OECD
+681,Maize,2015,Area harvested,"Hectares, Thousands",86.9000,Tech,2025-12-10,OECD
+682,Maize,2016,Area harvested,"Hectares, Thousands",96.3300,Tech,2025-12-10,OECD
+683,Maize,2017,Area harvested,"Hectares, Thousands",94.7200,Tech,2025-12-10,OECD
+684,Maize,2018,Area harvested,"Hectares, Thousands",91.2600,Tech,2025-12-10,OECD
+685,Maize,2019,Area harvested,"Hectares, Thousands",94.3200,Tech,2025-12-10,OECD
+686,Maize,2020,Area harvested,"Hectares, Thousands",98.6400,Tech,2025-12-10,OECD
+687,Maize,2021,Area harvested,"Hectares, Thousands",99.5794,Tech,2025-12-10,OECD
+688,Maize,2022,Area harvested,"Hectares, Thousands",107.4360,Tech,2025-12-10,OECD
+689,Maize,2023,Area harvested,"Hectares, Thousands",108.0000,Tech,2025-12-10,OECD
+690,Maize,2024,Area harvested,"Hectares, Thousands",108.0000,Tech,2025-12-10,OECD
+691,Maize,2025,Area harvested,"Hectares, Thousands",108.2800,Tech,2025-12-10,OECD
+692,Maize,2026,Area harvested,"Hectares, Thousands",108.9176,Tech,2025-12-10,OECD
+693,Maize,2027,Area harvested,"Hectares, Thousands",109.0350,Tech,2025-12-10,OECD
+694,Maize,2028,Area harvested,"Hectares, Thousands",109.2340,Tech,2025-12-10,OECD
+695,Maize,2029,Area harvested,"Hectares, Thousands",109.4565,Tech,2025-12-10,OECD
+696,Maize,2030,Area harvested,"Hectares, Thousands",109.6289,Tech,2025-12-10,OECD
+697,Maize,2031,Area harvested,"Hectares, Thousands",109.8141,Tech,2025-12-10,OECD
+698,Maize,2032,Area harvested,"Hectares, Thousands",110.0516,Tech,2025-12-10,OECD
+699,Maize,2033,Area harvested,"Hectares, Thousands",110.2590,Tech,2025-12-10,OECD
+700,Maize,2034,Area harvested,"Hectares, Thousands",110.4973,Tech,2025-12-10,OECD
+701,Maize,2010,Feed,"Tonnes, Thousands",77.9681,Tech,2025-12-10,OECD
+702,Maize,2011,Feed,"Tonnes, Thousands",74.9718,Tech,2025-12-10,OECD
+703,Maize,2012,Feed,"Tonnes, Thousands",71.9730,Tech,2025-12-10,OECD
+704,Maize,2013,Feed,"Tonnes, Thousands",89.9683,Tech,2025-12-10,OECD
+705,Maize,2014,Feed,"Tonnes, Thousands",104.9634,Tech,2025-12-10,OECD
+706,Maize,2015,Feed,"Tonnes, Thousands",106.9619,Tech,2025-12-10,OECD
+707,Maize,2016,Feed,"Tonnes, Thousands",124.9600,Tech,2025-12-10,OECD
+708,Maize,2017,Feed,"Tonnes, Thousands",134.9601,Tech,2025-12-10,OECD
+709,Maize,2018,Feed,"Tonnes, Thousands",131.6106,Tech,2025-12-10,OECD
+710,Maize,2019,Feed,"Tonnes, Thousands",151.2153,Tech,2025-12-10,OECD
+711,Maize,2020,Feed,"Tonnes, Thousands",158.8025,Tech,2025-12-10,OECD
+712,Maize,2021,Feed,"Tonnes, Thousands",163.1413,Tech,2025-12-10,OECD
+713,Maize,2022,Feed,"Tonnes, Thousands",198.5716,Tech,2025-12-10,OECD
+714,Maize,2023,Feed,"Tonnes, Thousands",214.1071,Tech,2025-12-10,OECD
+715,Maize,2024,Feed,"Tonnes, Thousands",207.7467,Tech,2025-12-10,OECD
+716,Maize,2025,Feed,"Tonnes, Thousands",214.4763,Tech,2025-12-10,OECD
+717,Maize,2026,Feed,"Tonnes, Thousands",220.9344,Tech,2025-12-10,OECD
+718,Maize,2027,Feed,"Tonnes, Thousands",227.8413,Tech,2025-12-10,OECD
+719,Maize,2028,Feed,"Tonnes, Thousands",235.5378,Tech,2025-12-10,OECD
+720,Maize,2029,Feed,"Tonnes, Thousands",242.9931,Tech,2025-12-10,OECD
+721,Maize,2030,Feed,"Tonnes, Thousands",249.8049,Tech,2025-12-10,OECD
+722,Maize,2031,Feed,"Tonnes, Thousands",257.2966,Tech,2025-12-10,OECD
+723,Maize,2032,Feed,"Tonnes, Thousands",264.4915,Tech,2025-12-10,OECD
+724,Maize,2033,Feed,"Tonnes, Thousands",271.7105,Tech,2025-12-10,OECD
+725,Maize,2034,Feed,"Tonnes, Thousands",278.9837,Tech,2025-12-10,OECD
+726,Maize,2010,Food availability,"Tonnes, Thousands",77.9681,Tech,2025-12-10,OECD
+727,Maize,2011,Food availability,"Tonnes, Thousands",78.9703,Tech,2025-12-10,OECD
+728,Maize,2012,Food availability,"Tonnes, Thousands",76.9711,Tech,2025-12-10,OECD
+729,Maize,2013,Food availability,"Tonnes, Thousands",79.9719,Tech,2025-12-10,OECD
+730,Maize,2014,Food availability,"Tonnes, Thousands",81.9714,Tech,2025-12-10,OECD
+731,Maize,2015,Food availability,"Tonnes, Thousands",81.9708,Tech,2025-12-10,OECD
+732,Maize,2016,Food availability,"Tonnes, Thousands",82.9735,Tech,2025-12-10,OECD
+733,Maize,2017,Food availability,"Tonnes, Thousands",84.9749,Tech,2025-12-10,OECD
+734,Maize,2018,Food availability,"Tonnes, Thousands",84.7493,Tech,2025-12-10,OECD
+735,Maize,2019,Food availability,"Tonnes, Thousands",83.5663,Tech,2025-12-10,OECD
+736,Maize,2020,Food availability,"Tonnes, Thousands",78.4087,Tech,2025-12-10,OECD
+737,Maize,2021,Food availability,"Tonnes, Thousands",77.1213,Tech,2025-12-10,OECD
+738,Maize,2022,Food availability,"Tonnes, Thousands",77.0576,Tech,2025-12-10,OECD
+739,Maize,2023,Food availability,"Tonnes, Thousands",76.6071,Tech,2025-12-10,OECD
+740,Maize,2024,Food availability,"Tonnes, Thousands",71.1461,Tech,2025-12-10,OECD
+741,Maize,2025,Food availability,"Tonnes, Thousands",71.3833,Tech,2025-12-10,OECD
+742,Maize,2026,Food availability,"Tonnes, Thousands",73.0364,Tech,2025-12-10,OECD
+743,Maize,2027,Food availability,"Tonnes, Thousands",74.9789,Tech,2025-12-10,OECD
+744,Maize,2028,Food availability,"Tonnes, Thousands",76.4433,Tech,2025-12-10,OECD
+745,Maize,2029,Food availability,"Tonnes, Thousands",77.9175,Tech,2025-12-10,OECD
+746,Maize,2030,Food availability,"Tonnes, Thousands",79.4943,Tech,2025-12-10,OECD
+747,Maize,2031,Food availability,"Tonnes, Thousands",80.8964,Tech,2025-12-10,OECD
+748,Maize,2032,Food availability,"Tonnes, Thousands",82.2454,Tech,2025-12-10,OECD
+749,Maize,2033,Food availability,"Tonnes, Thousands",83.5516,Tech,2025-12-10,OECD
+750,Maize,2034,Food availability,"Tonnes, Thousands",84.7835,Tech,2025-12-10,OECD
+751,Maize,2010,Food,"Tonnes, Thousands",76.0356,Tech,2025-12-10,OECD
+752,Maize,2011,Food,"Tonnes, Thousands",77.0077,Tech,2025-12-10,OECD
+753,Maize,2012,Food,"Tonnes, Thousands",75.0486,Tech,2025-12-10,OECD
+754,Maize,2013,Food,"Tonnes, Thousands",77.9308,Tech,2025-12-10,OECD
+755,Maize,2014,Food,"Tonnes, Thousands",79.8283,Tech,2025-12-10,OECD
+756,Maize,2015,Food,"Tonnes, Thousands",79.8430,Tech,2025-12-10,OECD
+757,Maize,2016,Food,"Tonnes, Thousands",80.7730,Tech,2025-12-10,OECD
+758,Maize,2017,Food,"Tonnes, Thousands",82.6908,Tech,2025-12-10,OECD
+759,Maize,2018,Food,"Tonnes, Thousands",81.9793,Tech,2025-12-10,OECD
+760,Maize,2019,Food,"Tonnes, Thousands",80.8653,Tech,2025-12-10,OECD
+761,Maize,2020,Food,"Tonnes, Thousands",75.8608,Tech,2025-12-10,OECD
+762,Maize,2021,Food,"Tonnes, Thousands",74.6424,Tech,2025-12-10,OECD
+763,Maize,2022,Food,"Tonnes, Thousands",74.5737,Tech,2025-12-10,OECD
+764,Maize,2023,Food,"Tonnes, Thousands",74.1277,Tech,2025-12-10,OECD
+765,Maize,2024,Food,"Tonnes, Thousands",68.8295,Tech,2025-12-10,OECD
+766,Maize,2025,Food,"Tonnes, Thousands",69.0589,Tech,2025-12-10,OECD
+767,Maize,2026,Food,"Tonnes, Thousands",70.6581,Tech,2025-12-10,OECD
+768,Maize,2027,Food,"Tonnes, Thousands",72.5372,Tech,2025-12-10,OECD
+769,Maize,2028,Food,"Tonnes, Thousands",73.9540,Tech,2025-12-10,OECD
+770,Maize,2029,Food,"Tonnes, Thousands",75.3801,Tech,2025-12-10,OECD
+771,Maize,2030,Food,"Tonnes, Thousands",76.9055,Tech,2025-12-10,OECD
+772,Maize,2031,Food,"Tonnes, Thousands",78.2619,Tech,2025-12-10,OECD
+773,Maize,2032,Food,"Tonnes, Thousands",79.5669,Tech,2025-12-10,OECD
+774,Maize,2033,Food,"Tonnes, Thousands",80.8306,Tech,2025-12-10,OECD
+775,Maize,2034,Food,"Tonnes, Thousands",82.0223,Tech,2025-12-10,OECD
+776,Maize,2010,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+777,Maize,2011,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+778,Maize,2012,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+779,Maize,2013,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+780,Maize,2014,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+781,Maize,2015,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+782,Maize,2016,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+783,Maize,2017,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+784,Maize,2018,Biofuel use,"Tonnes, Thousands",0.7495,Tech,2025-12-10,OECD
+785,Maize,2019,Biofuel use,"Tonnes, Thousands",1.4381,Tech,2025-12-10,OECD
+786,Maize,2020,Biofuel use,"Tonnes, Thousands",2.3362,Tech,2025-12-10,OECD
+787,Maize,2021,Biofuel use,"Tonnes, Thousands",3.6893,Tech,2025-12-10,OECD
+788,Maize,2022,Biofuel use,"Tonnes, Thousands",4.4900,Tech,2025-12-10,OECD
+789,Maize,2023,Biofuel use,"Tonnes, Thousands",6.5906,Tech,2025-12-10,OECD
+790,Maize,2024,Biofuel use,"Tonnes, Thousands",19.8365,Tech,2025-12-10,OECD
+791,Maize,2025,Biofuel use,"Tonnes, Thousands",23.9350,Tech,2025-12-10,OECD
+792,Maize,2026,Biofuel use,"Tonnes, Thousands",25.9327,Tech,2025-12-10,OECD
+793,Maize,2027,Biofuel use,"Tonnes, Thousands",25.1589,Tech,2025-12-10,OECD
+794,Maize,2028,Biofuel use,"Tonnes, Thousands",24.7329,Tech,2025-12-10,OECD
+795,Maize,2029,Biofuel use,"Tonnes, Thousands",24.4913,Tech,2025-12-10,OECD
+796,Maize,2030,Biofuel use,"Tonnes, Thousands",24.4243,Tech,2025-12-10,OECD
+797,Maize,2031,Biofuel use,"Tonnes, Thousands",24.4847,Tech,2025-12-10,OECD
+798,Maize,2032,Biofuel use,"Tonnes, Thousands",24.6369,Tech,2025-12-10,OECD
+799,Maize,2033,Biofuel use,"Tonnes, Thousands",24.8561,Tech,2025-12-10,OECD
+800,Maize,2034,Biofuel use,"Tonnes, Thousands",25.1271,Tech,2025-12-10,OECD
+801,Maize,2010,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+802,Maize,2011,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+803,Maize,2012,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+804,Maize,2013,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+805,Maize,2014,Other use,"Tonnes, Thousands",16.7543,Tech,2025-12-10,OECD
+806,Maize,2015,Other use,"Tonnes, Thousands",2.7759,Tech,2025-12-10,OECD
+807,Maize,2016,Other use,"Tonnes, Thousands",18.3314,Tech,2025-12-10,OECD
+808,Maize,2017,Other use,"Tonnes, Thousands",21.7771,Tech,2025-12-10,OECD
+809,Maize,2018,Other use,"Tonnes, Thousands",22.2022,Tech,2025-12-10,OECD
+810,Maize,2019,Other use,"Tonnes, Thousands",20.8812,Tech,2025-12-10,OECD
+811,Maize,2020,Other use,"Tonnes, Thousands",18.4988,Tech,2025-12-10,OECD
+812,Maize,2021,Other use,"Tonnes, Thousands",16.7204,Tech,2025-12-10,OECD
+813,Maize,2022,Other use,"Tonnes, Thousands",21.7977,Tech,2025-12-10,OECD
+814,Maize,2023,Other use,"Tonnes, Thousands",25.2000,Tech,2025-12-10,OECD
+815,Maize,2024,Other use,"Tonnes, Thousands",22.5256,Tech,2025-12-10,OECD
+816,Maize,2025,Other use,"Tonnes, Thousands",22.6530,Tech,2025-12-10,OECD
+817,Maize,2026,Other use,"Tonnes, Thousands",22.9379,Tech,2025-12-10,OECD
+818,Maize,2027,Other use,"Tonnes, Thousands",23.1944,Tech,2025-12-10,OECD
+819,Maize,2028,Other use,"Tonnes, Thousands",23.4515,Tech,2025-12-10,OECD
+820,Maize,2029,Other use,"Tonnes, Thousands",23.7407,Tech,2025-12-10,OECD
+821,Maize,2030,Other use,"Tonnes, Thousands",24.0486,Tech,2025-12-10,OECD
+822,Maize,2031,Other use,"Tonnes, Thousands",24.3099,Tech,2025-12-10,OECD
+823,Maize,2032,Other use,"Tonnes, Thousands",24.6021,Tech,2025-12-10,OECD
+824,Maize,2033,Other use,"Tonnes, Thousands",24.8677,Tech,2025-12-10,OECD
+825,Maize,2034,Other use,"Tonnes, Thousands",25.1293,Tech,2025-12-10,OECD
+826,Maize,2010,Yield,Tonnes per hectare,0.0254,Tech,2025-12-10,OECD
+827,Maize,2011,Yield,Tonnes per hectare,0.0248,Tech,2025-12-10,OECD
+828,Maize,2012,Yield,Tonnes per hectare,0.0256,Tech,2025-12-10,OECD
+829,Maize,2013,Yield,Tonnes per hectare,0.0257,Tech,2025-12-10,OECD
+830,Maize,2014,Yield,Tonnes per hectare,0.0261,Tech,2025-12-10,OECD
+831,Maize,2015,Yield,Tonnes per hectare,0.0260,Tech,2025-12-10,OECD
+832,Maize,2016,Yield,Tonnes per hectare,0.0269,Tech,2025-12-10,OECD
+833,Maize,2017,Yield,Tonnes per hectare,0.0304,Tech,2025-12-10,OECD
+834,Maize,2018,Yield,Tonnes per hectare,0.0304,Tech,2025-12-10,OECD
+835,Maize,2019,Yield,Tonnes per hectare,0.0305,Tech,2025-12-10,OECD
+836,Maize,2020,Yield,Tonnes per hectare,0.0321,Tech,2025-12-10,OECD
+837,Maize,2021,Yield,Tonnes per hectare,0.0339,Tech,2025-12-10,OECD
+838,Maize,2022,Yield,Tonnes per hectare,0.0354,Tech,2025-12-10,OECD
+839,Maize,2023,Yield,Tonnes per hectare,0.0349,Tech,2025-12-10,OECD
+840,Maize,2024,Yield,Tonnes per hectare,0.0352,Tech,2025-12-10,OECD
+841,Maize,2025,Yield,Tonnes per hectare,0.0358,Tech,2025-12-10,OECD
+842,Maize,2026,Yield,Tonnes per hectare,0.0364,Tech,2025-12-10,OECD
+843,Maize,2027,Yield,Tonnes per hectare,0.0371,Tech,2025-12-10,OECD
+844,Maize,2028,Yield,Tonnes per hectare,0.0378,Tech,2025-12-10,OECD
+845,Maize,2029,Yield,Tonnes per hectare,0.0385,Tech,2025-12-10,OECD
+846,Maize,2030,Yield,Tonnes per hectare,0.0392,Tech,2025-12-10,OECD
+847,Maize,2031,Yield,Tonnes per hectare,0.0399,Tech,2025-12-10,OECD
+848,Maize,2032,Yield,Tonnes per hectare,0.0407,Tech,2025-12-10,OECD
+849,Maize,2033,Yield,Tonnes per hectare,0.0415,Tech,2025-12-10,OECD
+850,Maize,2034,Yield,Tonnes per hectare,0.0422,Tech,2025-12-10,OECD
+851,Maize,2010,Producer price,National currency per tonne,109.6938,Tech,2025-12-10,OECD
+852,Maize,2011,Producer price,National currency per tonne,119.5104,Tech,2025-12-10,OECD
+853,Maize,2012,Producer price,National currency per tonne,142.5849,Tech,2025-12-10,OECD
+854,Maize,2013,Producer price,National currency per tonne,107.5010,Tech,2025-12-10,OECD
+855,Maize,2014,Producer price,National currency per tonne,97.9590,Tech,2025-12-10,OECD
+856,Maize,2015,Producer price,National currency per tonne,105.0499,Tech,2025-12-10,OECD
+857,Maize,2016,Producer price,National currency per tonne,101.8064,Tech,2025-12-10,OECD
+858,Maize,2017,Producer price,National currency per tonne,100.0677,Tech,2025-12-10,OECD
+859,Maize,2018,Producer price,National currency per tonne,112.8631,Tech,2025-12-10,OECD
+860,Maize,2019,Producer price,National currency per tonne,112.7086,Tech,2025-12-10,OECD
+861,Maize,2020,Producer price,National currency per tonne,155.6542,Tech,2025-12-10,OECD
+862,Maize,2021,Producer price,National currency per tonne,191.2708,Tech,2025-12-10,OECD
+863,Maize,2022,Producer price,National currency per tonne,201.7171,Tech,2025-12-10,OECD
+864,Maize,2023,Producer price,National currency per tonne,161.0446,Tech,2025-12-10,OECD
+865,Maize,2024,Producer price,National currency per tonne,156.6738,Tech,2025-12-10,OECD
+866,Maize,2025,Producer price,National currency per tonne,168.8023,Tech,2025-12-10,OECD
+867,Maize,2026,Producer price,National currency per tonne,175.7455,Tech,2025-12-10,OECD
+868,Maize,2027,Producer price,National currency per tonne,184.0951,Tech,2025-12-10,OECD
+869,Maize,2028,Producer price,National currency per tonne,192.9485,Tech,2025-12-10,OECD
+870,Maize,2029,Producer price,National currency per tonne,201.0016,Tech,2025-12-10,OECD
+871,Maize,2030,Producer price,National currency per tonne,208.4212,Tech,2025-12-10,OECD
+872,Maize,2031,Producer price,National currency per tonne,217.9601,Tech,2025-12-10,OECD
+873,Maize,2032,Producer price,National currency per tonne,226.1697,Tech,2025-12-10,OECD
+874,Maize,2033,Producer price,National currency per tonne,235.6139,Tech,2025-12-10,OECD
+875,Maize,2034,Producer price,National currency per tonne,245.2661,Tech,2025-12-10,OECD
+876,Maize,2010,Human consumption,Kilogrammes per person,0.0611,Tech,2025-12-10,OECD
+877,Maize,2011,Human consumption,Kilogrammes per person,0.0611,Tech,2025-12-10,OECD
+878,Maize,2012,Human consumption,Kilogrammes per person,0.0587,Tech,2025-12-10,OECD
+879,Maize,2013,Human consumption,Kilogrammes per person,0.0601,Tech,2025-12-10,OECD
+880,Maize,2014,Human consumption,Kilogrammes per person,0.0608,Tech,2025-12-10,OECD
+881,Maize,2015,Human consumption,Kilogrammes per person,0.0601,Tech,2025-12-10,OECD
+882,Maize,2016,Human consumption,Kilogrammes per person,0.0601,Tech,2025-12-10,OECD
+883,Maize,2017,Human consumption,Kilogrammes per person,0.0608,Tech,2025-12-10,OECD
+884,Maize,2018,Human consumption,Kilogrammes per person,0.0596,Tech,2025-12-10,OECD
+885,Maize,2019,Human consumption,Kilogrammes per person,0.0582,Tech,2025-12-10,OECD
+886,Maize,2020,Human consumption,Kilogrammes per person,0.0541,Tech,2025-12-10,OECD
+887,Maize,2021,Human consumption,Kilogrammes per person,0.0528,Tech,2025-12-10,OECD
+888,Maize,2022,Human consumption,Kilogrammes per person,0.0523,Tech,2025-12-10,OECD
+889,Maize,2023,Human consumption,Kilogrammes per person,0.0515,Tech,2025-12-10,OECD
+890,Maize,2024,Human consumption,Kilogrammes per person,0.0474,Tech,2025-12-10,OECD
+891,Maize,2025,Human consumption,Kilogrammes per person,0.0472,Tech,2025-12-10,OECD
+892,Maize,2026,Human consumption,Kilogrammes per person,0.0479,Tech,2025-12-10,OECD
+893,Maize,2027,Human consumption,Kilogrammes per person,0.0487,Tech,2025-12-10,OECD
+894,Maize,2028,Human consumption,Kilogrammes per person,0.0493,Tech,2025-12-10,OECD
+895,Maize,2029,Human consumption,Kilogrammes per person,0.0498,Tech,2025-12-10,OECD
+896,Maize,2030,Human consumption,Kilogrammes per person,0.0504,Tech,2025-12-10,OECD
+897,Maize,2031,Human consumption,Kilogrammes per person,0.0509,Tech,2025-12-10,OECD
+898,Maize,2032,Human consumption,Kilogrammes per person,0.0514,Tech,2025-12-10,OECD
+899,Maize,2033,Human consumption,Kilogrammes per person,0.0519,Tech,2025-12-10,OECD
+900,Maize,2034,Human consumption,Kilogrammes per person,0.0523,Tech,2025-12-10,OECD
+901,Maize,2010,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0570,Tech,2025-12-10,OECD
+902,Maize,2011,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0597,Tech,2025-12-10,OECD
+903,Maize,2012,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0579,Tech,2025-12-10,OECD
+904,Maize,2013,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0631,Tech,2025-12-10,OECD
+905,Maize,2014,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0627,Tech,2025-12-10,OECD
+906,Maize,2015,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0637,Tech,2025-12-10,OECD
+907,Maize,2016,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0595,Tech,2025-12-10,OECD
+908,Maize,2017,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0658,Tech,2025-12-10,OECD
+909,Maize,2018,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0674,Tech,2025-12-10,OECD
+910,Maize,2019,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0690,Tech,2025-12-10,OECD
+911,Maize,2020,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0768,Tech,2025-12-10,OECD
+912,Maize,2021,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0765,Tech,2025-12-10,OECD
+913,Maize,2022,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0804,Tech,2025-12-10,OECD
+914,Maize,2023,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0821,Tech,2025-12-10,OECD
+915,Maize,2024,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0825,Tech,2025-12-10,OECD
+916,Maize,2025,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0854,Tech,2025-12-10,OECD
+917,Maize,2026,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0872,Tech,2025-12-10,OECD
+918,Maize,2027,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0886,Tech,2025-12-10,OECD
+919,Maize,2028,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0902,Tech,2025-12-10,OECD
+920,Maize,2029,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0918,Tech,2025-12-10,OECD
+921,Maize,2030,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0935,Tech,2025-12-10,OECD
+922,Maize,2031,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0952,Tech,2025-12-10,OECD
+923,Maize,2032,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0970,Tech,2025-12-10,OECD
+924,Maize,2033,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0987,Tech,2025-12-10,OECD
+925,Maize,2034,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.1006,Tech,2025-12-10,OECD
+926,Maize,2010,Total calorie availability,Kilocalories per person per day,0.5543,Tech,2025-12-10,OECD
+927,Maize,2011,Total calorie availability,Kilocalories per person per day,0.5253,Tech,2025-12-10,OECD
+928,Maize,2012,Total calorie availability,Kilocalories per person per day,0.5173,Tech,2025-12-10,OECD
+929,Maize,2013,Total calorie availability,Kilocalories per person per day,0.5098,Tech,2025-12-10,OECD
+930,Maize,2014,Total calorie availability,Kilocalories per person per day,0.5069,Tech,2025-12-10,OECD
+931,Maize,2015,Total calorie availability,Kilocalories per person per day,0.5381,Tech,2025-12-10,OECD
+932,Maize,2016,Total calorie availability,Kilocalories per person per day,0.5499,Tech,2025-12-10,OECD
+933,Maize,2017,Total calorie availability,Kilocalories per person per day,0.5750,Tech,2025-12-10,OECD
+934,Maize,2018,Total calorie availability,Kilocalories per person per day,0.5690,Tech,2025-12-10,OECD
+935,Maize,2019,Total calorie availability,Kilocalories per person per day,0.5675,Tech,2025-12-10,OECD
+936,Maize,2020,Total calorie availability,Kilocalories per person per day,0.5070,Tech,2025-12-10,OECD
+937,Maize,2021,Total calorie availability,Kilocalories per person per day,0.4332,Tech,2025-12-10,OECD
+938,Maize,2022,Total calorie availability,Kilocalories per person per day,0.3684,Tech,2025-12-10,OECD
+939,Maize,2023,Total calorie availability,Kilocalories per person per day,0.3569,Tech,2025-12-10,OECD
+940,Maize,2024,Total calorie availability,Kilocalories per person per day,0.3496,Tech,2025-12-10,OECD
+941,Maize,2025,Total calorie availability,Kilocalories per person per day,0.3377,Tech,2025-12-10,OECD
+942,Maize,2026,Total calorie availability,Kilocalories per person per day,0.3270,Tech,2025-12-10,OECD
+943,Maize,2027,Total calorie availability,Kilocalories per person per day,0.3215,Tech,2025-12-10,OECD
+944,Maize,2028,Total calorie availability,Kilocalories per person per day,0.3248,Tech,2025-12-10,OECD
+945,Maize,2029,Total calorie availability,Kilocalories per person per day,0.3294,Tech,2025-12-10,OECD
+946,Maize,2030,Total calorie availability,Kilocalories per person per day,0.3337,Tech,2025-12-10,OECD
+947,Maize,2031,Total calorie availability,Kilocalories per person per day,0.3375,Tech,2025-12-10,OECD
+948,Maize,2032,Total calorie availability,Kilocalories per person per day,0.3412,Tech,2025-12-10,OECD
+949,Maize,2033,Total calorie availability,Kilocalories per person per day,0.3448,Tech,2025-12-10,OECD
+950,Maize,2034,Total calorie availability,Kilocalories per person per day,0.3480,Tech,2025-12-10,OECD
+951,Maize,2010,Food protein availability,Grammes per person per day,0.0116,Tech,2025-12-10,OECD
+952,Maize,2011,Food protein availability,Grammes per person per day,0.0110,Tech,2025-12-10,OECD
+953,Maize,2012,Food protein availability,Grammes per person per day,0.0108,Tech,2025-12-10,OECD
+954,Maize,2013,Food protein availability,Grammes per person per day,0.0107,Tech,2025-12-10,OECD
+955,Maize,2014,Food protein availability,Grammes per person per day,0.0106,Tech,2025-12-10,OECD
+956,Maize,2015,Food protein availability,Grammes per person per day,0.0113,Tech,2025-12-10,OECD
+957,Maize,2016,Food protein availability,Grammes per person per day,0.0115,Tech,2025-12-10,OECD
+958,Maize,2017,Food protein availability,Grammes per person per day,0.0120,Tech,2025-12-10,OECD
+959,Maize,2018,Food protein availability,Grammes per person per day,0.0119,Tech,2025-12-10,OECD
+960,Maize,2019,Food protein availability,Grammes per person per day,0.0119,Tech,2025-12-10,OECD
+961,Maize,2020,Food protein availability,Grammes per person per day,0.0106,Tech,2025-12-10,OECD
+962,Maize,2021,Food protein availability,Grammes per person per day,0.0091,Tech,2025-12-10,OECD
+963,Maize,2022,Food protein availability,Grammes per person per day,0.0077,Tech,2025-12-10,OECD
+964,Maize,2023,Food protein availability,Grammes per person per day,0.0075,Tech,2025-12-10,OECD
+965,Maize,2024,Food protein availability,Grammes per person per day,0.0073,Tech,2025-12-10,OECD
+966,Maize,2025,Food protein availability,Grammes per person per day,0.0071,Tech,2025-12-10,OECD
+967,Maize,2026,Food protein availability,Grammes per person per day,0.0069,Tech,2025-12-10,OECD
+968,Maize,2027,Food protein availability,Grammes per person per day,0.0067,Tech,2025-12-10,OECD
+969,Maize,2028,Food protein availability,Grammes per person per day,0.0068,Tech,2025-12-10,OECD
+970,Maize,2029,Food protein availability,Grammes per person per day,0.0069,Tech,2025-12-10,OECD
+971,Maize,2030,Food protein availability,Grammes per person per day,0.0070,Tech,2025-12-10,OECD
+972,Maize,2031,Food protein availability,Grammes per person per day,0.0071,Tech,2025-12-10,OECD
+973,Maize,2032,Food protein availability,Grammes per person per day,0.0071,Tech,2025-12-10,OECD
+974,Maize,2033,Food protein availability,Grammes per person per day,0.0072,Tech,2025-12-10,OECD
+975,Maize,2034,Food protein availability,Grammes per person per day,0.0073,Tech,2025-12-10,OECD
+976,Maize,2010,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+977,Maize,2011,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+978,Maize,2012,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+979,Maize,2013,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+980,Maize,2014,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+981,Maize,2015,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+982,Maize,2016,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+983,Maize,2017,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+984,Maize,2018,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+985,Maize,2019,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+986,Maize,2020,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+987,Maize,2021,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+988,Maize,2022,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+989,Maize,2023,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+990,Maize,2024,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+991,Maize,2025,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+992,Maize,2026,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+993,Maize,2027,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+994,Maize,2028,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+995,Maize,2029,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+996,Maize,2030,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+997,Maize,2031,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+998,Maize,2032,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+999,Maize,2033,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1000,Maize,2034,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1001,Soybeans,2010,Production,"Tonnes, Thousands",127.4000,Tech,2025-12-10,OECD
+1002,Soybeans,2011,Production,"Tonnes, Thousands",122.1000,Tech,2025-12-10,OECD
+1003,Soybeans,2012,Production,"Tonnes, Thousands",146.7000,Tech,2025-12-10,OECD
+1004,Soybeans,2013,Production,"Tonnes, Thousands",118.6000,Tech,2025-12-10,OECD
+1005,Soybeans,2014,Production,"Tonnes, Thousands",103.7400,Tech,2025-12-10,OECD
+1006,Soybeans,2015,Production,"Tonnes, Thousands",85.7000,Tech,2025-12-10,OECD
+1007,Soybeans,2016,Production,"Tonnes, Thousands",131.5900,Tech,2025-12-10,OECD
+1008,Soybeans,2017,Production,"Tonnes, Thousands",109.3400,Tech,2025-12-10,OECD
+1009,Soybeans,2018,Production,"Tonnes, Thousands",132.6800,Tech,2025-12-10,OECD
+1010,Soybeans,2019,Production,"Tonnes, Thousands",112.2600,Tech,2025-12-10,OECD
+1011,Soybeans,2020,Production,"Tonnes, Thousands",126.1000,Tech,2025-12-10,OECD
+1012,Soybeans,2021,Production,"Tonnes, Thousands",129.8700,Tech,2025-12-10,OECD
+1013,Soybeans,2022,Production,"Tonnes, Thousands",149.8500,Tech,2025-12-10,OECD
+1014,Soybeans,2023,Production,"Tonnes, Thousands",130.6200,Tech,2025-12-10,OECD
+1015,Soybeans,2024,Production,"Tonnes, Thousands",140.0000,Tech,2025-12-10,OECD
+1016,Soybeans,2025,Production,"Tonnes, Thousands",145.9131,Tech,2025-12-10,OECD
+1017,Soybeans,2026,Production,"Tonnes, Thousands",150.4753,Tech,2025-12-10,OECD
+1018,Soybeans,2027,Production,"Tonnes, Thousands",154.3931,Tech,2025-12-10,OECD
+1019,Soybeans,2028,Production,"Tonnes, Thousands",157.6142,Tech,2025-12-10,OECD
+1020,Soybeans,2029,Production,"Tonnes, Thousands",160.4671,Tech,2025-12-10,OECD
+1021,Soybeans,2030,Production,"Tonnes, Thousands",162.8439,Tech,2025-12-10,OECD
+1022,Soybeans,2031,Production,"Tonnes, Thousands",164.9593,Tech,2025-12-10,OECD
+1023,Soybeans,2032,Production,"Tonnes, Thousands",166.9588,Tech,2025-12-10,OECD
+1024,Soybeans,2033,Production,"Tonnes, Thousands",168.7906,Tech,2025-12-10,OECD
+1025,Soybeans,2034,Production,"Tonnes, Thousands",170.5482,Tech,2025-12-10,OECD
+1026,Soybeans,2010,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1027,Soybeans,2011,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1028,Soybeans,2012,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1029,Soybeans,2013,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1030,Soybeans,2014,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1031,Soybeans,2015,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1032,Soybeans,2016,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1033,Soybeans,2017,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1034,Soybeans,2018,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1035,Soybeans,2019,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1036,Soybeans,2020,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1037,Soybeans,2021,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1038,Soybeans,2022,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1039,Soybeans,2023,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1040,Soybeans,2024,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1041,Soybeans,2025,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1042,Soybeans,2026,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1043,Soybeans,2027,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1044,Soybeans,2028,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1045,Soybeans,2029,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1046,Soybeans,2030,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1047,Soybeans,2031,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1048,Soybeans,2032,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1049,Soybeans,2033,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1050,Soybeans,2034,Ethanol production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1051,Soybeans,2010,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1052,Soybeans,2011,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1053,Soybeans,2012,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1054,Soybeans,2013,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1055,Soybeans,2014,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1056,Soybeans,2015,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1057,Soybeans,2016,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1058,Soybeans,2017,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1059,Soybeans,2018,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1060,Soybeans,2019,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1061,Soybeans,2020,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1062,Soybeans,2021,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1063,Soybeans,2022,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1064,Soybeans,2023,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1065,Soybeans,2024,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1066,Soybeans,2025,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1067,Soybeans,2026,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1068,Soybeans,2027,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1069,Soybeans,2028,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1070,Soybeans,2029,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1071,Soybeans,2030,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1072,Soybeans,2031,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1073,Soybeans,2032,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1074,Soybeans,2033,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1075,Soybeans,2034,Biodiesel production from commodity,"Litres, Millions",0.0000,Tech,2025-12-10,OECD
+1076,Soybeans,2010,Imports,"Tonnes, Thousands",0.0100,Tech,2025-12-10,OECD
+1077,Soybeans,2011,Imports,"Tonnes, Thousands",0.0100,Tech,2025-12-10,OECD
+1078,Soybeans,2012,Imports,"Tonnes, Thousands",0.0100,Tech,2025-12-10,OECD
+1079,Soybeans,2013,Imports,"Tonnes, Thousands",0.0400,Tech,2025-12-10,OECD
+1080,Soybeans,2014,Imports,"Tonnes, Thousands",0.1100,Tech,2025-12-10,OECD
+1081,Soybeans,2015,Imports,"Tonnes, Thousands",0.5300,Tech,2025-12-10,OECD
+1082,Soybeans,2016,Imports,"Tonnes, Thousands",0.9400,Tech,2025-12-10,OECD
+1083,Soybeans,2017,Imports,"Tonnes, Thousands",0.8900,Tech,2025-12-10,OECD
+1084,Soybeans,2018,Imports,"Tonnes, Thousands",2.0400,Tech,2025-12-10,OECD
+1085,Soybeans,2019,Imports,"Tonnes, Thousands",5.2000,Tech,2025-12-10,OECD
+1086,Soybeans,2020,Imports,"Tonnes, Thousands",5.4800,Tech,2025-12-10,OECD
+1087,Soybeans,2021,Imports,"Tonnes, Thousands",5.5500,Tech,2025-12-10,OECD
+1088,Soybeans,2022,Imports,"Tonnes, Thousands",7.0200,Tech,2025-12-10,OECD
+1089,Soybeans,2023,Imports,"Tonnes, Thousands",8.0000,Tech,2025-12-10,OECD
+1090,Soybeans,2024,Imports,"Tonnes, Thousands",8.0000,Tech,2025-12-10,OECD
+1091,Soybeans,2025,Imports,"Tonnes, Thousands",11.1486,Tech,2025-12-10,OECD
+1092,Soybeans,2026,Imports,"Tonnes, Thousands",13.0393,Tech,2025-12-10,OECD
+1093,Soybeans,2027,Imports,"Tonnes, Thousands",14.6853,Tech,2025-12-10,OECD
+1094,Soybeans,2028,Imports,"Tonnes, Thousands",15.6313,Tech,2025-12-10,OECD
+1095,Soybeans,2029,Imports,"Tonnes, Thousands",16.2420,Tech,2025-12-10,OECD
+1096,Soybeans,2030,Imports,"Tonnes, Thousands",16.9456,Tech,2025-12-10,OECD
+1097,Soybeans,2031,Imports,"Tonnes, Thousands",17.2457,Tech,2025-12-10,OECD
+1098,Soybeans,2032,Imports,"Tonnes, Thousands",17.5627,Tech,2025-12-10,OECD
+1099,Soybeans,2033,Imports,"Tonnes, Thousands",17.7529,Tech,2025-12-10,OECD
+1100,Soybeans,2034,Imports,"Tonnes, Thousands",17.7587,Tech,2025-12-10,OECD
+1101,Soybeans,2010,Consumption,"Tonnes, Thousands",133.3900,Tech,2025-12-10,OECD
+1102,Soybeans,2011,Consumption,"Tonnes, Thousands",115.7900,Tech,2025-12-10,OECD
+1103,Soybeans,2012,Consumption,"Tonnes, Thousands",142.8500,Tech,2025-12-10,OECD
+1104,Soybeans,2013,Consumption,"Tonnes, Thousands",122.0300,Tech,2025-12-10,OECD
+1105,Soybeans,2014,Consumption,"Tonnes, Thousands",101.4200,Tech,2025-12-10,OECD
+1106,Soybeans,2015,Consumption,"Tonnes, Thousands",91.4800,Tech,2025-12-10,OECD
+1107,Soybeans,2016,Consumption,"Tonnes, Thousands",121.7500,Tech,2025-12-10,OECD
+1108,Soybeans,2017,Consumption,"Tonnes, Thousands",111.7500,Tech,2025-12-10,OECD
+1109,Soybeans,2018,Consumption,"Tonnes, Thousands",125.3600,Tech,2025-12-10,OECD
+1110,Soybeans,2019,Consumption,"Tonnes, Thousands",118.0900,Tech,2025-12-10,OECD
+1111,Soybeans,2020,Consumption,"Tonnes, Thousands",130.2900,Tech,2025-12-10,OECD
+1112,Soybeans,2021,Consumption,"Tonnes, Thousands",134.5400,Tech,2025-12-10,OECD
+1113,Soybeans,2022,Consumption,"Tonnes, Thousands",155.2500,Tech,2025-12-10,OECD
+1114,Soybeans,2023,Consumption,"Tonnes, Thousands",139.9200,Tech,2025-12-10,OECD
+1115,Soybeans,2024,Consumption,"Tonnes, Thousands",148.9400,Tech,2025-12-10,OECD
+1116,Soybeans,2025,Consumption,"Tonnes, Thousands",156.9837,Tech,2025-12-10,OECD
+1117,Soybeans,2026,Consumption,"Tonnes, Thousands",163.5158,Tech,2025-12-10,OECD
+1118,Soybeans,2027,Consumption,"Tonnes, Thousands",168.8231,Tech,2025-12-10,OECD
+1119,Soybeans,2028,Consumption,"Tonnes, Thousands",172.8060,Tech,2025-12-10,OECD
+1120,Soybeans,2029,Consumption,"Tonnes, Thousands",176.2647,Tech,2025-12-10,OECD
+1121,Soybeans,2030,Consumption,"Tonnes, Thousands",179.3764,Tech,2025-12-10,OECD
+1122,Soybeans,2031,Consumption,"Tonnes, Thousands",181.8599,Tech,2025-12-10,OECD
+1123,Soybeans,2032,Consumption,"Tonnes, Thousands",184.1959,Tech,2025-12-10,OECD
+1124,Soybeans,2033,Consumption,"Tonnes, Thousands",186.2434,Tech,2025-12-10,OECD
+1125,Soybeans,2034,Consumption,"Tonnes, Thousands",188.0237,Tech,2025-12-10,OECD
+1126,Soybeans,2010,Exports,"Tonnes, Thousands",0.4000,Tech,2025-12-10,OECD
+1127,Soybeans,2011,Exports,"Tonnes, Thousands",0.3000,Tech,2025-12-10,OECD
+1128,Soybeans,2012,Exports,"Tonnes, Thousands",1.1500,Tech,2025-12-10,OECD
+1129,Soybeans,2013,Exports,"Tonnes, Thousands",1.8300,Tech,2025-12-10,OECD
+1130,Soybeans,2014,Exports,"Tonnes, Thousands",2.3500,Tech,2025-12-10,OECD
+1131,Soybeans,2015,Exports,"Tonnes, Thousands",1.3400,Tech,2025-12-10,OECD
+1132,Soybeans,2016,Exports,"Tonnes, Thousands",2.7800,Tech,2025-12-10,OECD
+1133,Soybeans,2017,Exports,"Tonnes, Thousands",6.2800,Tech,2025-12-10,OECD
+1134,Soybeans,2018,Exports,"Tonnes, Thousands",1.6500,Tech,2025-12-10,OECD
+1135,Soybeans,2019,Exports,"Tonnes, Thousands",0.8000,Tech,2025-12-10,OECD
+1136,Soybeans,2020,Exports,"Tonnes, Thousands",0.3200,Tech,2025-12-10,OECD
+1137,Soybeans,2021,Exports,"Tonnes, Thousands",0.6100,Tech,2025-12-10,OECD
+1138,Soybeans,2022,Exports,"Tonnes, Thousands",0.2200,Tech,2025-12-10,OECD
+1139,Soybeans,2023,Exports,"Tonnes, Thousands",0.0600,Tech,2025-12-10,OECD
+1140,Soybeans,2024,Exports,"Tonnes, Thousands",0.2000,Tech,2025-12-10,OECD
+1141,Soybeans,2025,Exports,"Tonnes, Thousands",0.1945,Tech,2025-12-10,OECD
+1142,Soybeans,2026,Exports,"Tonnes, Thousands",0.1919,Tech,2025-12-10,OECD
+1143,Soybeans,2027,Exports,"Tonnes, Thousands",0.1900,Tech,2025-12-10,OECD
+1144,Soybeans,2028,Exports,"Tonnes, Thousands",0.1869,Tech,2025-12-10,OECD
+1145,Soybeans,2029,Exports,"Tonnes, Thousands",0.1840,Tech,2025-12-10,OECD
+1146,Soybeans,2030,Exports,"Tonnes, Thousands",0.1816,Tech,2025-12-10,OECD
+1147,Soybeans,2031,Exports,"Tonnes, Thousands",0.1804,Tech,2025-12-10,OECD
+1148,Soybeans,2032,Exports,"Tonnes, Thousands",0.1795,Tech,2025-12-10,OECD
+1149,Soybeans,2033,Exports,"Tonnes, Thousands",0.1789,Tech,2025-12-10,OECD
+1150,Soybeans,2034,Exports,"Tonnes, Thousands",0.1787,Tech,2025-12-10,OECD
+1151,Soybeans,2010,Ending stocks,"Tonnes, Thousands",4.3800,Tech,2025-12-10,OECD
+1152,Soybeans,2011,Ending stocks,"Tonnes, Thousands",10.4000,Tech,2025-12-10,OECD
+1153,Soybeans,2012,Ending stocks,"Tonnes, Thousands",13.1100,Tech,2025-12-10,OECD
+1154,Soybeans,2013,Ending stocks,"Tonnes, Thousands",7.8900,Tech,2025-12-10,OECD
+1155,Soybeans,2014,Ending stocks,"Tonnes, Thousands",7.9700,Tech,2025-12-10,OECD
+1156,Soybeans,2015,Ending stocks,"Tonnes, Thousands",1.3800,Tech,2025-12-10,OECD
+1157,Soybeans,2016,Ending stocks,"Tonnes, Thousands",9.3800,Tech,2025-12-10,OECD
+1158,Soybeans,2017,Ending stocks,"Tonnes, Thousands",1.5800,Tech,2025-12-10,OECD
+1159,Soybeans,2018,Ending stocks,"Tonnes, Thousands",9.2900,Tech,2025-12-10,OECD
+1160,Soybeans,2019,Ending stocks,"Tonnes, Thousands",7.8600,Tech,2025-12-10,OECD
+1161,Soybeans,2020,Ending stocks,"Tonnes, Thousands",8.8300,Tech,2025-12-10,OECD
+1162,Soybeans,2021,Ending stocks,"Tonnes, Thousands",9.1000,Tech,2025-12-10,OECD
+1163,Soybeans,2022,Ending stocks,"Tonnes, Thousands",10.5000,Tech,2025-12-10,OECD
+1164,Soybeans,2023,Ending stocks,"Tonnes, Thousands",9.1400,Tech,2025-12-10,OECD
+1165,Soybeans,2024,Ending stocks,"Tonnes, Thousands",8.0000,Tech,2025-12-10,OECD
+1166,Soybeans,2025,Ending stocks,"Tonnes, Thousands",7.8835,Tech,2025-12-10,OECD
+1167,Soybeans,2026,Ending stocks,"Tonnes, Thousands",7.6905,Tech,2025-12-10,OECD
+1168,Soybeans,2027,Ending stocks,"Tonnes, Thousands",7.7559,Tech,2025-12-10,OECD
+1169,Soybeans,2028,Ending stocks,"Tonnes, Thousands",8.0084,Tech,2025-12-10,OECD
+1170,Soybeans,2029,Ending stocks,"Tonnes, Thousands",8.2688,Tech,2025-12-10,OECD
+1171,Soybeans,2030,Ending stocks,"Tonnes, Thousands",8.5003,Tech,2025-12-10,OECD
+1172,Soybeans,2031,Ending stocks,"Tonnes, Thousands",8.6650,Tech,2025-12-10,OECD
+1173,Soybeans,2032,Ending stocks,"Tonnes, Thousands",8.8111,Tech,2025-12-10,OECD
+1174,Soybeans,2033,Ending stocks,"Tonnes, Thousands",8.9322,Tech,2025-12-10,OECD
+1175,Soybeans,2034,Ending stocks,"Tonnes, Thousands",9.0367,Tech,2025-12-10,OECD
+1176,Soybeans,2010,Area harvested,"Hectares, Thousands",96.0000,Tech,2025-12-10,OECD
+1177,Soybeans,2011,Area harvested,"Hectares, Thousands",101.1000,Tech,2025-12-10,OECD
+1178,Soybeans,2012,Area harvested,"Hectares, Thousands",108.4000,Tech,2025-12-10,OECD
+1179,Soybeans,2013,Area harvested,"Hectares, Thousands",117.2000,Tech,2025-12-10,OECD
+1180,Soybeans,2014,Area harvested,"Hectares, Thousands",109.1000,Tech,2025-12-10,OECD
+1181,Soybeans,2015,Area harvested,"Hectares, Thousands",116.0500,Tech,2025-12-10,OECD
+1182,Soybeans,2016,Area harvested,"Hectares, Thousands",111.8300,Tech,2025-12-10,OECD
+1183,Soybeans,2017,Area harvested,"Hectares, Thousands",104.4100,Tech,2025-12-10,OECD
+1184,Soybeans,2018,Area harvested,"Hectares, Thousands",111.3100,Tech,2025-12-10,OECD
+1185,Soybeans,2019,Area harvested,"Hectares, Thousands",121.9300,Tech,2025-12-10,OECD
+1186,Soybeans,2020,Area harvested,"Hectares, Thousands",129.1800,Tech,2025-12-10,OECD
+1187,Soybeans,2021,Area harvested,"Hectares, Thousands",121.4700,Tech,2025-12-10,OECD
+1188,Soybeans,2022,Area harvested,"Hectares, Thousands",130.8400,Tech,2025-12-10,OECD
+1189,Soybeans,2023,Area harvested,"Hectares, Thousands",132.2600,Tech,2025-12-10,OECD
+1190,Soybeans,2024,Area harvested,"Hectares, Thousands",133.5000,Tech,2025-12-10,OECD
+1191,Soybeans,2025,Area harvested,"Hectares, Thousands",133.7534,Tech,2025-12-10,OECD
+1192,Soybeans,2026,Area harvested,"Hectares, Thousands",134.0379,Tech,2025-12-10,OECD
+1193,Soybeans,2027,Area harvested,"Hectares, Thousands",134.4818,Tech,2025-12-10,OECD
+1194,Soybeans,2028,Area harvested,"Hectares, Thousands",134.8374,Tech,2025-12-10,OECD
+1195,Soybeans,2029,Area harvested,"Hectares, Thousands",135.1974,Tech,2025-12-10,OECD
+1196,Soybeans,2030,Area harvested,"Hectares, Thousands",135.5064,Tech,2025-12-10,OECD
+1197,Soybeans,2031,Area harvested,"Hectares, Thousands",135.7833,Tech,2025-12-10,OECD
+1198,Soybeans,2032,Area harvested,"Hectares, Thousands",136.0420,Tech,2025-12-10,OECD
+1199,Soybeans,2033,Area harvested,"Hectares, Thousands",136.2735,Tech,2025-12-10,OECD
+1200,Soybeans,2034,Area harvested,"Hectares, Thousands",136.5151,Tech,2025-12-10,OECD
+1201,Soybeans,2010,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1202,Soybeans,2011,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1203,Soybeans,2012,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1204,Soybeans,2013,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1205,Soybeans,2014,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1206,Soybeans,2015,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1207,Soybeans,2016,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1208,Soybeans,2017,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1209,Soybeans,2018,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1210,Soybeans,2019,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1211,Soybeans,2020,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1212,Soybeans,2021,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1213,Soybeans,2022,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1214,Soybeans,2023,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1215,Soybeans,2024,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1216,Soybeans,2025,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1217,Soybeans,2026,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1218,Soybeans,2027,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1219,Soybeans,2028,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1220,Soybeans,2029,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1221,Soybeans,2030,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1222,Soybeans,2031,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1223,Soybeans,2032,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1224,Soybeans,2033,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1225,Soybeans,2034,Feed,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1226,Soybeans,2010,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1227,Soybeans,2011,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1228,Soybeans,2012,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1229,Soybeans,2013,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1230,Soybeans,2014,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1231,Soybeans,2015,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1232,Soybeans,2016,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1233,Soybeans,2017,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1234,Soybeans,2018,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1235,Soybeans,2019,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1236,Soybeans,2020,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1237,Soybeans,2021,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1238,Soybeans,2022,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1239,Soybeans,2023,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1240,Soybeans,2024,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1241,Soybeans,2025,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1242,Soybeans,2026,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1243,Soybeans,2027,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1244,Soybeans,2028,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1245,Soybeans,2029,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1246,Soybeans,2030,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1247,Soybeans,2031,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1248,Soybeans,2032,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1249,Soybeans,2033,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1250,Soybeans,2034,Food availability,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1251,Soybeans,2010,Food,"Tonnes, Thousands",11.7324,Tech,2025-12-10,OECD
+1252,Soybeans,2011,Food,"Tonnes, Thousands",15.7957,Tech,2025-12-10,OECD
+1253,Soybeans,2012,Food,"Tonnes, Thousands",26.4256,Tech,2025-12-10,OECD
+1254,Soybeans,2013,Food,"Tonnes, Thousands",20.1840,Tech,2025-12-10,OECD
+1255,Soybeans,2014,Food,"Tonnes, Thousands",18.7651,Tech,2025-12-10,OECD
+1256,Soybeans,2015,Food,"Tonnes, Thousands",15.0558,Tech,2025-12-10,OECD
+1257,Soybeans,2016,Food,"Tonnes, Thousands",20.0344,Tech,2025-12-10,OECD
+1258,Soybeans,2017,Food,"Tonnes, Thousands",15.1317,Tech,2025-12-10,OECD
+1259,Soybeans,2018,Food,"Tonnes, Thousands",16.7598,Tech,2025-12-10,OECD
+1260,Soybeans,2019,Food,"Tonnes, Thousands",15.3170,Tech,2025-12-10,OECD
+1261,Soybeans,2020,Food,"Tonnes, Thousands",15.6822,Tech,2025-12-10,OECD
+1262,Soybeans,2021,Food,"Tonnes, Thousands",14.8444,Tech,2025-12-10,OECD
+1263,Soybeans,2022,Food,"Tonnes, Thousands",15.5193,Tech,2025-12-10,OECD
+1264,Soybeans,2023,Food,"Tonnes, Thousands",12.4267,Tech,2025-12-10,OECD
+1265,Soybeans,2024,Food,"Tonnes, Thousands",11.7807,Tech,2025-12-10,OECD
+1266,Soybeans,2025,Food,"Tonnes, Thousands",12.0202,Tech,2025-12-10,OECD
+1267,Soybeans,2026,Food,"Tonnes, Thousands",12.2643,Tech,2025-12-10,OECD
+1268,Soybeans,2027,Food,"Tonnes, Thousands",12.4944,Tech,2025-12-10,OECD
+1269,Soybeans,2028,Food,"Tonnes, Thousands",12.7068,Tech,2025-12-10,OECD
+1270,Soybeans,2029,Food,"Tonnes, Thousands",12.9021,Tech,2025-12-10,OECD
+1271,Soybeans,2030,Food,"Tonnes, Thousands",13.0810,Tech,2025-12-10,OECD
+1272,Soybeans,2031,Food,"Tonnes, Thousands",13.2469,Tech,2025-12-10,OECD
+1273,Soybeans,2032,Food,"Tonnes, Thousands",13.3993,Tech,2025-12-10,OECD
+1274,Soybeans,2033,Food,"Tonnes, Thousands",13.5390,Tech,2025-12-10,OECD
+1275,Soybeans,2034,Food,"Tonnes, Thousands",13.6663,Tech,2025-12-10,OECD
+1276,Soybeans,2010,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1277,Soybeans,2011,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1278,Soybeans,2012,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1279,Soybeans,2013,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1280,Soybeans,2014,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1281,Soybeans,2015,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1282,Soybeans,2016,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1283,Soybeans,2017,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1284,Soybeans,2018,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1285,Soybeans,2019,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1286,Soybeans,2020,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1287,Soybeans,2021,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1288,Soybeans,2022,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1289,Soybeans,2023,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1290,Soybeans,2024,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1291,Soybeans,2025,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1292,Soybeans,2026,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1293,Soybeans,2027,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1294,Soybeans,2028,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1295,Soybeans,2029,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1296,Soybeans,2030,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1297,Soybeans,2031,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1298,Soybeans,2032,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1299,Soybeans,2033,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1300,Soybeans,2034,Biofuel use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1301,Soybeans,2010,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1302,Soybeans,2011,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1303,Soybeans,2012,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1304,Soybeans,2013,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1305,Soybeans,2014,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1306,Soybeans,2015,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1307,Soybeans,2016,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1308,Soybeans,2017,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1309,Soybeans,2018,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1310,Soybeans,2019,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1311,Soybeans,2020,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1312,Soybeans,2021,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1313,Soybeans,2022,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1314,Soybeans,2023,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1315,Soybeans,2024,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1316,Soybeans,2025,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1317,Soybeans,2026,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1318,Soybeans,2027,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1319,Soybeans,2028,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1320,Soybeans,2029,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1321,Soybeans,2030,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1322,Soybeans,2031,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1323,Soybeans,2032,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1324,Soybeans,2033,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1325,Soybeans,2034,Other use,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1326,Soybeans,2010,Yield,Tonnes per hectare,0.0133,Tech,2025-12-10,OECD
+1327,Soybeans,2011,Yield,Tonnes per hectare,0.0121,Tech,2025-12-10,OECD
+1328,Soybeans,2012,Yield,Tonnes per hectare,0.0135,Tech,2025-12-10,OECD
+1329,Soybeans,2013,Yield,Tonnes per hectare,0.0101,Tech,2025-12-10,OECD
+1330,Soybeans,2014,Yield,Tonnes per hectare,0.0095,Tech,2025-12-10,OECD
+1331,Soybeans,2015,Yield,Tonnes per hectare,0.0074,Tech,2025-12-10,OECD
+1332,Soybeans,2016,Yield,Tonnes per hectare,0.0118,Tech,2025-12-10,OECD
+1333,Soybeans,2017,Yield,Tonnes per hectare,0.0105,Tech,2025-12-10,OECD
+1334,Soybeans,2018,Yield,Tonnes per hectare,0.0119,Tech,2025-12-10,OECD
+1335,Soybeans,2019,Yield,Tonnes per hectare,0.0092,Tech,2025-12-10,OECD
+1336,Soybeans,2020,Yield,Tonnes per hectare,0.0098,Tech,2025-12-10,OECD
+1337,Soybeans,2021,Yield,Tonnes per hectare,0.0107,Tech,2025-12-10,OECD
+1338,Soybeans,2022,Yield,Tonnes per hectare,0.0115,Tech,2025-12-10,OECD
+1339,Soybeans,2023,Yield,Tonnes per hectare,0.0099,Tech,2025-12-10,OECD
+1340,Soybeans,2024,Yield,Tonnes per hectare,0.0105,Tech,2025-12-10,OECD
+1341,Soybeans,2025,Yield,Tonnes per hectare,0.0109,Tech,2025-12-10,OECD
+1342,Soybeans,2026,Yield,Tonnes per hectare,0.0112,Tech,2025-12-10,OECD
+1343,Soybeans,2027,Yield,Tonnes per hectare,0.0115,Tech,2025-12-10,OECD
+1344,Soybeans,2028,Yield,Tonnes per hectare,0.0117,Tech,2025-12-10,OECD
+1345,Soybeans,2029,Yield,Tonnes per hectare,0.0119,Tech,2025-12-10,OECD
+1346,Soybeans,2030,Yield,Tonnes per hectare,0.0120,Tech,2025-12-10,OECD
+1347,Soybeans,2031,Yield,Tonnes per hectare,0.0121,Tech,2025-12-10,OECD
+1348,Soybeans,2032,Yield,Tonnes per hectare,0.0123,Tech,2025-12-10,OECD
+1349,Soybeans,2033,Yield,Tonnes per hectare,0.0124,Tech,2025-12-10,OECD
+1350,Soybeans,2034,Yield,Tonnes per hectare,0.0125,Tech,2025-12-10,OECD
+1351,Soybeans,2010,Producer price,National currency per tonne,249.3281,Tech,2025-12-10,OECD
+1352,Soybeans,2011,Producer price,National currency per tonne,268.5948,Tech,2025-12-10,OECD
+1353,Soybeans,2012,Producer price,National currency per tonne,296.6689,Tech,2025-12-10,OECD
+1354,Soybeans,2013,Producer price,National currency per tonne,309.2869,Tech,2025-12-10,OECD
+1355,Soybeans,2014,Producer price,National currency per tonne,242.1821,Tech,2025-12-10,OECD
+1356,Soybeans,2015,Producer price,National currency per tonne,256.2239,Tech,2025-12-10,OECD
+1357,Soybeans,2016,Producer price,National currency per tonne,265.5776,Tech,2025-12-10,OECD
+1358,Soybeans,2017,Producer price,National currency per tonne,244.3450,Tech,2025-12-10,OECD
+1359,Soybeans,2018,Producer price,National currency per tonne,259.6626,Tech,2025-12-10,OECD
+1360,Soybeans,2019,Producer price,National currency per tonne,281.8322,Tech,2025-12-10,OECD
+1361,Soybeans,2020,Producer price,National currency per tonne,438.7692,Tech,2025-12-10,OECD
+1362,Soybeans,2021,Producer price,National currency per tonne,498.4503,Tech,2025-12-10,OECD
+1363,Soybeans,2022,Producer price,National currency per tonne,499.6801,Tech,2025-12-10,OECD
+1364,Soybeans,2023,Producer price,National currency per tonne,439.7650,Tech,2025-12-10,OECD
+1365,Soybeans,2024,Producer price,National currency per tonne,388.5700,Tech,2025-12-10,OECD
+1366,Soybeans,2025,Producer price,National currency per tonne,411.8514,Tech,2025-12-10,OECD
+1367,Soybeans,2026,Producer price,National currency per tonne,439.7471,Tech,2025-12-10,OECD
+1368,Soybeans,2027,Producer price,National currency per tonne,461.9542,Tech,2025-12-10,OECD
+1369,Soybeans,2028,Producer price,National currency per tonne,481.7927,Tech,2025-12-10,OECD
+1370,Soybeans,2029,Producer price,National currency per tonne,496.1506,Tech,2025-12-10,OECD
+1371,Soybeans,2030,Producer price,National currency per tonne,506.8272,Tech,2025-12-10,OECD
+1372,Soybeans,2031,Producer price,National currency per tonne,517.6680,Tech,2025-12-10,OECD
+1373,Soybeans,2032,Producer price,National currency per tonne,526.6499,Tech,2025-12-10,OECD
+1374,Soybeans,2033,Producer price,National currency per tonne,535.0405,Tech,2025-12-10,OECD
+1375,Soybeans,2034,Producer price,National currency per tonne,543.0332,Tech,2025-12-10,OECD
+1376,Soybeans,2010,Human consumption,Kilogrammes per person,0.0094,Tech,2025-12-10,OECD
+1377,Soybeans,2011,Human consumption,Kilogrammes per person,0.0125,Tech,2025-12-10,OECD
+1378,Soybeans,2012,Human consumption,Kilogrammes per person,0.0207,Tech,2025-12-10,OECD
+1379,Soybeans,2013,Human consumption,Kilogrammes per person,0.0156,Tech,2025-12-10,OECD
+1380,Soybeans,2014,Human consumption,Kilogrammes per person,0.0143,Tech,2025-12-10,OECD
+1381,Soybeans,2015,Human consumption,Kilogrammes per person,0.0113,Tech,2025-12-10,OECD
+1382,Soybeans,2016,Human consumption,Kilogrammes per person,0.0149,Tech,2025-12-10,OECD
+1383,Soybeans,2017,Human consumption,Kilogrammes per person,0.0111,Tech,2025-12-10,OECD
+1384,Soybeans,2018,Human consumption,Kilogrammes per person,0.0122,Tech,2025-12-10,OECD
+1385,Soybeans,2019,Human consumption,Kilogrammes per person,0.0110,Tech,2025-12-10,OECD
+1386,Soybeans,2020,Human consumption,Kilogrammes per person,0.0112,Tech,2025-12-10,OECD
+1387,Soybeans,2021,Human consumption,Kilogrammes per person,0.0105,Tech,2025-12-10,OECD
+1388,Soybeans,2022,Human consumption,Kilogrammes per person,0.0109,Tech,2025-12-10,OECD
+1389,Soybeans,2023,Human consumption,Kilogrammes per person,0.0086,Tech,2025-12-10,OECD
+1390,Soybeans,2024,Human consumption,Kilogrammes per person,0.0081,Tech,2025-12-10,OECD
+1391,Soybeans,2025,Human consumption,Kilogrammes per person,0.0082,Tech,2025-12-10,OECD
+1392,Soybeans,2026,Human consumption,Kilogrammes per person,0.0083,Tech,2025-12-10,OECD
+1393,Soybeans,2027,Human consumption,Kilogrammes per person,0.0084,Tech,2025-12-10,OECD
+1394,Soybeans,2028,Human consumption,Kilogrammes per person,0.0085,Tech,2025-12-10,OECD
+1395,Soybeans,2029,Human consumption,Kilogrammes per person,0.0085,Tech,2025-12-10,OECD
+1396,Soybeans,2030,Human consumption,Kilogrammes per person,0.0086,Tech,2025-12-10,OECD
+1397,Soybeans,2031,Human consumption,Kilogrammes per person,0.0086,Tech,2025-12-10,OECD
+1398,Soybeans,2032,Human consumption,Kilogrammes per person,0.0087,Tech,2025-12-10,OECD
+1399,Soybeans,2033,Human consumption,Kilogrammes per person,0.0087,Tech,2025-12-10,OECD
+1400,Soybeans,2034,Human consumption,Kilogrammes per person,0.0087,Tech,2025-12-10,OECD
+1401,Soybeans,2010,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0299,Tech,2025-12-10,OECD
+1402,Soybeans,2011,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0320,Tech,2025-12-10,OECD
+1403,Soybeans,2012,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0347,Tech,2025-12-10,OECD
+1404,Soybeans,2013,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0363,Tech,2025-12-10,OECD
+1405,Soybeans,2014,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0318,Tech,2025-12-10,OECD
+1406,Soybeans,2015,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0315,Tech,2025-12-10,OECD
+1407,Soybeans,2016,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0286,Tech,2025-12-10,OECD
+1408,Soybeans,2017,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0293,Tech,2025-12-10,OECD
+1409,Soybeans,2018,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0283,Tech,2025-12-10,OECD
+1410,Soybeans,2019,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0338,Tech,2025-12-10,OECD
+1411,Soybeans,2020,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0360,Tech,2025-12-10,OECD
+1412,Soybeans,2021,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0332,Tech,2025-12-10,OECD
+1413,Soybeans,2022,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0337,Tech,2025-12-10,OECD
+1414,Soybeans,2023,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0351,Tech,2025-12-10,OECD
+1415,Soybeans,2024,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0350,Tech,2025-12-10,OECD
+1416,Soybeans,2025,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0365,Tech,2025-12-10,OECD
+1417,Soybeans,2026,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0371,Tech,2025-12-10,OECD
+1418,Soybeans,2027,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0376,Tech,2025-12-10,OECD
+1419,Soybeans,2028,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0381,Tech,2025-12-10,OECD
+1420,Soybeans,2029,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0384,Tech,2025-12-10,OECD
+1421,Soybeans,2030,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0388,Tech,2025-12-10,OECD
+1422,Soybeans,2031,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0391,Tech,2025-12-10,OECD
+1423,Soybeans,2032,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0394,Tech,2025-12-10,OECD
+1424,Soybeans,2033,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0396,Tech,2025-12-10,OECD
+1425,Soybeans,2034,Direct GHG emission,"Tonnes of CO2-equivalent, Millions",0.0399,Tech,2025-12-10,OECD
+1426,Soybeans,2010,Total calorie availability,Kilocalories per person per day,0.0087,Tech,2025-12-10,OECD
+1427,Soybeans,2011,Total calorie availability,Kilocalories per person per day,0.0113,Tech,2025-12-10,OECD
+1428,Soybeans,2012,Total calorie availability,Kilocalories per person per day,0.0136,Tech,2025-12-10,OECD
+1429,Soybeans,2013,Total calorie availability,Kilocalories per person per day,0.0138,Tech,2025-12-10,OECD
+1430,Soybeans,2014,Total calorie availability,Kilocalories per person per day,0.0125,Tech,2025-12-10,OECD
+1431,Soybeans,2015,Total calorie availability,Kilocalories per person per day,0.0135,Tech,2025-12-10,OECD
+1432,Soybeans,2016,Total calorie availability,Kilocalories per person per day,0.0157,Tech,2025-12-10,OECD
+1433,Soybeans,2017,Total calorie availability,Kilocalories per person per day,0.0185,Tech,2025-12-10,OECD
+1434,Soybeans,2018,Total calorie availability,Kilocalories per person per day,0.0188,Tech,2025-12-10,OECD
+1435,Soybeans,2019,Total calorie availability,Kilocalories per person per day,0.0177,Tech,2025-12-10,OECD
+1436,Soybeans,2020,Total calorie availability,Kilocalories per person per day,0.0179,Tech,2025-12-10,OECD
+1437,Soybeans,2021,Total calorie availability,Kilocalories per person per day,0.0179,Tech,2025-12-10,OECD
+1438,Soybeans,2022,Total calorie availability,Kilocalories per person per day,0.0182,Tech,2025-12-10,OECD
+1439,Soybeans,2023,Total calorie availability,Kilocalories per person per day,0.0178,Tech,2025-12-10,OECD
+1440,Soybeans,2024,Total calorie availability,Kilocalories per person per day,0.0164,Tech,2025-12-10,OECD
+1441,Soybeans,2025,Total calorie availability,Kilocalories per person per day,0.0150,Tech,2025-12-10,OECD
+1442,Soybeans,2026,Total calorie availability,Kilocalories per person per day,0.0138,Tech,2025-12-10,OECD
+1443,Soybeans,2027,Total calorie availability,Kilocalories per person per day,0.0137,Tech,2025-12-10,OECD
+1444,Soybeans,2028,Total calorie availability,Kilocalories per person per day,0.0139,Tech,2025-12-10,OECD
+1445,Soybeans,2029,Total calorie availability,Kilocalories per person per day,0.0140,Tech,2025-12-10,OECD
+1446,Soybeans,2030,Total calorie availability,Kilocalories per person per day,0.0141,Tech,2025-12-10,OECD
+1447,Soybeans,2031,Total calorie availability,Kilocalories per person per day,0.0142,Tech,2025-12-10,OECD
+1448,Soybeans,2032,Total calorie availability,Kilocalories per person per day,0.0143,Tech,2025-12-10,OECD
+1449,Soybeans,2033,Total calorie availability,Kilocalories per person per day,0.0144,Tech,2025-12-10,OECD
+1450,Soybeans,2034,Total calorie availability,Kilocalories per person per day,0.0145,Tech,2025-12-10,OECD
+1451,Soybeans,2010,Food protein availability,Grammes per person per day,0.0009,Tech,2025-12-10,OECD
+1452,Soybeans,2011,Food protein availability,Grammes per person per day,0.0012,Tech,2025-12-10,OECD
+1453,Soybeans,2012,Food protein availability,Grammes per person per day,0.0014,Tech,2025-12-10,OECD
+1454,Soybeans,2013,Food protein availability,Grammes per person per day,0.0014,Tech,2025-12-10,OECD
+1455,Soybeans,2014,Food protein availability,Grammes per person per day,0.0012,Tech,2025-12-10,OECD
+1456,Soybeans,2015,Food protein availability,Grammes per person per day,0.0013,Tech,2025-12-10,OECD
+1457,Soybeans,2016,Food protein availability,Grammes per person per day,0.0016,Tech,2025-12-10,OECD
+1458,Soybeans,2017,Food protein availability,Grammes per person per day,0.0019,Tech,2025-12-10,OECD
+1459,Soybeans,2018,Food protein availability,Grammes per person per day,0.0019,Tech,2025-12-10,OECD
+1460,Soybeans,2019,Food protein availability,Grammes per person per day,0.0018,Tech,2025-12-10,OECD
+1461,Soybeans,2020,Food protein availability,Grammes per person per day,0.0018,Tech,2025-12-10,OECD
+1462,Soybeans,2021,Food protein availability,Grammes per person per day,0.0018,Tech,2025-12-10,OECD
+1463,Soybeans,2022,Food protein availability,Grammes per person per day,0.0019,Tech,2025-12-10,OECD
+1464,Soybeans,2023,Food protein availability,Grammes per person per day,0.0018,Tech,2025-12-10,OECD
+1465,Soybeans,2024,Food protein availability,Grammes per person per day,0.0017,Tech,2025-12-10,OECD
+1466,Soybeans,2025,Food protein availability,Grammes per person per day,0.0015,Tech,2025-12-10,OECD
+1467,Soybeans,2026,Food protein availability,Grammes per person per day,0.0014,Tech,2025-12-10,OECD
+1468,Soybeans,2027,Food protein availability,Grammes per person per day,0.0014,Tech,2025-12-10,OECD
+1469,Soybeans,2028,Food protein availability,Grammes per person per day,0.0014,Tech,2025-12-10,OECD
+1470,Soybeans,2029,Food protein availability,Grammes per person per day,0.0014,Tech,2025-12-10,OECD
+1471,Soybeans,2030,Food protein availability,Grammes per person per day,0.0014,Tech,2025-12-10,OECD
+1472,Soybeans,2031,Food protein availability,Grammes per person per day,0.0015,Tech,2025-12-10,OECD
+1473,Soybeans,2032,Food protein availability,Grammes per person per day,0.0015,Tech,2025-12-10,OECD
+1474,Soybeans,2033,Food protein availability,Grammes per person per day,0.0015,Tech,2025-12-10,OECD
+1475,Soybeans,2034,Food protein availability,Grammes per person per day,0.0015,Tech,2025-12-10,OECD
+1476,Soybeans,2010,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1477,Soybeans,2011,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1478,Soybeans,2012,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1479,Soybeans,2013,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1480,Soybeans,2014,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1481,Soybeans,2015,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1482,Soybeans,2016,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1483,Soybeans,2017,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1484,Soybeans,2018,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1485,Soybeans,2019,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1486,Soybeans,2020,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1487,Soybeans,2021,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1488,Soybeans,2022,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1489,Soybeans,2023,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1490,Soybeans,2024,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1491,Soybeans,2025,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1492,Soybeans,2026,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1493,Soybeans,2027,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1494,Soybeans,2028,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1495,Soybeans,2029,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1496,Soybeans,2030,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1497,Soybeans,2031,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1498,Soybeans,2032,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1499,Soybeans,2033,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1500,Soybeans,2034,Food fat availability,Grammes per person per day,0.0000,Tech,2025-12-10,OECD
+1501,Ethanol,2010,Production,"Tonnes, Thousands",18.6306,Tech,2025-12-10,OECD
+1502,Ethanol,2011,Production,"Tonnes, Thousands",19.8033,Tech,2025-12-10,OECD
+1503,Ethanol,2012,Production,"Tonnes, Thousands",19.9808,Tech,2025-12-10,OECD
+1504,Ethanol,2013,Production,"Tonnes, Thousands",20.4623,Tech,2025-12-10,OECD
+1505,Ethanol,2014,Production,"Tonnes, Thousands",22.1988,Tech,2025-12-10,OECD
+1506,Ethanol,2015,Production,"Tonnes, Thousands",22.1717,Tech,2025-12-10,OECD
+1507,Ethanol,2016,Production,"Tonnes, Thousands",22.9903,Tech,2025-12-10,OECD
+1508,Ethanol,2017,Production,"Tonnes, Thousands",16.9884,Tech,2025-12-10,OECD
+1509,Ethanol,2018,Production,"Tonnes, Thousands",25.5945,Tech,2025-12-10,OECD
+1510,Ethanol,2019,Production,"Tonnes, Thousands",28.3080,Tech,2025-12-10,OECD
+1511,Ethanol,2020,Production,"Tonnes, Thousands",29.0834,Tech,2025-12-10,OECD
+1512,Ethanol,2021,Production,"Tonnes, Thousands",45.6696,Tech,2025-12-10,OECD
+1513,Ethanol,2022,Production,"Tonnes, Thousands",60.8576,Tech,2025-12-10,OECD
+1514,Ethanol,2023,Production,"Tonnes, Thousands",68.4157,Tech,2025-12-10,OECD
+1515,Ethanol,2024,Production,"Tonnes, Thousands",86.9490,Tech,2025-12-10,OECD
+1516,Ethanol,2025,Production,"Tonnes, Thousands",115.1786,Tech,2025-12-10,OECD
+1517,Ethanol,2026,Production,"Tonnes, Thousands",131.4557,Tech,2025-12-10,OECD
+1518,Ethanol,2027,Production,"Tonnes, Thousands",133.5717,Tech,2025-12-10,OECD
+1519,Ethanol,2028,Production,"Tonnes, Thousands",136.1841,Tech,2025-12-10,OECD
+1520,Ethanol,2029,Production,"Tonnes, Thousands",138.6105,Tech,2025-12-10,OECD
+1521,Ethanol,2030,Production,"Tonnes, Thousands",141.0757,Tech,2025-12-10,OECD
+1522,Ethanol,2031,Production,"Tonnes, Thousands",143.5736,Tech,2025-12-10,OECD
+1523,Ethanol,2032,Production,"Tonnes, Thousands",146.0942,Tech,2025-12-10,OECD
+1524,Ethanol,2033,Production,"Tonnes, Thousands",148.6475,Tech,2025-12-10,OECD
+1525,Ethanol,2034,Production,"Tonnes, Thousands",151.2548,Tech,2025-12-10,OECD
+1526,Ethanol,2010,Imports,"Tonnes, Thousands",1.9471,Tech,2025-12-10,OECD
+1527,Ethanol,2011,Imports,"Tonnes, Thousands",0.8216,Tech,2025-12-10,OECD
+1528,Ethanol,2012,Imports,"Tonnes, Thousands",0.3431,Tech,2025-12-10,OECD
+1529,Ethanol,2013,Imports,"Tonnes, Thousands",0.3381,Tech,2025-12-10,OECD
+1530,Ethanol,2014,Imports,"Tonnes, Thousands",1.0644,Tech,2025-12-10,OECD
+1531,Ethanol,2015,Imports,"Tonnes, Thousands",2.1708,Tech,2025-12-10,OECD
+1532,Ethanol,2016,Imports,"Tonnes, Thousands",3.2422,Tech,2025-12-10,OECD
+1533,Ethanol,2017,Imports,"Tonnes, Thousands",4.6235,Tech,2025-12-10,OECD
+1534,Ethanol,2018,Imports,"Tonnes, Thousands",4.7850,Tech,2025-12-10,OECD
+1535,Ethanol,2019,Imports,"Tonnes, Thousands",5.7972,Tech,2025-12-10,OECD
+1536,Ethanol,2020,Imports,"Tonnes, Thousands",5.5545,Tech,2025-12-10,OECD
+1537,Ethanol,2021,Imports,"Tonnes, Thousands",4.9556,Tech,2025-12-10,OECD
+1538,Ethanol,2022,Imports,"Tonnes, Thousands",2.9951,Tech,2025-12-10,OECD
+1539,Ethanol,2023,Imports,"Tonnes, Thousands",2.7300,Tech,2025-12-10,OECD
+1540,Ethanol,2024,Imports,"Tonnes, Thousands",6.6714,Tech,2025-12-10,OECD
+1541,Ethanol,2025,Imports,"Tonnes, Thousands",3.5496,Tech,2025-12-10,OECD
+1542,Ethanol,2026,Imports,"Tonnes, Thousands",2.8254,Tech,2025-12-10,OECD
+1543,Ethanol,2027,Imports,"Tonnes, Thousands",2.3801,Tech,2025-12-10,OECD
+1544,Ethanol,2028,Imports,"Tonnes, Thousands",2.4005,Tech,2025-12-10,OECD
+1545,Ethanol,2029,Imports,"Tonnes, Thousands",2.3259,Tech,2025-12-10,OECD
+1546,Ethanol,2030,Imports,"Tonnes, Thousands",2.2570,Tech,2025-12-10,OECD
+1547,Ethanol,2031,Imports,"Tonnes, Thousands",2.1992,Tech,2025-12-10,OECD
+1548,Ethanol,2032,Imports,"Tonnes, Thousands",2.1609,Tech,2025-12-10,OECD
+1549,Ethanol,2033,Imports,"Tonnes, Thousands",2.1348,Tech,2025-12-10,OECD
+1550,Ethanol,2034,Imports,"Tonnes, Thousands",2.1039,Tech,2025-12-10,OECD
+1551,Ethanol,2010,Consumption,"Tonnes, Thousands",19.9369,Tech,2025-12-10,OECD
+1552,Ethanol,2011,Consumption,"Tonnes, Thousands",19.4612,Tech,2025-12-10,OECD
+1553,Ethanol,2012,Consumption,"Tonnes, Thousands",18.5584,Tech,2025-12-10,OECD
+1554,Ethanol,2013,Consumption,"Tonnes, Thousands",18.4580,Tech,2025-12-10,OECD
+1555,Ethanol,2014,Consumption,"Tonnes, Thousands",21.4675,Tech,2025-12-10,OECD
+1556,Ethanol,2015,Consumption,"Tonnes, Thousands",22.7014,Tech,2025-12-10,OECD
+1557,Ethanol,2016,Consumption,"Tonnes, Thousands",24.8782,Tech,2025-12-10,OECD
+1558,Ethanol,2017,Consumption,"Tonnes, Thousands",20.2136,Tech,2025-12-10,OECD
+1559,Ethanol,2018,Consumption,"Tonnes, Thousands",29.0915,Tech,2025-12-10,OECD
+1560,Ethanol,2019,Consumption,"Tonnes, Thousands",33.6057,Tech,2025-12-10,OECD
+1561,Ethanol,2020,Consumption,"Tonnes, Thousands",33.3047,Tech,2025-12-10,OECD
+1562,Ethanol,2021,Consumption,"Tonnes, Thousands",49.7564,Tech,2025-12-10,OECD
+1563,Ethanol,2022,Consumption,"Tonnes, Thousands",62.7573,Tech,2025-12-10,OECD
+1564,Ethanol,2023,Consumption,"Tonnes, Thousands",69.8185,Tech,2025-12-10,OECD
+1565,Ethanol,2024,Consumption,"Tonnes, Thousands",92.5661,Tech,2025-12-10,OECD
+1566,Ethanol,2025,Consumption,"Tonnes, Thousands",117.4512,Tech,2025-12-10,OECD
+1567,Ethanol,2026,Consumption,"Tonnes, Thousands",132.9125,Tech,2025-12-10,OECD
+1568,Ethanol,2027,Consumption,"Tonnes, Thousands",134.5100,Tech,2025-12-10,OECD
+1569,Ethanol,2028,Consumption,"Tonnes, Thousands",137.1465,Tech,2025-12-10,OECD
+1570,Ethanol,2029,Consumption,"Tonnes, Thousands",139.4845,Tech,2025-12-10,OECD
+1571,Ethanol,2030,Consumption,"Tonnes, Thousands",141.8675,Tech,2025-12-10,OECD
+1572,Ethanol,2031,Consumption,"Tonnes, Thousands",144.2959,Tech,2025-12-10,OECD
+1573,Ethanol,2032,Consumption,"Tonnes, Thousands",146.7704,Tech,2025-12-10,OECD
+1574,Ethanol,2033,Consumption,"Tonnes, Thousands",149.2921,Tech,2025-12-10,OECD
+1575,Ethanol,2034,Consumption,"Tonnes, Thousands",151.8619,Tech,2025-12-10,OECD
+1576,Ethanol,2010,Exports,"Tonnes, Thousands",0.6408,Tech,2025-12-10,OECD
+1577,Ethanol,2011,Exports,"Tonnes, Thousands",1.1637,Tech,2025-12-10,OECD
+1578,Ethanol,2012,Exports,"Tonnes, Thousands",1.7656,Tech,2025-12-10,OECD
+1579,Ethanol,2013,Exports,"Tonnes, Thousands",2.3424,Tech,2025-12-10,OECD
+1580,Ethanol,2014,Exports,"Tonnes, Thousands",1.7956,Tech,2025-12-10,OECD
+1581,Ethanol,2015,Exports,"Tonnes, Thousands",1.6412,Tech,2025-12-10,OECD
+1582,Ethanol,2016,Exports,"Tonnes, Thousands",1.3543,Tech,2025-12-10,OECD
+1583,Ethanol,2017,Exports,"Tonnes, Thousands",1.3984,Tech,2025-12-10,OECD
+1584,Ethanol,2018,Exports,"Tonnes, Thousands",1.2881,Tech,2025-12-10,OECD
+1585,Ethanol,2019,Exports,"Tonnes, Thousands",0.4996,Tech,2025-12-10,OECD
+1586,Ethanol,2020,Exports,"Tonnes, Thousands",1.3332,Tech,2025-12-10,OECD
+1587,Ethanol,2021,Exports,"Tonnes, Thousands",0.8687,Tech,2025-12-10,OECD
+1588,Ethanol,2022,Exports,"Tonnes, Thousands",1.0954,Tech,2025-12-10,OECD
+1589,Ethanol,2023,Exports,"Tonnes, Thousands",1.3272,Tech,2025-12-10,OECD
+1590,Ethanol,2024,Exports,"Tonnes, Thousands",1.0543,Tech,2025-12-10,OECD
+1591,Ethanol,2025,Exports,"Tonnes, Thousands",1.2770,Tech,2025-12-10,OECD
+1592,Ethanol,2026,Exports,"Tonnes, Thousands",1.3686,Tech,2025-12-10,OECD
+1593,Ethanol,2027,Exports,"Tonnes, Thousands",1.4418,Tech,2025-12-10,OECD
+1594,Ethanol,2028,Exports,"Tonnes, Thousands",1.4380,Tech,2025-12-10,OECD
+1595,Ethanol,2029,Exports,"Tonnes, Thousands",1.4519,Tech,2025-12-10,OECD
+1596,Ethanol,2030,Exports,"Tonnes, Thousands",1.4652,Tech,2025-12-10,OECD
+1597,Ethanol,2031,Exports,"Tonnes, Thousands",1.4768,Tech,2025-12-10,OECD
+1598,Ethanol,2032,Exports,"Tonnes, Thousands",1.4847,Tech,2025-12-10,OECD
+1599,Ethanol,2033,Exports,"Tonnes, Thousands",1.4902,Tech,2025-12-10,OECD
+1600,Ethanol,2034,Exports,"Tonnes, Thousands",1.4968,Tech,2025-12-10,OECD
+1601,Ethanol,2010,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1602,Ethanol,2011,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1603,Ethanol,2012,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1604,Ethanol,2013,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1605,Ethanol,2014,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1606,Ethanol,2015,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1607,Ethanol,2016,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1608,Ethanol,2017,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1609,Ethanol,2018,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1610,Ethanol,2019,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1611,Ethanol,2020,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1612,Ethanol,2021,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1613,Ethanol,2022,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1614,Ethanol,2023,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1615,Ethanol,2024,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1616,Ethanol,2025,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1617,Ethanol,2026,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1618,Ethanol,2027,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1619,Ethanol,2028,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1620,Ethanol,2029,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1621,Ethanol,2030,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1622,Ethanol,2031,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1623,Ethanol,2032,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1624,Ethanol,2033,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1625,Ethanol,2034,Ending stocks,"Tonnes, Thousands",0.0000,Tech,2025-12-10,OECD
+1626,Ethanol,2010,Producer price,National currency per hectolitre,25.8024,Tech,2025-12-10,OECD
+1627,Ethanol,2011,Producer price,National currency per hectolitre,34.3396,Tech,2025-12-10,OECD
+1628,Ethanol,2012,Producer price,National currency per hectolitre,32.2161,Tech,2025-12-10,OECD
+1629,Ethanol,2013,Producer price,National currency per hectolitre,35.8626,Tech,2025-12-10,OECD
+1630,Ethanol,2014,Producer price,National currency per hectolitre,36.7960,Tech,2025-12-10,OECD
+1631,Ethanol,2015,Producer price,National currency per hectolitre,30.2965,Tech,2025-12-10,OECD
+1632,Ethanol,2016,Producer price,National currency per hectolitre,32.9089,Tech,2025-12-10,OECD
+1633,Ethanol,2017,Producer price,National currency per hectolitre,31.6615,Tech,2025-12-10,OECD
+1634,Ethanol,2018,Producer price,National currency per hectolitre,30.9988,Tech,2025-12-10,OECD
+1635,Ethanol,2019,Producer price,National currency per hectolitre,31.9284,Tech,2025-12-10,OECD
+1636,Ethanol,2020,Producer price,National currency per hectolitre,31.6535,Tech,2025-12-10,OECD
+1637,Ethanol,2021,Producer price,National currency per hectolitre,53.3216,Tech,2025-12-10,OECD
+1638,Ethanol,2022,Producer price,National currency per hectolitre,59.0102,Tech,2025-12-10,OECD
+1639,Ethanol,2023,Producer price,National currency per hectolitre,55.7318,Tech,2025-12-10,OECD
+1640,Ethanol,2024,Producer price,National currency per hectolitre,45.1408,Tech,2025-12-10,OECD
+1641,Ethanol,2025,Producer price,National currency per hectolitre,39.9868,Tech,2025-12-10,OECD
+1642,Ethanol,2026,Producer price,National currency per hectolitre,39.0478,Tech,2025-12-10,OECD
+1643,Ethanol,2027,Producer price,National currency per hectolitre,38.3789,Tech,2025-12-10,OECD
+1644,Ethanol,2028,Producer price,National currency per hectolitre,38.9864,Tech,2025-12-10,OECD
+1645,Ethanol,2029,Producer price,National currency per hectolitre,39.4344,Tech,2025-12-10,OECD
+1646,Ethanol,2030,Producer price,National currency per hectolitre,39.8353,Tech,2025-12-10,OECD
+1647,Ethanol,2031,Producer price,National currency per hectolitre,40.2626,Tech,2025-12-10,OECD
+1648,Ethanol,2032,Producer price,National currency per hectolitre,40.7692,Tech,2025-12-10,OECD
+1649,Ethanol,2033,Producer price,National currency per hectolitre,41.2938,Tech,2025-12-10,OECD
+1650,Ethanol,2034,Producer price,National currency per hectolitre,41.8571,Tech,2025-12-10,OECD

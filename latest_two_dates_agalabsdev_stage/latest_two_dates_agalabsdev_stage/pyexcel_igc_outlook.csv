@@ -1,0 +1,9 @@
+﻿RecordIndex,CommodityName,Attribute,MarketYear,Value,Unit,Source,CreatedBy,CreatedDate,Month,PreviousValue
+186,Maize,Production,2026,1301.0,Million Tonnes,IGC,Research,2026-09-21,9,1346
+187,Maize,Trade,2026,209.0,Million Tonnes,IGC,Research,2026-09-21,9,203
+188,Maize,Consumption,2026,1321.0,Million Tonnes,IGC,Research,2026-09-21,9,1327
+189,Maize,Carryover stocks,2026,289.0,Million Tonnes,IGC,Research,2026-09-21,9,309
+190,Soybeans,Production ,2026,440.0,Million Tonnes,IGC,Research,2026-09-17,9,441
+191,Soybeans,Trade,2026,191.0,Million Tonnes,IGC,Research,2026-09-17,9,190
+192,Soybeans,Consumption,2026,446.0,Million Tonnes,IGC,Research,2026-09-17,9,447
+193,Soybeans,Carryover Stock,2026,73.0,Million Tonnes,IGC,Research,2026-09-17,9,75
